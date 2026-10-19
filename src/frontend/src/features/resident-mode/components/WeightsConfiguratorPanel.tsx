@@ -12,6 +12,7 @@ import {
 } from 'lucide-react';
 import type { QualityWeights, ResidentPreset } from '../../../types/contracts';
 import { RESIDENT_PRESETS } from '../../../utils/qualityIndexCalculator';
+import * as React from "react";
 
 export interface WeightsConfiguratorPanelProps {
   weights: QualityWeights;
@@ -25,6 +26,7 @@ interface SliderConfig {
   label: string;
   subtitle: string;
   accentColor: string;
+  iconBg: string;
   icon: React.ReactNode;
 }
 
@@ -33,51 +35,56 @@ const SLIDER_CONFIGS: SliderConfig[] = [
     key: 'mobility',
     label: 'Mobilność i Transport KMK',
     subtitle: 'Przystanki tramwajowe/autobusowe, izochrony 500m, ścieżki rowerowe i P&R',
-    accentColor: 'accent-sky-400',
-    icon: <Bus className="w-4 h-4 text-sky-400" />,
+    accentColor: 'accent-blue-600',
+    iconBg: 'bg-blue-50 text-blue-600 border-blue-200',
+    icon: <Bus className="w-4 h-4" />,
   },
   {
     key: 'education',
     label: 'Edukacja i Opieka (0–14 lat)',
     subtitle: 'Dostępność żłobków samorządowych/prywatnych, przedszkoli i szkół podstawowych',
-    accentColor: 'accent-indigo-400',
-    icon: <GraduationCap className="w-4 h-4 text-indigo-400" />,
+    accentColor: 'accent-indigo-600',
+    iconBg: 'bg-indigo-50 text-indigo-600 border-indigo-200',
+    icon: <GraduationCap className="w-4 h-4" />,
   },
   {
     key: 'greenery',
     label: 'Zieleń Miejska i Sport',
     subtitle: 'Parki miejskie, parki kieszonkowe, m² zieleni na mieszkańca, boiska i baseny',
-    accentColor: 'accent-emerald-400',
-    icon: <Trees className="w-4 h-4 text-emerald-400" />,
+    accentColor: 'accent-emerald-600',
+    iconBg: 'bg-emerald-50 text-emerald-600 border-emerald-200',
+    icon: <Trees className="w-4 h-4" />,
   },
   {
     key: 'culture',
     label: 'Kultura, Biblioteki i Seniorzy (CAS)',
     subtitle: 'Filie Biblioteki Kraków, domy kultury, Centra Aktywności Seniora i wydarzenia',
-    accentColor: 'accent-amber-400',
-    icon: <HeartHandshake className="w-4 h-4 text-amber-400" />,
+    accentColor: 'accent-sky-600',
+    iconBg: 'bg-sky-50 text-sky-600 border-sky-200',
+    icon: <HeartHandshake className="w-4 h-4" />,
   },
   {
     key: 'environment',
     label: 'Środowisko, Powietrze i Spokój',
     subtitle: 'Jakość powietrza (GIOŚ), niska gęstość zaludnienia i komfort akustyczny',
-    accentColor: 'accent-teal-400',
-    icon: <Wind className="w-4 h-4 text-teal-400" />,
+    accentColor: 'accent-teal-600',
+    iconBg: 'bg-teal-50 text-teal-600 border-teal-200',
+    icon: <Wind className="w-4 h-4" />,
   },
 ];
 
 function getPresetIcon(presetId: string) {
   switch (presetId) {
     case 'student':
-      return <GraduationCap className="w-4 h-4 text-sky-400 shrink-0" />;
+      return <GraduationCap className="w-4 h-4 text-blue-600 shrink-0" />;
     case 'single_pro':
-      return <Briefcase className="w-4 h-4 text-indigo-400 shrink-0" />;
+      return <Briefcase className="w-4 h-4 text-sky-600 shrink-0" />;
     case 'family_2_1':
-      return <Users className="w-4 h-4 text-emerald-400 shrink-0" />;
+      return <Users className="w-4 h-4 text-indigo-600 shrink-0" />;
     case 'active_senior':
-      return <HeartHandshake className="w-4 h-4 text-amber-400 shrink-0" />;
+      return <HeartHandshake className="w-4 h-4 text-emerald-600 shrink-0" />;
     default:
-      return <Sparkles className="w-4 h-4 text-sky-400 shrink-0" />;
+      return <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />;
   }
 }
 
@@ -102,40 +109,42 @@ export function WeightsConfiguratorPanel({
   };
 
   return (
-    <div className="rounded-2xl bg-slate-900/80 border border-slate-800 p-5 shadow-xl space-y-5">
+    <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-5 shadow-xl shadow-blue-900/5 space-y-5">
       {/* Header */}
-      <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-3.5">
+      <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-3.5">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-sky-500/15 border border-sky-500/30 flex items-center justify-center text-sky-400">
+          <div className="w-9 h-9 rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-sm shadow-blue-600/20">
             <SlidersHorizontal className="w-4 h-4" />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-white">Konfigurator Wag Jakości Życia</h3>
-            <p className="text-[11px] text-slate-400">
-              Dostosuj priorytety (0–10 pkt) – mapa i ranking przeliczają się w 0 ms
+            <h3 className="text-sm font-extrabold text-slate-900">Konfigurator Wag</h3>
+            <p className="text-[11px] text-slate-500">
+              Ustaw priorytety (0–10 pkt) – przeliczanie na żywo
             </p>
           </div>
         </div>
 
         <button
           onClick={onResetWeights}
-          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-slate-800 hover:bg-slate-700 text-slate-300 border border-slate-700 transition cursor-pointer"
+          className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-blue-50 text-slate-600 hover:text-blue-700 border border-slate-200/80 transition cursor-pointer"
           title="Przywróć równe wagi (5/10) dla wszystkich kategorii"
         >
           <RotateCcw className="w-3.5 h-3.5" />
-          Reset (5/10)
+          Reset
         </button>
       </div>
 
       {/* 4 Quick Persona Presets */}
-      <div className="space-y-2">
+      <div className="space-y-2.5">
         <div className="flex items-center justify-between">
-          <span className="text-xs font-semibold text-slate-300 flex items-center gap-1.5">
-            <Sparkles className="w-3.5 h-3.5 text-sky-400" />
-            Szybkie Profile Mieszkańca (Presety):
+          <span className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
+            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+            Szybkie Profile Mieszkańca:
           </span>
           {activePresetId && (
-            <span className="text-[11px] text-sky-400 font-medium">Aktywny profil</span>
+            <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+              Aktywny profil
+            </span>
           )}
         </div>
 
@@ -146,16 +155,26 @@ export function WeightsConfiguratorPanel({
               <button
                 key={preset.id}
                 onClick={() => handleSelectPreset(preset)}
-                className={`text-left p-2.5 rounded-xl border transition cursor-pointer flex items-start gap-2.5 ${
+                className={`text-left p-2.5 rounded-2xl border transition-all cursor-pointer flex items-start gap-2.5 ${
                   isActive
-                    ? 'bg-sky-500/15 border-sky-400/60 text-white shadow-md'
-                    : 'bg-slate-950/60 border-slate-800/90 text-slate-300 hover:bg-slate-800/60 hover:border-slate-700'
+                    ? 'bg-linear-to-br from-blue-600 to-sky-600 border-blue-600 text-white shadow-md shadow-blue-600/20'
+                    : 'bg-slate-50/80 border-slate-200/80 text-slate-700 hover:bg-blue-50/60 hover:border-blue-300'
                 }`}
               >
-                <div className="mt-0.5">{getPresetIcon(preset.id)}</div>
+                <div
+                  className={`p-1.5 rounded-xl shrink-0 ${
+                    isActive ? 'bg-white/20 text-white' : 'bg-white border border-slate-200'
+                  }`}
+                >
+                  {isActive ? <Sparkles className="w-3.5 h-3.5 text-white" /> : getPresetIcon(preset.id)}
+                </div>
                 <div className="min-w-0">
                   <div className="text-xs font-bold truncate">{preset.label}</div>
-                  <div className="text-[10px] text-slate-400 leading-tight mt-0.5 line-clamp-2">
+                  <div
+                    className={`text-[10px] leading-tight mt-0.5 line-clamp-2 ${
+                      isActive ? 'text-blue-100' : 'text-slate-500'
+                    }`}
+                  >
                     {preset.description}
                   </div>
                 </div>
@@ -166,28 +185,30 @@ export function WeightsConfiguratorPanel({
       </div>
 
       {/* 5 Interactive Category Weight Sliders (0-10) */}
-      <div className="space-y-4 pt-1">
+      <div className="space-y-3 pt-1">
         {SLIDER_CONFIGS.map((slider) => {
           const currentValue = weights[slider.key];
           return (
             <div
               key={slider.key}
-              className="p-3 rounded-xl bg-slate-950/50 border border-slate-800/80 space-y-2"
+              className="p-3 rounded-2xl bg-slate-50/70 border border-slate-200/70 hover:border-blue-200 transition space-y-1.5"
             >
               <div className="flex items-center justify-between gap-2">
-                <div className="flex items-center gap-2">
-                  {slider.icon}
-                  <span className="text-xs font-semibold text-slate-200">{slider.label}</span>
+                <div className="flex items-center gap-2 min-w-0">
+                  <span className={`p-1.5 rounded-xl border ${slider.iconBg} shrink-0`}>
+                    {slider.icon}
+                  </span>
+                  <span className="text-xs font-bold text-slate-800 truncate">{slider.label}</span>
                 </div>
-                <span className="text-xs font-extrabold px-2 py-0.5 rounded-md bg-slate-800 text-sky-300 border border-slate-700 min-w-[52px] text-center">
+                <span className="text-xs font-extrabold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 min-w-13 text-center shrink-0">
                   {currentValue} / 10
                 </span>
               </div>
 
-              <p className="text-[11px] text-slate-400 leading-snug">{slider.subtitle}</p>
+              <p className="text-[11px] text-slate-500 leading-snug">{slider.subtitle}</p>
 
               <div className="flex items-center gap-3 pt-1">
-                <span className="text-[10px] text-slate-500 font-medium w-4">0</span>
+                <span className="text-[10px] text-slate-400 font-semibold w-4">0</span>
                 <input
                   type="range"
                   min={0}
@@ -195,9 +216,9 @@ export function WeightsConfiguratorPanel({
                   step={1}
                   value={currentValue}
                   onChange={(e) => handleSliderChange(slider.key, Number(e.target.value))}
-                  className={`w-full h-2 bg-slate-800 rounded-lg cursor-pointer ${slider.accentColor}`}
+                  className={`w-full h-2 bg-blue-100 rounded-lg cursor-pointer ${slider.accentColor}`}
                 />
-                <span className="text-[10px] text-slate-500 font-medium w-4 text-right">10</span>
+                <span className="text-[10px] text-slate-400 font-semibold w-4 text-right">10</span>
               </div>
             </div>
           );

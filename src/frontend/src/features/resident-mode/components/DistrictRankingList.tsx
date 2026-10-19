@@ -16,27 +16,27 @@ export function DistrictRankingList({
   onSelectDistrict,
 }: DistrictRankingListProps) {
   return (
-    <div className="rounded-2xl bg-slate-900/80 border border-slate-800 p-5 shadow-xl flex flex-col h-[640px]">
+    <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-5 shadow-xl shadow-blue-900/5 flex flex-col h-162.5">
       {/* Header */}
-      <div className="flex items-center justify-between gap-2 border-b border-slate-800 pb-3.5 shrink-0">
+      <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-3.5 shrink-0">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-lg bg-amber-500/15 border border-amber-500/30 flex items-center justify-center text-amber-400">
+          <div className="w-9 h-9 rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-sm shadow-blue-600/20">
             <Trophy className="w-4 h-4" />
           </div>
           <div>
-            <h3 className="text-sm font-bold text-white">Ranking 18 Dzielnic na Żywo</h3>
-            <p className="text-[11px] text-slate-400">
-              Kliknij dzielnicę na liście, aby wybrać ją do porównania (#1 lub #2)
+            <h3 className="text-sm font-extrabold text-slate-900">Ranking 18 Dzielnic</h3>
+            <p className="text-[11px] text-slate-500">
+              Kliknij dzielnicę, aby porównać (#1 lub #2)
             </p>
           </div>
         </div>
-        <span className="text-[11px] font-semibold px-2.5 py-1 rounded-full bg-slate-800 text-slate-300 border border-slate-700">
+        <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
           {districts.length} dzielnic
         </span>
       </div>
 
       {/* Scrollable Live Ranking List */}
-      <div className="mt-3.5 flex-1 overflow-y-auto pr-1 space-y-2">
+      <div className="mt-3.5 flex-1 overflow-y-auto pr-1.5 space-y-2.5">
         {districts.map((district, index) => {
           const rank = index + 1;
           const isPrimary = district.districtId === selectedPrimaryId;
@@ -47,25 +47,25 @@ export function DistrictRankingList({
             <button
               key={district.districtId}
               onClick={() => onSelectDistrict(district.districtId)}
-              className={`w-full text-left p-3 rounded-xl border transition cursor-pointer block ${
+              className={`w-full text-left p-3 rounded-2xl border transition-all cursor-pointer block ${
                 isPrimary
-                  ? 'bg-sky-500/15 border-sky-400/70 shadow-md'
+                  ? 'bg-blue-50/90 border-blue-500 shadow-md shadow-blue-600/10'
                   : isSecondary
-                  ? 'bg-fuchsia-500/15 border-fuchsia-400/70 shadow-md'
-                  : 'bg-slate-950/60 border-slate-800/80 hover:bg-slate-800/60 hover:border-slate-700'
+                  ? 'bg-indigo-50/90 border-indigo-500 shadow-md shadow-indigo-600/10'
+                  : 'bg-slate-50/70 border-slate-200/80 hover:bg-blue-50/40 hover:border-blue-300'
               }`}
             >
               <div className="flex items-center justify-between gap-2">
                 <div className="flex items-center gap-2.5 min-w-0">
                   <span
-                    className={`w-6 h-6 rounded-md text-xs font-extrabold flex items-center justify-center shrink-0 ${
+                    className={`w-6 h-6 rounded-lg text-xs font-extrabold flex items-center justify-center shrink-0 ${
                       rank === 1
-                        ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                        ? 'bg-amber-100 text-amber-800 border border-amber-300'
                         : rank === 2
-                        ? 'bg-slate-300/20 text-slate-200 border border-slate-400/40'
+                        ? 'bg-slate-200 text-slate-700 border border-slate-300'
                         : rank === 3
-                        ? 'bg-amber-700/25 text-amber-400 border border-amber-600/40'
-                        : 'bg-slate-800 text-slate-400 border border-slate-700'
+                        ? 'bg-orange-100 text-orange-800 border border-orange-300'
+                        : 'bg-white text-slate-500 border border-slate-200'
                     }`}
                   >
                     #{rank}
@@ -73,24 +73,24 @@ export function DistrictRankingList({
 
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5">
-                      <span className="text-xs font-bold text-white truncate">
+                      <span className="text-xs font-extrabold text-slate-900 truncate">
                         {district.districtName}
                       </span>
                       {isPrimary && (
-                        <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-sky-500/30 text-sky-200 border border-sky-400/40 shrink-0">
+                        <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-md bg-blue-600 text-white shrink-0">
                           #1
                         </span>
                       )}
                       {isSecondary && (
-                        <span className="text-[10px] font-bold px-1.5 py-0.2 rounded bg-fuchsia-500/30 text-fuchsia-200 border border-fuchsia-400/40 shrink-0">
+                        <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-md bg-indigo-600 text-white shrink-0">
                           #2
                         </span>
                       )}
                     </div>
 
-                    <div className="flex items-center gap-3 text-[11px] text-slate-400 mt-0.5">
+                    <div className="flex items-center gap-2.5 text-[11px] text-slate-500 mt-0.5">
                       <span className="inline-flex items-center gap-1">
-                        <Users className="w-3 h-3 text-slate-500" />
+                        <Users className="w-3 h-3 text-slate-400" />
                         {district.totalPopulation.toLocaleString('pl-PL')} mieszk.
                       </span>
                       <span>•</span>
@@ -101,11 +101,11 @@ export function DistrictRankingList({
 
                 {/* Score Badge */}
                 <div
-                  className="text-xs font-extrabold px-2.5 py-1 rounded-lg shrink-0"
+                  className="text-xs font-extrabold px-2.5 py-1 rounded-xl shrink-0"
                   style={{
-                    backgroundColor: `${barColor}20`,
+                    backgroundColor: `${barColor}15`,
                     color: barColor,
-                    border: `1px solid ${barColor}45`,
+                    border: `1px solid ${barColor}40`,
                   }}
                 >
                   {district.weightedQualityOfLifeIndex.toFixed(1)} pkt
@@ -114,7 +114,7 @@ export function DistrictRankingList({
 
               {/* Progress Bar + Mini Category Pill Summary */}
               <div className="mt-2.5 space-y-1.5">
-                <div className="w-full h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                <div className="w-full h-1.5 bg-slate-200/80 rounded-full overflow-hidden">
                   <div
                     className="h-full rounded-full transition-all duration-300"
                     style={{
@@ -124,7 +124,7 @@ export function DistrictRankingList({
                   />
                 </div>
 
-                <div className="flex items-center justify-between text-[10px] text-slate-400">
+                <div className="flex items-center justify-between text-[10px] font-medium text-slate-500">
                   <span>Mob: {district.scores.mobilityScore}</span>
                   <span>Edu: {district.scores.educationScore}</span>
                   <span>Ziel: {district.scores.greeneryScore}</span>
