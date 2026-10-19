@@ -5,7 +5,6 @@ import type {
   DistrictsGeoJsonCollection,
   DistrictSummaryDto,
   QualityWeights,
-  SystemHelloDto,
 } from '../types/contracts';
 
 export const apiClient = axios.create({
@@ -17,11 +16,6 @@ export const apiClient = axios.create({
 });
 
 export const cracow360Api = {
-  getSystemHello: async (): Promise<SystemHelloDto> => {
-    const { data } = await apiClient.get<SystemHelloDto>('/system/hello');
-    return data;
-  },
-
   getDistricts: async (): Promise<DistrictSummaryDto[]> => {
     const { data } = await apiClient.get<DistrictSummaryDto[]>('/districts');
     return data;

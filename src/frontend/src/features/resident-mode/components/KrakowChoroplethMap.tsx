@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
-import type { Layer, PathOptions, LeafletMouseEvent } from 'leaflet';
+import type { Layer, PathOptions, LeafletMouseEvent, LatLngBoundsExpression } from 'leaflet';
 import type { Feature, Geometry } from 'geojson';
 import { GitCompareArrows, Info, MapPin, Moon, Sun, X } from 'lucide-react';
 import type {
@@ -19,7 +19,7 @@ export interface KrakowChoroplethMapProps {
 }
 
 /**
- * Returns the choropleth fill color (from warm amber/coral through lime to emerald/blue-teal)
+ * Returns the choropleth fill color (from warm amber/coral through sky blue to emerald)
  * based on the district's weighted Quality of Life Index (0-100 scale).
  */
 export function getChoroplethColor(score: number): string {
@@ -30,7 +30,16 @@ export function getChoroplethColor(score: number): string {
   return '#f97316'; // Orange 500 - Wymaga inwestycji
 }
 
-const KRAKOW_CENTER: [number, number] = [50.0614, 19.968];
+const KRAKOW_CENTER: [number, number] = [50.055, 20.005];
+
+/**
+ * Bounding box locked slightly beyond the administrative borders of Krakow
+ * (Krakow spans Lat 49.9677..50.1261, Lng 19.7922..20.2173).
+ */
+const KRAKOW_MAX_BOUNDS: LatLngBoundsExpression = [
+  [49.93, 19.72], // South-West corner
+  [50.16, 20.28], // North-East corner
+];
 
 export function KrakowChoroplethMap({
   geoJsonData,
@@ -41,7 +50,6 @@ export function KrakowChoroplethMap({
   onClearSelection,
 }: KrakowChoroplethMapProps) {
   const [hoveredDistrictId, setHoveredDistrictId] = useState<number | null>(null);
-  // Default to false (Light Kraków Civic Map) to match the white & blue theme
   const [darkMapMode, setDarkMapMode] = useState<boolean>(false);
 
   // Fast lookup map: districtId -> { summary, rank (1..18) }
@@ -153,12 +161,12 @@ export function KrakowChoroplethMap({
 
   return (
     <div
-      className={`relative w-full h-162.5 rounded-3xl overflow-hidden border border-blue-100 bg-white shadow-xl shadow-blue-900/5 ${
+      className={`relative w-full h-[650px] rounded-3xl overflow-hidden border border-blue-100 bg-white shadow-xl shadow-blue-900/5 ${
         darkMapMode ? 'krakow-dark-tiles' : 'krakow-light-tiles'
       }`}
     >
       {/* Top Floating Pill Bar: Selected Districts (#1 & #2) + Map Style Toggle */}
-      <div className="absolute top-4 left-14 right-4 z-1000 flex flex-wrap items-center justify-between gap-2 pointer-events-none">
+      <div className="absolute top-4 left-14 right-4 z-[1000] flex flex-wrap items-center justify-between gap-2 pointer-events-none">
         <div className="flex flex-wrap items-center gap-2 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-100 rounded-2xl px-3.5 py-2 shadow-lg shadow-blue-950/10">
           <span className="inline-flex items-center gap-1.5 text-xs font-bold text-slate-700 mr-1">
             <GitCompareArrows className="w-4 h-4 text-blue-600" />
@@ -237,7 +245,7 @@ export function KrakowChoroplethMap({
 
       {/* Bottom-Left Hover HUD Card: Detailed live preview of hovered district */}
       {hoveredInfo && (
-        <div className="absolute bottom-4 left-4 z-1000 w-72 pointer-events-none bg-white/95 backdrop-blur-md border border-blue-200 rounded-2xl p-4 shadow-2xl shadow-blue-950/15">
+        <div className="absolute bottom-4 left-4 z-[1000] w-72 pointer-events-none bg-white/95 backdrop-blur-md border border-blue-200 rounded-2xl p-4 shadow-2xl shadow-blue-950/15">
           <div className="flex items-center justify-between">
             <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
               Dzielnica {hoveredInfo.data.districtRoman} • #{hoveredInfo.rank}/18
@@ -304,7 +312,7 @@ export function KrakowChoroplethMap({
       )}
 
       {/* Bottom-Right Legend: Choropleth Color Scale */}
-      <div className="absolute bottom-4 right-4 z-1000 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-100 rounded-2xl p-3.5 shadow-lg shadow-blue-950/10">
+      <div className="absolute bottom-4 right-4 z-[1000] pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-100 rounded-2xl p-3.5 shadow-lg shadow-blue-950/10">
         <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-800 mb-2">
           <Info className="w-3.5 h-3.5 text-blue-600" />
           Indeks Jakości Życia (0–100 pkt)
@@ -333,10 +341,14 @@ export function KrakowChoroplethMap({
         </div>
       </div>
 
-      {/* Leaflet Map Canvas using official key-less OpenStreetMap tiles */}
+      {/* Leaflet Map Canvas locked strictly to the Krakow metropolitan area */}
       <MapContainer
         center={KRAKOW_CENTER}
         zoom={11}
+        minZoom={11}
+        maxZoom={16}
+        maxBounds={KRAKOW_MAX_BOUNDS}
+        maxBoundsViscosity={1.0}
         scrollWheelZoom={true}
         className="w-full h-full z-0"
       >
@@ -360,10 +372,10 @@ export function KrakowChoroplethMap({
       </MapContainer>
 
       {!geoJsonData && (
-        <div className="absolute inset-0 z-500 flex items-center justify-center bg-white/80 backdrop-blur-xs">
+        <div className="absolute inset-0 z-[500] flex items-center justify-center bg-white/80 backdrop-blur-xs">
           <div className="flex items-center gap-2 text-sm font-semibold text-blue-700">
             <MapPin className="w-4 h-4 text-blue-600 animate-bounce" />
-            Ładowanie granic wektorowych 18 dzielnic Krakowa (GeoJSON)...
+            Ładowanie granic wektorowych 18 dzielnic Krakowa...
           </div>
         </div>
       )}

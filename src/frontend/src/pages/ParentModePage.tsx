@@ -1,4 +1,4 @@
-﻿import { ArrowLeft, Baby, Clock, GraduationCap, MapPin, ShieldCheck, Trees } from 'lucide-react';
+import { ArrowLeft, Baby, Clock, GraduationCap, MapPin, ShieldCheck, Trees } from 'lucide-react';
 import type { DistrictSummaryDto } from '../types/contracts';
 
 export interface ParentModePageProps {

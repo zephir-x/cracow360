@@ -9,9 +9,10 @@ node_modules/
 [Bb]in/
 [Oo]bj/
 
-# Frontend build files (Vite/React)
+# Frontend build files (Vite/React/TypeScript)
 dist/
 build/
+*.tsbuildinfo
 
 # SQLite database files (generated locally from JSON contracts)
 data/db/*.db
@@ -28,9 +29,7 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 src/analytics/data_raw/*
-!src/analytics/data_raw/.gitkeep
 src/analytics/data_processed/*
-!src/analytics/data_processed/.gitkeep
 
 # Environment variables
 .env

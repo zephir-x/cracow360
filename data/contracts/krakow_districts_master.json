@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-19T17:20:00Z",
-    "dataVersion": "1.1.0-all-18-districts",
+    "generatedAt": "2026-10-19T20:39:17Z",
+    "dataVersion": "2.0.0-real-open-data-2025-2026",
     "normalizationMethod": "MinMax_0_100"
   },
   "districts": [
@@ -10,69 +10,69 @@
       "districtRoman": "I",
       "districtName": "Dzielnica I Stare Miasto",
       "areaKm2": 5.57,
-      "scores": {
-        "mobilityScore": 95.0,
-        "educationScore": 72.4,
-        "greeneryScore": 68.0,
-        "cultureAndSeniorScore": 96.5,
-        "environmentScore": 42.0
-      },
       "demographics": {
-        "totalPopulation": 29800,
-        "permanentResidents": 26100,
-        "temporaryResidents": 3700,
-        "foreignersTotal": 3100,
-        "age0to3": 820,
-        "age4to6": 790,
-        "age7to14": 1950,
-        "age15to64": 18240,
-        "age65Plus": 8000,
-        "populationGrowthRate3YrPct": -1.8
+        "totalPopulation": 29725,
+        "permanentResidents": 26823,
+        "temporaryResidents": 2902,
+        "foreignersTotal": 1304,
+        "age0to3": 569,
+        "age4to6": 595,
+        "age7to14": 1744,
+        "age15to64": 19098,
+        "age65Plus": 7719,
+        "populationGrowthRate3YrPct": 0.06
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 3,
+        "nurseriesPublicCount": 1,
+        "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 5,
-        "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 410,
-        "childrenPerCarePlaceRatio": 2.0,
-        "parentClubsCount": 2,
-        "kindergartensCount": 14,
-        "kindergartenPlacesTotal": 950,
-        "primarySchoolsCount": 11,
-        "primarySchoolStudentsTotal": 2400,
-        "avgStudentsPerClass": 21.5
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 201,
+        "childrenPerCarePlaceRatio": 2.83,
+        "parentClubsCount": 1,
+        "kindergartensCount": 18,
+        "kindergartenPlacesTotal": 938,
+        "primarySchoolsCount": 19,
+        "primarySchoolStudentsTotal": 3949,
+        "avgStudentsPerClass": 17.8
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 48,
-        "isochroneCoveragePct": 98.2,
+        "kmkStopsCount": 95,
+        "isochroneCoveragePct": 88.4,
         "parkAndRideCount": 0,
-        "bikeRacksCount": 320,
-        "bikeLanesLengthKm": 18.4
+        "bikeRacksCount": 2670,
+        "bikeLanesLengthKm": 27.2
       },
       "greeneryAndSport": {
-        "cityParksCount": 3,
-        "pocketParksCount": 2,
-        "totalParksAreaHa": 42.8,
-        "greenAreaM2PerCapita": 14.3,
-        "schoolSportsFacilitiesCount": 15,
-        "schoolSwimmingPoolsCount": 2
+        "cityParksCount": 4,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 30.91,
+        "greenAreaM2PerCapita": 10.4,
+        "schoolSportsFacilitiesCount": 12,
+        "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 5,
         "culturalCentersCount": 6,
-        "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 680,
-        "municipalSubsidyPerCapitaPln": 145.50
+        "seniorActivityCentersCount": 4,
+        "annualCulturalEventsCount": 1188,
+        "municipalSubsidyPerCapitaPln": 257.43
+      },
+      "scores": {
+        "mobilityScore": 96.0,
+        "educationScore": 92.0,
+        "greeneryScore": 80.1,
+        "cultureAndSeniorScore": 96.5,
+        "environmentScore": 50.5
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 780,
-        "forecastedCarePlacesBalance_2028": 20,
-        "forecastedAge4to6_2028": 750,
-        "nurseryInvestmentPotentialB2B": "LOW",
+        "forecastedAge0to3_2028": 467,
+        "forecastedCarePlacesBalance_2028": -149,
+        "forecastedAge4to6_2028": 437,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
-        "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Rozbudowa oferty Centrów Aktywności Seniora z uwagi na wysoki odsetek mieszkańców 65+ (26.8%)."
+        "greenSpaceDeficit": "MEDIUM",
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (26.0%)."
       }
     },
     {
@@ -80,69 +80,69 @@
       "districtRoman": "II",
       "districtName": "Dzielnica II Grzegórzki",
       "areaKm2": 5.85,
-      "scores": {
-        "mobilityScore": 89.5,
-        "educationScore": 64.0,
-        "greeneryScore": 58.5,
-        "cultureAndSeniorScore": 79.0,
-        "environmentScore": 55.0
-      },
       "demographics": {
-        "totalPopulation": 33400,
-        "permanentResidents": 29200,
-        "temporaryResidents": 4200,
-        "foreignersTotal": 2950,
-        "age0to3": 1420,
-        "age4to6": 1180,
-        "age7to14": 2450,
-        "age15to64": 21850,
-        "age65Plus": 6500,
-        "populationGrowthRate3YrPct": 4.2
+        "totalPopulation": 32066,
+        "permanentResidents": 29599,
+        "temporaryResidents": 2467,
+        "foreignersTotal": 1627,
+        "age0to3": 1139,
+        "age4to6": 1001,
+        "age7to14": 2405,
+        "age15to64": 20179,
+        "age65Plus": 7342,
+        "populationGrowthRate3YrPct": 5.57
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 3,
-        "nurseriesPrivateCount": 6,
-        "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 510,
-        "childrenPerCarePlaceRatio": 2.78,
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 14,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 682,
+        "childrenPerCarePlaceRatio": 1.67,
         "parentClubsCount": 2,
         "kindergartensCount": 12,
-        "kindergartenPlacesTotal": 1080,
-        "primarySchoolsCount": 6,
-        "primarySchoolStudentsTotal": 2350,
-        "avgStudentsPerClass": 23.8
+        "kindergartenPlacesTotal": 926,
+        "primarySchoolsCount": 11,
+        "primarySchoolStudentsTotal": 2968,
+        "avgStudentsPerClass": 17.1
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 38,
-        "isochroneCoveragePct": 94.0,
+        "kmkStopsCount": 67,
+        "isochroneCoveragePct": 80.3,
         "parkAndRideCount": 0,
-        "bikeRacksCount": 215,
-        "bikeLanesLengthKm": 14.8
+        "bikeRacksCount": 1095,
+        "bikeLanesLengthKm": 16.9
       },
       "greeneryAndSport": {
-        "cityParksCount": 2,
+        "cityParksCount": 5,
         "pocketParksCount": 3,
-        "totalParksAreaHa": 26.5,
-        "greenAreaM2PerCapita": 7.9,
-        "schoolSportsFacilitiesCount": 9,
+        "totalParksAreaHa": 24.14,
+        "greenAreaM2PerCapita": 7.5,
+        "schoolSportsFacilitiesCount": 8,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
-        "culturalCentersCount": 3,
-        "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 340,
-        "municipalSubsidyPerCapitaPln": 102.00
+        "culturalCentersCount": 2,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 540,
+        "municipalSubsidyPerCapitaPln": 108.47
+      },
+      "scores": {
+        "mobilityScore": 78.2,
+        "educationScore": 91.9,
+        "greeneryScore": 73.5,
+        "cultureAndSeniorScore": 70.4,
+        "environmentScore": 48.4
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1560,
-        "forecastedCarePlacesBalance_2028": -270,
-        "forecastedAge4to6_2028": 1310,
-        "nurseryInvestmentPotentialB2B": "HIGH",
-        "seniorInfrastructureDeficit": "LOW",
+        "forecastedAge0to3_2028": 978,
+        "forecastedCarePlacesBalance_2028": -52,
+        "forecastedAge4to6_2028": 896,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Tworzenie nowych parków kieszonkowych oraz wsparcie kontraktowania miejsc żłobkowych w rejonie Zabłocia i Grzegórzek."
+        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 7.5 m²/os. poniżej normy miejskiej 10 m²/os.)."
       }
     },
     {
@@ -150,69 +150,69 @@
       "districtRoman": "III",
       "districtName": "Dzielnica III Prądnik Czerwony",
       "areaKm2": 6.44,
-      "scores": {
-        "mobilityScore": 81.0,
-        "educationScore": 65.5,
-        "greeneryScore": 63.0,
-        "cultureAndSeniorScore": 71.0,
-        "environmentScore": 62.5
-      },
       "demographics": {
-        "totalPopulation": 48900,
-        "permanentResidents": 44100,
-        "temporaryResidents": 4800,
-        "foreignersTotal": 2700,
-        "age0to3": 1890,
-        "age4to6": 1650,
-        "age7to14": 3780,
-        "age15to64": 31280,
-        "age65Plus": 10300,
-        "populationGrowthRate3YrPct": 1.9
+        "totalPopulation": 46880,
+        "permanentResidents": 44524,
+        "temporaryResidents": 2356,
+        "foreignersTotal": 1483,
+        "age0to3": 1337,
+        "age4to6": 1359,
+        "age7to14": 3632,
+        "age15to64": 28904,
+        "age65Plus": 11648,
+        "populationGrowthRate3YrPct": 2.16
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 4,
-        "nurseriesPrivateCount": 7,
-        "kidsClubsCount": 3,
-        "totalCarePlaces0to3": 680,
-        "childrenPerCarePlaceRatio": 2.78,
-        "parentClubsCount": 2,
-        "kindergartensCount": 15,
-        "kindergartenPlacesTotal": 1520,
-        "primarySchoolsCount": 7,
-        "primarySchoolStudentsTotal": 3600,
-        "avgStudentsPerClass": 24.1
+        "nurseriesPublicCount": 1,
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 20,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 815,
+        "childrenPerCarePlaceRatio": 1.64,
+        "parentClubsCount": 4,
+        "kindergartensCount": 19,
+        "kindergartenPlacesTotal": 802,
+        "primarySchoolsCount": 12,
+        "primarySchoolStudentsTotal": 4014,
+        "avgStudentsPerClass": 17.4
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 36,
-        "isochroneCoveragePct": 88.5,
-        "parkAndRideCount": 0,
-        "bikeRacksCount": 175,
-        "bikeLanesLengthKm": 13.2
+        "kmkStopsCount": 98,
+        "isochroneCoveragePct": 85.8,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 622,
+        "bikeLanesLengthKm": 12.8
       },
       "greeneryAndSport": {
-        "cityParksCount": 2,
-        "pocketParksCount": 4,
-        "totalParksAreaHa": 44.0,
-        "greenAreaM2PerCapita": 9.0,
+        "cityParksCount": 4,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 20.02,
+        "greenAreaM2PerCapita": 4.3,
         "schoolSportsFacilitiesCount": 12,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 3,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 290,
-        "municipalSubsidyPerCapitaPln": 86.50
+        "annualCulturalEventsCount": 648,
+        "municipalSubsidyPerCapitaPln": 89.03
+      },
+      "scores": {
+        "mobilityScore": 83.6,
+        "educationScore": 87.2,
+        "greeneryScore": 67.1,
+        "cultureAndSeniorScore": 62.2,
+        "environmentScore": 44.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1950,
-        "forecastedCarePlacesBalance_2028": -295,
-        "forecastedAge4to6_2028": 1720,
+        "forecastedAge0to3_2028": 1096,
+        "forecastedCarePlacesBalance_2028": -7,
+        "forecastedAge4to6_2028": 1076,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Rewitalizacja terenów zielonych przy potoku Sudoł i rozwój infrastruktury rekreacyjnej między osiedlami."
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (24.8%)."
       }
     },
     {
@@ -220,69 +220,69 @@
       "districtRoman": "IV",
       "districtName": "Dzielnica IV Prądnik Biały",
       "areaKm2": 23.42,
-      "scores": {
-        "mobilityScore": 78.5,
-        "educationScore": 54.0,
-        "greeneryScore": 61.2,
-        "cultureAndSeniorScore": 64.0,
-        "environmentScore": 69.5
-      },
       "demographics": {
-        "totalPopulation": 72500,
-        "permanentResidents": 64200,
-        "temporaryResidents": 8300,
-        "foreignersTotal": 4850,
-        "age0to3": 3420,
-        "age4to6": 2890,
-        "age7to14": 6120,
-        "age15to64": 47870,
-        "age65Plus": 12200,
-        "populationGrowthRate3YrPct": 6.4
+        "totalPopulation": 76804,
+        "permanentResidents": 74105,
+        "temporaryResidents": 2699,
+        "foreignersTotal": 2238,
+        "age0to3": 2881,
+        "age4to6": 2557,
+        "age7to14": 6538,
+        "age15to64": 49458,
+        "age65Plus": 15370,
+        "populationGrowthRate3YrPct": 4.94
       },
       "educationAndCare": {
         "nurseriesPublicCount": 3,
-        "nurseriesContractedCount": 6,
-        "nurseriesPrivateCount": 12,
+        "nurseriesContractedCount": 2,
+        "nurseriesPrivateCount": 29,
         "kidsClubsCount": 4,
-        "totalCarePlaces0to3": 980,
-        "childrenPerCarePlaceRatio": 3.49,
+        "totalCarePlaces0to3": 1515,
+        "childrenPerCarePlaceRatio": 1.9,
         "parentClubsCount": 3,
-        "kindergartensCount": 22,
-        "kindergartenPlacesTotal": 2150,
-        "primarySchoolsCount": 9,
-        "primarySchoolStudentsTotal": 5800,
-        "avgStudentsPerClass": 25.8
+        "kindergartensCount": 46,
+        "kindergartenPlacesTotal": 2173,
+        "primarySchoolsCount": 16,
+        "primarySchoolStudentsTotal": 5685,
+        "avgStudentsPerClass": 20.4
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 64,
-        "isochroneCoveragePct": 84.5,
-        "parkAndRideCount": 2,
-        "bikeRacksCount": 210,
-        "bikeLanesLengthKm": 22.1
+        "kmkStopsCount": 256,
+        "isochroneCoveragePct": 79.5,
+        "parkAndRideCount": 3,
+        "bikeRacksCount": 529,
+        "bikeLanesLengthKm": 18.5
       },
       "greeneryAndSport": {
-        "cityParksCount": 4,
-        "pocketParksCount": 5,
-        "totalParksAreaHa": 68.4,
-        "greenAreaM2PerCapita": 9.4,
-        "schoolSportsFacilitiesCount": 18,
-        "schoolSwimmingPoolsCount": 1
+        "cityParksCount": 3,
+        "pocketParksCount": 2,
+        "totalParksAreaHa": 17.88,
+        "greenAreaM2PerCapita": 2.3,
+        "schoolSportsFacilitiesCount": 6,
+        "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 6,
+        "libraryBranchesCount": 5,
         "culturalCentersCount": 5,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 410,
-        "municipalSubsidyPerCapitaPln": 88.20
+        "annualCulturalEventsCount": 1080,
+        "municipalSubsidyPerCapitaPln": 90.57
+      },
+      "scores": {
+        "mobilityScore": 73.5,
+        "educationScore": 81.3,
+        "greeneryScore": 55.0,
+        "cultureAndSeniorScore": 64.2,
+        "environmentScore": 58.9
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 3790,
-        "forecastedCarePlacesBalance_2028": -420,
-        "forecastedAge4to6_2028": 3250,
+        "forecastedAge0to3_2028": 2648,
+        "forecastedCarePlacesBalance_2028": -471,
+        "forecastedAge4to6_2028": 2252,
         "nurseryInvestmentPotentialB2B": "HIGH",
-        "seniorInfrastructureDeficit": "LOW",
+        "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Pilne zwiększenie liczby miejsc w żłobkach i przedszkolach oraz tworzenie nowych parków kieszonkowych na nowych osiedlach."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -471 miejsc) oraz tworzenie parków kieszonkowych (obecnie 2.3 m² zieleni/os.)."
       }
     },
     {
@@ -290,69 +290,69 @@
       "districtRoman": "V",
       "districtName": "Dzielnica V Krowodrza",
       "areaKm2": 5.62,
-      "scores": {
-        "mobilityScore": 92.0,
-        "educationScore": 79.5,
-        "greeneryScore": 84.0,
-        "cultureAndSeniorScore": 88.0,
-        "environmentScore": 64.0
-      },
       "demographics": {
-        "totalPopulation": 31200,
-        "permanentResidents": 26800,
-        "temporaryResidents": 4400,
-        "foreignersTotal": 2400,
-        "age0to3": 890,
-        "age4to6": 840,
-        "age7to14": 2100,
-        "age15to64": 19170,
-        "age65Plus": 8200,
-        "populationGrowthRate3YrPct": -0.9
+        "totalPopulation": 31523,
+        "permanentResidents": 28725,
+        "temporaryResidents": 2798,
+        "foreignersTotal": 1565,
+        "age0to3": 806,
+        "age4to6": 741,
+        "age7to14": 2005,
+        "age15to64": 19494,
+        "age65Plus": 8477,
+        "populationGrowthRate3YrPct": 1.99
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 3,
-        "nurseriesPrivateCount": 5,
-        "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 440,
-        "childrenPerCarePlaceRatio": 2.02,
-        "parentClubsCount": 2,
-        "kindergartensCount": 13,
-        "kindergartenPlacesTotal": 1020,
-        "primarySchoolsCount": 8,
-        "primarySchoolStudentsTotal": 2650,
-        "avgStudentsPerClass": 22.0
+        "nurseriesContractedCount": 0,
+        "nurseriesPrivateCount": 13,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 608,
+        "childrenPerCarePlaceRatio": 1.33,
+        "parentClubsCount": 1,
+        "kindergartensCount": 16,
+        "kindergartenPlacesTotal": 407,
+        "primarySchoolsCount": 12,
+        "primarySchoolStudentsTotal": 3641,
+        "avgStudentsPerClass": 17.1
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 34,
-        "isochroneCoveragePct": 95.5,
+        "kmkStopsCount": 80,
+        "isochroneCoveragePct": 84.4,
         "parkAndRideCount": 0,
-        "bikeRacksCount": 260,
-        "bikeLanesLengthKm": 16.5
+        "bikeRacksCount": 1520,
+        "bikeLanesLengthKm": 20.0
       },
       "greeneryAndSport": {
-        "cityParksCount": 4,
-        "pocketParksCount": 3,
-        "totalParksAreaHa": 74.2,
-        "greenAreaM2PerCapita": 23.8,
-        "schoolSportsFacilitiesCount": 14,
+        "cityParksCount": 6,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 35.74,
+        "greenAreaM2PerCapita": 11.3,
+        "schoolSportsFacilitiesCount": 4,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 4,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 420,
-        "municipalSubsidyPerCapitaPln": 118.00
+        "annualCulturalEventsCount": 648,
+        "municipalSubsidyPerCapitaPln": 132.41
+      },
+      "scores": {
+        "mobilityScore": 85.9,
+        "educationScore": 89.1,
+        "greeneryScore": 80.3,
+        "cultureAndSeniorScore": 72.6,
+        "environmentScore": 49.9
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 860,
-        "forecastedCarePlacesBalance_2028": 10,
-        "forecastedAge4to6_2028": 820,
+        "forecastedAge0to3_2028": 701,
+        "forecastedCarePlacesBalance_2028": 82,
+        "forecastedAge4to6_2028": 612,
         "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
-        "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Rozwój programów aktywizacji seniorów (CAS) z uwagi na wysoki udział mieszkańców 65+ (26.3%)."
+        "greenSpaceDeficit": "MEDIUM",
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (26.9%)."
       }
     },
     {
@@ -360,69 +360,69 @@
       "districtRoman": "VI",
       "districtName": "Dzielnica VI Bronowice",
       "areaKm2": 9.56,
-      "scores": {
-        "mobilityScore": 79.0,
-        "educationScore": 71.0,
-        "greeneryScore": 76.5,
-        "cultureAndSeniorScore": 73.5,
-        "environmentScore": 77.0
-      },
       "demographics": {
-        "totalPopulation": 24800,
-        "permanentResidents": 22300,
-        "temporaryResidents": 2500,
-        "foreignersTotal": 1450,
-        "age0to3": 940,
-        "age4to6": 880,
-        "age7to14": 2150,
-        "age15to64": 15430,
-        "age65Plus": 5400,
-        "populationGrowthRate3YrPct": 2.1
+        "totalPopulation": 25627,
+        "permanentResidents": 24655,
+        "temporaryResidents": 972,
+        "foreignersTotal": 791,
+        "age0to3": 812,
+        "age4to6": 816,
+        "age7to14": 2210,
+        "age15to64": 15837,
+        "age65Plus": 5952,
+        "populationGrowthRate3YrPct": 3.27
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
-        "nurseriesContractedCount": 3,
-        "nurseriesPrivateCount": 5,
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 11,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 390,
-        "childrenPerCarePlaceRatio": 2.41,
-        "parentClubsCount": 2,
-        "kindergartensCount": 10,
-        "kindergartenPlacesTotal": 940,
-        "primarySchoolsCount": 5,
-        "primarySchoolStudentsTotal": 2100,
-        "avgStudentsPerClass": 23.2
+        "totalCarePlaces0to3": 600,
+        "childrenPerCarePlaceRatio": 1.35,
+        "parentClubsCount": 3,
+        "kindergartensCount": 15,
+        "kindergartenPlacesTotal": 768,
+        "primarySchoolsCount": 8,
+        "primarySchoolStudentsTotal": 2676,
+        "avgStudentsPerClass": 21.1
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 29,
-        "isochroneCoveragePct": 86.0,
+        "kmkStopsCount": 58,
+        "isochroneCoveragePct": 71.4,
         "parkAndRideCount": 1,
-        "bikeRacksCount": 140,
-        "bikeLanesLengthKm": 12.8
+        "bikeRacksCount": 357,
+        "bikeLanesLengthKm": 10.9
       },
       "greeneryAndSport": {
-        "cityParksCount": 2,
-        "pocketParksCount": 4,
-        "totalParksAreaHa": 48.5,
-        "greenAreaM2PerCapita": 19.6,
-        "schoolSportsFacilitiesCount": 9,
+        "cityParksCount": 4,
+        "pocketParksCount": 2,
+        "totalParksAreaHa": 39.93,
+        "greenAreaM2PerCapita": 15.6,
+        "schoolSportsFacilitiesCount": 4,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
+        "libraryBranchesCount": 2,
         "culturalCentersCount": 3,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 230,
-        "municipalSubsidyPerCapitaPln": 95.00
+        "annualCulturalEventsCount": 540,
+        "municipalSubsidyPerCapitaPln": 135.73
+      },
+      "scores": {
+        "mobilityScore": 60.8,
+        "educationScore": 83.5,
+        "greeneryScore": 78.9,
+        "cultureAndSeniorScore": 71.8,
+        "environmentScore": 72.6
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 990,
-        "forecastedCarePlacesBalance_2028": -105,
-        "forecastedAge4to6_2028": 920,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge0to3_2028": 693,
+        "forecastedCarePlacesBalance_2028": 80,
+        "forecastedAge4to6_2028": 622,
+        "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
-        "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Rozbudowa połączeń rowerowych wzdłuż ul. Armii Krajowej i wsparcie klubów dziecięcych w Bronowicach Małych."
+        "greenSpaceDeficit": "MEDIUM",
+        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 71.4%)."
       }
     },
     {
@@ -430,69 +430,69 @@
       "districtRoman": "VII",
       "districtName": "Dzielnica VII Zwierzyniec",
       "areaKm2": 28.73,
-      "scores": {
-        "mobilityScore": 64.5,
-        "educationScore": 76.0,
-        "greeneryScore": 98.0,
-        "cultureAndSeniorScore": 72.0,
-        "environmentScore": 91.5
-      },
       "demographics": {
-        "totalPopulation": 21100,
-        "permanentResidents": 19200,
-        "temporaryResidents": 1900,
-        "foreignersTotal": 1350,
-        "age0to3": 760,
-        "age4to6": 740,
-        "age7to14": 1890,
-        "age15to64": 13210,
-        "age65Plus": 4500,
-        "populationGrowthRate3YrPct": 1.4
+        "totalPopulation": 21661,
+        "permanentResidents": 20296,
+        "temporaryResidents": 1365,
+        "foreignersTotal": 611,
+        "age0to3": 524,
+        "age4to6": 547,
+        "age7to14": 1802,
+        "age15to64": 13740,
+        "age65Plus": 5048,
+        "populationGrowthRate3YrPct": 0.93
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 1,
-        "nurseriesContractedCount": 2,
-        "nurseriesPrivateCount": 5,
-        "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 360,
-        "childrenPerCarePlaceRatio": 2.11,
-        "parentClubsCount": 1,
-        "kindergartensCount": 9,
-        "kindergartenPlacesTotal": 820,
-        "primarySchoolsCount": 6,
-        "primarySchoolStudentsTotal": 1950,
-        "avgStudentsPerClass": 21.8
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 0,
+        "nurseriesPrivateCount": 4,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 316,
+        "childrenPerCarePlaceRatio": 1.66,
+        "parentClubsCount": 3,
+        "kindergartensCount": 16,
+        "kindergartenPlacesTotal": 704,
+        "primarySchoolsCount": 10,
+        "primarySchoolStudentsTotal": 2402,
+        "avgStudentsPerClass": 19.1
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 42,
-        "isochroneCoveragePct": 72.0,
+        "kmkStopsCount": 154,
+        "isochroneCoveragePct": 70.1,
         "parkAndRideCount": 0,
-        "bikeRacksCount": 165,
-        "bikeLanesLengthKm": 21.5
+        "bikeRacksCount": 462,
+        "bikeLanesLengthKm": 18.4
       },
       "greeneryAndSport": {
-        "cityParksCount": 4,
-        "pocketParksCount": 4,
-        "totalParksAreaHa": 465.0,
-        "greenAreaM2PerCapita": 220.4,
-        "schoolSportsFacilitiesCount": 11,
-        "schoolSwimmingPoolsCount": 1
+        "cityParksCount": 5,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 118.87,
+        "greenAreaM2PerCapita": 54.9,
+        "schoolSportsFacilitiesCount": 20,
+        "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
         "culturalCentersCount": 3,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 260,
-        "municipalSubsidyPerCapitaPln": 108.40
+        "annualCulturalEventsCount": 540,
+        "municipalSubsidyPerCapitaPln": 160.58
+      },
+      "scores": {
+        "mobilityScore": 57.4,
+        "educationScore": 91.2,
+        "greeneryScore": 97.0,
+        "cultureAndSeniorScore": 77.5,
+        "environmentScore": 93.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 790,
-        "forecastedCarePlacesBalance_2028": -35,
-        "forecastedAge4to6_2028": 770,
+        "forecastedAge0to3_2028": 430,
+        "forecastedCarePlacesBalance_2028": -6,
+        "forecastedAge4to6_2028": 394,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu komunikacji autobusowej KMK w peryferyjnych osiedlach (Olszanica, Bielany)."
+        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 70.1%)."
       }
     },
     {
@@ -500,69 +500,69 @@
       "districtRoman": "VIII",
       "districtName": "Dzielnica VIII Dębniki",
       "areaKm2": 46.19,
-      "scores": {
-        "mobilityScore": 74.0,
-        "educationScore": 66.8,
-        "greeneryScore": 88.5,
-        "cultureAndSeniorScore": 70.2,
-        "environmentScore": 81.0
-      },
       "demographics": {
-        "totalPopulation": 64900,
-        "permanentResidents": 58100,
-        "temporaryResidents": 6800,
-        "foreignersTotal": 4200,
-        "age0to3": 2950,
-        "age4to6": 2610,
-        "age7to14": 5740,
-        "age15to64": 42900,
-        "age65Plus": 10700,
-        "populationGrowthRate3YrPct": 4.9
+        "totalPopulation": 69431,
+        "permanentResidents": 66203,
+        "temporaryResidents": 3228,
+        "foreignersTotal": 2369,
+        "age0to3": 2383,
+        "age4to6": 2337,
+        "age7to14": 6636,
+        "age15to64": 46077,
+        "age65Plus": 11998,
+        "populationGrowthRate3YrPct": 4.96
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 5,
-        "nurseriesPrivateCount": 10,
-        "kidsClubsCount": 3,
-        "totalCarePlaces0to3": 890,
-        "childrenPerCarePlaceRatio": 3.31,
-        "parentClubsCount": 2,
-        "kindergartensCount": 19,
-        "kindergartenPlacesTotal": 1920,
-        "primarySchoolsCount": 10,
-        "primarySchoolStudentsTotal": 5100,
-        "avgStudentsPerClass": 24.2
+        "nurseriesContractedCount": 2,
+        "nurseriesPrivateCount": 40,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 1683,
+        "childrenPerCarePlaceRatio": 1.42,
+        "parentClubsCount": 3,
+        "kindergartensCount": 47,
+        "kindergartenPlacesTotal": 2498,
+        "primarySchoolsCount": 23,
+        "primarySchoolStudentsTotal": 9045,
+        "avgStudentsPerClass": 19.2
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 58,
-        "isochroneCoveragePct": 79.4,
+        "kmkStopsCount": 208,
+        "isochroneCoveragePct": 68.4,
         "parkAndRideCount": 1,
-        "bikeRacksCount": 245,
-        "bikeLanesLengthKm": 29.6
+        "bikeRacksCount": 734,
+        "bikeLanesLengthKm": 28.0
       },
       "greeneryAndSport": {
         "cityParksCount": 5,
-        "pocketParksCount": 4,
-        "totalParksAreaHa": 185.0,
-        "greenAreaM2PerCapita": 28.5,
-        "schoolSportsFacilitiesCount": 16,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 63.82,
+        "greenAreaM2PerCapita": 9.2,
+        "schoolSportsFacilitiesCount": 10,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 5,
-        "culturalCentersCount": 6,
+        "libraryBranchesCount": 4,
+        "culturalCentersCount": 4,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 390,
-        "municipalSubsidyPerCapitaPln": 94.00
+        "annualCulturalEventsCount": 864,
+        "municipalSubsidyPerCapitaPln": 80.15
+      },
+      "scores": {
+        "mobilityScore": 54.5,
+        "educationScore": 89.6,
+        "greeneryScore": 68.3,
+        "cultureAndSeniorScore": 61.2,
+        "environmentScore": 76.4
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 3210,
-        "forecastedCarePlacesBalance_2028": -280,
-        "forecastedAge4to6_2028": 2890,
-        "nurseryInvestmentPotentialB2B": "HIGH",
+        "forecastedAge0to3_2028": 1954,
+        "forecastedCarePlacesBalance_2028": 218,
+        "forecastedAge4to6_2028": 1912,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "LOW",
-        "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Rozwój sieci żłobków w rejonie Ruczaju i Klinów oraz rozbudowa połączeń rowerowych z centrum."
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 9.2 m²/os. poniżej normy miejskiej 10 m²/os.)."
       }
     },
     {
@@ -570,139 +570,139 @@
       "districtRoman": "IX",
       "districtName": "Dzielnica IX Łagiewniki-Borek Fałęcki",
       "areaKm2": 5.42,
-      "scores": {
-        "mobilityScore": 80.5,
-        "educationScore": 73.0,
-        "greeneryScore": 71.0,
-        "cultureAndSeniorScore": 69.0,
-        "environmentScore": 68.0
-      },
       "demographics": {
-        "totalPopulation": 15400,
-        "permanentResidents": 14100,
-        "temporaryResidents": 1300,
-        "foreignersTotal": 820,
-        "age0to3": 540,
-        "age4to6": 510,
-        "age7to14": 1240,
-        "age15to64": 9610,
-        "age65Plus": 3500,
-        "populationGrowthRate3YrPct": 0.8
+        "totalPopulation": 15797,
+        "permanentResidents": 15168,
+        "temporaryResidents": 629,
+        "foreignersTotal": 433,
+        "age0to3": 476,
+        "age4to6": 462,
+        "age7to14": 1457,
+        "age15to64": 10050,
+        "age65Plus": 3352,
+        "populationGrowthRate3YrPct": 2.49
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 1,
-        "nurseriesContractedCount": 2,
+        "nurseriesPublicCount": 0,
+        "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 3,
-        "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 240,
-        "childrenPerCarePlaceRatio": 2.25,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 84,
+        "childrenPerCarePlaceRatio": 5.67,
         "parentClubsCount": 1,
-        "kindergartensCount": 6,
-        "kindergartenPlacesTotal": 560,
-        "primarySchoolsCount": 4,
-        "primarySchoolStudentsTotal": 1350,
-        "avgStudentsPerClass": 22.4
+        "kindergartensCount": 5,
+        "kindergartenPlacesTotal": 142,
+        "primarySchoolsCount": 2,
+        "primarySchoolStudentsTotal": 993,
+        "avgStudentsPerClass": 21.6
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 24,
-        "isochroneCoveragePct": 89.0,
-        "parkAndRideCount": 1,
-        "bikeRacksCount": 95,
-        "bikeLanesLengthKm": 9.8
+        "kmkStopsCount": 59,
+        "isochroneCoveragePct": 79.4,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 155,
+        "bikeLanesLengthKm": 5.6
       },
       "greeneryAndSport": {
-        "cityParksCount": 2,
-        "pocketParksCount": 2,
-        "totalParksAreaHa": 31.0,
-        "greenAreaM2PerCapita": 20.1,
-        "schoolSportsFacilitiesCount": 6,
+        "cityParksCount": 3,
+        "pocketParksCount": 1,
+        "totalParksAreaHa": 36.81,
+        "greenAreaM2PerCapita": 23.3,
+        "schoolSportsFacilitiesCount": 0,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
         "culturalCentersCount": 2,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 160,
-        "municipalSubsidyPerCapitaPln": 91.00
+        "annualCulturalEventsCount": 432,
+        "municipalSubsidyPerCapitaPln": 176.15
+      },
+      "scores": {
+        "mobilityScore": 72.1,
+        "educationScore": 52.0,
+        "greeneryScore": 79.8,
+        "cultureAndSeniorScore": 86.2,
+        "environmentScore": 73.9
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 560,
-        "forecastedCarePlacesBalance_2028": -40,
-        "forecastedAge4to6_2028": 530,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge0to3_2028": 390,
+        "forecastedCarePlacesBalance_2028": -208,
+        "forecastedAge4to6_2028": 379,
+        "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Utworzenie nowego Centrum Aktywności Seniora oraz doposażenie infrastruktury sportowej przy szkołach podstawowych."
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +2.5%, bilans 2028: -208 miejsc)."
       }
     },
     {
       "districtId": 10,
       "districtRoman": "X",
       "districtName": "Dzielnica X Swoszowice",
-      "areaKm2": 25.60,
-      "scores": {
-        "mobilityScore": 56.0,
-        "educationScore": 59.5,
-        "greeneryScore": 81.5,
-        "cultureAndSeniorScore": 61.0,
-        "environmentScore": 87.5
-      },
+      "areaKm2": 25.6,
       "demographics": {
-        "totalPopulation": 29400,
-        "permanentResidents": 27300,
-        "temporaryResidents": 2100,
-        "foreignersTotal": 1200,
-        "age0to3": 1380,
-        "age4to6": 1290,
-        "age7to14": 3120,
-        "age15to64": 19110,
-        "age65Plus": 4500,
-        "populationGrowthRate3YrPct": 5.8
+        "totalPopulation": 30146,
+        "permanentResidents": 29234,
+        "temporaryResidents": 912,
+        "foreignersTotal": 574,
+        "age0to3": 933,
+        "age4to6": 1056,
+        "age7to14": 3211,
+        "age15to64": 19799,
+        "age65Plus": 5147,
+        "populationGrowthRate3YrPct": 3.43
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
-        "nurseriesContractedCount": 2,
-        "nurseriesPrivateCount": 5,
+        "nurseriesContractedCount": 0,
+        "nurseriesPrivateCount": 10,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 380,
-        "childrenPerCarePlaceRatio": 3.63,
-        "parentClubsCount": 2,
-        "kindergartensCount": 10,
-        "kindergartenPlacesTotal": 980,
+        "totalCarePlaces0to3": 422,
+        "childrenPerCarePlaceRatio": 2.21,
+        "parentClubsCount": 3,
+        "kindergartensCount": 20,
+        "kindergartenPlacesTotal": 1027,
         "primarySchoolsCount": 7,
-        "primarySchoolStudentsTotal": 2950,
-        "avgStudentsPerClass": 25.1
+        "primarySchoolStudentsTotal": 2108,
+        "avgStudentsPerClass": 16.7
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 44,
-        "isochroneCoveragePct": 68.0,
+        "kmkStopsCount": 126,
+        "isochroneCoveragePct": 69.2,
         "parkAndRideCount": 1,
-        "bikeRacksCount": 85,
-        "bikeLanesLengthKm": 11.2
+        "bikeRacksCount": 77,
+        "bikeLanesLengthKm": 6.6
       },
       "greeneryAndSport": {
         "cityParksCount": 2,
-        "pocketParksCount": 3,
-        "totalParksAreaHa": 78.0,
-        "greenAreaM2PerCapita": 26.5,
-        "schoolSportsFacilitiesCount": 10,
+        "pocketParksCount": 1,
+        "totalParksAreaHa": 13.33,
+        "greenAreaM2PerCapita": 4.4,
+        "schoolSportsFacilitiesCount": 4,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
-        "culturalCentersCount": 4,
+        "libraryBranchesCount": 2,
+        "culturalCentersCount": 3,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 195,
-        "municipalSubsidyPerCapitaPln": 82.00
+        "annualCulturalEventsCount": 540,
+        "municipalSubsidyPerCapitaPln": 115.38
+      },
+      "scores": {
+        "mobilityScore": 54.9,
+        "educationScore": 90.7,
+        "greeneryScore": 57.0,
+        "cultureAndSeniorScore": 70.7,
+        "environmentScore": 70.8
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1540,
-        "forecastedCarePlacesBalance_2028": -390,
-        "forecastedAge4to6_2028": 1420,
+        "forecastedAge0to3_2028": 765,
+        "forecastedCarePlacesBalance_2028": -152,
+        "forecastedAge4to6_2028": 749,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
-        "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Wysoki potencjał dla nowych żłobków i przedszkoli na dynamicznie rosnących osiedlach (Kliny, Opatkowice) oraz rozbudowa dowozowych linii KMK."
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -152 miejsc) oraz tworzenie parków kieszonkowych (obecnie 4.4 m² zieleni/os.)."
       }
     },
     {
@@ -710,69 +710,69 @@
       "districtRoman": "XI",
       "districtName": "Dzielnica XI Podgórze Duchackie",
       "areaKm2": 9.54,
-      "scores": {
-        "mobilityScore": 82.5,
-        "educationScore": 63.0,
-        "greeneryScore": 65.5,
-        "cultureAndSeniorScore": 68.5,
-        "environmentScore": 67.0
-      },
       "demographics": {
-        "totalPopulation": 54800,
-        "permanentResidents": 49600,
-        "temporaryResidents": 5200,
-        "foreignersTotal": 3100,
-        "age0to3": 2180,
-        "age4to6": 1960,
-        "age7to14": 4520,
-        "age15to64": 34940,
-        "age65Plus": 11200,
-        "populationGrowthRate3YrPct": 2.4
+        "totalPopulation": 55132,
+        "permanentResidents": 53769,
+        "temporaryResidents": 1363,
+        "foreignersTotal": 1104,
+        "age0to3": 1636,
+        "age4to6": 1647,
+        "age7to14": 4689,
+        "age15to64": 34159,
+        "age65Plus": 13001,
+        "populationGrowthRate3YrPct": 1.61
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 3,
-        "nurseriesContractedCount": 4,
-        "nurseriesPrivateCount": 8,
-        "kidsClubsCount": 3,
-        "totalCarePlaces0to3": 710,
-        "childrenPerCarePlaceRatio": 3.07,
-        "parentClubsCount": 2,
-        "kindergartensCount": 16,
-        "kindergartenPlacesTotal": 1680,
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 0,
+        "nurseriesPrivateCount": 21,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 887,
+        "childrenPerCarePlaceRatio": 1.84,
+        "parentClubsCount": 3,
+        "kindergartensCount": 29,
+        "kindergartenPlacesTotal": 1223,
         "primarySchoolsCount": 8,
-        "primarySchoolStudentsTotal": 4450,
-        "avgStudentsPerClass": 24.8
+        "primarySchoolStudentsTotal": 4232,
+        "avgStudentsPerClass": 21.4
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 41,
-        "isochroneCoveragePct": 89.5,
+        "kmkStopsCount": 89,
+        "isochroneCoveragePct": 77.0,
         "parkAndRideCount": 1,
-        "bikeRacksCount": 180,
-        "bikeLanesLengthKm": 16.4
+        "bikeRacksCount": 203,
+        "bikeLanesLengthKm": 8.0
       },
       "greeneryAndSport": {
-        "cityParksCount": 2,
-        "pocketParksCount": 4,
-        "totalParksAreaHa": 52.0,
-        "greenAreaM2PerCapita": 9.5,
-        "schoolSportsFacilitiesCount": 14,
-        "schoolSwimmingPoolsCount": 1
+        "cityParksCount": 3,
+        "pocketParksCount": 1,
+        "totalParksAreaHa": 47.13,
+        "greenAreaM2PerCapita": 8.5,
+        "schoolSportsFacilitiesCount": 18,
+        "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 3,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 280,
-        "municipalSubsidyPerCapitaPln": 84.00
+        "annualCulturalEventsCount": 756,
+        "municipalSubsidyPerCapitaPln": 88.33
+      },
+      "scores": {
+        "mobilityScore": 68.4,
+        "educationScore": 77.8,
+        "greeneryScore": 77.0,
+        "cultureAndSeniorScore": 61.5,
+        "environmentScore": 60.7
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 2310,
-        "forecastedCarePlacesBalance_2028": -445,
-        "forecastedAge4to6_2028": 2100,
-        "nurseryInvestmentPotentialB2B": "HIGH",
+        "forecastedAge0to3_2028": 1342,
+        "forecastedCarePlacesBalance_2028": -120,
+        "forecastedAge4to6_2028": 1296,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Nasadzenia i tworzenie parków kieszonkowych na Kurdwanowie i Woli Duchackiej oraz zwiększenie liczby miejsc w żłobkach."
+        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 8.5 m²/os. poniżej normy miejskiej 10 m²/os.)."
       }
     },
     {
@@ -780,69 +780,69 @@
       "districtRoman": "XII",
       "districtName": "Dzielnica XII Bieżanów-Prokocim",
       "areaKm2": 18.47,
-      "scores": {
-        "mobilityScore": 77.0,
-        "educationScore": 67.5,
-        "greeneryScore": 73.0,
-        "cultureAndSeniorScore": 69.5,
-        "environmentScore": 72.5
-      },
       "demographics": {
-        "totalPopulation": 63200,
-        "permanentResidents": 58400,
-        "temporaryResidents": 4800,
-        "foreignersTotal": 2900,
-        "age0to3": 2410,
-        "age4to6": 2250,
-        "age7to14": 5380,
-        "age15to64": 39860,
-        "age65Plus": 13300,
-        "populationGrowthRate3YrPct": 1.6
+        "totalPopulation": 64458,
+        "permanentResidents": 62507,
+        "temporaryResidents": 1951,
+        "foreignersTotal": 1122,
+        "age0to3": 2008,
+        "age4to6": 1875,
+        "age7to14": 5017,
+        "age15to64": 40365,
+        "age65Plus": 15193,
+        "populationGrowthRate3YrPct": 1.97
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 3,
-        "nurseriesContractedCount": 5,
-        "nurseriesPrivateCount": 8,
-        "kidsClubsCount": 3,
-        "totalCarePlaces0to3": 810,
-        "childrenPerCarePlaceRatio": 2.98,
-        "parentClubsCount": 3,
-        "kindergartensCount": 18,
-        "kindergartenPlacesTotal": 1950,
-        "primarySchoolsCount": 9,
-        "primarySchoolStudentsTotal": 5200,
-        "avgStudentsPerClass": 24.4
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 15,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 925,
+        "childrenPerCarePlaceRatio": 2.17,
+        "parentClubsCount": 4,
+        "kindergartensCount": 22,
+        "kindergartenPlacesTotal": 1271,
+        "primarySchoolsCount": 15,
+        "primarySchoolStudentsTotal": 5549,
+        "avgStudentsPerClass": 19.4
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 52,
-        "isochroneCoveragePct": 83.0,
-        "parkAndRideCount": 2,
-        "bikeRacksCount": 195,
-        "bikeLanesLengthKm": 19.2
+        "kmkStopsCount": 145,
+        "isochroneCoveragePct": 74.5,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 398,
+        "bikeLanesLengthKm": 14.5
       },
       "greeneryAndSport": {
-        "cityParksCount": 4,
-        "pocketParksCount": 4,
-        "totalParksAreaHa": 92.5,
-        "greenAreaM2PerCapita": 14.6,
-        "schoolSportsFacilitiesCount": 16,
+        "cityParksCount": 8,
+        "pocketParksCount": 2,
+        "totalParksAreaHa": 45.54,
+        "greenAreaM2PerCapita": 7.1,
+        "schoolSportsFacilitiesCount": 6,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 5,
-        "culturalCentersCount": 4,
+        "libraryBranchesCount": 4,
+        "culturalCentersCount": 3,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 310,
-        "municipalSubsidyPerCapitaPln": 87.50
+        "annualCulturalEventsCount": 756,
+        "municipalSubsidyPerCapitaPln": 75.55
+      },
+      "scores": {
+        "mobilityScore": 64.7,
+        "educationScore": 80.4,
+        "greeneryScore": 68.2,
+        "cultureAndSeniorScore": 58.0,
+        "environmentScore": 67.3
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 2490,
-        "forecastedCarePlacesBalance_2028": -435,
-        "forecastedAge4to6_2028": 2320,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge0to3_2028": 1739,
+        "forecastedCarePlacesBalance_2028": -379,
+        "forecastedAge4to6_2028": 1528,
+        "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "MEDIUM",
-        "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Rozbudowa oferty CAS dla rosnącej populacji seniorów na os. Prokocim i Bieżanów Nowy oraz rozwój sieci parków lokalnych."
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -379 miejsc) oraz tworzenie parków kieszonkowych (obecnie 7.1 m² zieleni/os.)."
       }
     },
     {
@@ -850,69 +850,69 @@
       "districtRoman": "XIII",
       "districtName": "Dzielnica XIII Podgórze",
       "areaKm2": 25.67,
-      "scores": {
-        "mobilityScore": 84.0,
-        "educationScore": 61.5,
-        "greeneryScore": 77.5,
-        "cultureAndSeniorScore": 83.0,
-        "environmentScore": 66.0
-      },
       "demographics": {
-        "totalPopulation": 42600,
-        "permanentResidents": 37400,
-        "temporaryResidents": 5200,
-        "foreignersTotal": 3600,
-        "age0to3": 1980,
-        "age4to6": 1720,
-        "age7to14": 3650,
-        "age15to64": 27850,
-        "age65Plus": 7400,
-        "populationGrowthRate3YrPct": 6.8
+        "totalPopulation": 45518,
+        "permanentResidents": 42298,
+        "temporaryResidents": 3220,
+        "foreignersTotal": 2485,
+        "age0to3": 2099,
+        "age4to6": 1875,
+        "age7to14": 3957,
+        "age15to64": 31044,
+        "age65Plus": 6543,
+        "populationGrowthRate3YrPct": 8.5
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 4,
-        "nurseriesPrivateCount": 8,
-        "kidsClubsCount": 3,
-        "totalCarePlaces0to3": 640,
-        "childrenPerCarePlaceRatio": 3.09,
-        "parentClubsCount": 2,
-        "kindergartensCount": 15,
-        "kindergartenPlacesTotal": 1460,
-        "primarySchoolsCount": 8,
-        "primarySchoolStudentsTotal": 3750,
-        "avgStudentsPerClass": 24.6
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 28,
+        "kidsClubsCount": 5,
+        "totalCarePlaces0to3": 1386,
+        "childrenPerCarePlaceRatio": 1.51,
+        "parentClubsCount": 5,
+        "kindergartensCount": 26,
+        "kindergartenPlacesTotal": 1549,
+        "primarySchoolsCount": 14,
+        "primarySchoolStudentsTotal": 4364,
+        "avgStudentsPerClass": 17.1
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 56,
-        "isochroneCoveragePct": 86.5,
+        "kmkStopsCount": 213,
+        "isochroneCoveragePct": 75.3,
         "parkAndRideCount": 1,
-        "bikeRacksCount": 240,
-        "bikeLanesLengthKm": 24.5
+        "bikeRacksCount": 904,
+        "bikeLanesLengthKm": 25.6
       },
       "greeneryAndSport": {
-        "cityParksCount": 4,
+        "cityParksCount": 7,
         "pocketParksCount": 4,
-        "totalParksAreaHa": 112.0,
-        "greenAreaM2PerCapita": 26.3,
-        "schoolSportsFacilitiesCount": 13,
+        "totalParksAreaHa": 92.55,
+        "greenAreaM2PerCapita": 20.3,
+        "schoolSportsFacilitiesCount": 14,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 4,
+        "libraryBranchesCount": 3,
         "culturalCentersCount": 5,
-        "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 460,
-        "municipalSubsidyPerCapitaPln": 115.00
+        "seniorActivityCentersCount": 4,
+        "annualCulturalEventsCount": 864,
+        "municipalSubsidyPerCapitaPln": 122.26
+      },
+      "scores": {
+        "mobilityScore": 67.1,
+        "educationScore": 91.6,
+        "greeneryScore": 81.0,
+        "cultureAndSeniorScore": 81.5,
+        "environmentScore": 78.4
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 2260,
-        "forecastedCarePlacesBalance_2028": -490,
-        "forecastedAge4to6_2028": 1980,
-        "nurseryInvestmentPotentialB2B": "HIGH",
+        "forecastedAge0to3_2028": 1981,
+        "forecastedCarePlacesBalance_2028": -100,
+        "forecastedAge4to6_2028": 1713,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Bardzo wysoki potencjał inwestycyjny dla żłobków i szkół w rejonie Płaszowa, Bagrów i Rybitw z uwagi na dynamiczny przyrost ludności (+6.8%)."
+        "recommendedMunicipalAction": "Utrzymanie wysokiej dostępności usług publicznych w Dzielnica XIII Podgórze przy wsparciu modernizacji przyszkolnej infrastruktury sportowej i oferty dla seniorów (14.4% populacji)."
       }
     },
     {
@@ -920,69 +920,69 @@
       "districtRoman": "XIV",
       "districtName": "Dzielnica XIV Czyżyny",
       "areaKm2": 12.26,
-      "scores": {
-        "mobilityScore": 81.5,
-        "educationScore": 58.0,
-        "greeneryScore": 74.0,
-        "cultureAndSeniorScore": 70.5,
-        "environmentScore": 65.0
-      },
       "demographics": {
-        "totalPopulation": 35800,
-        "permanentResidents": 31200,
-        "temporaryResidents": 4600,
-        "foreignersTotal": 2650,
-        "age0to3": 1760,
-        "age4to6": 1540,
-        "age7to14": 3180,
-        "age15to64": 23420,
-        "age65Plus": 5900,
-        "populationGrowthRate3YrPct": 5.5
+        "totalPopulation": 36669,
+        "permanentResidents": 34624,
+        "temporaryResidents": 2045,
+        "foreignersTotal": 1287,
+        "age0to3": 1761,
+        "age4to6": 1496,
+        "age7to14": 3261,
+        "age15to64": 23737,
+        "age65Plus": 6414,
+        "populationGrowthRate3YrPct": 8.5
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 3,
-        "nurseriesPrivateCount": 6,
+        "nurseriesPublicCount": 1,
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 22,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 520,
-        "childrenPerCarePlaceRatio": 3.38,
-        "parentClubsCount": 2,
-        "kindergartensCount": 12,
-        "kindergartenPlacesTotal": 1240,
-        "primarySchoolsCount": 6,
-        "primarySchoolStudentsTotal": 3100,
-        "avgStudentsPerClass": 25.4
+        "totalCarePlaces0to3": 972,
+        "childrenPerCarePlaceRatio": 1.81,
+        "parentClubsCount": 1,
+        "kindergartensCount": 23,
+        "kindergartenPlacesTotal": 1101,
+        "primarySchoolsCount": 7,
+        "primarySchoolStudentsTotal": 2900,
+        "avgStudentsPerClass": 20.9
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 35,
-        "isochroneCoveragePct": 87.0,
+        "kmkStopsCount": 122,
+        "isochroneCoveragePct": 78.0,
         "parkAndRideCount": 0,
-        "bikeRacksCount": 190,
-        "bikeLanesLengthKm": 17.8
+        "bikeRacksCount": 229,
+        "bikeLanesLengthKm": 9.3
       },
       "greeneryAndSport": {
-        "cityParksCount": 3,
-        "pocketParksCount": 3,
-        "totalParksAreaHa": 66.0,
-        "greenAreaM2PerCapita": 18.4,
-        "schoolSportsFacilitiesCount": 11,
+        "cityParksCount": 4,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 54.88,
+        "greenAreaM2PerCapita": 15.0,
+        "schoolSportsFacilitiesCount": 8,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
-        "culturalCentersCount": 3,
+        "libraryBranchesCount": 2,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 275,
-        "municipalSubsidyPerCapitaPln": 92.50
+        "annualCulturalEventsCount": 432,
+        "municipalSubsidyPerCapitaPln": 75.88
+      },
+      "scores": {
+        "mobilityScore": 69.3,
+        "educationScore": 79.1,
+        "greeneryScore": 78.9,
+        "cultureAndSeniorScore": 60.5,
+        "environmentScore": 70.6
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1960,
-        "forecastedCarePlacesBalance_2028": -460,
-        "forecastedAge4to6_2028": 1740,
+        "forecastedAge0to3_2028": 1752,
+        "forecastedCarePlacesBalance_2028": -342,
+        "forecastedAge4to6_2028": 1386,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
-        "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Rozbudowa bazy żłobkowo-przedszkolnej w rejonie ul. Centralnej i os. Avia w odpowiedzi na silny napływ młodych rodzin."
+        "greenSpaceDeficit": "MEDIUM",
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +8.5%, bilans 2028: -342 miejsc)."
       }
     },
     {
@@ -990,139 +990,139 @@
       "districtRoman": "XV",
       "districtName": "Dzielnica XV Mistrzejowice",
       "areaKm2": 5.59,
-      "scores": {
-        "mobilityScore": 83.0,
-        "educationScore": 70.5,
-        "greeneryScore": 72.5,
-        "cultureAndSeniorScore": 74.0,
-        "environmentScore": 71.0
-      },
       "demographics": {
-        "totalPopulation": 51200,
-        "permanentResidents": 47600,
-        "temporaryResidents": 3600,
-        "foreignersTotal": 2100,
-        "age0to3": 1790,
-        "age4to6": 1680,
-        "age7to14": 4120,
-        "age15to64": 31810,
-        "age65Plus": 11800,
-        "populationGrowthRate3YrPct": 0.6
+        "totalPopulation": 50819,
+        "permanentResidents": 49936,
+        "temporaryResidents": 883,
+        "foreignersTotal": 660,
+        "age0to3": 1293,
+        "age4to6": 1218,
+        "age7to14": 3485,
+        "age15to64": 31696,
+        "age65Plus": 13127,
+        "populationGrowthRate3YrPct": -0.95
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 3,
-        "nurseriesContractedCount": 4,
-        "nurseriesPrivateCount": 6,
-        "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 690,
-        "childrenPerCarePlaceRatio": 2.59,
-        "parentClubsCount": 2,
-        "kindergartensCount": 16,
-        "kindergartenPlacesTotal": 1640,
-        "primarySchoolsCount": 8,
-        "primarySchoolStudentsTotal": 4100,
-        "avgStudentsPerClass": 23.5
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 10,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 723,
+        "childrenPerCarePlaceRatio": 1.79,
+        "parentClubsCount": 3,
+        "kindergartensCount": 14,
+        "kindergartenPlacesTotal": 723,
+        "primarySchoolsCount": 6,
+        "primarySchoolStudentsTotal": 3203,
+        "avgStudentsPerClass": 21.4
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 32,
-        "isochroneCoveragePct": 91.0,
+        "kmkStopsCount": 91,
+        "isochroneCoveragePct": 87.3,
         "parkAndRideCount": 0,
-        "bikeRacksCount": 160,
-        "bikeLanesLengthKm": 13.5
+        "bikeRacksCount": 331,
+        "bikeLanesLengthKm": 8.6
       },
       "greeneryAndSport": {
-        "cityParksCount": 3,
-        "pocketParksCount": 4,
-        "totalParksAreaHa": 62.0,
-        "greenAreaM2PerCapita": 12.1,
-        "schoolSportsFacilitiesCount": 14,
+        "cityParksCount": 4,
+        "pocketParksCount": 2,
+        "totalParksAreaHa": 38.41,
+        "greenAreaM2PerCapita": 7.6,
+        "schoolSportsFacilitiesCount": 26,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 4,
+        "libraryBranchesCount": 3,
         "culturalCentersCount": 3,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 295,
-        "municipalSubsidyPerCapitaPln": 89.00
+        "annualCulturalEventsCount": 648,
+        "municipalSubsidyPerCapitaPln": 82.13
+      },
+      "scores": {
+        "mobilityScore": 83.7,
+        "educationScore": 76.2,
+        "greeneryScore": 79.2,
+        "cultureAndSeniorScore": 59.8,
+        "environmentScore": 52.6
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1860,
-        "forecastedCarePlacesBalance_2028": -240,
-        "forecastedAge4to6_2028": 1730,
+        "forecastedAge0to3_2028": 1060,
+        "forecastedCarePlacesBalance_2028": -72,
+        "forecastedAge4to6_2028": 996,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
-        "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Wykorzystanie nowej linii tramwajowej do Mistrzejowic poprzez dogęszczenie usług lokalnych i parków kieszonkowych."
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.8%)."
       }
     },
     {
       "districtId": 16,
       "districtRoman": "XVI",
       "districtName": "Dzielnica XVI Bieńczyce",
-      "areaKm2": 3.70,
-      "scores": {
-        "mobilityScore": 86.0,
-        "educationScore": 77.0,
-        "greeneryScore": 75.5,
-        "cultureAndSeniorScore": 78.5,
-        "environmentScore": 69.0
-      },
+      "areaKm2": 3.7,
       "demographics": {
-        "totalPopulation": 39600,
-        "permanentResidents": 36900,
-        "temporaryResidents": 2700,
-        "foreignersTotal": 1450,
-        "age0to3": 1120,
-        "age4to6": 1080,
-        "age7to14": 2850,
-        "age15to64": 23550,
-        "age65Plus": 11000,
-        "populationGrowthRate3YrPct": -1.4
+        "totalPopulation": 36438,
+        "permanentResidents": 35743,
+        "temporaryResidents": 695,
+        "foreignersTotal": 375,
+        "age0to3": 775,
+        "age4to6": 812,
+        "age7to14": 2253,
+        "age15to64": 22630,
+        "age65Plus": 9968,
+        "populationGrowthRate3YrPct": -2.37
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 3,
-        "nurseriesContractedCount": 3,
-        "nurseriesPrivateCount": 4,
-        "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 530,
-        "childrenPerCarePlaceRatio": 2.11,
-        "parentClubsCount": 2,
-        "kindergartensCount": 14,
-        "kindergartenPlacesTotal": 1380,
-        "primarySchoolsCount": 7,
-        "primarySchoolStudentsTotal": 3100,
-        "avgStudentsPerClass": 22.1
+        "nurseriesPublicCount": 1,
+        "nurseriesContractedCount": 0,
+        "nurseriesPrivateCount": 6,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 313,
+        "childrenPerCarePlaceRatio": 2.48,
+        "parentClubsCount": 1,
+        "kindergartensCount": 4,
+        "kindergartenPlacesTotal": 442,
+        "primarySchoolsCount": 10,
+        "primarySchoolStudentsTotal": 2904,
+        "avgStudentsPerClass": 20.6
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 28,
-        "isochroneCoveragePct": 93.5,
+        "kmkStopsCount": 56,
+        "isochroneCoveragePct": 85.7,
         "parkAndRideCount": 0,
-        "bikeRacksCount": 150,
-        "bikeLanesLengthKm": 11.4
+        "bikeRacksCount": 579,
+        "bikeLanesLengthKm": 10.2
       },
       "greeneryAndSport": {
         "cityParksCount": 2,
-        "pocketParksCount": 3,
-        "totalParksAreaHa": 54.0,
-        "greenAreaM2PerCapita": 13.6,
-        "schoolSportsFacilitiesCount": 12,
+        "pocketParksCount": 1,
+        "totalParksAreaHa": 31.95,
+        "greenAreaM2PerCapita": 8.8,
+        "schoolSportsFacilitiesCount": 20,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 4,
-        "culturalCentersCount": 3,
+        "libraryBranchesCount": 2,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 270,
-        "municipalSubsidyPerCapitaPln": 94.50
+        "annualCulturalEventsCount": 432,
+        "municipalSubsidyPerCapitaPln": 76.37
+      },
+      "scores": {
+        "mobilityScore": 84.5,
+        "educationScore": 74.1,
+        "greeneryScore": 82.9,
+        "cultureAndSeniorScore": 60.2,
+        "environmentScore": 51.4
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1070,
-        "forecastedCarePlacesBalance_2028": -5,
-        "forecastedAge4to6_2028": 1040,
-        "nurseryInvestmentPotentialB2B": "LOW",
+        "forecastedAge0to3_2028": 636,
+        "forecastedCarePlacesBalance_2028": -164,
+        "forecastedAge4to6_2028": 590,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
-        "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Priorytet dla usług senioralnych i opiekuńczych (ponad 27.7% mieszkańców w wieku 65+) oraz modernizacji istniejących terenów rekreacyjnych."
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (27.4%)."
       }
     },
     {
@@ -1130,69 +1130,69 @@
       "districtRoman": "XVII",
       "districtName": "Dzielnica XVII Wzgórza Krzesławickie",
       "areaKm2": 23.82,
-      "scores": {
-        "mobilityScore": 58.5,
-        "educationScore": 69.0,
-        "greeneryScore": 79.0,
-        "cultureAndSeniorScore": 63.5,
-        "environmentScore": 84.0
-      },
       "demographics": {
-        "totalPopulation": 20400,
-        "permanentResidents": 19100,
-        "temporaryResidents": 1300,
-        "foreignersTotal": 750,
-        "age0to3": 740,
-        "age4to6": 710,
-        "age7to14": 1820,
-        "age15to64": 12730,
-        "age65Plus": 4400,
-        "populationGrowthRate3YrPct": 1.2
+        "totalPopulation": 20465,
+        "permanentResidents": 20123,
+        "temporaryResidents": 342,
+        "foreignersTotal": 206,
+        "age0to3": 629,
+        "age4to6": 646,
+        "age7to14": 1681,
+        "age15to64": 13068,
+        "age65Plus": 4441,
+        "populationGrowthRate3YrPct": 1.92
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 1,
-        "nurseriesContractedCount": 2,
+        "nurseriesPublicCount": 3,
+        "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 3,
-        "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 290,
-        "childrenPerCarePlaceRatio": 2.55,
-        "parentClubsCount": 1,
-        "kindergartensCount": 8,
-        "kindergartenPlacesTotal": 740,
-        "primarySchoolsCount": 5,
-        "primarySchoolStudentsTotal": 1780,
-        "avgStudentsPerClass": 21.9
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 314,
+        "childrenPerCarePlaceRatio": 2.0,
+        "parentClubsCount": 2,
+        "kindergartensCount": 6,
+        "kindergartenPlacesTotal": 421,
+        "primarySchoolsCount": 3,
+        "primarySchoolStudentsTotal": 1454,
+        "avgStudentsPerClass": 20.2
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 34,
+        "kmkStopsCount": 140,
         "isochroneCoveragePct": 71.0,
-        "parkAndRideCount": 1,
-        "bikeRacksCount": 75,
-        "bikeLanesLengthKm": 10.6
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 128,
+        "bikeLanesLengthKm": 8.5
       },
       "greeneryAndSport": {
-        "cityParksCount": 2,
-        "pocketParksCount": 3,
-        "totalParksAreaHa": 58.0,
-        "greenAreaM2PerCapita": 28.4,
-        "schoolSportsFacilitiesCount": 8,
+        "cityParksCount": 5,
+        "pocketParksCount": 2,
+        "totalParksAreaHa": 19.99,
+        "greenAreaM2PerCapita": 9.8,
+        "schoolSportsFacilitiesCount": 2,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 2,
-        "culturalCentersCount": 3,
-        "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 175,
-        "municipalSubsidyPerCapitaPln": 89.00
+        "libraryBranchesCount": 1,
+        "culturalCentersCount": 5,
+        "seniorActivityCentersCount": 1,
+        "annualCulturalEventsCount": 648,
+        "municipalSubsidyPerCapitaPln": 203.95
+      },
+      "scores": {
+        "mobilityScore": 57.7,
+        "educationScore": 78.9,
+        "greeneryScore": 64.0,
+        "cultureAndSeniorScore": 77.3,
+        "environmentScore": 78.3
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 770,
-        "forecastedCarePlacesBalance_2028": -95,
-        "forecastedAge4to6_2028": 730,
+        "forecastedAge0to3_2028": 527,
+        "forecastedCarePlacesBalance_2028": -81,
+        "forecastedAge4to6_2028": 472,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
-        "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Poprawa dostępności transportowej KMK dla peryferyjnych sołectw oraz budowa ścieżek rowerowych łączących dzielnicę z centrum Nowej Huty."
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 9.8 m²/os. poniżej normy miejskiej 10 m²/os.)."
       }
     },
     {
@@ -1200,69 +1200,69 @@
       "districtRoman": "XVIII",
       "districtName": "Dzielnica XVIII Nowa Huta",
       "areaKm2": 65.41,
-      "scores": {
-        "mobilityScore": 72.0,
-        "educationScore": 78.5,
-        "greeneryScore": 86.0,
-        "cultureAndSeniorScore": 85.0,
-        "environmentScore": 73.5
-      },
       "demographics": {
-        "totalPopulation": 49500,
-        "permanentResidents": 46200,
-        "temporaryResidents": 3300,
-        "foreignersTotal": 1950,
-        "age0to3": 1340,
-        "age4to6": 1310,
-        "age7to14": 3650,
-        "age15to64": 29100,
-        "age65Plus": 14100,
-        "populationGrowthRate3YrPct": -1.6
+        "totalPopulation": 46796,
+        "permanentResidents": 45365,
+        "temporaryResidents": 1431,
+        "foreignersTotal": 540,
+        "age0to3": 1085,
+        "age4to6": 1168,
+        "age7to14": 3392,
+        "age15to64": 29010,
+        "age65Plus": 12141,
+        "populationGrowthRate3YrPct": -1.03
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 4,
-        "nurseriesContractedCount": 4,
-        "nurseriesPrivateCount": 5,
-        "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 680,
-        "childrenPerCarePlaceRatio": 1.97,
-        "parentClubsCount": 3,
-        "kindergartensCount": 19,
-        "kindergartenPlacesTotal": 1750,
-        "primarySchoolsCount": 11,
-        "primarySchoolStudentsTotal": 3950,
-        "avgStudentsPerClass": 21.2
+        "nurseriesPublicCount": 5,
+        "nurseriesContractedCount": 0,
+        "nurseriesPrivateCount": 12,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 882,
+        "childrenPerCarePlaceRatio": 1.23,
+        "parentClubsCount": 7,
+        "kindergartensCount": 12,
+        "kindergartenPlacesTotal": 680,
+        "primarySchoolsCount": 13,
+        "primarySchoolStudentsTotal": 3648,
+        "avgStudentsPerClass": 16.6
       },
       "mobilityAndTransport": {
-        "kmkStopsCount": 78,
-        "isochroneCoveragePct": 76.5,
-        "parkAndRideCount": 1,
-        "bikeRacksCount": 230,
-        "bikeLanesLengthKm": 26.8
+        "kmkStopsCount": 272,
+        "isochroneCoveragePct": 67.7,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 1485,
+        "bikeLanesLengthKm": 46.7
       },
       "greeneryAndSport": {
-        "cityParksCount": 5,
-        "pocketParksCount": 6,
-        "totalParksAreaHa": 168.0,
-        "greenAreaM2PerCapita": 33.9,
-        "schoolSportsFacilitiesCount": 19,
+        "cityParksCount": 8,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 146.15,
+        "greenAreaM2PerCapita": 31.2,
+        "schoolSportsFacilitiesCount": 20,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 6,
-        "culturalCentersCount": 6,
+        "libraryBranchesCount": 5,
+        "culturalCentersCount": 7,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 520,
-        "municipalSubsidyPerCapitaPln": 124.00
+        "annualCulturalEventsCount": 1296,
+        "municipalSubsidyPerCapitaPln": 178.39
+      },
+      "scores": {
+        "mobilityScore": 54.0,
+        "educationScore": 91.3,
+        "greeneryScore": 85.7,
+        "cultureAndSeniorScore": 80.2,
+        "environmentScore": 91.5
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1290,
-        "forecastedCarePlacesBalance_2028": 35,
-        "forecastedAge4to6_2028": 1260,
+        "forecastedAge0to3_2028": 890,
+        "forecastedCarePlacesBalance_2028": 214,
+        "forecastedAge4to6_2028": 848,
         "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Rozwój Centrów Aktywności Seniora (28.5% mieszkańców w wieku 65+) oraz poprawa częstotliwości komunikacji KMK na terenach zabranicznych."
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.9%)."
       }
     }
   ]

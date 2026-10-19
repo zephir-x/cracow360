@@ -1,7 +1,7 @@
-# MASTER CONTEXT & HANDOFF DOCUMENT – KRAKÓW360
+# MASTER PROJECT CONTEXT & TECHNICAL HANDOVER – KRAKÓW360
 
 > **PURPOSE OF THIS FILE:**
-> Read this file first when starting a new session. It contains the complete business, competition, architectural, and technical context of the **Kraków360** project, every engineering decision made so far, a complete map of existing files, and the exact roadmap for upcoming modules (**Module 2: Parent Mode** and **Module 3: Official & Investor Mode**).
+> Read this file first to understand the complete business, competition, architectural, and technical context of the **Kraków360** project, every engineering decision made so far, a complete map of existing files, and the roadmap for upcoming modules (**Module 2: Parent Mode** and **Module 3: Official & Investor Mode**).
 
 ---
 
@@ -45,12 +45,13 @@
    - **Always save JSON, GeoJSON, TypeScript, CSS, HTML, Python, and Markdown files as UTF-8 WITHOUT BOM.** (PostCSS/Vite fails if `package.json` or `.css` files contain a UTF-8 BOM `\xEF\xBB\xBF`).
 3. **Architecture Principles:**
    - **Backend (`src/backend/`):** Clean Architecture (`Domain` -> `Application` -> `Infrastructure` -> `Api`), SOLID, OOP, Minimal API endpoint groups, EF Core 9 + Dapper + `IMemoryCache`.
-   - **Frontend (`src/frontend/`):** Feature-sliced modular architecture (`src/features/resident-mode`, `src/features/parent-mode`, `src/features/investor-mode`), strict TypeScript, TailwindCSS v4 (`@tailwindcss/vite`), React-Leaflet v5, Recharts.
+   - **Frontend (`src/frontend/`):** Modular page and feature architecture (`src/components/layout`, `src/pages`, `src/features/resident-mode`), strict TypeScript, TailwindCSS v4 (`@tailwindcss/vite`), React-Leaflet v5, Recharts.
 4. **SQLite + Docker Compatibility on Windows:**
    - EF Core defaults to `WAL` journal mode, which creates `-shm` shared-memory files incompatible with Linux Docker containers (`sqlite-web`) mounted over Windows/WSL2.
    - `DatabaseSeeder.cs` explicitly executes `PRAGMA journal_mode=DELETE;` on startup so both the Windows `.NET 9` host process and the Docker `sqlite-web` container (`http://localhost:8080`) can read `data/db/cracow360.db` simultaneously without `disk I/O error`.
-5. **Map Tile Layer Rule (No Paid API Keys):**
-   - Always use the official, 100% free, key-less **OpenStreetMap Foundation** tile server (`https://tile.openstreetmap.org/{z}/{x}/{y}.png`) paired with the `.krakow-dark-tiles` CSS filter in `src/frontend/src/index.css` (and the UI Dark/Light toggle button). Never use Carto/Stadia tile URLs that display `API KEY REQUIRED` watermarks.
+5. **Map Tile Layer & Bounds Rule:**
+   - Always use the official, 100% free, key-less **OpenStreetMap Foundation** tile server (`https://tile.openstreetmap.org/{z}/{x}/{y}.png`) paired with the `.krakow-light-tiles` / `.krakow-dark-tiles` CSS filters in `src/frontend/src/index.css`.
+   - Lock the Leaflet map bounds (`maxBounds: [[49.93, 19.72], [50.16, 20.28]]`, `minZoom: 11`, `maxZoom: 16`) so the viewport stays focused strictly on the Krakow metropolitan area.
 
 ---
 
@@ -70,12 +71,12 @@
 ## 5. Complete Map of Currently Implemented Files (Stage 1 & Module 1 Completed)
 
 ### Root & Documentation
-- `.gitignore` – Excludes `bin/`, `obj/`, `node_modules/`, `.venv/`, `data/db/*.db*`, `src/analytics/data_raw/*` (keeps `.gitkeep`), `Assets/Documents/`.
+- `.gitignore` – Excludes `bin/`, `obj/`, `node_modules/`, `.venv/`, `*.tsbuildinfo`, `data/db/*.db*`, `src/analytics/data_raw/*`, `Assets/Documents/`.
 - `.env.Example` – Uppercase env template (`ASPNETCORE_ENVIRONMENT`, `CONNECTIONSTRINGS__DEFAULTCONNECTION`, `VITE_API_BASE_URL`).
 - `docker-compose.yml` – Runs `sqlite-db` (`coleifer/sqlite-web` on port `8080` mounted to `./data/db`). Includes commented production containers (`backend-api`, `frontend-nginx`) for Stage 4.
 - `README.md` – Polish project overview, quick-start commands, and documentation links.
 - `Assets/Instructions/`:
-  - `00_MASTER_CONTEXT.md` – Master AI context and handoff document (this file).
+  - `00_MASTER_CONTEXT.md` – Master project context and technical handover document (this file).
   - `01_COMPETITION_ANALYSIS_AND_ACTION_PLAN.md` – Competition timeline, evaluation criteria, and project action plan.
   - `02_ARCHITECTURE_PROJECT_STATE_AND_DEVELOPMENT.md` – Full technical architecture and development guide.
   - `03_PYTHON_ANALYTICS_DEVELOPER_GUIDE.md` – Standalone onboarding and workflow guide for the Python analyst.
@@ -113,16 +114,18 @@
    - `Endpoints/PoiEndpoints.cs` – `GET /api/pois` (with `districtId`, `category`, `subCategory` filters).
 
 ### Frontend – React 19 + TypeScript + Vite 6 + TailwindCSS 4 (`src/frontend/`)
-- `src/index.css` – TailwindCSS v4 + Leaflet CSS + `.krakow-dark-tiles` filter for dark Smart City map styling.
+- `src/index.css` – TailwindCSS v4 + Leaflet CSS + Kraków Civic Blue & White theme utilities and animations.
 - `src/types/contracts.ts` – Complete TypeScript DTOs matching `.NET 9` API (`DistrictSummaryDto`, `DistrictDetailsDto`, `DistrictComparisonDto`, GeoJSON types, `QualityWeights`, `ResidentPreset`).
-- `src/api/client.ts` – `cracow360Api` (`getSystemHello`, `getDistricts`, `getDistrictDetails`, `compareDistricts`, `getDistrictsGeoJson`).
+- `src/api/client.ts` – `cracow360Api` (`getDistricts`, `getDistrictDetails`, `compareDistricts`, `getDistrictsGeoJson`).
 - `src/utils/qualityIndexCalculator.ts` – Client-side zero-latency calculator (`calculateClientSideQualityIndex`) and `RESIDENT_PRESETS` (*Student*, *Singiel / Młody Profesjonalista*, *Rodzina 2+1*, *Aktywny Senior*).
+- `src/components/layout/` – `MainNavbar.tsx` (top navigation bar with mode tabs) and `MainFooter.tsx` (civic footer).
+- `src/pages/` – `ResidentModePage.tsx` (Module 1 with Hero Banner & workspace), `ParentModePage.tsx` (Module 2 overview), `OfficialInvestorModePage.tsx` (Module 3 overview), and `AboutDataMethodologyPage.tsx` (Methodology & Open Data registry).
 - `src/features/resident-mode/` (**Module 1 – 100% Complete**):
-  - `components/KrakowChoroplethMap.tsx` – Interactive `React-Leaflet` GeoJSON map of 18 districts with dynamic choropleth coloring (`#f97316` -> `#10b981`), hover HUD card, click selection for `#1` and `#2`, and Dark/Light map tile toggle.
+  - `components/KrakowChoroplethMap.tsx` – Interactive `React-Leaflet` GeoJSON map of 18 districts locked to Krakow bounds (`maxBounds`), with dynamic choropleth coloring, hover HUD card, click selection for `#1` and `#2`, and Light/Dark map tile toggle.
   - `components/WeightsConfiguratorPanel.tsx` – 4 persona preset buttons + 5 interactive category weight sliders (`0–10 pts`) + Reset button.
   - `components/DistrictRankingList.tsx` – Live-sorted ranking list (`#1` to `#18`) with progress bars and 1-click comparison selection.
   - `components/DistrictComparisonView.tsx` – Side-by-side comparison panel featuring a 5-axis `Recharts RadarChart`, Smart City recommendation cards, and a 12-row hard-metrics table highlighting the winning district in each metric.
-- `src/App.tsx` – Main dashboard integrating the 3-column Resident Mode workspace (Sliders + Map + Live Ranking), the Side-by-Side Comparison View below, and the system/data telemetry footer.
+- `src/App.tsx` – Main application shell coordinating tab navigation and state.
 
 ### Python Analytics Workspace (`src/analytics/`)
 - `scripts/config.py`, `01_etl_demographics_and_infrastructure.py`, `02_calculate_quality_scores.py`, `03_econometric_forecasts.py`, `04_validate_and_export_contracts.py` – Documented with full English engineering docstrings, exact mathematical formulas, and input/output contract rules.
@@ -135,17 +138,17 @@
 - [x] **Stage 1:** Fullstack `.NET 9` + `React 19` + `SQLite` + `Docker` + isolated `Python` environment setup.
 - [x] **Module 1 (Tryb Mieszkańca – Indeks Jakości Życia / Poziom Makro: Porównanie 18 Dzielnic):**
   - [x] Step 1: Real GeoJSON boundaries & 18-district data contract + `.NET` endpoints (`/geojson`, `/compare`).
-  - [x] Step 2: Interactive `React-Leaflet` Choropleth Map (`KrakowChoroplethMap.tsx`).
+  - [x] Step 2: Interactive `React-Leaflet` Choropleth Map locked to Krakow bounds (`KrakowChoroplethMap.tsx`).
   - [x] Step 3: 5 Weight Sliders (`0–10`), 4 Persona Presets & Live 18-District Ranking (`WeightsConfiguratorPanel.tsx`, `DistrictRankingList.tsx`).
   - [x] Step 4: Side-by-Side Comparison View + `Recharts RadarChart` + 12 Hard Metrics Table (`DistrictComparisonView.tsx`).
+  - [x] Step 5: Kraków Civic Blue & White UI design system (`MainNavbar`, `Hero Banner`, `MainFooter`, subpages).
 
 ### Upcoming Stages (Next Implementation Targets):
 - [ ] **Module 2 (Tryb Rodzica i Mieszkańca Lokalnego – Mapa Dostępności Mikrolokalnej i Izochron):**
   - Expand `data/contracts/krakow_poi_locations.json` with real geolocated POIs across Krakow (nurseries, kindergartens, primary schools, KMK stops, parks, libraries, CAS).
-  - Add top-level mode switcher tabs in `App.tsx` (*Moduł 1: Jakość Życia (Dzielnice)* | *Moduł 2: Mapa Dostępności Lokalnej (POI & Izochrony)* | *Moduł 3: Symulator Inwestycyjny i Predykcje 2028*).
-  - Implement address/point click on the map generating walking radius rings (`300m / 5 min`, `500m / 8 min`, `1000m / 15 min` – *15-Minute City* analysis), counting POIs inside the radius, and displaying the local accessibility score.
+  - Implement interactive address/point click on the map generating walking radius rings (`300m / 5 min`, `500m / 8 min`, `1000m / 15 min` – *15-Minute City* analysis), counting POIs inside the radius, and displaying the local accessibility score.
 - [ ] **Module 3 (Tryb Urzędnika i Inwestora B2G/B2B – Predykcje Demograficzne 2028 i Symulator „Co-Jeśli”):**
   - Implement demographic trend charts (historical vs. 2028 forecast for ages `0–3`, `4–6`, `65+`).
-  - Implement the interactive **"What-If" Investment Simulator**: clicking on a district with a deficit (e.g., *Prądnik Biały* or *Podgórze*) and simulating *"Add a new municipal nursery with 120 places"* or *"Add a 2.5 ha pocket park"*, recalculating the district's `childrenPerCarePlaceRatio`, `educationScore`, and 2028 deficit balance live!
+  - Implement the interactive **"What-If" Investment Simulator**: clicking on a district with a deficit (e.g., *Prądnik Biały* or *Podgórze*) and simulating *"Add a new municipal nursery with 120 places"* or *"Add a 2.5 ha pocket park"*, recalculating the district's `childrenPerCarePlaceRatio`, `educationScore`, and 2028 deficit balance live.
 - [ ] **Stage 4 (Production Polish, Live GIOŚ Air Quality Integration & Deployment):**
   - Activate live GIOŚ air quality station indicators on the map + NGINX/Docker production compose + final 2-page PDF competition summary (`konkursopendata@um.krakow.pl`).

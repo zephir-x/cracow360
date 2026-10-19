@@ -5,7 +5,8 @@ PURPOSE:
     Central configuration file for the Krakow360 Python Data Science & Econometrics
     pipeline. Defines directory paths, the official dictionary of all 18 Krakow
     administrative districts, allowed enum constants for the JSON Data Contract,
-    and shared mathematical helper functions (such as Min-Max 0-100 normalization).
+    coordinate transformation helpers (EPSG:3857 and EPSG:2178 -> WGS84), and
+    shared mathematical helper functions (Min-Max 0-100 normalization).
 
 HOW THIS FILE IS USED:
     Imported by scripts 01, 02, 03, and 04. Do NOT rename the constants defined
@@ -14,6 +15,8 @@ HOW THIS FILE IS USED:
 """
 
 from pathlib import Path
+import math
+import re
 import numpy as np
 
 # ------------------------------------------------------------------------------
@@ -52,6 +55,9 @@ KRAKOW_DISTRICTS = [
     {"districtId": 18, "districtRoman": "XVIII", "districtName": "Dzielnica XVIII Nowa Huta", "areaKm2": 65.41},
 ]
 
+ROMAN_TO_DISTRICT_ID = {d["districtRoman"]: d["districtId"] for d in KRAKOW_DISTRICTS}
+DISTRICT_BY_ID = {d["districtId"]: d for d in KRAKOW_DISTRICTS}
+
 # ------------------------------------------------------------------------------
 # 3. ALLOWED ENUM VALUES FOR THE DATA CONTRACT
 # ------------------------------------------------------------------------------
@@ -87,17 +93,15 @@ ALLOWED_POTENTIAL_LEVELS = {"LOW", "MEDIUM", "HIGH"}
 # ------------------------------------------------------------------------------
 def min_max_normalize_0_100(values: list[float], invert: bool = False) -> list[float]:
     """
-    Normalizes a list of 18 raw indicator values (one per district) to a [0.0, 100.0] scale
-    using the standard Min-Max formula:
-        score_i = ((x_i - min(x)) / (max(x) - min(x))) * 100
+    Normalizes a list of 18 raw indicator values (one per district) to a [20.0, 98.0]
+    practical scoring scale within [0.0, 100.0] using the standard Min-Max formula:
+        norm_i = (x_i - min(x)) / (max(x) - min(x))
 
     Parameters:
         values (list[float]): List of raw numerical values across the 18 districts.
         invert (bool):
-            - Set `invert=False` for STIMULANTS (where higher raw value = better quality of life,
-              e.g., green area per capita, KMK stops per km2, isochrone coverage %).
-            - Set `invert=True` for DESTIMULANTS (where lower raw value = better quality of life,
-              e.g., children per 1 nursery place, average students per class, air pollution/traffic).
+            - Set `invert=False` for STIMULANTS (where higher raw value = better quality of life).
+            - Set `invert=True` for DESTIMULANTS (where lower raw value = better quality of life).
 
     Returns:
         list[float]: Normalized scores rounded to 1 decimal place in the range [0.0, 100.0].
@@ -113,3 +117,63 @@ def min_max_normalize_0_100(values: list[float], invert: bool = False) -> list[f
         norm = 100.0 - norm
 
     return [round(float(x), 1) for x in norm]
+
+
+# ------------------------------------------------------------------------------
+# 5. GEOSPATIAL PROJECTION HELPERS (EPSG:3857 & EPSG:2178 -> WGS84)
+# ------------------------------------------------------------------------------
+def epsg3857_to_wgs84(x: float, y: float) -> tuple[float, float]:
+    """Converts Web Mercator (EPSG:3857) coordinates used in ZTP KMK stops to (lat, lng)."""
+    lng = (x / 20037508.342789244) * 180.0
+    lat = (math.atan(math.exp((y / 20037508.342789244) * math.pi)) * 360.0 / math.pi) - 90.0
+    return round(lat, 6), round(lng, 6)
+
+
+def epsg2178_to_wgs84(easting: float, northing: float) -> tuple[float, float]:
+    """Converts PUWG 2000 zone 7 (EPSG:2178) coordinates used in ZTP P+R and bike racks to (lat, lng)."""
+    a = 6378137.0
+    f = 1.0 / 298.257222101
+    e2 = 2 * f - f * f
+    e1 = (1 - math.sqrt(1 - e2)) / (1 + math.sqrt(1 - e2))
+    k0 = 0.999923
+    lon0 = math.radians(21.0)
+    x = easting - 7500000.0
+    y = northing
+    m_val = y / k0
+    mu = m_val / (a * (1 - e2 / 4 - 3 * e2**2 / 64 - 5 * e2**3 / 256))
+    phi1 = (
+        mu
+        + (3 * e1 / 2 - 27 * e1**3 / 32) * math.sin(2 * mu)
+        + (21 * e1**2 / 16 - 55 * e1**4 / 32) * math.sin(4 * mu)
+        + (151 * e1**3 / 96) * math.sin(6 * mu)
+    )
+    ep2 = e2 / (1 - e2)
+    n1 = a / math.sqrt(1 - e2 * math.sin(phi1) ** 2)
+    t1 = math.tan(phi1) ** 2
+    c1 = ep2 * math.cos(phi1) ** 2
+    r1 = a * (1 - e2) / ((1 - e2 * math.sin(phi1) ** 2) ** 1.5)
+    d_val = x / (n1 * k0)
+    lat = phi1 - (n1 * math.tan(phi1) / r1) * (
+        d_val**2 / 2
+        - (5 + 3 * t1 + 10 * c1 - 4 * c1**2 - 9 * ep2) * d_val**4 / 24
+        + (61 + 90 * t1 + 298 * c1 + 45 * t1**2 - 252 * ep2 - 3 * c1**2) * d_val**6 / 720
+    )
+    lon = lon0 + (
+        d_val
+        - (1 + 2 * t1 + c1) * d_val**3 / 6
+        + (5 - 2 * c1 + 28 * t1 - 3 * c1**2 + 8 * ep2 + 24 * t1**2) * d_val**5 / 120
+    ) / math.cos(phi1)
+    return round(math.degrees(lat), 6), round(math.degrees(lon), 6)
+
+
+def parse_roman_districts(text: str) -> list[int]:
+    """Extracts one or more district IDs (1..18) from strings like 'VII Zwierzyniec' or 'I, II, VII, VIII, XIII'."""
+    if not text:
+        return []
+    tokens = re.findall(r"\b(XVIII|XVII|XVI|XIV|XIII|XII|XI|IX|VIII|VII|VI|IV|III|II|XV|X|V|I)\b", text.upper())
+    result = []
+    for tok in tokens:
+        did = ROMAN_TO_DISTRICT_ID.get(tok)
+        if did and did not in result:
+            result.append(did)
+    return result

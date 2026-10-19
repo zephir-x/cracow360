@@ -11,7 +11,6 @@ import type {
   DistrictsGeoJsonCollection,
   DistrictSummaryDto,
   QualityWeights,
-  SystemHelloDto,
 } from './types/contracts';
 import { calculateClientSideQualityIndex } from './utils/qualityIndexCalculator';
 
@@ -25,7 +24,6 @@ const DEFAULT_WEIGHTS: QualityWeights = {
 
 export function App() {
   const [activeTab, setActiveTab] = useState<AppTabId>('resident');
-  const [hello, setHello] = useState<SystemHelloDto | null>(null);
   const [rawDistricts, setRawDistricts] = useState<DistrictSummaryDto[]>([]);
   const [geoJsonData, setGeoJsonData] = useState<DistrictsGeoJsonCollection | null>(null);
 
@@ -35,34 +33,36 @@ export function App() {
   const [selectedPrimaryId, setSelectedPrimaryId] = useState<number | null>(5); // Default #1: Dzielnica V Krowodrza
   const [selectedSecondaryId, setSelectedSecondaryId] = useState<number | null>(4); // Default #2: Dzielnica IV Prądnik Biały
 
-  const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
-  const fetchStatus = async () => {
-    setLoading(true);
-    setError(null);
-    try {
-      const [helloData, districtsData, geoJson] = await Promise.all([
-        cracow360Api.getSystemHello(),
-        cracow360Api.getDistricts(),
-        cracow360Api.getDistrictsGeoJson(),
-      ]);
-      setHello(helloData);
-      setRawDistricts(districtsData);
-      setGeoJsonData(geoJson);
-    } catch (err) {
-      setError(
-        err instanceof Error
-          ? err.message
-          : 'Brak połączenia z backendem .NET 9 (upewnij się, że API działa na http://localhost:5000).'
-      );
-    } finally {
-      setLoading(false);
-    }
-  };
-
   useEffect(() => {
-    void fetchStatus();
+    let cancelled = false;
+    const loadInitialData = async () => {
+      setError(null);
+      try {
+        const [districtsData, geoJson] = await Promise.all([
+          cracow360Api.getDistricts(),
+          cracow360Api.getDistrictsGeoJson(),
+        ]);
+        if (!cancelled) {
+          setRawDistricts(districtsData);
+          setGeoJsonData(geoJson);
+        }
+      } catch (err) {
+        if (!cancelled) {
+          setError(
+            err instanceof Error
+              ? err.message
+              : 'Nie udało się pobrać danych dzielnic. Spróbuj odświeżyć stronę.'
+          );
+        }
+      }
+    };
+
+    void loadInitialData();
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   // Dynamically recompute weighted Quality of Life Index and sort all 18 districts in 0ms
@@ -109,21 +109,15 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#eaf3ff] via-[#f5f9ff] to-white text-slate-900 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-b from-[#eaf3ff] via-[#f5f9ff] to-white text-slate-900 flex flex-col">
       {/* Top Civic Navigation Bar */}
-      <MainNavbar
-        activeTab={activeTab}
-        onSelectTab={setActiveTab}
-        hello={hello}
-        loading={loading}
-        onRefreshApi={() => void fetchStatus()}
-      />
+      <MainNavbar activeTab={activeTab} onSelectTab={setActiveTab} />
 
       {/* Main Content Container */}
-      <main className="flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
+      <main className="flex-1 max-w-[1440px] w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
         {error && (
           <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-medium shadow-xs">
-            <strong>Błąd połączenia z API:</strong> {error}
+            <strong>Komunikat:</strong> {error}
           </div>
         )}
 
@@ -164,7 +158,7 @@ export function App() {
       </main>
 
       {/* Civic Footer */}
-      <MainFooter hello={hello} onSelectTab={setActiveTab} />
+      <MainFooter onSelectTab={setActiveTab} />
     </div>
   );
 }

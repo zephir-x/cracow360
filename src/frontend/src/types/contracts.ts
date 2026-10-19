@@ -1,17 +1,5 @@
 import type { Feature, FeatureCollection, Geometry } from 'geojson';
 
-export interface SystemHelloDto {
-  message: string;
-  projectName: string;
-  competition: string;
-  environment: string;
-  databaseProvider: string;
-  databaseConnected: boolean;
-  seededDistrictsCount: number;
-  seededPoisCount: number;
-  serverTimeUtc: string;
-}
-
 export interface DistrictScoresDto {
   mobilityScore: number;
   educationScore: number;

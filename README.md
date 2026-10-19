@@ -8,8 +8,8 @@ Platforma analityczno-mapowa typu **Smart City** tworzona w ramach konkursu **�
 - **Data Science & Ekonometria (`src/analytics/`):** Odizolowany pipeline analityczny w Pythonie 3.12 (`pandas`, `geopandas`, `scikit-learn`, `statsmodels`, `numpy`, `geopy`) generujący i walidujący pliki kontraktowe JSON w `data/contracts/`.
 - **Baza danych i DevOps (`docker-compose.yml`):** SQLite (`data/db/cracow360.db`) + kontener `sqlite-web` (`http://localhost:8080`).
 
-## Dokumentacja Deweloperska, Źródła Danych i Kontekst AI (`Assets/Instructions/`)
-0. [**Master Context & Handoff Document** (Pełny kontekst dla agentów AI)](Assets/Instructions/00_MASTER_CONTEXT.md)
+## Dokumentacja Projektowa, Architektura i Źródła Danych (`Assets/Instructions/`)
+0. [**Master Project Context & Technical Handover** (Pełny kontekst techniczny projektu)](Assets/Instructions/00_MASTER_CONTEXT.md)
 1. [Competition Analysis & Action Plan (Module 1)](Assets/Instructions/01_COMPETITION_ANALYSIS_AND_ACTION_PLAN.md)
 2. [Architecture, Project State & Development Guide](Assets/Instructions/02_ARCHITECTURE_PROJECT_STATE_AND_DEVELOPMENT.md)
 3. [Python Analytics & Econometrics Developer Guide](Assets/Instructions/03_PYTHON_ANALYTICS_DEVELOPER_GUIDE.md)
