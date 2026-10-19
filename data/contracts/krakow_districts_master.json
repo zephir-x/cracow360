@@ -1,0 +1,219 @@
+{
+  "metadata": {
+    "generatedAt": "2026-10-19T15:00:00Z",
+    "dataVersion": "1.0.0-seed",
+    "normalizationMethod": "MinMax_0_100"
+  },
+  "districts": [
+    {
+      "districtId": 1,
+      "districtRoman": "I",
+      "districtName": "Dzielnica I Stare Miasto",
+      "areaKm2": 5.57,
+      "scores": {
+        "mobilityScore": 95.0,
+        "educationScore": 72.4,
+        "greeneryScore": 68.0,
+        "cultureAndSeniorScore": 92.5,
+        "environmentScore": 45.0
+      },
+      "demographics": {
+        "totalPopulation": 29800,
+        "permanentResidents": 26100,
+        "temporaryResidents": 3700,
+        "foreignersTotal": 3100,
+        "age0to3": 820,
+        "age4to6": 790,
+        "age7to14": 1950,
+        "age15to64": 18240,
+        "age65Plus": 8000,
+        "populationGrowthRate3YrPct": -1.8
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 3,
+        "nurseriesPrivateCount": 5,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 410,
+        "childrenPerCarePlaceRatio": 2.0,
+        "parentClubsCount": 2,
+        "kindergartensCount": 14,
+        "kindergartenPlacesTotal": 950,
+        "primarySchoolsCount": 11,
+        "primarySchoolStudentsTotal": 2400,
+        "avgStudentsPerClass": 21.5
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 48,
+        "isochroneCoveragePct": 98.2,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 320,
+        "bikeLanesLengthKm": 18.4
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 3,
+        "pocketParksCount": 2,
+        "totalParksAreaHa": 42.8,
+        "greenAreaM2PerCapita": 14.3,
+        "schoolSportsFacilitiesCount": 15,
+        "schoolSwimmingPoolsCount": 2
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 5,
+        "culturalCentersCount": 4,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 680,
+        "municipalSubsidyPerCapitaPln": 145.50
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 780,
+        "forecastedCarePlacesBalance_2028": 30,
+        "forecastedAge4to6_2028": 750,
+        "nurseryInvestmentPotentialB2B": "LOW",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Rozbudowa oferty Centrów Aktywności Seniora z uwagi na wysoki odsetek mieszkańców 65+ (26.8%)."
+      }
+    },
+    {
+      "districtId": 4,
+      "districtRoman": "IV",
+      "districtName": "Dzielnica IV Prądnik Biały",
+      "areaKm2": 23.42,
+      "scores": {
+        "mobilityScore": 78.5,
+        "educationScore": 54.0,
+        "greeneryScore": 61.2,
+        "cultureAndSeniorScore": 64.0,
+        "environmentScore": 69.5
+      },
+      "demographics": {
+        "totalPopulation": 72500,
+        "permanentResidents": 64200,
+        "temporaryResidents": 8300,
+        "foreignersTotal": 4850,
+        "age0to3": 3420,
+        "age4to6": 2890,
+        "age7to14": 6120,
+        "age15to64": 47870,
+        "age65Plus": 12200,
+        "populationGrowthRate3YrPct": 6.4
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 3,
+        "nurseriesContractedCount": 6,
+        "nurseriesPrivateCount": 12,
+        "kidsClubsCount": 4,
+        "totalCarePlaces0to3": 980,
+        "childrenPerCarePlaceRatio": 3.49,
+        "parentClubsCount": 3,
+        "kindergartensCount": 22,
+        "kindergartenPlacesTotal": 2150,
+        "primarySchoolsCount": 9,
+        "primarySchoolStudentsTotal": 5800,
+        "avgStudentsPerClass": 25.8
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 64,
+        "isochroneCoveragePct": 84.5,
+        "parkAndRideCount": 2,
+        "bikeRacksCount": 210,
+        "bikeLanesLengthKm": 22.1
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 4,
+        "pocketParksCount": 5,
+        "totalParksAreaHa": 68.4,
+        "greenAreaM2PerCapita": 9.4,
+        "schoolSportsFacilitiesCount": 18,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 6,
+        "culturalCentersCount": 5,
+        "seniorActivityCentersCount": 4,
+        "annualCulturalEventsCount": 410,
+        "municipalSubsidyPerCapitaPln": 88.20
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 3790,
+        "forecastedCarePlacesBalance_2028": -420,
+        "forecastedAge4to6_2028": 3250,
+        "nurseryInvestmentPotentialB2B": "HIGH",
+        "seniorInfrastructureDeficit": "LOW",
+        "greenSpaceDeficit": "MEDIUM",
+        "recommendedMunicipalAction": "Pilne zwiększenie liczby miejsc w żłobkach i przedszkolach oraz tworzenie nowych parków kieszonkowych na nowych osiedlach."
+      }
+    },
+    {
+      "districtId": 8,
+      "districtRoman": "VIII",
+      "districtName": "Dzielnica VIII Dębniki",
+      "areaKm2": 46.19,
+      "scores": {
+        "mobilityScore": 74.0,
+        "educationScore": 66.8,
+        "greeneryScore": 88.5,
+        "cultureAndSeniorScore": 70.2,
+        "environmentScore": 81.0
+      },
+      "demographics": {
+        "totalPopulation": 64900,
+        "permanentResidents": 58100,
+        "temporaryResidents": 6800,
+        "foreignersTotal": 4200,
+        "age0to3": 2950,
+        "age4to6": 2610,
+        "age7to14": 5740,
+        "age15to64": 42900,
+        "age65Plus": 10700,
+        "populationGrowthRate3YrPct": 4.9
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 5,
+        "nurseriesPrivateCount": 10,
+        "kidsClubsCount": 3,
+        "totalCarePlaces0to3": 890,
+        "childrenPerCarePlaceRatio": 3.31,
+        "parentClubsCount": 2,
+        "kindergartensCount": 19,
+        "kindergartenPlacesTotal": 1920,
+        "primarySchoolsCount": 10,
+        "primarySchoolStudentsTotal": 5100,
+        "avgStudentsPerClass": 24.2
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 58,
+        "isochroneCoveragePct": 79.4,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 245,
+        "bikeLanesLengthKm": 29.6
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 5,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 185.0,
+        "greenAreaM2PerCapita": 28.5,
+        "schoolSportsFacilitiesCount": 16,
+        "schoolSwimmingPoolsCount": 2
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 5,
+        "culturalCentersCount": 6,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 390,
+        "municipalSubsidyPerCapitaPln": 94.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 3210,
+        "forecastedCarePlacesBalance_2028": -280,
+        "forecastedAge4to6_2028": 2890,
+        "nurseryInvestmentPotentialB2B": "HIGH",
+        "seniorInfrastructureDeficit": "LOW",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Rozwój sieci żłobków w rejonie Ruczaju i Klinów oraz rozbudowa połączeń rowerowych z centrum."
+      }
+    }
+  ]
+}

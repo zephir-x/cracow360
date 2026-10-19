@@ -1,0 +1,49 @@
+{
+  "pointsOfInterest": [
+    {
+      "id": "nursery_pub_1",
+      "districtId": 4,
+      "category": "EDU_CARE",
+      "subCategory": "NURSERY_PUBLIC",
+      "name": "Żłobek Samorządowy nr 12",
+      "address": "ul. Przykładowa 10, Kraków",
+      "lat": 50.0884,
+      "lng": 19.9382,
+      "metrics": {
+        "capacity": 85,
+        "areaHa": null,
+        "additionalInfo": "Placówka prowadzona przez Gminę Miejską Kraków"
+      }
+    },
+    {
+      "id": "park_pocket_4",
+      "districtId": 4,
+      "category": "GREENERY",
+      "subCategory": "POCKET_PARK",
+      "name": "Ogród Krakowian - Park Kieszonkowy",
+      "address": "ul. Prądnicka, Kraków",
+      "lat": 50.0821,
+      "lng": 19.9315,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 0.35,
+        "additionalInfo": "Strefa relaksu i plac zabaw"
+      }
+    },
+    {
+      "id": "library_1",
+      "districtId": 1,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "LIBRARY",
+      "name": "Biblioteka Kraków - Biblioteka Główna",
+      "address": "ul. Powroźnicza 2, Kraków",
+      "lat": 50.0545,
+      "lng": 19.9412,
+      "metrics": {
+        "capacity": 120,
+        "areaHa": null,
+        "additionalInfo": "Główna filia miejska z czytelnią"
+      }
+    }
+  ]
+}

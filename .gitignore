@@ -1,5 +1,6 @@
 # IDEs and Editors
 .idea/
+.vscode/
 
 # Dependencies
 node_modules/
@@ -11,6 +12,25 @@ node_modules/
 # Frontend build files (Vite/React)
 dist/
 build/
+
+# SQLite database files (generated locally from JSON contracts)
+data/db/*.db
+data/db/*.db-shm
+data/db/*.db-wal
+
+# Python isolated environment & caches
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+src/analytics/data_raw/*
+!src/analytics/data_raw/.gitkeep
+src/analytics/data_processed/*
+!src/analytics/data_processed/.gitkeep
 
 # Environment variables
 .env

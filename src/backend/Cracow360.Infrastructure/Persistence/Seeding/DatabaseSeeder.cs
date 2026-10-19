@@ -1,0 +1,214 @@
+﻿using System.Text.Json;
+using System.Text.Json.Serialization;
+using Cracow360.Domain.Entities;
+using Cracow360.Domain.Enums;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.Logging;
+
+namespace Cracow360.Infrastructure.Persistence.Seeding;
+
+public class DatabaseSeeder(
+    Cracow360DbContext dbContext,
+    ILogger<DatabaseSeeder> logger)
+{
+    private static readonly JsonSerializerOptions JsonOptions = new()
+    {
+        PropertyNameCaseInsensitive = true,
+        Converters = { new JsonStringEnumConverter(JsonNamingPolicy.CamelCase, allowIntegerValues: true) }
+    };
+
+    public async Task SeedAsync(string contractsDirectoryPath, CancellationToken cancellationToken = default)
+    {
+        await dbContext.Database.EnsureCreatedAsync(cancellationToken);
+
+        // Use DELETE journal mode instead of WAL so the SQLite file can be safely
+        // inspected simultaneously by Docker containers (e.g. sqlite-web) across Windows/WSL2 mounts.
+        await dbContext.Database.ExecuteSqlRawAsync("PRAGMA journal_mode=DELETE;", cancellationToken);
+
+        var districtsFile = Path.Combine(contractsDirectoryPath, "krakow_districts_master.json");
+        var poiFile = Path.Combine(contractsDirectoryPath, "krakow_poi_locations.json");
+
+        if (!await dbContext.Districts.AnyAsync(cancellationToken) && File.Exists(districtsFile))
+        {
+            logger.LogInformation("Seeding district data from contract: {FilePath}", districtsFile);
+            var json = await File.ReadAllTextAsync(districtsFile, cancellationToken);
+            var contract = JsonSerializer.Deserialize<DistrictsMasterContract>(json, JsonOptions);
+
+            if (contract?.Districts is { Count: > 0 })
+            {
+                var entities = contract.Districts.Select(MapToDomain).ToList();
+                await dbContext.Districts.AddRangeAsync(entities, cancellationToken);
+                await dbContext.SaveChangesAsync(cancellationToken);
+                logger.LogInformation("Successfully seeded {Count} districts.", entities.Count);
+            }
+        }
+
+        if (!await dbContext.PointsOfInterest.AnyAsync(cancellationToken) && File.Exists(poiFile))
+        {
+            logger.LogInformation("Seeding POI locations from contract: {FilePath}", poiFile);
+            var json = await File.ReadAllTextAsync(poiFile, cancellationToken);
+            var contract = JsonSerializer.Deserialize<PoiLocationsContract>(json, JsonOptions);
+
+            if (contract?.PointsOfInterest is { Count: > 0 })
+            {
+                var existingDistrictIds = await dbContext.Districts
+                    .Select(d => d.DistrictId)
+                    .ToHashSetAsync(cancellationToken);
+
+                var entities = contract.PointsOfInterest
+                    .Where(p => existingDistrictIds.Contains(p.DistrictId))
+                    .Select(MapPoiToDomain)
+                    .ToList();
+
+                await dbContext.PointsOfInterest.AddRangeAsync(entities, cancellationToken);
+                await dbContext.SaveChangesAsync(cancellationToken);
+                logger.LogInformation("Successfully seeded {Count} POI locations.", entities.Count);
+            }
+        }
+    }
+
+    private static District MapToDomain(DistrictContractItem item) => new()
+    {
+        DistrictId = item.DistrictId,
+        DistrictRoman = item.DistrictRoman,
+        DistrictName = item.DistrictName,
+        AreaKm2 = item.AreaKm2,
+        Scores = item.Scores ?? new DistrictScores(),
+        Demographics = new DistrictDemographics
+        {
+            TotalPopulation = item.Demographics?.TotalPopulation ?? 0,
+            PermanentResidents = item.Demographics?.PermanentResidents ?? 0,
+            TemporaryResidents = item.Demographics?.TemporaryResidents ?? 0,
+            ForeignersTotal = item.Demographics?.ForeignersTotal ?? 0,
+            Age0To3 = item.Demographics?.Age0to3 ?? 0,
+            Age4To6 = item.Demographics?.Age4to6 ?? 0,
+            Age7To14 = item.Demographics?.Age7to14 ?? 0,
+            Age15To64 = item.Demographics?.Age15to64 ?? 0,
+            Age65Plus = item.Demographics?.Age65Plus ?? 0,
+            PopulationGrowthRate3YrPct = item.Demographics?.PopulationGrowthRate3YrPct ?? 0
+        },
+        EducationAndCare = new DistrictEducationAndCare
+        {
+            NurseriesPublicCount = item.EducationAndCare?.NurseriesPublicCount ?? 0,
+            NurseriesContractedCount = item.EducationAndCare?.NurseriesContractedCount ?? 0,
+            NurseriesPrivateCount = item.EducationAndCare?.NurseriesPrivateCount ?? 0,
+            KidsClubsCount = item.EducationAndCare?.KidsClubsCount ?? 0,
+            TotalCarePlaces0To3 = item.EducationAndCare?.TotalCarePlaces0to3 ?? 0,
+            ChildrenPerCarePlaceRatio = item.EducationAndCare?.ChildrenPerCarePlaceRatio ?? 0,
+            ParentClubsCount = item.EducationAndCare?.ParentClubsCount ?? 0,
+            KindergartensCount = item.EducationAndCare?.KindergartensCount ?? 0,
+            KindergartenPlacesTotal = item.EducationAndCare?.KindergartenPlacesTotal ?? 0,
+            PrimarySchoolsCount = item.EducationAndCare?.PrimarySchoolsCount ?? 0,
+            PrimarySchoolStudentsTotal = item.EducationAndCare?.PrimarySchoolStudentsTotal ?? 0,
+            AvgStudentsPerClass = item.EducationAndCare?.AvgStudentsPerClass ?? 0
+        },
+        MobilityAndTransport = item.MobilityAndTransport ?? new DistrictMobilityAndTransport(),
+        GreeneryAndSport = item.GreeneryAndSport ?? new DistrictGreeneryAndSport(),
+        CultureAndSociety = item.CultureAndSociety ?? new DistrictCultureAndSociety(),
+        ForecastsAndB2B = new DistrictForecastsAndB2B
+        {
+            ForecastedAge0To3_2028 = item.ForecastsAndB2B?.ForecastedAge0to3_2028 ?? 0,
+            ForecastedCarePlacesBalance_2028 = item.ForecastsAndB2B?.ForecastedCarePlacesBalance_2028 ?? 0,
+            ForecastedAge4To6_2028 = item.ForecastsAndB2B?.ForecastedAge4to6_2028 ?? 0,
+            NurseryInvestmentPotentialB2B = ParsePotential(item.ForecastsAndB2B?.NurseryInvestmentPotentialB2B),
+            SeniorInfrastructureDeficit = ParsePotential(item.ForecastsAndB2B?.SeniorInfrastructureDeficit),
+            GreenSpaceDeficit = ParsePotential(item.ForecastsAndB2B?.GreenSpaceDeficit),
+            RecommendedMunicipalAction = item.ForecastsAndB2B?.RecommendedMunicipalAction ?? string.Empty
+        }
+    };
+
+    private static PointOfInterest MapPoiToDomain(PoiContractItem item) => new()
+    {
+        Id = item.Id,
+        DistrictId = item.DistrictId,
+        Category = Enum.TryParse<PoiCategory>(item.Category, true, out var cat) ? cat : PoiCategory.EDU_CARE,
+        SubCategory = Enum.TryParse<PoiSubCategory>(item.SubCategory, true, out var sub) ? sub : PoiSubCategory.NURSERY_PUBLIC,
+        Name = item.Name,
+        Address = item.Address,
+        Lat = item.Lat,
+        Lng = item.Lng,
+        Metrics = item.Metrics ?? new PoiMetrics()
+    };
+
+    private static PotentialLevel ParsePotential(string? value) =>
+        Enum.TryParse<PotentialLevel>(value, true, out var level) ? level : PotentialLevel.LOW;
+
+    private sealed class DistrictsMasterContract
+    {
+        public List<DistrictContractItem> Districts { get; set; } = [];
+    }
+
+    private sealed class DistrictContractItem
+    {
+        public int DistrictId { get; set; }
+        public string DistrictRoman { get; set; } = string.Empty;
+        public string DistrictName { get; set; } = string.Empty;
+        public double AreaKm2 { get; set; }
+        public DistrictScores? Scores { get; set; }
+        public DemographicsContract? Demographics { get; set; }
+        public EducationContract? EducationAndCare { get; set; }
+        public DistrictMobilityAndTransport? MobilityAndTransport { get; set; }
+        public DistrictGreeneryAndSport? GreeneryAndSport { get; set; }
+        public DistrictCultureAndSociety? CultureAndSociety { get; set; }
+        public ForecastsContract? ForecastsAndB2B { get; set; }
+    }
+
+    private sealed class DemographicsContract
+    {
+        public int TotalPopulation { get; set; }
+        public int PermanentResidents { get; set; }
+        public int TemporaryResidents { get; set; }
+        public int ForeignersTotal { get; set; }
+        public int Age0to3 { get; set; }
+        public int Age4to6 { get; set; }
+        public int Age7to14 { get; set; }
+        public int Age15to64 { get; set; }
+        public int Age65Plus { get; set; }
+        public double PopulationGrowthRate3YrPct { get; set; }
+    }
+
+    private sealed class EducationContract
+    {
+        public int NurseriesPublicCount { get; set; }
+        public int NurseriesContractedCount { get; set; }
+        public int NurseriesPrivateCount { get; set; }
+        public int KidsClubsCount { get; set; }
+        public int TotalCarePlaces0to3 { get; set; }
+        public double ChildrenPerCarePlaceRatio { get; set; }
+        public int ParentClubsCount { get; set; }
+        public int KindergartensCount { get; set; }
+        public int KindergartenPlacesTotal { get; set; }
+        public int PrimarySchoolsCount { get; set; }
+        public int PrimarySchoolStudentsTotal { get; set; }
+        public double AvgStudentsPerClass { get; set; }
+    }
+
+    private sealed class ForecastsContract
+    {
+        public int ForecastedAge0to3_2028 { get; set; }
+        public int ForecastedCarePlacesBalance_2028 { get; set; }
+        public int ForecastedAge4to6_2028 { get; set; }
+        public string? NurseryInvestmentPotentialB2B { get; set; }
+        public string? SeniorInfrastructureDeficit { get; set; }
+        public string? GreenSpaceDeficit { get; set; }
+        public string? RecommendedMunicipalAction { get; set; }
+    }
+
+    private sealed class PoiLocationsContract
+    {
+        public List<PoiContractItem> PointsOfInterest { get; set; } = [];
+    }
+
+    private sealed class PoiContractItem
+    {
+        public string Id { get; set; } = string.Empty;
+        public int DistrictId { get; set; }
+        public string Category { get; set; } = string.Empty;
+        public string SubCategory { get; set; } = string.Empty;
+        public string Name { get; set; } = string.Empty;
+        public string Address { get; set; } = string.Empty;
+        public double Lat { get; set; }
+        public double Lng { get; set; }
+        public PoiMetrics? Metrics { get; set; }
+    }
+}
