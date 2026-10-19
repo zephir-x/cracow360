@@ -1,8 +1,31 @@
 """
-Contract validation script checking generated JSON files against the .NET 9 / React Data Contract.
-Always run this script before committing changes!
-Command:
-    python scripts/04_validate_and_export_contracts.py
+================================================================================
+SCRIPT 04: 04_validate_and_export_contracts.py
+================================================================================
+GOAL / PURPOSE:
+    Automated Data Contract gatekeeper. Verifies that the JSON files generated
+    by the Python analytics pipeline (`krakow_districts_master.json` and
+    `krakow_poi_locations.json`) strictly conform to the schema expected by
+    the .NET 9 EF Core DatabaseSeeder and the React TypeScript frontend.
+
+WHEN TO RUN:
+    Always run this script from `src/analytics/` BEFORE committing any changes to Git:
+        python scripts/04_validate_and_export_contracts.py
+
+WHAT THIS SCRIPT VALIDATES:
+    1. Existence and valid UTF-8 JSON syntax of both contract files in `data/contracts/`.
+    2. Presence of all 7 required sections (`scores`, `demographics`, `educationAndCare`,
+       `mobilityAndTransport`, `greeneryAndSport`, `cultureAndSociety`, `forecastsAndB2B`)
+       for every district in `krakow_districts_master.json`.
+    3. All 5 Quality of Life scores are valid numbers within `[0.0, 100.0]`.
+    4. All B2B/deficit classification fields use only `"LOW"`, `"MEDIUM"`, or `"HIGH"`.
+    5. All POI records in `krakow_poi_locations.json` use allowed `subCategory` enums
+       and have valid GPS coordinates (`lat`, `lng`) inside the Krakow bounding box.
+
+EXIT CODE:
+    - Returns `0` (`[OK]`) if all contract checks pass.
+    - Returns `1` (`[ERROR]`) with a detailed list of violations if any check fails.
+================================================================================
 """
 
 import json
@@ -95,7 +118,7 @@ def main() -> int:
             print(f"  - {err}")
         return 1
 
-    print(f"[OK] {districts_file.name} is 100% compliant with the Data Contract!")
+    print(f"[OK] {districts_file.name} is 100% compliant with the Data Contract! ({len(json.loads(districts_file.read_text(encoding='utf-8'))['districts'])} districts verified)")
     print(f"[OK] {poi_file.name} is 100% compliant with the Data Contract!")
     return 0
 

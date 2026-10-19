@@ -13,6 +13,16 @@ public interface IDistrictService
         CancellationToken cancellationToken = default);
 
     Task<DistrictDetailsDto?> GetDistrictDetailsAsync(int districtId, CancellationToken cancellationToken = default);
+
+    Task<DistrictComparisonDto?> CompareDistrictsAsync(
+        int firstDistrictId,
+        int secondDistrictId,
+        double mobilityWeight = 5.0,
+        double educationWeight = 5.0,
+        double greeneryWeight = 5.0,
+        double cultureWeight = 5.0,
+        double environmentWeight = 5.0,
+        CancellationToken cancellationToken = default);
 }
 
 public interface IPointOfInterestService

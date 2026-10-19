@@ -39,9 +39,50 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
     public async Task<DistrictDetailsDto?> GetDistrictDetailsAsync(int districtId, CancellationToken cancellationToken = default)
     {
         var d = await districtRepository.GetByIdAsync(districtId, cancellationToken);
-        if (d is null) return null;
+        return d is null ? null : MapToDetailsDto(d);
+    }
 
-        return new DistrictDetailsDto(
+    public async Task<DistrictComparisonDto?> CompareDistrictsAsync(
+        int firstDistrictId,
+        int secondDistrictId,
+        double mobilityWeight = 5.0,
+        double educationWeight = 5.0,
+        double greeneryWeight = 5.0,
+        double cultureWeight = 5.0,
+        double environmentWeight = 5.0,
+        CancellationToken cancellationToken = default)
+    {
+        var first = await districtRepository.GetByIdAsync(firstDistrictId, cancellationToken);
+        var second = await districtRepository.GetByIdAsync(secondDistrictId, cancellationToken);
+
+        if (first is null || second is null)
+            return null;
+
+        var firstIndex = first.CalculateWeightedQualityOfLifeIndex(
+            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight);
+        var secondIndex = second.CalculateWeightedQualityOfLifeIndex(
+            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight);
+
+        var deltas = new DistrictScoreDeltasDto(
+            WeightedIndexDelta: Math.Round(firstIndex - secondIndex, 2),
+            MobilityScoreDelta: Math.Round(first.Scores.MobilityScore - second.Scores.MobilityScore, 2),
+            EducationScoreDelta: Math.Round(first.Scores.EducationScore - second.Scores.EducationScore, 2),
+            GreeneryScoreDelta: Math.Round(first.Scores.GreeneryScore - second.Scores.GreeneryScore, 2),
+            CultureAndSeniorScoreDelta: Math.Round(first.Scores.CultureAndSeniorScore - second.Scores.CultureAndSeniorScore, 2),
+            EnvironmentScoreDelta: Math.Round(first.Scores.EnvironmentScore - second.Scores.EnvironmentScore, 2)
+        );
+
+        return new DistrictComparisonDto(
+            FirstDistrict: MapToDetailsDto(first),
+            FirstWeightedIndex: firstIndex,
+            SecondDistrict: MapToDetailsDto(second),
+            SecondWeightedIndex: secondIndex,
+            ScoreDeltas: deltas
+        );
+    }
+
+    private static DistrictDetailsDto MapToDetailsDto(District d) =>
+        new(
             d.DistrictId,
             d.DistrictRoman,
             d.DistrictName,
@@ -99,7 +140,6 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
                 d.ForecastsAndB2B.GreenSpaceDeficit.ToString(),
                 d.ForecastsAndB2B.RecommendedMunicipalAction)
         );
-    }
 
     private static DistrictScoresDto MapScores(DistrictScores scores) =>
         new(

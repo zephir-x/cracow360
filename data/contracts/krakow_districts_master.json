@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-19T15:00:00Z",
-    "dataVersion": "1.0.0-seed",
+    "generatedAt": "2026-10-19T17:20:00Z",
+    "dataVersion": "1.1.0-all-18-districts",
     "normalizationMethod": "MinMax_0_100"
   },
   "districts": [
@@ -14,8 +14,8 @@
         "mobilityScore": 95.0,
         "educationScore": 72.4,
         "greeneryScore": 68.0,
-        "cultureAndSeniorScore": 92.5,
-        "environmentScore": 45.0
+        "cultureAndSeniorScore": 96.5,
+        "environmentScore": 42.0
       },
       "demographics": {
         "totalPopulation": 29800,
@@ -60,19 +60,159 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 5,
-        "culturalCentersCount": 4,
+        "culturalCentersCount": 6,
         "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 680,
         "municipalSubsidyPerCapitaPln": 145.50
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 780,
-        "forecastedCarePlacesBalance_2028": 30,
+        "forecastedCarePlacesBalance_2028": 20,
         "forecastedAge4to6_2028": 750,
         "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
         "recommendedMunicipalAction": "Rozbudowa oferty Centrów Aktywności Seniora z uwagi na wysoki odsetek mieszkańców 65+ (26.8%)."
+      }
+    },
+    {
+      "districtId": 2,
+      "districtRoman": "II",
+      "districtName": "Dzielnica II Grzegórzki",
+      "areaKm2": 5.85,
+      "scores": {
+        "mobilityScore": 89.5,
+        "educationScore": 64.0,
+        "greeneryScore": 58.5,
+        "cultureAndSeniorScore": 79.0,
+        "environmentScore": 55.0
+      },
+      "demographics": {
+        "totalPopulation": 33400,
+        "permanentResidents": 29200,
+        "temporaryResidents": 4200,
+        "foreignersTotal": 2950,
+        "age0to3": 1420,
+        "age4to6": 1180,
+        "age7to14": 2450,
+        "age15to64": 21850,
+        "age65Plus": 6500,
+        "populationGrowthRate3YrPct": 4.2
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 3,
+        "nurseriesPrivateCount": 6,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 510,
+        "childrenPerCarePlaceRatio": 2.78,
+        "parentClubsCount": 2,
+        "kindergartensCount": 12,
+        "kindergartenPlacesTotal": 1080,
+        "primarySchoolsCount": 6,
+        "primarySchoolStudentsTotal": 2350,
+        "avgStudentsPerClass": 23.8
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 38,
+        "isochroneCoveragePct": 94.0,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 215,
+        "bikeLanesLengthKm": 14.8
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 2,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 26.5,
+        "greenAreaM2PerCapita": 7.9,
+        "schoolSportsFacilitiesCount": 9,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 3,
+        "culturalCentersCount": 3,
+        "seniorActivityCentersCount": 2,
+        "annualCulturalEventsCount": 340,
+        "municipalSubsidyPerCapitaPln": 102.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 1560,
+        "forecastedCarePlacesBalance_2028": -270,
+        "forecastedAge4to6_2028": 1310,
+        "nurseryInvestmentPotentialB2B": "HIGH",
+        "seniorInfrastructureDeficit": "LOW",
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Tworzenie nowych parków kieszonkowych oraz wsparcie kontraktowania miejsc żłobkowych w rejonie Zabłocia i Grzegórzek."
+      }
+    },
+    {
+      "districtId": 3,
+      "districtRoman": "III",
+      "districtName": "Dzielnica III Prądnik Czerwony",
+      "areaKm2": 6.44,
+      "scores": {
+        "mobilityScore": 81.0,
+        "educationScore": 65.5,
+        "greeneryScore": 63.0,
+        "cultureAndSeniorScore": 71.0,
+        "environmentScore": 62.5
+      },
+      "demographics": {
+        "totalPopulation": 48900,
+        "permanentResidents": 44100,
+        "temporaryResidents": 4800,
+        "foreignersTotal": 2700,
+        "age0to3": 1890,
+        "age4to6": 1650,
+        "age7to14": 3780,
+        "age15to64": 31280,
+        "age65Plus": 10300,
+        "populationGrowthRate3YrPct": 1.9
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 4,
+        "nurseriesPrivateCount": 7,
+        "kidsClubsCount": 3,
+        "totalCarePlaces0to3": 680,
+        "childrenPerCarePlaceRatio": 2.78,
+        "parentClubsCount": 2,
+        "kindergartensCount": 15,
+        "kindergartenPlacesTotal": 1520,
+        "primarySchoolsCount": 7,
+        "primarySchoolStudentsTotal": 3600,
+        "avgStudentsPerClass": 24.1
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 36,
+        "isochroneCoveragePct": 88.5,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 175,
+        "bikeLanesLengthKm": 13.2
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 2,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 44.0,
+        "greenAreaM2PerCapita": 9.0,
+        "schoolSportsFacilitiesCount": 12,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 4,
+        "culturalCentersCount": 3,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 290,
+        "municipalSubsidyPerCapitaPln": 86.50
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 1950,
+        "forecastedCarePlacesBalance_2028": -295,
+        "forecastedAge4to6_2028": 1720,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Rewitalizacja terenów zielonych przy potoku Sudoł i rozwój infrastruktury rekreacyjnej między osiedlami."
       }
     },
     {
@@ -141,8 +281,218 @@
         "forecastedAge4to6_2028": 3250,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
-        "greenSpaceDeficit": "MEDIUM",
+        "greenSpaceDeficit": "HIGH",
         "recommendedMunicipalAction": "Pilne zwiększenie liczby miejsc w żłobkach i przedszkolach oraz tworzenie nowych parków kieszonkowych na nowych osiedlach."
+      }
+    },
+    {
+      "districtId": 5,
+      "districtRoman": "V",
+      "districtName": "Dzielnica V Krowodrza",
+      "areaKm2": 5.62,
+      "scores": {
+        "mobilityScore": 92.0,
+        "educationScore": 79.5,
+        "greeneryScore": 84.0,
+        "cultureAndSeniorScore": 88.0,
+        "environmentScore": 64.0
+      },
+      "demographics": {
+        "totalPopulation": 31200,
+        "permanentResidents": 26800,
+        "temporaryResidents": 4400,
+        "foreignersTotal": 2400,
+        "age0to3": 890,
+        "age4to6": 840,
+        "age7to14": 2100,
+        "age15to64": 19170,
+        "age65Plus": 8200,
+        "populationGrowthRate3YrPct": -0.9
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 3,
+        "nurseriesPrivateCount": 5,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 440,
+        "childrenPerCarePlaceRatio": 2.02,
+        "parentClubsCount": 2,
+        "kindergartensCount": 13,
+        "kindergartenPlacesTotal": 1020,
+        "primarySchoolsCount": 8,
+        "primarySchoolStudentsTotal": 2650,
+        "avgStudentsPerClass": 22.0
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 34,
+        "isochroneCoveragePct": 95.5,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 260,
+        "bikeLanesLengthKm": 16.5
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 4,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 74.2,
+        "greenAreaM2PerCapita": 23.8,
+        "schoolSportsFacilitiesCount": 14,
+        "schoolSwimmingPoolsCount": 2
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 4,
+        "culturalCentersCount": 4,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 420,
+        "municipalSubsidyPerCapitaPln": 118.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 860,
+        "forecastedCarePlacesBalance_2028": 10,
+        "forecastedAge4to6_2028": 820,
+        "nurseryInvestmentPotentialB2B": "LOW",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Rozwój programów aktywizacji seniorów (CAS) z uwagi na wysoki udział mieszkańców 65+ (26.3%)."
+      }
+    },
+    {
+      "districtId": 6,
+      "districtRoman": "VI",
+      "districtName": "Dzielnica VI Bronowice",
+      "areaKm2": 9.56,
+      "scores": {
+        "mobilityScore": 79.0,
+        "educationScore": 71.0,
+        "greeneryScore": 76.5,
+        "cultureAndSeniorScore": 73.5,
+        "environmentScore": 77.0
+      },
+      "demographics": {
+        "totalPopulation": 24800,
+        "permanentResidents": 22300,
+        "temporaryResidents": 2500,
+        "foreignersTotal": 1450,
+        "age0to3": 940,
+        "age4to6": 880,
+        "age7to14": 2150,
+        "age15to64": 15430,
+        "age65Plus": 5400,
+        "populationGrowthRate3YrPct": 2.1
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 1,
+        "nurseriesContractedCount": 3,
+        "nurseriesPrivateCount": 5,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 390,
+        "childrenPerCarePlaceRatio": 2.41,
+        "parentClubsCount": 2,
+        "kindergartensCount": 10,
+        "kindergartenPlacesTotal": 940,
+        "primarySchoolsCount": 5,
+        "primarySchoolStudentsTotal": 2100,
+        "avgStudentsPerClass": 23.2
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 29,
+        "isochroneCoveragePct": 86.0,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 140,
+        "bikeLanesLengthKm": 12.8
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 2,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 48.5,
+        "greenAreaM2PerCapita": 19.6,
+        "schoolSportsFacilitiesCount": 9,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 3,
+        "culturalCentersCount": 3,
+        "seniorActivityCentersCount": 2,
+        "annualCulturalEventsCount": 230,
+        "municipalSubsidyPerCapitaPln": 95.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 990,
+        "forecastedCarePlacesBalance_2028": -105,
+        "forecastedAge4to6_2028": 920,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Rozbudowa połączeń rowerowych wzdłuż ul. Armii Krajowej i wsparcie klubów dziecięcych w Bronowicach Małych."
+      }
+    },
+    {
+      "districtId": 7,
+      "districtRoman": "VII",
+      "districtName": "Dzielnica VII Zwierzyniec",
+      "areaKm2": 28.73,
+      "scores": {
+        "mobilityScore": 64.5,
+        "educationScore": 76.0,
+        "greeneryScore": 98.0,
+        "cultureAndSeniorScore": 72.0,
+        "environmentScore": 91.5
+      },
+      "demographics": {
+        "totalPopulation": 21100,
+        "permanentResidents": 19200,
+        "temporaryResidents": 1900,
+        "foreignersTotal": 1350,
+        "age0to3": 760,
+        "age4to6": 740,
+        "age7to14": 1890,
+        "age15to64": 13210,
+        "age65Plus": 4500,
+        "populationGrowthRate3YrPct": 1.4
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 1,
+        "nurseriesContractedCount": 2,
+        "nurseriesPrivateCount": 5,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 360,
+        "childrenPerCarePlaceRatio": 2.11,
+        "parentClubsCount": 1,
+        "kindergartensCount": 9,
+        "kindergartenPlacesTotal": 820,
+        "primarySchoolsCount": 6,
+        "primarySchoolStudentsTotal": 1950,
+        "avgStudentsPerClass": 21.8
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 42,
+        "isochroneCoveragePct": 72.0,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 165,
+        "bikeLanesLengthKm": 21.5
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 4,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 465.0,
+        "greenAreaM2PerCapita": 220.4,
+        "schoolSportsFacilitiesCount": 11,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 2,
+        "culturalCentersCount": 3,
+        "seniorActivityCentersCount": 2,
+        "annualCulturalEventsCount": 260,
+        "municipalSubsidyPerCapitaPln": 108.40
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 790,
+        "forecastedCarePlacesBalance_2028": -35,
+        "forecastedAge4to6_2028": 770,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu komunikacji autobusowej KMK w peryferyjnych osiedlach (Olszanica, Bielany)."
       }
     },
     {
@@ -213,6 +563,706 @@
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "LOW",
         "recommendedMunicipalAction": "Rozwój sieci żłobków w rejonie Ruczaju i Klinów oraz rozbudowa połączeń rowerowych z centrum."
+      }
+    },
+    {
+      "districtId": 9,
+      "districtRoman": "IX",
+      "districtName": "Dzielnica IX Łagiewniki-Borek Fałęcki",
+      "areaKm2": 5.42,
+      "scores": {
+        "mobilityScore": 80.5,
+        "educationScore": 73.0,
+        "greeneryScore": 71.0,
+        "cultureAndSeniorScore": 69.0,
+        "environmentScore": 68.0
+      },
+      "demographics": {
+        "totalPopulation": 15400,
+        "permanentResidents": 14100,
+        "temporaryResidents": 1300,
+        "foreignersTotal": 820,
+        "age0to3": 540,
+        "age4to6": 510,
+        "age7to14": 1240,
+        "age15to64": 9610,
+        "age65Plus": 3500,
+        "populationGrowthRate3YrPct": 0.8
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 1,
+        "nurseriesContractedCount": 2,
+        "nurseriesPrivateCount": 3,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 240,
+        "childrenPerCarePlaceRatio": 2.25,
+        "parentClubsCount": 1,
+        "kindergartensCount": 6,
+        "kindergartenPlacesTotal": 560,
+        "primarySchoolsCount": 4,
+        "primarySchoolStudentsTotal": 1350,
+        "avgStudentsPerClass": 22.4
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 24,
+        "isochroneCoveragePct": 89.0,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 95,
+        "bikeLanesLengthKm": 9.8
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 2,
+        "pocketParksCount": 2,
+        "totalParksAreaHa": 31.0,
+        "greenAreaM2PerCapita": 20.1,
+        "schoolSportsFacilitiesCount": 6,
+        "schoolSwimmingPoolsCount": 0
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 2,
+        "culturalCentersCount": 2,
+        "seniorActivityCentersCount": 2,
+        "annualCulturalEventsCount": 160,
+        "municipalSubsidyPerCapitaPln": 91.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 560,
+        "forecastedCarePlacesBalance_2028": -40,
+        "forecastedAge4to6_2028": 530,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Utworzenie nowego Centrum Aktywności Seniora oraz doposażenie infrastruktury sportowej przy szkołach podstawowych."
+      }
+    },
+    {
+      "districtId": 10,
+      "districtRoman": "X",
+      "districtName": "Dzielnica X Swoszowice",
+      "areaKm2": 25.60,
+      "scores": {
+        "mobilityScore": 56.0,
+        "educationScore": 59.5,
+        "greeneryScore": 81.5,
+        "cultureAndSeniorScore": 61.0,
+        "environmentScore": 87.5
+      },
+      "demographics": {
+        "totalPopulation": 29400,
+        "permanentResidents": 27300,
+        "temporaryResidents": 2100,
+        "foreignersTotal": 1200,
+        "age0to3": 1380,
+        "age4to6": 1290,
+        "age7to14": 3120,
+        "age15to64": 19110,
+        "age65Plus": 4500,
+        "populationGrowthRate3YrPct": 5.8
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 1,
+        "nurseriesContractedCount": 2,
+        "nurseriesPrivateCount": 5,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 380,
+        "childrenPerCarePlaceRatio": 3.63,
+        "parentClubsCount": 2,
+        "kindergartensCount": 10,
+        "kindergartenPlacesTotal": 980,
+        "primarySchoolsCount": 7,
+        "primarySchoolStudentsTotal": 2950,
+        "avgStudentsPerClass": 25.1
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 44,
+        "isochroneCoveragePct": 68.0,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 85,
+        "bikeLanesLengthKm": 11.2
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 2,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 78.0,
+        "greenAreaM2PerCapita": 26.5,
+        "schoolSportsFacilitiesCount": 10,
+        "schoolSwimmingPoolsCount": 0
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 3,
+        "culturalCentersCount": 4,
+        "seniorActivityCentersCount": 2,
+        "annualCulturalEventsCount": 195,
+        "municipalSubsidyPerCapitaPln": 82.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 1540,
+        "forecastedCarePlacesBalance_2028": -390,
+        "forecastedAge4to6_2028": 1420,
+        "nurseryInvestmentPotentialB2B": "HIGH",
+        "seniorInfrastructureDeficit": "LOW",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Wysoki potencjał dla nowych żłobków i przedszkoli na dynamicznie rosnących osiedlach (Kliny, Opatkowice) oraz rozbudowa dowozowych linii KMK."
+      }
+    },
+    {
+      "districtId": 11,
+      "districtRoman": "XI",
+      "districtName": "Dzielnica XI Podgórze Duchackie",
+      "areaKm2": 9.54,
+      "scores": {
+        "mobilityScore": 82.5,
+        "educationScore": 63.0,
+        "greeneryScore": 65.5,
+        "cultureAndSeniorScore": 68.5,
+        "environmentScore": 67.0
+      },
+      "demographics": {
+        "totalPopulation": 54800,
+        "permanentResidents": 49600,
+        "temporaryResidents": 5200,
+        "foreignersTotal": 3100,
+        "age0to3": 2180,
+        "age4to6": 1960,
+        "age7to14": 4520,
+        "age15to64": 34940,
+        "age65Plus": 11200,
+        "populationGrowthRate3YrPct": 2.4
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 3,
+        "nurseriesContractedCount": 4,
+        "nurseriesPrivateCount": 8,
+        "kidsClubsCount": 3,
+        "totalCarePlaces0to3": 710,
+        "childrenPerCarePlaceRatio": 3.07,
+        "parentClubsCount": 2,
+        "kindergartensCount": 16,
+        "kindergartenPlacesTotal": 1680,
+        "primarySchoolsCount": 8,
+        "primarySchoolStudentsTotal": 4450,
+        "avgStudentsPerClass": 24.8
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 41,
+        "isochroneCoveragePct": 89.5,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 180,
+        "bikeLanesLengthKm": 16.4
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 2,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 52.0,
+        "greenAreaM2PerCapita": 9.5,
+        "schoolSportsFacilitiesCount": 14,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 4,
+        "culturalCentersCount": 3,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 280,
+        "municipalSubsidyPerCapitaPln": 84.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 2310,
+        "forecastedCarePlacesBalance_2028": -445,
+        "forecastedAge4to6_2028": 2100,
+        "nurseryInvestmentPotentialB2B": "HIGH",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Nasadzenia i tworzenie parków kieszonkowych na Kurdwanowie i Woli Duchackiej oraz zwiększenie liczby miejsc w żłobkach."
+      }
+    },
+    {
+      "districtId": 12,
+      "districtRoman": "XII",
+      "districtName": "Dzielnica XII Bieżanów-Prokocim",
+      "areaKm2": 18.47,
+      "scores": {
+        "mobilityScore": 77.0,
+        "educationScore": 67.5,
+        "greeneryScore": 73.0,
+        "cultureAndSeniorScore": 69.5,
+        "environmentScore": 72.5
+      },
+      "demographics": {
+        "totalPopulation": 63200,
+        "permanentResidents": 58400,
+        "temporaryResidents": 4800,
+        "foreignersTotal": 2900,
+        "age0to3": 2410,
+        "age4to6": 2250,
+        "age7to14": 5380,
+        "age15to64": 39860,
+        "age65Plus": 13300,
+        "populationGrowthRate3YrPct": 1.6
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 3,
+        "nurseriesContractedCount": 5,
+        "nurseriesPrivateCount": 8,
+        "kidsClubsCount": 3,
+        "totalCarePlaces0to3": 810,
+        "childrenPerCarePlaceRatio": 2.98,
+        "parentClubsCount": 3,
+        "kindergartensCount": 18,
+        "kindergartenPlacesTotal": 1950,
+        "primarySchoolsCount": 9,
+        "primarySchoolStudentsTotal": 5200,
+        "avgStudentsPerClass": 24.4
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 52,
+        "isochroneCoveragePct": 83.0,
+        "parkAndRideCount": 2,
+        "bikeRacksCount": 195,
+        "bikeLanesLengthKm": 19.2
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 4,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 92.5,
+        "greenAreaM2PerCapita": 14.6,
+        "schoolSportsFacilitiesCount": 16,
+        "schoolSwimmingPoolsCount": 2
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 5,
+        "culturalCentersCount": 4,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 310,
+        "municipalSubsidyPerCapitaPln": 87.50
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 2490,
+        "forecastedCarePlacesBalance_2028": -435,
+        "forecastedAge4to6_2028": 2320,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "MEDIUM",
+        "recommendedMunicipalAction": "Rozbudowa oferty CAS dla rosnącej populacji seniorów na os. Prokocim i Bieżanów Nowy oraz rozwój sieci parków lokalnych."
+      }
+    },
+    {
+      "districtId": 13,
+      "districtRoman": "XIII",
+      "districtName": "Dzielnica XIII Podgórze",
+      "areaKm2": 25.67,
+      "scores": {
+        "mobilityScore": 84.0,
+        "educationScore": 61.5,
+        "greeneryScore": 77.5,
+        "cultureAndSeniorScore": 83.0,
+        "environmentScore": 66.0
+      },
+      "demographics": {
+        "totalPopulation": 42600,
+        "permanentResidents": 37400,
+        "temporaryResidents": 5200,
+        "foreignersTotal": 3600,
+        "age0to3": 1980,
+        "age4to6": 1720,
+        "age7to14": 3650,
+        "age15to64": 27850,
+        "age65Plus": 7400,
+        "populationGrowthRate3YrPct": 6.8
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 4,
+        "nurseriesPrivateCount": 8,
+        "kidsClubsCount": 3,
+        "totalCarePlaces0to3": 640,
+        "childrenPerCarePlaceRatio": 3.09,
+        "parentClubsCount": 2,
+        "kindergartensCount": 15,
+        "kindergartenPlacesTotal": 1460,
+        "primarySchoolsCount": 8,
+        "primarySchoolStudentsTotal": 3750,
+        "avgStudentsPerClass": 24.6
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 56,
+        "isochroneCoveragePct": 86.5,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 240,
+        "bikeLanesLengthKm": 24.5
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 4,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 112.0,
+        "greenAreaM2PerCapita": 26.3,
+        "schoolSportsFacilitiesCount": 13,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 4,
+        "culturalCentersCount": 5,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 460,
+        "municipalSubsidyPerCapitaPln": 115.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 2260,
+        "forecastedCarePlacesBalance_2028": -490,
+        "forecastedAge4to6_2028": 1980,
+        "nurseryInvestmentPotentialB2B": "HIGH",
+        "seniorInfrastructureDeficit": "LOW",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Bardzo wysoki potencjał inwestycyjny dla żłobków i szkół w rejonie Płaszowa, Bagrów i Rybitw z uwagi na dynamiczny przyrost ludności (+6.8%)."
+      }
+    },
+    {
+      "districtId": 14,
+      "districtRoman": "XIV",
+      "districtName": "Dzielnica XIV Czyżyny",
+      "areaKm2": 12.26,
+      "scores": {
+        "mobilityScore": 81.5,
+        "educationScore": 58.0,
+        "greeneryScore": 74.0,
+        "cultureAndSeniorScore": 70.5,
+        "environmentScore": 65.0
+      },
+      "demographics": {
+        "totalPopulation": 35800,
+        "permanentResidents": 31200,
+        "temporaryResidents": 4600,
+        "foreignersTotal": 2650,
+        "age0to3": 1760,
+        "age4to6": 1540,
+        "age7to14": 3180,
+        "age15to64": 23420,
+        "age65Plus": 5900,
+        "populationGrowthRate3YrPct": 5.5
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 3,
+        "nurseriesPrivateCount": 6,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 520,
+        "childrenPerCarePlaceRatio": 3.38,
+        "parentClubsCount": 2,
+        "kindergartensCount": 12,
+        "kindergartenPlacesTotal": 1240,
+        "primarySchoolsCount": 6,
+        "primarySchoolStudentsTotal": 3100,
+        "avgStudentsPerClass": 25.4
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 35,
+        "isochroneCoveragePct": 87.0,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 190,
+        "bikeLanesLengthKm": 17.8
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 3,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 66.0,
+        "greenAreaM2PerCapita": 18.4,
+        "schoolSportsFacilitiesCount": 11,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 3,
+        "culturalCentersCount": 3,
+        "seniorActivityCentersCount": 2,
+        "annualCulturalEventsCount": 275,
+        "municipalSubsidyPerCapitaPln": 92.50
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 1960,
+        "forecastedCarePlacesBalance_2028": -460,
+        "forecastedAge4to6_2028": 1740,
+        "nurseryInvestmentPotentialB2B": "HIGH",
+        "seniorInfrastructureDeficit": "LOW",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Rozbudowa bazy żłobkowo-przedszkolnej w rejonie ul. Centralnej i os. Avia w odpowiedzi na silny napływ młodych rodzin."
+      }
+    },
+    {
+      "districtId": 15,
+      "districtRoman": "XV",
+      "districtName": "Dzielnica XV Mistrzejowice",
+      "areaKm2": 5.59,
+      "scores": {
+        "mobilityScore": 83.0,
+        "educationScore": 70.5,
+        "greeneryScore": 72.5,
+        "cultureAndSeniorScore": 74.0,
+        "environmentScore": 71.0
+      },
+      "demographics": {
+        "totalPopulation": 51200,
+        "permanentResidents": 47600,
+        "temporaryResidents": 3600,
+        "foreignersTotal": 2100,
+        "age0to3": 1790,
+        "age4to6": 1680,
+        "age7to14": 4120,
+        "age15to64": 31810,
+        "age65Plus": 11800,
+        "populationGrowthRate3YrPct": 0.6
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 3,
+        "nurseriesContractedCount": 4,
+        "nurseriesPrivateCount": 6,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 690,
+        "childrenPerCarePlaceRatio": 2.59,
+        "parentClubsCount": 2,
+        "kindergartensCount": 16,
+        "kindergartenPlacesTotal": 1640,
+        "primarySchoolsCount": 8,
+        "primarySchoolStudentsTotal": 4100,
+        "avgStudentsPerClass": 23.5
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 32,
+        "isochroneCoveragePct": 91.0,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 160,
+        "bikeLanesLengthKm": 13.5
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 3,
+        "pocketParksCount": 4,
+        "totalParksAreaHa": 62.0,
+        "greenAreaM2PerCapita": 12.1,
+        "schoolSportsFacilitiesCount": 14,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 4,
+        "culturalCentersCount": 3,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 295,
+        "municipalSubsidyPerCapitaPln": 89.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 1860,
+        "forecastedCarePlacesBalance_2028": -240,
+        "forecastedAge4to6_2028": 1730,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "MEDIUM",
+        "recommendedMunicipalAction": "Wykorzystanie nowej linii tramwajowej do Mistrzejowic poprzez dogęszczenie usług lokalnych i parków kieszonkowych."
+      }
+    },
+    {
+      "districtId": 16,
+      "districtRoman": "XVI",
+      "districtName": "Dzielnica XVI Bieńczyce",
+      "areaKm2": 3.70,
+      "scores": {
+        "mobilityScore": 86.0,
+        "educationScore": 77.0,
+        "greeneryScore": 75.5,
+        "cultureAndSeniorScore": 78.5,
+        "environmentScore": 69.0
+      },
+      "demographics": {
+        "totalPopulation": 39600,
+        "permanentResidents": 36900,
+        "temporaryResidents": 2700,
+        "foreignersTotal": 1450,
+        "age0to3": 1120,
+        "age4to6": 1080,
+        "age7to14": 2850,
+        "age15to64": 23550,
+        "age65Plus": 11000,
+        "populationGrowthRate3YrPct": -1.4
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 3,
+        "nurseriesContractedCount": 3,
+        "nurseriesPrivateCount": 4,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 530,
+        "childrenPerCarePlaceRatio": 2.11,
+        "parentClubsCount": 2,
+        "kindergartensCount": 14,
+        "kindergartenPlacesTotal": 1380,
+        "primarySchoolsCount": 7,
+        "primarySchoolStudentsTotal": 3100,
+        "avgStudentsPerClass": 22.1
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 28,
+        "isochroneCoveragePct": 93.5,
+        "parkAndRideCount": 0,
+        "bikeRacksCount": 150,
+        "bikeLanesLengthKm": 11.4
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 2,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 54.0,
+        "greenAreaM2PerCapita": 13.6,
+        "schoolSportsFacilitiesCount": 12,
+        "schoolSwimmingPoolsCount": 1
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 4,
+        "culturalCentersCount": 3,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 270,
+        "municipalSubsidyPerCapitaPln": 94.50
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 1070,
+        "forecastedCarePlacesBalance_2028": -5,
+        "forecastedAge4to6_2028": 1040,
+        "nurseryInvestmentPotentialB2B": "LOW",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "MEDIUM",
+        "recommendedMunicipalAction": "Priorytet dla usług senioralnych i opiekuńczych (ponad 27.7% mieszkańców w wieku 65+) oraz modernizacji istniejących terenów rekreacyjnych."
+      }
+    },
+    {
+      "districtId": 17,
+      "districtRoman": "XVII",
+      "districtName": "Dzielnica XVII Wzgórza Krzesławickie",
+      "areaKm2": 23.82,
+      "scores": {
+        "mobilityScore": 58.5,
+        "educationScore": 69.0,
+        "greeneryScore": 79.0,
+        "cultureAndSeniorScore": 63.5,
+        "environmentScore": 84.0
+      },
+      "demographics": {
+        "totalPopulation": 20400,
+        "permanentResidents": 19100,
+        "temporaryResidents": 1300,
+        "foreignersTotal": 750,
+        "age0to3": 740,
+        "age4to6": 710,
+        "age7to14": 1820,
+        "age15to64": 12730,
+        "age65Plus": 4400,
+        "populationGrowthRate3YrPct": 1.2
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 1,
+        "nurseriesContractedCount": 2,
+        "nurseriesPrivateCount": 3,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 290,
+        "childrenPerCarePlaceRatio": 2.55,
+        "parentClubsCount": 1,
+        "kindergartensCount": 8,
+        "kindergartenPlacesTotal": 740,
+        "primarySchoolsCount": 5,
+        "primarySchoolStudentsTotal": 1780,
+        "avgStudentsPerClass": 21.9
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 34,
+        "isochroneCoveragePct": 71.0,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 75,
+        "bikeLanesLengthKm": 10.6
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 2,
+        "pocketParksCount": 3,
+        "totalParksAreaHa": 58.0,
+        "greenAreaM2PerCapita": 28.4,
+        "schoolSportsFacilitiesCount": 8,
+        "schoolSwimmingPoolsCount": 0
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 2,
+        "culturalCentersCount": 3,
+        "seniorActivityCentersCount": 2,
+        "annualCulturalEventsCount": 175,
+        "municipalSubsidyPerCapitaPln": 89.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 770,
+        "forecastedCarePlacesBalance_2028": -95,
+        "forecastedAge4to6_2028": 730,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Poprawa dostępności transportowej KMK dla peryferyjnych sołectw oraz budowa ścieżek rowerowych łączących dzielnicę z centrum Nowej Huty."
+      }
+    },
+    {
+      "districtId": 18,
+      "districtRoman": "XVIII",
+      "districtName": "Dzielnica XVIII Nowa Huta",
+      "areaKm2": 65.41,
+      "scores": {
+        "mobilityScore": 72.0,
+        "educationScore": 78.5,
+        "greeneryScore": 86.0,
+        "cultureAndSeniorScore": 85.0,
+        "environmentScore": 73.5
+      },
+      "demographics": {
+        "totalPopulation": 49500,
+        "permanentResidents": 46200,
+        "temporaryResidents": 3300,
+        "foreignersTotal": 1950,
+        "age0to3": 1340,
+        "age4to6": 1310,
+        "age7to14": 3650,
+        "age15to64": 29100,
+        "age65Plus": 14100,
+        "populationGrowthRate3YrPct": -1.6
+      },
+      "educationAndCare": {
+        "nurseriesPublicCount": 4,
+        "nurseriesContractedCount": 4,
+        "nurseriesPrivateCount": 5,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 680,
+        "childrenPerCarePlaceRatio": 1.97,
+        "parentClubsCount": 3,
+        "kindergartensCount": 19,
+        "kindergartenPlacesTotal": 1750,
+        "primarySchoolsCount": 11,
+        "primarySchoolStudentsTotal": 3950,
+        "avgStudentsPerClass": 21.2
+      },
+      "mobilityAndTransport": {
+        "kmkStopsCount": 78,
+        "isochroneCoveragePct": 76.5,
+        "parkAndRideCount": 1,
+        "bikeRacksCount": 230,
+        "bikeLanesLengthKm": 26.8
+      },
+      "greeneryAndSport": {
+        "cityParksCount": 5,
+        "pocketParksCount": 6,
+        "totalParksAreaHa": 168.0,
+        "greenAreaM2PerCapita": 33.9,
+        "schoolSportsFacilitiesCount": 19,
+        "schoolSwimmingPoolsCount": 2
+      },
+      "cultureAndSociety": {
+        "libraryBranchesCount": 6,
+        "culturalCentersCount": 6,
+        "seniorActivityCentersCount": 4,
+        "annualCulturalEventsCount": 520,
+        "municipalSubsidyPerCapitaPln": 124.00
+      },
+      "forecastsAndB2B": {
+        "forecastedAge0to3_2028": 1290,
+        "forecastedCarePlacesBalance_2028": 35,
+        "forecastedAge4to6_2028": 1260,
+        "nurseryInvestmentPotentialB2B": "LOW",
+        "seniorInfrastructureDeficit": "MEDIUM",
+        "greenSpaceDeficit": "LOW",
+        "recommendedMunicipalAction": "Rozwój Centrów Aktywności Seniora (28.5% mieszkańców w wieku 65+) oraz poprawa częstotliwości komunikacji KMK na terenach zabranicznych."
       }
     }
   ]

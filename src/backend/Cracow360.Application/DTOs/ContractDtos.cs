@@ -36,6 +36,23 @@ public record DistrictDetailsDto(
     DistrictForecastsAndB2BDto ForecastsAndB2B
 );
 
+public record DistrictComparisonDto(
+    DistrictDetailsDto FirstDistrict,
+    double FirstWeightedIndex,
+    DistrictDetailsDto SecondDistrict,
+    double SecondWeightedIndex,
+    DistrictScoreDeltasDto ScoreDeltas
+);
+
+public record DistrictScoreDeltasDto(
+    double WeightedIndexDelta,
+    double MobilityScoreDelta,
+    double EducationScoreDelta,
+    double GreeneryScoreDelta,
+    double CultureAndSeniorScoreDelta,
+    double EnvironmentScoreDelta
+);
+
 public record DistrictScoresDto(
     double MobilityScore,
     double EducationScore,
