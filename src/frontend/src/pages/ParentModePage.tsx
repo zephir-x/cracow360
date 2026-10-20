@@ -34,7 +34,7 @@ export function ParentModePage({ districts, onBackToResidentMode }: ParentModePa
               className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-blue-900 hover:bg-sky-50 shadow-lg transition cursor-pointer"
             >
               <ArrowLeft className="w-4 h-4 text-blue-600" />
-              Wróć do Modułu 1 (Mapa i Porównywarka 18 Dzielnic)
+              Wróć do Mapy i Porównywarki 18 Dzielnic
             </button>
           </div>
         </div>

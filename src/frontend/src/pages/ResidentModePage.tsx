@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import {useState} from "react";
 import {
   ArrowDownRight,
   BarChart3,
@@ -8,7 +8,6 @@ import {
   GitCompareArrows,
   HelpCircle,
   MapPin,
-  Sparkles,
   Trophy,
   Users,
 } from 'lucide-react';
@@ -122,7 +121,7 @@ export function ResidentModePage({
         <div className="relative z-10 px-6 sm:px-10 pt-8 sm:pt-10 pb-8 space-y-8">
           <div className="max-w-2xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
-              <Sparkles className="w-3.5 h-3.5 text-sky-300" />
+              <Compass className="w-4 h-4 text-sky-300" />
               Tryb Mieszkańca • Indeks Jakości Życia w 18 Dzielnicach
             </div>
 

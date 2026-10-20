@@ -33,7 +33,7 @@ interface SliderConfig {
 const SLIDER_CONFIGS: SliderConfig[] = [
   {
     key: 'mobility',
-    label: 'Mobilność i Transport KMK',
+    label: 'Mobilność KMK',
     subtitle: 'Przystanki tramwajowe/autobusowe, izochrony 500m, ścieżki rowerowe i P&R',
     accentColor: 'accent-blue-600',
     iconBg: 'bg-blue-50 text-blue-600 border-blue-200',
@@ -41,7 +41,7 @@ const SLIDER_CONFIGS: SliderConfig[] = [
   },
   {
     key: 'education',
-    label: 'Edukacja i Opieka (0–14 lat)',
+    label: 'Edukacja i Opieka',
     subtitle: 'Dostępność żłobków samorządowych/prywatnych, przedszkoli i szkół podstawowych',
     accentColor: 'accent-indigo-600',
     iconBg: 'bg-indigo-50 text-indigo-600 border-indigo-200',
@@ -49,7 +49,7 @@ const SLIDER_CONFIGS: SliderConfig[] = [
   },
   {
     key: 'greenery',
-    label: 'Zieleń Miejska i Sport',
+    label: 'Zieleń i Sport',
     subtitle: 'Parki miejskie, parki kieszonkowe, m² zieleni na mieszkańca, boiska i baseny',
     accentColor: 'accent-emerald-600',
     iconBg: 'bg-emerald-50 text-emerald-600 border-emerald-200',
@@ -57,7 +57,7 @@ const SLIDER_CONFIGS: SliderConfig[] = [
   },
   {
     key: 'culture',
-    label: 'Kultura, Biblioteki i Seniorzy (CAS)',
+    label: 'Kultura i Seniorzy',
     subtitle: 'Filie Biblioteki Kraków, domy kultury, Centra Aktywności Seniora i wydarzenia',
     accentColor: 'accent-sky-600',
     iconBg: 'bg-sky-50 text-sky-600 border-sky-200',
@@ -65,7 +65,7 @@ const SLIDER_CONFIGS: SliderConfig[] = [
   },
   {
     key: 'environment',
-    label: 'Środowisko, Powietrze i Spokój',
+    label: 'Środowisko i Spokój',
     subtitle: 'Jakość powietrza (GIOŚ), niska gęstość zaludnienia i komfort akustyczny',
     accentColor: 'accent-teal-600',
     iconBg: 'bg-teal-50 text-teal-600 border-teal-200',

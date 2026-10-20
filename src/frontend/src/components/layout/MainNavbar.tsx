@@ -1,5 +1,5 @@
-import { Baby, BookOpen, Building2, Compass, MapPin } from 'lucide-react';
-import * as React from "react";
+import { Baby, BookOpen, Building2, Compass } from 'lucide-react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 
 export type AppTabId = 'resident' | 'parent' | 'investor' | 'methodology';
 
@@ -38,17 +38,52 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
+  const navRef = useRef<HTMLElement | null>(null);
+  const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+
+  const [indicatorStyle, setIndicatorStyle] = useState<{
+    left: number;
+    top: number;
+    width: number;
+    height: number;
+    opacity: number;
+  }>({ left: 0, top: 0, width: 0, height: 0, opacity: 0 });
+
+  useLayoutEffect(() => {
+    const updateIndicator = () => {
+      const activeEl = tabRefs.current[activeTab];
+      const navEl = navRef.current;
+      if (activeEl && navEl) {
+        const navRect = navEl.getBoundingClientRect();
+        const tabRect = activeEl.getBoundingClientRect();
+        setIndicatorStyle({
+          left: tabRect.left - navRect.left,
+          top: tabRect.top - navRect.top,
+          width: tabRect.width,
+          height: tabRect.height,
+          opacity: 1,
+        });
+      }
+    };
+
+    updateIndicator();
+    window.addEventListener('resize', updateIndicator);
+    return () => window.removeEventListener('resize', updateIndicator);
+  }, [activeTab]);
+
   return (
     <header className="sticky top-0 z-1200 bg-white/85 backdrop-blur-xl border-b border-blue-100/90 shadow-xs">
       <div className="max-w-360 mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
-        {/* Left: Kraków360 Brand Crest */}
+        {/* Left: Kraków360 Brand Crest with Official Logo */}
         <button
           onClick={() => onSelectTab('resident')}
           className="flex items-center gap-3 text-left group cursor-pointer"
         >
-          <div className="h-10 w-10 rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-md shadow-blue-600/20 group-hover:scale-105 transition-transform">
-            <MapPin className="w-5 h-5" />
-          </div>
+          <img
+            src="/logo.png"
+            alt="Logo Kraków360"
+            className="h-10 w-10 object-contain drop-shadow-sm group-hover:scale-105 transition-transform shrink-0"
+          />
           <div>
             <div className="flex items-center gap-2">
               <span className="text-lg font-extrabold tracking-tight text-slate-900">
@@ -64,22 +99,36 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
           </div>
         </button>
 
-        {/* Center/Right: Mode Navigation Tabs */}
-        <nav className="flex flex-wrap items-center gap-1.5 bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200/80">
+        {/* Center/Right: Mode Navigation Tabs with smooth sliding pill */}
+        <nav ref={navRef} className="relative flex flex-wrap items-center gap-1 py-1">
+          {/* Sliding Blue Pill Indicator */}
+          <div
+            className="absolute top-0 left-0 rounded-xl bg-blue-600 shadow-md shadow-blue-600/25 transition-all duration-300 ease-out pointer-events-none z-0"
+            style={{
+              transform: `translate3d(${indicatorStyle.left}px, ${indicatorStyle.top}px, 0)`,
+              width: `${indicatorStyle.width}px`,
+              height: `${indicatorStyle.height}px`,
+              opacity: indicatorStyle.opacity,
+            }}
+          />
+
           {NAV_ITEMS.map((item) => {
             const isActive = activeTab === item.id;
             return (
               <button
                 key={item.id}
+                ref={(el) => {
+                  tabRefs.current[item.id] = el;
+                }}
                 onClick={() => onSelectTab(item.id)}
-                className={`inline-flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                className={`relative z-10 inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-semibold leading-none transition-colors duration-200 cursor-pointer ${
                   isActive
-                    ? 'bg-blue-600 text-white shadow-md shadow-blue-600/25'
-                    : 'text-slate-600 hover:text-blue-700 hover:bg-white/80'
+                    ? 'text-white'
+                    : 'text-slate-600 hover:text-blue-600'
                 }`}
               >
-                {item.icon}
-                <span>{item.label}</span>
+                <span className="shrink-0 flex items-center justify-center">{item.icon}</span>
+                <span className="leading-none pt-0.5">{item.label}</span>
               </button>
             );
           })}
