@@ -247,19 +247,19 @@ export function ResidentModePage({
               <div className="font-extrabold text-blue-900 mb-1">
                 1. Normalizacja Min-Max (0–100 pkt)
               </div>
-              Twarde dane miejskie (liczba przystanków KMK, m² parków, miejsca w żłobkach, filie bibliotek, gęstość zaludnienia) są przeliczane w Pythonie na obiektywną skalę 0–100 pkt w 5 kategoriach.
+              Twarde dane miejskie (liczba przystanków KMK, m² parków, miejsca w żłobkach, filie bibliotek, gęstość zaludnienia) są przeliczane na obiektywną skalę 0–100 pkt w 5 kategoriach.
             </div>
             <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
               <div className="font-extrabold text-sky-900 mb-1">
                 2. Twoje Wagi i Presety (0–10 pkt)
               </div>
-              Ustawiasz wagi suwakami po lewej stronie lub wybierasz gotowy profil (*Student*, *Singiel*, *Rodzina 2+1*, *Aktywny Senior*). Aplikacja mnoży 5 ocen każdej dzielnicy przez Twoje wagi w czasie 0 ms.
+              Ustawiasz wagi suwakami po lewej stronie lub wybierasz gotowy profil (*Rodzina z Dziećmi*, *Student / Młody*, *Aktywny Senior*, *Inwestor / Biznes B2B*). Aplikacja mnoży 5 ocen każdej dzielnicy przez Twoje wagi w czasie 0 ms.
             </div>
             <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
               <div className="font-extrabold text-indigo-900 mb-1">
                 3. Porównanie Side-by-Side (Wykres Radarowy)
               </div>
-              Kliknij dowolne 2 dzielnice na mapie lub liście rankingowej, aby nałożyć ich profile na 5-osiowy wykres radarowy i porównać 12 twardych wskaźników w tabeli poniżej.
+              Kliknij dowolne 2 dzielnice na mapie lub liście rankingowej, aby nałożyć ich profile na 5-osiowy wykres radarowy i porównać twarde wskaźniki w tabeli poniżej.
             </div>
           </div>
         </section>

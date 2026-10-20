@@ -128,7 +128,7 @@ export function DistrictComparisonView({
         fullMark: 100,
       },
       {
-        category: 'Kultura i Seniorzy',
+        category: 'Kultura i Społeczność',
         first: firstDetails.scores.cultureAndSeniorScore,
         second: secondDetails.scores.cultureAndSeniorScore,
         fullMark: 100,
@@ -183,12 +183,12 @@ export function DistrictComparisonView({
       },
       {
         category: 'Mobilność',
-        label: 'Długość ścieżek rowerowych (DDR)',
-        unit: 'km',
-        firstValue: firstDetails.mobilityAndTransport.bikeLanesLengthKm,
-        secondValue: secondDetails.mobilityAndTransport.bikeLanesLengthKm,
+        label: 'Stojaki rowerowe ZTP (pojemność)',
+        unit: 'stojaków',
+        firstValue: firstDetails.mobilityAndTransport.bikeRacksCount,
+        secondValue: secondDetails.mobilityAndTransport.bikeRacksCount,
         higherIsBetter: true,
-        format: (v) => `${v.toFixed(1)} km`,
+        format: (v) => v.toLocaleString('pl-PL'),
       },
       {
         category: 'Zieleń i Sport',
@@ -207,6 +207,14 @@ export function DistrictComparisonView({
         secondValue: secondDetails.greeneryAndSport.totalParksAreaHa,
         higherIsBetter: true,
         format: (v) => `${v.toFixed(1)} ha`,
+      },
+      {
+        category: 'Zieleń i Sport',
+        label: 'Przyszkolne pływalnie sportowo-rekreacyjne',
+        unit: 'basenów',
+        firstValue: firstDetails.greeneryAndSport.schoolSwimmingPoolsCount,
+        secondValue: secondDetails.greeneryAndSport.schoolSwimmingPoolsCount,
+        higherIsBetter: true,
       },
       {
         category: 'Edukacja i Opieka',
@@ -235,25 +243,19 @@ export function DistrictComparisonView({
         format: (v) => v.toFixed(1),
       },
       {
-        category: 'Kultura i Seniorzy',
-        label: 'Filie Biblioteki Kraków i Domy Kultury',
-        unit: 'placówek',
-        firstValue:
-          firstDetails.cultureAndSociety.libraryBranchesCount +
-          firstDetails.cultureAndSociety.culturalCentersCount,
-        secondValue:
-          secondDetails.cultureAndSociety.libraryBranchesCount +
-          secondDetails.cultureAndSociety.culturalCentersCount,
+        category: 'Kultura i Społeczność',
+        label: 'Filie Biblioteki Kraków w dzielnicy',
+        unit: 'filii',
+        firstValue: firstDetails.cultureAndSociety.libraryBranchesCount,
+        secondValue: secondDetails.cultureAndSociety.libraryBranchesCount,
         higherIsBetter: true,
       },
       {
-        category: 'Kultura i Seniorzy',
-        label: 'Centra Aktywności Seniora (CAS)',
+        category: 'Kultura i Społeczność',
+        label: 'Miejskie ośrodki i domy kultury',
         unit: 'placówek',
-        firstValue:
-          firstDetails.cultureAndSociety.seniorActivityCentersCount,
-        secondValue:
-          secondDetails.cultureAndSociety.seniorActivityCentersCount,
+        firstValue: firstDetails.cultureAndSociety.culturalCentersCount,
+        secondValue: secondDetails.cultureAndSociety.culturalCentersCount,
         higherIsBetter: true,
       },
     ];

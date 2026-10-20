@@ -1,90 +1,140 @@
+import React from 'react';
 import {
-  Briefcase,
+  SlidersHorizontal,
+  RotateCcw,
   Bus,
   GraduationCap,
-  HeartHandshake,
-  RotateCcw,
-  SlidersHorizontal,
-  Sparkles,
   Trees,
+  Landmark,
+  ShieldCheck,
+  Briefcase,
   Users,
-  Wind,
+  Baby,
+  Smile,
+  Sparkles,
 } from 'lucide-react';
 import type { QualityWeights, ResidentPreset } from '../../../types/contracts';
-import { RESIDENT_PRESETS } from '../../../utils/qualityIndexCalculator';
-import * as React from 'react';
 
 export interface WeightsConfiguratorPanelProps {
   weights: QualityWeights;
   activePresetId: string | null;
-  onChangeWeights: (newWeights: QualityWeights, presetId?: string | null) => void;
+  onChangeWeights: (newWeights: QualityWeights, presetId: string | null) => void;
   onResetWeights: () => void;
 }
 
-interface SliderConfig {
+const RESIDENT_PRESETS: ResidentPreset[] = [
+  {
+    id: 'rodzina_z_dziecmi',
+    label: 'Rodzina z Dziećmi',
+    description: 'Priorytet: żłobki, szkoły podstawowe, tereny zielone i bezpieczeństwo',
+    weights: {
+      education: 10,
+      greenery: 9,
+      environment: 8,
+      mobility: 5,
+      culture: 4,
+    },
+  },
+  {
+    id: 'student_mlody_profesjonalista',
+    label: 'Student / Młody',
+    description: 'Priorytet: szybka komunikacja miejska (KMK), kultura, rozrywka i kluby',
+    weights: {
+      mobility: 10,
+      culture: 9,
+      environment: 4,
+      greenery: 6,
+      education: 2,
+    },
+  },
+  {
+    id: 'senior',
+    label: 'Aktywny Senior',
+    description: 'Priorytet: Centra Seniora (CAS), parki, biblioteki, spokój i czyste powietrze',
+    weights: {
+      culture: 10,
+      environment: 9,
+      greenery: 8,
+      mobility: 6,
+      education: 1,
+    },
+  },
+  {
+    id: 'przedsiebiorca_b2b',
+    label: 'Inwestor / Biznes B2B',
+    description: 'Priorytet: nasycenie infrastruktury opiekuńczej, węzły przesiadkowe',
+    weights: {
+      education: 8,
+      mobility: 9,
+      greenery: 4,
+      culture: 4,
+      environment: 5,
+    },
+  },
+];
+
+const SLIDER_CONFIGS: {
   key: keyof QualityWeights;
   label: string;
-  subtitle: string;
-  accentColor: string;
+  description: string;
   iconBg: string;
+  accentColor: string;
   icon: React.ReactNode;
-}
-
-const SLIDER_CONFIGS: SliderConfig[] = [
+}[] = [
   {
     key: 'mobility',
-    label: 'Mobilność KMK',
-    subtitle: 'Przystanki tramwajowe/autobusowe, izochrony 500m, ścieżki rowerowe i P&R',
+    label: 'Mobilność i Komunikacja',
+    description: 'KMK, izochrony 15 min, drogi rowerowe',
+    iconBg: 'bg-blue-50 border-blue-200 text-blue-600',
     accentColor: 'accent-blue-600',
-    iconBg: 'bg-blue-50 text-blue-600 border-blue-200',
-    icon: <Bus className="w-4 h-4" />,
+    icon: <Bus className="w-3.5 h-3.5" />,
   },
   {
     key: 'education',
     label: 'Edukacja i Opieka',
-    subtitle: 'Dostępność żłobków samorządowych/prywatnych, przedszkoli i szkół podstawowych',
-    accentColor: 'accent-indigo-600',
-    iconBg: 'bg-indigo-50 text-indigo-600 border-indigo-200',
-    icon: <GraduationCap className="w-4 h-4" />,
+    description: 'Żłobki, przedszkola, małe klasy szkolne',
+    iconBg: 'bg-emerald-50 border-emerald-200 text-emerald-600',
+    accentColor: 'accent-emerald-600',
+    icon: <GraduationCap className="w-3.5 h-3.5" />,
   },
   {
     key: 'greenery',
-    label: 'Zieleń i Sport',
-    subtitle: 'Parki miejskie, parki kieszonkowe, m² zieleni na mieszkańca, boiska i baseny',
-    accentColor: 'accent-emerald-600',
-    iconBg: 'bg-emerald-50 text-emerald-600 border-emerald-200',
-    icon: <Trees className="w-4 h-4" />,
+    label: 'Zieleń i Rekreacja',
+    description: 'Parki miejskie i kieszonkowe, obiekty sportowe',
+    iconBg: 'bg-lime-50 border-lime-200 text-lime-600',
+    accentColor: 'accent-lime-600',
+    icon: <Trees className="w-3.5 h-3.5" />,
   },
   {
     key: 'culture',
-    label: 'Kultura i Seniorzy',
-    subtitle: 'Filie Biblioteki Kraków, domy kultury, Centra Aktywności Seniora i wydarzenia',
-    accentColor: 'accent-sky-600',
-    iconBg: 'bg-sky-50 text-sky-600 border-sky-200',
-    icon: <HeartHandshake className="w-4 h-4" />,
+    label: 'Kultura i Społeczność',
+    description: 'Biblioteki, centra kultury, wydarzenia, kluby',
+    iconBg: 'bg-amber-50 border-amber-200 text-amber-600',
+    accentColor: 'accent-amber-600',
+    icon: <Landmark className="w-3.5 h-3.5" />,
   },
   {
     key: 'environment',
     label: 'Środowisko i Spokój',
-    subtitle: 'Jakość powietrza (GIOŚ), niska gęstość zaludnienia i komfort akustyczny',
+    description: 'Czyste powietrze, brak hałasu tranzytowego',
+    iconBg: 'bg-teal-50 border-teal-200 text-teal-600',
     accentColor: 'accent-teal-600',
-    iconBg: 'bg-teal-50 text-teal-600 border-teal-200',
-    icon: <Wind className="w-4 h-4" />,
+    icon: <ShieldCheck className="w-3.5 h-3.5" />,
   },
 ];
 
 function getPresetIcon(presetId: string) {
   switch (presetId) {
-    case 'student':
-      return <GraduationCap className="w-4 h-4 text-blue-600 shrink-0" />;
-    case 'single_pro':
-      return <Briefcase className="w-4 h-4 text-sky-600 shrink-0" />;
-    case 'family_2_1':
-      return <Users className="w-4 h-4 text-indigo-600 shrink-0" />;
-    case 'active_senior':
-      return <HeartHandshake className="w-4 h-4 text-emerald-600 shrink-0" />;
+    case 'rodzina_z_dziecmi':
+      return <Baby className="w-3.5 h-3.5 text-blue-600" />;
+    case 'student_mlody_profesjonalista':
+      return <Users className="w-3.5 h-3.5 text-blue-600" />;
+    case 'senior':
+      return <Smile className="w-3.5 h-3.5 text-blue-600" />;
+    case 'przedsiebiorca_b2b':
+      return <Briefcase className="w-3.5 h-3.5 text-blue-600" />;
     default:
-      return <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />;
+      return <Sparkles className="w-3.5 h-3.5 text-blue-600" />;
   }
 }
 
@@ -160,7 +210,7 @@ export function WeightsConfiguratorPanel({
                 <button
                   key={preset.id}
                   onClick={() => handleSelectPreset(preset)}
-                  className={`p-2.5 rounded-2xl border transition-all cursor-pointer flex items-center justify-center gap-2 text-center ${
+                  className={`p-2.5 rounded-2xl border transition-all cursor-pointer flex items-center gap-2.5 text-left ${
                     isActive
                       ? 'bg-linear-to-br from-blue-600 to-sky-600 border-blue-600 text-white shadow-md shadow-blue-600/20'
                       : 'bg-slate-50/80 border-slate-200/80 text-slate-700 hover:bg-blue-50/60 hover:border-blue-300'
@@ -173,7 +223,7 @@ export function WeightsConfiguratorPanel({
                   >
                     {isActive ? <Sparkles className="w-3.5 h-3.5 text-white" /> : getPresetIcon(preset.id)}
                   </div>
-                  <span className="text-xs font-bold leading-tight text-center">
+                  <span className="flex-1 text-xs font-bold leading-tight text-center">
                     {preset.label}
                   </span>
                 </button>
@@ -193,30 +243,35 @@ export function WeightsConfiguratorPanel({
               >
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
-                    <span className={`p-1.5 rounded-xl border ${slider.iconBg} shrink-0`}>
+                    <div
+                      className={`w-6 h-6 rounded-lg flex items-center justify-center border shrink-0 ${slider.iconBg}`}
+                    >
                       {slider.icon}
+                    </div>
+                    <span className="text-xs font-bold text-slate-800 truncate">
+                      {slider.label}
                     </span>
-                    <span className="text-xs font-bold text-slate-800 truncate">{slider.label}</span>
                   </div>
-                  <span className="text-xs font-extrabold px-2.5 py-0.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 min-w-13 text-center shrink-0">
+                  <span className="px-2 py-0.5 rounded-lg bg-white border border-slate-200 text-xs font-extrabold text-blue-700 tabular-nums shrink-0">
                     {currentValue} / 10
                   </span>
                 </div>
 
-                <p className="text-[11px] text-slate-500 leading-snug">{slider.subtitle}</p>
-
-                <div className="flex items-center gap-3 pt-1">
-                  <span className="text-[10px] text-slate-400 font-semibold w-4">0</span>
+                <div className="space-y-1">
                   <input
                     type="range"
-                    min={0}
-                    max={10}
-                    step={1}
+                    min="0"
+                    max="10"
+                    step="1"
                     value={currentValue}
-                    onChange={(e) => handleSliderChange(slider.key, Number(e.target.value))}
-                    className={`w-full h-2 bg-blue-100 rounded-lg cursor-pointer ${slider.accentColor}`}
+                    onChange={(e) =>
+                      handleSliderChange(slider.key, Number(e.target.value))
+                    }
+                    className={`w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer ${slider.accentColor}`}
                   />
-                  <span className="text-[10px] text-slate-400 font-semibold w-4 text-right">10</span>
+                  <p className="text-[11px] text-slate-400 font-medium px-0.5 text-center truncate">
+                    {slider.description}
+                  </p>
                 </div>
               </div>
             );

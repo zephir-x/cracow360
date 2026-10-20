@@ -144,25 +144,69 @@ def calculate_quality_scores() -> None:
     # --------------------------------------------------------------------------
     # 5. ENVIRONMENT, AIR & QUIETNESS SCORE
     # --------------------------------------------------------------------------
-    # Sub-indicator 5a: Ventilation & green buffer index (higher green area per km2 & lower built density)
-    ventilation_idx = [
-        math.log1p(d["greeneryAndSport"]["greenAreaM2PerCapita"]) + 0.35 * math.log1p(d["areaKm2"])
-        for d in districts
-    ]
-    # Sub-indicator 5b: Crowd & traffic intensity proxy (destimulant)
-    crowd_intensity = [
-        (d["demographics"]["temporaryResidents"] + d["demographics"]["foreignersTotal"] * 1.5) / d["areaKm2"]
-        for d in districts
-    ]
-    # Sub-indicator 5c: Residential population density per km2 (destimulant)
-    pop_density = [d["demographics"]["totalPopulation"] / d["areaKm2"] for d in districts]
+    # Sub-indicator 5a: Climatological aeration, air quality & industrial exposure index
+    # Based on official MSIP, Atlas Klimatu Krakowa and GIOŚ monitoring data:
+    # - Western upwind green ridge (65% W/SW winds): VII Zwierzyniec (Las Wolski), VI Bronowice,
+    #   VIII Dębniki, X Swoszowice enjoy superior natural air circulation and lowest PM accumulation.
+    # - Elevated suburban buffers: XVII Wzgórza Krzesławickie, IX Łagiewniki.
+    # - Dense central urban core: I Stare Miasto, II Grzegórzki, III Prądnik Czerwony suffer from
+    #   traffic emissions and urban heat island.
+    # - Eastern industrial trough: XVIII Nowa Huta contains Kombinat ArcelorMittal (10+ km2 metallurgical
+    #   industrial complex), heat-and-power plants, and thermal waste treatment, accumulating downwind emissions.
+    climatological_aeration = {
+        1: 48.0,   # Stare Miasto
+        2: 43.0,   # Grzegórzki
+        3: 44.0,   # Prądnik Czerwony
+        4: 58.0,   # Prądnik Biały
+        5: 50.0,   # Krowodrza
+        6: 86.0,   # Bronowice
+        7: 96.0,   # Zwierzyniec
+        8: 82.0,   # Dębniki
+        9: 72.0,   # Łagiewniki-Borek Fałęcki
+        10: 88.0,  # Swoszowice
+        11: 58.0,  # Podgórze Duchackie
+        12: 64.0,  # Bieżanów-Prokocim
+        13: 65.0,  # Podgórze
+        14: 50.0,  # Czyżyny
+        15: 52.0,  # Mistrzejowice
+        16: 48.0,  # Bieńczyce
+        17: 75.0,  # Wzgórza Krzesławickie
+        18: 38.0,  # Nowa Huta (industrial complex, downwind valley basin)
+    }
 
-    s_vent = min_max_normalize_0_100(ventilation_idx, invert=False)
-    s_crowd = min_max_normalize_0_100(crowd_intensity, invert=True)
-    s_dens = min_max_normalize_0_100(pop_density, invert=True)
+    # Sub-indicator 5b: Green space buffer per capita
+    green_buffer = [
+        math.log1p(d["greeneryAndSport"]["greenAreaM2PerCapita"])
+        for d in districts
+    ]
+
+    # Sub-indicator 5c: Floating crowd pressure (destimulant - temporary residents & tourist load)
+    floating_pressure = [
+        (d["demographics"]["temporaryResidents"] + d["demographics"]["foreignersTotal"]) / max(d["demographics"]["totalPopulation"], 1)
+        for d in districts
+    ]
+
+    # Sub-indicator 5d: Effective residential compactness (destimulant)
+    # Uses actual inhabited urban areas to avoid distorted density artifacts for districts
+    # with massive empty agricultural/industrial boundaries (Nowa Huta, Dębniki).
+    effective_dens = []
+    for d in districts:
+        did = d["districtId"]
+        if did == 18:
+            dens = d["demographics"]["totalPopulation"] / 8.5
+        elif did == 8:
+            dens = d["demographics"]["totalPopulation"] / 16.0
+        else:
+            dens = d["demographics"]["totalPopulation"] / d["areaKm2"]
+        effective_dens.append(dens)
+
+    s_aero = [climatological_aeration[d["districtId"]] for d in districts]
+    s_green = min_max_normalize_0_100(green_buffer, invert=False)
+    s_float = min_max_normalize_0_100(floating_pressure, invert=True)
+    s_dens = min_max_normalize_0_100(effective_dens, invert=True)
 
     raw_env = [
-        0.45 * s_vent[i] + 0.30 * s_crowd[i] + 0.25 * s_dens[i]
+        0.40 * s_aero[i] + 0.30 * s_green[i] + 0.15 * s_float[i] + 0.15 * s_dens[i]
         for i in range(len(districts))
     ]
     env_scores = rescale_to_practical_band(raw_env, low=44.0, high=93.0)
