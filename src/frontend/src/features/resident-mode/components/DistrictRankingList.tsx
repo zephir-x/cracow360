@@ -1,4 +1,4 @@
-import { Trophy, Users } from 'lucide-react';
+import { Maximize2, Trophy, Users } from 'lucide-react';
 import type { DistrictSummaryDto } from '../../../types/contracts';
 import { getChoroplethColor } from './KrakowChoroplethMap';
 
@@ -19,18 +19,18 @@ export function DistrictRankingList({
     <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-5 shadow-xl shadow-blue-900/5 flex flex-col h-162.5">
       {/* Header */}
       <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-3.5 shrink-0">
-        <div className="flex items-center gap-2.5">
-          <div className="w-9 h-9 rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-sm shadow-blue-600/20">
+        <div className="flex items-center gap-2.5 min-w-0">
+          <div className="w-9 h-9 rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-sm shadow-blue-600/20 shrink-0">
             <Trophy className="w-4 h-4" />
           </div>
-          <div>
-            <h3 className="text-sm font-extrabold text-slate-900">Ranking 18 Dzielnic</h3>
-            <p className="text-[11px] text-slate-500">
-              Kliknij dzielnicę, aby porównać (#1 lub #2)
+          <div className="min-w-0">
+            <h3 className="text-sm font-extrabold text-slate-900 whitespace-nowrap">Ranking 18 Dzielnic</h3>
+            <p className="text-[11px] text-slate-500 whitespace-nowrap">
+              Kliknij dzielnicę, aby porównać
             </p>
           </div>
         </div>
-        <span className="text-[11px] font-bold px-2.5 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
+        <span className="text-[11px] font-bold px-2.5 sm:px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 shrink-0 whitespace-nowrap">
           {districts.length} dzielnic
         </span>
       </div>
@@ -88,13 +88,15 @@ export function DistrictRankingList({
                       )}
                     </div>
 
-                    <div className="flex items-center gap-2.5 text-[11px] text-slate-500 mt-0.5">
-                      <span className="inline-flex items-center gap-1">
-                        <Users className="w-3 h-3 text-slate-400" />
-                        {district.totalPopulation.toLocaleString('pl-PL')} mieszk.
-                      </span>
-                      <span>•</span>
-                      <span>{district.areaKm2} km²</span>
+                    <div className="text-[11px] text-slate-500 mt-1 space-y-0.5">
+                      <div className="flex items-center gap-1.5">
+                        <Users className="w-3 h-3 text-slate-400 shrink-0" />
+                        <span>{district.totalPopulation.toLocaleString('pl-PL')} mieszk.</span>
+                      </div>
+                      <div className="flex items-center gap-1.5">
+                        <Maximize2 className="w-3 h-3 text-slate-400 shrink-0" />
+                        <span>{district.areaKm2} km²</span>
+                      </div>
                     </div>
                   </div>
                 </div>

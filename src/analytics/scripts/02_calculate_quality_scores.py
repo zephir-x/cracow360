@@ -11,6 +11,11 @@ GOAL / PURPOSE:
 
 import json
 import math
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parent))
+
 from config import PROCESSED_DATA_DIR, min_max_normalize_0_100
 
 
@@ -177,7 +182,7 @@ def calculate_quality_scores() -> None:
         json.dump({"districts": districts}, f, ensure_ascii=False, indent=2)
 
     print(f"[Step 02 - Scores] Computed all 5 Quality of Life category scores for {len(districts)} districts.")
-    for d in districts[:5]:
+    for d in districts[:18]:
         sc = d["scores"]
         print(
             f"  - {d['districtName']}: Mobility={sc['mobilityScore']}, Edu={sc['educationScore']}, "

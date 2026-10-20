@@ -8,10 +8,10 @@ export interface MainFooterProps {
 export function MainFooter({ onSelectTab }: MainFooterProps) {
   return (
     <footer className="mt-14 border-t border-blue-100 bg-white/90 backdrop-blur-md">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-8">
+      <div className="max-w-360 mx-auto px-4 sm:px-6 py-8">
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-xl bg-gradient-to-br from-blue-600 to-sky-500 text-white flex items-center justify-center shadow-xs">
+            <div className="w-7 h-7 rounded-xl bg-linear-to-br from-blue-600 to-sky-500 text-white flex items-center justify-center shadow-xs">
               <MapPin className="w-4 h-4" />
             </div>
             <div>

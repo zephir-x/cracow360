@@ -1,4 +1,5 @@
-import { Baby, BookOpen, Building2, Compass, GitCompareArrows, MapPin } from 'lucide-react';
+import { Baby, BookOpen, Building2, Compass, MapPin } from 'lucide-react';
+import * as React from "react";
 
 export type AppTabId = 'resident' | 'parent' | 'investor' | 'methodology';
 
@@ -37,26 +38,15 @@ const NAV_ITEMS: NavItem[] = [
 ];
 
 export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
-  const handleJumpToComparison = () => {
-    if (activeTab !== 'resident') {
-      onSelectTab('resident');
-      setTimeout(() => {
-        document.getElementById('comparison-section')?.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
-    } else {
-      document.getElementById('comparison-section')?.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
   return (
-    <header className="sticky top-0 z-[1200] bg-white/85 backdrop-blur-xl border-b border-blue-100/90 shadow-xs">
-      <div className="max-w-[1440px] mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
+    <header className="sticky top-0 z-1200 bg-white/85 backdrop-blur-xl border-b border-blue-100/90 shadow-xs">
+      <div className="max-w-360 mx-auto px-4 sm:px-6 py-3 flex flex-wrap items-center justify-between gap-4">
         {/* Left: Kraków360 Brand Crest */}
         <button
           onClick={() => onSelectTab('resident')}
           className="flex items-center gap-3 text-left group cursor-pointer"
         >
-          <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-md shadow-blue-600/20 group-hover:scale-105 transition-transform">
+          <div className="h-10 w-10 rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-md shadow-blue-600/20 group-hover:scale-105 transition-transform">
             <MapPin className="w-5 h-5" />
           </div>
           <div>
@@ -74,7 +64,7 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
           </div>
         </button>
 
-        {/* Center: Mode Navigation Tabs */}
+        {/* Center/Right: Mode Navigation Tabs */}
         <nav className="flex flex-wrap items-center gap-1.5 bg-slate-100/90 p-1.5 rounded-2xl border border-slate-200/80">
           {NAV_ITEMS.map((item) => {
             const isActive = activeTab === item.id;
@@ -94,17 +84,6 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
             );
           })}
         </nav>
-
-        {/* Right: Quick Action CTA */}
-        <div className="hidden md:flex items-center">
-          <button
-            onClick={handleJumpToComparison}
-            className="inline-flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold bg-blue-50 hover:bg-blue-100 text-blue-700 border border-blue-200 transition cursor-pointer"
-          >
-            <GitCompareArrows className="w-4 h-4 text-blue-600" />
-            Porównaj Dzielnice
-          </button>
-        </div>
       </div>
     </header>
   );

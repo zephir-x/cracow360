@@ -24,7 +24,7 @@ export function OfficialInvestorModePage({
         <div className="max-w-2xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
             <Building2 className="w-4 h-4 text-sky-300" />
-            Moduł 3: Tryb Urzędnika i Inwestora (B2G / B2B)
+            Tryb Urzędnika i Inwestora (B2G / B2B)
           </div>
           <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
             Predykcje Demograficzne 2028

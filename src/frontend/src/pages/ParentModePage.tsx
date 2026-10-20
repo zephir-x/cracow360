@@ -18,7 +18,7 @@ export function ParentModePage({ districts, onBackToResidentMode }: ParentModePa
         <div className="max-w-2xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
             <Baby className="w-4 h-4 text-sky-300" />
-            Moduł 2: Tryb Rodzica i Mieszkańca Lokalnego (Poziom Mikro)
+            Tryb Rodzica i Mieszkańca Lokalnego (Poziom Mikro)
           </div>
           <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
             Mapa Dostępności Mikrolokalnej

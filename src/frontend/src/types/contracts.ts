@@ -1,4 +1,4 @@
-import type { Feature, FeatureCollection, Geometry } from 'geojson';
+import type { FeatureCollection, Geometry } from 'geojson';
 
 export interface DistrictScoresDto {
   mobilityScore: number;
@@ -119,7 +119,6 @@ export interface DistrictGeoJsonProperties {
   areaKm2: number;
 }
 
-export type DistrictGeoJsonFeature = Feature<Geometry, DistrictGeoJsonProperties>;
 export type DistrictsGeoJsonCollection = FeatureCollection<Geometry, DistrictGeoJsonProperties>;
 
 export interface QualityWeights {

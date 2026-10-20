@@ -28,10 +28,12 @@ from config import (
 )
 
 
-def find_csv_file(pattern: str) -> Path | None:
+def find_csv_file(pattern: str, exclude_pattern: str | None = None) -> Path | None:
     """Finds a file in RAW_DATA_DIR matching a case-insensitive regex pattern."""
     for p in sorted(RAW_DATA_DIR.glob("*.csv")):
         if re.search(pattern, p.name, re.IGNORECASE):
+            if exclude_pattern and re.search(exclude_pattern, p.name, re.IGNORECASE):
+                continue
             return p
     return None
 
@@ -42,12 +44,12 @@ def norm_street_key(street: str) -> str:
         return ""
     s = street.lower().strip()
     s = re.sub(
-        r"^(ul\.|ulica|al\.|aleja|os\.|osiedle|pl\.|plac|ks\.|gen\.|prof\.|dr\.|św\.|bpa|abp\.|kard\.|mjr\.|płk\.|rtm\.)\s*",
+        r"^(ul\.|ulica|al\.|aleja|os\.|osiedle|pl\.|plac|ks\.|gen\.|prof\.|dr\.|\u015bw\.|bpa|abp\.|kard\.|mjr\.|p\u0142k\.|rtm\.)\s*",
         "",
         s,
     )
     s = re.sub(r"\s+\d+.*$", "", s)
-    tokens = [t for t in re.split(r"[\s\-/\"']+", s) if len(t) > 2]
+    tokens = [t for t in re.split(r"[\s\-/\"]+", s) if len(t) > 2]
     return tokens[-1] if tokens else s
 
 
@@ -57,7 +59,7 @@ class KrakowSpatialResolver:
     built directly from `krakow_districts.geojson`, `Stojaki_ZTP`, and `Przystanki_KMK`.
     """
 
-    def __init__(self, geojson_path: Path) -> None:
+    def __init__(self, geojson_path: Path):
         self.district_polys: dict[int, list[MplPath]] = {}
         self.district_centroids: dict[int, tuple[float, float]] = {}
         self.street_coords: dict[str, list[tuple[int, float, float]]] = defaultdict(list)
@@ -72,7 +74,7 @@ class KrakowSpatialResolver:
             polys: list[MplPath] = []
             pts: list[list[float]] = []
             if geom["type"] == "Polygon":
-                polys.append(MplPath(geom["coordinates'][0]" if False else geom["coordinates"][0]))
+                polys.append(MplPath(geom["coordinates"][0]))
                 pts.extend(geom["coordinates"][0])
             elif geom["type"] == "MultiPolygon":
                 for poly in geom["coordinates"]:
@@ -294,20 +296,20 @@ def run_etl() -> None:
                     lat, lng = epsg2178_to_wgs84(float(row["x"]), float(row["y"]))
                     did = resolver.point_to_district(lat, lng) or resolver.nearest_district(lat, lng)
                     districts_data[did]["mobilityAndTransport"]["parkAndRideCount"] += 1
-                    cap = int(row["Liczba miejsc ogółem"]) if row.get("Liczba miejsc ogółem", "").isdigit() else 150
+                    cap = int(row["Liczba miejsc og\u00f3\u0142em"]) if row.get("Liczba miejsc og\u00f3\u0142em", "").isdigit() else 150
                     pois.append({
                         "id": f"pr_{idx}",
                         "districtId": did,
                         "category": "MOBILITY",
                         "subCategory": "PARK_AND_RIDE",
                         "name": row.get("Nazwa", f"P+R #{idx}").strip(),
-                        "address": f"Parking Park & Ride ({row.get('Nazwa', '').strip()}), Kraków",
+                        "address": f"Parking Park & Ride ({row.get('Nazwa', '').strip()}), Krak\u00f3w",
                         "lat": lat,
                         "lng": lng,
                         "metrics": {
                             "capacity": cap,
                             "areaHa": None,
-                            "additionalInfo": f"Miejsca: {cap}, ładowarki EV: {row.get('Liczba stanowisk do ładowania pojazdów elektrycznych', '0')}",
+                            "additionalInfo": f"Miejsca: {cap}, \u0142adowarki EV: {row.get('Liczba stanowisk do \u0142adowania pojazd\u00f3w elektrycznych', '0')}",
                         },
                     })
 
@@ -331,8 +333,8 @@ def run_etl() -> None:
     # ==========================================================================
     ref_year = 2025
     for pattern, is_perm in [
-        (r"Mieszkańcy.*pobyt stały.*2025", True),
-        (r"Mieszkańcy.*pobyt czasowy.*2025", False),
+        (r"Mieszka\u0144cy.*pobyt sta\u0142y.*2025", True),
+        (r"Mieszka\u0144cy.*pobyt czasowy.*2025", False),
     ]:
         p_file = find_csv_file(pattern) or find_csv_file(pattern.replace(".*2025", ""))
         if not p_file:
@@ -343,7 +345,7 @@ def run_etl() -> None:
                 if not did_str.isdigit():
                     continue
                 did = int(did_str)
-                cnt = int(row.get("Liczba_osób", "0").strip() or 0)
+                cnt = int(row.get("Liczba_os\u00f3b", "0").strip() or 0)
                 byear = int(row.get("Rok_Urodzenia", "1985").strip() or 1985)
                 age = max(0, ref_year - byear)
 
@@ -369,7 +371,7 @@ def run_etl() -> None:
                     districts_data[did]["_internal"]["birthCohorts"][byear] += cnt
 
     # Check if historical 2023 demographic files are present in data_raw/
-    for pattern2023 in [r"Mieszkańcy.*pobyt stały.*2023", r"Mieszkańcy.*pobyt czasowy.*2023"]:
+    for pattern2023 in [r"Mieszka\u0144cy.*pobyt sta\u0142y.*2023", r"Mieszka\u0144cy.*pobyt czasowy.*2023"]:
         f2023 = find_csv_file(pattern2023)
         if f2023:
             with open(f2023, "r", encoding="utf-8-sig") as f:
@@ -377,10 +379,10 @@ def run_etl() -> None:
                     did_str = row.get("Nr_Dzielnicy", "").strip()
                     if did_str.isdigit():
                         districts_data[int(did_str)]["_internal"]["pop2023"] += int(
-                            row.get("Liczba_osób", "0").strip() or 0
+                            row.get("Liczba_os\u00f3b", "0").strip() or 0
                         )
 
-    for pattern in [r"Cudzoziemcy.*pobyt stały", r"Cudzoziemcy.*pobyt czasowy"]:
+    for pattern in [r"Cudzoziemcy.*pobyt sta\u0142y", r"Cudzoziemcy.*pobyt czasowy"]:
         c_file = find_csv_file(pattern)
         if not c_file:
             continue
@@ -390,7 +392,7 @@ def run_etl() -> None:
                 if not did_str.isdigit():
                     continue
                 did = int(did_str)
-                cnt = int(row.get("Liczba_osób", "0").strip() or 0)
+                cnt = int(row.get("Liczba_os\u00f3b", "0").strip() or 0)
                 reg_yr = int(row.get("Rok_Zameldowania", "2020").strip() or 2020)
                 districts_data[did]["demographics"]["foreignersTotal"] += cnt
                 if reg_yr >= 2023:
@@ -401,7 +403,6 @@ def run_etl() -> None:
         pop = max(dem["totalPopulation"], 1)
         pop2023 = d["_internal"]["pop2023"]
         if pop2023 > 0:
-            # Exact historical difference from 2023 vs 2025 files (extrapolated to 3-year window)
             growth_3yr = ((pop - pop2023) / pop2023) * 100.0 * 1.5
         else:
             cohorts = d["_internal"]["birthCohorts"]
@@ -417,7 +418,7 @@ def run_etl() -> None:
     # ==========================================================================
     # 3. PRE-LEARN POSTAL CODES FROM MATCHED STREETS & KLUBY RODZICÓW
     # ==========================================================================
-    kluby_rodzicow_file = find_csv_file(r"Kluby Rodziców")
+    kluby_rodzicow_file = find_csv_file(r"Kluby Rodzic\u00f3w")
     if kluby_rodzicow_file:
         with open(kluby_rodzicow_file, "r", encoding="utf-8-sig") as f:
             for idx, row in enumerate(csv.DictReader(f, delimiter=";"), start=1):
@@ -433,18 +434,18 @@ def run_etl() -> None:
                     "districtId": did,
                     "category": "EDU_CARE",
                     "subCategory": "PARENT_CLUB",
-                    "name": f"Klub Rodziców - {row.get('Miejsce', '').strip()}",
-                    "address": f"ul. {street} {row.get('Numer budynku', '').strip()}, {pc} Kraków".strip(),
+                    "name": f"Klub Rodzic\u00f3w - {row.get('Miejsce', '').strip()}",
+                    "address": f"ul. {street} {row.get('Numer budynku', '').strip()}, {pc} Krak\u00f3w".strip(),
                     "lat": lat,
                     "lng": lng,
                     "metrics": {
                         "capacity": 30,
                         "areaHa": None,
-                        "additionalInfo": f"Podmiot prowadzący: {row.get('Podmiot prowadzący', 'GMK').strip()}",
+                        "additionalInfo": f"Podmiot prowadz\u0105cy: {row.get('Podmiot prowadz\u0105cy', 'GMK').strip()}",
                     },
                 })
 
-    for pat in [r"Żłobki", r"Kluby dziecięce", r"Przedszkola", r"Szkoły podstawowe", r"Tereny sportowe", r"Filie", r"Centra Aktywności"]:
+    for pat in [r"\u017b\u0142obki", r"Kluby dzieci\u0119ce", r"Przedszkola", r"Szko\u0142y podstawowe", r"Tereny sportowe", r"Filie", r"Centra Aktywno\u015bci"]:
         for p_file in sorted(RAW_DATA_DIR.glob("*.csv")):
             if not re.search(pat, p_file.name, re.IGNORECASE):
                 continue
@@ -461,10 +462,10 @@ def run_etl() -> None:
     # 4. EDUCATION & EARLY CARE (Nurseries, Kids Clubs, Kindergartens, Schools)
     # ==========================================================================
     nursery_configs = [
-        (r"Żłobki samorządowe", "nurseriesPublicCount", "NURSERY_PUBLIC", "nursery_pub"),
-        (r"Żłobki prowadzone na zlecenie", "nurseriesContractedCount", "NURSERY_CONTRACTED", "nursery_con"),
-        (r"Żłobki prywatne", "nurseriesPrivateCount", "NURSERY_PRIVATE", "nursery_priv"),
-        (r"Kluby dziecięce", "kidsClubsCount", "KIDS_CLUB", "kids_club"),
+        (r"\u017b\u0142obki samorz\u0105dowe", "nurseriesPublicCount", "NURSERY_PUBLIC", "nursery_pub"),
+        (r"\u017b\u0142obki prowadzone na zlecenie", "nurseriesContractedCount", "NURSERY_CONTRACTED", "nursery_con"),
+        (r"\u017b\u0142obki prywatne", "nurseriesPrivateCount", "NURSERY_PRIVATE", "nursery_priv"),
+        (r"Kluby dzieci\u0119ce", "kidsClubsCount", "KIDS_CLUB", "kids_club"),
     ]
     for pat, count_field, subcat, id_prefix in nursery_configs:
         n_file = find_csv_file(pat)
@@ -485,8 +486,8 @@ def run_etl() -> None:
                     "districtId": did,
                     "category": "EDU_CARE",
                     "subCategory": subcat,
-                    "name": row.get("Nazwa", f"Placówka #{idx}").strip().replace('""', '"'),
-                    "address": row.get("Adres", f"ul. {st}, {pc} Kraków").strip(),
+                    "name": row.get("Nazwa", f"Plac\u00f3wka #{idx}").strip().replace('""', '"'),
+                    "address": row.get("Adres", f"ul. {st}, {pc} Krak\u00f3w").strip(),
                     "lat": lat,
                     "lng": lng,
                     "metrics": {
@@ -497,8 +498,11 @@ def run_etl() -> None:
                 })
 
     seen_kg_rspo: set[str] = set()
-    for kg_pat in [r"Przedszkola niesamorządowe", r"Przedszkola samorządowe"]:
-        kg_file = find_csv_file(kg_pat)
+    for kg_pat, excl in [
+        (r"Przedszkola.*samorz", r"niesamorz"),
+        (r"Przedszkola niesamorz", None),
+    ]:
+        kg_file = find_csv_file(kg_pat, exclude_pattern=excl)
         if not kg_file:
             continue
         with open(kg_file, "r", encoding="utf-8-sig") as f:
@@ -508,7 +512,7 @@ def run_etl() -> None:
                     seen_kg_rspo.add(rspo)
                 st = row.get("Ulica", "").strip()
                 pc = row.get("Kod pocztowy", "").strip()
-                children = int(row.get("Liczba dzieci ogółem", "0").strip() or 0)
+                children = int(row.get("Liczba dzieci og\u00f3\u0142em", "0").strip() or 0)
                 did, lat, lng = resolver.resolve_address(st, pc, jitter_seed=idx * 11)
                 edu = districts_data[did]["educationAndCare"]
                 edu["kindergartensCount"] += 1
@@ -519,20 +523,23 @@ def run_etl() -> None:
                         "districtId": did,
                         "category": "EDU_CARE",
                         "subCategory": "KINDERGARTEN",
-                        "name": row.get("Nazwa szkoły_placówki", "Przedszkole").strip().replace('""', '"'),
-                        "address": f"ul. {st} {row.get('Nr domu', '').strip()}, {pc} Kraków",
+                        "name": row.get("Nazwa szko\u0142y_plac\u00f3wki", "Przedszkole").strip().replace('""', '"'),
+                        "address": f"ul. {st} {row.get('Nr domu', '').strip()}, {pc} Krak\u00f3w",
                         "lat": lat,
                         "lng": lng,
                         "metrics": {
                             "capacity": children,
                             "areaHa": None,
-                            "additionalInfo": f"Oddziały: {row.get('Liczba oddziałów ogółem', '1').strip()}",
+                            "additionalInfo": f"Oddzia\u0142y: {row.get('Liczba oddzia\u0142\u00f3w og\u00f3\u0142em', '1').strip()}",
                         },
                     })
 
     seen_sp_rspo: set[str] = set()
-    for sp_pat in [r"Szkoły podstawowe samorządowe", r"Szkoły podstawowe niesamorządowe"]:
-        sp_file = find_csv_file(sp_pat)
+    for sp_pat, excl in [
+        (r"Szko\u0142y podstawowe.*samorz", r"niesamorz"),
+        (r"Szko\u0142y podstawowe.*niesamorz", None),
+    ]:
+        sp_file = find_csv_file(sp_pat, exclude_pattern=excl)
         if not sp_file:
             continue
         with open(sp_file, "r", encoding="utf-8-sig") as f:
@@ -542,8 +549,8 @@ def run_etl() -> None:
                     seen_sp_rspo.add(rspo)
                 st = row.get("Ulica", "").strip()
                 pc = row.get("Kod pocztowy", "").strip()
-                students = int(row.get("Liczba uczniów ogółem", "0").strip() or 0)
-                classes = int(row.get("Liczba oddziałów ogółem", "0").strip() or 0)
+                students = int(row.get("Liczba uczni\u00f3w og\u00f3\u0142em", "0").strip() or 0)
+                classes = int(row.get("Liczba oddzia\u0142\u00f3w og\u00f3\u0142em", "0").strip() or 0)
                 pre_kids = int(row.get("wychowanie przedszkolne", "0").strip() or 0)
                 did, lat, lng = resolver.resolve_address(st, pc, jitter_seed=idx * 13)
                 edu = districts_data[did]["educationAndCare"]
@@ -556,14 +563,14 @@ def run_etl() -> None:
                     "districtId": did,
                     "category": "EDU_CARE",
                     "subCategory": "PRIMARY_SCHOOL",
-                    "name": row.get("Nazwa szkoły_placówki", "Szkoła Podstawowa").strip().replace('""', '"'),
-                    "address": f"ul. {st} {row.get('Nr domu', '').strip()}, {pc} Kraków",
+                    "name": row.get("Nazwa szko\u0142y_plac\u00f3wki", "Szko\u0142a Podstawowa").strip().replace('""', '"'),
+                    "address": f"ul. {st} {row.get('Nr domu', '').strip()}, {pc} Krak\u00f3w",
                     "lat": lat,
                     "lng": lng,
                     "metrics": {
                         "capacity": students,
                         "areaHa": None,
-                        "additionalInfo": f"Liczba oddziałów: {classes}, organ: {row.get('Organ prowadzący', 'GMK').strip()}",
+                        "additionalInfo": f"Liczba oddzia\u0142\u00f3w: {classes}, organ: {row.get('Organ prowadz\u0105cy', 'GMK').strip()}",
                     },
                 })
 
@@ -626,38 +633,41 @@ def run_etl() -> None:
                     "metrics": {
                         "capacity": None,
                         "areaHa": round(area_ha, 4),
-                        "additionalInfo": f"Status: {row.get('STATUS_TER', 'Istniejący').strip()}",
+                        "additionalInfo": f"Status: {row.get('STATUS_TER', 'Istniej\u0105cy').strip()}",
                     },
                 })
 
     sport_cols = [
-        "boiska do siatkówki",
-        "boiska do siatkówki plażowej",
-        "boiska do koszykówki",
-        "boiska do piłki ręcznej",
+        "boiska do siatk\u00f3wki",
+        "boiska do siatk\u00f3wki pla\u017cowej",
+        "boiska do koszyk\u00f3wki",
+        "boiska do pi\u0142ki r\u0119cznej",
         "korty tenisowe",
-        "boiska do piłki nożnej",
+        "boiska do pi\u0142ki no\u017cnej",
         "boiska do hokeja na trawie",
-        "bieżnie proste",
-        "bieżnie okólne",
+        "bie\u017cnie proste",
+        "bie\u017cnie ok\u00f3lne",
         "skocznie",
         "rzutnie",
         "boiska uniwersalne_wielozadaniowe",
         "boiska do rugby",
         "boiska do baseballa_softballa",
-        "inne urządzenia sportowe",
+        "inne urz\u0105dzenia sportowe",
     ]
-    for sport_pat in [r"Tereny sportowe.*samorządowych", r"Tereny sportowe.*niesamorządowych"]:
-        s_file = find_csv_file(sport_pat)
+    for sport_pat, excl in [
+        (r"Tereny sportowe.*samorz", r"niesamorz"),
+        (r"Tereny sportowe.*niesamorz", None),
+    ]:
+        s_file = find_csv_file(sport_pat, exclude_pattern=excl)
         if not s_file:
             continue
-        is_municipal_sio = "niesamorządowych" not in s_file.name.lower()
+        is_municipal_sio = "niesamorz\u0105dowych" not in s_file.name.lower()
         with open(s_file, "r", encoding="utf-8-sig") as f:
             for idx, row in enumerate(csv.DictReader(f, delimiter=";"), start=1):
                 st = row.get("Ulica", "").strip()
                 pc = row.get("Kod pocztowy", "").strip()
                 rspo = row.get("Numer RSPO", "").strip()
-                typ = row.get("Typ szkoły_placówki", "").strip()
+                typ = row.get("Typ szko\u0142y_plac\u00f3wki", "").strip()
                 did, lat, lng = resolver.resolve_address(st, pc, jitter_seed=idx * 29)
 
                 if is_municipal_sio and typ == "Przedszkole" and rspo not in seen_kg_rspo:
@@ -665,7 +675,7 @@ def run_etl() -> None:
                     districts_data[did]["educationAndCare"]["kindergartensCount"] += 1
                     districts_data[did]["educationAndCare"]["kindergartenPlacesTotal"] += 125
 
-                if not is_municipal_sio and typ == "Szkoła podstawowa" and rspo not in seen_sp_rspo:
+                if not is_municipal_sio and typ == "Szko\u0142a podstawowa" and rspo not in seen_sp_rspo:
                     seen_sp_rspo.add(rspo)
                     districts_data[did]["educationAndCare"]["primarySchoolsCount"] += 1
                     districts_data[did]["educationAndCare"]["primarySchoolStudentsTotal"] += 180
@@ -679,7 +689,7 @@ def run_etl() -> None:
                 if facilities_here > 0:
                     districts_data[did]["greeneryAndSport"]["schoolSportsFacilitiesCount"] += facilities_here
 
-    # Swimming pools from "Pomieszczenia WF w szkołach..." CSV if present, else baseline registry
+    # Swimming pools from "Pomieszczenia WF w szko\u0142ach..." CSV if present, else baseline registry
     pom_wf_files = [
         p for p in sorted(RAW_DATA_DIR.glob("*.csv")) if re.search(r"Pomieszczenia WF", p.name, re.IGNORECASE)
     ]
@@ -691,7 +701,7 @@ def run_etl() -> None:
                     pc = row.get("Kod pocztowy", "").strip()
                     did, _, _ = resolver.resolve_address(st, pc, jitter_seed=idx * 31)
                     for k, v in row.items():
-                        if k and ("basen" in k.lower() or "pływaln" in k.lower()) and "liczba" in k.lower():
+                        if k and ("basen" in k.lower() or "p\u0142ywaln" in k.lower()) and "liczba" in k.lower():
                             val = re.sub(r"\D", "", v or "0")
                             if val and int(val) > 0:
                                 districts_data[did]["greeneryAndSport"]["schoolSwimmingPoolsCount"] += int(val)
@@ -708,7 +718,7 @@ def run_etl() -> None:
     # ==========================================================================
     total_culture_subsidy_pln = 82_744_786.80
     total_cultural_events = 12_855
-    kultura_file = find_csv_file(r"Działalność miejskich centrów i ośrodków kultury")
+    kultura_file = find_csv_file(r"Dzia\u0142alno\u015b\u0107 miejskich centr\u00f3w i o\u015brodk\u00f3w kultury")
     if kultura_file:
         with open(kultura_file, "r", encoding="utf-8-sig") as f:
             ev_sum = 0
@@ -724,7 +734,7 @@ def run_etl() -> None:
             if sub_sum > 0:
                 total_culture_subsidy_pln = sub_sum
 
-    bib_stats_file = find_csv_file(r"Działalność Biblioteki Kraków")
+    bib_stats_file = find_csv_file(r"Dzia\u0142alno\u015b\u0107 Biblioteki Krak\u00f3w")
     total_library_subsidy_pln = 36_500_000.0
     if bib_stats_file:
         with open(bib_stats_file, "r", encoding="utf-8-sig") as f:
@@ -766,14 +776,14 @@ def run_etl() -> None:
                     "districtId": did,
                     "category": "CULTURE_SOCIETY",
                     "subCategory": "LIBRARY",
-                    "name": (row.get("Nazwa") or row.get("Filia") or f"Filia Biblioteki Kraków #{idx}").strip(),
-                    "address": f"{st}, {pc} Kraków".strip(", "),
+                    "name": (row.get("Nazwa") or row.get("Filia") or f"Filia Biblioteki Krak\u00f3w #{idx}").strip(),
+                    "address": f"{st}, {pc} Krak\u00f3w".strip(", "),
                     "lat": lat,
                     "lng": lng,
-                    "metrics": {"capacity": 45, "areaHa": None, "additionalInfo": "Filia Biblioteki Kraków"},
+                    "metrics": {"capacity": 45, "areaHa": None, "additionalInfo": "Filia Biblioteki Krak\u00f3w"},
                 })
 
-    cas_file = find_csv_file(r"Centra Aktywności Seniora")
+    cas_file = find_csv_file(r"Centra Aktywno\u015bci Seniora")
     if cas_file:
         cas_dist = {did: 0 for did in range(1, 19)}
         with open(cas_file, "r", encoding="utf-8-sig") as f:
@@ -790,11 +800,11 @@ def run_etl() -> None:
                     "districtId": did,
                     "category": "CULTURE_SOCIETY",
                     "subCategory": "SENIOR_CENTER",
-                    "name": (row.get("Nazwa") or f"Centrum Aktywności Seniora #{idx}").strip(),
-                    "address": f"{st}, {pc} Kraków".strip(", "),
+                    "name": (row.get("Nazwa") or f"Centrum Aktywno\u015bci Seniora #{idx}").strip(),
+                    "address": f"{st}, {pc} Krak\u00f3w".strip(", "),
                     "lat": lat,
                     "lng": lng,
-                    "metrics": {"capacity": 60, "areaHa": None, "additionalInfo": "Centrum Aktywności Seniora"},
+                    "metrics": {"capacity": 60, "areaHa": None, "additionalInfo": "Centrum Aktywno\u015bci Seniora"},
                 })
 
     total_inst_units = max(1, sum(lib_branches_dist.values()) + sum(cult_centers_dist.values()))
@@ -819,7 +829,7 @@ def run_etl() -> None:
                 "districtId": did,
                 "category": "CULTURE_SOCIETY",
                 "subCategory": "LIBRARY",
-                "name": f"Biblioteka Kraków – Filie Dzielnicy {d['districtRoman']} ({lib_branches_dist[did]} placówek)",
+                "name": f"Biblioteka Krak\u00f3w \u2013 Filie Dzielnicy {d['districtRoman']} ({lib_branches_dist[did]} plac\u00f3wek)",
                 "address": d["districtName"],
                 "lat": round(clat + 0.0012, 6),
                 "lng": round(clng - 0.0015, 6),
@@ -835,14 +845,14 @@ def run_etl() -> None:
                 "districtId": did,
                 "category": "CULTURE_SOCIETY",
                 "subCategory": "SENIOR_CENTER",
-                "name": f"Centrum Aktywności Seniora – {d['districtName']}",
+                "name": f"Centrum Aktywno\u015bci Seniora \u2013 {d['districtName']}",
                 "address": d["districtName"],
                 "lat": round(clat - 0.0014, 6),
                 "lng": round(clng + 0.0012, 6),
                 "metrics": {
                     "capacity": cas_dist[did] * 60,
                     "areaHa": None,
-                    "additionalInfo": f"Aktywne placówki CAS w dzielnicy: {cas_dist[did]}",
+                    "additionalInfo": f"Aktywne plac\u00f3wki CAS w dzielnicy: {cas_dist[did]}",
                 },
             })
 

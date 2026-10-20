@@ -47,7 +47,7 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
   },
   {
     id: 'single_pro',
-    label: 'Singiel / Młody Profesjonalista',
+    label: 'Singiel / Młody',
     description: 'Wysoka waga: Mobilność, Zieleń i Sport, Kultura',
     weights: { mobility: 9, education: 2, greenery: 8, culture: 8, environment: 6 },
   },

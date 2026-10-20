@@ -250,8 +250,10 @@ export function DistrictComparisonView({
         category: 'Kultura i Seniorzy',
         label: 'Centra Aktywności Seniora (CAS)',
         unit: 'placówek',
-        firstValue: firstDetails.cultureAndSociety.seniorActivityCentersCount,
-        secondValue: secondDetails.cultureAndSociety.seniorActivityCentersCount,
+        firstValue:
+          firstDetails.cultureAndSociety.seniorActivityCentersCount,
+        secondValue:
+          secondDetails.cultureAndSociety.seniorActivityCentersCount,
         higherIsBetter: true,
       },
     ];
@@ -268,13 +270,14 @@ export function DistrictComparisonView({
       className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-6"
     >
       {/* Header + Dropdown Selectors for District #1 & District #2 */}
-      <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4 border-b border-slate-100 pb-5">
-        <div className="flex items-center gap-3.5">
-          <div className="w-11 h-11 rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+      <div className="border-b border-slate-100 pb-5 space-y-4">
+        {/* Full-width Title & Description from left to right */}
+        <div className="flex items-center gap-3.5 w-full">
+          <div className="w-11 h-11 rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-md shadow-blue-600/20 shrink-0">
             <GitCompareArrows className="w-5 h-5" />
           </div>
-          <div>
-            <h2 className="text-lg font-extrabold text-slate-900">
+          <div className="flex-1 min-w-0">
+            <h2 className="text-lg font-extrabold text-slate-900 tracking-tight">
               Porównywarka Dzielnic Side-by-Side (Wykres Radarowy &amp; Twarde Wskaźniki)
             </h2>
             <p className="text-xs text-slate-500">
@@ -283,18 +286,19 @@ export function DistrictComparisonView({
           </div>
         </div>
 
-        {/* District #1 and District #2 Selectors */}
-        <div className="flex flex-wrap items-center gap-2.5">
-          <div className="flex items-center gap-2 bg-blue-50/80 border border-blue-200 rounded-2xl px-3 py-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-blue-600" />
-            <span className="text-xs font-extrabold text-blue-800">#1:</span>
+        {/* New Line: District #1 and District #2 Selectors stretching full width */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 w-full">
+          {/* District #1 Selector */}
+          <div className="flex-1 min-w-0 flex items-center gap-2 bg-blue-50/80 border border-blue-200 rounded-2xl px-3.5 py-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-blue-600 shrink-0" />
+            <span className="text-xs font-extrabold text-blue-800 shrink-0">#1:</span>
             <select
               value={selectedPrimaryId ?? ''}
               onChange={(e) => {
                 const val = Number(e.target.value);
                 if (val) onSelectPrimary(val);
               }}
-              className="bg-white text-xs font-bold text-slate-800 rounded-xl px-2.5 py-1.5 border border-blue-200 focus:outline-none focus:border-blue-500"
+              className="bg-white text-xs font-bold text-slate-800 rounded-xl px-3 py-1.5 border border-blue-200 focus:outline-none focus:border-blue-500 w-full truncate"
             >
               <option value="">-- Wybierz Dzielnicę #1 --</option>
               {sortedById.map((d) => (
@@ -305,18 +309,21 @@ export function DistrictComparisonView({
             </select>
           </div>
 
-          <ArrowLeftRight className="w-4 h-4 text-slate-400 hidden sm:block" />
+          <div className="hidden sm:flex items-center justify-center shrink-0 text-slate-400">
+            <ArrowLeftRight className="w-4 h-4" />
+          </div>
 
-          <div className="flex items-center gap-2 bg-indigo-50/80 border border-indigo-200 rounded-2xl px-3 py-1.5">
-            <span className="w-2.5 h-2.5 rounded-full bg-indigo-600" />
-            <span className="text-xs font-extrabold text-indigo-800">#2:</span>
+          {/* District #2 Selector */}
+          <div className="flex-1 min-w-0 flex items-center gap-2 bg-indigo-50/80 border border-indigo-200 rounded-2xl px-3.5 py-2">
+            <span className="w-2.5 h-2.5 rounded-full bg-indigo-600 shrink-0" />
+            <span className="text-xs font-extrabold text-indigo-800 shrink-0">#2:</span>
             <select
               value={selectedSecondaryId ?? ''}
               onChange={(e) => {
                 const val = Number(e.target.value);
                 if (val) onSelectSecondary(val);
               }}
-              className="bg-white text-xs font-bold text-slate-800 rounded-xl px-2.5 py-1.5 border border-indigo-200 focus:outline-none focus:border-indigo-500"
+              className="bg-white text-xs font-bold text-slate-800 rounded-xl px-3 py-1.5 border border-indigo-200 focus:outline-none focus:border-indigo-500 w-full truncate"
             >
               <option value="">-- Wybierz Dzielnicę #2 --</option>
               {sortedById.map((d) => (
@@ -327,21 +334,30 @@ export function DistrictComparisonView({
             </select>
           </div>
 
-          {(selectedPrimaryId || selectedSecondaryId) && (
-            <button
-              onClick={onClearSelection}
-              className="inline-flex items-center gap-1 px-3 py-2 rounded-2xl text-xs font-semibold bg-slate-100 hover:bg-rose-50 text-slate-600 hover:text-rose-600 border border-slate-200 transition cursor-pointer"
-            >
-              <X className="w-3.5 h-3.5" />
-              Wyczyść
-            </button>
-          )}
+          {/* Clear Button: Always visible with stable position, disabled if no selection */}
+          <button
+            onClick={onClearSelection}
+            disabled={!selectedPrimaryId && !selectedSecondaryId}
+            className={`inline-flex items-center justify-center gap-1.5 px-4 py-2.5 rounded-2xl text-xs font-semibold border transition shrink-0 ${
+              selectedPrimaryId || selectedSecondaryId
+                ? 'bg-slate-100 hover:bg-rose-50 text-slate-700 hover:text-rose-600 border-slate-200 cursor-pointer shadow-xs'
+                : 'bg-slate-50 text-slate-400 border-slate-200/60 cursor-not-allowed opacity-60'
+            }`}
+            title={
+              selectedPrimaryId || selectedSecondaryId
+                ? 'Wyczyść zaznaczenie obu dzielnic'
+                : 'Brak wybranych dzielnic do wyczyszczenia'
+            }
+          >
+            <X className="w-3.5 h-3.5" />
+            Wyczyść
+          </button>
         </div>
       </div>
 
       {/* Empty State when fewer than 2 districts are selected */}
       {(!firstDetails || !secondDetails) && (
-        <div className="py-12 px-4 text-center rounded-2xl bg-gradient-to-b from-blue-50/50 to-white border border-dashed border-blue-200 space-y-3">
+        <div className="py-12 px-4 text-center rounded-2xl bg-linear-to-b from-blue-50/50 to-white border border-dashed border-blue-200 space-y-3">
           <Sparkles className="w-8 h-8 text-blue-600 mx-auto" />
           <div className="text-sm font-extrabold text-slate-800">
             {loading

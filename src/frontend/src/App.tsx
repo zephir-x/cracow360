@@ -109,12 +109,12 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#eaf3ff] via-[#f5f9ff] to-white text-slate-900 flex flex-col">
+    <div className="min-h-screen bg-linear-to-b from-[#eaf3ff] via-[#f5f9ff] to-white text-slate-900 flex flex-col">
       {/* Top Civic Navigation Bar */}
       <MainNavbar activeTab={activeTab} onSelectTab={setActiveTab} />
 
       {/* Main Content Container */}
-      <main className="flex-1 max-w-[1440px] w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
+      <main className="flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
         {error && (
           <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-medium shadow-xs">
             <strong>Komunikat:</strong> {error}

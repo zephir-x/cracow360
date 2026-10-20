@@ -18,58 +18,58 @@ const DATA_SOURCES = [
   {
     category: 'Granice Administracyjne i Przestrzeń (GIS)',
     dataset: 'Granice wektorowe 18 Dzielnic Krakowa (Dzielnice I–XVIII) oraz powierzchnie w km²',
-    portal: 'Miejski System Informacji Przestrzennej (MSIP Kraków) & OpenStreetMap',
+    portal: 'Miejski System Informacji Przestrzennej & OpenStreetMap',
     url: 'https://msip.krakow.pl',
     status: 'Aktywne na mapie',
   },
   {
     category: 'Demografia: Mieszkańcy (pobyt stały i czasowy)',
     dataset: 'Mieszkańcy Krakowa zameldowani na pobyt stały i czasowy wg wieku i 18 Dzielnic (stan na 31.12.2025: 735 955 osób)',
-    portal: 'Otwarte Dane UMK – Mieszkańcy zameldowani na pobyt stały i czasowy',
+    portal: 'Otwarte Dane UMK – Mieszkańcy zameldowani na pobyt',
     url: 'https://otwartedane.um.krakow.pl/zbiory-danych/mieszkancy-zameldowani-na-pobyt-staly',
-    status: 'Zintegrowane (CSV 2025)',
+    status: 'Zintegrowane',
   },
   {
     category: 'Demografia: Cudzoziemcy w Dzielnicach',
     dataset: 'Cudzoziemcy zameldowani na pobyt stały i czasowy w podziale na 18 Dzielnic Krakowa (stan na 31.12.2025: 20 774 osób)',
     portal: 'Otwarte Dane UMK – Rejestr zamieszkania cudzoziemców',
     url: 'https://otwartedane.um.krakow.pl/zbiory-danych/cudzoziemcy-w-krakowie-zameldowani-na-pobyt-staly',
-    status: 'Zintegrowane (CSV 2025)',
+    status: 'Zintegrowane',
   },
   {
     category: 'Opieka Wczesnodziecięca (0–3 lata)',
     dataset: 'Żłobki samorządowe (33), na zlecenie GMK (11), prywatne (266), Kluby dziecięce (21) oraz Kluby Rodziców (50)',
     portal: 'Otwarte Dane UMK – Żłobki i Kluby Dziecięce w Krakowie',
     url: 'https://otwartedane.um.krakow.pl/zbiory-danych/zlobki-samorzadowe-w-krakowie',
-    status: 'Zintegrowane (5 zbiorów CSV)',
+    status: 'Zintegrowane',
   },
   {
     category: 'Oświata i Wychowanie (Przedszkola i Szkoły)',
     dataset: 'Przedszkola w Krakowie (liczba dzieci i oddziałów) oraz Szkoły podstawowe w Krakowie (liczba uczniów i oddziałów 2025/2026)',
     portal: 'Otwarte Dane UMK – System Informacji Oświatowej (SIO)',
     url: 'https://otwartedane.um.krakow.pl/zbiory-danych/szkoly-podstawowe-w-krakowie-liczba-dzieci',
-    status: 'Zintegrowane (CSV 2025/2026)',
+    status: 'Zintegrowane',
   },
   {
     category: 'Mobilność: Komunikacja Miejska (KMK) i Rowery',
     dataset: 'Przystanki KMK (2 329 w granicach dzielnic), izochrony dojścia 500m, parkingi Park&Ride (10) oraz stojaki rowerowe ZTP (12 478)',
-    portal: 'Otwarte Dane UMK & Zarząd Transportu Publicznego w Krakowie (ZTP)',
+    portal: 'Otwarte Dane UMK & Zarząd Transportu Publicznego w Krakowie',
     url: 'https://otwartedane.um.krakow.pl/zbiory-danych/komunikacja-miejska-w-krakowie-kmk',
-    status: 'Zintegrowane (GIS / CSV)',
+    status: 'Zintegrowane',
   },
   {
     category: 'Zieleń Miejska i Infrastruktura Sportowa Szkół',
     dataset: 'Parki miejskie ZZM (78 parków), Parki kieszonkowe (44 skwery) oraz Tereny sportowe w szkołach i placówkach oświatowych',
     portal: 'Otwarte Dane UMK – Zarząd Zieleni Miejskiej (ZZM) & SIO',
     url: 'https://otwartedane.um.krakow.pl/zbiory-danych/parki-miejskie-w-krakowie',
-    status: 'Zintegrowane (4 zbiory CSV)',
+    status: 'Zintegrowane',
   },
   {
     category: 'Kultura, Biblioteka Kraków i Seniorzy (CAS)',
     dataset: 'Działalność miejskich centrów i ośrodków kultury (2025), Filie Biblioteki Kraków oraz Centra Aktywności Seniora (CAS)',
     portal: 'Otwarte Dane UMK – Kultura i Społeczeństwo Obywatelskie',
     url: 'https://otwartedane.um.krakow.pl/zbiory-danych/dzialalnosc-miejskich-osrodkow-kultury-w-krakowie',
-    status: 'Zintegrowane (CSV 2025)',
+    status: 'Zintegrowane',
   },
   {
     category: 'Środowisko i Jakość Powietrza',
@@ -86,7 +86,7 @@ export function AboutDataMethodologyPage({
   return (
     <div className="space-y-8">
       {/* Header Banner */}
-      <section className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white p-8 sm:p-10 shadow-xl border border-blue-400/30">
+      <section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white p-8 sm:p-10 shadow-xl border border-blue-400/30">
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
             <BookOpen className="w-4 h-4 text-sky-300" />
@@ -175,7 +175,7 @@ export function AboutDataMethodologyPage({
 
       {/* Complete Open Data Sources Registry Table */}
       <section className="rounded-3xl bg-white border border-blue-100 overflow-hidden shadow-xl shadow-blue-900/5">
-        <div className="px-6 py-5 bg-gradient-to-r from-blue-50/80 to-white border-b border-blue-100 flex flex-wrap items-center justify-between gap-3">
+        <div className="px-6 py-5 bg-linear-to-r from-blue-50/80 to-white border-b border-blue-100 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-3">
             <div className="p-2.5 rounded-2xl bg-blue-600 text-white">
               <Database className="w-5 h-5" />
@@ -200,8 +200,8 @@ export function AboutDataMethodologyPage({
               <tr className="border-b border-slate-200 bg-slate-50/80 text-slate-500">
                 <th className="py-3.5 px-5 font-bold">Obszar / Domena</th>
                 <th className="py-3.5 px-5 font-bold">Zakres wskaźników</th>
-                <th className="py-3.5 px-5 font-bold">Instytucja / Portal źródłowy</th>
-                <th className="py-3.5 px-5 font-bold text-right">Status danych</th>
+                <th className="py-3.5 px-5 font-bold min-w-65">Instytucja / Portal Źródłowy</th>
+                <th className="py-3.5 px-5 font-bold text-right whitespace-nowrap">Status danych</th>
               </tr>
             </thead>
             <tbody className="divide-y divide-slate-100">
@@ -209,20 +209,20 @@ export function AboutDataMethodologyPage({
                 <tr key={idx} className="hover:bg-blue-50/30 transition">
                   <td className="py-3.5 px-5 font-bold text-slate-900">{src.category}</td>
                   <td className="py-3.5 px-5 text-slate-600 max-w-md">{src.dataset}</td>
-                  <td className="py-3.5 px-5">
+                  <td className="py-3.5 px-5 min-w-65">
                     <a
                       href={src.url}
                       target="_blank"
                       rel="noreferrer"
-                      className="inline-flex items-center gap-1 font-semibold text-blue-600 hover:text-blue-800"
+                      className="flex items-center justify-between gap-3 font-semibold text-blue-600 hover:text-blue-800 group"
                     >
-                      {src.portal}
-                      <ExternalLink className="w-3 h-3" />
+                      <span className="group-hover:underline">{src.portal}</span>
+                      <ExternalLink className="w-3.5 h-3.5 shrink-0 text-blue-500 group-hover:text-blue-700 transition" />
                     </a>
                   </td>
-                  <td className="py-3.5 px-5 text-right">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200">
-                      <Layers className="w-3 h-3" />
+                  <td className="py-3.5 px-5 text-right whitespace-nowrap">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-700 border border-emerald-200 whitespace-nowrap">
+                      <Layers className="w-3 h-3 shrink-0" />
                       {src.status}
                     </span>
                   </td>

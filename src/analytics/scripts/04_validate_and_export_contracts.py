@@ -14,13 +14,15 @@ WHEN TO RUN:
 
 WHAT THIS SCRIPT VALIDATES:
     1. Existence and valid UTF-8 JSON syntax of both contract files in `data/contracts/`.
-    2. Presence of all 7 required sections (`scores`, `demographics`, `educationAndCare`,
+    2. Presence of exactly 18 districts with IDs 1..18.
+    3. Presence of all 7 required sections (`scores`, `demographics`, `educationAndCare`,
        `mobilityAndTransport`, `greeneryAndSport`, `cultureAndSociety`, `forecastsAndB2B`)
        for every district in `krakow_districts_master.json`.
-    3. All 5 Quality of Life scores are valid numbers within `[0.0, 100.0]`.
-    4. All B2B/deficit classification fields use only `"LOW"`, `"MEDIUM"`, or `"HIGH"`.
-    5. All POI records in `krakow_poi_locations.json` use allowed `subCategory` enums
-       and have valid GPS coordinates (`lat`, `lng`) inside the Krakow bounding box.
+    4. All 5 Quality of Life scores are valid numbers within `[0.0, 100.0]`.
+    5. All B2B/deficit classification fields use only `"LOW"`, `"MEDIUM"`, or `"HIGH"`.
+    6. All POI records in `krakow_poi_locations.json` use allowed `category` and `subCategory`
+       enums, valid `districtId` (1..18), and have valid GPS coordinates (`lat`, `lng`)
+       inside the Krakow bounding box.
 
 EXIT CODE:
     - Returns `0` (`[OK]`) if all contract checks pass.
@@ -31,7 +33,16 @@ EXIT CODE:
 import json
 import sys
 from pathlib import Path
-from config import CONTRACTS_OUTPUT_DIR, ALLOWED_POI_SUBCATEGORIES, ALLOWED_POTENTIAL_LEVELS
+
+sys.path.append(str(Path(__file__).resolve().parent))
+
+from config import (
+    CONTRACTS_OUTPUT_DIR,
+    ALLOWED_POI_CATEGORIES,
+    ALLOWED_POI_SUBCATEGORIES,
+    ALLOWED_POTENTIAL_LEVELS,
+    KRAKOW_DISTRICTS,
+)
 
 
 def validate_districts_master(file_path: Path) -> list[str]:
@@ -39,13 +50,21 @@ def validate_districts_master(file_path: Path) -> list[str]:
     if not file_path.exists():
         return [f"Missing file: {file_path}"]
 
-    with open(file_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as exc:
+        return [f"Invalid JSON in {file_path}: {exc}"]
 
     if "metadata" not in data or "districts" not in data:
         errors.append("Missing root keys 'metadata' or 'districts'.")
         return errors
 
+    districts = data.get("districts", [])
+    if len(districts) != len(KRAKOW_DISTRICTS):
+        errors.append(f"Expected exactly {len(KRAKOW_DISTRICTS)} districts, found {len(districts)}.")
+
+    seen_ids = set()
     required_sections = [
         "scores",
         "demographics",
@@ -56,8 +75,13 @@ def validate_districts_master(file_path: Path) -> list[str]:
         "forecastsAndB2B",
     ]
 
-    for idx, d in enumerate(data["districts"]):
-        d_id = d.get("districtId", f"index_{idx}")
+    for idx, d in enumerate(districts):
+        d_id = d.get("districtId")
+        if d_id is None or not isinstance(d_id, int) or not (1 <= d_id <= 18):
+            errors.append(f"District at index {idx} has invalid districtId: {d_id}")
+        else:
+            seen_ids.add(d_id)
+
         for sec in required_sections:
             if sec not in d:
                 errors.append(f"District {d_id}: missing section '{sec}'.")
@@ -76,6 +100,10 @@ def validate_districts_master(file_path: Path) -> list[str]:
                     f"District {d_id}: '{level_key}' has invalid value '{lvl}'. Allowed: {ALLOWED_POTENTIAL_LEVELS}."
                 )
 
+    missing_ids = set(range(1, 19)) - seen_ids
+    if missing_ids:
+        errors.append(f"Missing district IDs in dataset: {sorted(missing_ids)}")
+
     return errors
 
 
@@ -84,18 +112,33 @@ def validate_poi_locations(file_path: Path) -> list[str]:
     if not file_path.exists():
         return [f"Missing file: {file_path}"]
 
-    with open(file_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    try:
+        with open(file_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    except Exception as exc:
+        return [f"Invalid JSON in {file_path}: {exc}"]
 
     pois = data.get("pointsOfInterest")
     if not isinstance(pois, list):
         return ["Missing 'pointsOfInterest' array in POI contract file."]
 
+    if len(pois) == 0:
+        errors.append("pointsOfInterest array is empty.")
+
     for idx, poi in enumerate(pois):
         poi_id = poi.get("id", f"index_{idx}")
+        cat = poi.get("category")
+        if cat not in ALLOWED_POI_CATEGORIES:
+            errors.append(f"POI '{poi_id}': invalid category='{cat}'. Allowed: {ALLOWED_POI_CATEGORIES}")
+
         sub_cat = poi.get("subCategory")
         if sub_cat not in ALLOWED_POI_SUBCATEGORIES:
-            errors.append(f"POI '{poi_id}': invalid subCategory='{sub_cat}'.")
+            errors.append(f"POI '{poi_id}': invalid subCategory='{sub_cat}'. Allowed: {ALLOWED_POI_SUBCATEGORIES}")
+
+        did = poi.get("districtId")
+        if did is None or not isinstance(did, int) or not (1 <= did <= 18):
+            errors.append(f"POI '{poi_id}': invalid districtId={did}. Must be 1..18.")
+
         lat, lng = poi.get("lat"), poi.get("lng")
         if lat is None or lng is None or not (49.9 <= float(lat) <= 50.2) or not (19.7 <= float(lng) <= 20.3):
             errors.append(f"POI '{poi_id}': coordinates ({lat}, {lng}) are outside the Krakow bounding box!")
@@ -118,8 +161,10 @@ def main() -> int:
             print(f"  - {err}")
         return 1
 
-    print(f"[OK] {districts_file.name} is 100% compliant with the Data Contract! ({len(json.loads(districts_file.read_text(encoding='utf-8'))['districts'])} districts verified)")
-    print(f"[OK] {poi_file.name} is 100% compliant with the Data Contract!")
+    districts_count = len(json.loads(districts_file.read_text(encoding="utf-8"))["districts"])
+    pois_count = len(json.loads(poi_file.read_text(encoding="utf-8"))["pointsOfInterest"])
+    print(f"[OK] {districts_file.name} is 100% compliant with the Data Contract! ({districts_count} districts verified)")
+    print(f"[OK] {poi_file.name} is 100% compliant with the Data Contract! ({pois_count} POIs verified)")
     return 0
 
 

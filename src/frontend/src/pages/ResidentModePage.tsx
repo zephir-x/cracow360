@@ -123,7 +123,7 @@ export function ResidentModePage({
           <div className="max-w-2xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
               <Sparkles className="w-3.5 h-3.5 text-sky-300" />
-              Moduł 1: Tryb Mieszkańca • Indeks Jakości Życia w 18 Dzielnicach
+              Tryb Mieszkańca • Indeks Jakości Życia w 18 Dzielnicach
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-black tracking-tight leading-[1.12] text-white">
@@ -136,7 +136,7 @@ export function ResidentModePage({
               Dostosuj wagi 5 kluczowych kategorii miejskich do własnych potrzeb, sprawdzaj interaktywny kartogram 18 dzielnic w czasie rzeczywistym i porównuj twarde wskaźniki z Otwartych Danych Urzędu Miasta Krakowa.
             </p>
 
-            {/* Interactive CTA Buttons (Directly inspired by inspiration.png) */}
+            {/* Interactive CTA Buttons */}
             <div className="flex flex-wrap items-center gap-3 pt-2">
               <button
                 onClick={scrollToWorkspace}
@@ -154,23 +154,10 @@ export function ResidentModePage({
                 <GitCompareArrows className="w-4 h-4 text-sky-200" />
                 Porównaj 2 Dzielnice Side-by-Side
               </button>
-
-              <button
-                onClick={() => setShowHowItWorks((prev) => !prev)}
-                className="inline-flex items-center gap-1.5 px-4 py-2.5 rounded-full text-xs sm:text-sm font-semibold bg-white/10 hover:bg-white/20 text-sky-100 border border-white/20 backdrop-blur-md transition cursor-pointer"
-              >
-                <HelpCircle className="w-4 h-4 text-sky-200" />
-                Jak to działa?
-                {showHowItWorks ? (
-                  <ChevronUp className="w-3.5 h-3.5" />
-                ) : (
-                  <ChevronDown className="w-3.5 h-3.5" />
-                )}
-              </button>
             </div>
           </div>
 
-          {/* Bottom Floating Glassmorphic Stat Cards (Like "128" & "24" in inspiration.png) */}
+          {/* Bottom Floating Glassmorphic Stat Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
             <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0">
@@ -222,6 +209,22 @@ export function ResidentModePage({
               </div>
             </div>
           </div>
+
+          {/* Centered "Jak to działa?" button placed symmetrically at the bottom */}
+          <div className="flex justify-center pt-2">
+            <button
+              onClick={() => setShowHowItWorks((prev) => !prev)}
+              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-md shadow-sm transition transform hover:-translate-y-0.5 cursor-pointer"
+            >
+              <HelpCircle className="w-4 h-4 text-sky-200" />
+              Jak to działa? (Metodologia obliczeń)
+              {showHowItWorks ? (
+                <ChevronUp className="w-3.5 h-3.5" />
+              ) : (
+                <ChevronDown className="w-3.5 h-3.5" />
+              )}
+            </button>
+          </div>
         </div>
       </section>
 
@@ -263,13 +266,13 @@ export function ResidentModePage({
         </section>
       )}
 
-      {/* Main 3-Column Interactive Workspace: Left Configurator (3) + Center Map (6) + Right Ranking (3) */}
+      {/* Main 3-Column Interactive Workspace: Left Configurator (325px) + Center Map (flex) + Right Ranking (345px) */}
       <section
         id="resident-workspace"
-        className="grid grid-cols-1 xl:grid-cols-12 gap-5 items-start scroll-mt-20"
+        className="grid grid-cols-1 xl:grid-cols-[325px_1fr_345px] gap-5 items-start scroll-mt-20"
       >
         {/* Left Panel: 4 Presets + 5 Category Sliders */}
-        <div className="xl:col-span-3">
+        <div className="w-full">
           <WeightsConfiguratorPanel
             weights={weights}
             activePresetId={activePresetId}
@@ -279,7 +282,7 @@ export function ResidentModePage({
         </div>
 
         {/* Center Panel: Interactive 18-District GeoJSON Choropleth Map */}
-        <div className="xl:col-span-6">
+        <div className="w-full min-w-0">
           <KrakowChoroplethMap
             geoJsonData={geoJsonData}
             districts={rankedDistricts}
@@ -291,7 +294,7 @@ export function ResidentModePage({
         </div>
 
         {/* Right Panel: Live-Sorted 18-District Ranking (#1 to #18) */}
-        <div className="xl:col-span-3">
+        <div className="w-full">
           <DistrictRankingList
             districts={rankedDistricts}
             selectedPrimaryId={selectedPrimaryId}

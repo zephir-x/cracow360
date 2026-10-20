@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-19T20:39:17Z",
+    "generatedAt": "2026-10-20T09:35:46Z",
     "dataVersion": "2.0.0-real-open-data-2025-2026",
     "normalizationMethod": "MinMax_0_100"
   },
@@ -30,8 +30,8 @@
         "totalCarePlaces0to3": 201,
         "childrenPerCarePlaceRatio": 2.83,
         "parentClubsCount": 1,
-        "kindergartensCount": 18,
-        "kindergartenPlacesTotal": 938,
+        "kindergartensCount": 22,
+        "kindergartenPlacesTotal": 1438,
         "primarySchoolsCount": 19,
         "primarySchoolStudentsTotal": 3949,
         "avgStudentsPerClass": 17.8
@@ -48,7 +48,7 @@
         "pocketParksCount": 3,
         "totalParksAreaHa": 30.91,
         "greenAreaM2PerCapita": 10.4,
-        "schoolSportsFacilitiesCount": 12,
+        "schoolSportsFacilitiesCount": 18,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
@@ -60,8 +60,8 @@
       },
       "scores": {
         "mobilityScore": 96.0,
-        "educationScore": 92.0,
-        "greeneryScore": 80.1,
+        "educationScore": 84.3,
+        "greeneryScore": 78.5,
         "cultureAndSeniorScore": 96.5,
         "environmentScore": 50.5
       },
@@ -100,8 +100,8 @@
         "totalCarePlaces0to3": 682,
         "childrenPerCarePlaceRatio": 1.67,
         "parentClubsCount": 2,
-        "kindergartensCount": 12,
-        "kindergartenPlacesTotal": 926,
+        "kindergartensCount": 18,
+        "kindergartenPlacesTotal": 1676,
         "primarySchoolsCount": 11,
         "primarySchoolStudentsTotal": 2968,
         "avgStudentsPerClass": 17.1
@@ -118,7 +118,7 @@
         "pocketParksCount": 3,
         "totalParksAreaHa": 24.14,
         "greenAreaM2PerCapita": 7.5,
-        "schoolSportsFacilitiesCount": 8,
+        "schoolSportsFacilitiesCount": 27,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
@@ -130,8 +130,8 @@
       },
       "scores": {
         "mobilityScore": 78.2,
-        "educationScore": 91.9,
-        "greeneryScore": 73.5,
+        "educationScore": 85.6,
+        "greeneryScore": 76.3,
         "cultureAndSeniorScore": 70.4,
         "environmentScore": 48.4
       },
@@ -170,8 +170,8 @@
         "totalCarePlaces0to3": 815,
         "childrenPerCarePlaceRatio": 1.64,
         "parentClubsCount": 4,
-        "kindergartensCount": 19,
-        "kindergartenPlacesTotal": 802,
+        "kindergartensCount": 27,
+        "kindergartenPlacesTotal": 1802,
         "primarySchoolsCount": 12,
         "primarySchoolStudentsTotal": 4014,
         "avgStudentsPerClass": 17.4
@@ -188,7 +188,7 @@
         "pocketParksCount": 3,
         "totalParksAreaHa": 20.02,
         "greenAreaM2PerCapita": 4.3,
-        "schoolSportsFacilitiesCount": 12,
+        "schoolSportsFacilitiesCount": 53,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
@@ -200,8 +200,8 @@
       },
       "scores": {
         "mobilityScore": 83.6,
-        "educationScore": 87.2,
-        "greeneryScore": 67.1,
+        "educationScore": 82.8,
+        "greeneryScore": 72.6,
         "cultureAndSeniorScore": 62.2,
         "environmentScore": 44.0
       },
@@ -240,8 +240,8 @@
         "totalCarePlaces0to3": 1515,
         "childrenPerCarePlaceRatio": 1.9,
         "parentClubsCount": 3,
-        "kindergartensCount": 46,
-        "kindergartenPlacesTotal": 2173,
+        "kindergartensCount": 55,
+        "kindergartenPlacesTotal": 3298,
         "primarySchoolsCount": 16,
         "primarySchoolStudentsTotal": 5685,
         "avgStudentsPerClass": 20.4
@@ -258,7 +258,7 @@
         "pocketParksCount": 2,
         "totalParksAreaHa": 17.88,
         "greenAreaM2PerCapita": 2.3,
-        "schoolSportsFacilitiesCount": 6,
+        "schoolSportsFacilitiesCount": 42,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
@@ -270,7 +270,7 @@
       },
       "scores": {
         "mobilityScore": 73.5,
-        "educationScore": 81.3,
+        "educationScore": 75.2,
         "greeneryScore": 55.0,
         "cultureAndSeniorScore": 64.2,
         "environmentScore": 58.9
@@ -310,8 +310,8 @@
         "totalCarePlaces0to3": 608,
         "childrenPerCarePlaceRatio": 1.33,
         "parentClubsCount": 1,
-        "kindergartensCount": 16,
-        "kindergartenPlacesTotal": 407,
+        "kindergartensCount": 22,
+        "kindergartenPlacesTotal": 1157,
         "primarySchoolsCount": 12,
         "primarySchoolStudentsTotal": 3641,
         "avgStudentsPerClass": 17.1
@@ -328,7 +328,7 @@
         "pocketParksCount": 4,
         "totalParksAreaHa": 35.74,
         "greenAreaM2PerCapita": 11.3,
-        "schoolSportsFacilitiesCount": 4,
+        "schoolSportsFacilitiesCount": 30,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
@@ -340,8 +340,8 @@
       },
       "scores": {
         "mobilityScore": 85.9,
-        "educationScore": 89.1,
-        "greeneryScore": 80.3,
+        "educationScore": 86.3,
+        "greeneryScore": 86.2,
         "cultureAndSeniorScore": 72.6,
         "environmentScore": 49.9
       },
@@ -380,8 +380,8 @@
         "totalCarePlaces0to3": 600,
         "childrenPerCarePlaceRatio": 1.35,
         "parentClubsCount": 3,
-        "kindergartensCount": 15,
-        "kindergartenPlacesTotal": 768,
+        "kindergartensCount": 17,
+        "kindergartenPlacesTotal": 1018,
         "primarySchoolsCount": 8,
         "primarySchoolStudentsTotal": 2676,
         "avgStudentsPerClass": 21.1
@@ -398,7 +398,7 @@
         "pocketParksCount": 2,
         "totalParksAreaHa": 39.93,
         "greenAreaM2PerCapita": 15.6,
-        "schoolSportsFacilitiesCount": 4,
+        "schoolSportsFacilitiesCount": 19,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
@@ -410,8 +410,8 @@
       },
       "scores": {
         "mobilityScore": 60.8,
-        "educationScore": 83.5,
-        "greeneryScore": 78.9,
+        "educationScore": 75.8,
+        "greeneryScore": 82.4,
         "cultureAndSeniorScore": 71.8,
         "environmentScore": 72.6
       },
@@ -450,8 +450,8 @@
         "totalCarePlaces0to3": 316,
         "childrenPerCarePlaceRatio": 1.66,
         "parentClubsCount": 3,
-        "kindergartensCount": 16,
-        "kindergartenPlacesTotal": 704,
+        "kindergartensCount": 20,
+        "kindergartenPlacesTotal": 1204,
         "primarySchoolsCount": 10,
         "primarySchoolStudentsTotal": 2402,
         "avgStudentsPerClass": 19.1
@@ -468,7 +468,7 @@
         "pocketParksCount": 3,
         "totalParksAreaHa": 118.87,
         "greenAreaM2PerCapita": 54.9,
-        "schoolSportsFacilitiesCount": 20,
+        "schoolSportsFacilitiesCount": 26,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
@@ -480,7 +480,7 @@
       },
       "scores": {
         "mobilityScore": 57.4,
-        "educationScore": 91.2,
+        "educationScore": 85.1,
         "greeneryScore": 97.0,
         "cultureAndSeniorScore": 77.5,
         "environmentScore": 93.0
@@ -520,8 +520,8 @@
         "totalCarePlaces0to3": 1683,
         "childrenPerCarePlaceRatio": 1.42,
         "parentClubsCount": 3,
-        "kindergartensCount": 47,
-        "kindergartenPlacesTotal": 2498,
+        "kindergartensCount": 57,
+        "kindergartenPlacesTotal": 3748,
         "primarySchoolsCount": 23,
         "primarySchoolStudentsTotal": 9045,
         "avgStudentsPerClass": 19.2
@@ -538,7 +538,7 @@
         "pocketParksCount": 3,
         "totalParksAreaHa": 63.82,
         "greenAreaM2PerCapita": 9.2,
-        "schoolSportsFacilitiesCount": 10,
+        "schoolSportsFacilitiesCount": 38,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
@@ -550,8 +550,8 @@
       },
       "scores": {
         "mobilityScore": 54.5,
-        "educationScore": 89.6,
-        "greeneryScore": 68.3,
+        "educationScore": 81.8,
+        "greeneryScore": 68.7,
         "cultureAndSeniorScore": 61.2,
         "environmentScore": 76.4
       },
@@ -590,8 +590,8 @@
         "totalCarePlaces0to3": 84,
         "childrenPerCarePlaceRatio": 5.67,
         "parentClubsCount": 1,
-        "kindergartensCount": 5,
-        "kindergartenPlacesTotal": 142,
+        "kindergartensCount": 6,
+        "kindergartenPlacesTotal": 267,
         "primarySchoolsCount": 2,
         "primarySchoolStudentsTotal": 993,
         "avgStudentsPerClass": 21.6
@@ -608,7 +608,7 @@
         "pocketParksCount": 1,
         "totalParksAreaHa": 36.81,
         "greenAreaM2PerCapita": 23.3,
-        "schoolSportsFacilitiesCount": 0,
+        "schoolSportsFacilitiesCount": 5,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
@@ -621,7 +621,7 @@
       "scores": {
         "mobilityScore": 72.1,
         "educationScore": 52.0,
-        "greeneryScore": 79.8,
+        "greeneryScore": 81.8,
         "cultureAndSeniorScore": 86.2,
         "environmentScore": 73.9
       },
@@ -660,8 +660,8 @@
         "totalCarePlaces0to3": 422,
         "childrenPerCarePlaceRatio": 2.21,
         "parentClubsCount": 3,
-        "kindergartensCount": 20,
-        "kindergartenPlacesTotal": 1027,
+        "kindergartensCount": 22,
+        "kindergartenPlacesTotal": 1277,
         "primarySchoolsCount": 7,
         "primarySchoolStudentsTotal": 2108,
         "avgStudentsPerClass": 16.7
@@ -678,7 +678,7 @@
         "pocketParksCount": 1,
         "totalParksAreaHa": 13.33,
         "greenAreaM2PerCapita": 4.4,
-        "schoolSportsFacilitiesCount": 4,
+        "schoolSportsFacilitiesCount": 13,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
@@ -690,8 +690,8 @@
       },
       "scores": {
         "mobilityScore": 54.9,
-        "educationScore": 90.7,
-        "greeneryScore": 57.0,
+        "educationScore": 81.0,
+        "greeneryScore": 55.6,
         "cultureAndSeniorScore": 70.7,
         "environmentScore": 70.8
       },
@@ -730,8 +730,8 @@
         "totalCarePlaces0to3": 887,
         "childrenPerCarePlaceRatio": 1.84,
         "parentClubsCount": 3,
-        "kindergartensCount": 29,
-        "kindergartenPlacesTotal": 1223,
+        "kindergartensCount": 34,
+        "kindergartenPlacesTotal": 1848,
         "primarySchoolsCount": 8,
         "primarySchoolStudentsTotal": 4232,
         "avgStudentsPerClass": 21.4
@@ -748,7 +748,7 @@
         "pocketParksCount": 1,
         "totalParksAreaHa": 47.13,
         "greenAreaM2PerCapita": 8.5,
-        "schoolSportsFacilitiesCount": 18,
+        "schoolSportsFacilitiesCount": 42,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
@@ -760,8 +760,8 @@
       },
       "scores": {
         "mobilityScore": 68.4,
-        "educationScore": 77.8,
-        "greeneryScore": 77.0,
+        "educationScore": 72.2,
+        "greeneryScore": 78.0,
         "cultureAndSeniorScore": 61.5,
         "environmentScore": 60.7
       },
@@ -800,8 +800,8 @@
         "totalCarePlaces0to3": 925,
         "childrenPerCarePlaceRatio": 2.17,
         "parentClubsCount": 4,
-        "kindergartensCount": 22,
-        "kindergartenPlacesTotal": 1271,
+        "kindergartensCount": 32,
+        "kindergartenPlacesTotal": 2521,
         "primarySchoolsCount": 15,
         "primarySchoolStudentsTotal": 5549,
         "avgStudentsPerClass": 19.4
@@ -818,7 +818,7 @@
         "pocketParksCount": 2,
         "totalParksAreaHa": 45.54,
         "greenAreaM2PerCapita": 7.1,
-        "schoolSportsFacilitiesCount": 6,
+        "schoolSportsFacilitiesCount": 42,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
@@ -830,8 +830,8 @@
       },
       "scores": {
         "mobilityScore": 64.7,
-        "educationScore": 80.4,
-        "greeneryScore": 68.2,
+        "educationScore": 76.5,
+        "greeneryScore": 70.6,
         "cultureAndSeniorScore": 58.0,
         "environmentScore": 67.3
       },
@@ -870,8 +870,8 @@
         "totalCarePlaces0to3": 1386,
         "childrenPerCarePlaceRatio": 1.51,
         "parentClubsCount": 5,
-        "kindergartensCount": 26,
-        "kindergartenPlacesTotal": 1549,
+        "kindergartensCount": 30,
+        "kindergartenPlacesTotal": 2049,
         "primarySchoolsCount": 14,
         "primarySchoolStudentsTotal": 4364,
         "avgStudentsPerClass": 17.1
@@ -888,7 +888,7 @@
         "pocketParksCount": 4,
         "totalParksAreaHa": 92.55,
         "greenAreaM2PerCapita": 20.3,
-        "schoolSportsFacilitiesCount": 14,
+        "schoolSportsFacilitiesCount": 17,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
@@ -900,8 +900,8 @@
       },
       "scores": {
         "mobilityScore": 67.1,
-        "educationScore": 91.6,
-        "greeneryScore": 81.0,
+        "educationScore": 82.4,
+        "greeneryScore": 78.6,
         "cultureAndSeniorScore": 81.5,
         "environmentScore": 78.4
       },
@@ -940,8 +940,8 @@
         "totalCarePlaces0to3": 972,
         "childrenPerCarePlaceRatio": 1.81,
         "parentClubsCount": 1,
-        "kindergartensCount": 23,
-        "kindergartenPlacesTotal": 1101,
+        "kindergartensCount": 26,
+        "kindergartenPlacesTotal": 1476,
         "primarySchoolsCount": 7,
         "primarySchoolStudentsTotal": 2900,
         "avgStudentsPerClass": 20.9
@@ -958,7 +958,7 @@
         "pocketParksCount": 4,
         "totalParksAreaHa": 54.88,
         "greenAreaM2PerCapita": 15.0,
-        "schoolSportsFacilitiesCount": 8,
+        "schoolSportsFacilitiesCount": 10,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
@@ -970,8 +970,8 @@
       },
       "scores": {
         "mobilityScore": 69.3,
-        "educationScore": 79.1,
-        "greeneryScore": 78.9,
+        "educationScore": 72.5,
+        "greeneryScore": 76.3,
         "cultureAndSeniorScore": 60.5,
         "environmentScore": 70.6
       },
@@ -1010,8 +1010,8 @@
         "totalCarePlaces0to3": 723,
         "childrenPerCarePlaceRatio": 1.79,
         "parentClubsCount": 3,
-        "kindergartensCount": 14,
-        "kindergartenPlacesTotal": 723,
+        "kindergartensCount": 21,
+        "kindergartenPlacesTotal": 1598,
         "primarySchoolsCount": 6,
         "primarySchoolStudentsTotal": 3203,
         "avgStudentsPerClass": 21.4
@@ -1028,7 +1028,7 @@
         "pocketParksCount": 2,
         "totalParksAreaHa": 38.41,
         "greenAreaM2PerCapita": 7.6,
-        "schoolSportsFacilitiesCount": 26,
+        "schoolSportsFacilitiesCount": 37,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
@@ -1040,8 +1040,8 @@
       },
       "scores": {
         "mobilityScore": 83.7,
-        "educationScore": 76.2,
-        "greeneryScore": 79.2,
+        "educationScore": 73.7,
+        "greeneryScore": 77.6,
         "cultureAndSeniorScore": 59.8,
         "environmentScore": 52.6
       },
@@ -1080,8 +1080,8 @@
         "totalCarePlaces0to3": 313,
         "childrenPerCarePlaceRatio": 2.48,
         "parentClubsCount": 1,
-        "kindergartensCount": 4,
-        "kindergartenPlacesTotal": 442,
+        "kindergartensCount": 13,
+        "kindergartenPlacesTotal": 1567,
         "primarySchoolsCount": 10,
         "primarySchoolStudentsTotal": 2904,
         "avgStudentsPerClass": 20.6
@@ -1098,7 +1098,7 @@
         "pocketParksCount": 1,
         "totalParksAreaHa": 31.95,
         "greenAreaM2PerCapita": 8.8,
-        "schoolSportsFacilitiesCount": 20,
+        "schoolSportsFacilitiesCount": 40,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
@@ -1110,8 +1110,8 @@
       },
       "scores": {
         "mobilityScore": 84.5,
-        "educationScore": 74.1,
-        "greeneryScore": 82.9,
+        "educationScore": 76.7,
+        "greeneryScore": 85.2,
         "cultureAndSeniorScore": 60.2,
         "environmentScore": 51.4
       },
@@ -1150,8 +1150,8 @@
         "totalCarePlaces0to3": 314,
         "childrenPerCarePlaceRatio": 2.0,
         "parentClubsCount": 2,
-        "kindergartensCount": 6,
-        "kindergartenPlacesTotal": 421,
+        "kindergartensCount": 9,
+        "kindergartenPlacesTotal": 796,
         "primarySchoolsCount": 3,
         "primarySchoolStudentsTotal": 1454,
         "avgStudentsPerClass": 20.2
@@ -1168,7 +1168,7 @@
         "pocketParksCount": 2,
         "totalParksAreaHa": 19.99,
         "greenAreaM2PerCapita": 9.8,
-        "schoolSportsFacilitiesCount": 2,
+        "schoolSportsFacilitiesCount": 14,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
@@ -1180,8 +1180,8 @@
       },
       "scores": {
         "mobilityScore": 57.7,
-        "educationScore": 78.9,
-        "greeneryScore": 64.0,
+        "educationScore": 74.8,
+        "greeneryScore": 66.9,
         "cultureAndSeniorScore": 77.3,
         "environmentScore": 78.3
       },
@@ -1220,8 +1220,8 @@
         "totalCarePlaces0to3": 882,
         "childrenPerCarePlaceRatio": 1.23,
         "parentClubsCount": 7,
-        "kindergartensCount": 12,
-        "kindergartenPlacesTotal": 680,
+        "kindergartensCount": 27,
+        "kindergartenPlacesTotal": 2555,
         "primarySchoolsCount": 13,
         "primarySchoolStudentsTotal": 3648,
         "avgStudentsPerClass": 16.6
@@ -1238,7 +1238,7 @@
         "pocketParksCount": 3,
         "totalParksAreaHa": 146.15,
         "greenAreaM2PerCapita": 31.2,
-        "schoolSportsFacilitiesCount": 20,
+        "schoolSportsFacilitiesCount": 60,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
@@ -1250,8 +1250,8 @@
       },
       "scores": {
         "mobilityScore": 54.0,
-        "educationScore": 91.3,
-        "greeneryScore": 85.7,
+        "educationScore": 92.0,
+        "greeneryScore": 91.9,
         "cultureAndSeniorScore": 80.2,
         "environmentScore": 91.5
       },

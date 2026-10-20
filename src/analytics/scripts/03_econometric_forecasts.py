@@ -13,6 +13,11 @@ GOAL / PURPOSE:
 
 from datetime import datetime, timezone
 import json
+import sys
+from pathlib import Path
+
+sys.path.append(str(Path(__file__).resolve().parent))
+
 import numpy as np
 from sklearn.linear_model import LinearRegression
 import matplotlib
@@ -63,32 +68,32 @@ def build_recommendation(d: dict, nursery_pot: str, senior_def: str, green_def: 
 
     if nursery_pot == "HIGH" and green_def == "HIGH":
         return (
-            f"Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: {balance} miejsc) "
-            f"oraz tworzenie parków kieszonkowych (obecnie {grn['greenAreaM2PerCapita']} m² zieleni/os.)."
+            f"Priorytet: kontraktowanie nowych miejsc \u017c\u0142obkowych (prognozowany bilans 2028: {balance} miejsc) "
+            f"oraz tworzenie park\u00f3w kieszonkowych (obecnie {grn['greenAreaM2PerCapita']} m\u00b2 zieleni/os.)."
         )
     if nursery_pot == "HIGH":
         return (
-            f"Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin "
+            f"Wysoki potencja\u0142 inwestycyjny B2B/B2G dla \u017c\u0142obk\u00f3w i klub\u00f3w dzieci\u0119cych z uwagi na nap\u0142yw m\u0142odych rodzin "
             f"(dynamika {dem['populationGrowthRate3YrPct']:+.1f}%, bilans 2028: {balance} miejsc)."
         )
     if senior_def in ("HIGH", "MEDIUM") and senior_pct >= 24.0:
         return (
-            f"Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej "
-            f"z uwagi na wysoki odsetek mieszkańców 65+ ({senior_pct}%)."
+            f"Rozbudowa sieci Centr\u00f3w Aktywno\u015bci Seniora (CAS) oraz oferty kulturalno-opieku\u0144czej "
+            f"z uwagi na wysoki odsetek mieszka\u0144c\u00f3w 65+ ({senior_pct}%)."
         )
     if green_def == "HIGH":
         return (
-            f"Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych "
-            f"(wskaźnik {grn['greenAreaM2PerCapita']} m²/os. poniżej normy miejskiej 10 m²/os.)."
+            f"Pilne zwi\u0119kszenie powierzchni teren\u00f3w zielonych i skwer\u00f3w lokalnych "
+            f"(wska\u017anik {grn['greenAreaM2PerCapita']} m\u00b2/os. poni\u017cej normy miejskiej 10 m\u00b2/os.)."
         )
     if d["mobilityAndTransport"]["isochroneCoveragePct"] < 75.0:
         return (
-            f"Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych "
-            f"(obecny zasięg izochrony 500m: {d['mobilityAndTransport']['isochroneCoveragePct']}%)."
+            f"Zwi\u0119kszenie cz\u0119stotliwo\u015bci i zasi\u0119gu linii dowozowych KMK oraz rozbudowa ci\u0105g\u00f3w pieszo-rowerowych "
+            f"(obecny zasi\u0119g izochrony 500m: {d['mobilityAndTransport']['isochroneCoveragePct']}%)."
         )
     return (
-        f"Utrzymanie wysokiej dostępności usług publicznych w {name} przy wsparciu modernizacji przyszkolnej "
-        f"infrastruktury sportowej i oferty dla seniorów ({senior_pct}% populacji)."
+        f"Utrzymanie wysokiej dost\u0119pno\u015bci us\u0142ug publicznych w {name} przy wsparciu modernizacji przyszkolnej "
+        f"infrastruktury sportowej i oferty dla senior\u00f3w ({senior_pct}% populacji)."
     )
 
 
@@ -122,7 +127,7 @@ def generate_competition_charts(districts: list[dict]) -> None:
             color="#1e293b",
         )
 
-    ax.set_title("Kraków360: Dynamika demograficzna vs. Prognozowany bilans miejsc żłobkowych (2028)", fontsize=12, fontweight="bold")
+    ax.set_title("Krak\u00f3w360: Dynamika demograficzna vs. Prognozowany bilans miejsc \u017c\u0142obkowych (2028)", fontsize=12, fontweight="bold")
     ax.set_xlabel("3-letnia dynamika demograficzna dzielnicy [%]")
     ax.set_ylabel("Prognozowany bilans miejsc opieki 0-3 lat w 2028 r. [miejsca]")
     ax.grid(True, linestyle="--", alpha=0.35)
@@ -145,8 +150,8 @@ def generate_competition_charts(districts: list[dict]) -> None:
         ax.text(val + 0.6, bar.get_y() + bar.get_height() / 2, f"{val:.1f}", va="center", fontsize=8.5, fontweight="bold")
 
     ax.set_xlim(0, 100)
-    ax.set_title("Kraków360: Bazowy Indeks Jakości Życia (średnia 5 wymiarów, wagi równe 5/10)", fontsize=12, fontweight="bold")
-    ax.set_xlabel("Syntetyczny wynik jakości życia [0 - 100 pkt]")
+    ax.set_title("Krak\u00f3w360: Bazowy Indeks Jako\u015bci \u017bycia (\u015brednia 5 wymiar\u00f3w, wagi r\u00f3wne 5/10)", fontsize=12, fontweight="bold")
+    ax.set_xlabel("Syntetyczny wynik jako\u015bci \u017cycia [0 - 100 pkt]")
     ax.grid(axis="x", linestyle="--", alpha=0.35)
     fig.tight_layout()
     chart2_path = CHARTS_DIR / "02_quality_of_life_ranking_18_districts.png"
