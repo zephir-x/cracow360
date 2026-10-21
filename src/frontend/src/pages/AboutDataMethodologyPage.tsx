@@ -529,7 +529,7 @@ export function AboutDataMethodologyPage({
             </span>
           </div>
 
-          {/* Search bar and Category Pills (5 in row 1, 4 in row 2, centered on Y axis) */}
+          {/* Search bar and Category Pills */}
           <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 pt-1">
             <div className="flex flex-col gap-2">
               {/* Row 1: 5 Category Pills */}
@@ -598,7 +598,7 @@ export function AboutDataMethodologyPage({
           </div>
         </div>
 
-        {/* Data Sources Table */}
+        {/* Data Sources Table with smooth fade-in on category, page or search query change */}
         <div className="overflow-x-auto">
           <table className="w-full text-xs text-left">
             <thead className="bg-slate-50 text-slate-700 text-[11px] font-bold uppercase tracking-wider border-b border-slate-200">
@@ -610,7 +610,10 @@ export function AboutDataMethodologyPage({
                 <th className="py-3 px-4 text-right">Portal Źródłowy</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100">
+            <tbody
+              key={`${activeCategory}-${currentPage}-${searchQuery}`}
+              className="divide-y divide-slate-100 animate-fade-in"
+            >
               {paginatedSources.map((source) => (
                 <tr key={source.id} className="hover:bg-blue-50/20 transition">
                   <td className="py-3 px-4 whitespace-nowrap">

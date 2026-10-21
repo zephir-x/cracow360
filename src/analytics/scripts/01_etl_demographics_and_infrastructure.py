@@ -467,20 +467,29 @@ def run_etl() -> None:
                 districts_data[did]["educationAndCare"]["primarySchoolStudentsTotal"] += places
                 districts_data[did]["_internal"]["primarySchoolClasses"] += classes
 
-            name = (
-                row.get("Nazwa szkoły_placówki")
+            operator = (row.get("Podmiot prowadzący") or row.get("Organ prowadzący") or "").strip()
+            add_info = f"Prowadzący: {operator}" if operator else (f"Pojemność: {places}" if places > 0 else "")
+
+            raw_name = (
+                row.get("Miejsce")
+                or row.get("Nazwa szkoły_placówki")
                 or row.get("Nazwa przedszkola")
                 or row.get("Nazwa żłobka")
                 or row.get("Nazwa")
                 or f"Placówka #{idx}"
             ).strip()
 
+            if subcat == "PARENT_CLUB" and not raw_name.lower().startswith("klub rodzic"):
+                name = f"Klub Rodziców: {raw_name}"
+            else:
+                name = raw_name
+
             if is_poi:
                 pois.append({
                     "id": f"{subcat.lower()}_{idx}", "districtId": did, "category": "EDU_CARE",
                     "subCategory": subcat, "name": name,
                     "address": f"{street}, {postal} Kraków".strip(", "), "lat": lat, "lng": lng,
-                    "metrics": {"capacity": places, "areaHa": None, "additionalInfo": f"Pojemność: {places}"},
+                    "metrics": {"capacity": places, "areaHa": None, "additionalInfo": add_info or f"Pojemność: {places}"},
                 })
 
     process_education_csv(r"Żłobki samorządowe", "NURSERY_PUBLIC", "nurseriesPublicCount")

@@ -1,13 +1,14 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { MapContainer, TileLayer, GeoJSON } from 'react-leaflet';
 import type { Layer, PathOptions, LeafletMouseEvent, LatLngBoundsExpression } from 'leaflet';
+import type L from 'leaflet';
 import type { Feature, Geometry } from 'geojson';
 import { GitCompareArrows, Info, MapPin, Moon, Sun, X } from 'lucide-react';
 import type {
   DistrictGeoJsonProperties,
   DistrictsGeoJsonCollection,
   DistrictSummaryDto,
-} from '../../../types/contracts';
+} from '../../types/contracts';
 
 export interface KrakowChoroplethMapProps {
   geoJsonData: DistrictsGeoJsonCollection | null;
@@ -28,6 +29,18 @@ export function getChoroplethColor(score: number): string {
   if (score >= 68) return '#0284c7'; // Sky 600 (Kraków Blue) - Dobra
   if (score >= 62) return '#f59e0b'; // Amber 500 - Umiarkowana
   return '#f97316'; // Orange 500 - Wymaga inwestycji
+}
+
+/**
+ * Returns a darker, harmonious border tone matching the district's active color palette
+ * (deep emerald, deep krakow blue, warm dark amber, burnt orange) instead of plain black.
+ */
+export function getChoroplethHoverBorder(score: number): string {
+  if (score >= 80) return '#064e3b'; // Emerald 900
+  if (score >= 74) return '#065f46'; // Emerald 800
+  if (score >= 68) return '#0369a1'; // Sky 700 / Ocean Blue
+  if (score >= 62) return '#b45309'; // Amber 700
+  return '#c2410c'; // Orange 700
 }
 
 function getShortDistrictName(fullName: string): string {
@@ -55,6 +68,7 @@ export function KrakowChoroplethMap({
 }: KrakowChoroplethMapProps) {
   const [hoveredDistrictId, setHoveredDistrictId] = useState<number | null>(null);
   const [darkMapMode, setDarkMapMode] = useState<boolean>(false);
+  const geoJsonRef = useRef<L.GeoJSON | null>(null);
 
   // Fast lookup map: districtId -> { summary, rank (1..18) }
   const districtLookup = useMemo(() => {
@@ -67,6 +81,12 @@ export function KrakowChoroplethMap({
     });
     return map;
   }, [districts]);
+
+  // Keep ref for dynamic tooltip lookups without re-creating layer
+  const districtLookupRef = useRef(districtLookup);
+  useEffect(() => {
+    districtLookupRef.current = districtLookup;
+  }, [districtLookup]);
 
   const primaryDistrict = selectedPrimaryId ? districtLookup.get(selectedPrimaryId)?.data : null;
   const secondaryDistrict = selectedSecondaryId ? districtLookup.get(selectedSecondaryId)?.data : null;
@@ -84,9 +104,9 @@ export function KrakowChoroplethMap({
     if (isPrimary) {
       return {
         fillColor: getChoroplethColor(score),
-        fillOpacity: 0.78,
+        fillOpacity: 0.82,
         color: '#1d4ed8', // Royal Blue 700 border for District #1
-        weight: 4,
+        weight: isHovered ? 4.5 : 4,
         dashArray: '',
       };
     }
@@ -94,9 +114,9 @@ export function KrakowChoroplethMap({
     if (isSecondary) {
       return {
         fillColor: getChoroplethColor(score),
-        fillOpacity: 0.78,
+        fillOpacity: 0.82,
         color: '#4338ca', // Indigo 700 border for District #2
-        weight: 4,
+        weight: isHovered ? 4.5 : 4,
         dashArray: '',
       };
     }
@@ -104,9 +124,9 @@ export function KrakowChoroplethMap({
     if (isHovered) {
       return {
         fillColor: getChoroplethColor(score),
-        fillOpacity: 0.75,
-        color: '#0f172a',
-        weight: 3,
+        fillOpacity: 0.82,
+        color: getChoroplethHoverBorder(score), // Darker harmonious tint of the district's tier
+        weight: 3.5,
         dashArray: '',
       };
     }
@@ -120,23 +140,36 @@ export function KrakowChoroplethMap({
     };
   };
 
-  // Attach mouseover, mouseout, click, and tooltip to each district polygon
+  // Perform lightweight style update on existing SVG paths without destroying/recreating DOM nodes
+  useEffect(() => {
+    if (geoJsonRef.current) {
+      geoJsonRef.current.setStyle((feature) =>
+        getFeatureStyle(feature as Feature<Geometry, DistrictGeoJsonProperties> | undefined)
+      );
+    }
+  });
+
+  // Attach mouseover, mouseout, click, and dynamic tooltip to each district polygon
   const onEachFeature = (
     feature: Feature<Geometry, DistrictGeoJsonProperties>,
     layer: Layer
   ) => {
     const districtId = feature.properties.districtId;
-    const entry = districtLookup.get(districtId);
-    const scoreText = entry
-      ? `${entry.data.weightedQualityOfLifeIndex.toFixed(1)} / 100 pkt (#${entry.rank})`
-      : 'Brak danych';
 
+    // Use dynamic string evaluation so tooltips always reflect current weights without re-binding
     layer.bindTooltip(
-      `<div style="font-family: system-ui, sans-serif; padding: 3px 6px;">
-        <div style="font-weight: 800; font-size: 13px; color: #0f172a;">${feature.properties.districtName}</div>
-        <div style="font-size: 12px; color: #1d4ed8; font-weight: 700;">Indeks Jakości Życia: ${scoreText}</div>
-        <div style="font-size: 11px; color: #475569;">Kliknij, aby wybrać do porównania</div>
-      </div>`,
+      () => {
+        const entry = districtLookupRef.current.get(districtId);
+        const scoreText = entry
+          ? `${entry.data.weightedQualityOfLifeIndex.toFixed(1)} / 100 pkt (#${entry.rank})`
+          : 'Brak danych';
+
+        return `<div style="font-family: system-ui, sans-serif; padding: 3px 6px;">
+          <div style="font-weight: 800; font-size: 13px; color: #0f172a;">${feature.properties.districtName}</div>
+          <div style="font-size: 12px; color: #1d4ed8; font-weight: 700;">Indeks Jakości Życia: ${scoreText}</div>
+          <div style="font-size: 11px; color: #475569;">Kliknij, aby wybrać do porównania</div>
+        </div>`;
+      },
       { sticky: true, direction: 'top', opacity: 0.98 }
     );
 
@@ -153,14 +186,6 @@ export function KrakowChoroplethMap({
       },
     });
   };
-
-  // Force GeoJSON layer re-bind when districts scores or selection changes
-  const geoJsonKey = useMemo(() => {
-    const scoresSignature = districts
-      .map((d) => `${d.districtId}:${d.weightedQualityOfLifeIndex}`)
-      .join('|');
-    return `${scoresSignature}-${selectedPrimaryId ?? 0}-${selectedSecondaryId ?? 0}`;
-  }, [districts, selectedPrimaryId, selectedSecondaryId]);
 
   return (
     <div
@@ -296,7 +321,8 @@ export function KrakowChoroplethMap({
 
         {geoJsonData && (
           <GeoJSON
-            key={geoJsonKey}
+            key={darkMapMode ? 'krakow-dark' : 'krakow-light'}
+            ref={geoJsonRef}
             data={geoJsonData}
             style={(feature) =>
               getFeatureStyle(feature as Feature<Geometry, DistrictGeoJsonProperties> | undefined)

@@ -1,6 +1,128 @@
 @import "tailwindcss";
 @import "leaflet/dist/leaflet.css";
 
+/* Root document canvas: transparent to display the detached #civic-fixed-bg layer */
+html, body {
+  min-height: 100%;
+  background-color: transparent;
+  color: #0f172a;
+}
+
+/* Page tab enter: dramatic scale and focal blur transition matching user's visual request */
+@keyframes tabEnterDramatic {
+  0% {
+    filter: blur(14px);
+    transform: scale(0.95);
+    opacity: 0.35;
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.animate-tab-enter {
+  animation: tabEnterDramatic 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: center top;
+  will-change: filter, transform, opacity;
+}
+
+/* Soft, calm focal transitions: subtle scale and progressive de-blur */
+@keyframes contentFocusEnter {
+  0% {
+    filter: blur(8px);
+    transform: scale(0.985);
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+
+@keyframes contentBlurFade {
+  0% {
+    filter: blur(6px);
+    transform: scale(0.99);
+  }
+  100% {
+    filter: blur(0px);
+    transform: scale(1);
+  }
+}
+
+/* Page root container transition: lightweight scale settle without texture allocation stalls */
+@keyframes pageRootEnter {
+  0% {
+    transform: scale(0.996);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* All animations slowed down by ~half (calm, elegant 0.65s-0.75s pacing with hardware layer stabilization) */
+.animate-fade-slide-up {
+  animation: contentFocusEnter 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: center top;
+}
+
+.animate-fade-in {
+  animation: contentBlurFade 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: center top;
+}
+
+.animate-page-enter {
+  animation: pageRootEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: center top;
+}
+
+.animate-content-enter {
+  animation: contentFocusEnter 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: center top;
+}
+
+.animate-content-blur {
+  animation: contentBlurFade 0.65s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: center top;
+}
+
+/* Expandable drawer with smooth open AND close transitions (height, blur, scale, opacity) */
+.drawer-expandable {
+  display: grid;
+  grid-template-rows: 0fr;
+  opacity: 0;
+  filter: blur(8px);
+  transform: scale(0.985);
+  transition: grid-template-rows 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.65s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+.drawer-expandable.is-open {
+  grid-template-rows: 1fr;
+  opacity: 1;
+  filter: blur(0px);
+  transform: scale(1);
+  pointer-events: auto;
+}
+
 /* Custom keyframe animations for the Kraków360 Hero & Interactive UI */
 @keyframes floatSlow {
   0%, 100% {
@@ -28,6 +150,11 @@
   animation: pulseGlow 5s ease-in-out infinite;
 }
 
+/* Smooth color & opacity crossfades for Leaflet choropleth district polygons (extended to 0.8s for silky GIS transition) */
+.leaflet-interactive {
+  transition: fill 0.8s ease-out, fill-opacity 0.8s ease-out, stroke 0.45s ease-out, stroke-width 0.3s ease-out;
+}
+
 /* Dark Smart City styling for key-less OpenStreetMap standard tiles (optional toggle) */
 .krakow-dark-tiles .leaflet-tile-pane {
   filter: invert(100%) hue-rotate(180deg) brightness(92%) contrast(92%) saturate(65%);
@@ -41,6 +168,11 @@
 .leaflet-container {
   background-color: #e0f2fe;
   font-family: inherit;
+}
+
+/* Smooth scrolling across the application */
+html {
+  scroll-behavior: smooth;
 }
 
 /* Custom subtle scrollbars for ranking lists */

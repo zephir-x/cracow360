@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 import {
   SlidersHorizontal,
   RotateCcw,
@@ -17,8 +17,8 @@ import {
   Bike,
   Sparkles,
 } from 'lucide-react';
-import type { QualityWeights, ResidentPreset } from '../../../types/contracts';
-import { RESIDENT_PRESETS } from '../../../utils/qualityIndexCalculator';
+import type { QualityWeights, ResidentPreset } from '../../types/contracts';
+import { RESIDENT_PRESETS } from '../../utils/qualityIndexCalculator';
 
 export interface WeightsConfiguratorPanelProps {
   weights: QualityWeights;
@@ -118,7 +118,68 @@ export function WeightsConfiguratorPanel({
   onChangeWeights,
   onResetWeights,
 }: WeightsConfiguratorPanelProps) {
+  const animationFrameRef = useRef<number | null>(null);
+
+  // Cancel any running animation on unmount
+  useEffect(() => {
+    return () => {
+      if (animationFrameRef.current !== null) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
+    };
+  }, []);
+
+  // Smoothly glide slider values and counter badges when applying presets or resetting
+  const animateWeightsTransition = (
+    targetWeights: QualityWeights,
+    presetId: string | null,
+    onComplete?: () => void
+  ) => {
+    if (animationFrameRef.current !== null) {
+      cancelAnimationFrame(animationFrameRef.current);
+    }
+
+    const startWeights = { ...weights };
+    const startTime = performance.now();
+    const duration = 450; // Smooth 450ms physical gliding
+
+    const step = (now: number) => {
+      const elapsed = now - startTime;
+      const progress = Math.min(1, elapsed / duration);
+      // easeOutCubic curve for realistic physical gliding
+      const ease = 1 - Math.pow(1 - progress, 3);
+
+      const interpolated: QualityWeights = {
+        mobility: Number((startWeights.mobility + (targetWeights.mobility - startWeights.mobility) * ease).toFixed(1)),
+        education: Number((startWeights.education + (targetWeights.education - startWeights.education) * ease).toFixed(1)),
+        greenery: Number((startWeights.greenery + (targetWeights.greenery - startWeights.greenery) * ease).toFixed(1)),
+        culture: Number((startWeights.culture + (targetWeights.culture - startWeights.culture) * ease).toFixed(1)),
+        environment: Number((startWeights.environment + (targetWeights.environment - startWeights.environment) * ease).toFixed(1)),
+        safety: Number((startWeights.safety + (targetWeights.safety - startWeights.safety) * ease).toFixed(1)),
+        housingAffordability: Number((startWeights.housingAffordability + (targetWeights.housingAffordability - startWeights.housingAffordability) * ease).toFixed(1)),
+      };
+
+      if (progress < 1) {
+        onChangeWeights(interpolated, presetId);
+        animationFrameRef.current = requestAnimationFrame(step);
+      } else {
+        if (onComplete) {
+          onComplete();
+        } else {
+          onChangeWeights(targetWeights, presetId);
+        }
+        animationFrameRef.current = null;
+      }
+    };
+
+    animationFrameRef.current = requestAnimationFrame(step);
+  };
+
   const handleSliderChange = (key: keyof QualityWeights, value: number) => {
+    if (animationFrameRef.current !== null) {
+      cancelAnimationFrame(animationFrameRef.current);
+      animationFrameRef.current = null;
+    }
     onChangeWeights(
       {
         ...weights,
@@ -129,7 +190,23 @@ export function WeightsConfiguratorPanel({
   };
 
   const handleApplyPreset = (preset: ResidentPreset) => {
-    onChangeWeights(preset.weights, preset.id);
+    animateWeightsTransition(preset.weights, preset.id);
+  };
+
+  const handleResetWithAnimation = () => {
+    animateWeightsTransition(
+      {
+        mobility: 5,
+        education: 5,
+        greenery: 5,
+        culture: 5,
+        environment: 5,
+        safety: 5,
+        housingAffordability: 5,
+      },
+      null,
+      () => onResetWeights()
+    );
   };
 
   return (
@@ -146,7 +223,7 @@ export function WeightsConfiguratorPanel({
           </div>
         </div>
         <button
-          onClick={onResetWeights}
+          onClick={handleResetWithAnimation}
           title="Przywróć równe wagi (wszystko po 5)"
           className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-semibold text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition border border-transparent hover:border-blue-200 cursor-pointer"
         >
@@ -216,18 +293,18 @@ export function WeightsConfiguratorPanel({
                       </span>
                     </div>
                   </div>
-                  <span className="text-xs font-black text-blue-700 px-2 py-0.5 bg-blue-50 border border-blue-200 rounded-lg shrink-0">
-                    {currentValue}
+                  <span className="text-xs font-black text-blue-700 px-2 py-0.5 bg-blue-50 border border-blue-200 rounded-lg shrink-0 transition-colors">
+                    {Math.round(currentValue)}
                   </span>
                 </div>
 
-                {/* Slider Input */}
+                {/* Slider Input with smooth gliding step */}
                 <div className="pt-0.5">
                   <input
                     type="range"
                     min="0"
                     max="10"
-                    step="1"
+                    step="0.1"
                     value={currentValue}
                     onChange={(e) => handleSliderChange(slider.key, Number(e.target.value))}
                     className={`w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer ${slider.accentColor}`}

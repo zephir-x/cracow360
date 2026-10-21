@@ -5120,14 +5120,14 @@
       "districtId": 1,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #1",
+      "name": "Klub Rodziców: Fundacja KDM",
       "address": "Berka Joselewicza, 31-031 Kraków",
       "lat": 50.054921,
       "lng": 19.947326,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5135,14 +5135,14 @@
       "districtId": 2,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #2",
+      "name": "Klub Rodziców: Stowarzyszenie Kultura i Edukacja",
       "address": "Bobrowskiego, 31-552 Kraków",
       "lat": 50.058972,
       "lng": 19.967235,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5150,14 +5150,14 @@
       "districtId": 2,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #3",
+      "name": "Klub Rodziców: Fundacja Polekont - Istota Przywiązania",
       "address": "Dąbska, 31-572 Kraków",
       "lat": 50.068467,
       "lng": 19.984446,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5165,14 +5165,14 @@
       "districtId": 1,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #4",
+      "name": "Klub Rodziców: Klub Kultury \"Wena\"",
       "address": "Aleja 29 Listopada, 31-241 Kraków",
       "lat": 50.079719,
       "lng": 19.952784,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5180,14 +5180,14 @@
       "districtId": 3,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #5",
+      "name": "Klub Rodziców: Klub Malwa",
       "address": "Dobrego Pasterza, 31-416 Kraków",
       "lat": 50.088333,
       "lng": 19.956764,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5195,14 +5195,14 @@
       "districtId": 3,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #6",
+      "name": "Klub Rodziców: Klub Olsza",
       "address": "Stanisława ze Skalbmierza, 31-436 Kraków",
       "lat": 50.081421,
       "lng": 19.968765,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5210,14 +5210,14 @@
       "districtId": 3,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #7",
+      "name": "Klub Rodziców: Stowarzyszenie SIEMACHA",
       "address": "Dobrego Pasterza, 31-416 Kraków",
       "lat": 50.089406,
       "lng": 19.958486,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5225,14 +5225,14 @@
       "districtId": 11,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #8",
+      "name": "Klub Rodziców: Centrum Kultury \"Dworek Białoprądnicki\"",
       "address": "Papiernicza, 31-221 Kraków",
       "lat": 50.012605,
       "lng": 19.975185,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5240,14 +5240,14 @@
       "districtId": 4,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #9",
+      "name": "Klub Rodziców: Klub Kultury \"Łokietek\"",
       "address": "Władysława Łokietka, 31-263 Kraków",
       "lat": 50.086272,
       "lng": 19.922827,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5255,14 +5255,14 @@
       "districtId": 9,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #10",
+      "name": "Klub Rodziców: PAL \"Na Żabińcu\"",
       "address": "Konecznego, 31-216 Kraków",
       "lat": 50.012322,
       "lng": 19.926318,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5270,14 +5270,14 @@
       "districtId": 5,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #11",
+      "name": "Klub Rodziców: Klub Kultury \"Paleta\"",
       "address": "Wrocławska, 30-017 Kraków",
       "lat": 50.076618,
       "lng": 19.927386,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5285,14 +5285,14 @@
       "districtId": 6,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #12",
+      "name": "Klub Rodziców: Klub Kultury \"Mydlniki\"",
       "address": "Balicka, 30-198 Kraków",
       "lat": 50.083968,
       "lng": 19.845687,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5300,14 +5300,14 @@
       "districtId": 6,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #13",
+      "name": "Klub Rodziców: Stowarzyszenie Latarnia",
       "address": "Jabłonkowska, 30-139 Kraków",
       "lat": 50.085188,
       "lng": 19.86906,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5315,14 +5315,14 @@
       "districtId": 6,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #14",
+      "name": "Klub Rodziców: Fundacja KDM",
       "address": "Wizjonerów, 31-356 Kraków",
       "lat": 50.083491,
       "lng": 19.886478,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5330,14 +5330,14 @@
       "districtId": 7,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #15",
+      "name": "Klub Rodziców: Klub Kultury \"Przegorzały\"",
       "address": "Kamedulska, 30-252 Kraków",
       "lat": 50.048221,
       "lng": 19.873565,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5345,14 +5345,14 @@
       "districtId": 7,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #16",
+      "name": "Klub Rodziców: Klub Kultury \"Wola\"",
       "address": "Królowej Jadwigi, 30-218 Kraków",
       "lat": 50.055412,
       "lng": 19.9068,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5360,14 +5360,14 @@
       "districtId": 7,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #17",
+      "name": "Klub Rodziców: Klub Kultury \"Chełm\"",
       "address": "Chełmska, 30-238 Kraków",
       "lat": 50.063718,
       "lng": 19.84103,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5375,14 +5375,14 @@
       "districtId": 1,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #18",
+      "name": "Klub Rodziców: Ośrodek Ruczaj",
       "address": "Przyzby, 30-384 Kraków",
       "lat": 50.066887,
       "lng": 19.938872,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5390,14 +5390,14 @@
       "districtId": 8,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #19",
+      "name": "Klub Rodziców: Klub Skotniki",
       "address": "Batalionów Chłopskich, 30-394 Kraków",
       "lat": 50.016349,
       "lng": 19.875701,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5405,14 +5405,14 @@
       "districtId": 8,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #20",
+      "name": "Klub Rodziców: Stowarzyszenie Rodzin Adopcyjnych i Zastępczych Pro Familia",
       "address": "Kapelanka, 30-347 Kraków",
       "lat": 50.043208,
       "lng": 19.922648,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5420,14 +5420,14 @@
       "districtId": 9,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #21",
+      "name": "Klub Rodziców: Klub Iskierka",
       "address": "Żywiecka, 30-427 Kraków",
       "lat": 50.01416,
       "lng": 19.91811,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5435,14 +5435,14 @@
       "districtId": 10,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #22",
+      "name": "Klub Rodziców: Klub Wróblowice",
       "address": "Niewodniczańskiego, 30-698 Kraków",
       "lat": 49.979265,
       "lng": 19.949616,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5450,14 +5450,14 @@
       "districtId": 14,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #23",
+      "name": "Klub Rodziców: Klub Swoszowice",
       "address": "Kolejarzy, 30-434 Kraków",
       "lat": 50.071456,
       "lng": 20.018831,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5465,14 +5465,14 @@
       "districtId": 10,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #24",
+      "name": "Klub Rodziców: Fort Borek",
       "address": "Forteczna, 30-437 Kraków",
       "lat": 50.001049,
       "lng": 19.906107,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5480,14 +5480,14 @@
       "districtId": 11,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #25",
+      "name": "Klub Rodziców: Klub Piaskownica",
       "address": "Łużycka, 30-658 Kraków",
       "lat": 50.007801,
       "lng": 19.974556,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5495,14 +5495,14 @@
       "districtId": 11,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #26",
+      "name": "Klub Rodziców: Fundacja Rodzina Plus",
       "address": "Witosa, 30-612 Kraków",
       "lat": 50.012408,
       "lng": 19.955841,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5510,14 +5510,14 @@
       "districtId": 11,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #27",
+      "name": "Klub Rodziców: Stowarzyszenie SIEMACHA",
       "address": "Kamieńskiego, 30-644 Kraków",
       "lat": 50.024552,
       "lng": 19.976917,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5525,14 +5525,14 @@
       "districtId": 9,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #28",
+      "name": "Klub Rodziców: Dwór Czeczów",
       "address": "Popiełuszki, 30-898 Kraków",
       "lat": 50.021322,
       "lng": 19.930318,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5540,14 +5540,14 @@
       "districtId": 12,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #29",
+      "name": "Klub Rodziców: Klub Aleksandry",
       "address": "Aleksandry, 30-837 Kraków",
       "lat": 50.012745,
       "lng": 20.01739,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5555,14 +5555,14 @@
       "districtId": 12,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #30",
+      "name": "Klub Rodziców: Fundacja Polekont - Istota Przywiązania",
       "address": "Kurczaba, 30-868 Kraków",
       "lat": 50.013401,
       "lng": 20.009224,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5570,14 +5570,14 @@
       "districtId": 6,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #31",
+      "name": "Klub Rodziców: Stowarzyszenie SIEMACHA",
       "address": "Facimiech, 30-667 Kraków",
       "lat": 50.082788,
       "lng": 19.87306,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5585,14 +5585,14 @@
       "districtId": 13,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #32",
+      "name": "Klub Rodziców: Klub Rybitwy",
       "address": "Rybitwy, 30-722 Kraków",
       "lat": 50.043069,
       "lng": 20.033718,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5600,14 +5600,14 @@
       "districtId": 13,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #33",
+      "name": "Klub Rodziców: Klub Przewóz",
       "address": "Łutnia, 30-799 Kraków",
       "lat": 50.042127,
       "lng": 20.064396,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5615,14 +5615,14 @@
       "districtId": 3,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #34",
+      "name": "Klub Rodziców: Klub Płaszów",
       "address": "Gumniska, 30-718 Kraków",
       "lat": 50.081897,
       "lng": 19.973438,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5630,14 +5630,14 @@
       "districtId": 2,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #35",
+      "name": "Klub Rodziców: Centrum Kultury Podgórza",
       "address": "Sokolska, 30-510 Kraków",
       "lat": 50.063481,
       "lng": 19.974177,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5645,14 +5645,14 @@
       "districtId": 13,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #36",
+      "name": "Klub Rodziców: PAL \"Stare Podgórze/Zabłocie\"",
       "address": "Dąbrówki, 30-550 Kraków",
       "lat": 50.04593,
       "lng": 19.9563,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5660,14 +5660,14 @@
       "districtId": 14,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #37",
+      "name": "Klub Rodziców: Klub 303",
       "address": "Osiedle Dywizjonu 303, 31-871 Kraków",
       "lat": 50.084863,
       "lng": 19.999625,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5675,14 +5675,14 @@
       "districtId": 15,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #38",
+      "name": "Klub Rodziców: Klub Kuźnia",
       "address": "Osiedle Złotego Wieku, 31-616 Kraków",
       "lat": 50.093684,
       "lng": 20.004382,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5690,14 +5690,14 @@
       "districtId": 15,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #39",
+      "name": "Klub Rodziców: Fundacja Polekont - Istota Przywiązania",
       "address": "Osiedle Oświecenia, 31-636 Kraków",
       "lat": 50.089328,
       "lng": 19.987642,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5705,14 +5705,14 @@
       "districtId": 15,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #40",
+      "name": "Klub Rodziców: Fundacja KDM",
       "address": "Osiedle Piastów, 31-624 Kraków",
       "lat": 50.098172,
       "lng": 20.016861,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5720,14 +5720,14 @@
       "districtId": 16,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #41",
+      "name": "Klub Rodziców: Stowarzyszenie Rodzin Adopcyjnych i Zastępczych Pro Familia",
       "address": "Osiedle Niepodległości, 31-861 Kraków",
       "lat": 50.079773,
       "lng": 20.020876,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5735,14 +5735,14 @@
       "districtId": 13,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #42",
+      "name": "Klub Rodziców: Klub Dukat",
       "address": "Styczna, 31-764 Kraków",
       "lat": 50.043321,
       "lng": 20.02118,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5750,14 +5750,14 @@
       "districtId": 12,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #43",
+      "name": "Klub Rodziców: Klub Zakole",
       "address": "Zakole, 31-763 Kraków",
       "lat": 50.011044,
       "lng": 20.023701,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5765,14 +5765,14 @@
       "districtId": 18,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #44",
+      "name": "Klub Rodziców: ARTzona",
       "address": "Osiedle Górali, 31-959 Kraków",
       "lat": 50.081063,
       "lng": 20.041255,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5780,14 +5780,14 @@
       "districtId": 14,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #45",
+      "name": "Klub Rodziców: Nowohuckie Centrum Kultury",
       "address": "Aleja Jana Pawła II, 31-913 Kraków",
       "lat": 50.074108,
       "lng": 20.011951,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5795,14 +5795,14 @@
       "districtId": 18,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #46",
+      "name": "Klub Rodziców: Klub Jędruś",
       "address": "Osiedle Centrum A, 31-923 Kraków",
       "lat": 50.072925,
       "lng": 20.034321,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5810,14 +5810,14 @@
       "districtId": 18,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #47",
+      "name": "Klub Rodziców: PAL \"Na Skarpie\"",
       "address": "Osiedle Na Skarpie, 31-910 Kraków",
       "lat": 50.069536,
       "lng": 20.046144,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5825,14 +5825,14 @@
       "districtId": 18,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #48",
+      "name": "Klub Rodziców: Klub Karino",
       "address": "Truskawkowa, 31-985 Kraków",
       "lat": 50.047589,
       "lng": 20.12835,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5840,14 +5840,14 @@
       "districtId": 18,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #49",
+      "name": "Klub Rodziców: Stowarzyszenie Rodzin Adopcyjnych i Zastępczych Pro Familia",
       "address": "Osiedle Górali, 31-960 Kraków",
       "lat": 50.080949,
       "lng": 20.039284,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Organizacja pozarządowa"
       }
     },
     {
@@ -5855,14 +5855,14 @@
       "districtId": 18,
       "category": "EDU_CARE",
       "subCategory": "PARENT_CLUB",
-      "name": "Placówka #50",
+      "name": "Klub Rodziców: PAL \"Wróżenice\"",
       "address": "Wróżenicka, 31-988 Kraków",
       "lat": 50.11224,
       "lng": 20.178236,
       "metrics": {
         "capacity": 0,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 0"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5877,7 +5877,7 @@
       "metrics": {
         "capacity": 108,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 108"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5892,7 +5892,7 @@
       "metrics": {
         "capacity": 339,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 339"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5907,7 +5907,7 @@
       "metrics": {
         "capacity": 164,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 164"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5922,7 +5922,7 @@
       "metrics": {
         "capacity": 143,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 143"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5937,7 +5937,7 @@
       "metrics": {
         "capacity": 128,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 128"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5952,7 +5952,7 @@
       "metrics": {
         "capacity": 125,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 125"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5967,7 +5967,7 @@
       "metrics": {
         "capacity": 145,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 145"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5982,7 +5982,7 @@
       "metrics": {
         "capacity": 131,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 131"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -5997,7 +5997,7 @@
       "metrics": {
         "capacity": 123,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 123"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6012,7 +6012,7 @@
       "metrics": {
         "capacity": 127,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 127"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6027,7 +6027,7 @@
       "metrics": {
         "capacity": 90,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 90"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6042,7 +6042,7 @@
       "metrics": {
         "capacity": 81,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 81"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6057,7 +6057,7 @@
       "metrics": {
         "capacity": 71,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 71"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6072,7 +6072,7 @@
       "metrics": {
         "capacity": 99,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 99"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6087,7 +6087,7 @@
       "metrics": {
         "capacity": 115,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 115"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6102,7 +6102,7 @@
       "metrics": {
         "capacity": 81,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 81"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6117,7 +6117,7 @@
       "metrics": {
         "capacity": 112,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 112"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6132,7 +6132,7 @@
       "metrics": {
         "capacity": 56,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 56"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6147,7 +6147,7 @@
       "metrics": {
         "capacity": 139,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 139"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6162,7 +6162,7 @@
       "metrics": {
         "capacity": 99,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 99"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6177,7 +6177,7 @@
       "metrics": {
         "capacity": 145,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 145"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6192,7 +6192,7 @@
       "metrics": {
         "capacity": 112,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 112"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6207,7 +6207,7 @@
       "metrics": {
         "capacity": 83,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 83"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6222,7 +6222,7 @@
       "metrics": {
         "capacity": 128,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 128"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6237,7 +6237,7 @@
       "metrics": {
         "capacity": 146,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 146"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6252,7 +6252,7 @@
       "metrics": {
         "capacity": 93,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 93"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6267,7 +6267,7 @@
       "metrics": {
         "capacity": 92,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 92"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6282,7 +6282,7 @@
       "metrics": {
         "capacity": 157,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 157"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6297,7 +6297,7 @@
       "metrics": {
         "capacity": 185,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 185"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6312,7 +6312,7 @@
       "metrics": {
         "capacity": 161,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 161"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6327,7 +6327,7 @@
       "metrics": {
         "capacity": 105,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 105"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6342,7 +6342,7 @@
       "metrics": {
         "capacity": 98,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 98"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6357,7 +6357,7 @@
       "metrics": {
         "capacity": 122,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 122"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6372,7 +6372,7 @@
       "metrics": {
         "capacity": 123,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 123"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6387,7 +6387,7 @@
       "metrics": {
         "capacity": 143,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 143"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6402,7 +6402,7 @@
       "metrics": {
         "capacity": 123,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 123"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6417,7 +6417,7 @@
       "metrics": {
         "capacity": 124,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 124"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6432,7 +6432,7 @@
       "metrics": {
         "capacity": 75,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 75"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6447,7 +6447,7 @@
       "metrics": {
         "capacity": 120,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 120"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6462,7 +6462,7 @@
       "metrics": {
         "capacity": 182,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 182"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6477,7 +6477,7 @@
       "metrics": {
         "capacity": 109,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 109"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6492,7 +6492,7 @@
       "metrics": {
         "capacity": 110,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 110"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6507,7 +6507,7 @@
       "metrics": {
         "capacity": 227,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 227"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6522,7 +6522,7 @@
       "metrics": {
         "capacity": 111,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 111"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6537,7 +6537,7 @@
       "metrics": {
         "capacity": 66,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 66"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6552,7 +6552,7 @@
       "metrics": {
         "capacity": 120,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 120"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6567,7 +6567,7 @@
       "metrics": {
         "capacity": 98,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 98"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6582,7 +6582,7 @@
       "metrics": {
         "capacity": 106,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 106"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6597,7 +6597,7 @@
       "metrics": {
         "capacity": 69,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 69"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6612,7 +6612,7 @@
       "metrics": {
         "capacity": 89,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 89"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6627,7 +6627,7 @@
       "metrics": {
         "capacity": 88,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 88"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6642,7 +6642,7 @@
       "metrics": {
         "capacity": 98,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 98"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6657,7 +6657,7 @@
       "metrics": {
         "capacity": 148,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 148"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6672,7 +6672,7 @@
       "metrics": {
         "capacity": 127,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 127"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6687,7 +6687,7 @@
       "metrics": {
         "capacity": 223,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 223"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6702,7 +6702,7 @@
       "metrics": {
         "capacity": 95,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 95"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6717,7 +6717,7 @@
       "metrics": {
         "capacity": 232,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 232"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6732,7 +6732,7 @@
       "metrics": {
         "capacity": 286,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 286"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6747,7 +6747,7 @@
       "metrics": {
         "capacity": 138,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 138"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6762,7 +6762,7 @@
       "metrics": {
         "capacity": 67,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 67"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6777,7 +6777,7 @@
       "metrics": {
         "capacity": 167,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 167"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6792,7 +6792,7 @@
       "metrics": {
         "capacity": 100,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 100"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6807,7 +6807,7 @@
       "metrics": {
         "capacity": 139,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 139"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6822,7 +6822,7 @@
       "metrics": {
         "capacity": 134,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 134"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6837,7 +6837,7 @@
       "metrics": {
         "capacity": 110,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 110"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6852,7 +6852,7 @@
       "metrics": {
         "capacity": 93,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 93"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6867,7 +6867,7 @@
       "metrics": {
         "capacity": 148,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 148"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6882,7 +6882,7 @@
       "metrics": {
         "capacity": 121,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 121"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6897,7 +6897,7 @@
       "metrics": {
         "capacity": 95,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 95"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6912,7 +6912,7 @@
       "metrics": {
         "capacity": 93,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 93"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6927,7 +6927,7 @@
       "metrics": {
         "capacity": 135,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 135"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6942,7 +6942,7 @@
       "metrics": {
         "capacity": 146,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 146"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6957,7 +6957,7 @@
       "metrics": {
         "capacity": 119,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 119"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6972,7 +6972,7 @@
       "metrics": {
         "capacity": 64,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 64"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -6987,7 +6987,7 @@
       "metrics": {
         "capacity": 282,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 282"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7002,7 +7002,7 @@
       "metrics": {
         "capacity": 122,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 122"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7017,7 +7017,7 @@
       "metrics": {
         "capacity": 67,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 67"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7032,7 +7032,7 @@
       "metrics": {
         "capacity": 202,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 202"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7047,7 +7047,7 @@
       "metrics": {
         "capacity": 57,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 57"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7062,7 +7062,7 @@
       "metrics": {
         "capacity": 65,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 65"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7077,7 +7077,7 @@
       "metrics": {
         "capacity": 66,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 66"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7092,7 +7092,7 @@
       "metrics": {
         "capacity": 110,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 110"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7107,7 +7107,7 @@
       "metrics": {
         "capacity": 80,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 80"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7122,7 +7122,7 @@
       "metrics": {
         "capacity": 94,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 94"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7137,7 +7137,7 @@
       "metrics": {
         "capacity": 120,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 120"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7152,7 +7152,7 @@
       "metrics": {
         "capacity": 71,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 71"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7167,7 +7167,7 @@
       "metrics": {
         "capacity": 75,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 75"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7182,7 +7182,7 @@
       "metrics": {
         "capacity": 46,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 46"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7197,7 +7197,7 @@
       "metrics": {
         "capacity": 118,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 118"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7212,7 +7212,7 @@
       "metrics": {
         "capacity": 15,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 15"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7227,7 +7227,7 @@
       "metrics": {
         "capacity": 109,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 109"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7242,7 +7242,7 @@
       "metrics": {
         "capacity": 179,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 179"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7257,7 +7257,7 @@
       "metrics": {
         "capacity": 73,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 73"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7272,7 +7272,7 @@
       "metrics": {
         "capacity": 107,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 107"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7287,7 +7287,7 @@
       "metrics": {
         "capacity": 125,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 125"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7302,7 +7302,7 @@
       "metrics": {
         "capacity": 107,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 107"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7317,7 +7317,7 @@
       "metrics": {
         "capacity": 121,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 121"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7332,7 +7332,7 @@
       "metrics": {
         "capacity": 87,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 87"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7347,7 +7347,7 @@
       "metrics": {
         "capacity": 117,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 117"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7362,7 +7362,7 @@
       "metrics": {
         "capacity": 164,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 164"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7377,7 +7377,7 @@
       "metrics": {
         "capacity": 41,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 41"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7392,7 +7392,7 @@
       "metrics": {
         "capacity": 168,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 168"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7407,7 +7407,7 @@
       "metrics": {
         "capacity": 45,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 45"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7422,7 +7422,7 @@
       "metrics": {
         "capacity": 97,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 97"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7437,7 +7437,7 @@
       "metrics": {
         "capacity": 122,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 122"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7452,7 +7452,7 @@
       "metrics": {
         "capacity": 157,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 157"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7467,7 +7467,7 @@
       "metrics": {
         "capacity": 38,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 38"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7482,7 +7482,7 @@
       "metrics": {
         "capacity": 140,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 140"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7497,7 +7497,7 @@
       "metrics": {
         "capacity": 92,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 92"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7512,7 +7512,7 @@
       "metrics": {
         "capacity": 172,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 172"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7527,7 +7527,7 @@
       "metrics": {
         "capacity": 53,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 53"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7542,7 +7542,7 @@
       "metrics": {
         "capacity": 15,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 15"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7557,7 +7557,7 @@
       "metrics": {
         "capacity": 26,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 26"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7572,7 +7572,7 @@
       "metrics": {
         "capacity": 125,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 125"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7587,7 +7587,7 @@
       "metrics": {
         "capacity": 100,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 100"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7602,7 +7602,7 @@
       "metrics": {
         "capacity": 72,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 72"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7617,7 +7617,7 @@
       "metrics": {
         "capacity": 150,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 150"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7632,7 +7632,7 @@
       "metrics": {
         "capacity": 138,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 138"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7647,7 +7647,7 @@
       "metrics": {
         "capacity": 89,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 89"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7662,7 +7662,7 @@
       "metrics": {
         "capacity": 163,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 163"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7677,7 +7677,7 @@
       "metrics": {
         "capacity": 115,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 115"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7692,7 +7692,7 @@
       "metrics": {
         "capacity": 162,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 162"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7707,7 +7707,7 @@
       "metrics": {
         "capacity": 5,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 5"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7722,7 +7722,7 @@
       "metrics": {
         "capacity": 20,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 20"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7737,7 +7737,7 @@
       "metrics": {
         "capacity": 100,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 100"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7752,7 +7752,7 @@
       "metrics": {
         "capacity": 75,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 75"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7767,7 +7767,7 @@
       "metrics": {
         "capacity": 14,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 14"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7782,7 +7782,7 @@
       "metrics": {
         "capacity": 59,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 59"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7797,7 +7797,7 @@
       "metrics": {
         "capacity": 73,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 73"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7812,7 +7812,7 @@
       "metrics": {
         "capacity": 161,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 161"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7827,7 +7827,7 @@
       "metrics": {
         "capacity": 121,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 121"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7842,7 +7842,7 @@
       "metrics": {
         "capacity": 87,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 87"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7857,7 +7857,7 @@
       "metrics": {
         "capacity": 100,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 100"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7872,7 +7872,7 @@
       "metrics": {
         "capacity": 47,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 47"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7887,7 +7887,7 @@
       "metrics": {
         "capacity": 50,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 50"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7902,7 +7902,7 @@
       "metrics": {
         "capacity": 86,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 86"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7917,7 +7917,7 @@
       "metrics": {
         "capacity": 454,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 454"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7932,7 +7932,7 @@
       "metrics": {
         "capacity": 834,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 834"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7947,7 +7947,7 @@
       "metrics": {
         "capacity": 781,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 781"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7962,7 +7962,7 @@
       "metrics": {
         "capacity": 163,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 163"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7977,7 +7977,7 @@
       "metrics": {
         "capacity": 425,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 425"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -7992,7 +7992,7 @@
       "metrics": {
         "capacity": 789,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 789"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8007,7 +8007,7 @@
       "metrics": {
         "capacity": 349,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 349"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8022,7 +8022,7 @@
       "metrics": {
         "capacity": 303,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 303"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8037,7 +8037,7 @@
       "metrics": {
         "capacity": 335,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 335"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8052,7 +8052,7 @@
       "metrics": {
         "capacity": 423,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 423"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8067,7 +8067,7 @@
       "metrics": {
         "capacity": 389,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 389"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8082,7 +8082,7 @@
       "metrics": {
         "capacity": 658,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 658"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8097,7 +8097,7 @@
       "metrics": {
         "capacity": 185,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 185"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8112,7 +8112,7 @@
       "metrics": {
         "capacity": 579,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 579"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8127,7 +8127,7 @@
       "metrics": {
         "capacity": 689,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 689"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8142,7 +8142,7 @@
       "metrics": {
         "capacity": 651,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 651"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8157,7 +8157,7 @@
       "metrics": {
         "capacity": 342,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 342"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8172,7 +8172,7 @@
       "metrics": {
         "capacity": 484,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 484"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8187,7 +8187,7 @@
       "metrics": {
         "capacity": 330,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 330"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8202,7 +8202,7 @@
       "metrics": {
         "capacity": 410,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 410"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8217,7 +8217,7 @@
       "metrics": {
         "capacity": 593,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 593"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8232,7 +8232,7 @@
       "metrics": {
         "capacity": 426,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 426"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8247,7 +8247,7 @@
       "metrics": {
         "capacity": 381,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 381"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8262,7 +8262,7 @@
       "metrics": {
         "capacity": 378,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 378"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8277,7 +8277,7 @@
       "metrics": {
         "capacity": 737,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 737"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8292,7 +8292,7 @@
       "metrics": {
         "capacity": 378,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 378"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8307,7 +8307,7 @@
       "metrics": {
         "capacity": 666,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 666"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8322,7 +8322,7 @@
       "metrics": {
         "capacity": 300,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 300"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8337,7 +8337,7 @@
       "metrics": {
         "capacity": 301,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 301"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8352,7 +8352,7 @@
       "metrics": {
         "capacity": 163,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 163"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8367,7 +8367,7 @@
       "metrics": {
         "capacity": 884,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 884"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8382,7 +8382,7 @@
       "metrics": {
         "capacity": 435,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 435"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8397,7 +8397,7 @@
       "metrics": {
         "capacity": 532,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 532"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8412,7 +8412,7 @@
       "metrics": {
         "capacity": 416,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 416"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8427,7 +8427,7 @@
       "metrics": {
         "capacity": 331,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 331"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8442,7 +8442,7 @@
       "metrics": {
         "capacity": 251,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 251"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8457,7 +8457,7 @@
       "metrics": {
         "capacity": 593,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 593"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8472,7 +8472,7 @@
       "metrics": {
         "capacity": 366,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 366"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8487,7 +8487,7 @@
       "metrics": {
         "capacity": 238,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 238"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8502,7 +8502,7 @@
       "metrics": {
         "capacity": 406,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 406"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8517,7 +8517,7 @@
       "metrics": {
         "capacity": 342,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 342"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8532,7 +8532,7 @@
       "metrics": {
         "capacity": 469,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 469"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8547,7 +8547,7 @@
       "metrics": {
         "capacity": 488,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 488"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8562,7 +8562,7 @@
       "metrics": {
         "capacity": 438,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 438"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8577,7 +8577,7 @@
       "metrics": {
         "capacity": 364,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 364"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8592,7 +8592,7 @@
       "metrics": {
         "capacity": 369,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 369"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8607,7 +8607,7 @@
       "metrics": {
         "capacity": 382,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 382"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8622,7 +8622,7 @@
       "metrics": {
         "capacity": 408,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 408"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8637,7 +8637,7 @@
       "metrics": {
         "capacity": 745,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 745"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8652,7 +8652,7 @@
       "metrics": {
         "capacity": 641,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 641"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8667,7 +8667,7 @@
       "metrics": {
         "capacity": 373,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 373"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8682,7 +8682,7 @@
       "metrics": {
         "capacity": 414,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 414"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8697,7 +8697,7 @@
       "metrics": {
         "capacity": 305,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 305"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8712,7 +8712,7 @@
       "metrics": {
         "capacity": 181,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 181"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8727,7 +8727,7 @@
       "metrics": {
         "capacity": 530,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 530"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8742,7 +8742,7 @@
       "metrics": {
         "capacity": 193,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 193"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8757,7 +8757,7 @@
       "metrics": {
         "capacity": 671,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 671"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8772,7 +8772,7 @@
       "metrics": {
         "capacity": 179,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 179"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8787,7 +8787,7 @@
       "metrics": {
         "capacity": 469,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 469"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8802,7 +8802,7 @@
       "metrics": {
         "capacity": 513,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 513"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8817,7 +8817,7 @@
       "metrics": {
         "capacity": 654,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 654"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8832,7 +8832,7 @@
       "metrics": {
         "capacity": 623,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 623"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8847,7 +8847,7 @@
       "metrics": {
         "capacity": 547,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 547"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8862,7 +8862,7 @@
       "metrics": {
         "capacity": 256,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 256"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8877,7 +8877,7 @@
       "metrics": {
         "capacity": 502,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 502"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8892,7 +8892,7 @@
       "metrics": {
         "capacity": 1001,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 1001"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8907,7 +8907,7 @@
       "metrics": {
         "capacity": 665,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 665"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8922,7 +8922,7 @@
       "metrics": {
         "capacity": 697,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 697"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8937,7 +8937,7 @@
       "metrics": {
         "capacity": 279,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 279"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8952,7 +8952,7 @@
       "metrics": {
         "capacity": 366,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 366"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8967,7 +8967,7 @@
       "metrics": {
         "capacity": 795,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 795"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8982,7 +8982,7 @@
       "metrics": {
         "capacity": 442,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 442"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -8997,7 +8997,7 @@
       "metrics": {
         "capacity": 495,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 495"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9012,7 +9012,7 @@
       "metrics": {
         "capacity": 569,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 569"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9027,7 +9027,7 @@
       "metrics": {
         "capacity": 1107,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 1107"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9042,7 +9042,7 @@
       "metrics": {
         "capacity": 472,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 472"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9057,7 +9057,7 @@
       "metrics": {
         "capacity": 251,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 251"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9072,7 +9072,7 @@
       "metrics": {
         "capacity": 209,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 209"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9087,7 +9087,7 @@
       "metrics": {
         "capacity": 534,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 534"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9102,7 +9102,7 @@
       "metrics": {
         "capacity": 286,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 286"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9117,7 +9117,7 @@
       "metrics": {
         "capacity": 314,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 314"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9132,7 +9132,7 @@
       "metrics": {
         "capacity": 296,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 296"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9147,7 +9147,7 @@
       "metrics": {
         "capacity": 456,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 456"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9162,7 +9162,7 @@
       "metrics": {
         "capacity": 625,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 625"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9177,7 +9177,7 @@
       "metrics": {
         "capacity": 518,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 518"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9192,7 +9192,7 @@
       "metrics": {
         "capacity": 1107,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 1107"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9207,7 +9207,7 @@
       "metrics": {
         "capacity": 309,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 309"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9222,7 +9222,7 @@
       "metrics": {
         "capacity": 170,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 170"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9237,7 +9237,7 @@
       "metrics": {
         "capacity": 291,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 291"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9252,7 +9252,7 @@
       "metrics": {
         "capacity": 379,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 379"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9267,7 +9267,7 @@
       "metrics": {
         "capacity": 500,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 500"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9282,7 +9282,7 @@
       "metrics": {
         "capacity": 182,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 182"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9297,7 +9297,7 @@
       "metrics": {
         "capacity": 299,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 299"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9312,7 +9312,7 @@
       "metrics": {
         "capacity": 139,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 139"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9327,7 +9327,7 @@
       "metrics": {
         "capacity": 70,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 70"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9342,7 +9342,7 @@
       "metrics": {
         "capacity": 194,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 194"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9357,7 +9357,7 @@
       "metrics": {
         "capacity": 82,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 82"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9372,7 +9372,7 @@
       "metrics": {
         "capacity": 127,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 127"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9387,7 +9387,7 @@
       "metrics": {
         "capacity": 55,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 55"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9402,7 +9402,7 @@
       "metrics": {
         "capacity": 54,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 54"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9417,7 +9417,7 @@
       "metrics": {
         "capacity": 207,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 207"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9432,7 +9432,7 @@
       "metrics": {
         "capacity": 707,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 707"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9447,7 +9447,7 @@
       "metrics": {
         "capacity": 472,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 472"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9462,7 +9462,7 @@
       "metrics": {
         "capacity": 612,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 612"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9477,7 +9477,7 @@
       "metrics": {
         "capacity": 72,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 72"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9492,7 +9492,7 @@
       "metrics": {
         "capacity": 121,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 121"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9507,7 +9507,7 @@
       "metrics": {
         "capacity": 75,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 75"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9522,7 +9522,7 @@
       "metrics": {
         "capacity": 86,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 86"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9537,7 +9537,7 @@
       "metrics": {
         "capacity": 15,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 15"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9552,7 +9552,7 @@
       "metrics": {
         "capacity": 70,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 70"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9567,7 +9567,7 @@
       "metrics": {
         "capacity": 53,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 53"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9582,7 +9582,7 @@
       "metrics": {
         "capacity": 125,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 125"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9597,7 +9597,7 @@
       "metrics": {
         "capacity": 354,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 354"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9612,7 +9612,7 @@
       "metrics": {
         "capacity": 81,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 81"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9627,7 +9627,7 @@
       "metrics": {
         "capacity": 524,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 524"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9642,7 +9642,7 @@
       "metrics": {
         "capacity": 94,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 94"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9657,7 +9657,7 @@
       "metrics": {
         "capacity": 476,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 476"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9672,7 +9672,7 @@
       "metrics": {
         "capacity": 475,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 475"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9687,7 +9687,7 @@
       "metrics": {
         "capacity": 462,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 462"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9702,7 +9702,7 @@
       "metrics": {
         "capacity": 376,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 376"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9717,7 +9717,7 @@
       "metrics": {
         "capacity": 438,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 438"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9732,7 +9732,7 @@
       "metrics": {
         "capacity": 319,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 319"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9747,7 +9747,7 @@
       "metrics": {
         "capacity": 273,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 273"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9762,7 +9762,7 @@
       "metrics": {
         "capacity": 956,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 956"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9777,7 +9777,7 @@
       "metrics": {
         "capacity": 54,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 54"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9792,7 +9792,7 @@
       "metrics": {
         "capacity": 331,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 331"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9807,7 +9807,7 @@
       "metrics": {
         "capacity": 528,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 528"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9822,7 +9822,7 @@
       "metrics": {
         "capacity": 848,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 848"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {
@@ -9837,7 +9837,7 @@
       "metrics": {
         "capacity": 732,
         "areaHa": null,
-        "additionalInfo": "Pojemność: 732"
+        "additionalInfo": "Prowadzący: Gmina Miejska Kraków"
       }
     },
     {

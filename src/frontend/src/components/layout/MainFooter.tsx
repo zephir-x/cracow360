@@ -30,6 +30,11 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
     };
   }, []);
 
+  const handleTabClick = (tab: AppTabId) => {
+    onSelectTab(tab);
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <footer className="mt-14 border-t border-blue-100 bg-white/90 backdrop-blur-md">
       <div className="max-w-360 mx-auto px-4 sm:px-6 py-8">
@@ -61,25 +66,25 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
           {/* Quick navigation links */}
           <div className="flex flex-wrap items-center gap-5 font-medium">
             <button
-              onClick={() => onSelectTab('resident')}
+              onClick={() => handleTabClick('resident')}
               className="hover:text-blue-600 transition cursor-pointer"
             >
               Dla Mieszkańca
             </button>
             <button
-              onClick={() => onSelectTab('parent')}
+              onClick={() => handleTabClick('parent')}
               className="hover:text-blue-600 transition cursor-pointer"
             >
               Dla Rodzica
             </button>
             <button
-              onClick={() => onSelectTab('investor')}
+              onClick={() => handleTabClick('investor')}
               className="hover:text-blue-600 transition cursor-pointer"
             >
               Dla Urzędnika i Inwestora
             </button>
             <button
-              onClick={() => onSelectTab('methodology')}
+              onClick={() => handleTabClick('methodology')}
               className="hover:text-blue-600 transition cursor-pointer"
             >
               Metodologia i Źródła Danych

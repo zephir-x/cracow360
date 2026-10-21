@@ -1,12 +1,11 @@
 import { useEffect, useMemo, useState } from 'react';
 import { cracow360Api } from './api/client';
-import { MainFooter, MainNavbar, type AppTabId } from './components/layout';
-import {
-  AboutDataMethodologyPage,
-  OfficialInvestorModePage,
-  ParentModePage,
-  ResidentModePage,
-} from './pages';
+import { MainFooter } from './components/layout/MainFooter';
+import { MainNavbar, type AppTabId } from './components/layout/MainNavbar';
+import { AboutDataMethodologyPage } from './pages/AboutDataMethodologyPage';
+import { OfficialInvestorModePage } from './pages/OfficialInvestorModePage';
+import { ParentModePage } from './pages/ParentModePage';
+import { ResidentModePage } from './pages/ResidentModePage';
 import type {
   DistrictsGeoJsonCollection,
   DistrictSummaryDto,
@@ -47,6 +46,11 @@ export function App() {
 
   // Network and data loading error message
   const [error, setError] = useState<string | null>(null);
+
+  // Smoothly scroll to the top of the viewport whenever the active tab changes
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }, [activeTab]);
 
   // Initial data loading from the backend API (all districts + vector boundaries)
   useEffect(() => {
@@ -126,11 +130,11 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-linear-to-b from-[#eaf3ff] via-[#f5f9ff] to-white text-slate-900 flex flex-col">
+    <div className="min-h-screen text-slate-900 flex flex-col bg-transparent">
       {/* Top Civic Navigation Bar */}
       <MainNavbar activeTab={activeTab} onSelectTab={setActiveTab} />
 
-      {/* Main Content Container */}
+      {/* Main Content Container with smooth tab transition */}
       <main className="flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
         {error && (
           <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-medium shadow-xs">
@@ -138,44 +142,46 @@ export function App() {
           </div>
         )}
 
-        {/* Module 1: Resident Mode (Quality of Life Map, Ranking & Comparison) */}
-        {activeTab === 'resident' && (
-          <ResidentModePage
-            rankedDistricts={rankedDistricts}
-            geoJsonData={geoJsonData}
-            weights={weights}
-            activePresetId={activePresetId}
-            selectedPrimaryId={selectedPrimaryId}
-            selectedSecondaryId={selectedSecondaryId}
-            onChangeWeights={handleWeightsChange}
-            onResetWeights={handleResetWeights}
-            onSelectDistrict={handleSelectDistrict}
-            onSelectPrimary={(id) => setSelectedPrimaryId(id)}
-            onSelectSecondary={(id) => setSelectedSecondaryId(id)}
-            onClearSelection={handleClearSelection}
-          />
-        )}
+        <div key={activeTab} className="w-full animate-tab-enter">
+          {/* Resident Mode (Quality of Life Map, Ranking & Comparison) */}
+          {activeTab === 'resident' && (
+            <ResidentModePage
+              rankedDistricts={rankedDistricts}
+              geoJsonData={geoJsonData}
+              weights={weights}
+              activePresetId={activePresetId}
+              selectedPrimaryId={selectedPrimaryId}
+              selectedSecondaryId={selectedSecondaryId}
+              onChangeWeights={handleWeightsChange}
+              onResetWeights={handleResetWeights}
+              onSelectDistrict={handleSelectDistrict}
+              onSelectPrimary={(id) => setSelectedPrimaryId(id)}
+              onSelectSecondary={(id) => setSelectedSecondaryId(id)}
+              onClearSelection={handleClearSelection}
+            />
+          )}
 
-        {/* Module 2: Parent Mode (Childcare & School Facility Compass) */}
-        {activeTab === 'parent' && (
-          <ParentModePage
-            districts={rankedDistricts}
-            onBackToResidentMode={() => setActiveTab('resident')}
-          />
-        )}
+          {/* Parent Mode (Childcare & School Facility Compass) */}
+          {activeTab === 'parent' && (
+            <ParentModePage
+              districts={rankedDistricts}
+              onBackToResidentMode={() => setActiveTab('resident')}
+            />
+          )}
 
-        {/* Module 3: Official & Investor Mode (Econometric Predictions & What-If Simulator) */}
-        {activeTab === 'investor' && (
-          <OfficialInvestorModePage
-            districts={rankedDistricts}
-            onBackToResidentMode={() => setActiveTab('resident')}
-          />
-        )}
+          {/* Official & Investor Mode (Econometric Predictions & What-If Simulator) */}
+          {activeTab === 'investor' && (
+            <OfficialInvestorModePage
+              districts={rankedDistricts}
+              onBackToResidentMode={() => setActiveTab('resident')}
+            />
+          )}
 
-        {/* Methodology & Open Data Sources Documentation */}
-        {activeTab === 'methodology' && (
-          <AboutDataMethodologyPage onBackToResidentMode={() => setActiveTab('resident')} />
-        )}
+          {/* Methodology & Open Data Sources Documentation */}
+          {activeTab === 'methodology' && (
+            <AboutDataMethodologyPage onBackToResidentMode={() => setActiveTab('resident')} />
+          )}
+        </div>
       </main>
 
       {/* Civic Footer */}

@@ -1,4 +1,4 @@
-import {useState} from "react";
+import { useState } from 'react';
 import {
   ArrowDownRight,
   BarChart3,
@@ -11,12 +11,10 @@ import {
   Trophy,
   Users,
 } from 'lucide-react';
-import {
-  DistrictComparisonView,
-  DistrictRankingList,
-  KrakowChoroplethMap,
-  WeightsConfiguratorPanel,
-} from '../features/resident-mode';
+import { DistrictComparisonView } from '../components/resident-mode/DistrictComparisonView';
+import { DistrictRankingList } from '../components/resident-mode/DistrictRankingList';
+import { KrakowChoroplethMap } from '../components/resident-mode/KrakowChoroplethMap';
+import { WeightsConfiguratorPanel } from '../components/resident-mode/WeightsConfiguratorPanel';
 import type {
   DistrictsGeoJsonCollection,
   DistrictSummaryDto,
@@ -67,7 +65,7 @@ export function ResidentModePage({
 
   return (
     <div className="space-y-8">
-      {/* HERO BANNER – Kraków Blue & White palette and animated graphics */}
+      {/* Hero Banner – Kraków Blue & White palette and animated graphics */}
       <section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white shadow-2xl shadow-blue-950/15 border border-blue-400/30">
         {/* Animated Background Vector Shapes & Glowing Orbs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -151,7 +149,7 @@ export function ResidentModePage({
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-blue-500/30 hover:bg-blue-500/45 text-white border border-white/30 backdrop-blur-md transition cursor-pointer"
               >
                 <GitCompareArrows className="w-4 h-4 text-sky-200" />
-                Porównaj 2 Dzielnice Side-by-Side
+                Porównaj 2 Dzielnice
               </button>
             </div>
           </div>
@@ -227,43 +225,45 @@ export function ResidentModePage({
         </div>
       </section>
 
-      {/* Expandable "Jak to działa?" Drawer */}
-      {showHowItWorks && (
-        <section className="rounded-3xl bg-white border border-blue-200 p-6 shadow-lg shadow-blue-900/5 space-y-4">
-          <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-            <h3 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
-              <HelpCircle className="w-5 h-5 text-blue-600" />
-              Jak wyliczamy spersonalizowany Indeks Jakości Życia (0–100 pkt)?
-            </h3>
-            <button
-              onClick={() => setShowHowItWorks(false)}
-              className="text-xs font-semibold text-slate-500 hover:text-slate-800 cursor-pointer"
-            >
-              Zamknij instrukcję
-            </button>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed">
-            <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
-              <div className="font-extrabold text-blue-900 mb-1">
-                1. Normalizacja Min-Max (0–100 pkt)
-              </div>
-              Twarde dane miejskie (ceny mieszkań, zdarzenia drogowe, KMK, parki i lasy, żłobki, biblioteki, CAS, smog i hałas) są przeliczane na obiektywną skalę 0–100 pkt w 7 kategoriach jakości życia.
+      {/* Expandable "Jak to działa?" Drawer with smooth open & close animation */}
+      <div className={`drawer-expandable ${showHowItWorks ? 'is-open' : ''}`}>
+        <div className="overflow-hidden">
+          <section className="rounded-3xl bg-white border border-blue-200 p-6 shadow-lg shadow-blue-900/5 space-y-4">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <h3 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
+                <HelpCircle className="w-5 h-5 text-blue-600" />
+                Jak wyliczamy spersonalizowany Indeks Jakości Życia (0–100 pkt)?
+              </h3>
+              <button
+                onClick={() => setShowHowItWorks(false)}
+                className="text-xs font-semibold text-slate-500 hover:text-slate-800 cursor-pointer"
+              >
+                Zamknij instrukcję
+              </button>
             </div>
-            <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
-              <div className="font-extrabold text-sky-900 mb-1">
-                2. Twoje Wagi i Presety (0–10 pkt)
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed">
+              <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
+                <div className="font-extrabold text-blue-900 mb-1">
+                  1. Normalizacja Min-Max (0–100 pkt)
+                </div>
+                Twarde dane miejskie (ceny mieszkań, zdarzenia drogowe, KMK, parki i lasy, żłobki, biblioteki, CAS, smog i hałas) są przeliczane na obiektywną skalę 0–100 pkt w 7 kategoriach jakości życia.
               </div>
-              Ustawiasz wagi suwakami po lewej stronie lub wybierasz gotowy profil (Rodzina z Dziećmi, Student / Młody, Aktywny Senior, Inwestor / Biznes B2B). Aplikacja mnoży 7 ocen każdej dzielnicy przez Twoje wagi w czasie 0 ms.
-            </div>
-            <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
-              <div className="font-extrabold text-indigo-900 mb-1">
-                3. Porównanie Side-by-Side (Wykres Radarowy 7 Osi)
+              <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
+                <div className="font-extrabold text-sky-900 mb-1">
+                  2. Twoje Wagi i Presety (0–10 pkt)
+                </div>
+                Ustawiasz wagi suwakami po lewej stronie lub wybierasz gotowy profil (Rodzina z Dziećmi, Student / Młody, Aktywny Senior, Inwestor / Biznes). Aplikacja mnoży 7 ocen każdej dzielnicy przez Twoje wagi w czasie 0 ms.
               </div>
-              Kliknij dowolne 2 dzielnice na mapie lub liście rankingowej, aby nałożyć ich profile na 7-osiowy wykres radarowy i porównać twarde wskaźniki w tabeli poniżej.
+              <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
+                <div className="font-extrabold text-indigo-900 mb-1">
+                  3. Porównanie (Wykres Radarowy 7 Osi)
+                </div>
+                Kliknij dowolne 2 dzielnice na mapie lub liście rankingowej, aby nałożyć ich profile na 7-osiowy wykres radarowy i porównać twarde wskaźniki w tabeli poniżej.
+              </div>
             </div>
-          </div>
-        </section>
-      )}
+          </section>
+        </div>
+      </div>
 
       {/* Main 3-Column Interactive Workspace: Left Configurator + Center Map + Right Ranking */}
       <section
@@ -303,16 +303,18 @@ export function ResidentModePage({
         </div>
       </section>
 
-      {/* Step 4: Side-by-Side District Comparison View + Recharts RadarChart + Hard Metrics Table */}
-      <DistrictComparisonView
-        districts={rankedDistricts}
-        selectedPrimaryId={selectedPrimaryId}
-        selectedSecondaryId={selectedSecondaryId}
-        weights={weights}
-        onSelectPrimary={onSelectPrimary}
-        onSelectSecondary={onSelectSecondary}
-        onClearSelection={onClearSelection}
-      />
+      {/* Side-by-Side District Comparison View: always accessible and displays empty/unfilled prompt on clear */}
+      <div id="comparison-section" className="scroll-mt-20">
+        <DistrictComparisonView
+          districts={rankedDistricts}
+          selectedPrimaryId={selectedPrimaryId}
+          selectedSecondaryId={selectedSecondaryId}
+          weights={weights}
+          onSelectPrimary={onSelectPrimary}
+          onSelectSecondary={onSelectSecondary}
+          onClearSelection={onClearSelection}
+        />
+      </div>
     </div>
   );
 }
