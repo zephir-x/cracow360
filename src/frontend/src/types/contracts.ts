@@ -13,7 +13,7 @@ export interface SystemHelloDto {
   serverTimeUtc: string;
 }
 
-// 7 Calibrated Quality of Life Category Scores (0.0 to 100.0)
+// 8 Calibrated Quality of Life Category Scores (0.0 to 100.0)
 export interface DistrictScoresDto {
   mobilityScore: number;
   educationScore: number;
@@ -22,6 +22,7 @@ export interface DistrictScoresDto {
   environmentScore: number;
   safetyScore: number;
   housingAffordabilityScore: number;
+  demographicVitalityScore: number;
 }
 
 // High-level district summary for the ranking leaderboard and map cards
@@ -68,6 +69,11 @@ export interface DistrictEducationAndCareDto {
 // Public transit stops, 500m isochrone coverage, cycling infrastructure, and P+R
 export interface DistrictMobilityAndTransportDto {
   kmkStopsCount: number;
+  tramStopsCount: number;
+  busStopsCount: number;
+  onDemandStopsCount: number;
+  scheduleBoardsCount: number;
+  tramNetworkSharePct: number;
   isochroneCoveragePct: number;
   parkAndRideCount: number;
   bikeRacksCount: number;
@@ -166,6 +172,7 @@ export interface DistrictScoreDeltasDto {
   environmentScoreDelta: number;
   safetyScoreDelta: number;
   housingAffordabilityScoreDelta: number;
+  demographicVitalityScoreDelta: number;
 }
 
 // Side-by-side comparative model for two selected districts
@@ -188,7 +195,7 @@ export interface DistrictGeoJsonProperties {
 // Top-level GeoJSON FeatureCollection of 18 Krakow districts
 export type DistrictsGeoJsonCollection = FeatureCollection<Geometry, DistrictGeoJsonProperties>;
 
-// 7 User Preference Slider Weights (0 to 10 scale)
+// 8 User Preference Slider Weights (0 to 10 scale)
 export interface QualityWeights {
   mobility: number;
   education: number;
@@ -197,6 +204,7 @@ export interface QualityWeights {
   environment: number;
   safety: number;
   housingAffordability: number;
+  demographicVitality: number;
 }
 
 // Curated resident persona preset

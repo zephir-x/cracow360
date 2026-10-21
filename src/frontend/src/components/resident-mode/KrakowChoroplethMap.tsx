@@ -15,6 +15,8 @@ export interface KrakowChoroplethMapProps {
   districts: DistrictSummaryDto[];
   selectedPrimaryId: number | null;
   selectedSecondaryId: number | null;
+  activeTargetSlot?: 1 | 2;
+  onSetActiveTargetSlot?: (slot: 1 | 2) => void;
   onSelectDistrict: (districtId: number) => void;
   onClearSelection: () => void;
 }
@@ -63,6 +65,8 @@ export function KrakowChoroplethMap({
   districts,
   selectedPrimaryId,
   selectedSecondaryId,
+  activeTargetSlot = 1,
+  onSetActiveTargetSlot,
   onSelectDistrict,
   onClearSelection,
 }: KrakowChoroplethMapProps) {
@@ -87,6 +91,12 @@ export function KrakowChoroplethMap({
   useEffect(() => {
     districtLookupRef.current = districtLookup;
   }, [districtLookup]);
+
+  // Keep ref for district selection callback to prevent stale closure in Leaflet event listeners
+  const onSelectDistrictRef = useRef(onSelectDistrict);
+  useEffect(() => {
+    onSelectDistrictRef.current = onSelectDistrict;
+  }, [onSelectDistrict]);
 
   const primaryDistrict = selectedPrimaryId ? districtLookup.get(selectedPrimaryId)?.data : null;
   const secondaryDistrict = selectedSecondaryId ? districtLookup.get(selectedSecondaryId)?.data : null;
@@ -182,7 +192,7 @@ export function KrakowChoroplethMap({
         setHoveredDistrictId((prev) => (prev === districtId ? null : prev));
       },
       click: () => {
-        onSelectDistrict(districtId);
+        onSelectDistrictRef.current(districtId);
       },
     });
   };
@@ -193,9 +203,9 @@ export function KrakowChoroplethMap({
         darkMapMode ? 'krakow-dark-tiles' : 'krakow-light-tiles'
       }`}
     >
-      {/* Top Floating Pill Bar: Icon + Selected Districts (#1 & #2) Compact Single Row */}
+      {/* Top Floating Pill Bar: Icon + Interactive District Slot Buttons (#1 & #2) */}
       <div className="absolute top-4 left-14 max-w-[calc(100%-4.5rem)] z-1000 pointer-events-none flex items-center overflow-hidden">
-        <div className="flex items-center gap-1.5 sm:gap-2 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-100 rounded-2xl px-2.5 sm:px-3 py-1.5 shadow-lg shadow-blue-950/10 max-w-full overflow-hidden">
+        <div className="flex items-center gap-1.5 sm:gap-2 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-100 rounded-2xl px-2 sm:px-2.5 py-1.5 shadow-lg shadow-blue-950/10 max-w-full overflow-hidden">
           <div
             className="w-7 h-7 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0"
             title="Porównywarka dwóch dzielnic"
@@ -203,47 +213,81 @@ export function KrakowChoroplethMap({
             <GitCompareArrows className="w-4 h-4" />
           </div>
 
-          {/* Slot #1 */}
-          <div
-            className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-xl text-xs font-semibold border shrink min-w-0 max-w-37.5 sm:max-w-50 ${
-              primaryDistrict
-                ? 'bg-blue-50 border-blue-300 text-blue-900'
-                : 'bg-slate-50 border-slate-200 text-slate-400'
+          {/* Slot #1 Interactive Button */}
+          <button
+            type="button"
+            onClick={() => onSetActiveTargetSlot?.(1)}
+            className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-xl text-xs font-semibold border shrink min-w-0 max-w-37.5 sm:max-w-50 transition-all duration-200 cursor-pointer ${
+              activeTargetSlot === 1
+                ? 'bg-blue-100/95 border-blue-500 text-blue-950 ring-2 ring-blue-600 ring-offset-1 shadow-sm font-bold'
+                : primaryDistrict
+                ? 'bg-blue-50/70 border-blue-200 text-blue-900 hover:bg-blue-100/70 hover:border-blue-300'
+                : 'bg-slate-50 border-slate-200 text-slate-400 hover:bg-slate-100 hover:text-slate-600'
             }`}
+            title={
+              activeTargetSlot === 1
+                ? 'Slot #1 jest aktywny: kliknięcie dzielnicy ustawi tę pozycję'
+                : 'Kliknij, aby przełączyć modyfikację na Dzielnicę #1'
+            }
           >
-            <span className="w-2 h-2 rounded-full bg-blue-600 shrink-0" />
+            <span
+              className={`w-2 h-2 rounded-full shrink-0 ${
+                activeTargetSlot === 1
+                  ? 'bg-blue-600 ring-2 ring-blue-300 animate-pulse'
+                  : primaryDistrict
+                  ? 'bg-blue-600'
+                  : 'bg-slate-300'
+              }`}
+            />
             {primaryDistrict ? (
-              <span className="truncate" title={`${primaryDistrict.districtName} (${primaryDistrict.weightedQualityOfLifeIndex.toFixed(1)} pkt)`}>
+              <span className="truncate">
                 #1: <strong>{getShortDistrictName(primaryDistrict.districtName)}</strong> ({primaryDistrict.weightedQualityOfLifeIndex.toFixed(1)} pkt)
               </span>
             ) : (
-              <span className="truncate">Kliknij 1. dzielnicę</span>
+              <span className="truncate">Wybierz 1. dzielnicę</span>
             )}
-          </div>
+          </button>
 
-          {/* Slot #2 */}
-          <div
-            className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-xl text-xs font-semibold border shrink min-w-0 max-w-37.5 sm:max-w-50 ${
-              secondaryDistrict
-                ? 'bg-indigo-50 border-indigo-300 text-indigo-900'
-                : 'bg-slate-50 border-slate-200 text-slate-400'
+          {/* Slot #2 Interactive Button */}
+          <button
+            type="button"
+            onClick={() => onSetActiveTargetSlot?.(2)}
+            className={`inline-flex items-center gap-1 sm:gap-1.5 px-2 sm:px-2.5 py-1 rounded-xl text-xs font-semibold border shrink min-w-0 max-w-37.5 sm:max-w-50 transition-all duration-200 cursor-pointer ${
+              activeTargetSlot === 2
+                ? 'bg-indigo-100/95 border-indigo-500 text-indigo-950 ring-2 ring-indigo-600 ring-offset-1 shadow-sm font-bold'
+                : secondaryDistrict
+                ? 'bg-indigo-50/70 border-indigo-200 text-indigo-900 hover:bg-indigo-100/70 hover:border-indigo-300'
+                : 'bg-slate-50 border-slate-200 text-slate-400 hover:bg-slate-100 hover:text-slate-600'
             }`}
+            title={
+              activeTargetSlot === 2
+                ? 'Slot #2 jest aktywny: kliknięcie dzielnicy ustawi tę pozycję'
+                : 'Kliknij, aby przełączyć modyfikację na Dzielnicę #2'
+            }
           >
-            <span className="w-2 h-2 rounded-full bg-indigo-600 shrink-0" />
+            <span
+              className={`w-2 h-2 rounded-full shrink-0 ${
+                activeTargetSlot === 2
+                  ? 'bg-indigo-600 ring-2 ring-indigo-300 animate-pulse'
+                  : secondaryDistrict
+                  ? 'bg-indigo-600'
+                  : 'bg-slate-300'
+              }`}
+            />
             {secondaryDistrict ? (
-              <span className="truncate" title={`${secondaryDistrict.districtName} (${secondaryDistrict.weightedQualityOfLifeIndex.toFixed(1)} pkt)`}>
+              <span className="truncate">
                 #2: <strong>{getShortDistrictName(secondaryDistrict.districtName)}</strong> ({secondaryDistrict.weightedQualityOfLifeIndex.toFixed(1)} pkt)
               </span>
             ) : (
-              <span className="truncate">Kliknij 2. dzielnicę</span>
+              <span className="truncate">Wybierz 2. dzielnicę</span>
             )}
-          </div>
+          </button>
 
           {(primaryDistrict || secondaryDistrict) && (
             <button
               onClick={onClearSelection}
               className="inline-flex items-center gap-1 px-2 py-1 rounded-lg text-xs font-medium text-slate-500 hover:text-rose-600 hover:bg-rose-50 transition cursor-pointer shrink-0 ml-0.5"
-              title="Wyczyść zaznaczenie"
+              title="Wyczyść zaznaczenie obu dzielnic"
             >
               <X className="w-3.5 h-3.5" />
               Wyczyść

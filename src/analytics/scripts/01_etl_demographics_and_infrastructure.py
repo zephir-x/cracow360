@@ -99,7 +99,7 @@ def clean_int(val: Any, default: int = 0) -> int:
 
 
 def clean_float(val: Any, default: float = 0.0) -> float:
-    """Parses float values supporting Polish comma decimals (e.g. '14,5' -> 14.5)."""
+    # Parses float values supporting Polish comma decimals (e.g. '14,5' -> 14.5).
     cleaned = str(val or "").replace(",", ".").replace(" ", "")
     m = re.search(r"[-+]?\d*\.?\d+", cleaned)
     try:
@@ -109,7 +109,7 @@ def clean_float(val: Any, default: float = 0.0) -> float:
 
 
 def norm_token(street: str) -> str:
-    """Normalizes Polish street and location names by stripping common administrative prefixes."""
+    # Normalizes Polish street and location names by stripping common administrative prefixes.
     if not street:
         return ""
     s = street.lower().strip()
@@ -256,9 +256,11 @@ def run_etl() -> None:
                 "primarySchoolsCount": 0, "primarySchoolStudentsTotal": 0, "avgStudentsPerClass": 0.0,
             },
             "mobilityAndTransport": {
-                "kmkStopsCount": 0, "isochroneCoveragePct": 0.0, "parkAndRideCount": 0,
-                "bikeRacksCount": 0, "bikeLanesLengthKm": 0.0, "bikeLanesSeparatedKm": 0.0,
-                "bikeLanesCombinedKm": 0.0, "bikeRepairStationsCount": 0,
+                "kmkStopsCount": 0, "tramStopsCount": 0, "busStopsCount": 0,
+                "onDemandStopsCount": 0, "scheduleBoardsCount": 0, "tramNetworkSharePct": 0.0,
+                "isochroneCoveragePct": 0.0, "parkAndRideCount": 0, "bikeRacksCount": 0,
+                "bikeLanesLengthKm": 0.0, "bikeLanesSeparatedKm": 0.0, "bikeLanesCombinedKm": 0.0,
+                "bikeRepairStationsCount": 0,
             },
             "greeneryAndSport": {
                 "cityParksCount": 0, "pocketParksCount": 0, "totalParksAreaHa": 0.0,
@@ -316,7 +318,24 @@ def run_etl() -> None:
                     lat, lng = epsg3857_to_wgs84(float(row["x"]), float(row["y"]))
                     did = resolver.point_to_district(lat, lng)
                     if did:
-                        districts_data[did]["mobilityAndTransport"]["kmkStopsCount"] += 1
+                        mob = districts_data[did]["mobilityAndTransport"]
+                        mob["kmkStopsCount"] += 1
+                        typ = row.get("Typ przystanku", "").strip()
+                        is_tram = ("T" in typ)
+                        is_ondemand = (row.get("Na żądanie", "").strip().lower() == "tak")
+                        ramki = clean_int(row.get("Ramki rozkładowe", "0"), 0)
+                        gabloty = clean_int(row.get("Gabloty rozkładowe", "0"), 0)
+
+                        if is_tram:
+                            mob["tramStopsCount"] += 1
+                        else:
+                            mob["busStopsCount"] += 1
+
+                        if is_ondemand:
+                            mob["onDemandStopsCount"] += 1
+
+                        mob["scheduleBoardsCount"] += (ramki + gabloty)
+
                         name = row.get("Nazwa przystanku z numerem", "").strip()
                         if name:
                             resolver.register_anchor(name, "", did, lat, lng)
@@ -324,10 +343,16 @@ def run_etl() -> None:
                     continue
 
     # Compute walking isochrone coverage (500m transit buffer model calibrated against stop density)
+    # Discounts on-demand low-frequency stops to capture real walking accessibility rather than phantom stops
     for did, d in districts_data.items():
-        density = d["mobilityAndTransport"]["kmkStopsCount"] / d["areaKm2"]
-        d["mobilityAndTransport"]["isochroneCoveragePct"] = round(
-            min(98.5, max(62.0, 56.0 + 4.2 * (density**0.72))), 1
+        mob = d["mobilityAndTransport"]
+        tot_stops = max(mob["kmkStopsCount"], 1)
+        mob["tramNetworkSharePct"] = round((mob["tramStopsCount"] / tot_stops) * 100.0, 1)
+
+        effective_stops = max(1.0, mob["kmkStopsCount"] - 0.5 * mob["onDemandStopsCount"])
+        effective_density = effective_stops / d["areaKm2"]
+        mob["isochroneCoveragePct"] = round(
+            min(98.5, max(52.0, 48.0 + 5.0 * (effective_density**0.68))), 1
         )
 
     # 1C. Park & Ride Hubs (Parkingi przesiadkowe P+R) - EPSG:2178 projected coordinates

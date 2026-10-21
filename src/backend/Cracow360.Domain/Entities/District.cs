@@ -4,7 +4,7 @@ namespace Cracow360.Domain.Entities;
 
 /// <summary>
 /// Root domain aggregate representing an official administrative district of Krakow (1..18).
-/// Encompasses all 10 domain facets, 7 Quality of Life category scores, and associated POI facilities.
+/// Encompasses all 10 domain facets, 8 Quality of Life category scores, and associated POI facilities.
 /// </summary>
 public class District
 {
@@ -20,7 +20,7 @@ public class District
     // Official geographic area in square kilometers (MSIP)
     public double AreaKm2 { get; set; }
 
-    // 7 Normalized Quality of Life Category Scores (0.0 to 100.0)
+    // 8 Normalized Quality of Life Category Scores (0.0 to 100.0)
     public DistrictScores Scores { get; set; } = new();
 
     // Demographic breakdown, age cohorts, and migration statistics
@@ -54,7 +54,7 @@ public class District
     public ICollection<PointOfInterest> PointsOfInterest { get; set; } = new List<PointOfInterest>();
 
     /// <summary>
-    /// Calculates the weighted composite Quality of Life Index (0.0 - 100.0) across all 7 urban pillars.
+    /// Calculates the weighted composite Quality of Life Index (0.0 - 100.0) across all 8 urban pillars.
     /// Default weight for each pillar is 5.0 on a 0.0 - 10.0 scale.
     /// If all weights are set to 0.0, computes an unweighted arithmetic average.
     /// </summary>
@@ -65,12 +65,13 @@ public class District
         double cultureWeight = 5.0,
         double environmentWeight = 5.0,
         double safetyWeight = 5.0,
-        double housingAffordabilityWeight = 5.0)
+        double housingAffordabilityWeight = 5.0,
+        double demographicVitalityWeight = 5.0)
     {
-        var totalWeight = mobilityWeight + educationWeight + greeneryWeight + cultureWeight + environmentWeight + safetyWeight + housingAffordabilityWeight;
+        var totalWeight = mobilityWeight + educationWeight + greeneryWeight + cultureWeight + environmentWeight + safetyWeight + housingAffordabilityWeight + demographicVitalityWeight;
         if (totalWeight <= 0)
         {
-            // Fallback: unweighted arithmetic mean across all 7 pillars
+            // Fallback: unweighted arithmetic mean across all 8 pillars
             return Math.Round(
                 (Scores.MobilityScore +
                  Scores.EducationScore +
@@ -78,7 +79,8 @@ public class District
                  Scores.CultureAndSeniorScore +
                  Scores.EnvironmentScore +
                  Scores.SafetyScore +
-                 Scores.HousingAffordabilityScore) / 7.0, 2);
+                 Scores.HousingAffordabilityScore +
+                 Scores.DemographicVitalityScore) / 8.0, 2);
         }
 
         // Weighted linear combination of pillar scores normalized by total weight sum
@@ -89,13 +91,14 @@ public class District
             (Scores.CultureAndSeniorScore * cultureWeight) +
             (Scores.EnvironmentScore * environmentWeight) +
             (Scores.SafetyScore * safetyWeight) +
-            (Scores.HousingAffordabilityScore * housingAffordabilityWeight);
+            (Scores.HousingAffordabilityScore * housingAffordabilityWeight) +
+            (Scores.DemographicVitalityScore * demographicVitalityWeight);
 
         return Math.Round(weightedSum / totalWeight, 2);
     }
 }
 
-// 7 Calibrated Quality of Life Category Scores (rescaled to practical empirical bands 0.0 - 100.0)
+// 8 Calibrated Quality of Life Category Scores (rescaled to practical empirical bands 0.0 - 100.0)
 public class DistrictScores
 {
     public double MobilityScore { get; set; }
@@ -105,6 +108,7 @@ public class DistrictScores
     public double EnvironmentScore { get; set; }
     public double SafetyScore { get; set; }
     public double HousingAffordabilityScore { get; set; }
+    public double DemographicVitalityScore { get; set; }
 }
 
 // Demographic cohorts, registration breakdown, and 3-year historical growth trend
@@ -143,6 +147,11 @@ public class DistrictEducationAndCare
 public class DistrictMobilityAndTransport
 {
     public int KmkStopsCount { get; set; }
+    public int TramStopsCount { get; set; }
+    public int BusStopsCount { get; set; }
+    public int OnDemandStopsCount { get; set; }
+    public int ScheduleBoardsCount { get; set; }
+    public double TramNetworkSharePct { get; set; }
     public double IsochroneCoveragePct { get; set; }
     public int ParkAndRideCount { get; set; }
     public int BikeRacksCount { get; set; }

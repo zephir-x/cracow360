@@ -10,7 +10,7 @@ namespace Cracow360.Api.Endpoints;
 
 /// <summary>
 /// Minimal API route configuration for Krakow administrative districts,
-/// composite Quality of Life scores, GeoJSON vector boundaries, and district comparisons.
+/// composite Quality of Life scores across 8 pillars, GeoJSON vector boundaries, and district comparisons.
 /// </summary>
 public static class DistrictEndpoints
 {
@@ -29,6 +29,7 @@ public static class DistrictEndpoints
             double? environmentWeight,
             double? safetyWeight,
             double? housingAffordabilityWeight,
+            double? demographicVitalityWeight,
             CancellationToken cancellationToken) =>
         {
             var summaries = await districtService.GetAllSummariesAsync(
@@ -39,12 +40,13 @@ public static class DistrictEndpoints
                 environmentWeight ?? 5.0,
                 safetyWeight ?? 5.0,
                 housingAffordabilityWeight ?? 5.0,
+                demographicVitalityWeight ?? 5.0,
                 cancellationToken);
 
             return Results.Ok(summaries);
         })
         .WithName("GetAllDistricts")
-        .WithSummary("Retrieves all 18 Krakow districts with their calculated Quality of Life Index across 7 pillars.")
+        .WithSummary("Retrieves all 18 Krakow districts with their calculated Quality of Life Index across 8 pillars.")
         .Produces<IReadOnlyList<DistrictSummaryDto>>(StatusCodes.Status200OK);
 
         // GET /api/districts/geojson - Serves the official vector boundaries (EPSG:4326 WGS84) for map visualization
@@ -80,6 +82,7 @@ public static class DistrictEndpoints
             double? environmentWeight,
             double? safetyWeight,
             double? housingAffordabilityWeight,
+            double? demographicVitalityWeight,
             CancellationToken cancellationToken) =>
         {
             var comparison = await districtService.CompareDistrictsAsync(
@@ -92,6 +95,7 @@ public static class DistrictEndpoints
                 environmentWeight ?? 5.0,
                 safetyWeight ?? 5.0,
                 housingAffordabilityWeight ?? 5.0,
+                demographicVitalityWeight ?? 5.0,
                 cancellationToken);
 
             return comparison is not null
@@ -99,7 +103,7 @@ public static class DistrictEndpoints
                 : Results.NotFound(new { Message = $"One or both districts ({firstId}, {secondId}) were not found." });
         })
         .WithName("CompareDistricts")
-        .WithSummary("Compares two Krakow districts side-by-side across all 7 Quality of Life dimensions and metrics.")
+        .WithSummary("Compares two Krakow districts side-by-side across all 8 Quality of Life dimensions and metrics.")
         .Produces<DistrictComparisonDto>(StatusCodes.Status200OK)
         .ProducesProblem(StatusCodes.Status404NotFound);
 

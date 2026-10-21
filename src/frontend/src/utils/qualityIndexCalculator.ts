@@ -2,7 +2,7 @@ import type { DistrictScoresDto, QualityWeights, ResidentPreset } from '../types
 
 /**
  * Dynamically calculates the personalized Quality of Life Index on the client side
- * with zero network latency across all 7 urban pillars.
+ * with zero network latency across all 8 urban pillars.
  * 
  * Formula: sum(score_i * weight_i) / sum(weight_i)
  * If total weight <= 0, falls back to unweighted arithmetic average.
@@ -18,7 +18,8 @@ export function calculateClientSideQualityIndex(
     weights.culture +
     weights.environment +
     weights.safety +
-    weights.housingAffordability;
+    weights.housingAffordability +
+    weights.demographicVitality;
 
   // Fallback to unweighted arithmetic mean if all weights are zero
   if (totalWeight <= 0) {
@@ -30,13 +31,14 @@ export function calculateClientSideQualityIndex(
           scores.cultureAndSeniorScore +
           scores.environmentScore +
           scores.safetyScore +
-          scores.housingAffordabilityScore) /
-        7
+          scores.housingAffordabilityScore +
+          scores.demographicVitalityScore) /
+        8
       ).toFixed(2)
     );
   }
 
-  // Linear weighted sum across all 7 calibrated urban pillars
+  // Linear weighted sum across all 8 calibrated urban pillars
   const weightedSum =
     scores.mobilityScore * weights.mobility +
     scores.educationScore * weights.education +
@@ -44,7 +46,8 @@ export function calculateClientSideQualityIndex(
     scores.cultureAndSeniorScore * weights.culture +
     scores.environmentScore * weights.environment +
     scores.safetyScore * weights.safety +
-    scores.housingAffordabilityScore * weights.housingAffordability;
+    scores.housingAffordabilityScore * weights.housingAffordability +
+    scores.demographicVitalityScore * weights.demographicVitality;
 
   return Number((weightedSum / totalWeight).toFixed(2));
 }
@@ -54,13 +57,14 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
   {
     id: 'rodzina_z_dziecmi',
     label: 'Rodzina z Dziećmi',
-    description: 'Priorytet: żłobki, szkoły, bezpieczeństwo, czyste powietrze, tereny zielone',
+    description: 'Priorytet: żłobki, szkoły, bezpieczeństwo, czyste powietrze, tereny zielone i rozwój',
     weights: {
       education: 10,
       safety: 10,
       greenery: 9,
       environment: 9,
       housingAffordability: 8,
+      demographicVitality: 8,
       mobility: 6,
       culture: 3,
     },
@@ -68,10 +72,11 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
   {
     id: 'student_mlody',
     label: 'Student / Młody',
-    description: 'Priorytet: szybka komunikacja KMK/DDR, kultura i kluby, przystępny najem',
+    description: 'Priorytet: szybka komunikacja KMK/DDR, witalność i młodość, kultura, przystępny najem',
     weights: {
       mobility: 10,
       culture: 10,
+      demographicVitality: 9,
       housingAffordability: 8,
       greenery: 4,
       safety: 3,
@@ -90,6 +95,7 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
       greenery: 8,
       mobility: 7,
       housingAffordability: 5,
+      demographicVitality: 4,
       education: 1,
     },
   },
@@ -102,6 +108,7 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
       greenery: 9,
       housingAffordability: 8,
       safety: 8,
+      demographicVitality: 6,
       mobility: 5,
       culture: 5,
       education: 2,
@@ -116,6 +123,7 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
       greenery: 10,
       environment: 9,
       safety: 8,
+      demographicVitality: 6,
       housingAffordability: 5,
       culture: 4,
       education: 2,
@@ -124,8 +132,9 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
   {
     id: 'inwestor_biznes',
     label: 'Inwestor / Biznes',
-    description: 'Priorytet: mobilność, nasycenie żłobków, dostępność mieszkaniowa pracowników',
+    description: 'Priorytet: witalność demograficzna, wzrost populacji, mobilność, dostępność mieszkań',
     weights: {
+      demographicVitality: 10,
       mobility: 10,
       housingAffordability: 8,
       safety: 7,

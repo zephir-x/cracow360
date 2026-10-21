@@ -60,10 +60,11 @@ public record DistrictScoreDeltasDto(
     double CultureAndSeniorScoreDelta,
     double EnvironmentScoreDelta,
     double SafetyScoreDelta,
-    double HousingAffordabilityScoreDelta
+    double HousingAffordabilityScoreDelta,
+    double DemographicVitalityScoreDelta
 );
 
-// 7 Calibrated Quality of Life Category Scores (0.0 - 100.0)
+// 8 Calibrated Quality of Life Category Scores (0.0 - 100.0)
 public record DistrictScoresDto(
     double MobilityScore,
     double EducationScore,
@@ -71,7 +72,8 @@ public record DistrictScoresDto(
     double CultureAndSeniorScore,
     double EnvironmentScore,
     double SafetyScore,
-    double HousingAffordabilityScore
+    double HousingAffordabilityScore,
+    double DemographicVitalityScore
 );
 
 // Demographic cohorts, registration breakdown, and 3-year growth trend
@@ -107,6 +109,11 @@ public record DistrictEducationAndCareDto(
 // Public transit stops, 500m isochrone coverage, cycling infrastructure, and P+R
 public record DistrictMobilityAndTransportDto(
     int KmkStopsCount,
+    int TramStopsCount,
+    int BusStopsCount,
+    int OnDemandStopsCount,
+    int ScheduleBoardsCount,
+    double TramNetworkSharePct,
     double IsochroneCoveragePct,
     int ParkAndRideCount,
     int BikeRacksCount,

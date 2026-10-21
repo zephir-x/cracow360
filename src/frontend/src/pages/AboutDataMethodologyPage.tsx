@@ -28,7 +28,7 @@ interface DataSourceItem {
 }
 
 const ALL_DATA_SOURCES: DataSourceItem[] = [
-  // Rynek Mieszkaniowy i Koszty Życia (NOWY)
+  // Rynek Mieszkaniowy i Koszty Życia
   {
     id: 'house-1',
     category: 'housing',
@@ -48,7 +48,7 @@ const ALL_DATA_SOURCES: DataSourceItem[] = [
     status: 'Rejestr NBP / RCN',
   },
 
-  // Bezpieczeństwo i Spokój Publiczny (NOWY)
+  // Bezpieczeństwo i Spokój Publiczny
   {
     id: 'safe-1',
     category: 'safety',
@@ -205,19 +205,19 @@ const ALL_DATA_SOURCES: DataSourceItem[] = [
     id: 'cult-3',
     category: 'culture',
     categoryLabel: 'Kultura & Seniorzy',
-    officialDatasetName: 'Lista bibliotek miejskich (filii) Biblioteki Kraków',
-    metrics: '56 filii Biblioteki Kraków w dzielnicach, dostępność do księgozbiorów i czytelnictwa, POI LIBRARY',
-    portalUrl: 'https://otwartedane.um.krakow.pl',
+    officialDatasetName: 'Biblioteka Kraków – Sieć filii bibliotecznych',
+    metrics: '56 filii Biblioteki Kraków w 18 dzielnicach, księgozbiory, komputeryzacja, POI LIBRARY',
+    portalUrl: 'https://biblioteka.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
 
-  // Demografia
+  // Demografia i Witalność
   {
     id: 'demo-1',
     category: 'demographics',
     categoryLabel: 'Demografia',
-    officialDatasetName: 'Mieszkańcy Krakowa zameldowani na pobyt stały (2025)',
-    metrics: 'Struktura demograficzna dzielnic, kohorty wieku (0–3, 4–6, 7–14, 15–64, 65+), gęstość zaludnienia',
+    officialDatasetName: 'Liczba mieszkańców zameldowanych na pobyt stały (2023–2025)',
+    metrics: 'Rejestr mieszkańców, gęstość zaludnienia, 3-letnia dynamika wzrostu populacji dzielnic',
     portalUrl: 'https://otwartedane.um.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
@@ -225,8 +225,8 @@ const ALL_DATA_SOURCES: DataSourceItem[] = [
     id: 'demo-2',
     category: 'demographics',
     categoryLabel: 'Demografia',
-    officialDatasetName: 'Mieszkańcy Krakowa zameldowani na pobyt stały (2024)',
-    metrics: 'Roczna dynamika zmian zaludnienia oraz szeregi czasowe do prognoz',
+    officialDatasetName: 'Liczba mieszkańców zameldowanych na pobyt czasowy (2025)',
+    metrics: 'Migracje wewnętrzne, studenci i pracownicy na pobycie czasowym w Krakowie',
     portalUrl: 'https://otwartedane.um.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
@@ -234,8 +234,8 @@ const ALL_DATA_SOURCES: DataSourceItem[] = [
     id: 'demo-3',
     category: 'demographics',
     categoryLabel: 'Demografia',
-    officialDatasetName: 'Mieszkańcy Krakowa zameldowani na pobyt stały (2023)',
-    metrics: '3-letnia baza meldunków stałych do wskaźnika trendu demograficznego oraz modelu ekonometrycznego 2028',
+    officialDatasetName: 'Struktura wieku mieszkańców: Dzieci 0–3 lata (2025)',
+    metrics: 'Kohorta żłobkowa, zapotrzebowanie na opiekę wczesnodziecięcą w dzielnicach',
     portalUrl: 'https://otwartedane.um.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
@@ -243,8 +243,8 @@ const ALL_DATA_SOURCES: DataSourceItem[] = [
     id: 'demo-4',
     category: 'demographics',
     categoryLabel: 'Demografia',
-    officialDatasetName: 'Mieszkańcy Krakowa zameldowani na pobyt czasowy (2025)',
-    metrics: 'Liczba mieszkańców na pobycie czasowym, rzeczywista baza zaludnienia dzielnic',
+    officialDatasetName: 'Struktura wieku mieszkańców: Dzieci 4–6 lat (2025)',
+    metrics: 'Kohorta przedszkolna, wskaźniki upowszechnienia edukacji przedszkolnej',
     portalUrl: 'https://otwartedane.um.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
@@ -252,8 +252,8 @@ const ALL_DATA_SOURCES: DataSourceItem[] = [
     id: 'demo-5',
     category: 'demographics',
     categoryLabel: 'Demografia',
-    officialDatasetName: 'Mieszkańcy Krakowa zameldowani na pobyt czasowy (2024)',
-    metrics: 'Roczna dynamika napływu mieszkańców czasowych do modelu popytu',
+    officialDatasetName: 'Struktura wieku mieszkańców: Dzieci i młodzież 7–14 lat (2025)',
+    metrics: 'Kohorta szkolna podstawowa, obciążenie obwodów szkół podstawowych',
     portalUrl: 'https://otwartedane.um.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
@@ -261,8 +261,8 @@ const ALL_DATA_SOURCES: DataSourceItem[] = [
     id: 'demo-6',
     category: 'demographics',
     categoryLabel: 'Demografia',
-    officialDatasetName: 'Mieszkańcy Krakowa zameldowani na pobyt czasowy (2023)',
-    metrics: '3-letnia baza meldunków czasowych do łącznego wskaźnika dynamiki zaludnienia',
+    officialDatasetName: 'Struktura wieku: Osoby 65+ (Seniorzy) (2025)',
+    metrics: 'Indeks starości demograficznej, zapotrzebowanie na infrastrukturę CAS i domy opieki',
     portalUrl: 'https://otwartedane.um.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
@@ -423,7 +423,7 @@ export function AboutDataMethodologyPage({
         <div className="max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
             <BookOpen className="w-4 h-4 text-sky-300" />
-            O Projekcie • Metodologia 7 Filarów i Rejestry Miejskie
+            O Projekcie • Metodologia 8 Filarów i Rejestry Miejskie
           </div>
           <h1 className="text-3xl sm:text-4xl font-black tracking-tight text-white">
             Metodologia Wyliczania Indeksu
@@ -431,7 +431,7 @@ export function AboutDataMethodologyPage({
             <span className="text-sky-200">oraz Rejestr Źródeł Otwartych Danych.</span>
           </h1>
           <p className="text-sm sm:text-base text-blue-100/95 leading-relaxed">
-            Transparentność danych i poprawność statystyczna to fundament platformy Kraków360. Poniżej przedstawiamy dokładny sposób wyliczania punktacji (0–100 pkt) w 7 filarach oraz wykaz oficjalnych rejestrów miejskich powiązanych bezpośrednio z serwisami źródłowymi.
+            Transparentność danych i poprawność statystyczna to fundament platformy Kraków360. Poniżej przedstawiamy dokładny sposób wyliczania punktacji (0–100 pkt) w 8 filarach jakości życia oraz wykaz oficjalnych rejestrów miejskich powiązanych bezpośrednio z serwisami źródłowymi.
           </p>
           <div className="pt-2">
             <button
@@ -462,13 +462,13 @@ export function AboutDataMethodologyPage({
             </div>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Aby móc rzetelnie porównywać wskaźniki wyrażone w różnych jednostkach (ceny m² mieszkań, liczbę kolizji, liczbę przystanków KMK, m² lasów i parków na mieszkańca oraz liczbę dzieci przypadających na 1 miejsce w żłobku), każdy wskaźnik surowy przechodzi standaryzację <strong>Min-Max (0–100 pkt)</strong>:
+            Aby móc rzetelnie porównywać wskaźniki wyrażone w różnych jednostkach (ceny m² mieszkań, liczbę kolizji, liczbę przystanków KMK, dynamikę demograficzną, m² lasów i parków na mieszkańca oraz liczbę dzieci przypadających na 1 miejsce w żłobku), każdy wskaźnik surowy przechodzi standaryzację <strong>Min-Max (0–100 pkt)</strong>:
           </p>
           <ul className="space-y-2 text-xs text-slate-700">
             <li className="flex items-start gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
               <span>
-                <strong>Stymulanty (im więcej, tym lepiej):</strong> Dzielnica z najwyższą wartością w Krakowie otrzymuje 100 pkt, a z najniższą 0 pkt (np. dostępność m² za pensję, drogi rowerowe DDR, m² zieleni i lasów, liczba bibliotek i CAS).
+                <strong>Stymulanty (im więcej, tym lepiej):</strong> Dzielnica z najwyższą wartością w Krakowie otrzymuje 100 pkt, a z najniższą 0 pkt (np. witalność demograficzna, dostępność m² za pensję, drogi rowerowe DDR, m² zieleni i lasów, liczba bibliotek i CAS).
               </span>
             </li>
             <li className="flex items-start gap-2">
@@ -490,16 +490,16 @@ export function AboutDataMethodologyPage({
                 Etap 2 • Personalizacja dla Mieszkańca
               </span>
               <h3 className="text-base font-extrabold text-slate-900">
-                Dynamiczna Średnia Ważona z 7 Suwaków Preferencji (0–10)
+                Dynamiczna Średnia Ważona z 8 Suwaków Preferencji (0–10)
               </h3>
             </div>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Każdy mieszkaniec ma inne priorytety – student szuka przystępnych cen najmu i szybkiego tramwaju KMK, a rodzina 2+1 szuka bezpieczeństwa, żłobków i parków. Gdy przesuwasz suwaki (0–10), wyliczamy spersonalizowany indeks:
+            Każdy mieszkaniec ma inne priorytety – student szuka przystępnych cen najmu i szybkiego tramwaju KMK, rodzina 2+1 szuka bezpieczeństwa, żłobków i parków, a inwestor rozwoju ludności. Gdy przesuwasz suwaki (0–10), wyliczamy spersonalizowany indeks:
           </p>
           <div className="p-3.5 rounded-2xl bg-slate-50 border border-blue-100 font-mono text-[11px] text-blue-900 text-center leading-relaxed">
-            <div>Indeks = (Mob·W₁ + Edu·W₂ + Ziel·W₃ + Kult·W₄ + Środ·W₅ + Bezp·W₆ + Cen·W₇)</div>
-            <div className="mt-1 font-semibold text-blue-700">/ (W₁ + W₂ + W₃ + W₄ + W₅ + W₆ + W₇)</div>
+            <div>Indeks = (Mob·W₁ + Edu·W₂ + Ziel·W₃ + Kult·W₄ + Środ·W₅ + Bezp·W₆ + Cen·W₇ + Wit·W₈)</div>
+            <div className="mt-1 font-semibold text-blue-700">/ (W₁ + W₂ + W₃ + W₄ + W₅ + W₆ + W₇ + W₈)</div>
           </div>
           <p className="text-xs text-slate-600 leading-relaxed">
             Zmiana układu suwaków lub wybór gotowego profilu mieszkańca natychmiastowo przelicza łączną ocenę dla wszystkich 18 dzielnic Krakowa, aktualizując kolory na mapie oraz kolejność w rankingu.
@@ -520,7 +520,7 @@ export function AboutDataMethodologyPage({
                   Rejestr Źródeł Otwartych Danych 1:1 Miasta Krakowa
                 </h2>
                 <p className="text-xs text-slate-500">
-                  33 zbiory surowe zintegrowane w potoku analitycznym Kraków360 z odnośnikami do oficjalnych portali
+                  Zbiory surowe zintegrowane w potoku analitycznym Kraków360 z odnośnikami do oficjalnych portali
                 </p>
               </div>
             </div>
@@ -598,109 +598,97 @@ export function AboutDataMethodologyPage({
           </div>
         </div>
 
-        {/* Data Sources Table with smooth fade-in on category, page or search query change */}
-        <div className="overflow-x-auto">
-          <table className="w-full text-xs text-left">
-            <thead className="bg-slate-50 text-slate-700 text-[11px] font-bold uppercase tracking-wider border-b border-slate-200">
+        {/* Datasets Table with Pagination */}
+        <div
+          key={`${activeCategory}-${currentPage}-${searchQuery}`}
+          className="overflow-x-auto animate-fade-in"
+        >
+          <table className="w-full text-left text-xs">
+            <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
               <tr>
-                <th className="py-3 px-4">Kategoria</th>
-                <th className="py-3 px-4">Zbiór Danych</th>
-                <th className="py-3 px-4">Parametry i Rola w Potoku</th>
-                <th className="py-3 px-4 text-center">Status</th>
-                <th className="py-3 px-4 text-right">Portal Źródłowy</th>
+                <th className="py-3 px-4 w-12 text-center">#</th>
+                <th className="py-3 px-4 w-48">Kategoria</th>
+                <th className="py-3 px-4">Oficjalna Nazwa Zbioru Danych</th>
+                <th className="py-3 px-4">Kluczowe Parametry i Wskaźniki</th>
+                <th className="py-3 px-4 w-48 text-center">Status Integracji</th>
+                <th className="py-3 px-4 w-28 text-center">Źródło</th>
               </tr>
             </thead>
-            <tbody
-              key={`${activeCategory}-${currentPage}-${searchQuery}`}
-              className="divide-y divide-slate-100 animate-fade-in"
-            >
-              {paginatedSources.map((source) => (
-                <tr key={source.id} className="hover:bg-blue-50/20 transition">
-                  <td className="py-3 px-4 whitespace-nowrap">
-                    <span className="px-2 py-0.8 rounded-lg bg-slate-100 text-slate-700 font-semibold text-[11px]">
-                      {source.categoryLabel}
-                    </span>
-                  </td>
-                  <td className="py-3 px-4 font-bold text-slate-900">
-                    {source.officialDatasetName}
-                  </td>
-                  <td className="py-3 px-4 text-slate-600 max-w-md">
-                    {source.metrics}
-                  </td>
-                  <td className="py-3 px-4 text-center whitespace-nowrap">
-                    <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full bg-emerald-50 text-emerald-700 border border-emerald-200 text-[11px] font-bold">
-                      <CheckCircle2 className="w-3 h-3" />
-                      {source.status}
-                    </span>
-                  </td>
-                  <td className="py-3 px-4 text-right whitespace-nowrap">
-                    <a
-                      href={source.portalUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-800 hover:underline"
-                    >
-                      <span>{source.portalUrl.replace('https://', '')}</span>
-                      <ExternalLink className="w-3 h-3" />
-                    </a>
-                  </td>
-                </tr>
-              ))}
-              {filteredSources.length === 0 && (
+            <tbody className="divide-y divide-slate-100">
+              {filteredSources.length === 0 ? (
                 <tr>
-                  <td colSpan={5} className="py-8 text-center text-slate-400">
-                    Nie znaleziono rejestrów pasujących do wyszukiwania.
+                  <td colSpan={6} className="py-8 text-center text-xs text-slate-400">
+                    Nie znaleziono rejestrów spełniających wybrane kryteria wyszukiwania.
                   </td>
                 </tr>
+              ) : (
+                paginatedSources.map((source, index) => {
+                  const globalIndex = startIndex + index + 1;
+                  return (
+                    <tr key={source.id} className="hover:bg-blue-50/40 transition">
+                      <td className="py-3 px-4 font-bold text-slate-400 text-center">
+                        {globalIndex}
+                      </td>
+                      <td className="py-3 px-4">
+                        <span className="inline-block px-2.5 py-1 rounded-lg text-[11px] font-bold bg-blue-50 text-blue-700 border border-blue-200">
+                          {source.categoryLabel}
+                        </span>
+                      </td>
+                      <td className="py-3 px-4 font-semibold text-slate-900">
+                        {source.officialDatasetName}
+                      </td>
+                      <td className="py-3 px-4 text-slate-600 leading-relaxed">
+                        {source.metrics}
+                      </td>
+                      <td className="py-3 px-4 text-center">
+                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">
+                          <CheckCircle2 className="w-3 h-3 text-emerald-600" />
+                          {source.status}
+                        </span>
+                      </td>
+                      <td className="py-3 px-4 text-center">
+                        <a
+                          href={source.portalUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-800 hover:underline"
+                        >
+                          Otwórz <ExternalLink className="w-3 h-3" />
+                        </a>
+                      </td>
+                    </tr>
+                  );
+                })
               )}
             </tbody>
           </table>
         </div>
 
-        {/* Pagination Controls (Max 10 records per page) */}
-        {filteredSources.length > 0 && (
-          <div className="px-6 py-4 bg-slate-50/80 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
-            <div className="text-xs text-slate-500">
-              Wyświetlanie <strong className="font-semibold text-slate-800">{filteredSources.length > 0 ? startIndex + 1 : 0}–{endIndex}</strong> z <strong className="font-semibold text-slate-800">{filteredSources.length}</strong> zbiorów danych
-            </div>
-
-            {totalPages > 1 && (
-              <div className="flex items-center gap-1.5">
-                <button
-                  onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-                  disabled={validCurrentPage === 1}
-                  className="px-2.5 py-1 text-xs font-semibold rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition cursor-pointer flex items-center gap-1"
-                >
-                  <ChevronLeft className="w-3.5 h-3.5" />
-                  <span>Poprzednia</span>
-                </button>
-
-                {Array.from({ length: totalPages }, (_, i) => i + 1).map((pageNum) => (
-                  <button
-                    key={pageNum}
-                    onClick={() => setCurrentPage(pageNum)}
-                    className={`w-7 h-7 text-xs font-bold rounded-lg transition cursor-pointer flex items-center justify-center ${
-                      validCurrentPage === pageNum
-                        ? 'bg-blue-600 text-white shadow-xs'
-                        : 'bg-white border border-slate-200 text-slate-700 hover:bg-slate-100'
-                    }`}
-                  >
-                    {pageNum}
-                  </button>
-                ))}
-
-                <button
-                  onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-                  disabled={validCurrentPage === totalPages}
-                  className="px-2.5 py-1 text-xs font-semibold rounded-lg border border-slate-200 bg-white text-slate-600 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition cursor-pointer flex items-center gap-1"
-                >
-                  <span>Następna</span>
-                  <ChevronRight className="w-3.5 h-3.5" />
-                </button>
-              </div>
-            )}
+        {/* Pagination Bar */}
+        <div className="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
+          <span className="text-xs text-slate-500">
+            Wyświetlono {startIndex + 1}–{endIndex} z {filteredSources.length} rejestrów
+          </span>
+          <div className="flex items-center gap-2">
+            <button
+              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
+              disabled={validCurrentPage === 1}
+              className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center gap-1 cursor-pointer"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" /> Poprzednia
+            </button>
+            <span className="text-xs font-bold text-slate-700 px-2">
+              {validCurrentPage} / {totalPages}
+            </span>
+            <button
+              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+              disabled={validCurrentPage >= totalPages}
+              className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center gap-1 cursor-pointer"
+            >
+              Następna <ChevronRight className="w-3.5 h-3.5" />
+            </button>
           </div>
-        )}
+        </div>
       </section>
     </div>
   );

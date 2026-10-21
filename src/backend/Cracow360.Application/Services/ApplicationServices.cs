@@ -8,7 +8,7 @@ namespace Cracow360.Application.Services;
 
 /// <summary>
 /// Application service orchestrating district retrievals, weighted quality of life index calculations,
-/// dynamic rankings, and detailed comparisons across the 7 calibrated urban pillars.
+/// dynamic rankings, and detailed comparisons across the 8 calibrated urban pillars.
 /// </summary>
 public class DistrictService(IDistrictRepository districtRepository) : IDistrictService
 {
@@ -21,6 +21,7 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
         double environmentWeight = 5.0,
         double safetyWeight = 5.0,
         double housingAffordabilityWeight = 5.0,
+        double demographicVitalityWeight = 5.0,
         CancellationToken cancellationToken = default)
     {
         var districts = await districtRepository.GetAllAsync(cancellationToken);
@@ -41,7 +42,8 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
                     cultureWeight,
                     environmentWeight,
                     safetyWeight,
-                    housingAffordabilityWeight)))
+                    housingAffordabilityWeight,
+                    demographicVitalityWeight)))
             .OrderByDescending(d => d.WeightedQualityOfLifeIndex)
             .ToList();
     }
@@ -64,6 +66,7 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
         double environmentWeight = 5.0,
         double safetyWeight = 5.0,
         double housingAffordabilityWeight = 5.0,
+        double demographicVitalityWeight = 5.0,
         CancellationToken cancellationToken = default)
     {
         var first = await districtRepository.GetByIdAsync(firstDistrictId, cancellationToken);
@@ -74,11 +77,11 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
 
         // Calculate composite quality of life indexes using the provided user weights
         var firstIndex = first.CalculateWeightedQualityOfLifeIndex(
-            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight, safetyWeight, housingAffordabilityWeight);
+            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight, safetyWeight, housingAffordabilityWeight, demographicVitalityWeight);
         var secondIndex = second.CalculateWeightedQualityOfLifeIndex(
-            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight, safetyWeight, housingAffordabilityWeight);
+            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight, safetyWeight, housingAffordabilityWeight, demographicVitalityWeight);
 
-        // Calculate metric score deltas (First District minus Second District) across all 7 pillars
+        // Calculate metric score deltas (First District minus Second District) across all 8 pillars
         var deltas = new DistrictScoreDeltasDto(
             WeightedIndexDelta: Math.Round(firstIndex - secondIndex, 2),
             MobilityScoreDelta: Math.Round(first.Scores.MobilityScore - second.Scores.MobilityScore, 2),
@@ -87,7 +90,8 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
             CultureAndSeniorScoreDelta: Math.Round(first.Scores.CultureAndSeniorScore - second.Scores.CultureAndSeniorScore, 2),
             EnvironmentScoreDelta: Math.Round(first.Scores.EnvironmentScore - second.Scores.EnvironmentScore, 2),
             SafetyScoreDelta: Math.Round(first.Scores.SafetyScore - second.Scores.SafetyScore, 2),
-            HousingAffordabilityScoreDelta: Math.Round(first.Scores.HousingAffordabilityScore - second.Scores.HousingAffordabilityScore, 2)
+            HousingAffordabilityScoreDelta: Math.Round(first.Scores.HousingAffordabilityScore - second.Scores.HousingAffordabilityScore, 2),
+            DemographicVitalityScoreDelta: Math.Round(first.Scores.DemographicVitalityScore - second.Scores.DemographicVitalityScore, 2)
         );
 
         return new DistrictComparisonDto(
@@ -133,6 +137,11 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
                 d.EducationAndCare.AvgStudentsPerClass),
             new DistrictMobilityAndTransportDto(
                 d.MobilityAndTransport.KmkStopsCount,
+                d.MobilityAndTransport.TramStopsCount,
+                d.MobilityAndTransport.BusStopsCount,
+                d.MobilityAndTransport.OnDemandStopsCount,
+                d.MobilityAndTransport.ScheduleBoardsCount,
+                d.MobilityAndTransport.TramNetworkSharePct,
                 d.MobilityAndTransport.IsochroneCoveragePct,
                 d.MobilityAndTransport.ParkAndRideCount,
                 d.MobilityAndTransport.BikeRacksCount,
@@ -194,7 +203,8 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
             scores.CultureAndSeniorScore,
             scores.EnvironmentScore,
             scores.SafetyScore,
-            scores.HousingAffordabilityScore);
+            scores.HousingAffordabilityScore,
+            scores.DemographicVitalityScore);
 }
 
 /// <summary>

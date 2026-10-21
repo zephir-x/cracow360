@@ -9,6 +9,7 @@ import {
   ShieldCheck,
   ShieldAlert,
   Coins,
+  TrendingUp,
   Briefcase,
   Users,
   Baby,
@@ -91,6 +92,14 @@ const SLIDER_CONFIGS: {
     accentColor: 'accent-rose-600',
     icon: <Coins className="w-3.5 h-3.5" />,
   },
+  {
+    key: 'demographicVitality',
+    label: 'Witalność i Rozwój Dzielnicy',
+    description: 'Wzrost ludności, wiek 15–64, cudzoziemcy',
+    iconBg: 'bg-violet-50 border-violet-200 text-violet-600',
+    accentColor: 'accent-violet-600',
+    icon: <TrendingUp className="w-3.5 h-3.5" />,
+  },
 ];
 
 function getPresetIcon(presetId: string) {
@@ -157,6 +166,7 @@ export function WeightsConfiguratorPanel({
         environment: Number((startWeights.environment + (targetWeights.environment - startWeights.environment) * ease).toFixed(1)),
         safety: Number((startWeights.safety + (targetWeights.safety - startWeights.safety) * ease).toFixed(1)),
         housingAffordability: Number((startWeights.housingAffordability + (targetWeights.housingAffordability - startWeights.housingAffordability) * ease).toFixed(1)),
+        demographicVitality: Number((startWeights.demographicVitality + (targetWeights.demographicVitality - startWeights.demographicVitality) * ease).toFixed(1)),
       };
 
       if (progress < 1) {
@@ -203,6 +213,7 @@ export function WeightsConfiguratorPanel({
         environment: 5,
         safety: 5,
         housingAffordability: 5,
+        demographicVitality: 5,
       },
       null,
       () => onResetWeights()
@@ -219,7 +230,7 @@ export function WeightsConfiguratorPanel({
           </div>
           <div>
             <h3 className="text-sm font-extrabold text-slate-900">Konfigurator Wag</h3>
-            <p className="text-[11px] text-slate-500">7 Filarów Jakości Życia (0-10)</p>
+            <p className="text-[11px] text-slate-500">8 Filarów Jakości Życia (0-10)</p>
           </div>
         </div>
         <button
@@ -265,10 +276,10 @@ export function WeightsConfiguratorPanel({
           </div>
         </div>
 
-        {/* 7 Quality Dimension Sliders */}
+        {/* 8 Quality Dimension Sliders */}
         <div className="space-y-3 pt-1">
           <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
-            Dostosuj 7 Wymiarów Jakości Życia:
+            Dostosuj 8 Wymiarów Jakości Życia:
           </label>
           {SLIDER_CONFIGS.map((slider) => {
             const currentValue = weights[slider.key];

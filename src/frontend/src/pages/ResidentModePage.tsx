@@ -28,6 +28,8 @@ export interface ResidentModePageProps {
   activePresetId: string | null;
   selectedPrimaryId: number | null;
   selectedSecondaryId: number | null;
+  activeTargetSlot: 1 | 2;
+  onSetActiveTargetSlot: (slot: 1 | 2) => void;
   onChangeWeights: (newWeights: QualityWeights, presetId?: string | null) => void;
   onResetWeights: () => void;
   onSelectDistrict: (districtId: number) => void;
@@ -43,6 +45,8 @@ export function ResidentModePage({
   activePresetId,
   selectedPrimaryId,
   selectedSecondaryId,
+  activeTargetSlot,
+  onSetActiveTargetSlot,
   onChangeWeights,
   onResetWeights,
   onSelectDistrict,
@@ -75,7 +79,7 @@ export function ResidentModePage({
 
           {/* Decorative Architectural & Topographic SVG Illustration on the Right */}
           <svg
-            className="absolute right-0 bottom-0 h-full w-full lg:w-3/5 opacity-25 object-cover"
+            className="absolute right-0 bottom-0 h-full w-full lg:w-3/5 opacity-25 pointer-events-none"
             viewBox="0 0 800 500"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
@@ -83,14 +87,6 @@ export function ResidentModePage({
             <circle cx="620" cy="210" r="190" stroke="white" strokeWidth="1.5" strokeDasharray="6 6" />
             <circle cx="620" cy="210" r="135" stroke="#bae6fd" strokeWidth="2" />
             <circle cx="620" cy="210" r="80" fill="white" fillOpacity="0.08" stroke="white" strokeWidth="1.5" />
-            <path
-              d="M0 420 Q 220 340 420 390 T 800 310 L 800 500 L 0 500 Z"
-              fill="url(#krakowWave1)"
-            />
-            <path
-              d="M120 460 Q 360 370 580 420 T 800 360 L 800 500 L 120 500 Z"
-              fill="url(#krakowWave2)"
-            />
             {/* Stylized Vistula River & District Grid Nodes */}
             <path
               d="M330 60 C 430 140, 480 260, 620 210 C 700 180, 740 240, 790 200"
@@ -102,16 +98,6 @@ export function ResidentModePage({
             <circle cx="555" cy="222" r="6" fill="#38bdf8" />
             <circle cx="620" cy="210" r="9" fill="#ffffff" stroke="#0284c7" strokeWidth="3" />
             <circle cx="695" cy="198" r="6" fill="#bae6fd" />
-            <defs>
-              <linearGradient id="krakowWave1" x1="0" y1="310" x2="800" y2="500" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#38bdf8" stopOpacity="0.35" />
-                <stop offset="1" stopColor="#0369a1" stopOpacity="0.05" />
-              </linearGradient>
-              <linearGradient id="krakowWave2" x1="120" y1="360" x2="800" y2="500" gradientUnits="userSpaceOnUse">
-                <stop stopColor="#ffffff" stopOpacity="0.25" />
-                <stop offset="1" stopColor="#bae6fd" stopOpacity="0.05" />
-              </linearGradient>
-            </defs>
           </svg>
         </div>
 
@@ -120,7 +106,7 @@ export function ResidentModePage({
           <div className="max-w-2xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
               <Compass className="w-4 h-4 text-sky-300" />
-              Tryb Mieszkańca • 7 Filarów Jakości Życia w 18 Dzielnicach
+              Tryb Mieszkańca • 8 Filarów Jakości Życia w 18 Dzielnicach
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-black tracking-tight leading-[1.12] text-white">
@@ -130,7 +116,7 @@ export function ResidentModePage({
             </h1>
 
             <p className="text-sm sm:text-base text-blue-100/95 leading-relaxed max-w-xl">
-              Dostosuj wagi 7 kluczowych wymiarów miejskich (w tym bezpieczeństwo publiczne i dostępność cenową mieszkań) do własnych priorytetów. Sprawdzaj interaktywny kartogram 18 dzielnic w czasie rzeczywistym i analizuj twarde wskaźniki z oficjalnych rejestrów Otwartych Danych.
+              Dostosuj wagi 8 kluczowych wymiarów miejskich (w tym witalność demograficzną, bezpieczeństwo i rynek mieszkań) do własnych priorytetów. Sprawdzaj interaktywny kartogram 18 dzielnic w czasie rzeczywistym i analizuj twarde wskaźniki z oficjalnych rejestrów Otwartych Danych.
             </p>
 
             {/* Interactive CTA Buttons */}
@@ -200,9 +186,9 @@ export function ResidentModePage({
                 <BarChart3 className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-black text-indigo-700 leading-none">7 Filarów</div>
+                <div className="text-2xl font-black text-indigo-700 leading-none">8 Filarów</div>
                 <div className="text-xs font-bold text-slate-800 mt-1">30+ Zbiorów Danych</div>
-                <div className="text-[11px] text-slate-500">Ceny, bezpieczeństwo, KMK, CAS i smog</div>
+                <div className="text-[11px] text-slate-500">Ceny, bezpieczeństwo, witalność, KMK i smog</div>
               </div>
             </div>
           </div>
@@ -246,19 +232,19 @@ export function ResidentModePage({
                 <div className="font-extrabold text-blue-900 mb-1">
                   1. Normalizacja Min-Max (0–100 pkt)
                 </div>
-                Twarde dane miejskie (ceny mieszkań, zdarzenia drogowe, KMK, parki i lasy, żłobki, biblioteki, CAS, smog i hałas) są przeliczane na obiektywną skalę 0–100 pkt w 7 kategoriach jakości życia.
+                Twarde dane miejskie (witalność demograficzna, ceny mieszkań, zdarzenia drogowe, KMK, parki i lasy, żłobki, biblioteki, CAS, smog i hałas) są przeliczane na obiektywną skalę 0–100 pkt w 8 kategoriach jakości życia.
               </div>
               <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
                 <div className="font-extrabold text-sky-900 mb-1">
                   2. Twoje Wagi i Presety (0–10 pkt)
                 </div>
-                Ustawiasz wagi suwakami po lewej stronie lub wybierasz gotowy profil (Rodzina z Dziećmi, Student / Młody, Aktywny Senior, Inwestor / Biznes). Aplikacja mnoży 7 ocen każdej dzielnicy przez Twoje wagi w czasie 0 ms.
+                Ustawiasz wagi suwakami po lewej stronie lub wybierasz gotowy profil (Rodzina z Dziećmi, Student / Młody, Aktywny Senior, Inwestor / Biznes). Aplikacja mnoży 8 ocen każdej dzielnicy przez Twoje wagi w czasie 0 ms.
               </div>
               <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
                 <div className="font-extrabold text-indigo-900 mb-1">
-                  3. Porównanie (Wykres Radarowy 7 Osi)
+                  3. Porównanie (Wykres Radarowy 8 Osi)
                 </div>
-                Kliknij dowolne 2 dzielnice na mapie lub liście rankingowej, aby nałożyć ich profile na 7-osiowy wykres radarowy i porównać twarde wskaźniki w tabeli poniżej.
+                Kliknij dowolne 2 dzielnice na mapie lub liście rankingowej, aby nałożyć ich profile na 8-osiowy wykres radarowy i porównać twarde wskaźniki w tabeli poniżej.
               </div>
             </div>
           </section>
@@ -270,7 +256,7 @@ export function ResidentModePage({
         id="resident-workspace"
         className="grid grid-cols-1 xl:grid-cols-[325px_1fr_345px] gap-5 items-start scroll-mt-20"
       >
-        {/* Left Panel: 4 Presets + 7 Category Sliders */}
+        {/* Left Panel: 6 Presets + 8 Category Sliders */}
         <div className="w-full">
           <WeightsConfiguratorPanel
             weights={weights}
@@ -287,6 +273,8 @@ export function ResidentModePage({
             districts={rankedDistricts}
             selectedPrimaryId={selectedPrimaryId}
             selectedSecondaryId={selectedSecondaryId}
+            activeTargetSlot={activeTargetSlot}
+            onSetActiveTargetSlot={onSetActiveTargetSlot}
             onSelectDistrict={onSelectDistrict}
             onClearSelection={onClearSelection}
           />

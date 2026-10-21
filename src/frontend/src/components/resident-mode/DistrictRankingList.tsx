@@ -114,7 +114,7 @@ export function DistrictRankingList({
                 </div>
               </div>
 
-              {/* Progress Bar + Mini Category Pill Summary across 7 Pillars (fixed grid positions, tabular numbers) */}
+              {/* Progress Bar + Mini Category Pill Summary across 8 Pillars (symmetrical 4x2 grid, tabular numbers) */}
               <div className="mt-2.5 space-y-1.5">
                 <div className="w-full h-1.5 bg-slate-200/80 rounded-full overflow-hidden">
                   <div
@@ -126,7 +126,7 @@ export function DistrictRankingList({
                   />
                 </div>
 
-                {/* 7 Urban Pillars with strictly fixed column slots and tabular numbers */}
+                {/* 8 Urban Pillars with strictly fixed symmetrical 4x2 grid and tabular numbers */}
                 <div className="pt-0.5 space-y-1 text-[9.5px] text-slate-500 tabular-nums">
                   <div className="grid grid-cols-4 gap-1">
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
@@ -146,7 +146,7 @@ export function DistrictRankingList({
                       <strong className="font-bold text-slate-700">{Number(district.scores.cultureAndSeniorScore).toFixed(1)}</strong>
                     </span>
                   </div>
-                  <div className="grid grid-cols-3 gap-1 px-3">
+                  <div className="grid grid-cols-4 gap-1">
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
                       <span className="text-slate-400 font-medium">Środ:</span>
                       <strong className="font-bold text-slate-700">{Number(district.scores.environmentScore).toFixed(1)}</strong>
@@ -158,6 +158,10 @@ export function DistrictRankingList({
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
                       <span className="text-slate-400 font-medium">Cena:</span>
                       <strong className="font-bold text-slate-700">{Number(district.scores.housingAffordabilityScore).toFixed(1)}</strong>
+                    </span>
+                    <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
+                      <span className="text-slate-400 font-medium">Demo:</span>
+                      <strong className="font-bold text-slate-700">{Number(district.scores.demographicVitalityScore ?? 50).toFixed(1)}</strong>
                     </span>
                   </div>
                 </div>

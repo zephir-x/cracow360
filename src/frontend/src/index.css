@@ -30,15 +30,17 @@ html, body {
   will-change: filter, transform, opacity;
 }
 
-/* Soft, calm focal transitions: subtle scale and progressive de-blur */
+/* Soft, calm focal transitions: subtle scale, progressive de-blur, and soft opacity fade */
 @keyframes contentFocusEnter {
   0% {
     filter: blur(8px);
     transform: scale(0.985);
+    opacity: 0.25;
   }
   100% {
     filter: blur(0px);
     transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -46,10 +48,12 @@ html, body {
   0% {
     filter: blur(6px);
     transform: scale(0.99);
+    opacity: 0.25;
   }
   100% {
     filter: blur(0px);
     transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -193,4 +197,13 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #2563eb;
+}
+
+/* Remove default browser focus outline rectangle around clicked SVG district paths */
+.leaflet-container path:focus,
+.leaflet-container path:focus-visible,
+.leaflet-interactive:focus,
+.leaflet-interactive:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
 }

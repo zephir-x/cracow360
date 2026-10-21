@@ -30,8 +30,26 @@ public class DatabaseSeeder(
     /// </summary>
     public async Task SeedAsync(string contractsDirectoryPath, CancellationToken cancellationToken = default)
     {
-        // 1. Ensure SQLite schema exists
+        // 1. Ensure SQLite schema exists and matches the current domain model (8 quality pillars)
         await dbContext.Database.EnsureCreatedAsync(cancellationToken);
+
+        try
+        {
+            // Verify if existing SQLite table schema matches the current entity model without tracking entities in memory
+            _ = await dbContext.Districts
+                .AsNoTracking()
+                .OrderBy(d => d.DistrictId)
+                .Take(1)
+                .ToListAsync(cancellationToken);
+        }
+        catch (Exception ex)
+        {
+            logger.LogWarning(
+                "SQLite schema mismatch or missing column detected ({Message}). Recreating schema to synchronize with new domain model...",
+                ex.Message);
+            await dbContext.Database.EnsureDeletedAsync(cancellationToken);
+            await dbContext.Database.EnsureCreatedAsync(cancellationToken);
+        }
 
         // 2. Set DELETE journal mode so SQLite can be safely inspected simultaneously by Docker containers across mounts
         await dbContext.Database.ExecuteSqlRawAsync("PRAGMA journal_mode=DELETE;", cancellationToken);
@@ -56,6 +74,9 @@ public class DatabaseSeeder(
                 await dbContext.PointsOfInterest.ExecuteDeleteAsync(cancellationToken);
                 await dbContext.Districts.ExecuteDeleteAsync(cancellationToken);
 
+                // Clear EF Core change tracker to prevent any identity conflicts
+                dbContext.ChangeTracker.Clear();
+
                 var entities = contract.Districts.Select(MapToDomain).ToList();
                 await dbContext.Districts.AddRangeAsync(entities, cancellationToken);
                 await dbContext.SaveChangesAsync(cancellationToken);
@@ -76,6 +97,9 @@ public class DatabaseSeeder(
                 var existingDistrictIds = await dbContext.Districts
                     .Select(d => d.DistrictId)
                     .ToHashSetAsync(cancellationToken);
+
+                // Clear EF Core change tracker before bulk inserting POIs
+                dbContext.ChangeTracker.Clear();
 
                 // Ensure all POIs reference valid districts
                 var entities = contract.PointsOfInterest

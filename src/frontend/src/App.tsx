@@ -13,7 +13,7 @@ import type {
 } from './types/contracts';
 import { calculateClientSideQualityIndex } from './utils/qualityIndexCalculator';
 
-// Neutral baseline weights: equal balance of 5.0 across all 7 urban pillars
+// Neutral baseline weights: equal balance of 5.0 across all 8 urban pillars
 const DEFAULT_WEIGHTS: QualityWeights = {
   mobility: 5,
   education: 5,
@@ -22,6 +22,7 @@ const DEFAULT_WEIGHTS: QualityWeights = {
   environment: 5,
   safety: 5,
   housingAffordability: 5,
+  demographicVitality: 5,
 };
 
 /// <summary>
@@ -43,6 +44,9 @@ export function App() {
   // Selected district IDs for side-by-side comparison (#1 Primary, #2 Secondary)
   const [selectedPrimaryId, setSelectedPrimaryId] = useState<number | null>(5); // Default #1: Dzielnica V Krowodrza
   const [selectedSecondaryId, setSelectedSecondaryId] = useState<number | null>(4); // Default #2: Dzielnica IV Prądnik Biały
+
+  // Active target slot for district selection focus (1 = District #1, 2 = District #2)
+  const [activeTargetSlot, setActiveTargetSlot] = useState<1 | 2>(1);
 
   // Network and data loading error message
   const [error, setError] = useState<string | null>(null);
@@ -99,34 +103,52 @@ export function App() {
     setActivePresetId(presetId);
   };
 
-  // Resets all 7 sliders to default baseline (5.0 each)
+  // Resets all 8 sliders to default baseline (5.0 each)
   const handleResetWeights = () => {
     setWeights(DEFAULT_WEIGHTS);
     setActivePresetId(null);
   };
 
-  // Toggle selection of District #1 (Primary) and District #2 (Secondary for comparison)
+  // Set selection of District #1 or District #2 with automatic alternating slot toggling
   const handleSelectDistrict = (districtId: number) => {
-    if (selectedPrimaryId === districtId) {
-      setSelectedPrimaryId(selectedSecondaryId);
-      setSelectedSecondaryId(null);
-      return;
-    }
-    if (selectedSecondaryId === districtId) {
-      setSelectedSecondaryId(null);
-      return;
-    }
-    if (selectedPrimaryId === null) {
+    if (activeTargetSlot === 1) {
+      if (selectedSecondaryId === districtId) {
+        setSelectedSecondaryId(null);
+      }
       setSelectedPrimaryId(districtId);
+      // Automatically advance active target slot to #2
+      setActiveTargetSlot(2);
     } else {
+      if (selectedPrimaryId === districtId) {
+        setSelectedPrimaryId(null);
+      }
       setSelectedSecondaryId(districtId);
+      // Automatically advance active target slot to #1
+      setActiveTargetSlot(1);
     }
   };
 
-  // Clears comparison selections
+  const handleSelectPrimary = (id: number) => {
+    if (selectedSecondaryId === id) {
+      setSelectedSecondaryId(null);
+    }
+    setSelectedPrimaryId(id);
+    setActiveTargetSlot(2);
+  };
+
+  const handleSelectSecondary = (id: number) => {
+    if (selectedPrimaryId === id) {
+      setSelectedPrimaryId(null);
+    }
+    setSelectedSecondaryId(id);
+    setActiveTargetSlot(1);
+  };
+
+  // Clears comparison selections and resets target focus to Slot #1
   const handleClearSelection = () => {
     setSelectedPrimaryId(null);
     setSelectedSecondaryId(null);
+    setActiveTargetSlot(1);
   };
 
   return (
@@ -152,11 +174,13 @@ export function App() {
               activePresetId={activePresetId}
               selectedPrimaryId={selectedPrimaryId}
               selectedSecondaryId={selectedSecondaryId}
+              activeTargetSlot={activeTargetSlot}
+              onSetActiveTargetSlot={setActiveTargetSlot}
               onChangeWeights={handleWeightsChange}
               onResetWeights={handleResetWeights}
               onSelectDistrict={handleSelectDistrict}
-              onSelectPrimary={(id) => setSelectedPrimaryId(id)}
-              onSelectSecondary={(id) => setSelectedSecondaryId(id)}
+              onSelectPrimary={handleSelectPrimary}
+              onSelectSecondary={handleSelectSecondary}
               onClearSelection={handleClearSelection}
             />
           )}

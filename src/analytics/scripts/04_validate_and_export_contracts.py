@@ -12,7 +12,7 @@ WHAT THIS SCRIPT VALIDATES:
     3. Completeness of all 10 required domain aggregate sections (`scores`, `demographics`,
        `educationAndCare`, `mobilityAndTransport`, `greeneryAndSport`, `cultureAndSociety`,
        `forecastsAndB2B`, `publicSafety`, `housingMarket`, `environmentalQuality`) for every district.
-    4. Compliance of all 7 Quality of Life category scores (numeric floats within [0.0, 100.0]).
+    4. Compliance of all 8 Quality of Life category scores (numeric floats within [0.0, 100.0]).
     5. Strict enum validation for B2B investment and deficit levels ('LOW', 'MEDIUM', 'HIGH').
     6. Geocoded civic Points of Interest (POIs) validation: allowed category and subCategory enums,
        valid district foreign keys (1..18), and WGS84 GPS coordinates within the Krakow metro bounding box.
@@ -44,7 +44,7 @@ def validate_districts_master(file_path: Path) -> list[str]:
     """
     Validates the primary district master contract file (`krakow_districts_master.json`).
     Asserts schema compliance across all 18 administrative districts, 10 nested domain sections,
-    7 quality scores, and econometric classification enums.
+    8 quality scores, and econometric classification enums.
 
     Args:
         file_path: Path to `data/contracts/krakow_districts_master.json`.
@@ -92,7 +92,7 @@ def validate_districts_master(file_path: Path) -> list[str]:
         "environmentalQuality",
     ]
 
-    # Step 6: Define the 7 normalized Quality of Life category score keys [0.0 - 100.0]
+    # Step 6: Define the 8 normalized Quality of Life category score keys [0.0 - 100.0]
     expected_score_keys = [
         "mobilityScore",
         "educationScore",
@@ -101,6 +101,7 @@ def validate_districts_master(file_path: Path) -> list[str]:
         "environmentScore",
         "safetyScore",
         "housingAffordabilityScore",
+        "demographicVitalityScore",
     ]
 
     # Step 7: Iterate over every district entity to assert schema and range conformance
@@ -117,7 +118,7 @@ def validate_districts_master(file_path: Path) -> list[str]:
             if sec not in district:
                 errors.append(f"District {d_id}: missing mandatory domain section '{sec}'.")
 
-        # Verify that all 7 Quality of Life category scores are numeric floats within [0.0, 100.0]
+        # Verify that all 8 Quality of Life category scores are numeric floats within [0.0, 100.0]
         scores = district.get("scores", {})
         for score_key in expected_score_keys:
             val = scores.get(score_key)
@@ -227,17 +228,14 @@ def main() -> int:
     Runs validation routines sequentially across both contract deliverables, prints an
     itemized diagnostic report, and returns exit code 0 on success or 1 on failure.
     """
-    # Resolve absolute contract file paths from the shared analytics configuration
     districts_file = CONTRACTS_OUTPUT_DIR / "krakow_districts_master.json"
     poi_file = CONTRACTS_OUTPUT_DIR / "krakow_poi_locations.json"
 
-    print("=== Krakow360 Data Contract Validation ===")
+    print("=== Krakow360 Data Contract Validation (8 Pillars) ===")
 
-    # Execute validations sequentially across both contract deliverables
     d_errors = validate_districts_master(districts_file)
     p_errors = validate_poi_locations(poi_file)
 
-    # Aggregate violations and report detailed diagnostics if the contract is breached
     all_errors = d_errors + p_errors
     if all_errors:
         print("\n[ERROR] Data contract validation failed:")
@@ -246,11 +244,10 @@ def main() -> int:
         print(f"\nTotal violations detected: {len(all_errors)}")
         return 1
 
-    # Log success summary and return status code 0 to indicate complete compliance
     print("\n[OK] Validation passed:")
     print(f"  - Verified 18 districts in {districts_file.name}")
     print(f"  - Verified all 10 required domain sections per district")
-    print(f"  - Verified all 7 Quality of Life category scores (0.0 - 100.0)")
+    print(f"  - Verified all 8 Quality of Life category scores (0.0 - 100.0)")
     print(f"  - Verified Points of Interest in {poi_file.name}")
     print("All JSON contract checks PASSED successfully.")
     return 0

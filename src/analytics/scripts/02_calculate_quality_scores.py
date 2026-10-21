@@ -1,6 +1,6 @@
 """
 GOAL / PURPOSE:
-    Calculate the 7 normalized category quality scores (scale 0.0 to 100.0) for
+    Calculate the 8 normalized category quality scores (scale 0.0 to 100.0) for
     each of the 18 Krakow districts based on the real aggregated municipal Open
     Data indicators produced by Script 01 (`districts_aggregated.json`).
 
@@ -12,6 +12,7 @@ PILLARS EVALUATED:
     5. environmentScore - Czyste powietrze (PM10 GIOŚ), brak hałasu tranzytowego i bufor zieleni
     6. safetyScore - Bezpieczeństwo drogowe, brak potrąceń i spokój publiczny (SEWiK / Straż Miejska)
     7. housingAffordabilityScore - Dostępność cenowa zakupu i najmu mieszkań (NBP / Otodom / RCN)
+    8. demographicVitalityScore - Witalność demograficzna, dynamika 3-letnia ludności i atrakcyjność migracyjna (BDK UMK)
 """
 
 from __future__ import annotations
@@ -49,7 +50,7 @@ def calculate_quality_scores() -> None:
     """
     Main analytical workflow:
     1. Ingests cleaned aggregate indicators from `data_processed/districts_aggregated.json`.
-    2. Computes stimulants and destimulants across all 7 urban quality dimensions.
+    2. Computes stimulants and destimulants across all 8 urban quality dimensions.
     3. Applies logarithmic scaling (math.log1p) and functional population weighting where needed.
     4. Maps composite indices to calibrated practical score bands.
     5. Saves the scored districts to `data_processed/districts_scored.json`.
@@ -65,25 +66,39 @@ def calculate_quality_scores() -> None:
     n_districts = len(districts)
 
     # 1. MOBILITY & TRANSPORT SCORE
-    # Indicators: 500m walking isochrone %, log stop density, bike lane density (km/km2), bike racks & P+R
+    # Indicators:
+    # - 500m walking isochrone % (calibrated discounting low-frequency on-demand stops)
+    # - Tram rapid transit density & share (high capacity, dedicated tracks, rapid intervals)
+    # - Timetable service frequency & line diversity proxy (schedule display frames & cases / km2)
+    # - Bike lane network density (DDR and separated lanes km/km2)
+    # - Intermodal capacity (ZTP bike racks per 1k residents + Park & Ride commuter hubs)
     iso_cov = [d["mobilityAndTransport"]["isochroneCoveragePct"] for d in districts]
-    stops_density = [math.log1p(d["mobilityAndTransport"]["kmkStopsCount"] / d["areaKm2"]) for d in districts]
+    tram_density = [
+        math.log1p(d["mobilityAndTransport"]["tramStopsCount"] / d["areaKm2"])
+        * (1.0 + (d["mobilityAndTransport"]["tramNetworkSharePct"] / 100.0))
+        for d in districts
+    ]
+    service_density = [
+        math.log1p(d["mobilityAndTransport"]["scheduleBoardsCount"] / d["areaKm2"])
+        for d in districts
+    ]
     bike_lane_density = [d["mobilityAndTransport"]["bikeLanesLengthKm"] / d["areaKm2"] for d in districts]
-    racks_and_pr = [
+    intermodal_hubs = [
         (d["mobilityAndTransport"]["bikeRacksCount"] * 1000.0 / max(d["demographics"]["totalPopulation"], 1))
         + (d["mobilityAndTransport"]["parkAndRideCount"] * 12.0)
         for d in districts
     ]
 
-    # Normalize components (all stimulants: higher values indicate superior transit access)
+    # Normalize components (all stimulants: higher values indicate superior transit access & frequency)
     s_iso = min_max_normalize_0_100(iso_cov, invert=False)
-    s_stops = min_max_normalize_0_100(stops_density, invert=False)
+    s_tram = min_max_normalize_0_100(tram_density, invert=False)
+    s_service = min_max_normalize_0_100(service_density, invert=False)
     s_bike = min_max_normalize_0_100(bike_lane_density, invert=False)
-    s_racks = min_max_normalize_0_100(racks_and_pr, invert=False)
+    s_intermodal = min_max_normalize_0_100(intermodal_hubs, invert=False)
 
-    # Weighting: 40% walking isochrone, 25% stop network, 20% bike lanes DDR, 15% bike racks & P+R
+    # Weighting: 30% walking isochrone, 25% tram rapid network, 20% timetable service frequency, 15% bike lanes DDR, 10% intermodal P+R & racks
     raw_mobility = [
-        0.40 * s_iso[i] + 0.25 * s_stops[i] + 0.20 * s_bike[i] + 0.15 * s_racks[i]
+        0.30 * s_iso[i] + 0.25 * s_tram[i] + 0.20 * s_service[i] + 0.15 * s_bike[i] + 0.10 * s_intermodal[i]
         for i in range(n_districts)
     ]
     # Practical band [28.0, 96.0]: appropriately penalizes car-dependent outer areas lacking tram lines
@@ -193,14 +208,12 @@ def calculate_quality_scores() -> None:
 
     # 6. PUBLIC SAFETY & TRAFFIC SAFETY SCORE (SEWiK KGP, Straż Miejska)
     # Standard IRMiR/GUS calibration: account for functional daytime active population
-    # (commuters, students & tourist traffic) and log-transformation to prevent skew
     daytime_factors = {1: 3.0, 2: 1.6, 5: 1.3, 13: 1.2}
 
     def effective_population(d: dict) -> float:
         factor = daytime_factors.get(d["districtId"], 1.0)
         return max(d["demographics"]["totalPopulation"] * factor, 1.0)
 
-    # Compute per-capita indicators relative to functional daytime population using math.log1p
     collisions_per_1k = [
         math.log1p(d["publicSafety"]["roadCollisionsAnnual"] * 1000.0 / effective_population(d))
         for d in districts
@@ -218,12 +231,10 @@ def calculate_quality_scores() -> None:
         for d in districts
     ]
 
-    # Normalize safety destimulants (fewer incidents = higher score)
     s_collisions = min_max_normalize_0_100(collisions_per_1k, invert=True)
     s_pedestrians = min_max_normalize_0_100(pedestrians_per_10k, invert=True)
     s_disturbance = min_max_normalize_0_100(disturbance_per_1k, invert=True)
 
-    # Weighting: 35% collisions, 35% pedestrian & injury accidents, 30% public disturbance calls
     raw_safety = [
         0.35 * s_collisions[i] + 0.35 * s_pedestrians[i] + 0.30 * s_disturbance[i]
         for i in range(n_districts)
@@ -231,25 +242,48 @@ def calculate_quality_scores() -> None:
     safety_scores = rescale_to_practical_band(raw_safety, low=58.0, high=95.0)
 
     # 7. HOUSING MARKET & AFFORDABILITY SCORE (NBP BaRN, Otodom, RCN)
-    # Indicators: purchase price m2 (destimulant), rent rate m2 (destimulant), m2 per salary (stimulant)
     price_m2 = [d["housingMarket"]["avgPricePerM2"] for d in districts]
     rent_m2 = [d["housingMarket"]["avgRentalPriceM2"] for d in districts]
     affordability = [d["housingMarket"]["m2PerAverageSalary"] for d in districts]
 
-    # Normalization: cheaper housing = higher affordability (invert=True)
     s_price = min_max_normalize_0_100(price_m2, invert=True)
     s_rent = min_max_normalize_0_100(rent_m2, invert=True)
     s_afford = min_max_normalize_0_100(affordability, invert=False)
 
-    # Weighting: 35% purchase price, 30% rental rate, 35% salary purchasing power
     raw_housing = [
         0.35 * s_price[i] + 0.30 * s_rent[i] + 0.35 * s_afford[i]
         for i in range(n_districts)
     ]
-    # Practical band [50.0, 92.0]: prevents peripheral cheap land from overpowering urban infrastructure
     housing_scores = rescale_to_practical_band(raw_housing, low=50.0, high=92.0)
 
-    # Attach all 7 computed scores to each district entity
+    # 8. DEMOGRAPHIC VITALITY & SETTLEMENT ATTRACTIVENESS SCORE (BDK, UMK 2023-2025)
+    # Indicators:
+    # - 3-year population growth rate (2023 to 2025 % dynamic)
+    # - Working-age demographic vitality share (age 15-64 / total population %)
+    # - Migration attractiveness & international openness (temporary residents + foreigners / total population %)
+    growth_rate = [d["demographics"]["populationGrowthRate3YrPct"] for d in districts]
+    working_age_share = [
+        (d["demographics"]["age15to64"] * 100.0) / max(d["demographics"]["totalPopulation"], 1)
+        for d in districts
+    ]
+    migration_rate = [
+        ((d["demographics"]["temporaryResidents"] + d["demographics"]["foreignersTotal"]) * 100.0)
+        / max(d["demographics"]["totalPopulation"], 1)
+        for d in districts
+    ]
+
+    s_growth = min_max_normalize_0_100(growth_rate, invert=False)
+    s_workforce = min_max_normalize_0_100(working_age_share, invert=False)
+    s_migration = min_max_normalize_0_100(migration_rate, invert=False)
+
+    # Weighting: 40% 3-year population growth rate, 35% working-age vitality share, 25% migration inflow & openness
+    raw_demographic = [
+        0.40 * s_growth[i] + 0.35 * s_workforce[i] + 0.25 * s_migration[i]
+        for i in range(n_districts)
+    ]
+    demographic_scores = rescale_to_practical_band(raw_demographic, low=45.0, high=95.0)
+
+    # Attach all 8 computed scores to each district entity
     for i, d in enumerate(districts):
         d["scores"] = {
             "mobilityScore": mobility_scores[i],
@@ -259,6 +293,7 @@ def calculate_quality_scores() -> None:
             "environmentScore": env_scores[i],
             "safetyScore": safety_scores[i],
             "housingAffordabilityScore": housing_scores[i],
+            "demographicVitalityScore": demographic_scores[i],
         }
 
     # Save final scored dataset for Script 03
@@ -266,13 +301,13 @@ def calculate_quality_scores() -> None:
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump({"districts": districts}, f, ensure_ascii=False, indent=2)
 
-    print(f"[Step 02 - Scores] Computed all 7 Quality of Life category scores for {len(districts)} districts.")
+    print(f"[Step 02 - Scores] Computed all 8 Quality of Life category scores for {len(districts)} districts.")
     for d in districts:
         sc = d["scores"]
         print(
             f"  - {d['districtName']}: Mob={sc['mobilityScore']}, Edu={sc['educationScore']}, "
             f"Green={sc['greeneryScore']}, Cult={sc['cultureAndSeniorScore']}, Env={sc['environmentScore']}, "
-            f"Safe={sc['safetyScore']}, House={sc['housingAffordabilityScore']}"
+            f"Safe={sc['safetyScore']}, House={sc['housingAffordabilityScore']}, Demo={sc['demographicVitalityScore']}"
         )
     print(f"[Step 02 - Scores] Saved scored districts -> {out_path}")
 

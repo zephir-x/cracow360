@@ -49,9 +49,7 @@ interface MetricRow {
 // Module-level permanent memory cache for all 18 districts (zero network delay on dropdown select)
 const DISTRICT_DETAILS_CACHE = new Map<number, DistrictDetailsDto>();
 
-/**
- * Synthesizes data-driven comparative resident strengths for the district card.
- */
+// Synthesizes data-driven comparative resident strengths for the district card across 8 pillars.
 function getResidentStrengths(current: DistrictDetailsDto, opponent: DistrictDetailsDto): string {
   const PILLARS: { key: keyof typeof current.scores; label: string }[] = [
     { key: 'mobilityScore', label: 'mobilność i komunikację KMK' },
@@ -61,6 +59,7 @@ function getResidentStrengths(current: DistrictDetailsDto, opponent: DistrictDet
     { key: 'environmentScore', label: 'czyste środowisko i spokój' },
     { key: 'safetyScore', label: 'bezpieczeństwo i porządek' },
     { key: 'housingAffordabilityScore', label: 'przystępność cenową mieszkań' },
+    { key: 'demographicVitalityScore', label: 'witalność demograficzną i rozwój' },
   ];
 
   // Calculate comparative deltas (current - opponent)
@@ -91,8 +90,8 @@ function getResidentStrengths(current: DistrictDetailsDto, opponent: DistrictDet
 }
 
 /// <summary>
-/// Side-by-side district comparison component featuring radar chart overlays across all 7 pillars,
-/// detailed differential tables, and smooth expand/collapse animations (drawer-expandable).
+/// Side-by-side district comparison component featuring radar chart overlays across all 8 pillars,
+/// detailed differential tables, and smooth expand/collapse transitions without layout jumps.
 /// </summary>
 export function DistrictComparisonView({
   districts,
@@ -167,7 +166,7 @@ export function DistrictComparisonView({
     return calculateClientSideQualityIndex(secondDetails.scores, weights);
   }, [secondDetails, weights]);
 
-  // RadarChart dataset overlaying all 7 pillars (0-100 scale)
+  // RadarChart dataset overlaying all 8 pillars (0-100 scale)
   const radarData = useMemo(() => {
     if (!firstDetails || !secondDetails) return [];
     return [
@@ -213,6 +212,12 @@ export function DistrictComparisonView({
         second: secondDetails.scores.housingAffordabilityScore,
         fullMark: 100,
       },
+      {
+        category: 'Witalność i Rozwój',
+        first: firstDetails.scores.demographicVitalityScore,
+        second: secondDetails.scores.demographicVitalityScore,
+        fullMark: 100,
+      },
     ];
   }, [firstDetails, secondDetails]);
 
@@ -220,6 +225,15 @@ export function DistrictComparisonView({
   const metricRows: MetricRow[] = useMemo(() => {
     if (!firstDetails || !secondDetails) return [];
     return [
+      {
+        category: 'Demografia',
+        label: 'Wskaźnik witalności demograficznej i rozwoju',
+        unit: 'pkt',
+        firstValue: firstDetails.scores.demographicVitalityScore ?? 0,
+        secondValue: secondDetails.scores.demographicVitalityScore ?? 0,
+        higherIsBetter: true,
+        format: (v) => `${v.toFixed(1)} pkt`,
+      },
       {
         category: 'Demografia',
         label: 'Liczba mieszkańców ogółem',
@@ -237,6 +251,24 @@ export function DistrictComparisonView({
         secondValue: secondDetails.demographics.populationGrowthRate3YrPct,
         higherIsBetter: true,
         format: (v) => `${v > 0 ? '+' : ''}${v.toFixed(1)}%`,
+      },
+      {
+        category: 'Demografia',
+        label: 'Mieszkańcy w wieku produkcyjnym (15–64 lata)',
+        unit: 'osób',
+        firstValue: firstDetails.demographics.age15To64,
+        secondValue: secondDetails.demographics.age15To64,
+        higherIsBetter: true,
+        format: (v) => v.toLocaleString('pl-PL'),
+      },
+      {
+        category: 'Demografia',
+        label: 'Cudzoziemcy zameldowani w dzielnicy',
+        unit: 'osób',
+        firstValue: firstDetails.demographics.foreignersTotal,
+        secondValue: secondDetails.demographics.foreignersTotal,
+        higherIsBetter: true,
+        format: (v) => v.toLocaleString('pl-PL'),
       },
       {
         category: 'Rynek Mieszkaniowy',
@@ -293,7 +325,33 @@ export function DistrictComparisonView({
       },
       {
         category: 'Mobilność',
-        label: 'Liczba przystanków KMK (tramwaj / autobus)',
+        label: 'Przystanki tramwajowe (szkielet szynowy)',
+        unit: 'przyst.',
+        firstValue: firstDetails.mobilityAndTransport.tramStopsCount ?? 0,
+        secondValue: secondDetails.mobilityAndTransport.tramStopsCount ?? 0,
+        higherIsBetter: true,
+      },
+      {
+        category: 'Mobilność',
+        label: 'Udział tramwajów w sieci przystankowej',
+        unit: '%',
+        firstValue: firstDetails.mobilityAndTransport.tramNetworkSharePct ?? 0,
+        secondValue: secondDetails.mobilityAndTransport.tramNetworkSharePct ?? 0,
+        higherIsBetter: true,
+        format: (v) => `${v.toFixed(1)}%`,
+      },
+      {
+        category: 'Mobilność',
+        label: 'Gabloty i ramki rozkładowe (oferta linii)',
+        unit: 'szt.',
+        firstValue: firstDetails.mobilityAndTransport.scheduleBoardsCount ?? 0,
+        secondValue: secondDetails.mobilityAndTransport.scheduleBoardsCount ?? 0,
+        higherIsBetter: true,
+        format: (v) => v.toLocaleString('pl-PL'),
+      },
+      {
+        category: 'Mobilność',
+        label: 'Łączna liczba przystanków KMK (sieć ogółem)',
         unit: 'przyst.',
         firstValue: firstDetails.mobilityAndTransport.kmkStopsCount,
         secondValue: secondDetails.mobilityAndTransport.kmkStopsCount,
@@ -301,7 +359,7 @@ export function DistrictComparisonView({
       },
       {
         category: 'Mobilność',
-        label: 'Pokrycie izochroną dojścia 500 m do KMK',
+        label: 'Efektywna dostępność piesza KMK (izochrona 500 m)',
         unit: '%',
         firstValue: firstDetails.mobilityAndTransport.isochroneCoveragePct,
         secondValue: secondDetails.mobilityAndTransport.isochroneCoveragePct,
@@ -449,9 +507,43 @@ export function DistrictComparisonView({
     ];
   }, [firstDetails, secondDetails]);
 
+  // Cached snapshot of active comparison to keep DOM intact during drawer collapse animation
+  const [cachedComparison, setCachedComparison] = useState<{
+    first: DistrictDetailsDto;
+    second: DistrictDetailsDto;
+    firstScore: number;
+    secondScore: number;
+    radar: typeof radarData;
+    metrics: typeof metricRows;
+  } | null>(null);
+
+  useEffect(() => {
+    if (firstDetails && secondDetails) {
+      setCachedComparison({
+        first: firstDetails,
+        second: secondDetails,
+        firstScore: firstWeightedScore,
+        secondScore: secondWeightedScore,
+        radar: radarData,
+        metrics: metricRows,
+      });
+    }
+  }, [firstDetails, secondDetails, firstWeightedScore, secondWeightedScore, radarData, metricRows]);
+
+  const activeComparison = (firstDetails && secondDetails)
+    ? {
+        first: firstDetails,
+        second: secondDetails,
+        firstScore: firstWeightedScore,
+        secondScore: secondWeightedScore,
+        radar: radarData,
+        metrics: metricRows,
+      }
+    : cachedComparison;
+
   const hasAnySelection = Boolean(selectedPrimaryId || selectedSecondaryId);
-  const hasBothSelections = Boolean(selectedPrimaryId && selectedSecondaryId);
-  const isComparisonOpen = Boolean(hasBothSelections && firstDetails && secondDetails);
+  const hasBothSelections = Boolean(selectedPrimaryId && selectedSecondaryId && firstDetails && secondDetails);
+  const isComparisonOpen = Boolean(hasBothSelections);
 
   return (
     <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-6">
@@ -466,7 +558,7 @@ export function DistrictComparisonView({
               Szczegółowa Porównywarka 1:1 Dzielnic
             </h2>
             <p className="text-xs text-slate-500">
-              Wybierz dwie dzielnice i zestaw twarde wskaźniki infrastrukturalne oraz 7 filarów jakości życia
+              Wybierz dwie dzielnice i zestaw twarde wskaźniki infrastrukturalne oraz 8 filarów jakości życia
             </p>
           </div>
         </div>
@@ -529,124 +621,65 @@ export function DistrictComparisonView({
         </div>
       </div>
 
-      {/* 1. Prompt Drawer (Empty or 1-district selection): smooth slide-in / slide-out */}
-      <div className={`drawer-expandable ${!isComparisonOpen ? 'is-open' : ''}`}>
-        <div className="overflow-hidden space-y-4">
-          {!hasAnySelection ? (
-            /* Empty State Card when 0 districts selected */
-            <div className="p-8 sm:p-12 text-center rounded-2xl bg-slate-50/70 border border-dashed border-slate-300 space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mx-auto shadow-xs">
-                <GitCompareArrows className="w-6 h-6" />
-              </div>
-              <div className="max-w-md mx-auto space-y-1">
-                <h3 className="text-sm font-extrabold text-slate-800">
-                  Wybierz 2 dzielnice do bezpośredniego zestawienia
-                </h3>
-                <p className="text-xs text-slate-500 leading-relaxed">
-                  Wybierz pierwszą i drugą dzielnicę z list powyżej lub kliknij je na mapie i liście rankingowej. Wykres radarowy 7 osi oraz szczegółowa tabela twardych danych miejskich rozsuną się automatycznie.
-                </p>
-              </div>
-            </div>
-          ) : (
-            /* Partial State when 1 district selected */
-            <div className="space-y-4">
-              <div className="p-3.5 text-center rounded-2xl bg-blue-50/70 border border-blue-200">
-                <div className="text-xs font-bold text-blue-900">
-                  Wybrano 1 dzielnicę ({firstDetails?.districtName || secondDetails?.districtName}). Wybierz drugą dzielnicę powyżej lub kliknij na mapie, aby rozsunąć pełne zestawienie.
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* Slot 1 */}
-                {firstDetails ? (
-                  <div className="p-5 rounded-2xl border border-blue-300 bg-blue-50/40 shadow-xs space-y-3">
-                    <div className="flex items-center justify-between gap-2">
-                      <div>
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700">Dzielnica #1</span>
-                        <h3 className="text-base font-black text-slate-900">{firstDetails.districtName}</h3>
-                      </div>
-                    </div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-black text-blue-600">{firstWeightedScore.toFixed(1)}</span>
-                      <span className="text-xs font-semibold text-slate-500">/ 100 pkt jakości życia</span>
-                    </div>
-                    <div className="p-3 rounded-xl bg-blue-100/40 border border-blue-200/70 text-xs text-slate-700 leading-relaxed">
-                      Gęstość zaludnienia: <strong className="text-blue-950">{Math.round(firstDetails.demographics.totalPopulation / (firstDetails.areaKm2 || 1))} os./km²</strong> • Ludność: <strong className="text-blue-950">{firstDetails.demographics.totalPopulation.toLocaleString('pl-PL')}</strong>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="p-6 rounded-2xl border border-dashed border-blue-200 bg-white/60 flex flex-col items-center justify-center text-center space-y-2 min-h-44">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-blue-500">Dzielnica #1 (Niebieski profil)</span>
-                    <p className="text-xs text-slate-500 max-w-xs">Wybierz pierwszą dzielnicę z listy rozwijanej powyżej</p>
-                  </div>
-                )}
-
-                {/* Slot 2 */}
-                {secondDetails ? (
-                  <div className="p-5 rounded-2xl border border-indigo-300 bg-indigo-50/40 shadow-xs space-y-3">
-                    <div className="flex items-center justify-between gap-2">
-                      <div>
-                        <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Dzielnica #2</span>
-                        <h3 className="text-base font-black text-slate-900">{secondDetails.districtName}</h3>
-                      </div>
-                    </div>
-                    <div className="flex items-baseline gap-2">
-                      <span className="text-3xl font-black text-indigo-600">{secondWeightedScore.toFixed(1)}</span>
-                      <span className="text-xs font-semibold text-slate-500">/ 100 pkt jakości życia</span>
-                    </div>
-                    <div className="p-3 rounded-xl bg-indigo-100/40 border border-indigo-200/70 text-xs text-slate-700 leading-relaxed">
-                      Gęstość zaludnienia: <strong className="text-indigo-950">{Math.round(secondDetails.demographics.totalPopulation / (secondDetails.areaKm2 || 1))} os./km²</strong> • Ludność: <strong className="text-indigo-950">{secondDetails.demographics.totalPopulation.toLocaleString('pl-PL')}</strong>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="p-6 rounded-2xl border border-dashed border-indigo-200 bg-white/60 flex flex-col items-center justify-center text-center space-y-2 min-h-44">
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-500">Dzielnica #2 (Fioletowy profil)</span>
-                    <p className="text-xs text-slate-500 max-w-xs">Wybierz drugą dzielnicę z listy rozwijanej powyżej</p>
-                  </div>
-                )}
+      {/* When 0 districts are selected: show the clean Empty State Prompt */}
+      {!hasAnySelection ? (
+        <div className="animate-fade-in p-8 sm:p-12 text-center rounded-2xl bg-slate-50/70 border border-dashed border-slate-300 space-y-3">
+          <div className="w-12 h-12 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 mx-auto shadow-xs">
+            <GitCompareArrows className="w-6 h-6" />
+          </div>
+          <div className="max-w-md mx-auto space-y-1">
+            <h3 className="text-sm font-extrabold text-slate-800">
+              Wybierz 2 dzielnice do bezpośredniego zestawienia
+            </h3>
+            <p className="text-xs text-slate-500 leading-relaxed">
+              Wybierz pierwszą i drugą dzielnicę z list powyżej lub kliknij je na mapie i liście rankingowej. Wykres radarowy 8 osi oraz szczegółowa tabela twardych danych miejskich rozsuną się automatycznie.
+            </p>
+          </div>
+        </div>
+      ) : (
+        /* When at least 1 district is selected: render persistent Cards Grid so transition from 1 to 2 districts never jumps or glitches */
+        <div className="space-y-4 animate-fade-in">
+          {/* Helper hint when only 1 district is chosen */}
+          {!hasBothSelections && (
+            <div className="p-3.5 text-center rounded-2xl bg-blue-50/70 border border-blue-200 animate-fade-in">
+              <div className="text-xs font-bold text-blue-900">
+                Wybrano 1. dzielnicę ({firstDetails?.districtName || secondDetails?.districtName}). Wybierz drugą dzielnicę powyżej lub kliknij na mapie, aby rozsunąć pełne zestawienie.
               </div>
             </div>
           )}
-        </div>
-      </div>
 
-      {/* 2. Detailed Side-by-Side Comparison Drawer: smooth rozsuwanie / zsuwanie (scale + blur + grid-template-rows) */}
-      <div className={`drawer-expandable ${isComparisonOpen ? 'is-open' : ''}`}>
-        <div className="overflow-hidden space-y-6">
-          {firstDetails && secondDetails && (
-            <div
-              key={`${firstDetails.districtId}-${secondDetails.districtId}`}
-              className="space-y-6 animate-fade-in"
-            >
-              {/* Summary Score Cards with Winner Badge & Resident Strengths */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                {/* Card 1 */}
-                <div
-                  className={`p-5 rounded-2xl border transition-all ${
-                    firstWeightedScore >= secondWeightedScore
-                      ? 'bg-blue-50/70 border-blue-400 shadow-md shadow-blue-600/10'
-                      : 'bg-white border-slate-200'
-                  }`}
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700">Dzielnica #1</span>
-                      <h3 className="text-base font-black text-slate-900">{firstDetails.districtName}</h3>
-                    </div>
-                    {firstWeightedScore >= secondWeightedScore && (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-600 text-white text-[11px] font-bold shadow-xs">
-                        <Award className="w-3.5 h-3.5" />
-                        Wyższa ocena
-                      </span>
-                    )}
+          {/* Persistent Two-District Cards Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {/* Slot #1 Card */}
+            {firstDetails ? (
+              <div
+                className={`p-5 rounded-2xl border transition-all duration-300 ${
+                  hasBothSelections && firstWeightedScore >= secondWeightedScore
+                    ? 'bg-blue-50/70 border-blue-400 shadow-md shadow-blue-600/10'
+                    : 'bg-blue-50/40 border-blue-300 shadow-xs'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700">Dzielnica #1</span>
+                    <h3 className="text-base font-black text-slate-900">{firstDetails.districtName}</h3>
                   </div>
-                  <div className="mt-3 flex items-baseline gap-2">
-                    <span className="text-3xl font-black text-blue-600">{firstWeightedScore.toFixed(1)}</span>
-                    <span className="text-xs font-semibold text-slate-500">/ 100 pkt jakości życia</span>
-                  </div>
+                  {hasBothSelections && firstWeightedScore >= secondWeightedScore && (
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-600 text-white text-[11px] font-bold shadow-xs animate-fade-in">
+                      <Award className="w-3.5 h-3.5" />
+                      Wyższa ocena
+                    </span>
+                  )}
+                </div>
 
-                  {/* Data-driven Resident Strength Synthesis Box */}
-                  <div className="mt-3.5 p-3 rounded-xl bg-blue-100/40 border border-blue-200/70">
+                <div className="mt-3 flex items-baseline gap-2">
+                  <span className="text-3xl font-black text-blue-600">{firstWeightedScore.toFixed(1)}</span>
+                  <span className="text-xs font-semibold text-slate-500">/ 100 pkt jakości życia</span>
+                </div>
+
+                {/* Resident strengths box (visible when comparing two districts) or standard metrics */}
+                {hasBothSelections && secondDetails ? (
+                  <div className="mt-3.5 p-3 rounded-xl bg-blue-100/40 border border-blue-200/70 animate-fade-in">
                     <div className="text-[11px] font-bold text-blue-900 flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                       <span>Atuty dla mieszkańca:</span>
@@ -655,35 +688,49 @@ export function DistrictComparisonView({
                       {getResidentStrengths(firstDetails, secondDetails)}
                     </p>
                   </div>
+                ) : (
+                  <div className="mt-3 p-3 rounded-xl bg-blue-100/40 border border-blue-200/70 text-xs text-slate-700 leading-relaxed">
+                    Gęstość zaludnienia: <strong className="text-blue-950">{Math.round(firstDetails.demographics.totalPopulation / (firstDetails.areaKm2 || 1))} os./km²</strong> • Ludność: <strong className="text-blue-950">{firstDetails.demographics.totalPopulation.toLocaleString('pl-PL')}</strong>
+                  </div>
+                )}
+              </div>
+            ) : (
+              <div className="p-6 rounded-2xl border border-dashed border-blue-200 bg-white/60 flex flex-col items-center justify-center text-center space-y-2 min-h-44 transition-all">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-500">Dzielnica #1 (Niebieski profil)</span>
+                <p className="text-xs text-slate-500 max-w-xs">Wybierz pierwszą dzielnicę z listy rozwijanej powyżej lub kliknij na mapie</p>
+              </div>
+            )}
+
+            {/* Slot #2 Card */}
+            {secondDetails ? (
+              <div
+                className={`p-5 rounded-2xl border transition-all duration-300 ${
+                  hasBothSelections && secondWeightedScore >= firstWeightedScore
+                    ? 'bg-indigo-50/70 border-indigo-400 shadow-md shadow-indigo-600/10'
+                    : 'bg-indigo-50/40 border-indigo-300 shadow-xs'
+                }`}
+              >
+                <div className="flex items-center justify-between gap-2">
+                  <div>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Dzielnica #2</span>
+                    <h3 className="text-base font-black text-slate-900">{secondDetails.districtName}</h3>
+                  </div>
+                  {hasBothSelections && secondWeightedScore >= firstWeightedScore && (
+                    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-600 text-white text-[11px] font-bold shadow-xs animate-fade-in">
+                      <Award className="w-3.5 h-3.5" />
+                      Wyższa ocena
+                    </span>
+                  )}
                 </div>
 
-                {/* Card 2 */}
-                <div
-                  className={`p-5 rounded-2xl border transition-all ${
-                    secondWeightedScore >= firstWeightedScore
-                      ? 'bg-indigo-50/70 border-indigo-400 shadow-md shadow-indigo-600/10'
-                      : 'bg-white border-slate-200'
-                  }`}
-                >
-                  <div className="flex items-center justify-between gap-2">
-                    <div>
-                      <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Dzielnica #2</span>
-                      <h3 className="text-base font-black text-slate-900">{secondDetails.districtName}</h3>
-                    </div>
-                    {secondWeightedScore >= firstWeightedScore && (
-                      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-600 text-white text-[11px] font-bold shadow-xs">
-                        <Award className="w-3.5 h-3.5" />
-                        Wyższa ocena
-                      </span>
-                    )}
-                  </div>
-                  <div className="mt-3 flex items-baseline gap-2">
-                    <span className="text-3xl font-black text-indigo-600">{secondWeightedScore.toFixed(1)}</span>
-                    <span className="text-xs font-semibold text-slate-500">/ 100 pkt jakości życia</span>
-                  </div>
+                <div className="mt-3 flex items-baseline gap-2">
+                  <span className="text-3xl font-black text-indigo-600">{secondWeightedScore.toFixed(1)}</span>
+                  <span className="text-xs font-semibold text-slate-500">/ 100 pkt jakości życia</span>
+                </div>
 
-                  {/* Data-driven Resident Strength Synthesis Box */}
-                  <div className="mt-3.5 p-3 rounded-xl bg-indigo-100/40 border border-indigo-200/70">
+                {/* Resident strengths box (visible when comparing two districts) or standard metrics */}
+                {hasBothSelections && firstDetails ? (
+                  <div className="mt-3.5 p-3 rounded-xl bg-indigo-100/40 border border-indigo-200/70 animate-fade-in">
                     <div className="text-[11px] font-bold text-indigo-900 flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
                       <span>Atuty dla mieszkańca:</span>
@@ -692,26 +739,47 @@ export function DistrictComparisonView({
                       {getResidentStrengths(secondDetails, firstDetails)}
                     </p>
                   </div>
-                </div>
+                ) : (
+                  <div className="mt-3 p-3 rounded-xl bg-indigo-100/40 border border-indigo-200/70 text-xs text-slate-700 leading-relaxed">
+                    Gęstość zaludnienia: <strong className="text-indigo-950">{Math.round(secondDetails.demographics.totalPopulation / (secondDetails.areaKm2 || 1))} os./km²</strong> • Ludność: <strong className="text-indigo-950">{secondDetails.demographics.totalPopulation.toLocaleString('pl-PL')}</strong>
+                  </div>
+                )}
               </div>
+            ) : (
+              <div className="p-6 rounded-2xl border border-dashed border-indigo-200 bg-white/60 flex flex-col items-center justify-center text-center space-y-2 min-h-44 transition-all">
+                <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-500">Dzielnica #2 (Fioletowy profil)</span>
+                <p className="text-xs text-slate-500 max-w-xs">Wybierz drugą dzielnicę z listy rozwijanej powyżej lub kliknij na mapie</p>
+              </div>
+            )}
+          </div>
+        </div>
+      )}
 
-              {/* Radar Chart Overlay (7 Pillars Comparison) */}
+      {/* Expandable Drawer: Radar Chart 8 Osi & Detailed Hard Data Table */}
+      <div className={`drawer-expandable ${isComparisonOpen ? 'is-open' : ''}`}>
+        <div className="overflow-hidden space-y-6 pt-1">
+          {activeComparison && (
+            <div
+              key={`${activeComparison.first.districtId}-${activeComparison.second.districtId}`}
+              className="space-y-6 animate-fade-in"
+            >
+              {/* Radar Chart Overlay (8 Pillars Comparison) */}
               <div className="p-6 rounded-2xl bg-linear-to-b from-slate-50/80 to-white border border-slate-200/80 space-y-2">
                 <div className="flex items-center justify-between">
                   <h4 className="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center gap-2">
                     <TrendingUp className="w-4 h-4 text-blue-600" />
-                    Wykres Radarowy: 7 Wymiarów Jakości Życia (0–100)
+                    Wykres Radarowy: 8 Wymiarów Jakości Życia (0–100)
                   </h4>
                   <span className="text-[11px] text-slate-500">Skala 0–100 punktów</span>
                 </div>
                 <div className="h-72 w-full">
                   <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart data={radarData}>
+                    <RadarChart data={activeComparison.radar}>
                       <PolarGrid stroke="#e2e8f0" />
                       <PolarAngleAxis dataKey="category" tick={{ fill: '#334155', fontSize: 11, fontWeight: 600 }} />
                       <PolarRadiusAxis angle={30} domain={[0, 100]} stroke="#cbd5e1" />
                       <Radar
-                        name={firstDetails.districtName}
+                        name={activeComparison.first.districtName}
                         dataKey="first"
                         stroke="#2563eb"
                         fill="#3b82f6"
@@ -719,7 +787,7 @@ export function DistrictComparisonView({
                         strokeWidth={2}
                       />
                       <Radar
-                        name={secondDetails.districtName}
+                        name={activeComparison.second.districtName}
                         dataKey="second"
                         stroke="#4f46e5"
                         fill="#6366f1"
@@ -758,16 +826,16 @@ export function DistrictComparisonView({
                       <tr>
                         <th className="py-3 px-4 w-1/4">Kategoria i Wskaźnik</th>
                         <th className="py-3 px-4 text-center w-1/4 text-blue-700 font-extrabold">
-                          {firstDetails.districtName}
+                          {activeComparison.first.districtName}
                         </th>
                         <th className="py-3 px-4 text-center w-1/4 text-indigo-700 font-extrabold">
-                          {secondDetails.districtName}
+                          {activeComparison.second.districtName}
                         </th>
                         <th className="py-3 px-6 text-center w-36 whitespace-nowrap">Różnica</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
-                      {metricRows.map((row, idx) => {
+                      {activeComparison.metrics.map((row, idx) => {
                         const firstVal = row.firstValue;
                         const secondVal = row.secondValue;
                         const diff = firstVal - secondVal;

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-21T16:02:50Z",
+    "generatedAt": "2026-10-21T22:07:12Z",
     "dataVersion": "2.1.0-expanded-7-pillars-2025-2026",
     "normalizationMethod": "MinMax_0_100_Calibrated"
   },
@@ -38,7 +38,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 95,
-        "isochroneCoveragePct": 88.4,
+        "tramStopsCount": 52,
+        "busStopsCount": 43,
+        "onDemandStopsCount": 5,
+        "scheduleBoardsCount": 126,
+        "tramNetworkSharePct": 54.7,
+        "isochroneCoveragePct": 81.8,
         "parkAndRideCount": 0,
         "bikeRacksCount": 2670,
         "bikeLanesLengthKm": 23.0,
@@ -93,7 +98,8 @@
         "cultureAndSeniorScore": 96.5,
         "environmentScore": 45.0,
         "safetyScore": 73.7,
-        "housingAffordabilityScore": 50.0
+        "housingAffordabilityScore": 50.0,
+        "demographicVitalityScore": 51.8
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 502,
@@ -138,7 +144,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 67,
-        "isochroneCoveragePct": 80.3,
+        "tramStopsCount": 34,
+        "busStopsCount": 33,
+        "onDemandStopsCount": 0,
+        "scheduleBoardsCount": 73,
+        "tramNetworkSharePct": 50.7,
+        "isochroneCoveragePct": 74.2,
         "parkAndRideCount": 0,
         "bikeRacksCount": 1095,
         "bikeLanesLengthKm": 22.9,
@@ -187,13 +198,14 @@
         "trafficNoiseExceededPct": 27.2
       },
       "scores": {
-        "mobilityScore": 70.8,
+        "mobilityScore": 73.6,
         "educationScore": 69.3,
         "greeneryScore": 65.0,
         "cultureAndSeniorScore": 88.2,
         "environmentScore": 50.1,
         "safetyScore": 71.2,
-        "housingAffordabilityScore": 52.9
+        "housingAffordabilityScore": 52.9,
+        "demographicVitalityScore": 63.9
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1078,
@@ -238,7 +250,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 98,
-        "isochroneCoveragePct": 85.8,
+        "tramStopsCount": 18,
+        "busStopsCount": 80,
+        "onDemandStopsCount": 4,
+        "scheduleBoardsCount": 132,
+        "tramNetworkSharePct": 18.4,
+        "isochroneCoveragePct": 79.4,
         "parkAndRideCount": 1,
         "bikeRacksCount": 622,
         "bikeLanesLengthKm": 19.3,
@@ -287,13 +304,14 @@
         "trafficNoiseExceededPct": 19.8
       },
       "scores": {
-        "mobilityScore": 78.2,
+        "mobilityScore": 73.6,
         "educationScore": 78.1,
         "greeneryScore": 58.7,
         "cultureAndSeniorScore": 74.7,
         "environmentScore": 63.0,
         "safetyScore": 79.0,
-        "housingAffordabilityScore": 73.5
+        "housingAffordabilityScore": 73.5,
+        "demographicVitalityScore": 54.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1267,
@@ -338,7 +356,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 256,
-        "isochroneCoveragePct": 79.5,
+        "tramStopsCount": 25,
+        "busStopsCount": 231,
+        "onDemandStopsCount": 25,
+        "scheduleBoardsCount": 321,
+        "tramNetworkSharePct": 9.8,
+        "isochroneCoveragePct": 72.6,
         "parkAndRideCount": 3,
         "bikeRacksCount": 529,
         "bikeLanesLengthKm": 30.4,
@@ -387,13 +410,14 @@
         "trafficNoiseExceededPct": 21.4
       },
       "scores": {
-        "mobilityScore": 61.0,
+        "mobilityScore": 56.2,
         "educationScore": 72.2,
         "greeneryScore": 55.0,
         "cultureAndSeniorScore": 65.5,
         "environmentScore": 59.5,
         "safetyScore": 80.5,
-        "housingAffordabilityScore": 69.4
+        "housingAffordabilityScore": 69.4,
+        "demographicVitalityScore": 75.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 2875,
@@ -438,7 +462,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 80,
-        "isochroneCoveragePct": 84.4,
+        "tramStopsCount": 20,
+        "busStopsCount": 60,
+        "onDemandStopsCount": 0,
+        "scheduleBoardsCount": 114,
+        "tramNetworkSharePct": 25.0,
+        "isochroneCoveragePct": 78.4,
         "parkAndRideCount": 0,
         "bikeRacksCount": 1520,
         "bikeLanesLengthKm": 19.0,
@@ -487,13 +516,14 @@
         "trafficNoiseExceededPct": 23.0
       },
       "scores": {
-        "mobilityScore": 79.6,
+        "mobilityScore": 77.2,
         "educationScore": 81.6,
         "greeneryScore": 70.5,
         "cultureAndSeniorScore": 84.3,
         "environmentScore": 58.1,
         "safetyScore": 71.2,
-        "housingAffordabilityScore": 62.5
+        "housingAffordabilityScore": 62.5,
+        "demographicVitalityScore": 53.2
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 745,
@@ -538,7 +568,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 58,
-        "isochroneCoveragePct": 71.4,
+        "tramStopsCount": 1,
+        "busStopsCount": 57,
+        "onDemandStopsCount": 20,
+        "scheduleBoardsCount": 88,
+        "tramNetworkSharePct": 1.7,
+        "isochroneCoveragePct": 63.0,
         "parkAndRideCount": 1,
         "bikeRacksCount": 357,
         "bikeLanesLengthKm": 14.6,
@@ -587,13 +622,14 @@
         "trafficNoiseExceededPct": 14.5
       },
       "scores": {
-        "mobilityScore": 40.4,
+        "mobilityScore": 38.7,
         "educationScore": 68.4,
         "greeneryScore": 69.3,
         "cultureAndSeniorScore": 78.7,
         "environmentScore": 76.4,
         "safetyScore": 75.4,
-        "housingAffordabilityScore": 70.5
+        "housingAffordabilityScore": 70.5,
+        "demographicVitalityScore": 63.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 794,
@@ -602,7 +638,7 @@
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 71.4%)."
+        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 63.0%)."
       }
     },
     {
@@ -638,7 +674,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 154,
-        "isochroneCoveragePct": 70.1,
+        "tramStopsCount": 16,
+        "busStopsCount": 138,
+        "onDemandStopsCount": 66,
+        "scheduleBoardsCount": 180,
+        "tramNetworkSharePct": 10.4,
+        "isochroneCoveragePct": 61.3,
         "parkAndRideCount": 0,
         "bikeRacksCount": 462,
         "bikeLanesLengthKm": 20.7,
@@ -687,13 +728,14 @@
         "trafficNoiseExceededPct": 11.2
       },
       "scores": {
-        "mobilityScore": 33.5,
+        "mobilityScore": 32.9,
         "educationScore": 72.4,
         "greeneryScore": 97.0,
         "cultureAndSeniorScore": 88.0,
         "environmentScore": 94.0,
         "safetyScore": 79.5,
-        "housingAffordabilityScore": 58.3
+        "housingAffordabilityScore": 58.3,
+        "demographicVitalityScore": 63.4
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 505,
@@ -702,7 +744,7 @@
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 70.1%)."
+        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 61.3%)."
       }
     },
     {
@@ -738,7 +780,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 208,
-        "isochroneCoveragePct": 68.4,
+        "tramStopsCount": 26,
+        "busStopsCount": 182,
+        "onDemandStopsCount": 48,
+        "scheduleBoardsCount": 231,
+        "tramNetworkSharePct": 12.5,
+        "isochroneCoveragePct": 60.8,
         "parkAndRideCount": 1,
         "bikeRacksCount": 734,
         "bikeLanesLengthKm": 35.3,
@@ -787,13 +834,14 @@
         "trafficNoiseExceededPct": 15.6
       },
       "scores": {
-        "mobilityScore": 29.3,
+        "mobilityScore": 30.7,
         "educationScore": 73.5,
         "greeneryScore": 75.0,
         "cultureAndSeniorScore": 67.7,
         "environmentScore": 80.0,
         "safetyScore": 85.7,
-        "housingAffordabilityScore": 72.0
+        "housingAffordabilityScore": 72.0,
+        "demographicVitalityScore": 78.9
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 2343,
@@ -838,7 +886,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 59,
-        "isochroneCoveragePct": 79.4,
+        "tramStopsCount": 16,
+        "busStopsCount": 43,
+        "onDemandStopsCount": 12,
+        "scheduleBoardsCount": 60,
+        "tramNetworkSharePct": 27.1,
+        "isochroneCoveragePct": 71.6,
         "parkAndRideCount": 0,
         "bikeRacksCount": 155,
         "bikeLanesLengthKm": 12.2,
@@ -887,13 +940,14 @@
         "trafficNoiseExceededPct": 18.4
       },
       "scores": {
-        "mobilityScore": 59.8,
+        "mobilityScore": 57.6,
         "educationScore": 80.2,
         "greeneryScore": 86.0,
         "cultureAndSeniorScore": 89.6,
         "environmentScore": 73.7,
         "safetyScore": 58.0,
-        "housingAffordabilityScore": 78.8
+        "housingAffordabilityScore": 78.8,
+        "demographicVitalityScore": 64.2
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 460,
@@ -902,7 +956,7 @@
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Utrzymanie wysokiej dostępności usług publicznych w Dzielnica IX Łagiewniki-Borek Fałęcki przy wsparciu modernizacji przyszkolnej infrastruktury sportowej i oferty dla seniorów (21.0% populacji)."
+        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 71.6%)."
       }
     },
     {
@@ -938,7 +992,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 126,
-        "isochroneCoveragePct": 69.2,
+        "tramStopsCount": 0,
+        "busStopsCount": 126,
+        "onDemandStopsCount": 49,
+        "scheduleBoardsCount": 155,
+        "tramNetworkSharePct": 0.0,
+        "isochroneCoveragePct": 60.8,
         "parkAndRideCount": 1,
         "bikeRacksCount": 77,
         "bikeLanesLengthKm": 8.3,
@@ -987,13 +1046,14 @@
         "trafficNoiseExceededPct": 8.5
       },
       "scores": {
-        "mobilityScore": 28.9,
+        "mobilityScore": 28.0,
         "educationScore": 76.4,
         "greeneryScore": 72.0,
         "cultureAndSeniorScore": 73.8,
         "environmentScore": 87.8,
         "safetyScore": 95.0,
-        "housingAffordabilityScore": 87.8
+        "housingAffordabilityScore": 87.8,
+        "demographicVitalityScore": 72.1
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 914,
@@ -1038,7 +1098,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 89,
-        "isochroneCoveragePct": 77.0,
+        "tramStopsCount": 10,
+        "busStopsCount": 79,
+        "onDemandStopsCount": 19,
+        "scheduleBoardsCount": 92,
+        "tramNetworkSharePct": 11.2,
+        "isochroneCoveragePct": 69.1,
         "parkAndRideCount": 1,
         "bikeRacksCount": 203,
         "bikeLanesLengthKm": 17.8,
@@ -1087,13 +1152,14 @@
         "trafficNoiseExceededPct": 20.1
       },
       "scores": {
-        "mobilityScore": 53.8,
+        "mobilityScore": 48.5,
         "educationScore": 66.4,
         "greeneryScore": 66.4,
         "cultureAndSeniorScore": 62.9,
         "environmentScore": 59.4,
         "safetyScore": 83.4,
-        "housingAffordabilityScore": 76.4
+        "housingAffordabilityScore": 76.4,
+        "demographicVitalityScore": 61.0
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1596,
@@ -1138,7 +1204,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 145,
-        "isochroneCoveragePct": 74.5,
+        "tramStopsCount": 24,
+        "busStopsCount": 121,
+        "onDemandStopsCount": 36,
+        "scheduleBoardsCount": 169,
+        "tramNetworkSharePct": 16.6,
+        "isochroneCoveragePct": 66.6,
         "parkAndRideCount": 1,
         "bikeRacksCount": 398,
         "bikeLanesLengthKm": 22.0,
@@ -1187,13 +1258,14 @@
         "trafficNoiseExceededPct": 17.8
       },
       "scores": {
-        "mobilityScore": 45.9,
+        "mobilityScore": 45.0,
         "educationScore": 52.0,
         "greeneryScore": 62.0,
         "cultureAndSeniorScore": 63.6,
         "environmentScore": 65.9,
         "safetyScore": 86.6,
-        "housingAffordabilityScore": 75.7
+        "housingAffordabilityScore": 75.7,
+        "demographicVitalityScore": 59.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1973,
@@ -1238,7 +1310,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 213,
-        "isochroneCoveragePct": 75.3,
+        "tramStopsCount": 48,
+        "busStopsCount": 165,
+        "onDemandStopsCount": 18,
+        "scheduleBoardsCount": 230,
+        "tramNetworkSharePct": 22.5,
+        "isochroneCoveragePct": 68.5,
         "parkAndRideCount": 1,
         "bikeRacksCount": 904,
         "bikeLanesLengthKm": 29.5,
@@ -1293,7 +1370,8 @@
         "cultureAndSeniorScore": 73.7,
         "environmentScore": 56.7,
         "safetyScore": 71.3,
-        "housingAffordabilityScore": 64.2
+        "housingAffordabilityScore": 64.2,
+        "demographicVitalityScore": 95.0
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 2098,
@@ -1338,7 +1416,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 122,
-        "isochroneCoveragePct": 78.0,
+        "tramStopsCount": 17,
+        "busStopsCount": 105,
+        "onDemandStopsCount": 18,
+        "scheduleBoardsCount": 131,
+        "tramNetworkSharePct": 13.9,
+        "isochroneCoveragePct": 70.6,
         "parkAndRideCount": 0,
         "bikeRacksCount": 229,
         "bikeLanesLengthKm": 23.4,
@@ -1387,13 +1470,14 @@
         "trafficNoiseExceededPct": 21.0
       },
       "scores": {
-        "mobilityScore": 54.9,
+        "mobilityScore": 51.2,
         "educationScore": 66.4,
         "greeneryScore": 68.7,
         "cultureAndSeniorScore": 58.3,
         "environmentScore": 62.7,
         "safetyScore": 70.0,
-        "housingAffordabilityScore": 74.7
+        "housingAffordabilityScore": 74.7,
+        "demographicVitalityScore": 77.8
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1754,
@@ -1438,7 +1522,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 91,
-        "isochroneCoveragePct": 87.3,
+        "tramStopsCount": 24,
+        "busStopsCount": 67,
+        "onDemandStopsCount": 8,
+        "scheduleBoardsCount": 94,
+        "tramNetworkSharePct": 26.4,
+        "isochroneCoveragePct": 80.3,
         "parkAndRideCount": 0,
         "bikeRacksCount": 331,
         "bikeLanesLengthKm": 15.9,
@@ -1487,13 +1576,14 @@
         "trafficNoiseExceededPct": 14.2
       },
       "scores": {
-        "mobilityScore": 78.3,
+        "mobilityScore": 73.2,
         "educationScore": 58.8,
         "greeneryScore": 64.9,
         "cultureAndSeniorScore": 58.0,
         "environmentScore": 71.9,
         "safetyScore": 91.3,
-        "housingAffordabilityScore": 81.9
+        "housingAffordabilityScore": 81.9,
+        "demographicVitalityScore": 56.3
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1259,
@@ -1538,7 +1628,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 56,
-        "isochroneCoveragePct": 85.7,
+        "tramStopsCount": 13,
+        "busStopsCount": 43,
+        "onDemandStopsCount": 6,
+        "scheduleBoardsCount": 67,
+        "tramNetworkSharePct": 23.2,
+        "isochroneCoveragePct": 78.6,
         "parkAndRideCount": 0,
         "bikeRacksCount": 579,
         "bikeLanesLengthKm": 16.9,
@@ -1587,13 +1682,14 @@
         "trafficNoiseExceededPct": 15.8
       },
       "scores": {
-        "mobilityScore": 82.2,
+        "mobilityScore": 76.3,
         "educationScore": 80.6,
         "greeneryScore": 69.2,
         "cultureAndSeniorScore": 71.0,
         "environmentScore": 69.1,
         "safetyScore": 82.5,
-        "housingAffordabilityScore": 87.8
+        "housingAffordabilityScore": 87.8,
+        "demographicVitalityScore": 45.0
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 730,
@@ -1638,7 +1734,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 140,
-        "isochroneCoveragePct": 71.0,
+        "tramStopsCount": 18,
+        "busStopsCount": 122,
+        "onDemandStopsCount": 63,
+        "scheduleBoardsCount": 147,
+        "tramNetworkSharePct": 12.9,
+        "isochroneCoveragePct": 62.0,
         "parkAndRideCount": 0,
         "bikeRacksCount": 128,
         "bikeLanesLengthKm": 10.0,
@@ -1687,13 +1788,14 @@
         "trafficNoiseExceededPct": 6.8
       },
       "scores": {
-        "mobilityScore": 32.9,
+        "mobilityScore": 32.1,
         "educationScore": 68.3,
         "greeneryScore": 69.7,
         "cultureAndSeniorScore": 61.7,
         "environmentScore": 86.7,
         "safetyScore": 87.3,
-        "housingAffordabilityScore": 92.0
+        "housingAffordabilityScore": 92.0,
+        "demographicVitalityScore": 67.2
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 624,
@@ -1738,7 +1840,12 @@
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 272,
-        "isochroneCoveragePct": 67.7,
+        "tramStopsCount": 47,
+        "busStopsCount": 225,
+        "onDemandStopsCount": 136,
+        "scheduleBoardsCount": 313,
+        "tramNetworkSharePct": 17.3,
+        "isochroneCoveragePct": 58.8,
         "parkAndRideCount": 0,
         "bikeRacksCount": 1485,
         "bikeLanesLengthKm": 40.0,
@@ -1787,13 +1894,14 @@
         "trafficNoiseExceededPct": 16.5
       },
       "scores": {
-        "mobilityScore": 28.0,
+        "mobilityScore": 29.5,
         "educationScore": 83.6,
         "greeneryScore": 73.5,
         "cultureAndSeniorScore": 77.1,
         "environmentScore": 60.6,
         "safetyScore": 71.6,
-        "housingAffordabilityScore": 82.1
+        "housingAffordabilityScore": 82.1,
+        "demographicVitalityScore": 47.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1035,

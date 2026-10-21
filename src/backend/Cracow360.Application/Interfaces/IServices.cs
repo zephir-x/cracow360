@@ -16,6 +16,7 @@ public interface IDistrictService
         double environmentWeight = 5.0,
         double safetyWeight = 5.0,
         double housingAffordabilityWeight = 5.0,
+        double demographicVitalityWeight = 5.0,
         CancellationToken cancellationToken = default);
 
     // Retrieves complete granular domain metrics and forecasts for a specific district
@@ -34,6 +35,7 @@ public interface IDistrictService
         double environmentWeight = 5.0,
         double safetyWeight = 5.0,
         double housingAffordabilityWeight = 5.0,
+        double demographicVitalityWeight = 5.0,
         CancellationToken cancellationToken = default);
 }
 
