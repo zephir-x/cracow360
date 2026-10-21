@@ -1,5 +1,6 @@
 ﻿namespace Cracow360.Application.DTOs;
 
+// System diagnostic and connectivity verification DTO
 public record SystemHelloDto(
     string Message,
     string ProjectName,
@@ -12,6 +13,7 @@ public record SystemHelloDto(
     DateTime ServerTimeUtc
 );
 
+// High-level district summary for the ranking leaderboard and map cards
 public record DistrictSummaryDto(
     int DistrictId,
     string DistrictRoman,
@@ -22,6 +24,7 @@ public record DistrictSummaryDto(
     double WeightedQualityOfLifeIndex
 );
 
+// Complete granular district metrics across all 10 domain facets and 2028 econometric forecasts
 public record DistrictDetailsDto(
     int DistrictId,
     string DistrictRoman,
@@ -33,9 +36,13 @@ public record DistrictDetailsDto(
     DistrictMobilityAndTransportDto MobilityAndTransport,
     DistrictGreeneryAndSportDto GreeneryAndSport,
     DistrictCultureAndSocietyDto CultureAndSociety,
+    DistrictPublicSafetyDto PublicSafety,
+    DistrictHousingMarketDto HousingMarket,
+    DistrictEnvironmentalQualityDto EnvironmentalQuality,
     DistrictForecastsAndB2BDto ForecastsAndB2B
 );
 
+// Side-by-side comparative model for two selected districts
 public record DistrictComparisonDto(
     DistrictDetailsDto FirstDistrict,
     double FirstWeightedIndex,
@@ -44,23 +51,30 @@ public record DistrictComparisonDto(
     DistrictScoreDeltasDto ScoreDeltas
 );
 
+// Metric difference deltas between the two compared districts (First - Second)
 public record DistrictScoreDeltasDto(
     double WeightedIndexDelta,
     double MobilityScoreDelta,
     double EducationScoreDelta,
     double GreeneryScoreDelta,
     double CultureAndSeniorScoreDelta,
-    double EnvironmentScoreDelta
+    double EnvironmentScoreDelta,
+    double SafetyScoreDelta,
+    double HousingAffordabilityScoreDelta
 );
 
+// 7 Calibrated Quality of Life Category Scores (0.0 - 100.0)
 public record DistrictScoresDto(
     double MobilityScore,
     double EducationScore,
     double GreeneryScore,
     double CultureAndSeniorScore,
-    double EnvironmentScore
+    double EnvironmentScore,
+    double SafetyScore,
+    double HousingAffordabilityScore
 );
 
+// Demographic cohorts, registration breakdown, and 3-year growth trend
 public record DistrictDemographicsDto(
     int TotalPopulation,
     int PermanentResidents,
@@ -74,6 +88,7 @@ public record DistrictDemographicsDto(
     double PopulationGrowthRate3YrPct
 );
 
+// Childcare facilities, schools, places, and capacity ratios
 public record DistrictEducationAndCareDto(
     int NurseriesPublicCount,
     int NurseriesContractedCount,
@@ -89,23 +104,32 @@ public record DistrictEducationAndCareDto(
     double AvgStudentsPerClass
 );
 
+// Public transit stops, 500m isochrone coverage, cycling infrastructure, and P+R
 public record DistrictMobilityAndTransportDto(
     int KmkStopsCount,
     double IsochroneCoveragePct,
     int ParkAndRideCount,
     int BikeRacksCount,
-    double BikeLanesLengthKm
+    double BikeLanesLengthKm,
+    double BikeLanesSeparatedKm,
+    double BikeLanesCombinedKm,
+    int BikeRepairStationsCount
 );
 
+// Parks, forests, biological buffer areas, and youth sports facilities
 public record DistrictGreeneryAndSportDto(
     int CityParksCount,
     int PocketParksCount,
     double TotalParksAreaHa,
+    double ForestAreaHa,
+    double TotalGreenAreaHa,
     double GreenAreaM2PerCapita,
+    double TotalGreenM2PerCapita,
     int SchoolSportsFacilitiesCount,
     int SchoolSwimmingPoolsCount
 );
 
+// Cultural institutions, library branches, senior activity centers, and municipal subsidies
 public record DistrictCultureAndSocietyDto(
     int LibraryBranchesCount,
     int CulturalCentersCount,
@@ -114,6 +138,35 @@ public record DistrictCultureAndSocietyDto(
     decimal MunicipalSubsidyPerCapitaPln
 );
 
+// Traffic safety, road incidents, and municipal police interventions
+public record DistrictPublicSafetyDto(
+    int RoadCollisionsAnnual,
+    int PedestrianAccidents,
+    int InjuryAccidents,
+    int MunicipalPoliceInterventionsTotal,
+    int PublicDisturbanceInterventions
+);
+
+// Housing transaction prices, rental rates, affordability index, and YoY dynamics
+public record DistrictHousingMarketDto(
+    double AvgPricePerM2,
+    double PriceSecondaryM2,
+    double PricePrimaryM2,
+    double PriceMedianM2,
+    double AvgRentalPriceM2,
+    double PriceGrowthYoYPct,
+    double M2PerAverageSalary
+);
+
+// Environmental monitoring: PM10/PM2.5 concentrations, smog days, and noise exposure
+public record DistrictEnvironmentalQualityDto(
+    double Pm10AnnualUgM3,
+    double Pm25AnnualUgM3,
+    int SmogDaysCount,
+    double TrafficNoiseExceededPct
+);
+
+// 2028 Econometric forecasts, childcare balance, and municipal/B2B recommendations
 public record DistrictForecastsAndB2BDto(
     int ForecastedAge0To3_2028,
     int ForecastedCarePlacesBalance_2028,
@@ -124,6 +177,7 @@ public record DistrictForecastsAndB2BDto(
     string RecommendedMunicipalAction
 );
 
+// Geocoded municipal Point of Interest (POI) with geographic coordinates (WGS84)
 public record PointOfInterestDto(
     string Id,
     int DistrictId,
@@ -136,6 +190,7 @@ public record PointOfInterestDto(
     PoiMetricsDto Metrics
 );
 
+// Specific quantitative metrics associated with a point of interest
 public record PoiMetricsDto(
     int? Capacity,
     double? AreaHa,

@@ -14,27 +14,41 @@ import type {
 } from './types/contracts';
 import { calculateClientSideQualityIndex } from './utils/qualityIndexCalculator';
 
+// Neutral baseline weights: equal balance of 5.0 across all 7 urban pillars
 const DEFAULT_WEIGHTS: QualityWeights = {
   mobility: 5,
   education: 5,
   greenery: 5,
   culture: 5,
   environment: 5,
+  safety: 5,
+  housingAffordability: 5,
 };
 
+/// <summary>
+/// Root application shell orchestrating global state, dynamic quality-of-life recalculations,
+/// district comparisons, and tabbed view navigation.
+/// </summary>
 export function App() {
+  // Navigation active tab state
   const [activeTab, setActiveTab] = useState<AppTabId>('resident');
+
+  // Baseline district metrics and spatial GeoJSON boundaries
   const [rawDistricts, setRawDistricts] = useState<DistrictSummaryDto[]>([]);
   const [geoJsonData, setGeoJsonData] = useState<DistrictsGeoJsonCollection | null>(null);
 
+  // Preference weights and active persona preset
   const [weights, setWeights] = useState<QualityWeights>(DEFAULT_WEIGHTS);
   const [activePresetId, setActivePresetId] = useState<string | null>(null);
 
+  // Selected district IDs for side-by-side comparison (#1 Primary, #2 Secondary)
   const [selectedPrimaryId, setSelectedPrimaryId] = useState<number | null>(5); // Default #1: Dzielnica V Krowodrza
   const [selectedSecondaryId, setSelectedSecondaryId] = useState<number | null>(4); // Default #2: Dzielnica IV Prądnik Biały
 
+  // Network and data loading error message
   const [error, setError] = useState<string | null>(null);
 
+  // Initial data loading from the backend API (all districts + vector boundaries)
   useEffect(() => {
     let cancelled = false;
     const loadInitialData = async () => {
@@ -53,7 +67,7 @@ export function App() {
           setError(
             err instanceof Error
               ? err.message
-              : 'Nie udało się pobrać danych dzielnic. Spróbuj odświeżyć stronę.'
+              : 'Nie udało się pobrać danych dzielnic. Upewnij się, że backend API jest uruchomiony.'
           );
         }
       }
@@ -75,11 +89,13 @@ export function App() {
       .sort((a, b) => b.weightedQualityOfLifeIndex - a.weightedQualityOfLifeIndex);
   }, [rawDistricts, weights]);
 
+  // Updates custom weights and synchronizes the active preset identifier
   const handleWeightsChange = (newWeights: QualityWeights, presetId: string | null = null) => {
     setWeights(newWeights);
     setActivePresetId(presetId);
   };
 
+  // Resets all 7 sliders to default baseline (5.0 each)
   const handleResetWeights = () => {
     setWeights(DEFAULT_WEIGHTS);
     setActivePresetId(null);
@@ -103,6 +119,7 @@ export function App() {
     }
   };
 
+  // Clears comparison selections
   const handleClearSelection = () => {
     setSelectedPrimaryId(null);
     setSelectedSecondaryId(null);
@@ -121,6 +138,7 @@ export function App() {
           </div>
         )}
 
+        {/* Module 1: Resident Mode (Quality of Life Map, Ranking & Comparison) */}
         {activeTab === 'resident' && (
           <ResidentModePage
             rankedDistricts={rankedDistricts}
@@ -138,6 +156,7 @@ export function App() {
           />
         )}
 
+        {/* Module 2: Parent Mode (Childcare & School Facility Compass) */}
         {activeTab === 'parent' && (
           <ParentModePage
             districts={rankedDistricts}
@@ -145,6 +164,7 @@ export function App() {
           />
         )}
 
+        {/* Module 3: Official & Investor Mode (Econometric Predictions & What-If Simulator) */}
         {activeTab === 'investor' && (
           <OfficialInvestorModePage
             districts={rankedDistricts}
@@ -152,6 +172,7 @@ export function App() {
           />
         )}
 
+        {/* Methodology & Open Data Sources Documentation */}
         {activeTab === 'methodology' && (
           <AboutDataMethodologyPage onBackToResidentMode={() => setActiveTab('resident')} />
         )}

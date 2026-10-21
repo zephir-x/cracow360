@@ -8462,13 +8462,13 @@
     },
     {
       "id": "primary_school_38",
-      "districtId": 4,
+      "districtId": 17,
       "category": "EDU_CARE",
       "subCategory": "PRIMARY_SCHOOL",
       "name": "SZKOŁA PODSTAWOWA NR 21 IM. WŁADYSŁAWA JAGIEŁŁY W KRAKOWIE",
       "address": "Batalionu \"Skała\" AK, 31-273 Kraków",
-      "lat": 50.089595,
-      "lng": 19.92311,
+      "lat": 50.096965,
+      "lng": 20.073791,
       "metrics": {
         "capacity": 366,
         "areaHa": null,
@@ -11671,6 +11671,306 @@
       }
     },
     {
+      "id": "forest_1",
+      "districtId": 7,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Las Wolski",
+      "address": "Las Wolski, Kraków",
+      "lat": 50.059192,
+      "lng": 19.845349,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 419.0,
+        "additionalInfo": "Las komunalny (419.00 ha)"
+      }
+    },
+    {
+      "id": "forest_2",
+      "districtId": 8,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Skałki Twardowskiego i Zakrzówek",
+      "address": "Uroczysko Skałki Twardowskiego i Zakrzówek, Kraków",
+      "lat": 50.012845,
+      "lng": 19.872119,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 34.5,
+        "additionalInfo": "Uroczysko leśne (34.50 ha)"
+      }
+    },
+    {
+      "id": "forest_3",
+      "districtId": 8,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Kostrze",
+      "address": "Uroczysko Kostrze, Kraków",
+      "lat": 50.018958,
+      "lng": 19.842551,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 42.2,
+        "additionalInfo": "Las łęgowy / rezerwat (42.20 ha)"
+      }
+    },
+    {
+      "id": "forest_4",
+      "districtId": 8,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Tyniec (Grodzisko i Bogucianka)",
+      "address": "Uroczysko Tyniec (Grodzisko i Bogucianka), Kraków",
+      "lat": 50.011045,
+      "lng": 19.871319,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 56.8,
+        "additionalInfo": "Las komunalny (56.80 ha)"
+      }
+    },
+    {
+      "id": "forest_5",
+      "districtId": 8,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Skotniki",
+      "address": "Uroczysko Skotniki, Kraków",
+      "lat": 50.007334,
+      "lng": 19.873584,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 28.4,
+        "additionalInfo": "Las komunalny (28.40 ha)"
+      }
+    },
+    {
+      "id": "forest_6",
+      "districtId": 9,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Las Borkowski",
+      "address": "Las Borkowski, Kraków",
+      "lat": 50.00798,
+      "lng": 19.906578,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 65.2,
+        "additionalInfo": "Las komunalny (65.20 ha)"
+      }
+    },
+    {
+      "id": "forest_7",
+      "districtId": 8,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Górka Pychowicka",
+      "address": "Uroczysko Górka Pychowicka, Kraków",
+      "lat": 50.033966,
+      "lng": 19.876206,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 18.6,
+        "additionalInfo": "Uroczysko leśne (18.60 ha)"
+      }
+    },
+    {
+      "id": "forest_8",
+      "districtId": 4,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Las Witkowicki",
+      "address": "Las Witkowicki, Kraków",
+      "lat": 50.105961,
+      "lng": 19.92469,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 15.3,
+        "additionalInfo": "Las komunalny (15.30 ha)"
+      }
+    },
+    {
+      "id": "forest_9",
+      "districtId": 18,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Lasek Mogilski",
+      "address": "Lasek Mogilski, Kraków",
+      "lat": 50.055519,
+      "lng": 20.049662,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 23.8,
+        "additionalInfo": "Las łęgowy (23.80 ha)"
+      }
+    },
+    {
+      "id": "forest_10",
+      "districtId": 18,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Kępa Kujawska",
+      "address": "Uroczysko Kępa Kujawska, Kraków",
+      "lat": 50.072401,
+      "lng": 19.922515,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 12.5,
+        "additionalInfo": "Las komunalny (12.50 ha)"
+      }
+    },
+    {
+      "id": "forest_11",
+      "districtId": 10,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Las w Swoszowicach (Park Zdrojowy / Las Uzdrowiskowy)",
+      "address": "Las w Swoszowicach (Park Zdrojowy / Las Uzdrowiskowy), Kraków",
+      "lat": 49.988143,
+      "lng": 19.941238,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 19.4,
+        "additionalInfo": "Las uzdrowiskowy (19.40 ha)"
+      }
+    },
+    {
+      "id": "forest_12",
+      "districtId": 10,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Wróblowice",
+      "address": "Uroczysko Wróblowice, Kraków",
+      "lat": 49.979843,
+      "lng": 19.954804,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 14.2,
+        "additionalInfo": "Las komunalny (14.20 ha)"
+      }
+    },
+    {
+      "id": "forest_13",
+      "districtId": 10,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Lasek Parkoszowicki",
+      "address": "Lasek Parkoszowicki, Kraków",
+      "lat": 49.986343,
+      "lng": 19.940438,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 11.8,
+        "additionalInfo": "Las komunalny (11.80 ha)"
+      }
+    },
+    {
+      "id": "forest_14",
+      "districtId": 10,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Las Krzyszkowice / Kosocice",
+      "address": "Las Krzyszkowice / Kosocice, Kraków",
+      "lat": 49.994317,
+      "lng": 19.989237,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 16.5,
+        "additionalInfo": "Las komunalny (16.50 ha)"
+      }
+    },
+    {
+      "id": "forest_15",
+      "districtId": 10,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Rajsko",
+      "address": "Uroczysko Rajsko, Kraków",
+      "lat": 49.986485,
+      "lng": 19.969675,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 22.0,
+        "additionalInfo": "Las komunalny (22.00 ha)"
+      }
+    },
+    {
+      "id": "forest_16",
+      "districtId": 12,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Rżąka",
+      "address": "Uroczysko Rżąka, Kraków",
+      "lat": 50.006243,
+      "lng": 20.010926,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 11.2,
+        "additionalInfo": "Las komunalny (11.20 ha)"
+      }
+    },
+    {
+      "id": "forest_17",
+      "districtId": 11,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Bonarka",
+      "address": "Uroczysko Bonarka, Kraków",
+      "lat": 50.028766,
+      "lng": 19.954011,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 7.8,
+        "additionalInfo": "Rezerwat przyrody / zalesienie (7.80 ha)"
+      }
+    },
+    {
+      "id": "forest_18",
+      "districtId": 2,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Lasek Grzegórzecki (Dąbie nadrzeczne)",
+      "address": "Lasek Grzegórzecki (Dąbie nadrzeczne), Kraków",
+      "lat": 50.065881,
+      "lng": 19.970177,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 5.4,
+        "additionalInfo": "Las łęgowy (5.40 ha)"
+      }
+    },
+    {
+      "id": "forest_19",
+      "districtId": 17,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Krzesławice (Dłubnia)",
+      "address": "Uroczysko Krzesławice (Dłubnia), Kraków",
+      "lat": 50.096965,
+      "lng": 20.073791,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 16.7,
+        "additionalInfo": "Las łęgowy (16.70 ha)"
+      }
+    },
+    {
+      "id": "forest_20",
+      "districtId": 17,
+      "category": "GREENERY",
+      "subCategory": "CITY_PARK",
+      "name": "Uroczysko Łuczanowice",
+      "address": "Uroczysko Łuczanowice, Kraków",
+      "lat": 50.107272,
+      "lng": 20.110763,
+      "metrics": {
+        "capacity": null,
+        "areaHa": 18.9,
+        "additionalInfo": "Las komunalny (18.90 ha)"
+      }
+    },
+    {
       "id": "library_1",
       "districtId": 2,
       "category": "CULTURE_SOCIETY",
@@ -12598,6 +12898,801 @@
         "capacity": 50,
         "areaHa": null,
         "additionalInfo": "Filia Biblioteki Kraków"
+      }
+    },
+    {
+      "id": "cas_1",
+      "districtId": 1,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Senior w Centrum",
+      "address": "ul. Berka Joselewicza 28, 31-031 Kraków",
+      "lat": 50.054921,
+      "lng": 19.947326,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja KDM"
+      }
+    },
+    {
+      "id": "cas_2",
+      "districtId": 1,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Dobrej Nadziei",
+      "address": "ul. Batorego 3, 31-135 Kraków",
+      "lat": 50.066958,
+      "lng": 19.92934,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Dobrej Nadziei"
+      }
+    },
+    {
+      "id": "cas_3",
+      "districtId": 1,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Artystyczny WARSZTATOWA5",
+      "address": "ul. Dunajewskiego 5, 31-133 Kraków",
+      "lat": 50.064256,
+      "lng": 19.933767,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Zawsze Silni"
+      }
+    },
+    {
+      "id": "cas_4",
+      "districtId": 1,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Spot Nestor Długa",
+      "address": "ul. Długa 42, 31-147 Kraków",
+      "lat": 50.072029,
+      "lng": 19.935996,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Spot Nestor"
+      }
+    },
+    {
+      "id": "cas_5",
+      "districtId": 2,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Dojrzały Smak Życia",
+      "address": "ul. Rzeźnicza 2a, 31-540 Kraków",
+      "lat": 50.057153,
+      "lng": 19.956971,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Akademia Pełni Życia"
+      }
+    },
+    {
+      "id": "cas_6",
+      "districtId": 2,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS przy parafii św. Kazimierza",
+      "address": "ul. Bobrowskiego 6, 31-552 Kraków",
+      "lat": 50.058972,
+      "lng": 19.967235,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Kultura i Edukacja"
+      }
+    },
+    {
+      "id": "cas_7",
+      "districtId": 2,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Aktywni Razem",
+      "address": "ul. Kasprowicza 9a, 31-523 Kraków",
+      "lat": 50.068088,
+      "lng": 19.967897,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie PLinEU"
+      }
+    },
+    {
+      "id": "cas_8",
+      "districtId": 2,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Spot Nestor Mogilska",
+      "address": "ul. Mogilska 58, 31-546 Kraków",
+      "lat": 50.066781,
+      "lng": 19.96472,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Spot Nestor"
+      }
+    },
+    {
+      "id": "cas_9",
+      "districtId": 3,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Olsza / Miechowity",
+      "address": "ul. Miechowity 6, 31-469 Kraków",
+      "lat": 50.083033,
+      "lng": 19.964883,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja im. H. i T. Augustyn"
+      }
+    },
+    {
+      "id": "cas_10",
+      "districtId": 3,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Renesans",
+      "address": "ul. Młyńska 6a, 31-469 Kraków",
+      "lat": 50.082983,
+      "lng": 19.971402,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Grace"
+      }
+    },
+    {
+      "id": "cas_11",
+      "districtId": 3,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Seniorzy z Pasją",
+      "address": "ul. Strzelców 5a, 31-423 Kraków",
+      "lat": 50.093945,
+      "lng": 19.976368,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Aktywności Obywatelskiej"
+      }
+    },
+    {
+      "id": "cas_12",
+      "districtId": 4,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Prądnik Biały",
+      "address": "ul. Pachońskiego 8, 31-223 Kraków",
+      "lat": 50.110761,
+      "lng": 19.91669,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Nowe Centrum"
+      }
+    },
+    {
+      "id": "cas_13",
+      "districtId": 4,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Azory Nie Dzieli Nas Wiek",
+      "address": "ul. Weissa 8, 31-339 Kraków",
+      "lat": 50.086568,
+      "lng": 19.909409,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Nie Dzieli Nas Wiek"
+      }
+    },
+    {
+      "id": "cas_14",
+      "districtId": 4,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Toń w Toniach",
+      "address": "ul. Władysława Łokietka 267, 31-263 Kraków",
+      "lat": 50.086272,
+      "lng": 19.922827,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Rozwoju Toni"
+      }
+    },
+    {
+      "id": "cas_15",
+      "districtId": 4,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Uskrzydleni Wiekiem",
+      "address": "ul. Rusznikarska 14, 31-261 Kraków",
+      "lat": 50.086198,
+      "lng": 19.926935,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Wspierania Seniorów"
+      }
+    },
+    {
+      "id": "cas_16",
+      "districtId": 5,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Optymista",
+      "address": "ul. Sienkiewicza 2a, 30-033 Kraków",
+      "lat": 50.071933,
+      "lng": 19.926568,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Przyjaciół Krowodrzy"
+      }
+    },
+    {
+      "id": "cas_17",
+      "districtId": 5,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Współpracujmy",
+      "address": "ul. Litewska 34, 30-014 Kraków",
+      "lat": 50.076212,
+      "lng": 19.926882,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Współpracy Międzypokoleniowej"
+      }
+    },
+    {
+      "id": "cas_18",
+      "districtId": 5,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Seniorpedia.pl",
+      "address": "ul. Kazimierza Wielkiego 117, 30-074 Kraków",
+      "lat": 50.072294,
+      "lng": 19.922392,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Consensus"
+      }
+    },
+    {
+      "id": "cas_19",
+      "districtId": 6,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Źródło",
+      "address": "ul. Gabrieli Zapolskiej 42, 30-126 Kraków",
+      "lat": 50.076788,
+      "lng": 19.86026,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie LAJKONIK"
+      }
+    },
+    {
+      "id": "cas_20",
+      "districtId": 6,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Bronowice",
+      "address": "ul. Na Błonie 15b, 30-147 Kraków",
+      "lat": 50.077338,
+      "lng": 19.884192,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Carpe Diem"
+      }
+    },
+    {
+      "id": "cas_21",
+      "districtId": 6,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Młode Duchem Bronowice",
+      "address": "ul. Wernyhory 3, 30-135 Kraków",
+      "lat": 50.083988,
+      "lng": 19.86346,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Aktywne Społeczeństwo"
+      }
+    },
+    {
+      "id": "cas_22",
+      "districtId": 7,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS w Willi Decjusza",
+      "address": "ul. 28 Lipca 1943 17a, 30-233 Kraków",
+      "lat": 50.065192,
+      "lng": 19.842949,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Willa Decjusza"
+      }
+    },
+    {
+      "id": "cas_23",
+      "districtId": 7,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Salwator",
+      "address": "ul. Morawskiego 5, 30-102 Kraków",
+      "lat": 50.056298,
+      "lng": 19.927447,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Wsparcia Seniorów Salwator"
+      }
+    },
+    {
+      "id": "cas_24",
+      "districtId": 7,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Hala 100-lecia KS Cracovia",
+      "address": "ul. Aleja Marszałka Ferdinanda Focha 40, 30-119 Kraków",
+      "lat": 50.058198,
+      "lng": 19.917903,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja KS Cracovia"
+      }
+    },
+    {
+      "id": "cas_25",
+      "districtId": 7,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Przystań Aktywnego Seniora",
+      "address": "ul. Dojazdowa 4, 30-241 Kraków",
+      "lat": 50.064592,
+      "lng": 19.847749,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Przystań"
+      }
+    },
+    {
+      "id": "cas_26",
+      "districtId": 8,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Radosny Senior",
+      "address": "ul. Zamiejska 6, 30-383 Kraków",
+      "lat": 50.005645,
+      "lng": 19.868919,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Dobrej Nadziei"
+      }
+    },
+    {
+      "id": "cas_27",
+      "districtId": 8,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Tekla",
+      "address": "ul. Działowskiego 1, 30-399 Kraków",
+      "lat": 49.989131,
+      "lng": 19.872933,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Pomocy Seniorom Tekla"
+      }
+    },
+    {
+      "id": "cas_28",
+      "districtId": 8,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Dębniki",
+      "address": "ul. Bałuckiego 21, 30-318 Kraków",
+      "lat": 50.049049,
+      "lng": 19.925896,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Przyjaciół Dębnik"
+      }
+    },
+    {
+      "id": "cas_29",
+      "districtId": 8,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Kapelanka",
+      "address": "ul. Kapelanka 56, 30-347 Kraków",
+      "lat": 50.045411,
+      "lng": 19.920426,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Aktywni Mieszkańcy"
+      }
+    },
+    {
+      "id": "cas_30",
+      "districtId": 8,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Popatrz Sercem",
+      "address": "ul. Mieszczańska 9b, 30-313 Kraków",
+      "lat": 50.008645,
+      "lng": 19.860119,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Popatrz Sercem"
+      }
+    },
+    {
+      "id": "cas_31",
+      "districtId": 9,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Łagiewniki",
+      "address": "ul. Zakopiańska 62, 30-418 Kraków",
+      "lat": 50.015313,
+      "lng": 19.929714,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Promocji Zdrowia i Kultury"
+      }
+    },
+    {
+      "id": "cas_32",
+      "districtId": 9,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Borsuczek",
+      "address": "ul. Borsucza 12, 30-408 Kraków",
+      "lat": 50.030496,
+      "lng": 19.928449,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Przyjazny Borek"
+      }
+    },
+    {
+      "id": "cas_33",
+      "districtId": 10,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Swoszowice",
+      "address": "ul. Tuchowska 113, 30-618 Kraków",
+      "lat": 50.013319,
+      "lng": 19.966592,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Aktywności Południowej"
+      }
+    },
+    {
+      "id": "cas_34",
+      "districtId": 10,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Uzdrowisko",
+      "address": "ul. Kąpielowa 70, 30-698 Kraków",
+      "lat": 49.997408,
+      "lng": 19.919953,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Przyjaciół Uzdrowiska"
+      }
+    },
+    {
+      "id": "cas_35",
+      "districtId": 11,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Kurdwanów",
+      "address": "ul. Witosa 39, 30-647 Kraków",
+      "lat": 50.012821,
+      "lng": 19.95567,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Pomocy Obywatelskiej"
+      }
+    },
+    {
+      "id": "cas_36",
+      "districtId": 11,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Siemacha Bonarka",
+      "address": "ul. Kamieńskiego 11, 30-644 Kraków",
+      "lat": 50.024552,
+      "lng": 19.976917,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Siemacha"
+      }
+    },
+    {
+      "id": "cas_37",
+      "districtId": 11,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Złoty Wiek",
+      "address": "ul. Kurczaba 15, 30-868 Kraków",
+      "lat": 50.013813,
+      "lng": 20.009447,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Pogodne Dni"
+      }
+    },
+    {
+      "id": "cas_38",
+      "districtId": 12,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Prokocim",
+      "address": "ul. Ściegiennego 5, 30-833 Kraków",
+      "lat": 50.014339,
+      "lng": 19.999104,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Rozwoju Prokocimia"
+      }
+    },
+    {
+      "id": "cas_39",
+      "districtId": 12,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Nowy Bieżanów",
+      "address": "ul. Heleny 4, 30-838 Kraków",
+      "lat": 50.014044,
+      "lng": 20.014901,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Wspólnota Pokoleń"
+      }
+    },
+    {
+      "id": "cas_40",
+      "districtId": 12,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Złocień",
+      "address": "ul. Agatowa 33, 30-798 Kraków",
+      "lat": 50.021764,
+      "lng": 20.043034,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Aktywne Południe"
+      }
+    },
+    {
+      "id": "cas_41",
+      "districtId": 13,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Rynek Podgórski",
+      "address": "ul. Sokolska 13, 30-510 Kraków",
+      "lat": 50.044521,
+      "lng": 20.01158,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie PODGÓRZE.PL"
+      }
+    },
+    {
+      "id": "cas_42",
+      "districtId": 13,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Zabłocie",
+      "address": "ul. Przemysłowa 12, 30-701 Kraków",
+      "lat": 50.036721,
+      "lng": 20.01318,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Fabryka Inicjatyw"
+      }
+    },
+    {
+      "id": "cas_43",
+      "districtId": 13,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Płaszów",
+      "address": "ul. Płaszowska 34, 30-713 Kraków",
+      "lat": 50.044979,
+      "lng": 19.978217,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Nowy Płaszów"
+      }
+    },
+    {
+      "id": "cas_44",
+      "districtId": 14,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Czyżyny",
+      "address": "ul. Centralna 41, 31-586 Kraków",
+      "lat": 50.063569,
+      "lng": 20.007812,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Animatorów Społecznych"
+      }
+    },
+    {
+      "id": "cas_45",
+      "districtId": 14,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Nowe Czyżyny",
+      "address": "ul. Medweckiego 17, 31-870 Kraków",
+      "lat": 50.075379,
+      "lng": 20.015325,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Przestrzeń Seniora"
+      }
+    },
+    {
+      "id": "cas_46",
+      "districtId": 15,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Mistrzejowice",
+      "address": "ul. Mikołajczyka 14, 31-620 Kraków",
+      "lat": 50.099697,
+      "lng": 20.01587,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Dialog Międzypokoleniowy"
+      }
+    },
+    {
+      "id": "cas_47",
+      "districtId": 15,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Srebrne Mistrzejowice",
+      "address": "ul. Tysiąclecia 42, 31-610 Kraków",
+      "lat": 50.091019,
+      "lng": 19.999487,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Seniorów Nowohuckich"
+      }
+    },
+    {
+      "id": "cas_48",
+      "districtId": 16,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Bieńczyce",
+      "address": "ul. Strusia 19, 31-807 Kraków",
+      "lat": 50.086755,
+      "lng": 20.009171,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Nasze Bieńczyce"
+      }
+    },
+    {
+      "id": "cas_49",
+      "districtId": 16,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Albertyńskie",
+      "address": "ul. Osiedle Albertyńskie 1, 31-851 Kraków",
+      "lat": 50.081007,
+      "lng": 20.019633,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Pogodna Jesień"
+      }
+    },
+    {
+      "id": "cas_50",
+      "districtId": 17,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Krzesławice",
+      "address": "ul. Garbarska 2, 31-751 Kraków",
+      "lat": 50.064789,
+      "lng": 19.931829,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Przyjaciół Wzgórz"
+      }
+    },
+    {
+      "id": "cas_51",
+      "districtId": 18,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Tęcza Nowa Huta",
+      "address": "ul. Osiedle Centrum C 10, 31-931 Kraków",
+      "lat": 50.072945,
+      "lng": 20.03413,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Pomocy Społecznej Tęcza"
+      }
+    },
+    {
+      "id": "cas_52",
+      "districtId": 18,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Przy Arce",
+      "address": "ul. Obrońców Krzyża 1, 31-831 Kraków",
+      "lat": 50.080827,
+      "lng": 20.034554,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Stowarzyszenie Przyjaciół Nowej Huty"
+      }
+    },
+    {
+      "id": "cas_53",
+      "districtId": 18,
+      "category": "CULTURE_SOCIETY",
+      "subCategory": "SENIOR_CENTER",
+      "name": "CAS Hutnik",
+      "address": "ul. Osiedle Górali 5, 31-959 Kraków",
+      "lat": 50.081229,
+      "lng": 20.040512,
+      "metrics": {
+        "capacity": 45,
+        "areaHa": null,
+        "additionalInfo": "Podmiot: Fundacja Ziemia Nowohucka"
       }
     }
   ]

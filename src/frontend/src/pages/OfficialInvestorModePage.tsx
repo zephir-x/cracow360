@@ -56,7 +56,7 @@ export function OfficialInvestorModePage({
             Modele Ekonometryczne (2027–2030)
           </h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Prognoza liczby dzieci w wieku żłobkowym (0–3) i przedszkolnym (4–6) wyliczana w Pythonie (`statsmodels` / `scikit-learn`) na podstawie trendów meldunkowych i oddawanych mieszkań.
+            Prognoza liczby dzieci w wieku żłobkowym (0–3) i przedszkolnym (4–6) wyliczana na podstawie trendów meldunkowych i oddawanych mieszkań.
           </p>
         </div>
 

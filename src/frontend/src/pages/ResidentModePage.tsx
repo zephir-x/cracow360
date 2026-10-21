@@ -67,7 +67,7 @@ export function ResidentModePage({
 
   return (
     <div className="space-y-8">
-      {/* HERO BANNER – Inspired by inspiration.png with Kraków Blue & White palette and animated graphics */}
+      {/* HERO BANNER – Kraków Blue & White palette and animated graphics */}
       <section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white shadow-2xl shadow-blue-950/15 border border-blue-400/30">
         {/* Animated Background Vector Shapes & Glowing Orbs */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
@@ -122,7 +122,7 @@ export function ResidentModePage({
           <div className="max-w-2xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
               <Compass className="w-4 h-4 text-sky-300" />
-              Tryb Mieszkańca • Indeks Jakości Życia w 18 Dzielnicach
+              Tryb Mieszkańca • 7 Filarów Jakości Życia w 18 Dzielnicach
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-black tracking-tight leading-[1.12] text-white">
@@ -132,7 +132,7 @@ export function ResidentModePage({
             </h1>
 
             <p className="text-sm sm:text-base text-blue-100/95 leading-relaxed max-w-xl">
-              Dostosuj wagi 5 kluczowych kategorii miejskich do własnych potrzeb, sprawdzaj interaktywny kartogram 18 dzielnic w czasie rzeczywistym i porównuj twarde wskaźniki z Otwartych Danych Urzędu Miasta Krakowa.
+              Dostosuj wagi 7 kluczowych wymiarów miejskich (w tym bezpieczeństwo publiczne i dostępność cenową mieszkań) do własnych priorytetów. Sprawdzaj interaktywny kartogram 18 dzielnic w czasie rzeczywistym i analizuj twarde wskaźniki z oficjalnych rejestrów Otwartych Danych.
             </p>
 
             {/* Interactive CTA Buttons */}
@@ -165,7 +165,7 @@ export function ResidentModePage({
               <div>
                 <div className="text-2xl font-black text-blue-700 leading-none">18</div>
                 <div className="text-xs font-bold text-slate-800 mt-1">Dzielnic Administracyjnych</div>
-                <div className="text-[11px] text-slate-500">Pełny kartogram wektorowy GeoJSON</div>
+                <div className="text-[11px] text-slate-500">Pełny kartogram wektorowy</div>
               </div>
             </div>
 
@@ -190,10 +190,10 @@ export function ResidentModePage({
               </div>
               <div>
                 <div className="text-2xl font-black text-sky-700 leading-none">
-                  {totalCityPopulation > 0 ? `${Math.round(totalCityPopulation / 1000)} tys.` : '725 tys.'}
+                  {totalCityPopulation > 0 ? `${Math.round(totalCityPopulation / 1000)} tys.` : '736 tys.'}
                 </div>
                 <div className="text-xs font-bold text-slate-800 mt-1">Mieszkańców w bazie BDK</div>
-                <div className="text-[11px] text-slate-500">Meldunki stałe, czasowe i dynamika</div>
+                <div className="text-[11px] text-slate-500">Meldunki stałe, czasowe i cudzoziemcy</div>
               </div>
             </div>
 
@@ -202,9 +202,9 @@ export function ResidentModePage({
                 <BarChart3 className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-black text-indigo-700 leading-none">5 × 12</div>
-                <div className="text-xs font-bold text-slate-800 mt-1">Wymiarów i Wskaźników</div>
-                <div className="text-[11px] text-slate-500">KMK, żłobki, parki, CAS i powietrze</div>
+                <div className="text-2xl font-black text-indigo-700 leading-none">7 Filarów</div>
+                <div className="text-xs font-bold text-slate-800 mt-1">30+ Zbiorów Danych</div>
+                <div className="text-[11px] text-slate-500">Ceny, bezpieczeństwo, KMK, CAS i smog</div>
               </div>
             </div>
           </div>
@@ -247,30 +247,30 @@ export function ResidentModePage({
               <div className="font-extrabold text-blue-900 mb-1">
                 1. Normalizacja Min-Max (0–100 pkt)
               </div>
-              Twarde dane miejskie (liczba przystanków KMK, m² parków, miejsca w żłobkach, filie bibliotek, gęstość zaludnienia) są przeliczane na obiektywną skalę 0–100 pkt w 5 kategoriach.
+              Twarde dane miejskie (ceny mieszkań, zdarzenia drogowe, KMK, parki i lasy, żłobki, biblioteki, CAS, smog i hałas) są przeliczane na obiektywną skalę 0–100 pkt w 7 kategoriach jakości życia.
             </div>
             <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
               <div className="font-extrabold text-sky-900 mb-1">
                 2. Twoje Wagi i Presety (0–10 pkt)
               </div>
-              Ustawiasz wagi suwakami po lewej stronie lub wybierasz gotowy profil (*Rodzina z Dziećmi*, *Student / Młody*, *Aktywny Senior*, *Inwestor / Biznes B2B*). Aplikacja mnoży 5 ocen każdej dzielnicy przez Twoje wagi w czasie 0 ms.
+              Ustawiasz wagi suwakami po lewej stronie lub wybierasz gotowy profil (Rodzina z Dziećmi, Student / Młody, Aktywny Senior, Inwestor / Biznes B2B). Aplikacja mnoży 7 ocen każdej dzielnicy przez Twoje wagi w czasie 0 ms.
             </div>
             <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
               <div className="font-extrabold text-indigo-900 mb-1">
-                3. Porównanie Side-by-Side (Wykres Radarowy)
+                3. Porównanie Side-by-Side (Wykres Radarowy 7 Osi)
               </div>
-              Kliknij dowolne 2 dzielnice na mapie lub liście rankingowej, aby nałożyć ich profile na 5-osiowy wykres radarowy i porównać twarde wskaźniki w tabeli poniżej.
+              Kliknij dowolne 2 dzielnice na mapie lub liście rankingowej, aby nałożyć ich profile na 7-osiowy wykres radarowy i porównać twarde wskaźniki w tabeli poniżej.
             </div>
           </div>
         </section>
       )}
 
-      {/* Main 3-Column Interactive Workspace: Left Configurator (325px) + Center Map (flex) + Right Ranking (345px) */}
+      {/* Main 3-Column Interactive Workspace: Left Configurator + Center Map + Right Ranking */}
       <section
         id="resident-workspace"
         className="grid grid-cols-1 xl:grid-cols-[325px_1fr_345px] gap-5 items-start scroll-mt-20"
       >
-        {/* Left Panel: 4 Presets + 5 Category Sliders */}
+        {/* Left Panel: 4 Presets + 7 Category Sliders */}
         <div className="w-full">
           <WeightsConfiguratorPanel
             weights={weights}

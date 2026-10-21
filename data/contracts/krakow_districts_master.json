@@ -1,8 +1,8 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-20T14:38:49Z",
-    "dataVersion": "2.0.0-real-open-data-2025-2026",
-    "normalizationMethod": "MinMax_0_100"
+    "generatedAt": "2026-10-21T15:27:17Z",
+    "dataVersion": "2.1.0-expanded-7-pillars-2025-2026",
+    "normalizationMethod": "MinMax_0_100_Calibrated"
   },
   "districts": [
     {
@@ -41,36 +41,66 @@
         "isochroneCoveragePct": 88.4,
         "parkAndRideCount": 0,
         "bikeRacksCount": 2670,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 23.0,
+        "bikeLanesSeparatedKm": 14.8,
+        "bikeLanesCombinedKm": 8.2,
+        "bikeRepairStationsCount": 12
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
         "pocketParksCount": 3,
         "totalParksAreaHa": 59.72,
+        "forestAreaHa": 0.0,
+        "totalGreenAreaHa": 59.72,
         "greenAreaM2PerCapita": 20.09,
+        "totalGreenM2PerCapita": 20.09,
         "schoolSportsFacilitiesCount": 268,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 4,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 4,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 305.06
+      },
+      "publicSafety": {
+        "roadCollisionsAnnual": 1420,
+        "pedestrianAccidents": 48,
+        "injuryAccidents": 32,
+        "municipalPoliceInterventionsTotal": 28400,
+        "publicDisturbanceInterventions": 4450
+      },
+      "housingMarket": {
+        "avgPricePerM2": 18500.0,
+        "priceSecondaryM2": 18200.0,
+        "pricePrimaryM2": 19800.0,
+        "priceMedianM2": 18100.0,
+        "avgRentalPriceM2": 68.5,
+        "priceGrowthYoYPct": 4.8,
+        "m2PerAverageSalary": 0.4
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 29.4,
+        "pm25AnnualUgM3": 19.8,
+        "smogDaysCount": 34,
+        "trafficNoiseExceededPct": 31.5
       },
       "scores": {
         "mobilityScore": 96.0,
         "educationScore": 92.0,
-        "greeneryScore": 97.0,
+        "greeneryScore": 87.1,
         "cultureAndSeniorScore": 96.5,
-        "environmentScore": 55.7
+        "environmentScore": 45.0,
+        "safetyScore": 73.7,
+        "housingAffordabilityScore": 50.0
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 502,
         "forecastedCarePlacesBalance_2028": -342,
         "forecastedAge4to6_2028": 380,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
-        "seniorInfrastructureDeficit": "HIGH",
+        "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.3%)."
       }
@@ -100,7 +130,7 @@
         "totalCarePlaces0to3": 0,
         "childrenPerCarePlaceRatio": 1075.0,
         "parentClubsCount": 3,
-        "kindergartensCount": 22,
+        "kindergartensCount": 23,
         "kindergartenPlacesTotal": 1772,
         "primarySchoolsCount": 11,
         "primarySchoolStudentsTotal": 3020,
@@ -111,29 +141,59 @@
         "isochroneCoveragePct": 80.3,
         "parkAndRideCount": 0,
         "bikeRacksCount": 1095,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 22.9,
+        "bikeLanesSeparatedKm": 16.5,
+        "bikeLanesCombinedKm": 6.4,
+        "bikeRepairStationsCount": 10
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
         "pocketParksCount": 3,
         "totalParksAreaHa": 16.94,
+        "forestAreaHa": 5.4,
+        "totalGreenAreaHa": 22.34,
         "greenAreaM2PerCapita": 5.28,
+        "totalGreenM2PerCapita": 6.97,
         "schoolSportsFacilitiesCount": 89,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 6,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 4,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 212.09
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 1180,
+        "pedestrianAccidents": 34,
+        "injuryAccidents": 24,
+        "municipalPoliceInterventionsTotal": 12300,
+        "publicDisturbanceInterventions": 1420
+      },
+      "housingMarket": {
+        "avgPricePerM2": 18200.0,
+        "priceSecondaryM2": 17900.0,
+        "pricePrimaryM2": 19200.0,
+        "priceMedianM2": 17800.0,
+        "avgRentalPriceM2": 65.0,
+        "priceGrowthYoYPct": 5.2,
+        "m2PerAverageSalary": 0.41
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 27.8,
+        "pm25AnnualUgM3": 18.6,
+        "smogDaysCount": 30,
+        "trafficNoiseExceededPct": 27.2
+      },
       "scores": {
-        "mobilityScore": 78.7,
+        "mobilityScore": 70.8,
         "educationScore": 69.3,
-        "greeneryScore": 68.7,
-        "cultureAndSeniorScore": 86.6,
-        "environmentScore": 44.0
+        "greeneryScore": 65.0,
+        "cultureAndSeniorScore": 88.2,
+        "environmentScore": 50.1,
+        "safetyScore": 71.2,
+        "housingAffordabilityScore": 52.9
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1078,
@@ -181,36 +241,66 @@
         "isochroneCoveragePct": 85.8,
         "parkAndRideCount": 1,
         "bikeRacksCount": 622,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 19.3,
+        "bikeLanesSeparatedKm": 15.2,
+        "bikeLanesCombinedKm": 4.1,
+        "bikeRepairStationsCount": 8
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
         "pocketParksCount": 3,
         "totalParksAreaHa": 20.02,
+        "forestAreaHa": 0.0,
+        "totalGreenAreaHa": 20.02,
         "greenAreaM2PerCapita": 4.27,
+        "totalGreenM2PerCapita": 4.27,
         "schoolSportsFacilitiesCount": 86,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 6,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 145.07
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 890,
+        "pedestrianAccidents": 22,
+        "injuryAccidents": 16,
+        "municipalPoliceInterventionsTotal": 7600,
+        "publicDisturbanceInterventions": 1120
+      },
+      "housingMarket": {
+        "avgPricePerM2": 14600.0,
+        "priceSecondaryM2": 14400.0,
+        "pricePrimaryM2": 15100.0,
+        "priceMedianM2": 14500.0,
+        "avgRentalPriceM2": 51.5,
+        "priceGrowthYoYPct": 3.8,
+        "m2PerAverageSalary": 0.51
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 24.5,
+        "pm25AnnualUgM3": 16.4,
+        "smogDaysCount": 24,
+        "trafficNoiseExceededPct": 19.8
+      },
       "scores": {
-        "mobilityScore": 87.5,
+        "mobilityScore": 78.2,
         "educationScore": 78.1,
-        "greeneryScore": 65.1,
-        "cultureAndSeniorScore": 78.6,
-        "environmentScore": 45.3
+        "greeneryScore": 58.7,
+        "cultureAndSeniorScore": 74.7,
+        "environmentScore": 63.0,
+        "safetyScore": 79.0,
+        "housingAffordabilityScore": 73.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1267,
         "forecastedCarePlacesBalance_2028": -926,
         "forecastedAge4to6_2028": 952,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
-        "seniorInfrastructureDeficit": "HIGH",
+        "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (24.6%)."
       }
@@ -240,40 +330,70 @@
         "totalCarePlaces0to3": 83,
         "childrenPerCarePlaceRatio": 33.89,
         "parentClubsCount": 1,
-        "kindergartensCount": 54,
+        "kindergartensCount": 53,
         "kindergartenPlacesTotal": 3565,
-        "primarySchoolsCount": 19,
-        "primarySchoolStudentsTotal": 6398,
-        "avgStudentsPerClass": 20.5
+        "primarySchoolsCount": 18,
+        "primarySchoolStudentsTotal": 6032,
+        "avgStudentsPerClass": 20.4
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 256,
         "isochroneCoveragePct": 79.5,
         "parkAndRideCount": 3,
         "bikeRacksCount": 529,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 30.4,
+        "bikeLanesSeparatedKm": 24.6,
+        "bikeLanesCombinedKm": 5.8,
+        "bikeRepairStationsCount": 14
       },
       "greeneryAndSport": {
         "cityParksCount": 3,
         "pocketParksCount": 2,
         "totalParksAreaHa": 17.88,
+        "forestAreaHa": 15.3,
+        "totalGreenAreaHa": 33.18,
         "greenAreaM2PerCapita": 2.33,
-        "schoolSportsFacilitiesCount": 128,
+        "totalGreenM2PerCapita": 4.32,
+        "schoolSportsFacilitiesCount": 125,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 1,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 4,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 73.79
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 1340,
+        "pedestrianAccidents": 38,
+        "injuryAccidents": 28,
+        "municipalPoliceInterventionsTotal": 11200,
+        "publicDisturbanceInterventions": 1610
+      },
+      "housingMarket": {
+        "avgPricePerM2": 15300.0,
+        "priceSecondaryM2": 15000.0,
+        "pricePrimaryM2": 15800.0,
+        "priceMedianM2": 15200.0,
+        "avgRentalPriceM2": 53.0,
+        "priceGrowthYoYPct": 4.5,
+        "m2PerAverageSalary": 0.48
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 25.2,
+        "pm25AnnualUgM3": 16.9,
+        "smogDaysCount": 26,
+        "trafficNoiseExceededPct": 21.4
+      },
       "scores": {
-        "mobilityScore": 77.9,
-        "educationScore": 72.1,
+        "mobilityScore": 61.0,
+        "educationScore": 72.2,
         "greeneryScore": 55.0,
-        "cultureAndSeniorScore": 67.9,
-        "environmentScore": 53.5
+        "cultureAndSeniorScore": 65.5,
+        "environmentScore": 59.5,
+        "safetyScore": 80.5,
+        "housingAffordabilityScore": 69.4
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 2875,
@@ -321,36 +441,66 @@
         "isochroneCoveragePct": 84.4,
         "parkAndRideCount": 0,
         "bikeRacksCount": 1520,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 19.0,
+        "bikeLanesSeparatedKm": 13.8,
+        "bikeLanesCombinedKm": 5.2,
+        "bikeRepairStationsCount": 9
       },
       "greeneryAndSport": {
         "cityParksCount": 6,
         "pocketParksCount": 4,
         "totalParksAreaHa": 35.74,
+        "forestAreaHa": 0.0,
+        "totalGreenAreaHa": 35.74,
         "greenAreaM2PerCapita": 11.34,
+        "totalGreenM2PerCapita": 11.34,
         "schoolSportsFacilitiesCount": 90,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 5,
         "culturalCentersCount": 1,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 215.75
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 920,
+        "pedestrianAccidents": 26,
+        "injuryAccidents": 18,
+        "municipalPoliceInterventionsTotal": 8900,
+        "publicDisturbanceInterventions": 1250
+      },
+      "housingMarket": {
+        "avgPricePerM2": 16500.0,
+        "priceSecondaryM2": 16200.0,
+        "pricePrimaryM2": 17400.0,
+        "priceMedianM2": 16300.0,
+        "avgRentalPriceM2": 58.0,
+        "priceGrowthYoYPct": 4.1,
+        "m2PerAverageSalary": 0.45
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 26.1,
+        "pm25AnnualUgM3": 17.5,
+        "smogDaysCount": 28,
+        "trafficNoiseExceededPct": 23.0
+      },
       "scores": {
-        "mobilityScore": 86.7,
+        "mobilityScore": 79.6,
         "educationScore": 81.6,
-        "greeneryScore": 79.0,
-        "cultureAndSeniorScore": 87.0,
-        "environmentScore": 51.4
+        "greeneryScore": 70.5,
+        "cultureAndSeniorScore": 84.3,
+        "environmentScore": 58.1,
+        "safetyScore": 71.2,
+        "housingAffordabilityScore": 62.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 745,
         "forecastedCarePlacesBalance_2028": -559,
         "forecastedAge4to6_2028": 560,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
-        "seniorInfrastructureDeficit": "HIGH",
+        "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "MEDIUM",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (26.6%)."
       }
@@ -391,29 +541,59 @@
         "isochroneCoveragePct": 71.4,
         "parkAndRideCount": 1,
         "bikeRacksCount": 357,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 14.6,
+        "bikeLanesSeparatedKm": 11.4,
+        "bikeLanesCombinedKm": 3.2,
+        "bikeRepairStationsCount": 6
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
         "pocketParksCount": 2,
         "totalParksAreaHa": 39.93,
+        "forestAreaHa": 0.0,
+        "totalGreenAreaHa": 39.93,
         "greenAreaM2PerCapita": 15.58,
+        "totalGreenM2PerCapita": 15.58,
         "schoolSportsFacilitiesCount": 65,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 132.69
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 610,
+        "pedestrianAccidents": 14,
+        "injuryAccidents": 11,
+        "municipalPoliceInterventionsTotal": 4100,
+        "publicDisturbanceInterventions": 510
+      },
+      "housingMarket": {
+        "avgPricePerM2": 15200.0,
+        "priceSecondaryM2": 14900.0,
+        "pricePrimaryM2": 15900.0,
+        "priceMedianM2": 15100.0,
+        "avgRentalPriceM2": 52.5,
+        "priceGrowthYoYPct": 3.9,
+        "m2PerAverageSalary": 0.49
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 22.4,
+        "pm25AnnualUgM3": 15.1,
+        "smogDaysCount": 19,
+        "trafficNoiseExceededPct": 14.5
+      },
       "scores": {
-        "mobilityScore": 61.4,
+        "mobilityScore": 40.4,
         "educationScore": 68.4,
-        "greeneryScore": 78.7,
-        "cultureAndSeniorScore": 76.9,
-        "environmentScore": 78.5
+        "greeneryScore": 69.3,
+        "cultureAndSeniorScore": 78.7,
+        "environmentScore": 76.4,
+        "safetyScore": 75.4,
+        "housingAffordabilityScore": 70.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 794,
@@ -461,29 +641,59 @@
         "isochroneCoveragePct": 70.1,
         "parkAndRideCount": 0,
         "bikeRacksCount": 462,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 20.7,
+        "bikeLanesSeparatedKm": 16.2,
+        "bikeLanesCombinedKm": 4.5,
+        "bikeRepairStationsCount": 8
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
         "pocketParksCount": 3,
         "totalParksAreaHa": 111.67,
+        "forestAreaHa": 419.0,
+        "totalGreenAreaHa": 530.67,
         "greenAreaM2PerCapita": 51.55,
+        "totalGreenM2PerCapita": 244.99,
         "schoolSportsFacilitiesCount": 59,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
         "culturalCentersCount": 1,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 4,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 156.99
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 490,
+        "pedestrianAccidents": 9,
+        "injuryAccidents": 8,
+        "municipalPoliceInterventionsTotal": 3200,
+        "publicDisturbanceInterventions": 405
+      },
+      "housingMarket": {
+        "avgPricePerM2": 17200.0,
+        "priceSecondaryM2": 16800.0,
+        "pricePrimaryM2": 18400.0,
+        "priceMedianM2": 17000.0,
+        "avgRentalPriceM2": 61.0,
+        "priceGrowthYoYPct": 4.0,
+        "m2PerAverageSalary": 0.43
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 19.8,
+        "pm25AnnualUgM3": 13.2,
+        "smogDaysCount": 14,
+        "trafficNoiseExceededPct": 11.2
+      },
       "scores": {
-        "mobilityScore": 58.5,
+        "mobilityScore": 33.5,
         "educationScore": 72.4,
-        "greeneryScore": 89.7,
-        "cultureAndSeniorScore": 80.1,
-        "environmentScore": 93.0
+        "greeneryScore": 97.0,
+        "cultureAndSeniorScore": 88.0,
+        "environmentScore": 94.0,
+        "safetyScore": 79.5,
+        "housingAffordabilityScore": 58.3
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 505,
@@ -531,29 +741,59 @@
         "isochroneCoveragePct": 68.4,
         "parkAndRideCount": 1,
         "bikeRacksCount": 734,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 35.3,
+        "bikeLanesSeparatedKm": 28.5,
+        "bikeLanesCombinedKm": 6.8,
+        "bikeRepairStationsCount": 15
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
         "pocketParksCount": 3,
         "totalParksAreaHa": 56.62,
+        "forestAreaHa": 180.5,
+        "totalGreenAreaHa": 237.12,
         "greenAreaM2PerCapita": 8.15,
+        "totalGreenM2PerCapita": 34.15,
         "schoolSportsFacilitiesCount": 130,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 5,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 65.3
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 1150,
+        "pedestrianAccidents": 28,
+        "injuryAccidents": 22,
+        "municipalPoliceInterventionsTotal": 8400,
+        "publicDisturbanceInterventions": 1100
+      },
+      "housingMarket": {
+        "avgPricePerM2": 14900.0,
+        "priceSecondaryM2": 14600.0,
+        "pricePrimaryM2": 15600.0,
+        "priceMedianM2": 14800.0,
+        "avgRentalPriceM2": 52.0,
+        "priceGrowthYoYPct": 5.6,
+        "m2PerAverageSalary": 0.5
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 21.6,
+        "pm25AnnualUgM3": 14.5,
+        "smogDaysCount": 18,
+        "trafficNoiseExceededPct": 15.6
+      },
       "scores": {
-        "mobilityScore": 54.9,
+        "mobilityScore": 29.3,
         "educationScore": 73.5,
-        "greeneryScore": 66.8,
-        "cultureAndSeniorScore": 66.3,
-        "environmentScore": 67.9
+        "greeneryScore": 75.0,
+        "cultureAndSeniorScore": 67.7,
+        "environmentScore": 80.0,
+        "safetyScore": 85.7,
+        "housingAffordabilityScore": 72.0
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 2343,
@@ -601,29 +841,59 @@
         "isochroneCoveragePct": 79.4,
         "parkAndRideCount": 0,
         "bikeRacksCount": 155,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 12.2,
+        "bikeLanesSeparatedKm": 9.4,
+        "bikeLanesCombinedKm": 2.8,
+        "bikeRepairStationsCount": 5
       },
       "greeneryAndSport": {
         "cityParksCount": 3,
         "pocketParksCount": 1,
         "totalParksAreaHa": 36.81,
+        "forestAreaHa": 65.2,
+        "totalGreenAreaHa": 102.01,
         "greenAreaM2PerCapita": 23.3,
-        "schoolSportsFacilitiesCount": 24,
+        "totalGreenM2PerCapita": 64.58,
+        "schoolSportsFacilitiesCount": 25,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 2,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 215.26
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 680,
+        "pedestrianAccidents": 15,
+        "injuryAccidents": 12,
+        "municipalPoliceInterventionsTotal": 3800,
+        "publicDisturbanceInterventions": 435
+      },
+      "housingMarket": {
+        "avgPricePerM2": 13800.0,
+        "priceSecondaryM2": 13500.0,
+        "pricePrimaryM2": 14400.0,
+        "priceMedianM2": 13700.0,
+        "avgRentalPriceM2": 48.0,
+        "priceGrowthYoYPct": 3.5,
+        "m2PerAverageSalary": 0.54
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 23.8,
+        "pm25AnnualUgM3": 15.9,
+        "smogDaysCount": 22,
+        "trafficNoiseExceededPct": 18.4
+      },
       "scores": {
-        "mobilityScore": 75.5,
+        "mobilityScore": 59.8,
         "educationScore": 80.2,
-        "greeneryScore": 83.3,
-        "cultureAndSeniorScore": 87.0,
-        "environmentScore": 77.1
+        "greeneryScore": 86.0,
+        "cultureAndSeniorScore": 89.6,
+        "environmentScore": 73.7,
+        "safetyScore": 58.0,
+        "housingAffordabilityScore": 78.8
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 460,
@@ -671,29 +941,59 @@
         "isochroneCoveragePct": 69.2,
         "parkAndRideCount": 1,
         "bikeRacksCount": 77,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 8.3,
+        "bikeLanesSeparatedKm": 6.8,
+        "bikeLanesCombinedKm": 1.5,
+        "bikeRepairStationsCount": 3
       },
       "greeneryAndSport": {
         "cityParksCount": 2,
         "pocketParksCount": 1,
         "totalParksAreaHa": 13.33,
+        "forestAreaHa": 83.9,
+        "totalGreenAreaHa": 97.23,
         "greenAreaM2PerCapita": 4.42,
+        "totalGreenM2PerCapita": 32.25,
         "schoolSportsFacilitiesCount": 46,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 2,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 112.8
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 450,
+        "pedestrianAccidents": 8,
+        "injuryAccidents": 7,
+        "municipalPoliceInterventionsTotal": 2400,
+        "publicDisturbanceInterventions": 310
+      },
+      "housingMarket": {
+        "avgPricePerM2": 12400.0,
+        "priceSecondaryM2": 12100.0,
+        "pricePrimaryM2": 13100.0,
+        "priceMedianM2": 12300.0,
+        "avgRentalPriceM2": 43.5,
+        "priceGrowthYoYPct": 3.2,
+        "m2PerAverageSalary": 0.6
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 20.5,
+        "pm25AnnualUgM3": 13.8,
+        "smogDaysCount": 15,
+        "trafficNoiseExceededPct": 8.5
+      },
       "scores": {
-        "mobilityScore": 56.1,
+        "mobilityScore": 28.9,
         "educationScore": 76.4,
-        "greeneryScore": 58.5,
-        "cultureAndSeniorScore": 74.2,
-        "environmentScore": 73.1
+        "greeneryScore": 72.0,
+        "cultureAndSeniorScore": 73.8,
+        "environmentScore": 87.8,
+        "safetyScore": 95.0,
+        "housingAffordabilityScore": 87.8
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 914,
@@ -741,29 +1041,59 @@
         "isochroneCoveragePct": 77.0,
         "parkAndRideCount": 1,
         "bikeRacksCount": 203,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 17.8,
+        "bikeLanesSeparatedKm": 14.2,
+        "bikeLanesCombinedKm": 3.6,
+        "bikeRepairStationsCount": 7
       },
       "greeneryAndSport": {
         "cityParksCount": 3,
         "pocketParksCount": 1,
         "totalParksAreaHa": 47.13,
+        "forestAreaHa": 7.8,
+        "totalGreenAreaHa": 54.93,
         "greenAreaM2PerCapita": 8.55,
+        "totalGreenM2PerCapita": 9.96,
         "schoolSportsFacilitiesCount": 81,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 61.68
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 980,
+        "pedestrianAccidents": 24,
+        "injuryAccidents": 19,
+        "municipalPoliceInterventionsTotal": 6800,
+        "publicDisturbanceInterventions": 920
+      },
+      "housingMarket": {
+        "avgPricePerM2": 14100.0,
+        "priceSecondaryM2": 13800.0,
+        "pricePrimaryM2": 14600.0,
+        "priceMedianM2": 14000.0,
+        "avgRentalPriceM2": 49.0,
+        "priceGrowthYoYPct": 4.2,
+        "m2PerAverageSalary": 0.52
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 26.5,
+        "pm25AnnualUgM3": 17.8,
+        "smogDaysCount": 27,
+        "trafficNoiseExceededPct": 20.1
+      },
       "scores": {
-        "mobilityScore": 71.6,
+        "mobilityScore": 53.8,
         "educationScore": 66.4,
-        "greeneryScore": 72.6,
-        "cultureAndSeniorScore": 65.6,
-        "environmentScore": 62.0
+        "greeneryScore": 66.4,
+        "cultureAndSeniorScore": 62.9,
+        "environmentScore": 59.4,
+        "safetyScore": 83.4,
+        "housingAffordabilityScore": 76.4
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1596,
@@ -811,29 +1141,59 @@
         "isochroneCoveragePct": 74.5,
         "parkAndRideCount": 1,
         "bikeRacksCount": 398,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 22.0,
+        "bikeLanesSeparatedKm": 17.8,
+        "bikeLanesCombinedKm": 4.2,
+        "bikeRepairStationsCount": 9
       },
       "greeneryAndSport": {
         "cityParksCount": 8,
         "pocketParksCount": 2,
         "totalParksAreaHa": 45.54,
+        "forestAreaHa": 11.2,
+        "totalGreenAreaHa": 56.74,
         "greenAreaM2PerCapita": 7.07,
-        "schoolSportsFacilitiesCount": 81,
+        "totalGreenM2PerCapita": 8.8,
+        "schoolSportsFacilitiesCount": 83,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 70.34
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 1040,
+        "pedestrianAccidents": 25,
+        "injuryAccidents": 21,
+        "municipalPoliceInterventionsTotal": 7200,
+        "publicDisturbanceInterventions": 980
+      },
+      "housingMarket": {
+        "avgPricePerM2": 14300.0,
+        "priceSecondaryM2": 14000.0,
+        "pricePrimaryM2": 14800.0,
+        "priceMedianM2": 14200.0,
+        "avgRentalPriceM2": 49.5,
+        "priceGrowthYoYPct": 4.6,
+        "m2PerAverageSalary": 0.52
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 24.9,
+        "pm25AnnualUgM3": 16.7,
+        "smogDaysCount": 23,
+        "trafficNoiseExceededPct": 17.8
+      },
       "scores": {
-        "mobilityScore": 67.1,
+        "mobilityScore": 45.9,
         "educationScore": 52.0,
-        "greeneryScore": 67.1,
-        "cultureAndSeniorScore": 67.3,
-        "environmentScore": 65.5
+        "greeneryScore": 62.0,
+        "cultureAndSeniorScore": 63.6,
+        "environmentScore": 65.9,
+        "safetyScore": 86.6,
+        "housingAffordabilityScore": 75.7
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1973,
@@ -881,29 +1241,59 @@
         "isochroneCoveragePct": 75.3,
         "parkAndRideCount": 1,
         "bikeRacksCount": 904,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 29.5,
+        "bikeLanesSeparatedKm": 22.4,
+        "bikeLanesCombinedKm": 7.1,
+        "bikeRepairStationsCount": 13
       },
       "greeneryAndSport": {
         "cityParksCount": 6,
         "pocketParksCount": 4,
         "totalParksAreaHa": 85.35,
+        "forestAreaHa": 0.0,
+        "totalGreenAreaHa": 85.35,
         "greenAreaM2PerCapita": 18.75,
+        "totalGreenM2PerCapita": 18.75,
         "schoolSportsFacilitiesCount": 117,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
         "culturalCentersCount": 1,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 99.61
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 1260,
+        "pedestrianAccidents": 36,
+        "injuryAccidents": 26,
+        "municipalPoliceInterventionsTotal": 11800,
+        "publicDisturbanceInterventions": 1480
+      },
+      "housingMarket": {
+        "avgPricePerM2": 16200.0,
+        "priceSecondaryM2": 15800.0,
+        "pricePrimaryM2": 17100.0,
+        "priceMedianM2": 16000.0,
+        "avgRentalPriceM2": 57.0,
+        "priceGrowthYoYPct": 5.0,
+        "m2PerAverageSalary": 0.46
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 26.8,
+        "pm25AnnualUgM3": 18.0,
+        "smogDaysCount": 29,
+        "trafficNoiseExceededPct": 24.6
+      },
       "scores": {
-        "mobilityScore": 69.4,
+        "mobilityScore": 49.4,
         "educationScore": 76.9,
-        "greeneryScore": 79.3,
-        "cultureAndSeniorScore": 72.2,
-        "environmentScore": 67.9
+        "greeneryScore": 69.5,
+        "cultureAndSeniorScore": 73.7,
+        "environmentScore": 56.7,
+        "safetyScore": 71.3,
+        "housingAffordabilityScore": 64.2
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 2098,
@@ -951,29 +1341,59 @@
         "isochroneCoveragePct": 78.0,
         "parkAndRideCount": 0,
         "bikeRacksCount": 229,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 23.4,
+        "bikeLanesSeparatedKm": 18.6,
+        "bikeLanesCombinedKm": 4.8,
+        "bikeRepairStationsCount": 11
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
         "pocketParksCount": 4,
         "totalParksAreaHa": 54.88,
+        "forestAreaHa": 0.0,
+        "totalGreenAreaHa": 54.88,
         "greenAreaM2PerCapita": 14.97,
+        "totalGreenM2PerCapita": 14.97,
         "schoolSportsFacilitiesCount": 69,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 2,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 30.91
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 950,
+        "pedestrianAccidents": 27,
+        "injuryAccidents": 19,
+        "municipalPoliceInterventionsTotal": 6400,
+        "publicDisturbanceInterventions": 830
+      },
+      "housingMarket": {
+        "avgPricePerM2": 14400.0,
+        "priceSecondaryM2": 14100.0,
+        "pricePrimaryM2": 15000.0,
+        "priceMedianM2": 14300.0,
+        "avgRentalPriceM2": 50.0,
+        "priceGrowthYoYPct": 4.7,
+        "m2PerAverageSalary": 0.51
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 25.7,
+        "pm25AnnualUgM3": 17.2,
+        "smogDaysCount": 25,
+        "trafficNoiseExceededPct": 21.0
+      },
       "scores": {
-        "mobilityScore": 72.8,
+        "mobilityScore": 54.9,
         "educationScore": 66.4,
-        "greeneryScore": 77.9,
-        "cultureAndSeniorScore": 58.0,
-        "environmentScore": 62.8
+        "greeneryScore": 68.7,
+        "cultureAndSeniorScore": 58.3,
+        "environmentScore": 62.7,
+        "safetyScore": 70.0,
+        "housingAffordabilityScore": 74.7
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1754,
@@ -1021,29 +1441,59 @@
         "isochroneCoveragePct": 87.3,
         "parkAndRideCount": 0,
         "bikeRacksCount": 331,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 15.9,
+        "bikeLanesSeparatedKm": 12.8,
+        "bikeLanesCombinedKm": 3.1,
+        "bikeRepairStationsCount": 6
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
         "pocketParksCount": 2,
         "totalParksAreaHa": 38.41,
+        "forestAreaHa": 0.0,
+        "totalGreenAreaHa": 38.41,
         "greenAreaM2PerCapita": 7.56,
+        "totalGreenM2PerCapita": 7.56,
         "schoolSportsFacilitiesCount": 52,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 2,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 44.61
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 690,
+        "pedestrianAccidents": 18,
+        "injuryAccidents": 13,
+        "municipalPoliceInterventionsTotal": 4900,
+        "publicDisturbanceInterventions": 690
+      },
+      "housingMarket": {
+        "avgPricePerM2": 13300.0,
+        "priceSecondaryM2": 13000.0,
+        "pricePrimaryM2": 13900.0,
+        "priceMedianM2": 13200.0,
+        "avgRentalPriceM2": 46.5,
+        "priceGrowthYoYPct": 3.6,
+        "m2PerAverageSalary": 0.56
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 23.2,
+        "pm25AnnualUgM3": 15.6,
+        "smogDaysCount": 21,
+        "trafficNoiseExceededPct": 14.2
+      },
       "scores": {
-        "mobilityScore": 88.8,
+        "mobilityScore": 78.3,
         "educationScore": 58.8,
-        "greeneryScore": 72.6,
-        "cultureAndSeniorScore": 61.9,
-        "environmentScore": 55.9
+        "greeneryScore": 64.9,
+        "cultureAndSeniorScore": 58.0,
+        "environmentScore": 71.9,
+        "safetyScore": 91.3,
+        "housingAffordabilityScore": 81.9
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1259,
@@ -1091,29 +1541,59 @@
         "isochroneCoveragePct": 85.7,
         "parkAndRideCount": 0,
         "bikeRacksCount": 579,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 16.9,
+        "bikeLanesSeparatedKm": 13.5,
+        "bikeLanesCombinedKm": 3.4,
+        "bikeRepairStationsCount": 7
       },
       "greeneryAndSport": {
         "cityParksCount": 2,
         "pocketParksCount": 1,
         "totalParksAreaHa": 31.95,
+        "forestAreaHa": 0.0,
+        "totalGreenAreaHa": 31.95,
         "greenAreaM2PerCapita": 8.77,
+        "totalGreenM2PerCapita": 8.77,
         "schoolSportsFacilitiesCount": 84,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 2,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 124.43
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 620,
+        "pedestrianAccidents": 16,
+        "injuryAccidents": 12,
+        "municipalPoliceInterventionsTotal": 4700,
+        "publicDisturbanceInterventions": 740
+      },
+      "housingMarket": {
+        "avgPricePerM2": 12300.0,
+        "priceSecondaryM2": 12100.0,
+        "pricePrimaryM2": 12900.0,
+        "priceMedianM2": 12200.0,
+        "avgRentalPriceM2": 44.0,
+        "priceGrowthYoYPct": 2.8,
+        "m2PerAverageSalary": 0.6
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 24.1,
+        "pm25AnnualUgM3": 16.2,
+        "smogDaysCount": 22,
+        "trafficNoiseExceededPct": 15.8
+      },
       "scores": {
-        "mobilityScore": 86.8,
+        "mobilityScore": 82.2,
         "educationScore": 80.6,
-        "greeneryScore": 77.3,
-        "cultureAndSeniorScore": 75.8,
-        "environmentScore": 54.7
+        "greeneryScore": 69.2,
+        "cultureAndSeniorScore": 71.0,
+        "environmentScore": 69.1,
+        "safetyScore": 82.5,
+        "housingAffordabilityScore": 87.8
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 730,
@@ -1152,38 +1632,68 @@
         "parentClubsCount": 0,
         "kindergartensCount": 11,
         "kindergartenPlacesTotal": 674,
-        "primarySchoolsCount": 5,
-        "primarySchoolStudentsTotal": 2447,
-        "avgStudentsPerClass": 20.1
+        "primarySchoolsCount": 6,
+        "primarySchoolStudentsTotal": 2813,
+        "avgStudentsPerClass": 20.2
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 140,
         "isochroneCoveragePct": 71.0,
         "parkAndRideCount": 0,
         "bikeRacksCount": 128,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 10.0,
+        "bikeLanesSeparatedKm": 8.2,
+        "bikeLanesCombinedKm": 1.8,
+        "bikeRepairStationsCount": 4
       },
       "greeneryAndSport": {
         "cityParksCount": 5,
         "pocketParksCount": 2,
         "totalParksAreaHa": 19.99,
+        "forestAreaHa": 35.6,
+        "totalGreenAreaHa": 55.59,
         "greenAreaM2PerCapita": 9.77,
+        "totalGreenM2PerCapita": 27.16,
         "schoolSportsFacilitiesCount": 46,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 1,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 55.39
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 380,
+        "pedestrianAccidents": 7,
+        "injuryAccidents": 6,
+        "municipalPoliceInterventionsTotal": 1900,
+        "publicDisturbanceInterventions": 270
+      },
+      "housingMarket": {
+        "avgPricePerM2": 11800.0,
+        "priceSecondaryM2": 11600.0,
+        "pricePrimaryM2": 12400.0,
+        "priceMedianM2": 11700.0,
+        "avgRentalPriceM2": 41.5,
+        "priceGrowthYoYPct": 2.5,
+        "m2PerAverageSalary": 0.63
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 21.0,
+        "pm25AnnualUgM3": 14.1,
+        "smogDaysCount": 16,
+        "trafficNoiseExceededPct": 6.8
+      },
       "scores": {
-        "mobilityScore": 59.4,
-        "educationScore": 68.4,
-        "greeneryScore": 67.4,
-        "cultureAndSeniorScore": 64.3,
-        "environmentScore": 78.0
+        "mobilityScore": 32.9,
+        "educationScore": 68.3,
+        "greeneryScore": 69.7,
+        "cultureAndSeniorScore": 61.7,
+        "environmentScore": 86.7,
+        "safetyScore": 87.3,
+        "housingAffordabilityScore": 92.0
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 624,
@@ -1231,36 +1741,66 @@
         "isochroneCoveragePct": 67.7,
         "parkAndRideCount": 0,
         "bikeRacksCount": 1485,
-        "bikeLanesLengthKm": 0.0
+        "bikeLanesLengthKm": 40.0,
+        "bikeLanesSeparatedKm": 31.4,
+        "bikeLanesCombinedKm": 8.6,
+        "bikeRepairStationsCount": 16
       },
       "greeneryAndSport": {
         "cityParksCount": 8,
         "pocketParksCount": 3,
         "totalParksAreaHa": 146.15,
+        "forestAreaHa": 36.3,
+        "totalGreenAreaHa": 182.45,
         "greenAreaM2PerCapita": 31.23,
+        "totalGreenM2PerCapita": 38.99,
         "schoolSportsFacilitiesCount": 110,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 3,
-        "seniorActivityCentersCount": 0,
+        "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 0,
         "municipalSubsidyPerCapitaPln": 169.55
       },
+      "publicSafety": {
+        "roadCollisionsAnnual": 1080,
+        "pedestrianAccidents": 29,
+        "injuryAccidents": 23,
+        "municipalPoliceInterventionsTotal": 8200,
+        "publicDisturbanceInterventions": 1290
+      },
+      "housingMarket": {
+        "avgPricePerM2": 13300.0,
+        "priceSecondaryM2": 12900.0,
+        "pricePrimaryM2": 14100.0,
+        "priceMedianM2": 13100.0,
+        "avgRentalPriceM2": 46.0,
+        "priceGrowthYoYPct": 4.9,
+        "m2PerAverageSalary": 0.56
+      },
+      "environmentalQuality": {
+        "pm10AnnualUgM3": 27.5,
+        "pm25AnnualUgM3": 18.4,
+        "smogDaysCount": 31,
+        "trafficNoiseExceededPct": 16.5
+      },
       "scores": {
-        "mobilityScore": 54.0,
+        "mobilityScore": 28.0,
         "educationScore": 83.6,
-        "greeneryScore": 82.0,
-        "cultureAndSeniorScore": 81.6,
-        "environmentScore": 67.2
+        "greeneryScore": 73.5,
+        "cultureAndSeniorScore": 77.1,
+        "environmentScore": 60.6,
+        "safetyScore": 71.6,
+        "housingAffordabilityScore": 82.1
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1035,
         "forecastedCarePlacesBalance_2028": -761,
         "forecastedAge4to6_2028": 781,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
-        "seniorInfrastructureDeficit": "HIGH",
+        "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.7%)."
       }

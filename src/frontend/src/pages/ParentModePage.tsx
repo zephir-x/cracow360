@@ -1,15 +1,86 @@
-import { ArrowLeft, Baby, Clock, GraduationCap, MapPin, ShieldCheck, Trees } from 'lucide-react';
-import type { DistrictSummaryDto } from '../types/contracts';
+import { useEffect, useMemo, useState } from 'react';
+import {
+  ArrowLeft,
+  Baby,
+  Clock,
+  GraduationCap,
+  MapPin,
+  Search,
+  ShieldCheck,
+  Sparkles,
+  Trees,
+} from 'lucide-react';
+import { cracow360Api } from '../api/client';
+import type { DistrictSummaryDto, PointOfInterestDto, PoiSubCategory } from '../types/contracts';
 
 export interface ParentModePageProps {
   districts: DistrictSummaryDto[];
   onBackToResidentMode: () => void;
 }
 
+const POI_FILTER_TABS: { id: string; label: string; subCategory?: PoiSubCategory }[] = [
+  { id: 'all', label: 'Wszystkie placówki' },
+  { id: 'nursery_pub', label: 'Żłobki samorządowe', subCategory: 'NURSERY_PUBLIC' },
+  { id: 'nursery_priv', label: 'Żłobki prywatne / dotowane', subCategory: 'NURSERY_PRIVATE' },
+  { id: 'parent_club', label: 'Kluby Rodziców', subCategory: 'PARENT_CLUB' },
+  { id: 'kindergarten', label: 'Przedszkola', subCategory: 'KINDERGARTEN' },
+  { id: 'school', label: 'Szkoły podstawowe', subCategory: 'PRIMARY_SCHOOL' },
+];
+
+/// <summary>
+/// Parent & Family mode presenting walking accessibility isochrones,
+/// district childcare rankings, and a live POI facility explorer.
+/// </summary>
 export function ParentModePage({ districts, onBackToResidentMode }: ParentModePageProps) {
-  const topEducationDistricts = [...districts]
-    .sort((a, b) => b.scores.educationScore - a.scores.educationScore)
-    .slice(0, 6);
+  const [pois, setPois] = useState<PointOfInterestDto[]>([]);
+  const [loadingPois, setLoadingPois] = useState<boolean>(true);
+  const [activeFilterId, setActiveFilterId] = useState<string>('all');
+  const [searchQuery, setSearchQuery] = useState<string>('');
+
+  // Top districts in the Education & Childcare category
+  const topEducationDistricts = useMemo(() => {
+    return [...districts]
+      .sort((a, b) => b.scores.educationScore - a.scores.educationScore)
+      .slice(0, 6);
+  }, [districts]);
+
+  // Load real educational and childcare points of interest from backend API
+  useEffect(() => {
+    let cancelled = false;
+    setLoadingPois(true);
+
+    cracow360Api
+      .getPois({ category: 'EDU_CARE' })
+      .then((data) => {
+        if (!cancelled) {
+          setPois(data);
+          setLoadingPois(false);
+        }
+      })
+      .catch(() => {
+        if (!cancelled) setLoadingPois(false);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  // Filter POIs based on selected subcategory and search term
+  const filteredPois = useMemo(() => {
+    const selectedTab = POI_FILTER_TABS.find((t) => t.id === activeFilterId);
+    return pois.filter((poi) => {
+      const matchesSubCategory = selectedTab?.subCategory
+        ? poi.subCategory === selectedTab.subCategory
+        : true;
+      const q = searchQuery.toLowerCase().trim();
+      const matchesSearch =
+        !q ||
+        poi.name.toLowerCase().includes(q) ||
+        poi.address.toLowerCase().includes(q);
+      return matchesSubCategory && matchesSearch;
+    });
+  }, [pois, activeFilterId, searchQuery]);
 
   return (
     <div className="space-y-8">
@@ -123,6 +194,95 @@ export function ParentModePage({ districts, onBackToResidentMode }: ParentModePa
             </div>
           ))}
         </div>
+      </section>
+
+      {/* Live Interactive POI Facility Explorer */}
+      <section className="rounded-3xl bg-white border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-5">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
+          <div className="flex items-center gap-3">
+            <div className="p-2.5 rounded-2xl bg-sky-50 text-sky-600 border border-sky-200">
+              <Sparkles className="w-5 h-5" />
+            </div>
+            <div>
+              <h2 className="text-base font-extrabold text-slate-900">
+                Eksplorator Placówek Opiekuńczo-Edukacyjnych
+              </h2>
+              <p className="text-xs text-slate-500">
+                Pobrane na żywo z bazy SQLite API ({pois.length} geokodowanych punktów POI)
+              </p>
+            </div>
+          </div>
+
+          {/* Quick Search Input */}
+          <div className="relative w-full sm:w-64">
+            <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+            <input
+              type="text"
+              placeholder="Szukaj po nazwie lub ulicy..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="w-full text-xs font-medium pl-9 pr-3.5 py-2 rounded-xl bg-slate-50 border border-slate-200 text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-blue-500"
+            />
+          </div>
+        </div>
+
+        {/* Subcategory Filter Pills */}
+        <div className="flex flex-wrap items-center gap-2">
+          {POI_FILTER_TABS.map((tab) => {
+            const isActive = activeFilterId === tab.id;
+            return (
+              <button
+                key={tab.id}
+                onClick={() => setActiveFilterId(tab.id)}
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all cursor-pointer ${
+                  isActive
+                    ? 'bg-blue-600 text-white shadow-xs'
+                    : 'bg-slate-100 text-slate-600 hover:bg-slate-200'
+                }`}
+              >
+                {tab.label}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* POI List / Cards */}
+        {loadingPois ? (
+          <div className="p-8 text-center text-xs text-slate-400 animate-pulse">
+            Wczytywanie bazy punktów POI z serwera...
+          </div>
+        ) : filteredPois.length === 0 ? (
+          <div className="p-8 text-center text-xs text-slate-400">
+            Nie znaleziono placówek spełniających wybrane kryteria wyszukiwania.
+          </div>
+        ) : (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 max-h-96 overflow-y-auto pr-1">
+            {filteredPois.slice(0, 30).map((poi) => (
+              <div
+                key={poi.id}
+                className="p-3.5 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:bg-blue-50/40 hover:border-blue-200 transition-colors flex flex-col justify-between gap-2"
+              >
+                <div>
+                  <div className="flex items-center justify-between gap-2">
+                    <span className="text-[10px] font-bold uppercase tracking-wider text-blue-600 truncate">
+                      {poi.subCategory.replace('_', ' ')}
+                    </span>
+                    <span className="text-[10px] font-semibold text-slate-400 shrink-0">
+                      Dzielnica {poi.districtId}
+                    </span>
+                  </div>
+                  <h4 className="text-xs font-bold text-slate-900 mt-1 line-clamp-2">
+                    {poi.name}
+                  </h4>
+                </div>
+                <div className="text-[11px] text-slate-500 flex items-center gap-1.5">
+                  <MapPin className="w-3.5 h-3.5 text-blue-500 shrink-0" />
+                  <span className="truncate">{poi.address || 'Kraków'}</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        )}
       </section>
     </div>
   );

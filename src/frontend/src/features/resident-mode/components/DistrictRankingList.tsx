@@ -114,7 +114,7 @@ export function DistrictRankingList({
                 </div>
               </div>
 
-              {/* Progress Bar + Mini Category Pill Summary */}
+              {/* Progress Bar + Mini Category Pill Summary across 7 Pillars (4 on row 1, 3 on row 2, centered) */}
               <div className="mt-2.5 space-y-1.5">
                 <div className="w-full h-1.5 bg-slate-200/80 rounded-full overflow-hidden">
                   <div
@@ -126,12 +126,18 @@ export function DistrictRankingList({
                   />
                 </div>
 
-                <div className="flex items-center justify-between text-[10px] font-medium text-slate-500">
-                  <span>Mob: {district.scores.mobilityScore}</span>
-                  <span>Edu: {district.scores.educationScore}</span>
-                  <span>Ziel: {district.scores.greeneryScore}</span>
-                  <span>Kult: {district.scores.cultureAndSeniorScore}</span>
-                  <span>Środ: {district.scores.environmentScore}</span>
+                <div className="pt-0.5 space-y-0.5 text-[9.5px] text-slate-500">
+                  <div className="flex items-center justify-center gap-2.5">
+                    <span>Mob: <strong className="font-semibold text-slate-700">{district.scores.mobilityScore}</strong></span>
+                    <span>Edu: <strong className="font-semibold text-slate-700">{district.scores.educationScore}</strong></span>
+                    <span>Ziel: <strong className="font-semibold text-slate-700">{district.scores.greeneryScore}</strong></span>
+                    <span>Kult: <strong className="font-semibold text-slate-700">{district.scores.cultureAndSeniorScore}</strong></span>
+                  </div>
+                  <div className="flex items-center justify-center gap-2.5">
+                    <span>Środ: <strong className="font-semibold text-slate-700">{district.scores.environmentScore}</strong></span>
+                    <span>Bez: <strong className="font-semibold text-slate-700">{district.scores.safetyScore}</strong></span>
+                    <span>Cena: <strong className="font-semibold text-slate-700">{district.scores.housingAffordabilityScore}</strong></span>
+                  </div>
                 </div>
               </div>
             </button>

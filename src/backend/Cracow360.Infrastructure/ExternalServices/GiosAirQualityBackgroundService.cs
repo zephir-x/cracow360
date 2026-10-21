@@ -11,6 +11,7 @@ namespace Cracow360.Infrastructure.ExternalServices;
 public class GiosAirQualityBackgroundService(
     ILogger<GiosAirQualityBackgroundService> logger) : BackgroundService
 {
+    // Interval for polling atmospheric monitoring stations (every 30 minutes)
     private static readonly TimeSpan SyncInterval = TimeSpan.FromMinutes(30);
 
     protected override async Task ExecuteAsync(CancellationToken stoppingToken)
@@ -18,6 +19,8 @@ public class GiosAirQualityBackgroundService(
         logger.LogInformation("GiosAirQualityBackgroundService started (sync interval: {Interval}).", SyncInterval);
 
         using var timer = new PeriodicTimer(SyncInterval);
+
+        // Polling loop executing on each tick until service shutdown is requested
         while (!stoppingToken.IsCancellationRequested && await timer.WaitForNextTickAsync(stoppingToken))
         {
             try

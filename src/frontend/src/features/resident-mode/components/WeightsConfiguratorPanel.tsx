@@ -7,13 +7,18 @@ import {
   Trees,
   Landmark,
   ShieldCheck,
+  ShieldAlert,
+  Coins,
   Briefcase,
   Users,
   Baby,
   Smile,
+  Laptop,
+  Bike,
   Sparkles,
 } from 'lucide-react';
 import type { QualityWeights, ResidentPreset } from '../../../types/contracts';
+import { RESIDENT_PRESETS } from '../../../utils/qualityIndexCalculator';
 
 export interface WeightsConfiguratorPanelProps {
   weights: QualityWeights;
@@ -21,57 +26,6 @@ export interface WeightsConfiguratorPanelProps {
   onChangeWeights: (newWeights: QualityWeights, presetId: string | null) => void;
   onResetWeights: () => void;
 }
-
-const RESIDENT_PRESETS: ResidentPreset[] = [
-  {
-    id: 'rodzina_z_dziecmi',
-    label: 'Rodzina z Dziećmi',
-    description: 'Priorytet: żłobki, szkoły podstawowe, tereny zielone i bezpieczeństwo',
-    weights: {
-      education: 10,
-      greenery: 9,
-      environment: 8,
-      mobility: 5,
-      culture: 4,
-    },
-  },
-  {
-    id: 'student_mlody_profesjonalista',
-    label: 'Student / Młody',
-    description: 'Priorytet: szybka komunikacja miejska (KMK), kultura, rozrywka i kluby',
-    weights: {
-      mobility: 10,
-      culture: 9,
-      environment: 4,
-      greenery: 6,
-      education: 2,
-    },
-  },
-  {
-    id: 'senior',
-    label: 'Aktywny Senior',
-    description: 'Priorytet: Centra Seniora (CAS), parki, biblioteki, spokój i czyste powietrze',
-    weights: {
-      culture: 10,
-      environment: 9,
-      greenery: 8,
-      mobility: 6,
-      education: 1,
-    },
-  },
-  {
-    id: 'przedsiebiorca_b2b',
-    label: 'Inwestor / Biznes B2B',
-    description: 'Priorytet: nasycenie infrastruktury opiekuńczej, węzły przesiadkowe',
-    weights: {
-      education: 8,
-      mobility: 9,
-      greenery: 4,
-      culture: 4,
-      environment: 5,
-    },
-  },
-];
 
 const SLIDER_CONFIGS: {
   key: keyof QualityWeights;
@@ -84,7 +38,7 @@ const SLIDER_CONFIGS: {
   {
     key: 'mobility',
     label: 'Mobilność i Komunikacja',
-    description: 'KMK, izochrony 15 min, drogi rowerowe',
+    description: 'KMK, izochrony, drogi rowerowe DDR',
     iconBg: 'bg-blue-50 border-blue-200 text-blue-600',
     accentColor: 'accent-blue-600',
     icon: <Bus className="w-3.5 h-3.5" />,
@@ -100,7 +54,7 @@ const SLIDER_CONFIGS: {
   {
     key: 'greenery',
     label: 'Zieleń i Rekreacja',
-    description: 'Parki miejskie i kieszonkowe, obiekty sportowe',
+    description: 'Parki, lasy miejskie, sport i baseny',
     iconBg: 'bg-lime-50 border-lime-200 text-lime-600',
     accentColor: 'accent-lime-600',
     icon: <Trees className="w-3.5 h-3.5" />,
@@ -108,7 +62,7 @@ const SLIDER_CONFIGS: {
   {
     key: 'culture',
     label: 'Kultura i Społeczność',
-    description: 'Biblioteki, centra kultury, wydarzenia, kluby',
+    description: 'Biblioteki, domy kultury, centra CAS',
     iconBg: 'bg-amber-50 border-amber-200 text-amber-600',
     accentColor: 'accent-amber-600',
     icon: <Landmark className="w-3.5 h-3.5" />,
@@ -116,10 +70,26 @@ const SLIDER_CONFIGS: {
   {
     key: 'environment',
     label: 'Środowisko i Spokój',
-    description: 'Czyste powietrze, brak hałasu tranzytowego',
+    description: 'Pomiary PM10 GIOŚ, akustyka i hałas',
     iconBg: 'bg-teal-50 border-teal-200 text-teal-600',
     accentColor: 'accent-teal-600',
     icon: <ShieldCheck className="w-3.5 h-3.5" />,
+  },
+  {
+    key: 'safety',
+    label: 'Bezpieczeństwo i Porządek',
+    description: 'Bezpieczny ruch, ochrona pieszych',
+    iconBg: 'bg-indigo-50 border-indigo-200 text-indigo-600',
+    accentColor: 'accent-indigo-600',
+    icon: <ShieldAlert className="w-3.5 h-3.5" />,
+  },
+  {
+    key: 'housingAffordability',
+    label: 'Dostępność Mieszkaniowa',
+    description: 'Ceny zakupu i najmu m², siła nabywcza',
+    iconBg: 'bg-rose-50 border-rose-200 text-rose-600',
+    accentColor: 'accent-rose-600',
+    icon: <Coins className="w-3.5 h-3.5" />,
   },
 ];
 
@@ -127,11 +97,15 @@ function getPresetIcon(presetId: string) {
   switch (presetId) {
     case 'rodzina_z_dziecmi':
       return <Baby className="w-3.5 h-3.5 text-blue-600" />;
-    case 'student_mlody_profesjonalista':
+    case 'student_mlody':
       return <Users className="w-3.5 h-3.5 text-blue-600" />;
     case 'senior':
       return <Smile className="w-3.5 h-3.5 text-blue-600" />;
-    case 'przedsiebiorca_b2b':
+    case 'zdalny_freelancer':
+      return <Laptop className="w-3.5 h-3.5 text-blue-600" />;
+    case 'cyklista_eko':
+      return <Bike className="w-3.5 h-3.5 text-blue-600" />;
+    case 'inwestor_biznes':
       return <Briefcase className="w-3.5 h-3.5 text-blue-600" />;
     default:
       return <Sparkles className="w-3.5 h-3.5 text-blue-600" />;
@@ -154,76 +128,58 @@ export function WeightsConfiguratorPanel({
     );
   };
 
-  const handleSelectPreset = (preset: ResidentPreset) => {
-    onChangeWeights({ ...preset.weights }, preset.id);
+  const handleApplyPreset = (preset: ResidentPreset) => {
+    onChangeWeights(preset.weights, preset.id);
   };
 
   return (
     <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-5 shadow-xl shadow-blue-900/5 flex flex-col h-162.5">
-      {/* Header */}
-      <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-3.5 shrink-0">
-        <div className="flex items-center gap-2.5 min-w-0">
-          <div className="w-9 h-9 rounded-2xl bg-linear-to-br from-blue-600 to-sky-500 flex items-center justify-center text-white shadow-sm shadow-blue-600/20 shrink-0">
+      {/* Panel Header */}
+      <div className="flex items-center justify-between border-b border-slate-100 pb-3 shrink-0">
+        <div className="flex items-center gap-2">
+          <div className="w-8 h-8 rounded-xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
             <SlidersHorizontal className="w-4 h-4" />
           </div>
-          <div className="min-w-0">
-            <h3 className="text-sm font-extrabold text-slate-900 whitespace-nowrap">Konfigurator Wag</h3>
-            <p className="text-[11px] text-slate-500 whitespace-nowrap">
-              Ustaw priorytety (0–10 pkt)
-            </p>
+          <div>
+            <h3 className="text-sm font-extrabold text-slate-900">Konfigurator Wag</h3>
+            <p className="text-[11px] text-slate-500">7 Filarów Jakości Życia (0-10)</p>
           </div>
         </div>
-
         <button
           onClick={onResetWeights}
-          className="inline-flex items-center gap-1 px-2.5 py-1.5 rounded-xl text-xs font-semibold bg-slate-100 hover:bg-blue-50 text-slate-600 hover:text-blue-700 border border-slate-200/80 transition cursor-pointer shrink-0"
-          title="Przywróć równe wagi (5/10) dla wszystkich kategorii"
+          title="Przywróć równe wagi (wszystko po 5)"
+          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-semibold text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition border border-transparent hover:border-blue-200 cursor-pointer"
         >
-          <RotateCcw className="w-3.5 h-3.5" />
-          Reset
+          <RotateCcw className="w-3 h-3" />
+          <span>Reset</span>
         </button>
       </div>
 
       {/* Scrollable Content Container matching DistrictRankingList */}
       <div className="mt-3.5 flex-1 overflow-y-auto pr-1.5 space-y-4">
-        {/* 4 Quick Persona Presets */}
-        <div className="space-y-2.5">
-          <div className="flex items-center justify-between gap-2">
-            <span className="text-xs font-bold text-slate-700 flex items-center gap-1.5">
-              Szybkie Profile Mieszkańca:
-            </span>
-            <span
-              className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-0.5 rounded-full border text-center shrink-0 ${
-                activePresetId
-                  ? 'bg-blue-50 text-blue-700 border-blue-200'
-                  : 'bg-slate-100 text-slate-400 border-slate-200'
-              }`}
-            >
-              {activePresetId ? 'Aktywny profil' : 'Nieaktywny profil'}
-            </span>
-          </div>
-
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+        {/* Preset Buttons Grid */}
+        <div className="space-y-1.5">
+          <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
+            Gotowe Profile Mieszkańców:
+          </label>
+          <div className="grid grid-cols-2 gap-1.5">
             {RESIDENT_PRESETS.map((preset) => {
               const isActive = activePresetId === preset.id;
               return (
                 <button
                   key={preset.id}
-                  onClick={() => handleSelectPreset(preset)}
-                  className={`p-2.5 rounded-2xl border transition-all cursor-pointer flex items-center gap-2.5 text-left ${
+                  onClick={() => handleApplyPreset(preset)}
+                  className={`flex items-center p-2 rounded-xl border transition cursor-pointer min-h-13 ${
                     isActive
-                      ? 'bg-linear-to-br from-blue-600 to-sky-600 border-blue-600 text-white shadow-md shadow-blue-600/20'
-                      : 'bg-slate-50/80 border-slate-200/80 text-slate-700 hover:bg-blue-50/60 hover:border-blue-300'
+                      ? 'bg-blue-50/90 border-blue-500 text-blue-900 shadow-xs ring-1 ring-blue-500/30'
+                      : 'bg-slate-50/70 border-slate-200 text-slate-700 hover:bg-blue-50/40 hover:border-blue-300'
                   }`}
+                  title={preset.description}
                 >
-                  <div
-                    className={`p-1.5 rounded-xl shrink-0 ${
-                      isActive ? 'bg-white/20 text-white' : 'bg-white border border-slate-200'
-                    }`}
-                  >
-                    {isActive ? <Sparkles className="w-3.5 h-3.5 text-white" /> : getPresetIcon(preset.id)}
+                  <div className="w-6 h-6 rounded-md bg-white border border-slate-200/80 flex items-center justify-center shrink-0">
+                    {getPresetIcon(preset.id)}
                   </div>
-                  <span className="flex-1 text-xs font-bold leading-tight text-center">
+                  <span className="flex-1 text-[11px] font-bold leading-tight text-center whitespace-normal line-clamp-2 px-1">
                     {preset.label}
                   </span>
                 </button>
@@ -232,46 +188,50 @@ export function WeightsConfiguratorPanel({
           </div>
         </div>
 
-        {/* 5 Interactive Category Weight Sliders (0-10) */}
+        {/* 7 Quality Dimension Sliders */}
         <div className="space-y-3 pt-1">
+          <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
+            Dostosuj 7 Wymiarów Jakości Życia:
+          </label>
           {SLIDER_CONFIGS.map((slider) => {
             const currentValue = weights[slider.key];
             return (
               <div
                 key={slider.key}
-                className="p-3 rounded-2xl bg-slate-50/70 border border-slate-200/70 hover:border-blue-200 transition space-y-1.5"
+                className="p-2.5 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:border-blue-200 transition space-y-1.5"
               >
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
                     <div
-                      className={`w-6 h-6 rounded-lg flex items-center justify-center border shrink-0 ${slider.iconBg}`}
+                      className={`w-6 h-6 rounded-lg border flex items-center justify-center shrink-0 ${slider.iconBg}`}
                     >
                       {slider.icon}
                     </div>
-                    <span className="text-xs font-bold text-slate-800 truncate">
-                      {slider.label}
-                    </span>
+                    <div className="min-w-0">
+                      <span className="text-xs font-bold text-slate-900 truncate block leading-tight">
+                        {slider.label}
+                      </span>
+                      <span className="text-[10px] text-slate-600 truncate block">
+                        {slider.description}
+                      </span>
+                    </div>
                   </div>
-                  <span className="px-2 py-0.5 rounded-lg bg-white border border-slate-200 text-xs font-extrabold text-blue-700 tabular-nums shrink-0">
-                    {currentValue} / 10
+                  <span className="text-xs font-black text-blue-700 px-2 py-0.5 bg-blue-50 border border-blue-200 rounded-lg shrink-0">
+                    {currentValue}
                   </span>
                 </div>
 
-                <div className="space-y-1">
+                {/* Slider Input */}
+                <div className="pt-0.5">
                   <input
                     type="range"
                     min="0"
                     max="10"
                     step="1"
                     value={currentValue}
-                    onChange={(e) =>
-                      handleSliderChange(slider.key, Number(e.target.value))
-                    }
-                    className={`w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer ${slider.accentColor}`}
+                    onChange={(e) => handleSliderChange(slider.key, Number(e.target.value))}
+                    className={`w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer ${slider.accentColor}`}
                   />
-                  <p className="text-[11px] text-slate-400 font-medium px-0.5 text-center truncate">
-                    {slider.description}
-                  </p>
                 </div>
               </div>
             );

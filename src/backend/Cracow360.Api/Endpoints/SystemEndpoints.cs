@@ -7,6 +7,10 @@ using Microsoft.AspNetCore.Routing;
 
 namespace Cracow360.Api.Endpoints;
 
+/// <summary>
+/// Minimal API route configuration for system health inspection,
+/// database connectivity verification, and contract seeding statistics.
+/// </summary>
 public static class SystemEndpoints
 {
     public static IEndpointRouteBuilder MapSystemEndpoints(this IEndpointRouteBuilder app)
@@ -14,6 +18,7 @@ public static class SystemEndpoints
         var group = app.MapGroup("/api/system")
             .WithTags("System");
 
+        // GET /api/system/hello - Returns system status, runtime environment, and database seeding verification
         group.MapGet("/hello", async (
             Cracow360DbContext dbContext,
             IDistrictRepository districtRepository,
@@ -40,7 +45,8 @@ public static class SystemEndpoints
             return Results.Ok(response);
         })
         .WithName("GetSystemHello")
-        .WithSummary("Returns Hello World connection status, SQLite database connectivity, and seeding statistics.");
+        .WithSummary("Returns Hello World connection status, SQLite database connectivity, and seeding statistics.")
+        .Produces<SystemHelloDto>(StatusCodes.Status200OK);
 
         return app;
     }

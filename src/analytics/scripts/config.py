@@ -1,17 +1,10 @@
 """
-================================================================================
-FILE: config.py
 PURPOSE:
     Central configuration file for the Krakow360 Python Data Science & Econometrics
     pipeline. Defines directory paths, the official dictionary of all 18 Krakow
     administrative districts, allowed enum constants for the JSON Data Contract,
     coordinate transformation helpers (EPSG:3857 and EPSG:2178 -> WGS84), and
     shared mathematical helper functions (Min-Max 0-100 normalization).
-
-HOW THIS FILE IS USED:
-    Imported by scripts 01, 02, 03, and 04. Do NOT rename the constants defined
-    here, as they enforce strict compatibility with the .NET 9 Backend and React UI.
-================================================================================
 """
 
 from pathlib import Path
@@ -19,9 +12,7 @@ import math
 import re
 import numpy as np
 
-# ------------------------------------------------------------------------------
 # 1. DIRECTORY PATHS
-# ------------------------------------------------------------------------------
 BASE_DIR = Path(__file__).resolve().parent.parent
 RAW_DATA_DIR = BASE_DIR / "data_raw"
 PROCESSED_DATA_DIR = BASE_DIR / "data_processed"
@@ -29,9 +20,7 @@ CHARTS_DIR = BASE_DIR / "charts"
 SCHEMAS_DIR = BASE_DIR / "schemas"
 CONTRACTS_OUTPUT_DIR = BASE_DIR.parent.parent / "data" / "contracts"
 
-# ------------------------------------------------------------------------------
 # 2. OFFICIAL 18 ADMINISTRATIVE DISTRICTS OF KRAKOW (MSIP / District Statutes)
-# ------------------------------------------------------------------------------
 # Every district record in `krakow_districts_master.json` MUST use these exact
 # `districtId` (1..18), `districtRoman` ("I".."XVIII"), `districtName`, and `areaKm2`.
 KRAKOW_DISTRICTS = [
@@ -58,9 +47,7 @@ KRAKOW_DISTRICTS = [
 ROMAN_TO_DISTRICT_ID = {d["districtRoman"]: d["districtId"] for d in KRAKOW_DISTRICTS}
 DISTRICT_BY_ID = {d["districtId"]: d for d in KRAKOW_DISTRICTS}
 
-# ------------------------------------------------------------------------------
 # 3. ALLOWED ENUM VALUES FOR THE DATA CONTRACT
-# ------------------------------------------------------------------------------
 ALLOWED_POI_CATEGORIES = {
     "EDU_CARE",
     "GREENERY",
@@ -88,9 +75,7 @@ ALLOWED_POI_SUBCATEGORIES = {
 ALLOWED_POTENTIAL_LEVELS = {"LOW", "MEDIUM", "HIGH"}
 
 
-# ------------------------------------------------------------------------------
 # 4. MATHEMATICAL NORMALIZATION HELPER
-# ------------------------------------------------------------------------------
 def min_max_normalize_0_100(values: list[float], invert: bool = False) -> list[float]:
     """
     Normalizes a list of 18 raw indicator values (one per district) to a [20.0, 98.0]
@@ -119,18 +104,16 @@ def min_max_normalize_0_100(values: list[float], invert: bool = False) -> list[f
     return [round(float(x), 1) for x in norm]
 
 
-# ------------------------------------------------------------------------------
 # 5. GEOSPATIAL PROJECTION HELPERS (EPSG:3857 & EPSG:2178 -> WGS84)
-# ------------------------------------------------------------------------------
 def epsg3857_to_wgs84(x: float, y: float) -> tuple[float, float]:
-    """Converts Web Mercator (EPSG:3857) coordinates used in ZTP KMK stops to (lat, lng)."""
+    # Converts Web Mercator (EPSG:3857) coordinates used in ZTP KMK stops to (lat, lng).
     lng = (x / 20037508.342789244) * 180.0
     lat = (math.atan(math.exp((y / 20037508.342789244) * math.pi)) * 360.0 / math.pi) - 90.0
     return round(lat, 6), round(lng, 6)
 
 
 def epsg2178_to_wgs84(easting: float, northing: float) -> tuple[float, float]:
-    """Converts PUWG 2000 zone 7 (EPSG:2178) coordinates used in ZTP P+R and bike racks to (lat, lng)."""
+    # Converts PUWG 2000 zone 7 (EPSG:2178) coordinates used in ZTP P+R and bike racks to (lat, lng).
     a = 6378137.0
     f = 1.0 / 298.257222101
     e2 = 2 * f - f * f
@@ -167,7 +150,7 @@ def epsg2178_to_wgs84(easting: float, northing: float) -> tuple[float, float]:
 
 
 def parse_roman_districts(text: str) -> list[int]:
-    """Extracts one or more district IDs (1..18) from strings like 'VII Zwierzyniec' or 'I, II, VII, VIII, XIII'."""
+    # Extracts one or more district IDs (1..18) from strings like 'VII Zwierzyniec' or 'I, II, VII, VIII, XIII'.
     if not text:
         return []
     tokens = re.findall(r"\b(XVIII|XVII|XVI|XIV|XIII|XII|XI|IX|VIII|VII|VI|IV|III|II|XV|X|V|I)\b", text.upper())

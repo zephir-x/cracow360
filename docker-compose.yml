@@ -1,11 +1,9 @@
 services:
-  # ============================================================================
-  # DEVELOPMENT STAGE (Stages 1-3):
+  # DEVELOPMENT STAGE:
   # Container maintaining the shared SQLite database volume (./data/db)
   # with a lightweight web-based SQLite browser UI available at:
   # http://localhost:8080
   # Backend (.NET 9) and Frontend (React + Vite) are run locally via IDE/CLI.
-  # ============================================================================
   sqlite-db:
     image: coleifer/sqlite-web:latest
     container_name: cracow360-sqlite-db
@@ -18,10 +16,8 @@ services:
       - SQLITE_DATABASE=cracow360.db
     command: sqlite_web -H 0.0.0.0 -p 8080 /data/cracow360.db
 
-  # ============================================================================
-  # PRODUCTION STAGE (Stage 4 - Mikrus VPS + NGINX + Cloudflare):
-  # Services below will be enabled in the final deployment stage.
-  # ============================================================================
+  # PRODUCTION STAGE (In Next Stage - Mikrus VPS + NGINX + Cloudflare):
+  # Approximate services below will be enabled in the final deployment stage.
   # backend-api:
   #   build:
   #     context: ./src/backend

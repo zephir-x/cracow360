@@ -6,18 +6,26 @@ using Cracow360.Domain.Interfaces;
 
 namespace Cracow360.Application.Services;
 
+/// <summary>
+/// Application service orchestrating district retrievals, weighted quality of life index calculations,
+/// dynamic rankings, and detailed comparisons across the 7 calibrated urban pillars.
+/// </summary>
 public class DistrictService(IDistrictRepository districtRepository) : IDistrictService
 {
+    // Fetches all 18 districts, evaluates their weighted index according to user preferences, and sorts descending
     public async Task<IReadOnlyList<DistrictSummaryDto>> GetAllSummariesAsync(
         double mobilityWeight = 5.0,
         double educationWeight = 5.0,
         double greeneryWeight = 5.0,
         double cultureWeight = 5.0,
         double environmentWeight = 5.0,
+        double safetyWeight = 5.0,
+        double housingAffordabilityWeight = 5.0,
         CancellationToken cancellationToken = default)
     {
         var districts = await districtRepository.GetAllAsync(cancellationToken);
 
+        // Project domain entities to summary DTOs and sort descending by the computed composite index
         return districts
             .Select(d => new DistrictSummaryDto(
                 d.DistrictId,
@@ -31,17 +39,21 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
                     educationWeight,
                     greeneryWeight,
                     cultureWeight,
-                    environmentWeight)))
+                    environmentWeight,
+                    safetyWeight,
+                    housingAffordabilityWeight)))
             .OrderByDescending(d => d.WeightedQualityOfLifeIndex)
             .ToList();
     }
 
+    // Fetches a single district by its unique numeric ID (1..18) and maps all granular domains
     public async Task<DistrictDetailsDto?> GetDistrictDetailsAsync(int districtId, CancellationToken cancellationToken = default)
     {
         var d = await districtRepository.GetByIdAsync(districtId, cancellationToken);
         return d is null ? null : MapToDetailsDto(d);
     }
 
+    // Performs side-by-side comparative analysis between two districts and calculates exact metric deltas
     public async Task<DistrictComparisonDto?> CompareDistrictsAsync(
         int firstDistrictId,
         int secondDistrictId,
@@ -50,6 +62,8 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
         double greeneryWeight = 5.0,
         double cultureWeight = 5.0,
         double environmentWeight = 5.0,
+        double safetyWeight = 5.0,
+        double housingAffordabilityWeight = 5.0,
         CancellationToken cancellationToken = default)
     {
         var first = await districtRepository.GetByIdAsync(firstDistrictId, cancellationToken);
@@ -58,18 +72,22 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
         if (first is null || second is null)
             return null;
 
+        // Calculate composite quality of life indexes using the provided user weights
         var firstIndex = first.CalculateWeightedQualityOfLifeIndex(
-            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight);
+            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight, safetyWeight, housingAffordabilityWeight);
         var secondIndex = second.CalculateWeightedQualityOfLifeIndex(
-            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight);
+            mobilityWeight, educationWeight, greeneryWeight, cultureWeight, environmentWeight, safetyWeight, housingAffordabilityWeight);
 
+        // Calculate metric score deltas (First District minus Second District) across all 7 pillars
         var deltas = new DistrictScoreDeltasDto(
             WeightedIndexDelta: Math.Round(firstIndex - secondIndex, 2),
             MobilityScoreDelta: Math.Round(first.Scores.MobilityScore - second.Scores.MobilityScore, 2),
             EducationScoreDelta: Math.Round(first.Scores.EducationScore - second.Scores.EducationScore, 2),
             GreeneryScoreDelta: Math.Round(first.Scores.GreeneryScore - second.Scores.GreeneryScore, 2),
             CultureAndSeniorScoreDelta: Math.Round(first.Scores.CultureAndSeniorScore - second.Scores.CultureAndSeniorScore, 2),
-            EnvironmentScoreDelta: Math.Round(first.Scores.EnvironmentScore - second.Scores.EnvironmentScore, 2)
+            EnvironmentScoreDelta: Math.Round(first.Scores.EnvironmentScore - second.Scores.EnvironmentScore, 2),
+            SafetyScoreDelta: Math.Round(first.Scores.SafetyScore - second.Scores.SafetyScore, 2),
+            HousingAffordabilityScoreDelta: Math.Round(first.Scores.HousingAffordabilityScore - second.Scores.HousingAffordabilityScore, 2)
         );
 
         return new DistrictComparisonDto(
@@ -81,6 +99,7 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
         );
     }
 
+    // Maps a domain District aggregate to a deep DistrictDetailsDto contract
     private static DistrictDetailsDto MapToDetailsDto(District d) =>
         new(
             d.DistrictId,
@@ -117,12 +136,18 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
                 d.MobilityAndTransport.IsochroneCoveragePct,
                 d.MobilityAndTransport.ParkAndRideCount,
                 d.MobilityAndTransport.BikeRacksCount,
-                d.MobilityAndTransport.BikeLanesLengthKm),
+                d.MobilityAndTransport.BikeLanesLengthKm,
+                d.MobilityAndTransport.BikeLanesSeparatedKm,
+                d.MobilityAndTransport.BikeLanesCombinedKm,
+                d.MobilityAndTransport.BikeRepairStationsCount),
             new DistrictGreeneryAndSportDto(
                 d.GreeneryAndSport.CityParksCount,
                 d.GreeneryAndSport.PocketParksCount,
                 d.GreeneryAndSport.TotalParksAreaHa,
+                d.GreeneryAndSport.ForestAreaHa,
+                d.GreeneryAndSport.TotalGreenAreaHa,
                 d.GreeneryAndSport.GreenAreaM2PerCapita,
+                d.GreeneryAndSport.TotalGreenM2PerCapita,
                 d.GreeneryAndSport.SchoolSportsFacilitiesCount,
                 d.GreeneryAndSport.SchoolSwimmingPoolsCount),
             new DistrictCultureAndSocietyDto(
@@ -131,6 +156,25 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
                 d.CultureAndSociety.SeniorActivityCentersCount,
                 d.CultureAndSociety.AnnualCulturalEventsCount,
                 d.CultureAndSociety.MunicipalSubsidyPerCapitaPln),
+            new DistrictPublicSafetyDto(
+                d.PublicSafety.RoadCollisionsAnnual,
+                d.PublicSafety.PedestrianAccidents,
+                d.PublicSafety.InjuryAccidents,
+                d.PublicSafety.MunicipalPoliceInterventionsTotal,
+                d.PublicSafety.PublicDisturbanceInterventions),
+            new DistrictHousingMarketDto(
+                d.HousingMarket.AvgPricePerM2,
+                d.HousingMarket.PriceSecondaryM2,
+                d.HousingMarket.PricePrimaryM2,
+                d.HousingMarket.PriceMedianM2,
+                d.HousingMarket.AvgRentalPriceM2,
+                d.HousingMarket.PriceGrowthYoYPct,
+                d.HousingMarket.M2PerAverageSalary),
+            new DistrictEnvironmentalQualityDto(
+                d.EnvironmentalQuality.Pm10AnnualUgM3,
+                d.EnvironmentalQuality.Pm25AnnualUgM3,
+                d.EnvironmentalQuality.SmogDaysCount,
+                d.EnvironmentalQuality.TrafficNoiseExceededPct),
             new DistrictForecastsAndB2BDto(
                 d.ForecastsAndB2B.ForecastedAge0To3_2028,
                 d.ForecastsAndB2B.ForecastedCarePlacesBalance_2028,
@@ -141,28 +185,37 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
                 d.ForecastsAndB2B.RecommendedMunicipalAction)
         );
 
+    // Maps domain DistrictScores to the immutable DistrictScoresDto contract
     private static DistrictScoresDto MapScores(DistrictScores scores) =>
         new(
             scores.MobilityScore,
             scores.EducationScore,
             scores.GreeneryScore,
             scores.CultureAndSeniorScore,
-            scores.EnvironmentScore);
+            scores.EnvironmentScore,
+            scores.SafetyScore,
+            scores.HousingAffordabilityScore);
 }
 
+/// <summary>
+/// Application service querying municipal points of interest with defensive enum parsing and DTO projection.
+/// </summary>
 public class PointOfInterestService(IPointOfInterestRepository poiRepository) : IPointOfInterestService
 {
+    // Queries POI repository with optional case-insensitive enum filters and projects to DTOs
     public async Task<IReadOnlyList<PointOfInterestDto>> GetPointsOfInterestAsync(
         int? districtId = null,
         string? category = null,
         string? subCategory = null,
         CancellationToken cancellationToken = default)
     {
+        // Safe case-insensitive enum parsing for incoming string query filters
         PoiCategory? parsedCategory = Enum.TryParse<PoiCategory>(category, true, out var cat) ? cat : null;
         PoiSubCategory? parsedSubCategory = Enum.TryParse<PoiSubCategory>(subCategory, true, out var sub) ? sub : null;
 
         var pois = await poiRepository.GetAllAsync(districtId, parsedCategory, parsedSubCategory, cancellationToken);
 
+        // Project domain entities to PointOfInterestDto records
         return pois
             .Select(p => new PointOfInterestDto(
                 p.Id,
