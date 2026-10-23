@@ -214,8 +214,8 @@ class KrakowSpatialResolver:
 
 def run_etl() -> None:
     """
-    Executes the complete ETL pipeline across all 33 municipal raw data tables:
-    1. Mobility & spatial anchors (Stojaki ZTP, Przystanki KMK, P+R, Drogi Rowerowe DDR)
+    Executes the complete ETL pipeline across all municipal raw data tables:
+    1. Mobility & spatial anchors (bicycle parking racks, public transport stops, Park & Ride facilities, bicycle paths)
     2. Demographics (8 CSV files: 2023-2025 permanent/temporary residents, foreigners, age cohorts)
     3. Education & Childcare (Nurseries, Kindergartens, Primary Schools, Parent Clubs)
     4. Greenery & Sports (Parks, Pocket Parks, Municipal Forests, Sports Grounds, Swimming Pools)
@@ -292,8 +292,8 @@ def run_etl() -> None:
 
     pois: list[dict] = []
 
-    # 1. MOBILITY & SPATIAL ANCHORS (Stojaki ZTP, Przystanki KMK, P+R, Drogi Rowerowe)
-    # 1A. ZTP Bike Racks (Stojaki rowerowe) - EPSG:2178 projected coordinates
+    # 1. MOBILITY & SPATIAL ANCHORS (Bicycle Racks, Public Transport Stops, Park & Ride Facilities, Cycle Paths)
+    # 1A. Bicycle Racks - EPSG:2178 projected coordinates
     stojaki_file = find_csv(r"Stojaki_ZTP")
     if stojaki_file:
         for row in read_clean_csv(stojaki_file):
@@ -309,7 +309,7 @@ def run_etl() -> None:
                 except (ValueError, TypeError):
                     continue
 
-    # 1B. KMK Transit Stops (Przystanki tramwajowe i autobusowe) - EPSG:3857 projected coordinates
+    # 1B. KMK Transit Stops (Tram and bus stops) - EPSG:3857 projected coordinates
     przystanki_file = find_csv(r"Przystanki_Komunikacji_Miejskiej")
     if przystanki_file:
         for row in read_clean_csv(przystanki_file):
@@ -355,7 +355,7 @@ def run_etl() -> None:
             min(98.5, max(52.0, 48.0 + 5.0 * (effective_density**0.68))), 1
         )
 
-    # 1C. Park & Ride Hubs (Parkingi przesiadkowe P+R) - EPSG:2178 projected coordinates
+    # 1C. Park & Ride Hubs (Park-and-ride facilities) - EPSG:2178 projected coordinates
     pr_file = find_csv(r"Park_and_Ride")
     if pr_file:
         for idx, row in enumerate(read_clean_csv(pr_file), start=1):
@@ -375,7 +375,7 @@ def run_etl() -> None:
                 except (ValueError, TypeError):
                     continue
 
-    # 1D. Bike Lanes Infrastructure (ZTP Kraków - DDR, pasy rowerowe, stacje napraw)
+    # 1D. Bike Lanes Infrastructure (ZTP Kraków – bicycle paths, bike lanes, repair stations)
     bike_file = find_csv(r"Infrastruktura rowerowa")
     if bike_file:
         for row in read_clean_csv(bike_file):
@@ -389,7 +389,7 @@ def run_etl() -> None:
                 districts_data[did]["mobilityAndTransport"]["bikeLanesLengthKm"] = round(ddr + pasy, 2)
                 districts_data[did]["mobilityAndTransport"]["bikeRepairStationsCount"] = stacje
 
-    # 2. DEMOGRAPHY (8 Municipal CSVs: Stały 2023-2025, Czasowy 2023-2025, Cudzoziemcy)
+    # 2. DEMOGRAPHY (8 Municipal CSVs: Permanent 2023–2025, Temporary 2023–2025, Foreigners)
     def load_demography(pattern: str) -> list[tuple[int, int, int | None]]:
         f = find_csv(pattern)
         if not f:
@@ -528,7 +528,7 @@ def run_etl() -> None:
     process_education_csv(r"Szkoły podstawowe niesamorządowe", "PRIMARY_SCHOOL", "primarySchoolsCount", is_poi=False)
 
     # 4. GREENERY & SPORTS (Parks ZZM, Pocket Parks, Forests, Sports Facilities)
-    # 4A. City Parks (ZZM - Zarząd Zieleni Miejskiej)
+    # 4A. City Parks (ZZM - Municipal Greenery Authority)
     parki_file = find_csv(r"Parki miejskie")
     if parki_file:
         for idx, row in enumerate(read_clean_csv(parki_file), start=1):
@@ -546,7 +546,7 @@ def run_etl() -> None:
                 "metrics": {"capacity": None, "areaHa": round(area_ha, 2), "additionalInfo": f"Park miejski ZZM ({area_ha:.2f} ha)"},
             })
 
-    # 4B. Pocket Parks (ZZM - Ogrody Krakowian)
+    # 4B. Pocket Parks (ZZM – Gardens for the People of Kraków)
     kieszonkowe_file = find_csv(r"Parki kieszonkowe")
     if kieszonkowe_file:
         for idx, row in enumerate(read_clean_csv(kieszonkowe_file), start=1):
@@ -592,7 +592,7 @@ def run_etl() -> None:
             did, _, _ = resolver.resolve_address(street, postal, seed=idx * 59)
             districts_data[did]["greeneryAndSport"]["schoolSportsFacilitiesCount"] += 1
 
-    # 4E. Indoor sports halls, gymnasiums and school swimming pools (Pomieszczenia WF)
+    # 4E. Indoor sports halls, gymnasiums and school swimming pools (PE facilities)
     wf_file = find_csv(r"Pomieszczenia WF")
     if wf_file:
         for idx, row in enumerate(read_clean_csv(wf_file), start=1):
@@ -605,7 +605,7 @@ def run_etl() -> None:
             if pools_in_school > 0:
                 districts_data[did]["greeneryAndSport"]["schoolSwimmingPoolsCount"] += pools_in_school
 
-    # 5. CULTURE & SOCIETY (Centra Kultury, Biblioteki, Centra Aktywności Seniora)
+    # 5. CULTURE & SOCIETY (Cultural Centers, Libraries, Senior Activity Centers)
     total_culture_subsidy = 0.0
     total_cultural_events = 0
     cultural_centers_by_district: dict[int, int] = defaultdict(int)
@@ -633,7 +633,7 @@ def run_etl() -> None:
             else:
                 cultural_centers_by_district[1] += kluby
 
-    # 5B. Biblioteka Kraków Branches (Filie biblioteczne)
+    # 5B. Kraków Library Branches (Library Branches)
     library_branches_by_district: dict[int, int] = defaultdict(int)
     filie_bib_file = find_csv(r"Filie Biblioteki")
     if filie_bib_file:
@@ -652,7 +652,7 @@ def run_etl() -> None:
                 "metrics": {"capacity": 50, "areaHa": None, "additionalInfo": "Filia Biblioteki Kraków"},
             })
 
-    # 5C. Senior Activity Centers (CAS - Centra Aktywności Seniora)
+    # 5C. Senior Activity Centers (CAS – Senior Activity Centers)
     cas_file = find_csv(r"Centra Aktywnosci Seniora")
     if cas_file:
         for idx, row in enumerate(read_clean_csv(cas_file), start=1):
@@ -684,7 +684,7 @@ def run_etl() -> None:
         pop = max(d["demographics"]["totalPopulation"], 1)
         cult["municipalSubsidyPerCapitaPln"] = round((total_culture_subsidy * share) / pop, 2)
 
-    # 6. ENVIRONMENTAL QUALITY & NOISE (GIOŚ, WIOŚ, Mapa Akustyczna MSIP)
+    # 6. ENVIRONMENTAL QUALITY & NOISE (GIOŚ, WIOŚ, MSIP Noise Map)
     env_file = find_csv(r"Jakosc powietrza")
     if env_file:
         for row in read_clean_csv(env_file):
@@ -696,7 +696,7 @@ def run_etl() -> None:
                 env["smogDaysCount"] = clean_int(row.get("Dni_z_przekroczeniem_PM10_rocznie"))
                 env["trafficNoiseExceededPct"] = clean_float(row.get("Udzial_powierzchni_halas_powyzej_65dB_pct"))
 
-    # 7. PUBLIC SAFETY & TRAFFIC INCIDENTS (SEWiK KGP, Straż Miejska)
+    # 7. PUBLIC SAFETY & TRAFFIC INCIDENTS (SEWiK KGP, Municipal Police)
     safety_file = find_csv(r"Bezpieczenstwo i zdarzenia drogowe")
     if safety_file:
         for row in read_clean_csv(safety_file):

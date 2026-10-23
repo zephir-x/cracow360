@@ -20,18 +20,18 @@ public enum PoiCategory
 // Granular Point of Interest (POI) subcategories
 public enum PoiSubCategory
 {
-    NURSERY_PUBLIC,      // Municipal nursery (samorządowy)
+    NURSERY_PUBLIC,      // Municipal nursery
     NURSERY_CONTRACTED,  // Contracted non-public nursery with municipal subsidies
     NURSERY_PRIVATE,     // Private nursery
-    KIDS_CLUB,           // Licensed children's club (klub dziecięcy)
-    PARENT_CLUB,         // Municipal parent club for children 0-3 (Klub Rodziców)
+    KIDS_CLUB,           // Licensed children's club
+    PARENT_CLUB,         // Municipal parent club for children 0-3
     KINDERGARTEN,        // Public and non-public kindergartens
-    PRIMARY_SCHOOL,      // Primary schools (szkoły podstawowe)
+    PRIMARY_SCHOOL,      // Primary schools
     SCHOOL_SPORT,        // School sports halls and fields
-    CITY_PARK,           // Major municipal park (park miejski)
-    POCKET_PARK,         // Neighborhood pocket park (ogród krakowian)
-    LIBRARY,             // Municipal library branch (Biblioteka Kraków)
-    CULTURAL_CENTER,     // Community cultural center or club (ośrodek kultury)
-    SENIOR_CENTER,       // Senior activity center (Centrum Aktywności Seniora - CAS)
+    CITY_PARK,           // Major municipal park
+    POCKET_PARK,         // Neighborhood pocket park
+    LIBRARY,             // Municipal library branch
+    CULTURAL_CENTER,     // Community cultural center or club
+    SENIOR_CENTER,       // Senior activity center
     PARK_AND_RIDE        // Multimodal transit interchange (Park & Ride)
 }

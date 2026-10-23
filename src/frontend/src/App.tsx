@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { cracow360Api } from './api/client';
 import { MainFooter } from './components/layout/MainFooter';
 import { MainNavbar, type AppTabId } from './components/layout/MainNavbar';
+import { useTranslation } from './i18n/I18nContext';
 import { AboutDataMethodologyPage } from './pages/AboutDataMethodologyPage';
 import { OfficialInvestorModePage } from './pages/OfficialInvestorModePage';
 import { ParentModePage } from './pages/ParentModePage';
@@ -30,6 +31,8 @@ const DEFAULT_WEIGHTS: QualityWeights = {
 /// district comparisons, and tabbed view navigation.
 /// </summary>
 export function App() {
+  const { language, t } = useTranslation();
+
   // Navigation active tab state
   const [activeTab, setActiveTab] = useState<AppTabId>('resident');
 
@@ -42,8 +45,8 @@ export function App() {
   const [activePresetId, setActivePresetId] = useState<string | null>(null);
 
   // Selected district IDs for side-by-side comparison (#1 Primary, #2 Secondary)
-  const [selectedPrimaryId, setSelectedPrimaryId] = useState<number | null>(5); // Default #1: Dzielnica V Krowodrza
-  const [selectedSecondaryId, setSelectedSecondaryId] = useState<number | null>(4); // Default #2: Dzielnica IV Prądnik Biały
+  const [selectedPrimaryId, setSelectedPrimaryId] = useState<number | null>(5); // Default #1: District V Krowodrza
+  const [selectedSecondaryId, setSelectedSecondaryId] = useState<number | null>(4); // Default #2: District IV Prądnik Biały
 
   // Active target slot for district selection focus (1 = District #1, 2 = District #2)
   const [activeTargetSlot, setActiveTargetSlot] = useState<1 | 2>(1);
@@ -75,7 +78,7 @@ export function App() {
           setError(
             err instanceof Error
               ? err.message
-              : 'Nie udało się pobrać danych dzielnic. Upewnij się, że backend API jest uruchomiony.'
+              : t.common.apiLoadError
           );
         }
       }
@@ -85,7 +88,7 @@ export function App() {
     return () => {
       cancelled = true;
     };
-  }, []);
+  }, [t.common.apiLoadError]);
 
   // Dynamically recompute weighted Quality of Life Index and sort all 18 districts in 0ms
   const rankedDistricts = useMemo(() => {
@@ -156,15 +159,15 @@ export function App() {
       {/* Top Civic Navigation Bar */}
       <MainNavbar activeTab={activeTab} onSelectTab={setActiveTab} />
 
-      {/* Main Content Container with smooth tab transition */}
+      {/* Main Content Container with smooth tab & language transition */}
       <main className="flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
         {error && (
           <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-medium shadow-xs">
-            <strong>Komunikat:</strong> {error}
+            <strong>{t.common.notice}:</strong> {error}
           </div>
         )}
 
-        <div key={activeTab} className="w-full animate-tab-enter">
+        <div key={`${activeTab}-${language}`} className="w-full animate-tab-enter">
           {/* Resident Mode (Quality of Life Map, Ranking & Comparison) */}
           {activeTab === 'resident' && (
             <ResidentModePage

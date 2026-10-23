@@ -1,6 +1,9 @@
 ﻿import { Clock, GraduationCap, Trees } from 'lucide-react';
+import { useTranslation } from '../../i18n/I18nContext';
 
 export function ParentCapabilitiesGrid() {
+  const { t } = useTranslation();
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
       <div className="p-6 rounded-3xl bg-white border border-blue-100 shadow-lg shadow-blue-900/5 space-y-3">
@@ -8,10 +11,10 @@ export function ParentCapabilitiesGrid() {
           <Clock className="w-5 h-5" />
         </div>
         <h3 className="text-base font-extrabold text-slate-900">
-          Izochrony Dojścia Pieszego (300m / 500m / 1km)
+          {t.parent.capabilities.isochronesTitle}
         </h3>
         <p className="text-xs text-slate-600 leading-relaxed">
-          Kliknięcie dowolnego punktu lub wpisanie adresu w Krakowie wyrysuje bufor spacerowy i zliczy wszystkie placówki opiekuńcze, edukacyjne oraz przystanki KMK w zasięgu pieszego dojścia.
+          {t.parent.capabilities.isochronesDesc}
         </p>
       </div>
 
@@ -20,10 +23,10 @@ export function ParentCapabilitiesGrid() {
           <GraduationCap className="w-5 h-5" />
         </div>
         <h3 className="text-base font-extrabold text-slate-900">
-          Mapa Żłobków, Przedszkoli i Klubów Rodziców
+          {t.parent.capabilities.facilitiesTitle}
         </h3>
         <p className="text-xs text-slate-600 leading-relaxed">
-          Wizualizacja punktów POI z rozróżnieniem na żłobki samorządowe, prywatne z dotacją Gminy Miejskiej Kraków, kluby dziecięce oraz szkoły podstawowe wraz z ich obłożeniem.
+          {t.parent.capabilities.facilitiesDesc}
         </p>
       </div>
 
@@ -32,10 +35,10 @@ export function ParentCapabilitiesGrid() {
           <Trees className="w-5 h-5" />
         </div>
         <h3 className="text-base font-extrabold text-slate-900">
-          Zieleń Przydomowa i Parki Kieszonkowe
+          {t.parent.capabilities.greeneryTitle}
         </h3>
         <p className="text-xs text-slate-600 leading-relaxed">
-          Analiza odległości od najbliższego parku miejskiego, parku kieszonkowego ZZM, placu zabaw oraz przyszkolnych obiektów sportowych i basenów.
+          {t.parent.capabilities.greeneryDesc}
         </p>
       </div>
     </section>

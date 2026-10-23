@@ -24,8 +24,8 @@ public class AirQualityStationReading
     // Numeric European Air Quality Index (CAQI) level
     public int? CaqiIndexLevel { get; set; }
 
-    // Descriptive air quality index label (e.g. "Bardzo dobry", "Umiarkowany", "Zły")
-    public string IndexLevelName { get; set; } = "Brak danych";
+    // Descriptive air quality index label (e.g. "Very good", "Moderate", "Bad")
+    public string IndexLevelName { get; set; } = "No data";
 
     // Measurement timestamp in UTC
     public DateTime MeasuredAtUtc { get; set; }

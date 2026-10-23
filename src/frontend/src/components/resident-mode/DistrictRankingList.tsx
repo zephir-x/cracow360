@@ -1,6 +1,8 @@
 import { Maximize2, Trophy, Users } from 'lucide-react';
 import type { DistrictSummaryDto } from '../../types/contracts';
 import { getChoroplethColor } from './KrakowChoroplethMap';
+import { useTranslation } from '../../i18n/I18nContext';
+import { localizeDistrictName } from '../../utils/districtLocalization';
 
 export interface DistrictRankingListProps {
   districts: DistrictSummaryDto[];
@@ -15,6 +17,17 @@ export function DistrictRankingList({
   selectedSecondaryId,
   onSelectDistrict,
 }: DistrictRankingListProps) {
+  const { t, language, formatWithPlural } = useTranslation();
+
+  const districtPluralForms: [string, string, string] =
+    language === 'ua'
+      ? ['район', 'райони', 'районів']
+      : language === 'en'
+      ? ['district', 'districts', 'districts']
+      : ['dzielnica', 'dzielnice', 'dzielnic'];
+
+  const locale = language === 'ua' ? 'uk-UA' : language === 'en' ? 'en-US' : 'pl-PL';
+
   return (
     <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-5 shadow-xl shadow-blue-900/5 flex flex-col h-162.5">
       {/* Header */}
@@ -24,14 +37,14 @@ export function DistrictRankingList({
             <Trophy className="w-4 h-4" />
           </div>
           <div className="min-w-0">
-            <h3 className="text-sm font-extrabold text-slate-900 whitespace-nowrap">Ranking 18 Dzielnic</h3>
+            <h3 className="text-sm font-extrabold text-slate-900 whitespace-nowrap">{t.ranking.title}</h3>
             <p className="text-[11px] text-slate-500 whitespace-nowrap">
-              Kliknij dzielnicę, aby porównać
+              {t.ranking.subtitle}
             </p>
           </div>
         </div>
         <span className="text-[11px] font-bold px-2.5 sm:px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 shrink-0 whitespace-nowrap">
-          {districts.length} dzielnic
+          {formatWithPlural(districts.length, districtPluralForms)}
         </span>
       </div>
 
@@ -42,6 +55,7 @@ export function DistrictRankingList({
           const isPrimary = district.districtId === selectedPrimaryId;
           const isSecondary = district.districtId === selectedSecondaryId;
           const barColor = getChoroplethColor(district.weightedQualityOfLifeIndex);
+          const localizedName = localizeDistrictName(district.districtName, language);
 
           return (
             <button
@@ -74,7 +88,7 @@ export function DistrictRankingList({
                   <div className="min-w-0">
                     <div className="flex items-center gap-1.5">
                       <span className="text-xs font-extrabold text-slate-900 truncate">
-                        {district.districtName}
+                        {localizedName}
                       </span>
                       {isPrimary && (
                         <span className="text-[10px] font-bold px-1.5 py-0.2 rounded-md bg-blue-600 text-white shrink-0">
@@ -91,11 +105,11 @@ export function DistrictRankingList({
                     <div className="text-[11px] text-slate-500 mt-1 space-y-0.5">
                       <div className="flex items-center gap-1.5">
                         <Users className="w-3 h-3 text-slate-400 shrink-0" />
-                        <span>{district.totalPopulation.toLocaleString('pl-PL')} mieszk.</span>
+                        <span>{district.totalPopulation.toLocaleString(locale)} {t.ranking.populationUnit}</span>
                       </div>
                       <div className="flex items-center gap-1.5">
                         <Maximize2 className="w-3 h-3 text-slate-400 shrink-0" />
-                        <span>{district.areaKm2} km²</span>
+                        <span>{district.areaKm2} {t.ranking.areaUnit}</span>
                       </div>
                     </div>
                   </div>
@@ -110,7 +124,7 @@ export function DistrictRankingList({
                     border: `1px solid ${barColor}40`,
                   }}
                 >
-                  {district.weightedQualityOfLifeIndex.toFixed(1)} pkt
+                  {district.weightedQualityOfLifeIndex.toFixed(1)} {t.common.points}
                 </div>
               </div>
 
@@ -130,38 +144,38 @@ export function DistrictRankingList({
                 <div className="pt-0.5 space-y-1 text-[9.5px] text-slate-500 tabular-nums">
                   <div className="grid grid-cols-4 gap-1">
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
-                      <span className="text-slate-400 font-medium">Mob:</span>
+                      <span className="text-slate-400 font-medium">{t.ranking.indicators.mob}</span>
                       <strong className="font-bold text-slate-700">{Number(district.scores.mobilityScore).toFixed(1)}</strong>
                     </span>
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
-                      <span className="text-slate-400 font-medium">Edu:</span>
+                      <span className="text-slate-400 font-medium">{t.ranking.indicators.edu}</span>
                       <strong className="font-bold text-slate-700">{Number(district.scores.educationScore).toFixed(1)}</strong>
                     </span>
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
-                      <span className="text-slate-400 font-medium">Ziel:</span>
+                      <span className="text-slate-400 font-medium">{t.ranking.indicators.green}</span>
                       <strong className="font-bold text-slate-700">{Number(district.scores.greeneryScore).toFixed(1)}</strong>
                     </span>
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
-                      <span className="text-slate-400 font-medium">Kult:</span>
+                      <span className="text-slate-400 font-medium">{t.ranking.indicators.cult}</span>
                       <strong className="font-bold text-slate-700">{Number(district.scores.cultureAndSeniorScore).toFixed(1)}</strong>
                     </span>
                   </div>
                   <div className="grid grid-cols-4 gap-1">
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
-                      <span className="text-slate-400 font-medium">Środ:</span>
+                      <span className="text-slate-400 font-medium">{t.ranking.indicators.env}</span>
                       <strong className="font-bold text-slate-700">{Number(district.scores.environmentScore).toFixed(1)}</strong>
                     </span>
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
-                      <span className="text-slate-400 font-medium">Bez:</span>
+                      <span className="text-slate-400 font-medium">{t.ranking.indicators.safe}</span>
                       <strong className="font-bold text-slate-700">{Number(district.scores.safetyScore).toFixed(1)}</strong>
                     </span>
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
-                      <span className="text-slate-400 font-medium">Cena:</span>
+                      <span className="text-slate-400 font-medium">{t.ranking.indicators.price}</span>
                       <strong className="font-bold text-slate-700">{Number(district.scores.housingAffordabilityScore).toFixed(1)}</strong>
                     </span>
                     <span className="flex items-center justify-between px-1.5 py-0.5 bg-slate-100/70 rounded">
-                      <span className="text-slate-400 font-medium">Demo:</span>
-                      <strong className="font-bold text-slate-700">{Number(district.scores.demographicVitalityScore ?? 50).toFixed(1)}</strong>
+                      <span className="text-slate-400 font-medium">{t.ranking.indicators.dev}</span>
+                      <strong className="font-bold text-slate-700">{Number(district.scores.demographicVitalityScore).toFixed(1)}</strong>
                     </span>
                   </div>
                 </div>

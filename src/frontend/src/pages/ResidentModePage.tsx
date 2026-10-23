@@ -20,6 +20,8 @@ import type {
   DistrictSummaryDto,
   QualityWeights,
 } from '../types/contracts';
+import { useTranslation } from '../i18n/I18nContext';
+import { getShortDistrictName } from '../utils/districtLocalization';
 
 export interface ResidentModePageProps {
   rankedDistricts: DistrictSummaryDto[];
@@ -54,10 +56,25 @@ export function ResidentModePage({
   onSelectSecondary,
   onClearSelection,
 }: ResidentModePageProps) {
+  const { t, language, plural } = useTranslation();
   const [showHowItWorks, setShowHowItWorks] = useState<boolean>(false);
 
   const topDistrict = rankedDistricts[0] ?? null;
   const totalCityPopulation = rankedDistricts.reduce((acc, d) => acc + d.totalPopulation, 0);
+
+  const districtPluralForms: [string, string, string] =
+    language === 'ua'
+      ? ['Адміністративний Район', 'Адміністративні Райони', 'Адміністративних Районів']
+      : language === 'en'
+      ? ['Administrative District', 'Administrative Districts', 'Administrative Districts']
+      : ['Dzielnica Administracyjna', 'Dzielnice Administracyjne', 'Dzielnic Administracyjnych'];
+
+  const pillarPluralForms: [string, string, string] =
+    language === 'ua'
+      ? ['Стовп', 'Стовпи', 'Стовпів']
+      : language === 'en'
+      ? ['Pillar', 'Pillars', 'Pillars']
+      : ['Filar', 'Filary', 'Filarów'];
 
   const scrollToWorkspace = () => {
     document.getElementById('resident-workspace')?.scrollIntoView({ behavior: 'smooth' });
@@ -106,17 +123,17 @@ export function ResidentModePage({
           <div className="max-w-2xl space-y-4">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
               <Compass className="w-4 h-4 text-sky-300" />
-              Tryb Mieszkańca • 8 Filarów Jakości Życia w 18 Dzielnicach
+              {t.hero.badge}
             </div>
 
             <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-black tracking-tight leading-[1.12] text-white">
-              Razem odkrywamy
+              {t.hero.titleLead}
               <br />
-              <span className="text-sky-200">najlepsze miejsce do życia w Krakowie.</span>
+              <span className="text-sky-200">{t.hero.titleAccent}</span>
             </h1>
 
             <p className="text-sm sm:text-base text-blue-100/95 leading-relaxed max-w-xl">
-              Dostosuj wagi 8 kluczowych wymiarów miejskich (w tym witalność demograficzną, bezpieczeństwo i rynek mieszkań) do własnych priorytetów. Sprawdzaj interaktywny kartogram 18 dzielnic w czasie rzeczywistym i analizuj twarde wskaźniki z oficjalnych rejestrów Otwartych Danych.
+              {t.hero.description}
             </p>
 
             {/* Interactive CTA Buttons */}
@@ -126,7 +143,7 @@ export function ResidentModePage({
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-blue-900 hover:bg-sky-50 shadow-lg shadow-blue-950/20 transition transform hover:-translate-y-0.5 cursor-pointer"
               >
                 <Compass className="w-4 h-4 text-blue-600" />
-                Eksploruj Mapę i Ranking
+                {t.hero.ctaExplore}
                 <ArrowDownRight className="w-4 h-4 text-blue-600" />
               </button>
 
@@ -135,21 +152,23 @@ export function ResidentModePage({
                 className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-blue-500/30 hover:bg-blue-500/45 text-white border border-white/30 backdrop-blur-md transition cursor-pointer"
               >
                 <GitCompareArrows className="w-4 h-4 text-sky-200" />
-                Porównaj 2 Dzielnice
+                {t.hero.ctaCompare}
               </button>
             </div>
           </div>
 
-          {/* Bottom Floating Glassmorphic Stat Cards */}
+          {/* Bottom Floating Glassmorphic Stat Cards with Linguistically Accurate Grammatical Inflections */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
             <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-black text-blue-700 leading-none">18</div>
-                <div className="text-xs font-bold text-slate-800 mt-1">Dzielnic Administracyjnych</div>
-                <div className="text-[11px] text-slate-500">Pełny kartogram wektorowy</div>
+                <div className="text-2xl font-black text-blue-700 leading-none">{rankedDistricts.length}</div>
+                <div className="text-xs font-bold text-slate-800 mt-1">
+                  {plural(rankedDistricts.length, districtPluralForms)}
+                </div>
+                <div className="text-[11px] text-slate-500">{t.stats.districtsSub}</div>
               </div>
             </div>
 
@@ -159,12 +178,12 @@ export function ResidentModePage({
               </div>
               <div className="min-w-0">
                 <div className="text-lg font-black text-slate-900 truncate leading-tight">
-                  {topDistrict ? topDistrict.districtName.replace('Dzielnica ', '') : 'Ładowanie...'}
+                  {topDistrict ? getShortDistrictName(topDistrict.districtName) : t.stats.loading}
                 </div>
                 <div className="text-xs font-bold text-blue-700 mt-0.5">
-                  Lider dla Twoich wag ({topDistrict ? `${topDistrict.weightedQualityOfLifeIndex.toFixed(1)} pkt` : '—'})
+                  {t.stats.leaderLabel} ({topDistrict ? `${topDistrict.weightedQualityOfLifeIndex.toFixed(1)} ${t.stats.leaderPoints}` : '—'})
                 </div>
-                <div className="text-[11px] text-slate-500">Dynamiczny ranking w czasie 0 ms</div>
+                <div className="text-[11px] text-slate-500">{t.stats.leaderSub}</div>
               </div>
             </div>
 
@@ -174,10 +193,12 @@ export function ResidentModePage({
               </div>
               <div>
                 <div className="text-2xl font-black text-sky-700 leading-none">
-                  {totalCityPopulation > 0 ? `${Math.round(totalCityPopulation / 1000)} tys.` : '736 tys.'}
+                  {totalCityPopulation > 0
+                    ? `${Math.round(totalCityPopulation / 1000)} ${t.stats.thousands}`
+                    : `736 ${t.stats.thousands}`}
                 </div>
-                <div className="text-xs font-bold text-slate-800 mt-1">Mieszkańców w bazie BDK</div>
-                <div className="text-[11px] text-slate-500">Meldunki stałe, czasowe i cudzoziemcy</div>
+                <div className="text-xs font-bold text-slate-800 mt-1">{t.stats.populationLabel}</div>
+                <div className="text-[11px] text-slate-500">{t.stats.populationSub}</div>
               </div>
             </div>
 
@@ -186,21 +207,23 @@ export function ResidentModePage({
                 <BarChart3 className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-black text-indigo-700 leading-none">8 Filarów</div>
-                <div className="text-xs font-bold text-slate-800 mt-1">30+ Zbiorów Danych</div>
-                <div className="text-[11px] text-slate-500">Ceny, bezpieczeństwo, witalność, KMK i smog</div>
+                <div className="text-2xl font-black text-indigo-700 leading-none">
+                  8 {plural(8, pillarPluralForms)}
+                </div>
+                <div className="text-xs font-bold text-slate-800 mt-1">{t.stats.datasetsCount}</div>
+                <div className="text-[11px] text-slate-500">{t.stats.pillarsSub}</div>
               </div>
             </div>
           </div>
 
-          {/* Centered "Jak to działa?" button placed symmetrically at the bottom */}
+          {/* Centered "How does it work?" button placed symmetrically at the bottom */}
           <div className="flex justify-center pt-2">
             <button
               onClick={() => setShowHowItWorks((prev) => !prev)}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-md shadow-sm transition transform hover:-translate-y-0.5 cursor-pointer"
             >
               <HelpCircle className="w-4 h-4 text-sky-200" />
-              Jak to działa? (Metodologia obliczeń)
+              {t.hero.howItWorksBtn}
               {showHowItWorks ? (
                 <ChevronUp className="w-3.5 h-3.5" />
               ) : (
@@ -211,40 +234,40 @@ export function ResidentModePage({
         </div>
       </section>
 
-      {/* Expandable "Jak to działa?" Drawer with smooth open & close animation */}
+      {/* Expandable "How does it work?" Drawer with smooth open & close animation */}
       <div className={`drawer-expandable ${showHowItWorks ? 'is-open' : ''}`}>
         <div className="overflow-hidden">
           <section className="rounded-3xl bg-white border border-blue-200 p-6 shadow-lg shadow-blue-900/5 space-y-4">
             <div className="flex items-center justify-between border-b border-slate-100 pb-3">
               <h3 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
                 <HelpCircle className="w-5 h-5 text-blue-600" />
-                Jak wyliczamy spersonalizowany Indeks Jakości Życia (0–100 pkt)?
+                {t.hero.howItWorksTitle}
               </h3>
               <button
                 onClick={() => setShowHowItWorks(false)}
                 className="text-xs font-semibold text-slate-500 hover:text-slate-800 cursor-pointer"
               >
-                Zamknij instrukcję
+                {t.hero.howItWorksClose}
               </button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed">
               <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
                 <div className="font-extrabold text-blue-900 mb-1">
-                  1. Normalizacja Min-Max (0–100 pkt)
+                  {t.hero.step1Title}
                 </div>
-                Twarde dane miejskie (witalność demograficzna, ceny mieszkań, zdarzenia drogowe, KMK, parki i lasy, żłobki, biblioteki, CAS, smog i hałas) są przeliczane na obiektywną skalę 0–100 pkt w 8 kategoriach jakości życia.
+                {t.hero.step1Desc}
               </div>
               <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
                 <div className="font-extrabold text-sky-900 mb-1">
-                  2. Twoje Wagi i Presety (0–10 pkt)
+                  {t.hero.step2Title}
                 </div>
-                Ustawiasz wagi suwakami po lewej stronie lub wybierasz gotowy profil (Rodzina z Dziećmi, Student / Młody, Aktywny Senior, Inwestor / Biznes). Aplikacja mnoży 8 ocen każdej dzielnicy przez Twoje wagi w czasie 0 ms.
+                {t.hero.step2Desc}
               </div>
               <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
                 <div className="font-extrabold text-indigo-900 mb-1">
-                  3. Porównanie (Wykres Radarowy 8 Osi)
+                  {t.hero.step3Title}
                 </div>
-                Kliknij dowolne 2 dzielnice na mapie lub liście rankingowej, aby nałożyć ich profile na 8-osiowy wykres radarowy i porównać twarde wskaźniki w tabeli poniżej.
+                {t.hero.step3Desc}
               </div>
             </div>
           </section>

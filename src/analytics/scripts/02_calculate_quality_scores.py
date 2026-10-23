@@ -5,14 +5,14 @@ GOAL / PURPOSE:
     Data indicators produced by Script 01 (`districts_aggregated.json`).
 
 PILLARS EVALUATED:
-    1. mobilityScore - Transport publiczny KMK, węzły P+R oraz infrastruktura rowerowa DDR
-    2. educationScore - Żłobki, przedszkola, szkoły podstawowe i infrastruktura opiekuńcza
-    3. greeneryScore - Parki miejskie, parki kieszonkowe, lasy komunalne i obiekty sportowe
-    4. cultureAndSeniorScore - Biblioteki Kraków, Domy Kultury oraz Centra Aktywności Seniora (CAS)
-    5. environmentScore - Czyste powietrze (PM10 GIOŚ), brak hałasu tranzytowego i bufor zieleni
-    6. safetyScore - Bezpieczeństwo drogowe, brak potrąceń i spokój publiczny (SEWiK / Straż Miejska)
-    7. housingAffordabilityScore - Dostępność cenowa zakupu i najmu mieszkań (NBP / Otodom / RCN)
-    8. demographicVitalityScore - Witalność demograficzna, dynamika 3-letnia ludności i atrakcyjność migracyjna (BDK UMK)
+    1. mobilityScore – Public transport (KMK), Park & Ride (P+R) hubs, and cycling infrastructure
+    2. educationScore – Nurseries, kindergartens, primary schools, and childcare infrastructure
+    3. greeneryScore – City parks, pocket parks, municipal forests, and sports facilities
+    4. cultureAndSeniorScore – Libraries, cultural centers, and Senior Activity Centers (CAS)
+    5. environmentScore – Clean air (PM10 levels via GIOŚ), absence of transit noise, and green buffers
+    6. safetyScore – Road safety, absence of pedestrian accidents, and public order (data from SEWiK / Municipal Police)
+    7. housingAffordabilityScore – Affordability of purchasing or renting residential property (data from NBP / Otodom / RCN)
+    8. demographicVitalityScore – Demographic vitality, 3-year population trends, and migration attractiveness (data from BDK UMK)
 """
 
 from __future__ import annotations
@@ -206,7 +206,7 @@ def calculate_quality_scores() -> None:
     ]
     env_scores = rescale_to_practical_band(raw_env, low=45.0, high=94.0)
 
-    # 6. PUBLIC SAFETY & TRAFFIC SAFETY SCORE (SEWiK KGP, Straż Miejska)
+    # 6. PUBLIC SAFETY & TRAFFIC SAFETY SCORE (SEWiK KGP, Municipal Police)
     # Standard IRMiR/GUS calibration: account for functional daytime active population
     daytime_factors = {1: 3.0, 2: 1.6, 5: 1.3, 13: 1.2}
 

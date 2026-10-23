@@ -170,7 +170,7 @@ def generate_competition_charts(districts: list[dict]) -> None:
     fig.savefig(chart1_path)
     plt.close(fig)
 
-    # Chart 2: Ranking of all 18 districts by equal-weighted composite Quality of Life Index (7 Pillars)
+    # Chart 2: Ranking of all 18 districts by equal-weighted composite Quality of Life Index (8 Pillars)
     fig, ax = plt.subplots(figsize=(10, 6.5), dpi=160)
     num_scores = len(districts[0]["scores"])
     ranked = sorted(districts, key=lambda d: sum(d["scores"].values()) / num_scores)

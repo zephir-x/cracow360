@@ -25,6 +25,13 @@ import type {
   QualityWeights,
 } from '../../types/contracts';
 import { calculateClientSideQualityIndex } from '../../utils/qualityIndexCalculator';
+import { useTranslation } from '../../i18n/I18nContext';
+import { localizeDistrictName } from '../../utils/districtLocalization';
+import {
+  buildComparisonMetricRows,
+  getResidentStrengths,
+  type MetricRowDef,
+} from './comparison/comparisonMetrics';
 
 export interface DistrictComparisonViewProps {
   districts: DistrictSummaryDto[];
@@ -36,63 +43,9 @@ export interface DistrictComparisonViewProps {
   onClearSelection: () => void;
 }
 
-interface MetricRow {
-  category: string;
-  label: string;
-  unit: string;
-  firstValue: number;
-  secondValue: number;
-  higherIsBetter: boolean;
-  format?: (val: number) => string;
-}
-
 // Module-level permanent memory cache for all 18 districts (zero network delay on dropdown select)
 const DISTRICT_DETAILS_CACHE = new Map<number, DistrictDetailsDto>();
 
-// Synthesizes data-driven comparative resident strengths for the district card across 8 pillars.
-function getResidentStrengths(current: DistrictDetailsDto, opponent: DistrictDetailsDto): string {
-  const PILLARS: { key: keyof typeof current.scores; label: string }[] = [
-    { key: 'mobilityScore', label: 'mobilność i komunikację KMK' },
-    { key: 'educationScore', label: 'ofertę edukacyjną i opiekę' },
-    { key: 'greeneryScore', label: 'tereny zielone i rekreację' },
-    { key: 'cultureAndSeniorScore', label: 'ofertę kulturalną i CAS' },
-    { key: 'environmentScore', label: 'czyste środowisko i spokój' },
-    { key: 'safetyScore', label: 'bezpieczeństwo i porządek' },
-    { key: 'housingAffordabilityScore', label: 'przystępność cenową mieszkań' },
-    { key: 'demographicVitalityScore', label: 'witalność demograficzną i rozwój' },
-  ];
-
-  // Calculate comparative deltas (current - opponent)
-  const deltas = PILLARS.map((p) => ({
-    label: p.label,
-    score: current.scores[p.key],
-    delta: current.scores[p.key] - opponent.scores[p.key],
-  }));
-
-  // Categories where current has a distinct comparative edge (>= 3.0 pts)
-  const advantages = deltas
-    .filter((d) => d.delta >= 3.0)
-    .sort((a, b) => b.delta - a.delta);
-
-  if (advantages.length >= 2) {
-    const [top1, top2] = advantages;
-    return `Wyraźna przewaga w kategoriach: ${top1.label} (+${top1.delta.toFixed(1)} pkt) oraz ${top2.label} (+${top2.delta.toFixed(1)} pkt).`;
-  }
-
-  if (advantages.length === 1) {
-    const top1 = advantages[0];
-    return `Kluczowy atut w zestawieniu: ${top1.label} (+${top1.delta.toFixed(1)} pkt względem drugiej dzielnicy).`;
-  }
-
-  // If both districts are very close, highlight top absolute scoring categories
-  const topAbsolute = [...deltas].sort((a, b) => b.score - a.score);
-  return `Zrównoważony profil miejski: najwyżej oceniane to ${topAbsolute[0].label} (${topAbsolute[0].score.toFixed(1)} pkt) oraz ${topAbsolute[1].label} (${topAbsolute[1].score.toFixed(1)} pkt).`;
-}
-
-/// <summary>
-/// Side-by-side district comparison component featuring radar chart overlays across all 8 pillars,
-/// detailed differential tables, and smooth expand/collapse transitions without layout jumps.
-/// </summary>
 export function DistrictComparisonView({
   districts,
   selectedPrimaryId,
@@ -102,6 +55,7 @@ export function DistrictComparisonView({
   onSelectSecondary,
   onClearSelection,
 }: DistrictComparisonViewProps) {
+  const { t, language, formatWithPlural, plural } = useTranslation();
   const [, setCacheVersion] = useState<number>(0);
 
   // Background prefetch: loads all 18 district details once into module-level memory cache
@@ -119,43 +73,43 @@ export function DistrictComparisonView({
           setCacheVersion((v) => v + 1);
         }
       } catch {
-        // Silently continue
+        // Silently continue if background prefetching fails
       }
     };
-
-    void prefetchAll();
+    if (districts.length > 0) {
+      void prefetchAll();
+    }
     return () => {
       cancelled = true;
     };
   }, [districts]);
 
-  // Synchronous cache retrieval: 0 ms delay on any dropdown select or map click
-  const firstDetails = selectedPrimaryId ? DISTRICT_DETAILS_CACHE.get(selectedPrimaryId) ?? null : null;
-  const secondDetails = selectedSecondaryId ? DISTRICT_DETAILS_CACHE.get(selectedSecondaryId) ?? null : null;
+  // Synchronous cache retrieval for Slot 1 and Slot 2
+  const firstDetails = useMemo(() => {
+    return selectedPrimaryId ? DISTRICT_DETAILS_CACHE.get(selectedPrimaryId) ?? null : null;
+  }, [selectedPrimaryId]);
 
-  // Fallback direct loader if a district wasn't yet in cache
+  const secondDetails = useMemo(() => {
+    return selectedSecondaryId ? DISTRICT_DETAILS_CACHE.get(selectedSecondaryId) ?? null : null;
+  }, [selectedSecondaryId]);
+
+  // Fallback network loading if a district was selected before prefetch finished
   useEffect(() => {
     if (selectedPrimaryId && !DISTRICT_DETAILS_CACHE.has(selectedPrimaryId)) {
-      cracow360Api
-        .getDistrictDetails(selectedPrimaryId)
-        .then((d) => {
-          DISTRICT_DETAILS_CACHE.set(selectedPrimaryId, d);
-          setCacheVersion((v) => v + 1);
-        })
-        .catch(() => {});
+      void cracow360Api.getDistrictDetails(selectedPrimaryId).then((d) => {
+        DISTRICT_DETAILS_CACHE.set(selectedPrimaryId, d);
+        setCacheVersion((v) => v + 1);
+      });
     }
     if (selectedSecondaryId && !DISTRICT_DETAILS_CACHE.has(selectedSecondaryId)) {
-      cracow360Api
-        .getDistrictDetails(selectedSecondaryId)
-        .then((d) => {
-          DISTRICT_DETAILS_CACHE.set(selectedSecondaryId, d);
-          setCacheVersion((v) => v + 1);
-        })
-        .catch(() => {});
+      void cracow360Api.getDistrictDetails(selectedSecondaryId).then((d) => {
+        DISTRICT_DETAILS_CACHE.set(selectedSecondaryId, d);
+        setCacheVersion((v) => v + 1);
+      });
     }
   }, [selectedPrimaryId, selectedSecondaryId]);
 
-  // Real-time client-side calculation of composite indexes using active slider weights
+  // Dynamic client-side weighted score recalculation in 0ms (60 FPS slider updates)
   const firstWeightedScore = useMemo(() => {
     if (!firstDetails) return 0;
     return calculateClientSideQualityIndex(firstDetails.scores, weights);
@@ -166,346 +120,77 @@ export function DistrictComparisonView({
     return calculateClientSideQualityIndex(secondDetails.scores, weights);
   }, [secondDetails, weights]);
 
-  // RadarChart dataset overlaying all 8 pillars (0-100 scale)
+  const localizedFirstDistrictName = useMemo(() => {
+    return firstDetails ? localizeDistrictName(firstDetails.districtName, language) : '';
+  }, [firstDetails, language]);
+
+  const localizedSecondDistrictName = useMemo(() => {
+    return secondDetails ? localizeDistrictName(secondDetails.districtName, language) : '';
+  }, [secondDetails, language]);
+
+  // Radar chart multi-dimensional overlay across 8 quality dimensions
   const radarData = useMemo(() => {
     if (!firstDetails || !secondDetails) return [];
-    return [
-      {
-        category: 'Mobilność KMK i DDR',
-        first: firstDetails.scores.mobilityScore,
-        second: secondDetails.scores.mobilityScore,
-        fullMark: 100,
-      },
-      {
-        category: 'Edukacja i Opieka',
-        first: firstDetails.scores.educationScore,
-        second: secondDetails.scores.educationScore,
-        fullMark: 100,
-      },
-      {
-        category: 'Zieleń i Rekreacja',
-        first: firstDetails.scores.greeneryScore,
-        second: secondDetails.scores.greeneryScore,
-        fullMark: 100,
-      },
-      {
-        category: 'Kultura i CAS',
-        first: firstDetails.scores.cultureAndSeniorScore,
-        second: secondDetails.scores.cultureAndSeniorScore,
-        fullMark: 100,
-      },
-      {
-        category: 'Środowisko i Spokój',
-        first: firstDetails.scores.environmentScore,
-        second: secondDetails.scores.environmentScore,
-        fullMark: 100,
-      },
-      {
-        category: 'Bezpieczeństwo Ruchu',
-        first: firstDetails.scores.safetyScore,
-        second: secondDetails.scores.safetyScore,
-        fullMark: 100,
-      },
-      {
-        category: 'Dostępność Mieszkań',
-        first: firstDetails.scores.housingAffordabilityScore,
-        second: secondDetails.scores.housingAffordabilityScore,
-        fullMark: 100,
-      },
-      {
-        category: 'Witalność i Rozwój',
-        first: firstDetails.scores.demographicVitalityScore,
-        second: secondDetails.scores.demographicVitalityScore,
-        fullMark: 100,
-      },
-    ];
-  }, [firstDetails, secondDetails]);
+    const name1 = localizedFirstDistrictName;
+    const name2 = localizedSecondDistrictName;
 
-  // Hard infrastructure, housing, safety & demographic metrics table rows
-  const metricRows: MetricRow[] = useMemo(() => {
-    if (!firstDetails || !secondDetails) return [];
     return [
       {
-        category: 'Demografia',
-        label: 'Wskaźnik witalności demograficznej i rozwoju',
-        unit: 'pkt',
-        firstValue: firstDetails.scores.demographicVitalityScore ?? 0,
-        secondValue: secondDetails.scores.demographicVitalityScore ?? 0,
-        higherIsBetter: true,
-        format: (v) => `${v.toFixed(1)} pkt`,
+        pillar: t.comparison.radarAxes.mobility,
+        [name1]: Number(firstDetails.scores.mobilityScore.toFixed(1)),
+        [name2]: Number(secondDetails.scores.mobilityScore.toFixed(1)),
+        fullMark: 100,
       },
       {
-        category: 'Demografia',
-        label: 'Liczba mieszkańców ogółem',
-        unit: 'osób',
-        firstValue: firstDetails.demographics.totalPopulation,
-        secondValue: secondDetails.demographics.totalPopulation,
-        higherIsBetter: true,
-        format: (v) => v.toLocaleString('pl-PL'),
+        pillar: t.comparison.radarAxes.education,
+        [name1]: Number(firstDetails.scores.educationScore.toFixed(1)),
+        [name2]: Number(secondDetails.scores.educationScore.toFixed(1)),
+        fullMark: 100,
       },
       {
-        category: 'Demografia',
-        label: 'Dynamika populacji (ostatnie 3 lata)',
-        unit: '%',
-        firstValue: firstDetails.demographics.populationGrowthRate3YrPct,
-        secondValue: secondDetails.demographics.populationGrowthRate3YrPct,
-        higherIsBetter: true,
-        format: (v) => `${v > 0 ? '+' : ''}${v.toFixed(1)}%`,
+        pillar: t.comparison.radarAxes.greenery,
+        [name1]: Number(firstDetails.scores.greeneryScore.toFixed(1)),
+        [name2]: Number(secondDetails.scores.greeneryScore.toFixed(1)),
+        fullMark: 100,
       },
       {
-        category: 'Demografia',
-        label: 'Mieszkańcy w wieku produkcyjnym (15–64 lata)',
-        unit: 'osób',
-        firstValue: firstDetails.demographics.age15To64,
-        secondValue: secondDetails.demographics.age15To64,
-        higherIsBetter: true,
-        format: (v) => v.toLocaleString('pl-PL'),
+        pillar: t.comparison.radarAxes.culture,
+        [name1]: Number(firstDetails.scores.cultureAndSeniorScore.toFixed(1)),
+        [name2]: Number(secondDetails.scores.cultureAndSeniorScore.toFixed(1)),
+        fullMark: 100,
       },
       {
-        category: 'Demografia',
-        label: 'Cudzoziemcy zameldowani w dzielnicy',
-        unit: 'osób',
-        firstValue: firstDetails.demographics.foreignersTotal,
-        secondValue: secondDetails.demographics.foreignersTotal,
-        higherIsBetter: true,
-        format: (v) => v.toLocaleString('pl-PL'),
+        pillar: t.comparison.radarAxes.environment,
+        [name1]: Number(firstDetails.scores.environmentScore.toFixed(1)),
+        [name2]: Number(secondDetails.scores.environmentScore.toFixed(1)),
+        fullMark: 100,
       },
       {
-        category: 'Rynek Mieszkaniowy',
-        label: 'Średnia cena zakupu mieszkania za m²',
-        unit: 'zł/m²',
-        firstValue: firstDetails.housingMarket?.avgPricePerM2 ?? 0,
-        secondValue: secondDetails.housingMarket?.avgPricePerM2 ?? 0,
-        higherIsBetter: false,
-        format: (v) => `${v.toLocaleString('pl-PL')} zł`,
+        pillar: t.comparison.radarAxes.safety,
+        [name1]: Number(firstDetails.scores.safetyScore.toFixed(1)),
+        [name2]: Number(secondDetails.scores.safetyScore.toFixed(1)),
+        fullMark: 100,
       },
       {
-        category: 'Rynek Mieszkaniowy',
-        label: 'Średnia miesięczna stawka najmu za m²',
-        unit: 'zł/m²',
-        firstValue: firstDetails.housingMarket?.avgRentalPriceM2 ?? 0,
-        secondValue: secondDetails.housingMarket?.avgRentalPriceM2 ?? 0,
-        higherIsBetter: false,
-        format: (v) => `${v.toFixed(1)} zł`,
+        pillar: t.comparison.radarAxes.housing,
+        [name1]: Number(firstDetails.scores.housingAffordabilityScore.toFixed(1)),
+        [name2]: Number(secondDetails.scores.housingAffordabilityScore.toFixed(1)),
+        fullMark: 100,
       },
       {
-        category: 'Rynek Mieszkaniowy',
-        label: 'Dostępność m² za średnie wynagrodzenie netto',
-        unit: 'm²/pensję',
-        firstValue: firstDetails.housingMarket?.m2PerAverageSalary ?? 0,
-        secondValue: secondDetails.housingMarket?.m2PerAverageSalary ?? 0,
-        higherIsBetter: true,
-        format: (v) => `${v.toFixed(2)} m²`,
-      },
-      {
-        category: 'Bezpieczeństwo',
-        label: 'Roczna liczba kolizji drogowych',
-        unit: 'kolizji',
-        firstValue: firstDetails.publicSafety?.roadCollisionsAnnual ?? 0,
-        secondValue: secondDetails.publicSafety?.roadCollisionsAnnual ?? 0,
-        higherIsBetter: false,
-        format: (v) => v.toLocaleString('pl-PL'),
-      },
-      {
-        category: 'Bezpieczeństwo',
-        label: 'Wypadki drogowe z udziałem pieszych',
-        unit: 'wypadków',
-        firstValue: firstDetails.publicSafety?.pedestrianAccidents ?? 0,
-        secondValue: secondDetails.publicSafety?.pedestrianAccidents ?? 0,
-        higherIsBetter: false,
-      },
-      {
-        category: 'Bezpieczeństwo',
-        label: 'Zgłoszenia zakłócania porządku (Straż Miejska)',
-        unit: 'interwencji',
-        firstValue: firstDetails.publicSafety?.publicDisturbanceInterventions ?? 0,
-        secondValue: secondDetails.publicSafety?.publicDisturbanceInterventions ?? 0,
-        higherIsBetter: false,
-        format: (v) => v.toLocaleString('pl-PL'),
-      },
-      {
-        category: 'Mobilność',
-        label: 'Przystanki tramwajowe (szkielet szynowy)',
-        unit: 'przyst.',
-        firstValue: firstDetails.mobilityAndTransport.tramStopsCount ?? 0,
-        secondValue: secondDetails.mobilityAndTransport.tramStopsCount ?? 0,
-        higherIsBetter: true,
-      },
-      {
-        category: 'Mobilność',
-        label: 'Udział tramwajów w sieci przystankowej',
-        unit: '%',
-        firstValue: firstDetails.mobilityAndTransport.tramNetworkSharePct ?? 0,
-        secondValue: secondDetails.mobilityAndTransport.tramNetworkSharePct ?? 0,
-        higherIsBetter: true,
-        format: (v) => `${v.toFixed(1)}%`,
-      },
-      {
-        category: 'Mobilność',
-        label: 'Gabloty i ramki rozkładowe (oferta linii)',
-        unit: 'szt.',
-        firstValue: firstDetails.mobilityAndTransport.scheduleBoardsCount ?? 0,
-        secondValue: secondDetails.mobilityAndTransport.scheduleBoardsCount ?? 0,
-        higherIsBetter: true,
-        format: (v) => v.toLocaleString('pl-PL'),
-      },
-      {
-        category: 'Mobilność',
-        label: 'Łączna liczba przystanków KMK (sieć ogółem)',
-        unit: 'przyst.',
-        firstValue: firstDetails.mobilityAndTransport.kmkStopsCount,
-        secondValue: secondDetails.mobilityAndTransport.kmkStopsCount,
-        higherIsBetter: true,
-      },
-      {
-        category: 'Mobilność',
-        label: 'Efektywna dostępność piesza KMK (izochrona 500 m)',
-        unit: '%',
-        firstValue: firstDetails.mobilityAndTransport.isochroneCoveragePct,
-        secondValue: secondDetails.mobilityAndTransport.isochroneCoveragePct,
-        higherIsBetter: true,
-        format: (v) => `${v.toFixed(1)}%`,
-      },
-      {
-        category: 'Mobilność',
-        label: 'Długość sieci dróg rowerowych (DDR i pasy)',
-        unit: 'km',
-        firstValue: firstDetails.mobilityAndTransport.bikeLanesLengthKm,
-        secondValue: secondDetails.mobilityAndTransport.bikeLanesLengthKm,
-        higherIsBetter: true,
-        format: (v) => `${v.toFixed(1)} km`,
-      },
-      {
-        category: 'Mobilność',
-        label: 'Stojaki rowerowe ZTP (pojemność)',
-        unit: 'stojaków',
-        firstValue: firstDetails.mobilityAndTransport.bikeRacksCount,
-        secondValue: secondDetails.mobilityAndTransport.bikeRacksCount,
-        higherIsBetter: true,
-        format: (v) => v.toLocaleString('pl-PL'),
-      },
-      {
-        category: 'Zieleń i Sport',
-        label: 'Powierzchnia zieleni biologicznej na mieszkańca',
-        unit: 'm²/os.',
-        firstValue: firstDetails.greeneryAndSport.totalGreenM2PerCapita || firstDetails.greeneryAndSport.greenAreaM2PerCapita,
-        secondValue: secondDetails.greeneryAndSport.totalGreenM2PerCapita || secondDetails.greeneryAndSport.greenAreaM2PerCapita,
-        higherIsBetter: true,
-        format: (v) => `${v.toFixed(1)} m²`,
-      },
-      {
-        category: 'Zieleń i Sport',
-        label: 'Lasy komunalne i uroczyska leśne ZZM',
-        unit: 'ha',
-        firstValue: firstDetails.greeneryAndSport.forestAreaHa ?? 0,
-        secondValue: secondDetails.greeneryAndSport.forestAreaHa ?? 0,
-        higherIsBetter: true,
-        format: (v) => `${v.toFixed(1)} ha`,
-      },
-      {
-        category: 'Zieleń i Sport',
-        label: 'Łączna powierzchnia parków miejskich i kieszonkowych',
-        unit: 'ha',
-        firstValue: firstDetails.greeneryAndSport.totalParksAreaHa,
-        secondValue: secondDetails.greeneryAndSport.totalParksAreaHa,
-        higherIsBetter: true,
-        format: (v) => `${v.toFixed(1)} ha`,
-      },
-      {
-        category: 'Zieleń i Sport',
-        label: 'Przyszkolne pływalnie sportowo-rekreacyjne',
-        unit: 'basenów',
-        firstValue: firstDetails.greeneryAndSport.schoolSwimmingPoolsCount,
-        secondValue: secondDetails.greeneryAndSport.schoolSwimmingPoolsCount,
-        higherIsBetter: true,
-      },
-      {
-        category: 'Edukacja i Opieka',
-        label: 'Żłobki publiczne samorządowe (liczba placówek)',
-        unit: 'placówek',
-        firstValue: firstDetails.educationAndCare.nurseriesPublicCount,
-        secondValue: secondDetails.educationAndCare.nurseriesPublicCount,
-        higherIsBetter: true,
-      },
-      {
-        category: 'Edukacja i Opieka',
-        label: 'Łączna liczba miejsc opieki 0–3 (żłobki + kluby)',
-        unit: 'miejsc',
-        firstValue: firstDetails.educationAndCare.totalCarePlaces0To3,
-        secondValue: secondDetails.educationAndCare.totalCarePlaces0To3,
-        higherIsBetter: true,
-        format: (v) => v.toLocaleString('pl-PL'),
-      },
-      {
-        category: 'Edukacja i Opieka',
-        label: 'Liczba dzieci (0–3 lat) przypadająca na 1 miejsce w żłobku',
-        unit: 'dzieci/miejsce',
-        firstValue: firstDetails.educationAndCare.childrenPerCarePlaceRatio,
-        secondValue: secondDetails.educationAndCare.childrenPerCarePlaceRatio,
-        higherIsBetter: false,
-        format: (v) => `${v.toFixed(2)} os.`,
-      },
-      {
-        category: 'Edukacja i Opieka',
-        label: 'Średnia liczebność oddziału w szkołach podstawowych',
-        unit: 'uczniów/klasę',
-        firstValue: firstDetails.educationAndCare.avgStudentsPerClass,
-        secondValue: secondDetails.educationAndCare.avgStudentsPerClass,
-        higherIsBetter: false,
-        format: (v) => `${v.toFixed(1)} os.`,
-      },
-      {
-        category: 'Kultura i Społeczność',
-        label: 'Filie Biblioteki Kraków w dzielnicy',
-        unit: 'filii',
-        firstValue: firstDetails.cultureAndSociety.libraryBranchesCount,
-        secondValue: secondDetails.cultureAndSociety.libraryBranchesCount,
-        higherIsBetter: true,
-      },
-      {
-        category: 'Kultura i Społeczność',
-        label: 'Miejskie Domy i Ośrodki Kultury',
-        unit: 'ośrodków',
-        firstValue: firstDetails.cultureAndSociety.culturalCentersCount,
-        secondValue: secondDetails.cultureAndSociety.culturalCentersCount,
-        higherIsBetter: true,
-      },
-      {
-        category: 'Kultura i Społeczność',
-        label: 'Centra Aktywności Seniora (CAS)',
-        unit: 'centrów',
-        firstValue: firstDetails.cultureAndSociety.seniorActivityCentersCount,
-        secondValue: secondDetails.cultureAndSociety.seniorActivityCentersCount,
-        higherIsBetter: true,
-      },
-      {
-        category: 'Środowisko',
-        label: 'Średnioroczne stężenie pyłu zawieszonego PM10',
-        unit: 'µg/m³',
-        firstValue: firstDetails.environmentalQuality.pm10AnnualUgM3,
-        secondValue: secondDetails.environmentalQuality.pm10AnnualUgM3,
-        higherIsBetter: false,
-        format: (v) => `${v.toFixed(1)} µg/m³`,
-      },
-      {
-        category: 'Środowisko',
-        label: 'Liczba dni z przekroczeniem normy PM10 w roku',
-        unit: 'dni',
-        firstValue: firstDetails.environmentalQuality.smogDaysCount,
-        secondValue: secondDetails.environmentalQuality.smogDaysCount,
-        higherIsBetter: false,
-      },
-      {
-        category: 'Środowisko',
-        label: 'Udział powierzchni dzielnicy z hałasem >65 dB',
-        unit: '%',
-        firstValue: firstDetails.environmentalQuality.trafficNoiseExceededPct,
-        secondValue: secondDetails.environmentalQuality.trafficNoiseExceededPct,
-        higherIsBetter: false,
-        format: (v) => `${v.toFixed(1)}%`,
+        pillar: t.comparison.radarAxes.demographics,
+        [name1]: Number(firstDetails.scores.demographicVitalityScore.toFixed(1)),
+        [name2]: Number(secondDetails.scores.demographicVitalityScore.toFixed(1)),
+        fullMark: 100,
       },
     ];
-  }, [firstDetails, secondDetails]);
+  }, [firstDetails, secondDetails, localizedFirstDistrictName, localizedSecondDistrictName, t.comparison.radarAxes]);
+
+  // Hard infrastructure, housing, safety & demographic metrics table rows with linguistically accurate plurals
+  const metricRows: MetricRowDef[] = useMemo(() => {
+    if (!firstDetails || !secondDetails) return [];
+    return buildComparisonMetricRows(firstDetails, secondDetails, language, t.common.points);
+  }, [firstDetails, secondDetails, language, t.common.points]);
 
   // Cached snapshot of active comparison to keep DOM intact during drawer collapse animation
   const [cachedComparison, setCachedComparison] = useState<{
@@ -513,6 +198,8 @@ export function DistrictComparisonView({
     second: DistrictDetailsDto;
     firstScore: number;
     secondScore: number;
+    firstLocalizedName: string;
+    secondLocalizedName: string;
     radar: typeof radarData;
     metrics: typeof metricRows;
   } | null>(null);
@@ -524,11 +211,13 @@ export function DistrictComparisonView({
         second: secondDetails,
         firstScore: firstWeightedScore,
         secondScore: secondWeightedScore,
+        firstLocalizedName: localizedFirstDistrictName,
+        secondLocalizedName: localizedSecondDistrictName,
         radar: radarData,
         metrics: metricRows,
       });
     }
-  }, [firstDetails, secondDetails, firstWeightedScore, secondWeightedScore, radarData, metricRows]);
+  }, [firstDetails, secondDetails, firstWeightedScore, secondWeightedScore, localizedFirstDistrictName, localizedSecondDistrictName, radarData, metricRows]);
 
   const activeComparison = (firstDetails && secondDetails)
     ? {
@@ -536,6 +225,8 @@ export function DistrictComparisonView({
         second: secondDetails,
         firstScore: firstWeightedScore,
         secondScore: secondWeightedScore,
+        firstLocalizedName: localizedFirstDistrictName,
+        secondLocalizedName: localizedSecondDistrictName,
         radar: radarData,
         metrics: metricRows,
       }
@@ -544,6 +235,7 @@ export function DistrictComparisonView({
   const hasAnySelection = Boolean(selectedPrimaryId || selectedSecondaryId);
   const hasBothSelections = Boolean(selectedPrimaryId && selectedSecondaryId && firstDetails && secondDetails);
   const isComparisonOpen = Boolean(hasBothSelections);
+  const numLocale = language === 'ua' ? 'uk-UA' : language === 'en' ? 'en-US' : 'pl-PL';
 
   return (
     <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-6">
@@ -555,10 +247,10 @@ export function DistrictComparisonView({
           </div>
           <div>
             <h2 className="text-lg font-black text-slate-900">
-              Szczegółowa Porównywarka 1:1 Dzielnic
+              {t.comparison.title}
             </h2>
             <p className="text-xs text-slate-500">
-              Wybierz dwie dzielnice i zestaw twarde wskaźniki infrastrukturalne oraz 8 filarów jakości życia
+              {t.comparison.subtitle}
             </p>
           </div>
         </div>
@@ -569,7 +261,7 @@ export function DistrictComparisonView({
             className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-500 hover:text-rose-600 hover:bg-rose-50 border border-slate-200 transition cursor-pointer"
           >
             <X className="w-3.5 h-3.5" />
-            Wyczyść porównanie
+            {t.comparison.clearButton}
           </button>
         )}
       </div>
@@ -582,17 +274,17 @@ export function DistrictComparisonView({
             <span className="w-5 h-5 rounded-md bg-blue-600 text-white text-[11px] font-extrabold flex items-center justify-center">
               1
             </span>
-            Pierwsza dzielnica (Niebieski profil):
+            {t.comparison.primaryDropdownLabel}
           </label>
           <select
             value={selectedPrimaryId ?? ''}
             onChange={(e) => onSelectPrimary(Number(e.target.value))}
             className="w-full text-xs font-semibold p-2.5 rounded-xl bg-white border border-blue-300 text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-blue-500 cursor-pointer"
           >
-            <option value="">Wybierz dzielnicę...</option>
+            <option value="">{t.comparison.selectPrimaryPlaceholder}</option>
             {districts.map((d) => (
               <option key={d.districtId} value={d.districtId} disabled={d.districtId === selectedSecondaryId}>
-                {d.districtName} ({d.weightedQualityOfLifeIndex.toFixed(1)} pkt)
+                {localizeDistrictName(d.districtName, language)} ({d.weightedQualityOfLifeIndex.toFixed(1)} {t.common.points})
               </option>
             ))}
           </select>
@@ -604,17 +296,17 @@ export function DistrictComparisonView({
             <span className="w-5 h-5 rounded-md bg-indigo-600 text-white text-[11px] font-extrabold flex items-center justify-center">
               2
             </span>
-            Druga dzielnica (Fioletowy profil):
+            {t.comparison.secondaryDropdownLabel}
           </label>
           <select
             value={selectedSecondaryId ?? ''}
             onChange={(e) => onSelectSecondary(Number(e.target.value))}
             className="w-full text-xs font-semibold p-2.5 rounded-xl bg-white border border-indigo-300 text-slate-800 focus:outline-hidden focus:ring-2 focus:ring-indigo-500 cursor-pointer"
           >
-            <option value="">Wybierz dzielnicę do zestawienia...</option>
+            <option value="">{t.comparison.selectSecondaryPlaceholder}</option>
             {districts.map((d) => (
               <option key={d.districtId} value={d.districtId} disabled={d.districtId === selectedPrimaryId}>
-                {d.districtName} ({d.weightedQualityOfLifeIndex.toFixed(1)} pkt)
+                {localizeDistrictName(d.districtName, language)} ({d.weightedQualityOfLifeIndex.toFixed(1)} {t.common.points})
               </option>
             ))}
           </select>
@@ -629,10 +321,10 @@ export function DistrictComparisonView({
           </div>
           <div className="max-w-md mx-auto space-y-1">
             <h3 className="text-sm font-extrabold text-slate-800">
-              Wybierz 2 dzielnice do bezpośredniego zestawienia
+              {t.comparison.emptyPromptTitle}
             </h3>
             <p className="text-xs text-slate-500 leading-relaxed">
-              Wybierz pierwszą i drugą dzielnicę z list powyżej lub kliknij je na mapie i liście rankingowej. Wykres radarowy 8 osi oraz szczegółowa tabela twardych danych miejskich rozsuną się automatycznie.
+              {t.comparison.emptyPromptDesc}
             </p>
           </div>
         </div>
@@ -643,7 +335,11 @@ export function DistrictComparisonView({
           {!hasBothSelections && (
             <div className="p-3.5 text-center rounded-2xl bg-blue-50/70 border border-blue-200 animate-fade-in">
               <div className="text-xs font-bold text-blue-900">
-                Wybrano 1. dzielnicę ({firstDetails?.districtName || secondDetails?.districtName}). Wybierz drugą dzielnicę powyżej lub kliknij na mapie, aby rozsunąć pełne zestawienie.
+                {language === 'en'
+                  ? `District selected (${localizedFirstDistrictName || localizedSecondDistrictName}). Choose a second district above or click on the map to expand comparison.`
+                  : language === 'ua'
+                  ? `Обрано 1-й район (${localizedFirstDistrictName || localizedSecondDistrictName}). Оберіть другий район угорі або на карті для повного зіставлення.`
+                  : `Wybrano 1. dzielnicę (${localizedFirstDistrictName || localizedSecondDistrictName}). Wybierz drugą dzielnicę powyżej lub kliknij na mapie, aby rozsunąć pełne zestawienie.`}
               </div>
             </div>
           )}
@@ -661,20 +357,20 @@ export function DistrictComparisonView({
               >
                 <div className="flex items-center justify-between gap-2">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700">Dzielnica #1</span>
-                    <h3 className="text-base font-black text-slate-900">{firstDetails.districtName}</h3>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-blue-700">{t.comparison.slot1CardTitle}</span>
+                    <h3 className="text-base font-black text-slate-900">{localizedFirstDistrictName}</h3>
                   </div>
                   {hasBothSelections && firstWeightedScore >= secondWeightedScore && (
                     <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-600 text-white text-[11px] font-bold shadow-xs animate-fade-in">
                       <Award className="w-3.5 h-3.5" />
-                      Wyższa ocena
+                      {t.comparison.higherScoreBadge}
                     </span>
                   )}
                 </div>
 
                 <div className="mt-3 flex items-baseline gap-2">
                   <span className="text-3xl font-black text-blue-600">{firstWeightedScore.toFixed(1)}</span>
-                  <span className="text-xs font-semibold text-slate-500">/ 100 pkt jakości życia</span>
+                  <span className="text-xs font-semibold text-slate-500">{t.comparison.scoreScale}</span>
                 </div>
 
                 {/* Resident strengths box (visible when comparing two districts) or standard metrics */}
@@ -682,22 +378,22 @@ export function DistrictComparisonView({
                   <div className="mt-3.5 p-3 rounded-xl bg-blue-100/40 border border-blue-200/70 animate-fade-in">
                     <div className="text-[11px] font-bold text-blue-900 flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                      <span>Atuty dla mieszkańca:</span>
+                      <span>{t.comparison.strengthsTitle}</span>
                     </div>
                     <p className="mt-1 text-xs text-slate-700 leading-relaxed">
-                      {getResidentStrengths(firstDetails, secondDetails)}
+                      {getResidentStrengths(firstDetails, secondDetails, t, language)}
                     </p>
                   </div>
                 ) : (
                   <div className="mt-3 p-3 rounded-xl bg-blue-100/40 border border-blue-200/70 text-xs text-slate-700 leading-relaxed">
-                    Gęstość zaludnienia: <strong className="text-blue-950">{Math.round(firstDetails.demographics.totalPopulation / (firstDetails.areaKm2 || 1))} os./km²</strong> • Ludność: <strong className="text-blue-950">{firstDetails.demographics.totalPopulation.toLocaleString('pl-PL')}</strong>
+                    {t.comparison.densityLabel} <strong className="text-blue-950">{Math.round(firstDetails.demographics.totalPopulation / (firstDetails.areaKm2 || 1))} {t.comparison.densityUnit}</strong> • {t.comparison.populationLabel} <strong className="text-blue-950">{firstDetails.demographics.totalPopulation.toLocaleString(numLocale)}</strong>
                   </div>
                 )}
               </div>
             ) : (
               <div className="p-6 rounded-2xl border border-dashed border-blue-200 bg-white/60 flex flex-col items-center justify-center text-center space-y-2 min-h-44 transition-all">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-500">Dzielnica #1 (Niebieski profil)</span>
-                <p className="text-xs text-slate-500 max-w-xs">Wybierz pierwszą dzielnicę z listy rozwijanej powyżej lub kliknij na mapie</p>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-blue-500">{t.comparison.slot1CardTitle}</span>
+                <p className="text-xs text-slate-500 max-w-xs">{t.comparison.emptyPromptDesc}</p>
               </div>
             )}
 
@@ -712,20 +408,20 @@ export function DistrictComparisonView({
               >
                 <div className="flex items-center justify-between gap-2">
                   <div>
-                    <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700">Dzielnica #2</span>
-                    <h3 className="text-base font-black text-slate-900">{secondDetails.districtName}</h3>
+                    <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-700">{t.comparison.slot2CardTitle}</span>
+                    <h3 className="text-base font-black text-slate-900">{localizedSecondDistrictName}</h3>
                   </div>
-                  {hasBothSelections && secondWeightedScore >= firstWeightedScore && (
+                  {hasBothSelections && selectedSecondaryId && secondWeightedScore >= firstWeightedScore && (
                     <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-indigo-600 text-white text-[11px] font-bold shadow-xs animate-fade-in">
                       <Award className="w-3.5 h-3.5" />
-                      Wyższa ocena
+                      {t.comparison.higherScoreBadge}
                     </span>
                   )}
                 </div>
 
                 <div className="mt-3 flex items-baseline gap-2">
                   <span className="text-3xl font-black text-indigo-600">{secondWeightedScore.toFixed(1)}</span>
-                  <span className="text-xs font-semibold text-slate-500">/ 100 pkt jakości życia</span>
+                  <span className="text-xs font-semibold text-slate-500">{t.comparison.scoreScale}</span>
                 </div>
 
                 {/* Resident strengths box (visible when comparing two districts) or standard metrics */}
@@ -733,22 +429,22 @@ export function DistrictComparisonView({
                   <div className="mt-3.5 p-3 rounded-xl bg-indigo-100/40 border border-indigo-200/70 animate-fade-in">
                     <div className="text-[11px] font-bold text-indigo-900 flex items-center gap-1.5">
                       <Sparkles className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
-                      <span>Atuty dla mieszkańca:</span>
+                      <span>{t.comparison.strengthsTitle}</span>
                     </div>
                     <p className="mt-1 text-xs text-slate-700 leading-relaxed">
-                      {getResidentStrengths(secondDetails, firstDetails)}
+                      {getResidentStrengths(secondDetails, firstDetails, t, language)}
                     </p>
                   </div>
                 ) : (
                   <div className="mt-3 p-3 rounded-xl bg-indigo-100/40 border border-indigo-200/70 text-xs text-slate-700 leading-relaxed">
-                    Gęstość zaludnienia: <strong className="text-indigo-950">{Math.round(secondDetails.demographics.totalPopulation / (secondDetails.areaKm2 || 1))} os./km²</strong> • Ludność: <strong className="text-indigo-950">{secondDetails.demographics.totalPopulation.toLocaleString('pl-PL')}</strong>
+                    {t.comparison.densityLabel} <strong className="text-indigo-950">{Math.round(secondDetails.demographics.totalPopulation / (secondDetails.areaKm2 || 1))} {t.comparison.densityUnit}</strong> • {t.comparison.populationLabel} <strong className="text-indigo-950">{secondDetails.demographics.totalPopulation.toLocaleString(numLocale)}</strong>
                   </div>
                 )}
               </div>
             ) : (
               <div className="p-6 rounded-2xl border border-dashed border-indigo-200 bg-white/60 flex flex-col items-center justify-center text-center space-y-2 min-h-44 transition-all">
-                <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-500">Dzielnica #2 (Fioletowy profil)</span>
-                <p className="text-xs text-slate-500 max-w-xs">Wybierz drugą dzielnicę z listy rozwijanej powyżej lub kliknij na mapie</p>
+                <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-500">{t.comparison.slot2CardTitle}</span>
+                <p className="text-xs text-slate-500 max-w-xs">{t.comparison.emptyPromptDesc}</p>
               </div>
             )}
           </div>
@@ -759,39 +455,49 @@ export function DistrictComparisonView({
       <div className={`drawer-expandable ${isComparisonOpen ? 'is-open' : ''}`}>
         <div className="overflow-hidden space-y-6 pt-1">
           {activeComparison && (
-            <div
-              key={`${activeComparison.first.districtId}-${activeComparison.second.districtId}`}
-              className="space-y-6 animate-fade-in"
-            >
-              {/* Radar Chart Overlay (8 Pillars Comparison) */}
-              <div className="p-6 rounded-2xl bg-linear-to-b from-slate-50/80 to-white border border-slate-200/80 space-y-2">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center gap-2">
-                    <TrendingUp className="w-4 h-4 text-blue-600" />
-                    Wykres Radarowy: 8 Wymiarów Jakości Życia (0–100)
-                  </h4>
-                  <span className="text-[11px] text-slate-500">Skala 0–100 punktów</span>
+            <div className="space-y-6 pt-4 border-t border-slate-100">
+              {/* Comparative Radar Chart */}
+              <div className="p-5 sm:p-6 rounded-3xl bg-slate-50/70 border border-slate-200 space-y-4">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                  <div>
+                    <h3 className="text-sm font-extrabold text-slate-900 flex items-center gap-2">
+                      <TrendingUp className="w-4 h-4 text-blue-600" />
+                      {t.comparison.radarTitle}
+                    </h3>
+                    <p className="text-xs text-slate-500">
+                      {t.comparison.radarSubtitle}
+                    </p>
+                  </div>
+                  <span className="text-[11px] text-slate-500">{t.comparison.scaleNote}</span>
                 </div>
-                <div className="h-72 w-full">
+
+                <div className="w-full h-80 sm:h-96">
                   <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart data={activeComparison.radar}>
-                      <PolarGrid stroke="#e2e8f0" />
-                      <PolarAngleAxis dataKey="category" tick={{ fill: '#334155', fontSize: 11, fontWeight: 600 }} />
-                      <PolarRadiusAxis angle={30} domain={[0, 100]} stroke="#cbd5e1" />
+                    <RadarChart cx="50%" cy="50%" outerRadius="75%" data={activeComparison.radar}>
+                      <PolarGrid stroke="#e2e8f0" strokeDasharray="3 3" />
+                      <PolarAngleAxis
+                        dataKey="pillar"
+                        tick={{ fill: '#334155', fontSize: 11, fontWeight: 700 }}
+                      />
+                      <PolarRadiusAxis
+                        angle={30}
+                        domain={[0, 100]}
+                        tick={{ fill: '#94a3b8', fontSize: 10 }}
+                      />
                       <Radar
-                        name={activeComparison.first.districtName}
-                        dataKey="first"
+                        name={activeComparison.firstLocalizedName}
+                        dataKey={activeComparison.firstLocalizedName}
                         stroke="#2563eb"
                         fill="#3b82f6"
                         fillOpacity={0.35}
                         strokeWidth={2}
                       />
                       <Radar
-                        name={activeComparison.second.districtName}
-                        dataKey="second"
-                        stroke="#4f46e5"
-                        fill="#6366f1"
-                        fillOpacity={0.35}
+                        name={activeComparison.secondLocalizedName}
+                        dataKey={activeComparison.secondLocalizedName}
+                        stroke="#7c3aed"
+                        fill="#8b5cf6"
+                        fillOpacity={0.3}
                         strokeWidth={2}
                       />
                       <Tooltip
@@ -813,10 +519,10 @@ export function DistrictComparisonView({
                 <div className="flex items-center justify-between">
                   <h4 className="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center gap-2">
                     <ArrowLeftRight className="w-4 h-4 text-blue-600" />
-                    Szczegółowe Zestawienie Twardych Danych Miejskich
+                    {t.comparison.tableTitle}
                   </h4>
                   <span className="text-[11px] text-slate-500">
-                    Kolorem zielonym oznaczono dzielnicę z korzystniejszym parametrem
+                    {t.comparison.tableSubtitle}
                   </span>
                 </div>
 
@@ -824,14 +530,14 @@ export function DistrictComparisonView({
                   <table className="w-full text-left text-xs">
                     <thead className="bg-slate-100/90 text-slate-700 font-bold border-b border-slate-200">
                       <tr>
-                        <th className="py-3 px-4 w-1/4">Kategoria i Wskaźnik</th>
+                        <th className="py-3 px-4 w-1/4">{t.comparison.categoryAndMetric}</th>
                         <th className="py-3 px-4 text-center w-1/4 text-blue-700 font-extrabold">
-                          {activeComparison.first.districtName}
+                          {activeComparison.firstLocalizedName}
                         </th>
                         <th className="py-3 px-4 text-center w-1/4 text-indigo-700 font-extrabold">
-                          {activeComparison.second.districtName}
+                          {activeComparison.secondLocalizedName}
                         </th>
-                        <th className="py-3 px-6 text-center w-36 whitespace-nowrap">Różnica</th>
+                        <th className="py-3 px-6 text-center w-36 whitespace-nowrap">{t.comparison.difference}</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
@@ -843,16 +549,39 @@ export function DistrictComparisonView({
                         const firstIsBetter = row.higherIsBetter ? diff > 0 : diff < 0;
                         const secondIsBetter = row.higherIsBetter ? diff < 0 : diff > 0;
 
-                        const formattedFirst = row.format ? row.format(firstVal) : `${firstVal} ${row.unit}`;
-                        const formattedSecond = row.format ? row.format(secondVal) : `${secondVal} ${row.unit}`;
+                        const localizedCategory = t.comparison.categories[row.categoryKey] || row.defaultCategory;
+                        const localizedLabel = t.comparison.metrics[row.metricKey] || row.defaultLabel;
+
+                        const activePluralForms = row.pluralMap ? row.pluralMap[language] : undefined;
+
+                        // Precise grammatical plural inflection formatting
+                        const formattedFirst = row.format
+                          ? row.format(firstVal, language)
+                          : activePluralForms
+                          ? formatWithPlural(firstVal, activePluralForms)
+                          : `${firstVal} ${row.unit}`;
+
+                        const formattedSecond = row.format
+                          ? row.format(secondVal, language)
+                          : activePluralForms
+                          ? formatWithPlural(secondVal, activePluralForms)
+                          : `${secondVal} ${row.unit}`;
+
+                        const absDiff = Math.abs(diff);
+                        const isInteger = Math.abs(diff - Math.round(diff)) < 0.0001;
+                        const diffNum = isInteger ? Math.round(diff) : diff.toFixed(1);
+                        const formattedDiffNum = diff > 0 ? `+${diffNum}` : `${diffNum}`;
+                        const formattedDiffUnit = activePluralForms
+                          ? plural(absDiff, activePluralForms)
+                          : row.unit;
 
                         return (
                           <tr key={idx} className="hover:bg-blue-50/30 transition-colors">
                             <td className="py-2.5 px-4">
                               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
-                                {row.category}
+                                {localizedCategory}
                               </span>
-                              <span className="font-medium text-slate-800">{row.label}</span>
+                              <span className="font-medium text-slate-800">{localizedLabel}</span>
                             </td>
                             <td
                               className={`py-2.5 px-4 text-center font-bold ${
@@ -876,10 +605,10 @@ export function DistrictComparisonView({
                             </td>
                             <td className="py-2.5 px-6 text-center font-extrabold text-[11px] text-slate-600 whitespace-nowrap">
                               {diff === 0 ? (
-                                <span className="text-slate-400">Równe</span>
+                                <span className="text-slate-400">{t.comparison.equal}</span>
                               ) : (
                                 <span className={diff > 0 ? 'text-blue-600' : 'text-indigo-600'}>
-                                  {diff > 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1)} {row.unit}
+                                  {formattedDiffNum} {formattedDiffUnit}
                                 </span>
                               )}
                             </td>

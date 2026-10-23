@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 import { cracow360Api } from '../../api/client';
 import type { SystemHelloDto } from '../../types/contracts';
 import type { AppTabId } from './MainNavbar';
+import { useTranslation } from '../../i18n/I18nContext';
 
 export interface MainFooterProps {
   onSelectTab: (tab: AppTabId) => void;
@@ -9,8 +10,11 @@ export interface MainFooterProps {
 
 /// <summary>
 /// Civic footer displaying branding, navigation links, and verified city data status.
+/// Fully localized with dynamic plural forms for districts and points of interest.
 /// </summary>
 export function MainFooter({ onSelectTab }: MainFooterProps) {
+  const { t, formatWithPlural } = useTranslation();
+
   // Live system diagnostic metadata fetched from backend Minimal API
   const [systemInfo, setSystemInfo] = useState<SystemHelloDto | null>(null);
 
@@ -35,6 +39,9 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  const districtsCount = systemInfo?.seededDistrictsCount ?? 18;
+  const poisCount = systemInfo?.seededPoisCount ?? 913;
+
   return (
     <footer className="mt-14 border-t border-blue-100 bg-white/90 backdrop-blur-md">
       <div className="max-w-360 mx-auto px-4 sm:px-6 py-8">
@@ -51,13 +58,15 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
                 <span className="font-extrabold text-slate-800">Kraków<span className="text-blue-600">360</span></span>
                 <span className="text-slate-300">•</span>
                 <span>
-                  Platforma Analizy Jakości Życia i Dostępności Usług Publicznych w Krakowie
+                  {t.footer.dataSourceInfo}
                 </span>
               </div>
               <div className="flex items-center gap-2 mt-1 text-[11px] text-slate-500">
                 <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span className="font-medium text-emerald-700">
-                  Zweryfikowane dane miejskie: {systemInfo?.seededDistrictsCount ?? 18} dzielnic • {systemInfo?.seededPoisCount ?? 913} obiektów użyteczności publicznej (POI)
+                  {t.footer.verifiedData}{' '}
+                  {formatWithPlural(districtsCount, t.footer.districtsPlural)}{' • '}
+                  {formatWithPlural(poisCount, t.footer.poisPlural)}
                 </span>
               </div>
             </div>
@@ -69,25 +78,25 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
               onClick={() => handleTabClick('resident')}
               className="hover:text-blue-600 transition cursor-pointer"
             >
-              Dla Mieszkańca
+              {t.nav.residentMode}
             </button>
             <button
               onClick={() => handleTabClick('parent')}
               className="hover:text-blue-600 transition cursor-pointer"
             >
-              Dla Rodzica
+              {t.nav.parentMode}
             </button>
             <button
               onClick={() => handleTabClick('investor')}
               className="hover:text-blue-600 transition cursor-pointer"
             >
-              Dla Urzędnika i Inwestora
+              {t.nav.investorMode}
             </button>
             <button
               onClick={() => handleTabClick('methodology')}
               className="hover:text-blue-600 transition cursor-pointer"
             >
-              Metodologia i Źródła Danych
+              {t.nav.methodology}
             </button>
           </div>
         </div>

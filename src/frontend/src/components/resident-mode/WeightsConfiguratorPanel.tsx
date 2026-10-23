@@ -20,6 +20,7 @@ import {
 } from 'lucide-react';
 import type { QualityWeights, ResidentPreset } from '../../types/contracts';
 import { RESIDENT_PRESETS } from '../../utils/qualityIndexCalculator';
+import { useTranslation } from '../../i18n/I18nContext';
 
 export interface WeightsConfiguratorPanelProps {
   weights: QualityWeights;
@@ -28,74 +29,58 @@ export interface WeightsConfiguratorPanelProps {
   onResetWeights: () => void;
 }
 
-const SLIDER_CONFIGS: {
+interface SliderDefinition {
   key: keyof QualityWeights;
-  label: string;
-  description: string;
   iconBg: string;
   accentColor: string;
   icon: React.ReactNode;
-}[] = [
+}
+
+const SLIDER_DEFS: SliderDefinition[] = [
   {
     key: 'mobility',
-    label: 'Mobilność i Komunikacja',
-    description: 'KMK, izochrony, drogi rowerowe DDR',
     iconBg: 'bg-blue-50 border-blue-200 text-blue-600',
     accentColor: 'accent-blue-600',
     icon: <Bus className="w-3.5 h-3.5" />,
   },
   {
     key: 'education',
-    label: 'Edukacja i Opieka',
-    description: 'Żłobki, przedszkola, małe klasy szkolne',
     iconBg: 'bg-emerald-50 border-emerald-200 text-emerald-600',
     accentColor: 'accent-emerald-600',
     icon: <GraduationCap className="w-3.5 h-3.5" />,
   },
   {
     key: 'greenery',
-    label: 'Zieleń i Rekreacja',
-    description: 'Parki, lasy miejskie, sport i baseny',
     iconBg: 'bg-lime-50 border-lime-200 text-lime-600',
     accentColor: 'accent-lime-600',
     icon: <Trees className="w-3.5 h-3.5" />,
   },
   {
     key: 'culture',
-    label: 'Kultura i Społeczność',
-    description: 'Biblioteki, domy kultury, centra CAS',
     iconBg: 'bg-amber-50 border-amber-200 text-amber-600',
     accentColor: 'accent-amber-600',
     icon: <Landmark className="w-3.5 h-3.5" />,
   },
   {
     key: 'environment',
-    label: 'Środowisko i Spokój',
-    description: 'Pomiary PM10 GIOŚ, akustyka i hałas',
     iconBg: 'bg-teal-50 border-teal-200 text-teal-600',
     accentColor: 'accent-teal-600',
     icon: <ShieldCheck className="w-3.5 h-3.5" />,
   },
   {
     key: 'safety',
-    label: 'Bezpieczeństwo i Porządek',
-    description: 'Bezpieczny ruch, ochrona pieszych',
     iconBg: 'bg-indigo-50 border-indigo-200 text-indigo-600',
     accentColor: 'accent-indigo-600',
     icon: <ShieldAlert className="w-3.5 h-3.5" />,
   },
   {
     key: 'housingAffordability',
-    label: 'Dostępność Mieszkaniowa',
-    description: 'Ceny zakupu i najmu m², siła nabywcza',
     iconBg: 'bg-rose-50 border-rose-200 text-rose-600',
     accentColor: 'accent-rose-600',
     icon: <Coins className="w-3.5 h-3.5" />,
   },
   {
     key: 'demographicVitality',
-    label: 'Witalność i Rozwój Dzielnicy',
-    description: 'Wzrost ludności, wiek 15–64, cudzoziemcy',
     iconBg: 'bg-violet-50 border-violet-200 text-violet-600',
     accentColor: 'accent-violet-600',
     icon: <TrendingUp className="w-3.5 h-3.5" />,
@@ -127,6 +112,7 @@ export function WeightsConfiguratorPanel({
   onChangeWeights,
   onResetWeights,
 }: WeightsConfiguratorPanelProps) {
+  const { t } = useTranslation();
   const animationFrameRef = useRef<number | null>(null);
 
   // Cancel any running animation on unmount
@@ -229,17 +215,17 @@ export function WeightsConfiguratorPanel({
             <SlidersHorizontal className="w-4 h-4" />
           </div>
           <div>
-            <h3 className="text-sm font-extrabold text-slate-900">Konfigurator Wag</h3>
-            <p className="text-[11px] text-slate-500">8 Filarów Jakości Życia (0-10)</p>
+            <h3 className="text-sm font-extrabold text-slate-900">{t.configurator.title}</h3>
+            <p className="text-[11px] text-slate-500">{t.configurator.subtitle}</p>
           </div>
         </div>
         <button
           onClick={handleResetWithAnimation}
-          title="Przywróć równe wagi (wszystko po 5)"
+          title={t.configurator.resetWeightsTitle}
           className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl text-xs font-semibold text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition border border-transparent hover:border-blue-200 cursor-pointer"
         >
           <RotateCcw className="w-3 h-3" />
-          <span>Reset</span>
+          <span>{t.configurator.resetWeights}</span>
         </button>
       </div>
 
@@ -248,11 +234,16 @@ export function WeightsConfiguratorPanel({
         {/* Preset Buttons Grid */}
         <div className="space-y-1.5">
           <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
-            Gotowe Profile Mieszkańców:
+            {t.configurator.presetsLabel}
           </label>
           <div className="grid grid-cols-2 gap-1.5">
             {RESIDENT_PRESETS.map((preset) => {
               const isActive = activePresetId === preset.id;
+              const presetKey = preset.id as keyof typeof t.configurator.presets;
+              const presetLocalized = t.configurator.presets[presetKey];
+              const label = presetLocalized ? presetLocalized.label : preset.label;
+              const desc = presetLocalized ? presetLocalized.desc : preset.description;
+
               return (
                 <button
                   key={preset.id}
@@ -262,13 +253,13 @@ export function WeightsConfiguratorPanel({
                       ? 'bg-blue-50/90 border-blue-500 text-blue-900 shadow-xs ring-1 ring-blue-500/30'
                       : 'bg-slate-50/70 border-slate-200 text-slate-700 hover:bg-blue-50/40 hover:border-blue-300'
                   }`}
-                  title={preset.description}
+                  title={desc}
                 >
                   <div className="w-6 h-6 rounded-md bg-white border border-slate-200/80 flex items-center justify-center shrink-0">
                     {getPresetIcon(preset.id)}
                   </div>
                   <span className="flex-1 text-[11px] font-bold leading-tight text-center whitespace-normal line-clamp-2 px-1">
-                    {preset.label}
+                    {label}
                   </span>
                 </button>
               );
@@ -279,10 +270,14 @@ export function WeightsConfiguratorPanel({
         {/* 8 Quality Dimension Sliders */}
         <div className="space-y-3 pt-1">
           <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
-            Dostosuj 8 Wymiarów Jakości Życia:
+            {t.configurator.slidersSectionTitle}
           </label>
-          {SLIDER_CONFIGS.map((slider) => {
+          {SLIDER_DEFS.map((slider) => {
             const currentValue = weights[slider.key];
+            const pillarLocalized = t.configurator.pillars[slider.key];
+            const pillarName = pillarLocalized ? pillarLocalized.name : slider.key;
+            const pillarDesc = pillarLocalized ? pillarLocalized.desc : '';
+
             return (
               <div
                 key={slider.key}
@@ -297,10 +292,10 @@ export function WeightsConfiguratorPanel({
                     </div>
                     <div className="min-w-0">
                       <span className="text-xs font-bold text-slate-900 truncate block leading-tight">
-                        {slider.label}
+                        {pillarName}
                       </span>
                       <span className="text-[10px] text-slate-600 truncate block">
-                        {slider.description}
+                        {pillarDesc}
                       </span>
                     </div>
                   </div>

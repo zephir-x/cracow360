@@ -43,7 +43,7 @@ export const cracow360Api = {
     return data;
   },
 
-  // Compares two districts side-by-side with calculated index and metric deltas across all 7 pillars
+  // Compares two districts side-by-side with calculated index and metric deltas across all 8 pillars
   compareDistricts: async (
     firstId: number,
     secondId: number,

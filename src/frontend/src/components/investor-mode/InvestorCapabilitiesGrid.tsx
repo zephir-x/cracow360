@@ -1,6 +1,9 @@
 ﻿import { Calculator, LineChart, Sliders } from 'lucide-react';
+import { useTranslation } from '../../i18n/I18nContext';
 
 export function InvestorCapabilitiesGrid() {
+  const { t } = useTranslation();
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
       <div className="p-6 rounded-3xl bg-white border border-blue-100 shadow-lg shadow-blue-900/5 space-y-3">
@@ -8,10 +11,10 @@ export function InvestorCapabilitiesGrid() {
           <LineChart className="w-5 h-5" />
         </div>
         <h3 className="text-base font-extrabold text-slate-900">
-          Modele Ekonometryczne (2027–2030)
+          {t.investor.capabilities.econometricsTitle}
         </h3>
         <p className="text-xs text-slate-600 leading-relaxed">
-          Prognoza liczby dzieci w wieku żłobkowym (0–3) i przedszkolnym (4–6) wyliczana na podstawie trendów meldunkowych i oddawanych mieszkań.
+          {t.investor.capabilities.econometricsDesc}
         </p>
       </div>
 
@@ -20,10 +23,10 @@ export function InvestorCapabilitiesGrid() {
           <Sliders className="w-5 h-5" />
         </div>
         <h3 className="text-base font-extrabold text-slate-900">
-          Symulator „Co-Jeśli"
+          {t.investor.capabilities.whatIfTitle}
         </h3>
         <p className="text-xs text-slate-600 leading-relaxed">
-          Możliwość wirtualnego dodania np. nowego żłobka samorządowego na 120 miejsc w Dzielnicy IV Prądnik Biały i sprawdzenia na żywo, o ile spadnie deficyt miejsc w 2028 roku.
+          {t.investor.capabilities.whatIfDesc}
         </p>
       </div>
 
@@ -32,10 +35,10 @@ export function InvestorCapabilitiesGrid() {
           <Calculator className="w-5 h-5" />
         </div>
         <h3 className="text-base font-extrabold text-slate-900">
-          Mapa Deficytów Inwestycyjnych B2B/B2G
+          {t.investor.capabilities.deficitsTitle}
         </h3>
         <p className="text-xs text-slate-600 leading-relaxed">
-          Automatyczna klasyfikacja dzielnic wskazująca, gdzie miasto lub prywatny operator powinien w pierwszej kolejności otworzyć żłobek, CAS lub park kieszonkowy.
+          {t.investor.capabilities.deficitsDesc}
         </p>
       </div>
     </section>

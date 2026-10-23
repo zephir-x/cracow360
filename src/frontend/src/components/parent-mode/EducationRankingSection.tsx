@@ -1,4 +1,5 @@
 ﻿import { MapPin, ShieldCheck } from 'lucide-react';
+import { useTranslation } from '../../i18n/I18nContext';
 import type { DistrictSummaryDto } from '../../types/contracts';
 
 export interface EducationRankingSectionProps {
@@ -6,6 +7,8 @@ export interface EducationRankingSectionProps {
 }
 
 export function EducationRankingSection({ districts }: EducationRankingSectionProps) {
+  const { t, localizeDistrictName } = useTranslation();
+
   const topEducationDistricts = [...districts]
     .sort((a, b) => b.scores.educationScore - a.scores.educationScore)
     .slice(0, 6);
@@ -19,10 +22,10 @@ export function EducationRankingSection({ districts }: EducationRankingSectionPr
           </div>
           <div>
             <h2 className="text-base font-extrabold text-slate-900">
-              Aktualny Ranking Dzielnic w Kategorii: Edukacja i Opieka (0–14 lat)
+              {t.parent.rankingTitle}
             </h2>
             <p className="text-xs text-slate-500">
-              Zagregowane dane oświatowe dla 18 dzielnic (rejestry SIO i UMK)
+              {t.parent.rankingSubtitle}
             </p>
           </div>
         </div>
@@ -40,16 +43,16 @@ export function EducationRankingSection({ districts }: EducationRankingSectionPr
               </span>
               <div className="min-w-0">
                 <div className="text-xs font-extrabold text-slate-900 truncate">
-                  {d.districtName}
+                  {localizeDistrictName(d.districtName)}
                 </div>
                 <div className="text-[11px] text-slate-500 flex items-center gap-1 mt-0.5">
                   <MapPin className="w-3 h-3 text-blue-500" />
-                  Populacja: {d.totalPopulation.toLocaleString('pl-PL')}
+                  {t.parent.population} {d.totalPopulation.toLocaleString()}
                 </div>
               </div>
             </div>
             <div className="text-xs font-extrabold px-2.5 py-1 rounded-xl bg-blue-50 text-blue-700 border border-blue-200 shrink-0">
-              {d.scores.educationScore.toFixed(1)} pkt
+              {d.scores.educationScore.toFixed(1)} {t.common.points}
             </div>
           </div>
         ))}
