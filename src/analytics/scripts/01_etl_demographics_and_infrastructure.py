@@ -484,7 +484,7 @@ def run_etl() -> None:
             )
 
             # Aggregate institutional capacities
-            if "nursery" in counter_key.lower() or "kids" in counter_key.lower():
+            if "nurser" in counter_key.lower() or "kids" in counter_key.lower():
                 districts_data[did]["educationAndCare"]["totalCarePlaces0to3"] += places
             elif "kindergarten" in counter_key.lower():
                 districts_data[did]["educationAndCare"]["kindergartenPlacesTotal"] += places

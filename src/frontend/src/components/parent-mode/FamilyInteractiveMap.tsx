@@ -341,11 +341,11 @@ export function FamilyInteractiveMap({
   );
 
   return (
-    <section className="space-y-4">
+    <section className="rounded-3xl bg-white border border-slate-200/80 shadow-sm overflow-hidden">
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-blue-100 pb-3">
+      <div className="p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100">
         <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
+          <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200/80 flex items-center justify-center shrink-0">
             <Compass className="w-5 h-5" />
           </div>
           <div>
@@ -360,7 +360,7 @@ export function FamilyInteractiveMap({
 
         {/* Active buffer indicator pill in section header */}
         {selectedCenter && (
-          <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-900 animate-fade-in self-start sm:self-auto">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-900 animate-fade-in self-start sm:self-auto">
             <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
             <span>
               {t.parent.familyMap.bufferRadius}: {currentRadiusLabels.dist} ({currentRadiusLabels.time})
@@ -378,7 +378,7 @@ export function FamilyInteractiveMap({
 
       {/* Map Container */}
       <div
-        className={`relative w-full h-[620px] rounded-3xl overflow-hidden border border-blue-100 bg-white shadow-xl shadow-blue-900/5 family-interactive-map ${
+        className={`relative w-full h-155 overflow-hidden family-interactive-map ${
           darkMapMode ? 'krakow-dark-tiles' : 'krakow-light-tiles'
         }`}
       >

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-21T22:07:12Z",
+    "generatedAt": "2026-10-23T21:41:14Z",
     "dataVersion": "2.1.0-expanded-7-pillars-2025-2026",
     "normalizationMethod": "MinMax_0_100_Calibrated"
   },
@@ -27,8 +27,8 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 10,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 35,
-        "childrenPerCarePlaceRatio": 14.77,
+        "totalCarePlaces0to3": 500,
+        "childrenPerCarePlaceRatio": 1.03,
         "parentClubsCount": 3,
         "kindergartensCount": 26,
         "kindergartenPlacesTotal": 1853,
@@ -103,9 +103,9 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 502,
-        "forecastedCarePlacesBalance_2028": -342,
+        "forecastedCarePlacesBalance_2028": 124,
         "forecastedAge4to6_2028": 380,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.3%)."
@@ -133,8 +133,8 @@
         "nurseriesContractedCount": 1,
         "nurseriesPrivateCount": 19,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 0,
-        "childrenPerCarePlaceRatio": 1075.0,
+        "totalCarePlaces0to3": 805,
+        "childrenPerCarePlaceRatio": 1.34,
         "parentClubsCount": 3,
         "kindergartensCount": 23,
         "kindergartenPlacesTotal": 1772,
@@ -199,7 +199,7 @@
       },
       "scores": {
         "mobilityScore": 73.6,
-        "educationScore": 69.3,
+        "educationScore": 77.6,
         "greeneryScore": 65.0,
         "cultureAndSeniorScore": 88.2,
         "environmentScore": 50.1,
@@ -209,7 +209,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1078,
-        "forecastedCarePlacesBalance_2028": -808,
+        "forecastedCarePlacesBalance_2028": -4,
         "forecastedAge4to6_2028": 808,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -239,8 +239,8 @@
         "nurseriesContractedCount": 1,
         "nurseriesPrivateCount": 12,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 24,
-        "childrenPerCarePlaceRatio": 53.29,
+        "totalCarePlaces0to3": 646,
+        "childrenPerCarePlaceRatio": 1.98,
         "parentClubsCount": 4,
         "kindergartensCount": 28,
         "kindergartenPlacesTotal": 1989,
@@ -305,7 +305,7 @@
       },
       "scores": {
         "mobilityScore": 73.6,
-        "educationScore": 78.1,
+        "educationScore": 63.4,
         "greeneryScore": 58.7,
         "cultureAndSeniorScore": 74.7,
         "environmentScore": 63.0,
@@ -315,7 +315,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1267,
-        "forecastedCarePlacesBalance_2028": -926,
+        "forecastedCarePlacesBalance_2028": -304,
         "forecastedAge4to6_2028": 952,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -345,8 +345,8 @@
         "nurseriesContractedCount": 2,
         "nurseriesPrivateCount": 26,
         "kidsClubsCount": 4,
-        "totalCarePlaces0to3": 83,
-        "childrenPerCarePlaceRatio": 33.89,
+        "totalCarePlaces0to3": 1426,
+        "childrenPerCarePlaceRatio": 1.97,
         "parentClubsCount": 1,
         "kindergartensCount": 53,
         "kindergartenPlacesTotal": 3565,
@@ -411,7 +411,7 @@
       },
       "scores": {
         "mobilityScore": 56.2,
-        "educationScore": 72.2,
+        "educationScore": 57.4,
         "greeneryScore": 55.0,
         "cultureAndSeniorScore": 65.5,
         "environmentScore": 59.5,
@@ -421,12 +421,12 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 2875,
-        "forecastedCarePlacesBalance_2028": -2073,
+        "forecastedCarePlacesBalance_2028": -730,
         "forecastedAge4to6_2028": 2146,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -2073 miejsc) oraz tworzenie parków kieszonkowych (obecnie 2.33 m² zieleni/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -730 miejsc) oraz tworzenie parków kieszonkowych (obecnie 2.33 m² zieleni/os.)."
       }
     },
     {
@@ -451,8 +451,8 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 14,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 0,
-        "childrenPerCarePlaceRatio": 753.0,
+        "totalCarePlaces0to3": 649,
+        "childrenPerCarePlaceRatio": 1.16,
         "parentClubsCount": 1,
         "kindergartensCount": 29,
         "kindergartenPlacesTotal": 1471,
@@ -517,7 +517,7 @@
       },
       "scores": {
         "mobilityScore": 77.2,
-        "educationScore": 81.6,
+        "educationScore": 88.8,
         "greeneryScore": 70.5,
         "cultureAndSeniorScore": 84.3,
         "environmentScore": 58.1,
@@ -527,9 +527,9 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 745,
-        "forecastedCarePlacesBalance_2028": -559,
+        "forecastedCarePlacesBalance_2028": 90,
         "forecastedAge4to6_2028": 560,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "MEDIUM",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (26.6%)."
@@ -557,8 +557,8 @@
         "nurseriesContractedCount": 1,
         "nurseriesPrivateCount": 13,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 25,
-        "childrenPerCarePlaceRatio": 31.44,
+        "totalCarePlaces0to3": 511,
+        "childrenPerCarePlaceRatio": 1.54,
         "parentClubsCount": 4,
         "kindergartensCount": 13,
         "kindergartenPlacesTotal": 849,
@@ -623,7 +623,7 @@
       },
       "scores": {
         "mobilityScore": 38.7,
-        "educationScore": 68.4,
+        "educationScore": 60.4,
         "greeneryScore": 69.3,
         "cultureAndSeniorScore": 78.7,
         "environmentScore": 76.4,
@@ -633,7 +633,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 794,
-        "forecastedCarePlacesBalance_2028": -570,
+        "forecastedCarePlacesBalance_2028": -84,
         "forecastedAge4to6_2028": 595,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -663,8 +663,8 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 7,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 0,
-        "childrenPerCarePlaceRatio": 502.0,
+        "totalCarePlaces0to3": 306,
+        "childrenPerCarePlaceRatio": 1.64,
         "parentClubsCount": 3,
         "kindergartensCount": 20,
         "kindergartenPlacesTotal": 968,
@@ -729,7 +729,7 @@
       },
       "scores": {
         "mobilityScore": 32.9,
-        "educationScore": 72.4,
+        "educationScore": 68.7,
         "greeneryScore": 97.0,
         "cultureAndSeniorScore": 88.0,
         "environmentScore": 94.0,
@@ -739,7 +739,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 505,
-        "forecastedCarePlacesBalance_2028": -379,
+        "forecastedCarePlacesBalance_2028": -73,
         "forecastedAge4to6_2028": 378,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -769,8 +769,8 @@
         "nurseriesContractedCount": 2,
         "nurseriesPrivateCount": 26,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 22,
-        "childrenPerCarePlaceRatio": 104.77,
+        "totalCarePlaces0to3": 1195,
+        "childrenPerCarePlaceRatio": 1.93,
         "parentClubsCount": 2,
         "kindergartensCount": 43,
         "kindergartenPlacesTotal": 2920,
@@ -835,7 +835,7 @@
       },
       "scores": {
         "mobilityScore": 30.7,
-        "educationScore": 73.5,
+        "educationScore": 60.2,
         "greeneryScore": 75.0,
         "cultureAndSeniorScore": 67.7,
         "environmentScore": 80.0,
@@ -845,12 +845,12 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 2343,
-        "forecastedCarePlacesBalance_2028": -1735,
+        "forecastedCarePlacesBalance_2028": -562,
         "forecastedAge4to6_2028": 1751,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -1735 miejsc) oraz tworzenie parków kieszonkowych (obecnie 8.15 m² zieleni/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -562 miejsc) oraz tworzenie parków kieszonkowych (obecnie 8.15 m² zieleni/os.)."
       }
     },
     {
@@ -875,8 +875,8 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 5,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 15,
-        "childrenPerCarePlaceRatio": 30.67,
+        "totalCarePlaces0to3": 208,
+        "childrenPerCarePlaceRatio": 2.21,
         "parentClubsCount": 3,
         "kindergartensCount": 13,
         "kindergartenPlacesTotal": 893,
@@ -941,7 +941,7 @@
       },
       "scores": {
         "mobilityScore": 57.6,
-        "educationScore": 80.2,
+        "educationScore": 61.4,
         "greeneryScore": 86.0,
         "cultureAndSeniorScore": 89.6,
         "environmentScore": 73.7,
@@ -951,7 +951,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 460,
-        "forecastedCarePlacesBalance_2028": -330,
+        "forecastedCarePlacesBalance_2028": -137,
         "forecastedAge4to6_2028": 345,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -981,8 +981,8 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 7,
         "kidsClubsCount": 3,
-        "totalCarePlaces0to3": 35,
-        "childrenPerCarePlaceRatio": 25.94,
+        "totalCarePlaces0to3": 354,
+        "childrenPerCarePlaceRatio": 2.56,
         "parentClubsCount": 2,
         "kindergartensCount": 20,
         "kindergartenPlacesTotal": 1353,
@@ -1047,7 +1047,7 @@
       },
       "scores": {
         "mobilityScore": 28.0,
-        "educationScore": 76.4,
+        "educationScore": 52.0,
         "greeneryScore": 72.0,
         "cultureAndSeniorScore": 73.8,
         "environmentScore": 87.8,
@@ -1057,7 +1057,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 914,
-        "forecastedCarePlacesBalance_2028": -650,
+        "forecastedCarePlacesBalance_2028": -332,
         "forecastedAge4to6_2028": 685,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "LOW",
@@ -1087,8 +1087,8 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 16,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 15,
-        "childrenPerCarePlaceRatio": 105.87,
+        "totalCarePlaces0to3": 835,
+        "childrenPerCarePlaceRatio": 1.9,
         "parentClubsCount": 4,
         "kindergartensCount": 29,
         "kindergartenPlacesTotal": 1945,
@@ -1153,7 +1153,7 @@
       },
       "scores": {
         "mobilityScore": 48.5,
-        "educationScore": 66.4,
+        "educationScore": 53.5,
         "greeneryScore": 66.4,
         "cultureAndSeniorScore": 62.9,
         "environmentScore": 59.4,
@@ -1163,7 +1163,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1596,
-        "forecastedCarePlacesBalance_2028": -1182,
+        "forecastedCarePlacesBalance_2028": -362,
         "forecastedAge4to6_2028": 1195,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -1193,8 +1193,8 @@
         "nurseriesContractedCount": 1,
         "nurseriesPrivateCount": 17,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 0,
-        "childrenPerCarePlaceRatio": 1973.0,
+        "totalCarePlaces0to3": 982,
+        "childrenPerCarePlaceRatio": 2.01,
         "parentClubsCount": 3,
         "kindergartensCount": 32,
         "kindergartenPlacesTotal": 2449,
@@ -1259,7 +1259,7 @@
       },
       "scores": {
         "mobilityScore": 45.0,
-        "educationScore": 52.0,
+        "educationScore": 60.8,
         "greeneryScore": 62.0,
         "cultureAndSeniorScore": 63.6,
         "environmentScore": 65.9,
@@ -1269,7 +1269,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1973,
-        "forecastedCarePlacesBalance_2028": -1480,
+        "forecastedCarePlacesBalance_2028": -498,
         "forecastedAge4to6_2028": 1480,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -1299,8 +1299,8 @@
         "nurseriesContractedCount": 1,
         "nurseriesPrivateCount": 25,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 29,
-        "childrenPerCarePlaceRatio": 69.52,
+        "totalCarePlaces0to3": 1153,
+        "childrenPerCarePlaceRatio": 1.75,
         "parentClubsCount": 4,
         "kindergartensCount": 37,
         "kindergartenPlacesTotal": 2515,
@@ -1365,7 +1365,7 @@
       },
       "scores": {
         "mobilityScore": 49.4,
-        "educationScore": 76.9,
+        "educationScore": 66.0,
         "greeneryScore": 69.5,
         "cultureAndSeniorScore": 73.7,
         "environmentScore": 56.7,
@@ -1375,12 +1375,12 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 2098,
-        "forecastedCarePlacesBalance_2028": -1544,
+        "forecastedCarePlacesBalance_2028": -420,
         "forecastedAge4to6_2028": 1559,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +4.8%, bilans 2028: -1544 miejsc)."
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +4.8%, bilans 2028: -420 miejsc)."
       }
     },
     {
@@ -1405,8 +1405,8 @@
         "nurseriesContractedCount": 1,
         "nurseriesPrivateCount": 26,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 30,
-        "childrenPerCarePlaceRatio": 56.87,
+        "totalCarePlaces0to3": 1217,
+        "childrenPerCarePlaceRatio": 1.4,
         "parentClubsCount": 3,
         "kindergartensCount": 29,
         "kindergartenPlacesTotal": 1609,
@@ -1471,7 +1471,7 @@
       },
       "scores": {
         "mobilityScore": 51.2,
-        "educationScore": 66.4,
+        "educationScore": 60.9,
         "greeneryScore": 68.7,
         "cultureAndSeniorScore": 58.3,
         "environmentScore": 62.7,
@@ -1481,12 +1481,12 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1754,
-        "forecastedCarePlacesBalance_2028": -1286,
+        "forecastedCarePlacesBalance_2028": -98,
         "forecastedAge4to6_2028": 1308,
-        "nurseryInvestmentPotentialB2B": "HIGH",
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +3.3%, bilans 2028: -1286 miejsc)."
+        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 70.6%)."
       }
     },
     {
@@ -1511,8 +1511,8 @@
         "nurseriesContractedCount": 1,
         "nurseriesPrivateCount": 13,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 0,
-        "childrenPerCarePlaceRatio": 1269.0,
+        "totalCarePlaces0to3": 797,
+        "childrenPerCarePlaceRatio": 1.59,
         "parentClubsCount": 3,
         "kindergartensCount": 23,
         "kindergartenPlacesTotal": 2001,
@@ -1577,7 +1577,7 @@
       },
       "scores": {
         "mobilityScore": 73.2,
-        "educationScore": 58.8,
+        "educationScore": 65.5,
         "greeneryScore": 64.9,
         "cultureAndSeniorScore": 58.0,
         "environmentScore": 71.9,
@@ -1587,7 +1587,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1259,
-        "forecastedCarePlacesBalance_2028": -944,
+        "forecastedCarePlacesBalance_2028": -147,
         "forecastedAge4to6_2028": 946,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "HIGH",
@@ -1617,8 +1617,8 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 8,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 23,
-        "childrenPerCarePlaceRatio": 32.78,
+        "totalCarePlaces0to3": 427,
+        "childrenPerCarePlaceRatio": 1.77,
         "parentClubsCount": 1,
         "kindergartensCount": 21,
         "kindergartenPlacesTotal": 1737,
@@ -1683,7 +1683,7 @@
       },
       "scores": {
         "mobilityScore": 76.3,
-        "educationScore": 80.6,
+        "educationScore": 69.0,
         "greeneryScore": 69.2,
         "cultureAndSeniorScore": 71.0,
         "environmentScore": 69.1,
@@ -1693,7 +1693,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 730,
-        "forecastedCarePlacesBalance_2028": -524,
+        "forecastedCarePlacesBalance_2028": -120,
         "forecastedAge4to6_2028": 552,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "HIGH",
@@ -1723,8 +1723,8 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 6,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 17,
-        "childrenPerCarePlaceRatio": 36.35,
+        "totalCarePlaces0to3": 433,
+        "childrenPerCarePlaceRatio": 1.43,
         "parentClubsCount": 0,
         "kindergartensCount": 11,
         "kindergartenPlacesTotal": 674,
@@ -1789,7 +1789,7 @@
       },
       "scores": {
         "mobilityScore": 32.1,
-        "educationScore": 68.3,
+        "educationScore": 62.1,
         "greeneryScore": 69.7,
         "cultureAndSeniorScore": 61.7,
         "environmentScore": 86.7,
@@ -1799,7 +1799,7 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 624,
-        "forecastedCarePlacesBalance_2028": -451,
+        "forecastedCarePlacesBalance_2028": -35,
         "forecastedAge4to6_2028": 467,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -1829,8 +1829,8 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 16,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 15,
-        "childrenPerCarePlaceRatio": 70.67,
+        "totalCarePlaces0to3": 884,
+        "childrenPerCarePlaceRatio": 1.2,
         "parentClubsCount": 6,
         "kindergartensCount": 36,
         "kindergartenPlacesTotal": 2325,
@@ -1895,7 +1895,7 @@
       },
       "scores": {
         "mobilityScore": 29.5,
-        "educationScore": 83.6,
+        "educationScore": 81.5,
         "greeneryScore": 73.5,
         "cultureAndSeniorScore": 77.1,
         "environmentScore": 60.6,
@@ -1905,9 +1905,9 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1035,
-        "forecastedCarePlacesBalance_2028": -761,
+        "forecastedCarePlacesBalance_2028": 108,
         "forecastedAge4to6_2028": 781,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.7%)."

@@ -2,6 +2,7 @@
 import { useMemo } from 'react';
 import { useTranslation } from '../../../i18n/I18nContext';
 import { localizePoiAdditionalInfo, localizePoiName } from '../../../utils/poiLocalization';
+import { formatPolishPlural } from '../../../utils/pluralization';
 import { getRadiusLabels, type BufferStats, type DisplayPoi } from './familyMapTypes';
 
 export interface FamilyMapHudProps {
@@ -36,15 +37,22 @@ export function FamilyMapHud({
       ? 'calc(33.333% + 2px)'
       : 'calc(66.666%)';
 
-  // Formatted localized summary text for the HUD footer
+  // Formatted localized summary text for the HUD footer with Polish Slavic grammatical inflections
   const totalSummaryText = useMemo(() => {
     if (bufferStats.total === 0) {
       return t.parent.familyMap.noFacilitiesInBuffer;
     }
-    return t.parent.familyMap.totalFacilitiesInDistance
-      .replace('{count}', String(bufferStats.total))
-      .replace('{time}', currentRadiusLabels.time);
-  }, [bufferStats, t, currentRadiusLabels]);
+    if (language === 'pl') {
+      const noun = formatPolishPlural(bufferStats.total, ['obiekt', 'obiekty', 'obiektów']);
+      return `Łącznie ${bufferStats.total} ${noun} w zasięgu ${currentRadiusLabels.time} spaceru pieszo.`;
+    }
+    if (language === 'ua') {
+      const noun = formatPolishPlural(bufferStats.total, ['об’єкт', 'об’єкти', 'об’єктів']);
+      return `Всього ${bufferStats.total} ${noun} у межах ${currentRadiusLabels.time} пішої прогулянки.`;
+    }
+    const noun = bufferStats.total === 1 ? 'facility' : 'facilities';
+    return `Total ${bufferStats.total} ${noun} within ${currentRadiusLabels.time} walking distance.`;
+  }, [bufferStats, t, currentRadiusLabels, language]);
 
   return (
     <div className="absolute top-20 sm:top-4 right-4 z-1000 w-80 sm:w-88 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-200/80 rounded-2xl p-4 shadow-xl shadow-blue-950/15 space-y-3 animate-fade-in">
@@ -149,14 +157,16 @@ export function FamilyMapHud({
           .replace('{time}', currentRadiusLabels.time)}
       </div>
 
-      {/* 4 Pillars Stat Grid: Exact Lucide icons unified with map pins! */}
+      {/* 4 Pillars Stat Grid */}
       <div className="grid grid-cols-2 gap-2 text-xs">
         {/* Nurseries */}
         <div className="p-2 rounded-xl bg-blue-50/70 border border-blue-200 flex items-center justify-between gap-1.5">
           <div className="flex items-center gap-1.5 text-blue-700 min-w-0">
             <Baby className="w-4 h-4 shrink-0 text-blue-600" />
-            <span className="text-[11px] font-semibold leading-tight">
-              {t.parent.familyMap.nurseriesCount}
+            <span className="text-[11px] font-semibold leading-tight truncate">
+              {language === 'pl'
+                ? formatPolishPlural(bufferStats.nurseries, ['Żłobek / klub', 'Żłobki / kluby', 'Żłobków / klubów'])
+                : t.parent.familyMap.nurseriesCount}
             </span>
           </div>
           <span className="text-xs font-black text-blue-900 shrink-0">
@@ -168,8 +178,10 @@ export function FamilyMapHud({
         <div className="p-2 rounded-xl bg-amber-50/70 border border-amber-200 flex items-center justify-between gap-1.5">
           <div className="flex items-center gap-1.5 text-amber-700 min-w-0">
             <Smile className="w-4 h-4 shrink-0 text-amber-600" />
-            <span className="text-[11px] font-semibold leading-tight">
-              {t.parent.familyMap.kindergartensCount}
+            <span className="text-[11px] font-semibold leading-tight truncate">
+              {language === 'pl'
+                ? formatPolishPlural(bufferStats.kindergartens, ['Przedszkole', 'Przedszkola', 'Przedszkoli'])
+                : t.parent.familyMap.kindergartensCount}
             </span>
           </div>
           <span className="text-xs font-black text-amber-900 shrink-0">
@@ -177,12 +189,14 @@ export function FamilyMapHud({
           </span>
         </div>
 
-        {/* Primary Schools (Violet) */}
+        {/* Primary Schools */}
         <div className="p-2 rounded-xl bg-purple-50/70 border border-purple-200 flex items-center justify-between gap-1.5">
           <div className="flex items-center gap-1.5 text-purple-700 min-w-0">
             <GraduationCap className="w-4 h-4 shrink-0 text-purple-600" />
-            <span className="text-[11px] font-semibold leading-tight">
-              {t.parent.familyMap.schoolsCount}
+            <span className="text-[11px] font-semibold leading-tight truncate">
+              {language === 'pl'
+                ? formatPolishPlural(bufferStats.schools, ['Szkoła podst.', 'Szkoły podst.', 'Szkół podst.'])
+                : t.parent.familyMap.schoolsCount}
             </span>
           </div>
           <span className="text-xs font-black text-purple-900 shrink-0">
@@ -190,12 +204,14 @@ export function FamilyMapHud({
           </span>
         </div>
 
-        {/* Parks (Green) */}
+        {/* Parks */}
         <div className="p-2 rounded-xl bg-green-50/70 border border-green-200 flex items-center justify-between gap-1.5">
           <div className="flex items-center gap-1.5 text-green-700 min-w-0">
             <Trees className="w-4 h-4 shrink-0 text-green-600" />
-            <span className="text-[11px] font-semibold leading-tight">
-              {t.parent.familyMap.parksCount}
+            <span className="text-[11px] font-semibold leading-tight truncate">
+              {language === 'pl'
+                ? formatPolishPlural(bufferStats.parks, ['Park / zieleń', 'Parki / zieleń', 'Parków / zieleni'])
+                : t.parent.familyMap.parksCount}
             </span>
           </div>
           <span className="text-xs font-black text-green-900 shrink-0">
