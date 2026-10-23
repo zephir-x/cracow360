@@ -252,8 +252,9 @@ export const enTranslations: TranslationDictionary = {
       'This module answers the key question of a parent looking for housing at a specific address: how many municipal nurseries, kindergartens, primary schools, and pocket parks are within 5, 8, and 15 minutes of walking (300 m / 500 m / 1000 m).',
     backButton: 'Return to 18 Districts Map & Comparison',
     rankingTitle: 'Current District Ranking: Education & Childcare (0–14 years)',
-    rankingSubtitle: 'Aggregated educational data across 18 districts (SIO and Krakow City Hall registries)',
+    rankingSubtitle: 'TOP 6 districts with highest accessibility to nurseries, kindergartens, and schools',
     population: 'Population:',
+    education: 'Education:',
     capabilities: {
       isochronesTitle: 'Walking Isochrones (300m / 500m / 1km)',
       isochronesDesc:
@@ -307,10 +308,11 @@ export const enTranslations: TranslationDictionary = {
     description:
       'Decision support tool for Krakow City Hall and private educational investors: econometric models forecasting child (0–3, 4–6 years) and senior (65+) growth up to 2028, and a simulator testing the impact of new nurseries or parks on district metrics.',
     backButton: 'Return to 18 Districts Map & Comparison',
-    sectionTitle: 'Demographic Potential Overview across 18 Krakow Districts',
-    sectionSubtitle: 'Summary of population and baseline metrics feeding predictive models',
+    sectionTitle: 'Current District Ranking: Demographic Vitality & District Growth',
+    sectionSubtitle: 'TOP 6 districts with highest development pace, registration dynamics, and migration',
     population: 'Population:',
     education: 'Education:',
+    demography: 'Vitality:',
     capabilities: {
       econometricsTitle: 'Econometric Models (2027–2030)',
       econometricsDesc:
@@ -347,7 +349,7 @@ export const enTranslations: TranslationDictionary = {
     formulaIndex: 'Index = (Mob·W₁ + Edu·W₂ + Green·W₃ + Cult·W₄ + Env·W₅ + Safe·W₆ + Price·W₇ + Dev·W₈)',
     formulaDenominator: '/ (W₁ + W₂ + W₃ + W₄ + W₅ + W₆ + W₇ + W₈)',
     step2Note:
-      'Adjusting sliders or selecting a preset resident profile immediately recalculates the composite index for all 18 Krakow districts in 0 ms, updating map choropleth fills and ranking positions at 60 FPS.',
+      'Adjusting sliders or selecting a preset resident profile immediately recalculates the composite index for all 18 Krakow districts in 0 ms, updating map choropleth fills and ranking positions.',
     registryTitle: 'City of Krakow 1:1 Open Data Sources Registry',
     registrySubtitle:
       'Raw municipal datasets integrated into the Kraków360 analytical pipeline with direct links to official data portals',

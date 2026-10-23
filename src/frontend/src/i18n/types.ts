@@ -173,6 +173,7 @@ export interface TranslationDictionary {
     rankingTitle: string;
     rankingSubtitle: string;
     population: string;
+    education: string;
     capabilities: {
       isochronesTitle: string;
       isochronesDesc: string;
@@ -209,6 +210,7 @@ export interface TranslationDictionary {
     sectionSubtitle: string;
     population: string;
     education: string;
+    demography: string;
     capabilities: {
       econometricsTitle: string;
       econometricsDesc: string;

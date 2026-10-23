@@ -56,7 +56,7 @@ export function DistrictComparisonView({
   onClearSelection,
 }: DistrictComparisonViewProps) {
   const { t, language, formatWithPlural, plural } = useTranslation();
-  const [, setCacheVersion] = useState<number>(0);
+  const [cacheVersion, setCacheVersion] = useState<number>(0);
 
   // Background prefetch: loads all 18 district details once into module-level memory cache
   useEffect(() => {
@@ -87,11 +87,11 @@ export function DistrictComparisonView({
   // Synchronous cache retrieval for Slot 1 and Slot 2
   const firstDetails = useMemo(() => {
     return selectedPrimaryId ? DISTRICT_DETAILS_CACHE.get(selectedPrimaryId) ?? null : null;
-  }, [selectedPrimaryId]);
+  }, [selectedPrimaryId, cacheVersion]);
 
   const secondDetails = useMemo(() => {
     return selectedSecondaryId ? DISTRICT_DETAILS_CACHE.get(selectedSecondaryId) ?? null : null;
-  }, [selectedSecondaryId]);
+  }, [selectedSecondaryId, cacheVersion]);
 
   // Fallback network loading if a district was selected before prefetch finished
   useEffect(() => {

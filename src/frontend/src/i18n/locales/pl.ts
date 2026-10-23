@@ -25,7 +25,7 @@ export const plTranslations: TranslationDictionary = {
       'Wskaźniki surowe (demografia, ceny mieszkań, bezpieczeństwo, transport KMK, parki, żłobki, biblioteki, czystość powietrza) są sprowadzane do obiektywnej skali 0–100 pkt w 8 kategoriach.',
     step2Title: '2. Twoje Wagi i Profile (0–10 pkt)',
     step2Desc:
-      'Ustalasz wagi suwakami po lewej lub wybierasz profil mieszkańca (Rodzina z dziećmi, Student, Aktywny senior, Inwestor). Aplikacja przelicza ocenę każdej dzielnicy w 0 ms z płynnością 60 FPS.',
+      'Ustalasz wagi suwakami po lewej lub wybierasz profil mieszkańca (Rodzina z dziećmi, Student, Aktywny senior, Inwestor). Aplikacja przelicza ocenę każdej dzielnicy w 0 ms.',
     step3Title: '3. Porównanie (Wykres Radarowy 8 Osi)',
     step3Desc:
       'Wybierz dowolne 2 dzielnice na mapie lub w rankingu, aby nałożyć ich profile na 8-osiowy wykres radarowy i porównać szczegółowe parametry w tabeli poniżej.',
@@ -252,8 +252,9 @@ export const plTranslations: TranslationDictionary = {
       'Ten moduł odpowiada na pytanie rodzica szukającego mieszkania pod konkretnym adresem: ile żłobków samorządowych, przedszkoli, szkół podstawowych i parków kieszonkowych znajduje się w zasięgu 5, 8 i 15 minut spaceru (300 m / 500 m / 1000 m).',
     backButton: 'Wróć do Mapy i Porównywarki 18 Dzielnic',
     rankingTitle: 'Aktualny Ranking Dzielnic w Kategorii: Edukacja i Opieka (0–14 lat)',
-    rankingSubtitle: 'Zagregowane dane oświatowe dla 18 dzielnic (rejestry SIO i UMK)',
+    rankingSubtitle: 'TOP 6 dzielnic o najwyższym wskaźniku dostępności żłobków, przedszkoli i szkół',
     population: 'Populacja:',
+    education: 'Edukacja:',
     capabilities: {
       isochronesTitle: 'Izochrony Dojścia Pieszego (300m / 500m / 1km)',
       isochronesDesc:
@@ -307,10 +308,11 @@ export const plTranslations: TranslationDictionary = {
     description:
       'Narzędzie wspomagania decyzji dla Urzędu Miasta Krakowa oraz prywatnych inwestorów edukacyjnych: modele ekonometryczne prognozujące przyrost dzieci (0–3, 4–6 lat) i seniorów (65+) do 2028 roku oraz symulator sprawdzający wpływ budowy nowego żłobka lub parku na wskaźniki dzielnicy.',
     backButton: 'Wróć do Mapy i Porównywarki 18 Dzielnic',
-    sectionTitle: 'Przegląd Potencjału Demograficznego 18 Dzielnic Krakowa',
-    sectionSubtitle: 'Zestawienie populacji i ocen bazowych zasilających modele predykcyjne',
+    sectionTitle: 'Aktualny Ranking Dzielnic w Kategorii: Witalność Demograficzna i Rozwój',
+    sectionSubtitle: 'TOP 6 dzielnic o najwyższym wskaźniku rozwoju, dynamiki meldunków i migracji',
     population: 'Populacja:',
     education: 'Edukacja:',
+    demography: 'Witalność:',
     capabilities: {
       econometricsTitle: 'Modele Ekonometryczne (2027–2030)',
       econometricsDesc:

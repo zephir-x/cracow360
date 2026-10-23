@@ -9,6 +9,10 @@ export interface DemographicPotentialSectionProps {
 export function DemographicPotentialSection({ districts }: DemographicPotentialSectionProps) {
   const { t, localizeDistrictName } = useTranslation();
 
+  const topDemographicDistricts = [...districts]
+    .sort((a, b) => b.scores.demographicVitalityScore - a.scores.demographicVitalityScore)
+    .slice(0, 6);
+
   return (
     <section className="rounded-3xl bg-white border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-4">
       <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
@@ -26,25 +30,30 @@ export function DemographicPotentialSection({ districts }: DemographicPotentialS
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
-        {districts.slice(0, 9).map((d) => (
+        {topDemographicDistricts.map((d, idx) => (
           <div
             key={d.districtId}
-            className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 space-y-2"
+            className="p-4 rounded-2xl bg-slate-50/80 border border-slate-200/80 space-y-2.5 transition hover:border-blue-300 hover:shadow-md hover:shadow-blue-900/5"
           >
-            <div className="flex items-center justify-between">
-              <span className="text-xs font-extrabold text-slate-900">
-                {localizeDistrictName(d.districtName)}
-              </span>
-              <span className="text-[11px] font-bold px-2 py-0.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-200">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2 min-w-0">
+                <span className="w-6 h-6 rounded-lg bg-blue-600 text-white text-[11px] font-extrabold flex items-center justify-center shrink-0">
+                  #{idx + 1}
+                </span>
+                <span className="text-xs font-extrabold text-slate-900 truncate">
+                  {localizeDistrictName(d.districtName)}
+                </span>
+              </div>
+              <span className="text-[11px] font-bold px-2 py-0.5 rounded-lg bg-blue-50 text-blue-700 border border-blue-200 shrink-0">
                 {d.areaKm2} km²
               </span>
             </div>
-            <div className="flex items-center justify-between text-xs text-slate-600">
+            <div className="flex items-center justify-between text-xs text-slate-600 pt-0.5">
               <span>
                 {t.investor.population} <strong>{d.totalPopulation.toLocaleString()}</strong>
               </span>
-              <span>
-                {t.investor.education} <strong>{d.scores.educationScore.toFixed(1)} {t.common.points}</strong>
+              <span className="font-semibold text-blue-700">
+                {t.investor.demography} <strong className="font-black text-slate-900">{d.scores.demographicVitalityScore.toFixed(1)} {t.common.points}</strong>
               </span>
             </div>
           </div>
