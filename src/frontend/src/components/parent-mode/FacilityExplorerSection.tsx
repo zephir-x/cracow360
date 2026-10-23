@@ -14,9 +14,11 @@ import type {
   PoiSubCategory,
 } from '../../types/contracts';
 import { localizePoiAdditionalInfo, localizePoiName } from '../../utils/poiLocalization';
+import type { ChildAgeCohort } from './FamilyAgeCohortSelector';
 
 export interface FacilityExplorerSectionProps {
   districts: DistrictSummaryDto[];
+  selectedCohort?: ChildAgeCohort;
 }
 
 interface PoiFilterTabDef {
@@ -52,9 +54,12 @@ function getPageNumbers(currentPage: number, totalPages: number): (number | stri
 /// <summary>
 /// Verified municipal care and education points of interest explorer with live search and pagination.
 /// Strictly filters to ~600 EDU_CARE facilities across municipal nurseries, subsidized, private, clubs,
-/// kindergartens, and primary schools.
+/// kindergartens, and primary schools, seamlessly synchronized with the active child age cohort.
 /// </summary>
-export function FacilityExplorerSection({ districts }: FacilityExplorerSectionProps) {
+export function FacilityExplorerSection({
+  districts,
+  selectedCohort = 'all',
+}: FacilityExplorerSectionProps) {
   const { t, language, formatWithPlural, localizeDistrictName } = useTranslation();
 
   const [pois, setPois] = useState<PointOfInterestDto[]>([]);
@@ -62,6 +67,20 @@ export function FacilityExplorerSection({ districts }: FacilityExplorerSectionPr
   const [activeFilterId, setActiveFilterId] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
+
+  // Automatically synchronize facility filter tab with the selected child age cohort
+  useEffect(() => {
+    if (!selectedCohort || selectedCohort === 'all') {
+      setActiveFilterId('all');
+    } else if (selectedCohort === 'infant') {
+      setActiveFilterId('nursery_pub');
+    } else if (selectedCohort === 'preschool') {
+      setActiveFilterId('kindergarten');
+    } else if (selectedCohort === 'school') {
+      setActiveFilterId('school');
+    }
+    setCurrentPage(1);
+  }, [selectedCohort]);
 
   // Load only educational and childcare municipal POIs from backend once on mount
   useEffect(() => {
@@ -200,19 +219,18 @@ export function FacilityExplorerSection({ districts }: FacilityExplorerSectionPr
 
       {/* POI List / Cards */}
       {loadingPois ? (
-        <div className="p-8 text-center text-xs text-slate-400 animate-pulse">
+        <div className="py-16 text-center text-xs font-semibold text-slate-400 animate-pulse">
           {t.parent.explorer.loading}
         </div>
       ) : filteredPois.length === 0 ? (
-        <div className="p-8 text-center text-xs text-slate-400 animate-fade-in">
+        <div className="py-14 text-center text-xs font-medium text-slate-400 bg-slate-50/70 rounded-2xl border border-dashed border-slate-200">
           {t.parent.explorer.empty}
         </div>
       ) : (
-        <div className="space-y-5">
-          {/* Keyed by search query, active filter and page so search typing animates with smooth fade-in */}
+        <div className="space-y-4">
           <div
-            key={`${activeFilterId}-${currentPage}-${searchQuery}`}
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5 animate-fade-in"
+            key={`${activeFilterId}-${searchQuery}-${currentPage}`}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-3.5 animate-content-enter"
           >
             {paginatedPois.map((poi) => {
               const localizedSubCategory =
@@ -224,7 +242,8 @@ export function FacilityExplorerSection({ districts }: FacilityExplorerSectionPr
               const localizedInfo = localizePoiAdditionalInfo(
                 poi.metrics?.additionalInfo,
                 poi.metrics?.capacity,
-                t
+                t,
+                language
               );
 
               return (
@@ -271,8 +290,9 @@ export function FacilityExplorerSection({ districts }: FacilityExplorerSectionPr
                   {startIndex + 1}–{Math.min(startIndex + ITEMS_PER_PAGE, filteredPois.length)}
                 </span>{' '}
                 {t.parent.explorer.of}{' '}
-                <span className="font-semibold text-slate-800">{filteredPois.length}</span>{' '}
-                {formatWithPlural(filteredPois.length, t.parent.explorer.facilityPlural)}
+                <span className="font-semibold text-slate-800">
+                  {formatWithPlural(filteredPois.length, t.parent.explorer.facilityPlural)}
+                </span>
               </div>
               <div className="flex items-center gap-1.5">
                 <button

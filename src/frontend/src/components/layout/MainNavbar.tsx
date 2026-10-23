@@ -17,9 +17,13 @@ interface NavItem {
 }
 
 export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
-  const { t } = useTranslation();
+  const { language, t } = useTranslation();
   const navRef = useRef<HTMLElement | null>(null);
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
+
+  // Track whether smooth animation is enabled (disabled on initial F5 and on language change to prevent drifting)
+  const [isTransitionEnabled, setIsTransitionEnabled] = useState<boolean>(false);
+  const prevLangRef = useRef<string>(language);
 
   const [indicatorStyle, setIndicatorStyle] = useState<{
     left: number;
@@ -53,6 +57,13 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
   ], [t]);
 
   useLayoutEffect(() => {
+    const isLangChanged = prevLangRef.current !== language;
+    if (isLangChanged) {
+      prevLangRef.current = language;
+      // Immediately disable transitions while label sizes resize
+      setIsTransitionEnabled(false);
+    }
+
     const updateIndicator = () => {
       const activeEl = tabRefs.current[activeTab];
       const navEl = navRef.current;
@@ -66,13 +77,19 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
           height: tabRect.height,
           opacity: 1,
         });
+
+        // Re-enable smooth transition for subsequent user tab clicks
+        requestAnimationFrame(() => {
+          setIsTransitionEnabled(true);
+        });
       }
     };
 
     updateIndicator();
-    window.addEventListener('resize', updateIndicator);
-    return () => window.removeEventListener('resize', updateIndicator);
-  }, [activeTab, t]);
+    const handleResize = () => updateIndicator();
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, [activeTab, language, t]);
 
   return (
     <header className="sticky top-0 z-1200 bg-white/85 backdrop-blur-xl border-b border-blue-100/90 shadow-xs">
@@ -95,9 +112,11 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
         {/* Center/Right: Mode Navigation Tabs with smooth sliding pill & Language Switcher */}
         <div className="flex flex-wrap items-center gap-3">
           <nav ref={navRef} className="relative flex flex-wrap items-center gap-1 py-1">
-            {/* Sliding Blue Pill Indicator */}
+            {/* Sliding Blue Pill Indicator: Transition is disabled on initial F5 mount and on language change to snap directly into the active tab */}
             <div
-              className="absolute top-0 left-0 rounded-xl bg-blue-600 shadow-md shadow-blue-600/25 transition-all duration-300 ease-out pointer-events-none z-0"
+              className={`absolute top-0 left-0 rounded-xl bg-blue-600 shadow-md shadow-blue-600/25 pointer-events-none z-0 ${
+                isTransitionEnabled ? 'transition-all duration-300 ease-out' : 'transition-none'
+              }`}
               style={{
                 transform: `translate3d(${indicatorStyle.left}px, ${indicatorStyle.top}px, 0)`,
                 width: `${indicatorStyle.width}px`,
@@ -115,22 +134,19 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
                     tabRefs.current[item.id] = el;
                   }}
                   onClick={() => onSelectTab(item.id)}
-                  className={`relative z-10 inline-flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-semibold leading-none transition-colors duration-200 cursor-pointer ${
+                  className={`relative z-10 px-3.5 py-1.5 rounded-xl text-xs font-bold flex items-center gap-2 transition-colors duration-200 cursor-pointer ${
                     isActive
                       ? 'text-white'
-                      : 'text-slate-600 hover:text-slate-900'
+                      : 'text-slate-600 hover:text-blue-600'
                   }`}
                 >
-                  <span className={isActive ? 'text-white' : 'text-slate-400'}>
-                    {item.icon}
-                  </span>
+                  <span className="shrink-0">{item.icon}</span>
                   <span>{item.label}</span>
                 </button>
               );
             })}
           </nav>
 
-          {/* Smooth Sliding Pill Language Switcher */}
           <LanguageSwitcher />
         </div>
       </div>

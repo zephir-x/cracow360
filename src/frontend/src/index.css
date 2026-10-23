@@ -30,17 +30,15 @@ html, body {
   will-change: filter, transform, opacity;
 }
 
-/* Soft, calm focal transitions: subtle scale, progressive de-blur, and soft opacity fade */
+/* Soft, calm focal transitions: subtle scale and progressive de-blur */
 @keyframes contentFocusEnter {
   0% {
     filter: blur(8px);
     transform: scale(0.985);
-    opacity: 0.25;
   }
   100% {
     filter: blur(0px);
     transform: scale(1);
-    opacity: 1;
   }
 }
 
@@ -48,12 +46,10 @@ html, body {
   0% {
     filter: blur(6px);
     transform: scale(0.99);
-    opacity: 0.25;
   }
   100% {
     filter: blur(0px);
     transform: scale(1);
-    opacity: 1;
   }
 }
 
@@ -206,4 +202,61 @@ html {
 .leaflet-interactive:focus-visible {
   outline: none !important;
   box-shadow: none !important;
+}
+
+/* Family Interactive Map: Smooth pop-in and focal settling for POI markers upon category toggling */
+@keyframes poiMarkerBubbleEnter {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+    filter: blur(4px);
+  }
+  65% {
+    transform: scale(1.15);
+    opacity: 0.95;
+    filter: blur(0px);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+    filter: blur(0px);
+  }
+}
+
+.cracow-poi-marker-bubble {
+  animation: poiMarkerBubbleEnter 0.45s cubic-bezier(0.16, 1, 0.3, 1) both;
+  will-change: transform, opacity, filter;
+}
+
+/* Family Interactive Map: Color and opacity transitions for the walking buffer circle.
+   Radius morphing is animated via requestAnimationFrame in React state for full cross-browser
+   SVG compatibility and zero wheel-zoom sliding glitch. */
+.family-interactive-map .leaflet-overlay-pane path {
+  transition: fill 0.4s ease-out,
+              fill-opacity 0.4s ease-out,
+              stroke 0.4s ease-out,
+              stroke-width 0.3s ease-out;
+}
+
+/* Cluster badge styling for high performance at city overview zoom levels */
+.cracow-poi-cluster-icon {
+  background: transparent !important;
+  border: none !important;
+}
+
+.cracow-poi-cluster-bubble {
+  background: linear-gradient(135deg, #2563eb, #1d4ed8);
+  color: #ffffff;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 12px;
+  cursor: pointer;
+  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease;
 }

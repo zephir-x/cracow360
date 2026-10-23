@@ -174,6 +174,77 @@ export interface TranslationDictionary {
     rankingSubtitle: string;
     population: string;
     education: string;
+    matchScore: string;
+    cohorts: {
+      sectionTitle: string;
+      sectionSubtitle: string;
+      allLabel: string;
+      infant: {
+        title: string;
+        ageRange: string;
+        subtitle: string;
+        highlight1: string;
+        highlight2: string;
+        highlight3: string;
+      };
+      preschool: {
+        title: string;
+        ageRange: string;
+        subtitle: string;
+        highlight1: string;
+        highlight2: string;
+        highlight3: string;
+      };
+      school: {
+        title: string;
+        ageRange: string;
+        subtitle: string;
+        highlight1: string;
+        highlight2: string;
+        highlight3: string;
+      };
+      rankingSubtitles: {
+        all: string;
+        infant: string;
+        preschool: string;
+        school: string;
+      };
+    };
+    familyMap: {
+      title: string;
+      subtitle: string;
+      resetBuffer: string;
+      lightTheme: string;
+      darkTheme: string;
+      bufferRadius: string;
+      bufferDesc: string;
+      radius300m: string;
+      radius500m: string;
+      radius1km: string;
+      radiusSelectLabel: string;
+      allLayers: string;
+      nurseriesLayer: string;
+      kindergartensLayer: string;
+      schoolsLayer: string;
+      parksLayer: string;
+      facilitiesWithin500m: string;
+      facilitiesWithinDistance: string;
+      nurseriesCount: string;
+      kindergartensCount: string;
+      schoolsCount: string;
+      parksCount: string;
+      clickHint: string;
+      selectedPointTitle: string;
+      legendTitle: string;
+      legendNurseries: string;
+      legendKindergartens: string;
+      legendSchools: string;
+      legendParks: string;
+      legendBuffer: string;
+      totalFacilitiesInDistance: string;
+      noFacilitiesInBuffer: string;
+      mapClickHintBanner: string;
+    };
     capabilities: {
       isochronesTitle: string;
       isochronesDesc: string;

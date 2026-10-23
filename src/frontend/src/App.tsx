@@ -26,15 +26,37 @@ const DEFAULT_WEIGHTS: QualityWeights = {
   demographicVitality: 5,
 };
 
+// Clean keyword routing config: enables bookmarkable URL hashes that survive page refreshes (F5)
+const TAB_ROUTING: Record<AppTabId, { hash: string; keywords: string[] }> = {
+  resident: { hash: '/resident', keywords: ['mieszkaniec', 'resident'] },
+  parent: { hash: '/parent', keywords: ['rodzic', 'parent', 'family', 'rodzina'] },
+  investor: { hash: '/investor', keywords: ['inwestor', 'investor', 'urzednik'] },
+  methodology: { hash: '/methodology', keywords: ['metodologia', 'methodology', 'zrodla'] },
+};
+
+function getTabFromUrl(): AppTabId {
+  if (typeof window === 'undefined') return 'resident';
+  const hash = window.location.hash.toLowerCase();
+  const path = window.location.pathname.toLowerCase();
+  const target = `${hash} ${path}`;
+
+  if (TAB_ROUTING.parent.keywords.some((kw) => target.includes(kw))) return 'parent';
+  if (TAB_ROUTING.investor.keywords.some((kw) => target.includes(kw))) return 'investor';
+  if (TAB_ROUTING.methodology.keywords.some((kw) => target.includes(kw))) return 'methodology';
+  if (TAB_ROUTING.resident.keywords.some((kw) => target.includes(kw))) return 'resident';
+
+  return 'resident';
+}
+
 /// <summary>
 /// Root application shell orchestrating global state, dynamic quality-of-life recalculations,
-/// district comparisons, and tabbed view navigation.
+/// district comparisons, and tabbed view navigation with URL hash persistence.
 /// </summary>
 export function App() {
   const { language, t } = useTranslation();
 
-  // Navigation active tab state
-  const [activeTab, setActiveTab] = useState<AppTabId>('resident');
+  // Navigation active tab state with URL hash synchronization (survives F5)
+  const [activeTab, setActiveTab] = useState<AppTabId>(getTabFromUrl);
 
   // Baseline district metrics and spatial GeoJSON boundaries
   const [rawDistricts, setRawDistricts] = useState<DistrictSummaryDto[]>([]);
@@ -58,6 +80,36 @@ export function App() {
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   }, [activeTab]);
+
+  // Synchronize activeTab with URL hash changes (browser back/forward & direct anchor navigation)
+  useEffect(() => {
+    const handleUrlChange = () => {
+      const tab = getTabFromUrl();
+      setActiveTab((prev) => (prev !== tab ? tab : prev));
+    };
+
+    window.addEventListener('hashchange', handleUrlChange);
+    window.addEventListener('popstate', handleUrlChange);
+
+    // If current hash is missing on boot, populate it with current tab
+    if (!window.location.hash) {
+      window.history.replaceState(null, '', TAB_ROUTING[activeTab].hash);
+    }
+
+    return () => {
+      window.removeEventListener('hashchange', handleUrlChange);
+      window.removeEventListener('popstate', handleUrlChange);
+    };
+  }, [activeTab]);
+
+  // Update active tab and synchronize URL hash so refreshing (F5) stays on the current subpage
+  const handleSelectTab = (tab: AppTabId) => {
+    setActiveTab(tab);
+    const expectedHash = TAB_ROUTING[tab].hash;
+    if (window.location.hash !== expectedHash) {
+      window.history.replaceState(null, '', expectedHash);
+    }
+  };
 
   // Initial data loading from the backend API (all districts + vector boundaries)
   useEffect(() => {
@@ -157,7 +209,7 @@ export function App() {
   return (
     <div className="min-h-screen text-slate-900 flex flex-col bg-transparent">
       {/* Top Civic Navigation Bar */}
-      <MainNavbar activeTab={activeTab} onSelectTab={setActiveTab} />
+      <MainNavbar activeTab={activeTab} onSelectTab={handleSelectTab} />
 
       {/* Main Content Container with smooth tab & language transition */}
       <main className="flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
@@ -192,7 +244,7 @@ export function App() {
           {activeTab === 'parent' && (
             <ParentModePage
               districts={rankedDistricts}
-              onBackToResidentMode={() => setActiveTab('resident')}
+              onBackToResidentMode={() => handleSelectTab('resident')}
             />
           )}
 
@@ -200,19 +252,19 @@ export function App() {
           {activeTab === 'investor' && (
             <OfficialInvestorModePage
               districts={rankedDistricts}
-              onBackToResidentMode={() => setActiveTab('resident')}
+              onBackToResidentMode={() => handleSelectTab('resident')}
             />
           )}
 
           {/* Methodology & Open Data Sources Documentation */}
           {activeTab === 'methodology' && (
-            <AboutDataMethodologyPage onBackToResidentMode={() => setActiveTab('resident')} />
+            <AboutDataMethodologyPage onBackToResidentMode={() => handleSelectTab('resident')} />
           )}
         </div>
       </main>
 
       {/* Civic Footer */}
-      <MainFooter onSelectTab={setActiveTab} />
+      <MainFooter onSelectTab={handleSelectTab} />
     </div>
   );
 }
