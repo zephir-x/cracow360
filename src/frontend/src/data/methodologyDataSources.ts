@@ -83,6 +83,15 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     portalUrl: 'https://powietrze.gios.gov.pl',
     status: 'Zintegrowane w ETL',
   },
+  {
+    id: 'gis-3',
+    category: 'gis_env',
+    categoryLabel: 'Granice & Środowisko',
+    officialDatasetName: 'Uniwersalna Usługa Geokodowania (GUGiK EMUiA / PRG)',
+    metrics: 'Państwowy rejestr adresowy posesji w Krakowie, transformacja PUWG 1992 (EPSG:2180) do WGS84 dla 646 placówek edukacyjnych i 115 instytucji',
+    portalUrl: 'https://geoportal.gov.pl',
+    status: 'Zintegrowane w ETL',
+  },
 
   // Mobility & Transport
   {
@@ -175,6 +184,24 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     officialDatasetName: 'Przyszkolne pływalnie sportowe i pomieszczenia WF',
     metrics: 'Kryte pływalnie przyszkolne i obiekty sportowe, POI SCHOOL_SPORT',
     portalUrl: 'https://otwartedane.um.krakow.pl',
+    status: 'Zintegrowane w ETL',
+  },
+  {
+    id: 'gis-4',
+    category: 'greenery',
+    categoryLabel: 'Zieleń & Rekreacja',
+    officialDatasetName: 'OpenStreetMap & Overpass API – Geometrie Terenów Zielonych',
+    metrics: 'Wektorowe poligony parków miejskich, lasów komunalnych i rezerwatów przyrody (leisure=park, landuse=forest), precyzyjne centroidy dla 142 obiektów',
+    portalUrl: 'https://www.openstreetmap.org',
+    status: 'Zintegrowane w ETL',
+  },
+  {
+    id: 'gis-5',
+    category: 'greenery',
+    categoryLabel: 'Zieleń & Rekreacja',
+    officialDatasetName: 'BIP UMK – Karty Lokalizacyjne i MPZP Ogrodów Krakowian (ZZM)',
+    metrics: 'Miejscowe plany zagospodarowania i lokalizacje kwartałowe dla 44 parków kieszonkowych Zarządu Zieleni Miejskiej',
+    portalUrl: 'https://bip.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
 

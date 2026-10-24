@@ -10,17 +10,99 @@
   Trees,
   TrendingUp,
 } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
+import { cracow360Api } from '../../api/client';
 import { useTranslation } from '../../i18n/I18nContext';
+import type { DistrictSummaryDto } from '../../types/contracts';
 import { ParentCapabilitiesGrid } from './ParentCapabilitiesGrid';
 
 export interface ParentHeroHeaderProps {
   totalDistrictsCount?: number;
+  districts?: DistrictSummaryDto[];
 }
 
-export function ParentHeroHeader({ totalDistrictsCount: _totalDistrictsCount = 18 }: ParentHeroHeaderProps) {
-  const { t } = useTranslation();
+export function ParentHeroHeader({
+  totalDistrictsCount: _totalDistrictsCount = 18,
+  districts,
+}: ParentHeroHeaderProps) {
+  const { language, t } = useTranslation();
   const [showCapabilities, setShowCapabilities] = useState<boolean>(false);
+
+  // Dynamic municipal counts calculated live from backend API
+  const [eduCareCount, setEduCareCount] = useState<number>(646);
+  const [greeneryCount, setGreeneryCount] = useState<number>(142);
+  const [childrenCount, setChildrenCount] = useState<number>(101498);
+
+  useEffect(() => {
+    let cancelled = false;
+
+    cracow360Api
+      .getPois()
+      .then((pois) => {
+        if (cancelled) return;
+        const eduCare = pois.filter((p) =>
+          [
+            'NURSERY_PUBLIC',
+            'NURSERY_CONTRACTED',
+            'NURSERY_PRIVATE',
+            'KIDS_CLUB',
+            'PARENT_CLUB',
+            'KINDERGARTEN',
+            'PRIMARY_SCHOOL',
+          ].includes(p.subCategory)
+        ).length;
+
+        const greenery = pois.filter((p) =>
+          ['CITY_PARK', 'POCKET_PARK'].includes(p.subCategory)
+        ).length;
+
+        if (eduCare > 0) setEduCareCount(eduCare);
+        if (greenery > 0) setGreeneryCount(greenery);
+      })
+      .catch((err) => {
+        console.error('Failed to load dynamic POIs in hero header:', err);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, []);
+
+  useEffect(() => {
+    let cancelled = false;
+    if (!districts || districts.length === 0) return;
+
+    Promise.all(districts.map((d) => cracow360Api.getDistrictDetails(d.districtId)))
+      .then((detailsList) => {
+        if (cancelled) return;
+        let totalKids = 0;
+        detailsList.forEach((d) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const dem = d.demographics as any;
+          const c03 = dem?.age0To3 ?? dem?.age0to3 ?? 0;
+          const c46 = dem?.age4To6 ?? dem?.age4to6 ?? 0;
+          const c714 = dem?.age7To14 ?? dem?.age7to14 ?? 0;
+          totalKids += c03 + c46 + c714;
+        });
+        if (totalKids > 0) {
+          setChildrenCount(totalKids);
+        }
+      })
+      .catch((err) => {
+        console.error('Failed to load dynamic children count in hero header:', err);
+      });
+
+    return () => {
+      cancelled = true;
+    };
+  }, [districts]);
+
+  const childrenCountFormatted = useMemo(() => {
+    const inThousands = (childrenCount / 1000).toFixed(1);
+    if (language === 'en') return `${inThousands}k`;
+    if (language === 'ua') return `${inThousands} тис.`;
+    return `${inThousands} tys.`;
+  }, [childrenCount, language]);
 
   const scrollToProfile = () => {
     document.getElementById('child-profile-section')?.scrollIntoView({ behavior: 'smooth' });
@@ -194,14 +276,16 @@ export function ParentHeroHeader({ totalDistrictsCount: _totalDistrictsCount = 1
             </div>
           </div>
 
-          {/* Bottom Floating Glassmorphic Stat Cards */}
+          {/* Bottom Floating Glassmorphic Stat Cards with live dynamic metrics */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
             <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0">
                 <GraduationCap className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-black text-blue-700 leading-none">646</div>
+                <div className="text-2xl font-black text-blue-700 leading-none">
+                  {eduCareCount.toLocaleString()}
+                </div>
                 <div className="text-xs font-bold text-slate-800 mt-1">{t.parent.hero.statEduCareLabel}</div>
                 <div className="text-[11px] text-slate-500">{t.parent.hero.statEduCareSub}</div>
               </div>
@@ -212,7 +296,9 @@ export function ParentHeroHeader({ totalDistrictsCount: _totalDistrictsCount = 1
                 <Trees className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-black text-emerald-700 leading-none">142</div>
+                <div className="text-2xl font-black text-emerald-700 leading-none">
+                  {greeneryCount.toLocaleString()}
+                </div>
                 <div className="text-xs font-bold text-slate-800 mt-1">{t.parent.hero.statGreeneryLabel}</div>
                 <div className="text-[11px] text-slate-500">{t.parent.hero.statGreenerySub}</div>
               </div>
@@ -237,7 +323,7 @@ export function ParentHeroHeader({ totalDistrictsCount: _totalDistrictsCount = 1
               </div>
               <div>
                 <div className="text-2xl font-black text-indigo-700 leading-none">
-                  {t.parent.hero.statChildrenCount}
+                  {childrenCountFormatted}
                 </div>
                 <div className="text-xs font-bold text-slate-800 mt-1">{t.parent.hero.statChildrenLabel}</div>
                 <div className="text-[11px] text-slate-500">{t.parent.hero.statChildrenSub}</div>

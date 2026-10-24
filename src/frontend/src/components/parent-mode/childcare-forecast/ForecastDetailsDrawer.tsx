@@ -3,7 +3,17 @@ import type React from 'react';
 import type { Language } from '../../../i18n/types';
 import type { DistrictDetailsDto } from '../../../types/contracts';
 import type { ChildAgeCohort } from '../FamilyAgeCohortSelector';
-import { getDrawerLabels, getParentPracticalInsight } from './forecastCalculations';
+import {
+  formatKindergartensCount,
+  formatKindergartensLabel,
+  formatNurseriesCount,
+  formatSchoolsCount,
+  formatSchoolsLabel,
+  formatPlacesUnit,
+  formatToddlerInfraBreakdown,
+  getDrawerLabels,
+  getParentPracticalInsight,
+} from '../../../i18n/childcareForecastI18n';
 
 export interface ForecastDetailsDrawerProps {
   isOpen: boolean;
@@ -43,27 +53,29 @@ export function ForecastDetailsDrawer({
                 </h3>
               </div>
               <button
+                type="button"
                 onClick={onClose}
-                className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-600 hover:text-slate-900 text-xs font-bold transition cursor-pointer shadow-2xs"
-                title={labels.close}
+                className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
+                aria-label={labels.close}
               >
-                <X className="w-3.5 h-3.5" />
-                <span>{labels.close}</span>
+                <X className="w-5 h-5" />
               </button>
             </div>
 
-            {/* Practical Parental Guidance Highlight */}
-            <div className="p-4 rounded-2xl bg-indigo-50/70 border border-indigo-100 space-y-1.5">
-              <div className="text-xs font-bold text-indigo-900 flex items-center gap-1.5">
-                <Info className="w-4 h-4 text-indigo-600" />
-                {labels.guidelinesTitle}
+            {/* Practical Parent Guidance */}
+            <div className="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100 text-sm text-indigo-950 leading-relaxed flex items-start gap-3">
+              <Info className="w-5 h-5 text-indigo-600 shrink-0 mt-0.5" />
+              <div>
+                <span className="font-bold block mb-0.5 text-indigo-900">
+                  {labels.guidelinesTitle}
+                </span>
+                <p className="text-slate-700 text-xs sm:text-sm">
+                  {getParentPracticalInsight(activeDistrictData, activeCohort, language)}
+                </p>
               </div>
-              <p className="text-xs sm:text-sm text-slate-700 leading-relaxed font-medium">
-                {getParentPracticalInsight(activeDistrictData, activeCohort, language)}
-              </p>
             </div>
 
-            {/* Standardized 4 Metrics Grid tailored to selected child cohort */}
+            {/* 4 Quantitative Metric Cards tailored to Active Age Group */}
             {(() => {
               if (activeCohort === 'infant') {
                 const nurseriesPublic = activeDistrictData.educationAndCare.nurseriesPublicCount;
@@ -72,9 +84,9 @@ export function ForecastDetailsDrawer({
                   activeDistrictData.educationAndCare.nurseriesPrivateCount;
                 const clubs = activeDistrictData.educationAndCare.kidsClubsCount;
                 const carePlaces = activeDistrictData.educationAndCare.totalCarePlaces0To3;
-                const p03 = activeDistrictData.forecastsAndB2B.forecastedAge0To3_2028;
-                const cur03 = activeDistrictData.demographics.age0To3;
-                const bal = activeDistrictData.forecastsAndB2B.forecastedCarePlacesBalance_2028;
+                const projectedInfants2028 = activeDistrictData.forecastsAndB2B.forecastedAge0To3_2028;
+                const currentInfants = activeDistrictData.demographics.age0To3;
+                const balance = carePlaces - projectedInfants2028;
 
                 return (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
@@ -82,21 +94,24 @@ export function ForecastDetailsDrawer({
                     <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-1">
                       <div className="text-slate-500 font-medium">{labels.toddlersTitle}</div>
                       <div className="text-xl font-black text-indigo-700">
-                        {p03.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.childrenUnit2028}</span>
+                        {projectedInfants2028.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.childrenUnit2028}</span>
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {labels.currently} <span className="font-bold text-slate-700">{cur03.toLocaleString()}</span> {labels.children}
+                        {labels.currently} <span className="font-bold text-slate-700">{currentInfants.toLocaleString()}</span> {labels.children}
                       </div>
                     </div>
 
                     {/* 2. Locations and Balance: Current Base vs. 2028 Balance */}
                     <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-1">
                       <div className="text-slate-500 font-medium">{labels.nurseryBalanceTitle}</div>
-                      <div className={`text-xl font-black ${bal < 0 ? 'text-rose-600' : 'text-emerald-700'}`}>
-                        {bal >= 0 ? `+${bal.toLocaleString()}` : bal.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.balanceUnit2028}</span>
+                      <div className={`text-xl font-black ${balance < 0 ? 'text-rose-600' : 'text-emerald-700'}`}>
+                        {balance >= 0 ? `+${balance.toLocaleString()}` : balance.toLocaleString()}{' '}
+                        <span className="text-xs font-semibold text-slate-500">
+                          {formatPlacesUnit(balance, language)} ({balance < 0 ? labels.deficitUnit2028 : labels.balanceUnit2028})
+                        </span>
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {labels.currentBase} <span className="font-bold text-slate-700">{carePlaces.toLocaleString()}</span> {labels.places}
+                        {labels.currentBase} <span className="font-bold text-slate-700">{carePlaces.toLocaleString()}</span> {formatPlacesUnit(carePlaces, language)}
                       </div>
                     </div>
 
@@ -107,7 +122,7 @@ export function ForecastDetailsDrawer({
                         {nurseriesPublic + nurseriesPrivateAndContracted + clubs} <span className="text-xs font-semibold text-slate-500">{labels.facilities}</span>
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {nurseriesPublic} {labels.municipalWord}, {nurseriesPrivateAndContracted} {labels.privateWord}, {clubs} {labels.clubsWord}
+                        {formatToddlerInfraBreakdown(nurseriesPublic, nurseriesPrivateAndContracted, clubs, language)}
                       </div>
                     </div>
 
@@ -118,7 +133,7 @@ export function ForecastDetailsDrawer({
                         {carePlaces > 0 ? `${Math.round(carePlaces / Math.max(1, nurseriesPublic + nurseriesPrivateAndContracted + clubs))} ${labels.placesPerFacility}` : '—'}
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {bal >= 0 ? labels.highAdaptation : labels.earlyEnrollment}
+                        {balance >= 0 ? labels.highAdaptation : labels.earlyEnrollment}
                       </div>
                     </div>
                   </div>
@@ -126,13 +141,13 @@ export function ForecastDetailsDrawer({
               }
 
               if (activeCohort === 'preschool') {
-                const kgPlaces = activeDistrictData.educationAndCare.kindergartenPlacesTotal;
-                const kgCount = activeDistrictData.educationAndCare.kindergartensCount;
-                const p46 = activeDistrictData.forecastsAndB2B.forecastedAge4To6_2028;
-                const cur46 = activeDistrictData.demographics.age4To6;
-                const avgPerKg = kgCount > 0 ? Math.round(kgPlaces / kgCount) : 0;
-                const kgBalance = kgPlaces - p46;
-                const ratio = (kgPlaces / Math.max(1, p46)).toFixed(2);
+                const kindergartenPlaces = activeDistrictData.educationAndCare.kindergartenPlacesTotal;
+                const kindergartenCount = activeDistrictData.educationAndCare.kindergartensCount;
+                const projectedPreschoolers2028 = activeDistrictData.forecastsAndB2B.forecastedAge4To6_2028;
+                const currentPreschoolers = activeDistrictData.demographics.age4To6;
+                const avgPerKindergarten = kindergartenCount > 0 ? Math.round(kindergartenPlaces / kindergartenCount) : 0;
+                const kindergartenBalance = kindergartenPlaces - projectedPreschoolers2028;
+                const ratio = (kindergartenPlaces / Math.max(1, projectedPreschoolers2028)).toFixed(2);
 
                 return (
                   <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 text-xs">
@@ -140,21 +155,24 @@ export function ForecastDetailsDrawer({
                     <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-1">
                       <div className="text-slate-500 font-medium">{labels.preschoolersTitle}</div>
                       <div className="text-xl font-black text-indigo-700">
-                        {p46.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.childrenUnit2028}</span>
+                        {projectedPreschoolers2028.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.childrenUnit2028}</span>
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {labels.currently} <span className="font-bold text-slate-700">{cur46.toLocaleString()}</span> {labels.children}
+                        {labels.currently} <span className="font-bold text-slate-700">{currentPreschoolers.toLocaleString()}</span> {labels.children}
                       </div>
                     </div>
 
                     {/* 2. Locations and Balance: Current Base vs. 2028 Balance */}
                     <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-1">
                       <div className="text-slate-500 font-medium">{labels.kgBalanceTitle}</div>
-                      <div className={`text-xl font-black ${kgBalance < 0 ? 'text-rose-600' : 'text-emerald-700'}`}>
-                        {kgBalance >= 0 ? `+${kgBalance.toLocaleString()}` : kgBalance.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.balanceUnit2028}</span>
+                      <div className={`text-xl font-black ${kindergartenBalance < 0 ? 'text-rose-600' : 'text-emerald-700'}`}>
+                        {kindergartenBalance >= 0 ? `+${kindergartenBalance.toLocaleString()}` : kindergartenBalance.toLocaleString()}{' '}
+                        <span className="text-xs font-semibold text-slate-500">
+                          {formatPlacesUnit(kindergartenBalance, language)} ({kindergartenBalance < 0 ? labels.deficitUnit2028 : labels.reserveUnit2028})
+                        </span>
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {labels.currentBase} <span className="font-bold text-slate-700">{kgPlaces.toLocaleString()}</span> {labels.places}
+                        {labels.currentBase} <span className="font-bold text-slate-700">{kindergartenPlaces.toLocaleString()}</span> {formatPlacesUnit(kindergartenPlaces, language)}
                       </div>
                     </div>
 
@@ -162,10 +180,10 @@ export function ForecastDetailsDrawer({
                     <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-1">
                       <div className="text-slate-500 font-medium">{labels.kgInfraTitle}</div>
                       <div className="text-xl font-black text-slate-900">
-                        {kgCount} <span className="text-xs font-semibold text-slate-500">{labels.kindergartens}</span>
+                        {formatKindergartensLabel(kindergartenCount, language)}
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {labels.avgPerKg(avgPerKg)}
+                        {labels.avgPerKg(avgPerKindergarten)}
                       </div>
                     </div>
 
@@ -176,7 +194,7 @@ export function ForecastDetailsDrawer({
                         {ratio}x <span className="text-xs font-semibold text-slate-500">{labels.placesPerChild}</span>
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {kgBalance >= 0 ? labels.universalAccess : labels.standardEnrollment}
+                        {kindergartenBalance >= 0 ? labels.universalAccess : labels.standardEnrollment}
                       </div>
                     </div>
                   </div>
@@ -185,10 +203,10 @@ export function ForecastDetailsDrawer({
 
               if (activeCohort === 'school') {
                 const schools = activeDistrictData.educationAndCare.primarySchoolsCount;
-                const schoolCap = schools * 350;
+                const schoolCapacity = schools * 350;
                 const students = activeDistrictData.educationAndCare.primarySchoolStudentsTotal;
-                const cur714 = activeDistrictData.demographics.age7To14;
-                const schoolBal = schoolCap - students;
+                const registeredChildren7To14 = activeDistrictData.demographics.age7To14;
+                const schoolBalance = schoolCapacity - students;
                 const avgClass = activeDistrictData.educationAndCare.avgStudentsPerClass;
 
                 return (
@@ -200,18 +218,21 @@ export function ForecastDetailsDrawer({
                         {students.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.students}</span>
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {labels.registeredWord} <span className="font-bold text-slate-700">{cur714.toLocaleString()}</span> {labels.children}
+                        {labels.registeredWord} <span className="font-bold text-slate-700">{registeredChildren7To14.toLocaleString()}</span> {labels.children}
                       </div>
                     </div>
 
                     {/* 2. Spaces and Balance: Capacity vs. Balance 2028 */}
                     <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-1">
                       <div className="text-slate-500 font-medium">{labels.schoolBalanceTitle}</div>
-                      <div className={`text-xl font-black ${schoolBal < 0 ? 'text-rose-600' : 'text-emerald-700'}`}>
-                        {schoolBal >= 0 ? `+${schoolBal.toLocaleString()}` : schoolBal.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.reserveUnit2028}</span>
+                      <div className={`text-xl font-black ${schoolBalance < 0 ? 'text-rose-600' : 'text-emerald-700'}`}>
+                        {schoolBalance >= 0 ? `+${schoolBalance.toLocaleString()}` : schoolBalance.toLocaleString()}{' '}
+                        <span className="text-xs font-semibold text-slate-500">
+                          {formatPlacesUnit(schoolBalance, language)} ({schoolBalance < 0 ? labels.deficitUnit2028 : labels.reserveUnit2028})
+                        </span>
                       </div>
                       <div className="text-[11px] text-slate-500">
-                        {labels.estimatedCapacity} <span className="font-bold text-slate-700">{schoolCap.toLocaleString()}</span> {labels.places}
+                        {labels.estimatedCapacity} <span className="font-bold text-slate-700">{schoolCapacity.toLocaleString()}</span> {formatPlacesUnit(schoolCapacity, language)}
                       </div>
                     </div>
 
@@ -219,7 +240,7 @@ export function ForecastDetailsDrawer({
                     <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-1">
                       <div className="text-slate-500 font-medium">{labels.schoolInfraTitle}</div>
                       <div className="text-xl font-black text-slate-900">
-                        {schools} <span className="text-xs font-semibold text-slate-500">{labels.primarySchools}</span>
+                        {formatSchoolsLabel(schools, language)}
                       </div>
                       <div className="text-[11px] text-slate-500">
                         {labels.avgPerSchool(schools > 0 ? Math.round(students / schools) : 0)}
@@ -255,11 +276,11 @@ export function ForecastDetailsDrawer({
                 activeDistrictData.educationAndCare.totalCarePlaces0To3 +
                 activeDistrictData.educationAndCare.kindergartenPlacesTotal +
                 activeDistrictData.educationAndCare.primarySchoolsCount * 350;
-              const p03 = activeDistrictData.forecastsAndB2B.forecastedAge0To3_2028;
-              const p46 = activeDistrictData.forecastsAndB2B.forecastedAge4To6_2028;
+              const projectedInfants2028 = activeDistrictData.forecastsAndB2B.forecastedAge0To3_2028;
+              const projectedPreschoolers2028 = activeDistrictData.forecastsAndB2B.forecastedAge4To6_2028;
               const students = activeDistrictData.educationAndCare.primarySchoolStudentsTotal;
-              const totalChildrenSum = p03 + p46 + students;
-              const totalBal = totalCapacity - totalChildrenSum;
+              const totalChildrenSum = projectedInfants2028 + projectedPreschoolers2028 + students;
+              const totalBalance = totalCapacity - totalChildrenSum;
               const avgClass = activeDistrictData.educationAndCare.avgStudentsPerClass;
 
               return (
@@ -271,18 +292,21 @@ export function ForecastDetailsDrawer({
                       {totalChildrenSum.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.childrenUnit2028}</span>
                     </div>
                     <div className="text-[11px] text-slate-500 truncate">
-                      0–3: {p03.toLocaleString()} | 4–6: {p46.toLocaleString()} | SP: {students.toLocaleString()}
+                      0–3: {projectedInfants2028.toLocaleString()} | 4–6: {projectedPreschoolers2028.toLocaleString()} | SP: {students.toLocaleString()}
                     </div>
                   </div>
 
                   {/* 2. Integrated Base Capacity & Balance 2028 */}
                   <div className="p-3.5 rounded-2xl bg-white border border-slate-200/90 shadow-2xs space-y-1">
                     <div className="text-slate-500 font-medium">{labels.allBalanceTitle}</div>
-                    <div className={`text-xl font-black ${totalBal < 0 ? 'text-rose-600' : 'text-emerald-700'}`}>
-                      {totalBal >= 0 ? `+${totalBal.toLocaleString()}` : totalBal.toLocaleString()} <span className="text-xs font-semibold text-slate-500">{labels.balanceUnit2028}</span>
+                    <div className={`text-xl font-black ${totalBalance < 0 ? 'text-rose-600' : 'text-emerald-700'}`}>
+                      {totalBalance >= 0 ? `+${totalBalance.toLocaleString()}` : totalBalance.toLocaleString()}{' '}
+                      <span className="text-xs font-semibold text-slate-500">
+                        {formatPlacesUnit(totalBalance, language)} ({totalBalance < 0 ? labels.deficitUnit2028 : labels.balanceUnit2028})
+                      </span>
                     </div>
                     <div className="text-[11px] text-slate-500">
-                      {labels.totalBase} <span className="font-bold text-slate-700">{totalCapacity.toLocaleString()}</span> {labels.places}
+                      {labels.totalBase} <span className="font-bold text-slate-700">{totalCapacity.toLocaleString()}</span> {formatPlacesUnit(totalCapacity, language)}
                     </div>
                   </div>
 
@@ -293,7 +317,7 @@ export function ForecastDetailsDrawer({
                       {totalEduFacilities} <span className="text-xs font-semibold text-slate-500">{labels.facilitiesTotal}</span>
                     </div>
                     <div className="text-[11px] text-slate-500">
-                      {nurseriesTotal} {labels.nurseriesWord}, {activeDistrictData.educationAndCare.kindergartensCount} {labels.kindergartensWord}, {activeDistrictData.educationAndCare.primarySchoolsCount} {labels.schoolsWord}
+                      {formatNurseriesCount(nurseriesTotal, language)}, {formatKindergartensCount(activeDistrictData.educationAndCare.kindergartensCount, language)}, {formatSchoolsCount(activeDistrictData.educationAndCare.primarySchoolsCount, language)}
                     </div>
                   </div>
 

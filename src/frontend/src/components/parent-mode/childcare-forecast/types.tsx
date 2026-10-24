@@ -14,8 +14,10 @@ export interface DistrictStatus {
 export interface DistrictCohortData {
   placesShortLabel: string;
   placesCount: string;
+  placesRaw: number;
   facilitiesSubtitle: string;
   balanceFormatted: string;
+  balanceRaw: number;
   balanceSubtitle: string;
   isNegativeBalance: boolean;
   forecastChildren: string;
@@ -24,6 +26,7 @@ export interface DistrictCohortData {
   coverageValue: string;
   progressPercent: number;
   status: DistrictStatus;
+  statusBadge: string;
 }
 
 export interface MacroIndicators {
@@ -57,24 +60,24 @@ export function getPageNumbers(currentPage: number, totalPages: number): (number
   if (currentPage >= totalPages - 2) {
     return [1, '...', totalPages - 2, totalPages - 1, totalPages];
   }
-  return [1, '...', currentPage, '...', totalPages];
+  return [1, '...', currentPage - 1, currentPage, currentPage + 1, '...', totalPages];
 }
 
-/// <summary>
-/// Splits title to cleanly highlight (2028 Forecast) in brand blue without duplicate text or line breaks.
-/// </summary>
-export function formatTitleWithBlueAccent(title: string): React.ReactNode {
-  const patterns = ['(Prognoza 2028)', '(2028 Forecast)', '(Прогноз 2028)'];
-  for (const pat of patterns) {
-    if (title.includes(pat)) {
-      const base = title.replace(pat, '').trim();
+export function renderHighlightedTitle(title: string, _language?: string): React.ReactNode {
+  const triggers = ['(Prognoza 2028)', '(2028 Forecast)', '(Прогноз 2028)'];
+  for (const trigger of triggers) {
+    if (title.includes(trigger)) {
+      const parts = title.split(trigger);
       return (
-        <span className="inline">
-          <span>{base}</span>{' '}
-          <span className="inline-block text-blue-600 font-black">{pat}</span>
-        </span>
+        <>
+          {parts[0]}
+          <span className="text-blue-600 font-bold">{trigger}</span>
+          {parts[1]}
+        </>
       );
     }
   }
-  return <span>{title}</span>;
+  return title;
 }
+
+export const formatTitleWithBlueAccent = renderHighlightedTitle;

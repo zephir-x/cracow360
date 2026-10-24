@@ -28,7 +28,7 @@ export function ParentModePage({ districts }: ParentModePageProps) {
   return (
     <div className="space-y-8">
       {/* 1. Hero Header with interactive CTA links and expandable capabilities drawer */}
-      <ParentHeroHeader totalDistrictsCount={districts.length} />
+      <ParentHeroHeader totalDistrictsCount={districts.length} districts={districts} />
 
       {/* 2. Interactive Child Age Stage Selector (Sole global controller of the page profile) */}
       <div id="child-profile-section" className="scroll-mt-20">

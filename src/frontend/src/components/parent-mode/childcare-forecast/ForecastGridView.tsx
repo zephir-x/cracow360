@@ -3,6 +3,7 @@ import type { Language } from '../../../i18n/types';
 import type { DistrictDetailsDto, DistrictSummaryDto } from '../../../types/contracts';
 import type { ChildAgeCohort } from '../FamilyAgeCohortSelector';
 import { getDistrictCohortData } from './forecastCalculations';
+import { formatPlacesUnit } from '../../../i18n/childcareForecastI18n';
 import type { ForecastFilter } from './types';
 
 export interface ForecastGridViewProps {
@@ -12,13 +13,13 @@ export interface ForecastGridViewProps {
   activeFilter: ForecastFilter;
   currentPage: number;
   selectedDistrictId: number | null;
-  onSelectDistrict: (districtId: number) => void;
+  onSelectDistrict: (districtId: number, shouldScroll?: boolean) => void;
   language: Language;
   localizeDistrictName: (name: string | null | undefined, lang: Language) => string;
-  whiteSpotBadge: string;
-  balancedBadge: string;
-  surplusBadge: string;
-  placesUnit: string;
+  whiteSpotBadge?: string;
+  balancedBadge?: string;
+  surplusBadge?: string;
+  placesUnit?: string;
   closeCard: string;
   recommendationActionBtn: string;
 }
@@ -36,7 +37,7 @@ export function ForecastGridView({
   whiteSpotBadge,
   balancedBadge,
   surplusBadge,
-  placesUnit,
+  placesUnit: _placesUnit,
   closeCard,
   recommendationActionBtn,
 }: ForecastGridViewProps) {
@@ -54,25 +55,24 @@ export function ForecastGridView({
         return (
           <div
             key={district.districtId}
-            onClick={() => onSelectDistrict(district.districtId)}
-            className={`p-4 sm:p-5 rounded-2xl border transition-all duration-200 cursor-pointer flex flex-col justify-between gap-3 shadow-xs ${
+            className={`p-4 sm:p-5 rounded-2xl border transition-all duration-200 flex flex-col justify-between gap-3 shadow-xs ${
               isSelected
                 ? 'border-blue-600 ring-2 ring-blue-500/30 bg-blue-50/50 shadow-md'
                 : status.isWhiteSpot
-                ? 'bg-slate-50/70 border-rose-200/80 hover:bg-rose-50/40 hover:border-rose-300'
+                ? 'bg-slate-50/70 border-rose-200/80 hover:border-rose-300'
                 : status.isSurplus
-                ? 'bg-slate-50/70 border-emerald-200/80 hover:bg-emerald-50/40 hover:border-emerald-300'
-                : 'bg-slate-50/70 border-slate-200/80 hover:bg-blue-50/40 hover:border-blue-200'
+                ? 'bg-slate-50/70 border-emerald-200/80 hover:border-emerald-300'
+                : 'bg-slate-50/70 border-slate-200/80 hover:border-blue-200'
             }`}
           >
             {/* Top Bar: District Tag & Name + Status Badge */}
             <div>
               <div className="flex items-center justify-between gap-2">
                 <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
-                  {language === 'ua' ? 'Район' : language === 'en' ? 'District' : 'Dzielnica'} {district.districtRoman}
+                  {language === 'en' ? 'District' : language === 'ua' ? 'Район' : 'Dzielnica'} {district.districtRoman}
                 </span>
                 <span
-                  className={`text-[10px] font-bold px-2 py-0.5 rounded-full shrink-0 ${
+                  className={`text-[10px] font-bold px-2 py-0.5 rounded-full ${
                     status.isWhiteSpot
                       ? 'bg-rose-100 text-rose-800'
                       : status.isSurplus
@@ -80,11 +80,13 @@ export function ForecastGridView({
                       : 'bg-amber-100 text-amber-800'
                   }`}
                 >
-                  {status.isWhiteSpot
+                  {status.isWhiteSpot && whiteSpotBadge
                     ? whiteSpotBadge
-                    : status.isSurplus
+                    : status.isSurplus && surplusBadge
                     ? surplusBadge
-                    : balancedBadge}
+                    : status.isBalanced && balancedBadge
+                    ? balancedBadge
+                    : cardData.statusBadge}
                 </span>
               </div>
 
@@ -103,7 +105,7 @@ export function ForecastGridView({
                 <div className="text-sm font-black text-slate-900">
                   {cardData.placesCount}{' '}
                   <span className="text-[10px] font-medium text-slate-500">
-                    {placesUnit}
+                    {formatPlacesUnit(cardData.placesRaw, language)}
                   </span>
                 </div>
                 <div className="text-[10px] text-slate-400 truncate">
@@ -124,7 +126,7 @@ export function ForecastGridView({
                 >
                   {cardData.balanceFormatted}{' '}
                   <span className="text-[10px] font-medium text-slate-500">
-                    {placesUnit}
+                    {formatPlacesUnit(cardData.balanceRaw, language)}
                   </span>
                 </div>
                 <div className="text-[10px] text-slate-400 truncate">
@@ -133,7 +135,7 @@ export function ForecastGridView({
               </div>
             </div>
 
-            {/* Middle: Progress / Standard Bar with Amber-500 for Balanced */}
+            {/* Middle: Progress / Standard Bar */}
             <div className="space-y-1.5">
               <div className="flex items-center justify-between text-xs">
                 <span className="text-slate-600 font-medium text-[11px]">
@@ -143,7 +145,7 @@ export function ForecastGridView({
                   {cardData.coverageValue}
                 </span>
               </div>
-              <div className="w-full h-1.5 rounded-full bg-slate-200/80 overflow-hidden">
+              <div className="w-full h-2 rounded-full bg-slate-200 overflow-hidden">
                 <div
                   className={`h-full rounded-full transition-all duration-500 ${
                     status.isWhiteSpot
@@ -152,14 +154,12 @@ export function ForecastGridView({
                       ? 'bg-emerald-500'
                       : 'bg-amber-500'
                   }`}
-                  style={{
-                    width: `${Math.min(100, Math.max(8, cardData.progressPercent))}%`,
-                  }}
+                  style={{ width: `${cardData.progressPercent}%` }}
                 />
               </div>
             </div>
 
-            {/* Card Footer: Prognoza 2028 Dzieci Context + Action Button */}
+            {/* Card Footer: Projected Children + Modern Animated Action Button */}
             <div className="pt-2 flex items-center justify-between border-t border-slate-200/60 gap-2">
               <span className="text-[11px] font-semibold text-slate-700 bg-slate-100/90 border border-slate-200/80 px-2.5 py-1 rounded-lg shrink-0">
                 {language === 'en' ? 'Forecast:' : language === 'ua' ? 'Прогноз:' : 'Prognoza:'}{' '}
@@ -173,23 +173,20 @@ export function ForecastGridView({
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
-                  onSelectDistrict(district.districtId);
+                  onSelectDistrict(district.districtId, true);
                 }}
-                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all shadow-2xs shrink-0 cursor-pointer ${
+                className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-bold transition-all duration-200 shadow-2xs shrink-0 cursor-pointer active:scale-95 group ${
                   isSelected
-                    ? 'bg-slate-100 hover:bg-slate-200 text-slate-700'
-                    : 'bg-blue-50 text-blue-700 hover:bg-blue-600 hover:text-white border border-blue-200/80'
+                    ? 'bg-rose-50 text-rose-700 hover:bg-rose-600 hover:text-white border border-rose-200 hover:border-rose-600 shadow-xs'
+                    : 'bg-blue-50 text-blue-700 hover:bg-blue-600 hover:text-white border border-blue-200/80 hover:border-blue-600 shadow-xs'
                 }`}
+                title={isSelected ? closeCard : recommendationActionBtn}
               >
-                <span>
-                  {isSelected
-                    ? closeCard
-                    : recommendationActionBtn}
-                </span>
+                <span>{isSelected ? closeCard : recommendationActionBtn}</span>
                 {isSelected ? (
-                  <X className="w-3.5 h-3.5" />
+                  <X className="w-3.5 h-3.5 transition-transform duration-200 group-hover:rotate-90" />
                 ) : (
-                  <ArrowRight className="w-3.5 h-3.5" />
+                  <ArrowRight className="w-3.5 h-3.5 transition-transform duration-200 group-hover:translate-x-0.5" />
                 )}
               </button>
             </div>

@@ -19,6 +19,10 @@ data/db/*.db
 data/db/*.db-shm
 data/db/*.db-wal
 
+# Temporary geocoding & pipeline caches
+data/contracts/*_cache.json
+*spatial_geocoding_cache.json
+
 # Python isolated environment & caches
 .venv/
 venv/

@@ -16,7 +16,7 @@ export function ForecastMacroCards({
 }: ForecastMacroCardsProps) {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-      {/* 1. Space Balance */}
+      {/* 1. Places Balance */}
       <div
         className={`p-5 rounded-3xl border shadow-sm flex items-center gap-3.5 ${
           currentMacro.balance < 0
@@ -45,8 +45,8 @@ export function ForecastMacroCards({
           >
             {currentMacro.balance >= 0
               ? `+${currentMacro.balance.toLocaleString()}`
-              : currentMacro.balance.toLocaleString()}
-            <span className="text-xs font-semibold text-slate-500 ml-1">
+              : currentMacro.balance.toLocaleString()}{' '}
+            <span className="text-xs font-semibold text-slate-500">
               {placesUnit}
             </span>
           </div>
@@ -59,7 +59,7 @@ export function ForecastMacroCards({
         </div>
       </div>
 
-      {/* 2. Districts with a Deficit */}
+      {/* 2. Deficit / Tight Base Districts */}
       <div className="p-5 rounded-3xl border border-slate-200/90 bg-white shadow-sm flex items-center gap-3.5">
         <div
           className={`w-12 h-12 rounded-2xl flex items-center justify-center shrink-0 ${

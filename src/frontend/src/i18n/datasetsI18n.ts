@@ -35,6 +35,11 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     en: 'Annual mean PM10 and PM2.5 concentrations, annual smog days count, road traffic noise map >65 dB',
     ua: 'Середньорічні концентрації пилу PM10 і PM2.5, річна кількість днів зі смогом, карта дорожнього шуму >65 дБ',
   },
+  'gis-3': {
+    pl: 'Państwowy rejestr adresowy posesji w Krakowie, transformacja PUWG 1992 (EPSG:2180) do WGS84 dla 646 placówek edukacyjnych i 115 instytucji',
+    en: 'National address register of properties in Krakow, PUWG 1992 (EPSG:2180) to WGS84 transformation for 646 educational facilities and 115 institutions',
+    ua: 'Державний адресний реєстр садиб у Кракові, трансформація PUWG 1992 (EPSG:2180) у WGS84 для 646 навчальних закладів та 115 установ',
+  },
   'trans-1': {
     pl: '1 378 przystanków komunikacji miejskiej (tramwaje i autobusy), gęstość sieci KMK na km²',
     en: '1,378 public transit stops (trams and buses), KMK network density per km²',
@@ -84,6 +89,16 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     pl: 'Kryte pływalnie przyszkolne i obiekty sportowe, POI SCHOOL_SPORT',
     en: 'Indoor school swimming pools and athletic centers, POI SCHOOL_SPORT',
     ua: 'Криті пришкільні басейни та спортивні комплекси, POI SCHOOL_SPORT',
+  },
+  'gis-4': {
+    pl: 'Wektorowe poligony parków miejskich, lasów komunalnych i rezerwatów przyrody (leisure=park, landuse=forest), precyzyjne centroidy dla 142 obiektów',
+    en: 'Vector polygons of municipal parks, community forests, and nature reserves (leisure=park, landuse=forest), precise centroids for 142 green assets',
+    ua: 'Векторні полігони міських парків, комунальних лісів та природних заповідників (leisure=park, landuse=forest), точні центроїди для 142 об’єктів',
+  },
+  'gis-5': {
+    pl: 'Miejscowe plany zagospodarowania i lokalizacje kwartałowe dla 44 parków kieszonkowych Zarządu Zieleni Miejskiej',
+    en: 'Local zoning plans and residential block locations for 44 pocket parks managed by the Municipal Greenery Board',
+    ua: 'Місцеві плани просторового планування та квартальні локації для 44 кишенькових парків Управління міських зелених насаджень',
   },
   'cult-1': {
     pl: '53 aktywne Centra Seniora we wszystkich 18 dzielnicach, adresy, operatorzy NGO, POI SENIOR_CENTER',

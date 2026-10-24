@@ -35,17 +35,24 @@ export function AboutDataMethodologyPage({
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
 
-  const categoryTabs = useMemo(() => [
-    { key: 'all', label: t.methodology.categories.all, count: ALL_DATA_SOURCES.length },
-    { key: 'housing', label: t.methodology.categories.housing, count: 2 },
-    { key: 'safety', label: t.methodology.categories.safety, count: 2 },
-    { key: 'transport', label: t.methodology.categories.transport, count: 4 },
-    { key: 'greenery', label: t.methodology.categories.greenery, count: 6 },
-    { key: 'education', label: t.methodology.categories.education, count: 9 },
-    { key: 'culture', label: t.methodology.categories.culture, count: 3 },
-    { key: 'demographics', label: t.methodology.categories.demographics, count: 8 },
-    { key: 'gis_env', label: t.methodology.categories.gis_env, count: 2 },
-  ], [t]);
+  const categoryTabs = useMemo(() => {
+    const counts = ALL_DATA_SOURCES.reduce((acc, item) => {
+      acc[item.category] = (acc[item.category] || 0) + 1;
+      return acc;
+    }, {} as Record<string, number>);
+
+    return [
+      { key: 'all', label: t.methodology.categories.all, count: ALL_DATA_SOURCES.length },
+      { key: 'housing', label: t.methodology.categories.housing, count: counts['housing'] || 0 },
+      { key: 'safety', label: t.methodology.categories.safety, count: counts['safety'] || 0 },
+      { key: 'transport', label: t.methodology.categories.transport, count: counts['transport'] || 0 },
+      { key: 'greenery', label: t.methodology.categories.greenery, count: counts['greenery'] || 0 },
+      { key: 'education', label: t.methodology.categories.education, count: counts['education'] || 0 },
+      { key: 'culture', label: t.methodology.categories.culture, count: counts['culture'] || 0 },
+      { key: 'demographics', label: t.methodology.categories.demographics, count: counts['demographics'] || 0 },
+      { key: 'gis_env', label: t.methodology.categories.gis_env, count: counts['gis_env'] || 0 },
+    ];
+  }, [t]);
 
   const filteredSources = ALL_DATA_SOURCES.filter((item) => {
     const matchesCategory =

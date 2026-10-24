@@ -13,9 +13,12 @@ import { ForecastToolbar } from './childcare-forecast/ForecastToolbar';
 import {
   calculateCityMacroStats,
   getDistrictCohortData,
+} from './childcare-forecast/forecastCalculations';
+import {
+  getForecastFilterLabels,
   getMacroPillDescriptions,
   getMacroTitles,
-} from './childcare-forecast/forecastCalculations';
+} from '../../i18n/childcareForecastI18n';
 import {
   getPageNumbers,
   ITEMS_PER_PAGE,
@@ -98,9 +101,13 @@ export function ChildcareForecastSection({
   // City-wide macro calculations
   const macroStats = useMemo(() => calculateCityMacroStats(detailsMap), [detailsMap]);
   const currentMacro = macroStats[activeCohort];
-  const macroTitles = useMemo(() => getMacroTitles(language), [language]);
+  const macroTitles = useMemo(() => getMacroTitles(activeCohort, language), [activeCohort, language]);
   const macroPillDescriptions = useMemo(
     () => getMacroPillDescriptions(activeCohort, language),
+    [activeCohort, language]
+  );
+  const filterLabels = useMemo(
+    () => getForecastFilterLabels(activeCohort, language),
     [activeCohort, language]
   );
 
@@ -143,23 +150,36 @@ export function ChildcareForecastSection({
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const paginatedDistricts = filteredDistricts.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
+  // Reset pagination only when cohort or filter changes
   useEffect(() => {
     setCurrentPage(1);
   }, [activeCohort, activeFilter]);
 
-  // Handle district selection & trigger immediate smooth scroll
-  const handleSelectDistrict = (districtId: number) => {
+  // Desynchronize drawer only if selected district is no longer visible under active filter
+  useEffect(() => {
+    if (selectedDistrictId !== null) {
+      const isVisible = filteredDistricts.some((d) => d.districtId === selectedDistrictId);
+      if (!isVisible) {
+        setSelectedDistrictId(null);
+      }
+    }
+  }, [filteredDistricts, selectedDistrictId]);
+
+  // Handle district selection & optional smooth scroll (triggered on specific Details button click)
+  const handleSelectDistrict = (districtId: number, shouldScroll = false) => {
     if (selectedDistrictId === districtId) {
       setSelectedDistrictId(null);
     } else {
       setSelectedDistrictId(districtId);
-      setTimeout(() => {
-        if (recommendationRef.current) {
-          const rect = recommendationRef.current.getBoundingClientRect();
-          const targetY = window.scrollY + rect.top - 80;
-          window.scrollTo({ top: targetY, behavior: 'smooth' });
-        }
-      }, 100);
+      if (shouldScroll) {
+        setTimeout(() => {
+          if (recommendationRef.current) {
+            const rect = recommendationRef.current.getBoundingClientRect();
+            const targetY = window.scrollY + rect.top - 80;
+            window.scrollTo({ top: targetY, behavior: 'smooth' });
+          }
+        }, 120);
+      }
     }
   };
 
@@ -189,12 +209,7 @@ export function ChildcareForecastSection({
           viewMode={viewMode}
           onSelectViewMode={setViewMode}
           cohortsDef={t.parent.cohorts}
-          filterLabels={{
-            all: t.parent.forecast.filterAll,
-            whiteSpots: t.parent.forecast.filterWhiteSpots,
-            balanced: t.parent.forecast.filterBalanced,
-            surplus: t.parent.forecast.filterSurplus,
-          }}
+          filterLabels={filterLabels}
           viewModeLabels={{
             grid: t.parent.forecast.viewGrid || 'Siatka',
             table: t.parent.forecast.viewTable || 'Tabela',
