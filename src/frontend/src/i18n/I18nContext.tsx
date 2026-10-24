@@ -8,6 +8,12 @@ import { localizeDistrictName as localizeDistNameHelper } from '../utils/distric
 
 const STORAGE_KEY = 'cracow360_lang';
 
+export const PAGE_TITLES: Record<Language, string> = {
+  pl: 'Kraków360 – System Analizy Jakości Życia i Predykcji Rozwoju Miejskiego',
+  en: 'Kraków360 – Quality of Life Analysis & Urban Development Forecast System',
+  ua: 'Kraków360 – Система Аналізу Якості Життя та Прогнозування Міського Розвитку',
+};
+
 interface I18nContextValue {
   language: Language;
   setLanguage: (lang: Language) => void;
@@ -49,6 +55,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
     try {
       localStorage.setItem(STORAGE_KEY, newLang);
       document.documentElement.lang = newLang;
+      document.title = PAGE_TITLES[newLang] ?? PAGE_TITLES.pl;
     } catch {
       // Ignore storage errors if localStorage is restricted
     }
@@ -56,6 +63,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
 
   useEffect(() => {
     document.documentElement.lang = language;
+    document.title = PAGE_TITLES[language] ?? PAGE_TITLES.pl;
   }, [language]);
 
   const plural = useMemo(() => {

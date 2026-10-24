@@ -119,12 +119,15 @@ html, body {
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
+  overflow: hidden !important;
 }
 
 .drawer-expandable:not(.is-open) > div {
   margin: 0 !important;
   padding: 0 !important;
   border: none !important;
+  min-height: 0;
+  overflow: hidden !important;
 }
 
 .drawer-expandable > div {
@@ -138,11 +141,14 @@ html, body {
   filter: blur(0px);
   transform: scale(1);
   pointer-events: auto;
+  overflow: visible !important;
 }
 
 /* Cushion buffer for child box-shadows to bloom naturally without edge clipping */
 .drawer-expandable.is-open > div {
-  padding: 4px 8px 24px 8px;
+  min-height: 0;
+  overflow: visible !important;
+  padding: 8px 12px 28px 12px;
 }
 
 /* Custom keyframe animations for the Kraków360 Hero & Interactive UI */

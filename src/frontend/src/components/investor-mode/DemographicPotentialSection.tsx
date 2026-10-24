@@ -14,7 +14,10 @@ export function DemographicPotentialSection({ districts }: DemographicPotentialS
     .slice(0, 6);
 
   return (
-    <section className="rounded-3xl bg-white border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-4">
+    <section
+      id="investor-ranking-section"
+      className="scroll-mt-20 rounded-3xl bg-white border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-4"
+    >
       <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
         <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
           <TrendingUp className="w-5 h-5" />

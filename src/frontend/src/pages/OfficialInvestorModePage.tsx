@@ -1,5 +1,5 @@
 import { DemographicPotentialSection } from '../components/investor-mode/DemographicPotentialSection';
-import { InvestorCapabilitiesGrid } from '../components/investor-mode/InvestorCapabilitiesGrid';
+import { InvestorForecastSection } from '../components/investor-mode/forecast-2028/InvestorForecastSection';
 import { InvestorHeroHeader } from '../components/investor-mode/InvestorHeroHeader';
 import type { DistrictSummaryDto } from '../types/contracts';
 
@@ -18,14 +18,14 @@ export function OfficialInvestorModePage({
 }: OfficialInvestorModePageProps) {
   return (
     <div className="space-y-8">
-      {/* Hero Header */}
-      <InvestorHeroHeader onBackToResidentMode={onBackToResidentMode} />
+      {/* Hero Header with Navigation, 4 Unique Stats Cards, and Collapsible Capabilities Drawer */}
+      <InvestorHeroHeader districts={districts} onBackToResidentMode={onBackToResidentMode} />
 
-      {/* Module 3 Capabilities */}
-      <InvestorCapabilitiesGrid />
-
-      {/* Overview of Districts Requiring Municipal Investment */}
+      {/* Overview of Districts in Vitality Ranking (TOP 6) */}
       <DemographicPotentialSection districts={districts} />
+
+      {/* 2028 Demographic Projections & B2B/B2G Investment Decision Support */}
+      <InvestorForecastSection districts={districts} />
     </div>
   );
 }
