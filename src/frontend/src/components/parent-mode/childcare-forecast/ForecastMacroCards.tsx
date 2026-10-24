@@ -109,7 +109,7 @@ export function ForecastMacroCards({
         </div>
       </div>
 
-      {/* 4. Child Population (2028 Forecast) */}
+      {/* 4. Child Population */}
       <div className="p-5 rounded-3xl border border-slate-200/90 bg-white shadow-sm flex items-center gap-3.5">
         <div className="w-12 h-12 rounded-2xl bg-indigo-50 border border-indigo-200/80 flex items-center justify-center text-indigo-600 shrink-0">
           <Baby className="w-6 h-6" />

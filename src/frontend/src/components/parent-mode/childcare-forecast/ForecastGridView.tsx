@@ -95,7 +95,7 @@ export function ForecastGridView({
               </h3>
             </div>
 
-            {/* 2-Column Comparison Box: Places paired with Places */}
+            {/* 2-Column Comparison Box: Places paired with Balance */}
             <div className="grid grid-cols-2 gap-2 p-2.5 rounded-xl bg-white border border-slate-200/80 shadow-2xs">
               {/* Left: Current Places */}
               <div className="space-y-0.5">
@@ -113,11 +113,10 @@ export function ForecastGridView({
                 </div>
               </div>
 
-              {/* Right: Places Balance (2028) */}
+              {/* Right: Places Balance */}
               <div className="space-y-0.5 pl-2 border-l border-slate-100">
                 <div className="text-[10px] font-bold text-blue-600 uppercase tracking-wide truncate">
-                  {language === 'en' ? 'Places Balance' : language === 'ua' ? 'Баланс Місць' : 'Bilans Miejsc'}{' '}
-                  <span className="text-blue-600 font-bold">(2028)</span>
+                  {language === 'en' ? 'Places Balance' : language === 'ua' ? 'Баланс Місць' : 'Bilans Miejsc'}
                 </div>
                 <div
                   className={`text-sm font-black ${
@@ -159,10 +158,10 @@ export function ForecastGridView({
               </div>
             </div>
 
-            {/* Card Footer: Projected Children + Modern Animated Action Button */}
+            {/* Card Footer: Current Children + Modern Animated Action Button */}
             <div className="pt-2 flex items-center justify-between border-t border-slate-200/60 gap-2">
               <span className="text-[11px] font-semibold text-slate-700 bg-slate-100/90 border border-slate-200/80 px-2.5 py-1 rounded-lg shrink-0">
-                {language === 'en' ? 'Forecast:' : language === 'ua' ? 'Прогноз:' : 'Prognoza:'}{' '}
+                {language === 'en' ? 'Children:' : language === 'ua' ? 'Діти:' : 'Dzieci:'}{' '}
                 <span className="text-blue-700 font-black">
                   {cardData.forecastChildren}
                 </span>{' '}

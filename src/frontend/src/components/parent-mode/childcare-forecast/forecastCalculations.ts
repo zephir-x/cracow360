@@ -12,19 +12,20 @@ import {
   formatNurseriesLabel,
 } from '../../../i18n/childcareForecastI18n';
 
-// City-wide Macro Aggregations (Infants, Preschool, Primary, All)
+// City-wide Macro Aggregations (Infants, Preschool, Primary, All) – Pure Current State
 export function getMacroIndicators(
   districts: DistrictDetailsDto[]
 ): Record<ChildAgeCohort, MacroIndicators> {
   let nurseryPlaces = 0;
   let nurseryWhiteSpots = 0;
-  let proj0To3 = 0;
+  let current0To3 = 0;
 
   let kgPlaces = 0;
   let kgDistrictsHighDemand = 0;
-  let proj4To6 = 0;
+  let current4To6 = 0;
 
   let primarySchools = 0;
+  let current7To14 = 0;
   let primaryStudents = 0;
   let crowdedSchoolsDistricts = 0;
 
@@ -34,88 +35,91 @@ export function getMacroIndicators(
 
   districts.forEach((d) => {
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const rawF = d.forecastsAndB2B as any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const rawD = d.demographics as any;
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const rawE = d.educationAndCare as any;
 
-    const p03 = rawF?.forecastedAge0To3_2028 ?? rawF?.forecastedAge0to3_2028 ?? rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
-    const p46 = rawF?.forecastedAge4To6_2028 ?? rawF?.forecastedAge4to6_2028 ?? rawD?.age4To6 ?? rawD?.age4to6 ?? 0;
+    const c03 = rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
+    const c46 = rawD?.age4To6 ?? rawD?.age4to6 ?? 0;
+    const c714 = rawD?.age7To14 ?? rawD?.age7to14 ?? 0;
     const stud = rawE?.primarySchoolStudentsTotal ?? 0;
 
-    proj0To3 += p03;
-    proj4To6 += p46;
+    current0To3 += c03;
+    current4To6 += c46;
+    current7To14 += c714;
     primaryStudents += stud;
 
-    // 1. Infants
+    // 1. Infants (0–3)
     const carePlaces = rawE?.totalCarePlaces0To3 ?? rawE?.totalCarePlaces0to3 ?? 0;
     nurseryPlaces += carePlaces;
-    const nurBal = carePlaces - p03;
-    const b2b = rawF?.nurseryInvestmentPotentialB2B ?? 'LOW';
-    if (nurBal <= -750 || b2b === 'HIGH') {
+    const nurBal = carePlaces - c03;
+    const nurCov = c03 > 0 ? (carePlaces / c03) * 100 : 0;
+    if (nurCov < 50 || nurBal <= -600) {
       nurseryWhiteSpots++;
     }
 
-    // 2. Preschool
+    // 2. Preschool (4–6)
     const kPlaces = rawE?.kindergartenPlacesTotal ?? 0;
     kgPlaces += kPlaces;
-    const kRatio = p46 > 0 ? kPlaces / p46 : 2.0;
-    if (kRatio < 1.62) {
+    const kCov = c46 > 0 ? (kPlaces / c46) * 100 : 100;
+    const kBal = kPlaces - c46;
+    if (kCov < 125 || kBal < 150) {
       kgDistrictsHighDemand++;
     }
 
-    // 3. Primary Schools
+    // 3. Primary Schools (7–14) – Pure Demographics
     const schCount = rawE?.primarySchoolsCount ?? 0;
     primarySchools += schCount;
-    const avgClass = rawE?.avgStudentsPerClass ?? 0;
-    if (avgClass > 20.0) {
+    const schCap = schCount * 350;
+    const schBal = schCap - c714;
+    const schCov = c714 > 0 ? (schCap / c714) * 100 : 100;
+    if (schCov < 100 || schBal <= 0) {
       crowdedSchoolsDistricts++;
     }
 
-    // 4. All
-    const schCap = schCount * 350;
+    // 4. All Cohorts (0–14) – Pure Demographics 0–3, 4–6, 7–14 (harmonized with Hero 101.5k)
     const totCap = carePlaces + kPlaces + schCap;
-    const totKids = p03 + p46 + stud;
+    const totKids = c03 + c46 + c714;
     const totBal = totCap - totKids;
+    const covPct = totKids > 0 ? (totCap / totKids) * 100 : 100;
 
     allTotalCapacity += totCap;
     allTotalChildren += totKids;
 
-    if (totBal <= 150) {
+    if (covPct < 100 || totBal <= 0) {
       allTightDistricts++;
     }
   });
 
-  const nurseryBalance = nurseryPlaces - proj0To3;
-  const infantCoverage = proj0To3 > 0 ? Math.min(100, Math.round((nurseryPlaces / proj0To3) * 100)) : 56;
-  const preschoolBalance = kgPlaces - proj4To6;
-  const preschoolCoverage = proj4To6 > 0 ? Math.min(100, Math.round((kgPlaces / proj4To6) * 100)) : 100;
+  const nurseryBalance = nurseryPlaces - current0To3;
+  const infantCoverage = current0To3 > 0 ? Math.round((nurseryPlaces / current0To3) * 100) : 60;
+  const preschoolBalance = kgPlaces - current4To6;
+  const preschoolCoverage = current4To6 > 0 ? Math.round((kgPlaces / current4To6) * 100) : 153;
   const schoolCapacity = primarySchools * 350;
-  const schoolBalance = schoolCapacity - primaryStudents;
-  const schoolCoverage = schoolCapacity > 0 ? Math.round((primaryStudents / schoolCapacity) * 100) : 92;
+  const schoolBalance = schoolCapacity - current7To14;
+  const schoolCoverage = current7To14 > 0 ? Math.round((schoolCapacity / current7To14) * 100) : 126;
 
   const allTotalBalance = allTotalCapacity - allTotalChildren;
-  const allCoveragePct = allTotalChildren > 0 ? Math.round((allTotalCapacity / allTotalChildren) * 100) : 100;
+  const allCoveragePct = allTotalChildren > 0 ? Math.round((allTotalCapacity / allTotalChildren) * 100) : 117;
 
   return {
     infant: {
       balance: nurseryBalance,
       criticalDistricts: nurseryWhiteSpots,
       coveragePct: infantCoverage,
-      projectedChildren: proj0To3,
+      projectedChildren: current0To3,
     },
     preschool: {
       balance: preschoolBalance,
       criticalDistricts: kgDistrictsHighDemand,
       coveragePct: preschoolCoverage,
-      projectedChildren: proj4To6 > 0 ? proj4To6 : 16888,
+      projectedChildren: current4To6 > 0 ? current4To6 : 21556,
     },
     school: {
       balance: schoolBalance,
       criticalDistricts: crowdedSchoolsDistricts,
       coveragePct: schoolCoverage,
-      projectedChildren: primaryStudents,
+      projectedChildren: current7To14,
     },
     all: {
       balance: allTotalBalance,
@@ -126,7 +130,7 @@ export function getMacroIndicators(
   };
 }
 
-// District Cohort Calculation (Pure Math & Logic)
+// District Cohort Calculation (Pure Current Math & Logic)
 export function getDistrictCohortData(
   details: DistrictDetailsDto | undefined,
   cohort: ChildAgeCohort,
@@ -156,22 +160,20 @@ export function getDistrictCohortData(
   const isUa = language === 'ua';
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const rawF = details.forecastsAndB2B as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawD = details.demographics as any;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawE = details.educationAndCare as any;
 
-  // 1. PRESCHOOL
+  // 1. PRESCHOOL (4–6)
   if (cohort === 'preschool') {
     const kgPlaces: number = rawE?.kindergartenPlacesTotal ?? 0;
     const kgCount: number = rawE?.kindergartensCount ?? 0;
-    const p46: number = rawF?.forecastedAge4To6_2028 ?? rawF?.forecastedAge4to6_2028 ?? rawD?.age4To6 ?? rawD?.age4to6 ?? 1;
-    const ratio = kgPlaces / Math.max(1, p46);
-    const isWhiteSpot = ratio < 1.62;
-    const isSurplus = ratio >= 2.3;
+    const c46: number = rawD?.age4To6 ?? rawD?.age4to6 ?? 1;
+    const kgBal = kgPlaces - c46;
+    const covPct = c46 > 0 ? Math.round((kgPlaces / c46) * 100) : 100;
+    const isWhiteSpot = covPct < 125 || kgBal < 150;
+    const isSurplus = covPct >= 140 && kgBal >= 400;
     const isBalanced = !isWhiteSpot && !isSurplus;
-    const kgBal = kgPlaces - p46;
 
     const statusBadge = isWhiteSpot
       ? isEn ? 'High Demand' : isUa ? 'Підвищений Попит' : 'Zwiększone Zapotrzebowanie'
@@ -190,32 +192,33 @@ export function getDistrictCohortData(
         ? (isEn ? 'recruitment surplus' : isUa ? 'набірний надлишок' : 'nadwyżka rekrutacyjna')
         : (isEn ? 'places deficit' : isUa ? 'дефіцит місць' : 'deficyt miejsc'),
       isNegativeBalance: kgBal < 0,
-      forecastChildren: p46.toLocaleString(),
+      forecastChildren: c46.toLocaleString(),
       forecastChildrenUnit: isEn ? 'preschoolers' : isUa ? 'дошкільнят' : 'przedszkolaków',
       coverageLabel: isEn ? 'Preschool demand coverage' : isUa ? 'Покриття попиту в дитсадках' : 'Pokrycie popytu przedszkolnego',
-      coverageValue: isEn ? '100% (full)' : isUa ? '100% (повне)' : '100% (pełne)',
-      progressPercent: 100,
+      coverageValue: `${Math.round((kgPlaces / Math.max(1, c46)) * 100)}%`,
+      progressPercent: Math.min(100, Math.round((kgPlaces / Math.max(1, c46)) * 100)),
       status: { isWhiteSpot, isSurplus, isBalanced },
       statusBadge,
     };
   }
 
-  // 2. SCHOOL
+  // 2. SCHOOL (7–14) – Pure Demographics (BDK age 7–14)
   if (cohort === 'school') {
     const schools: number = rawE?.primarySchoolsCount ?? 0;
     const schoolCap = schools * 350;
-    const students: number = rawE?.primarySchoolStudentsTotal ?? 0;
-    const avgClass: number = rawE?.avgStudentsPerClass ?? 0;
-    const schoolBal = schoolCap - students;
-    const isWhiteSpot = avgClass > 20.0;
-    const isSurplus = avgClass <= 17.5;
+    const c714: number = rawD?.age7To14 ?? rawD?.age7to14 ?? 1;
+    const schoolBal = schoolCap - c714;
+    const covPct = c714 > 0 ? Math.round((schoolCap / c714) * 100) : 100;
+
+    const isWhiteSpot = covPct < 100 || schoolBal <= 0;
+    const isSurplus = covPct >= 120 && schoolBal >= 300;
     const isBalanced = !isWhiteSpot && !isSurplus;
 
     const statusBadge = isWhiteSpot
-      ? isEn ? 'Crowded Classes' : isUa ? 'Переповнені Класи' : 'Zagęszczone Oddziały'
+      ? isEn ? 'High Demand' : isUa ? 'Підвищений Попит' : 'Zwiększone Zapotrzebowanie'
       : isSurplus
-      ? isEn ? 'Cosy Classrooms' : isUa ? 'Затишні Класи' : 'Kameralne Oddziały'
-      : isEn ? 'Standard Class Size' : isUa ? 'Стандартний Розмір' : 'Standardowy Wymiar';
+      ? isEn ? 'High Availability' : isUa ? 'Висока Доступність' : 'Wysoka Dostępność'
+      : isEn ? 'Balanced Market' : isUa ? 'Збалансований Ринок' : 'Rynek Zrównoważony';
 
     return {
       placesShortLabel: isEn ? 'Primary School Places' : isUa ? 'Місця в Початкових Школах' : 'Miejsca w Szkołach SP',
@@ -225,20 +228,20 @@ export function getDistrictCohortData(
       balanceFormatted: `${schoolBal >= 0 ? `+${schoolBal.toLocaleString()}` : schoolBal.toLocaleString()}`,
       balanceRaw: schoolBal,
       balanceSubtitle: schoolBal >= 0
-        ? (isEn ? 'capacity reserve in SP' : isUa ? 'резерв місць у школах' : 'rezerwa miejsc w SP')
-        : (isEn ? 'classroom deficit' : isUa ? 'дефіцит класів' : 'deficyt oddziałów'),
+        ? (isEn ? 'catchment reserve in SP' : isUa ? 'районний резерв у школах' : 'rezerwa rejonowa w SP')
+        : (isEn ? 'places deficit in SP' : isUa ? 'дефіцит місць у школах' : 'deficyt miejsc w SP'),
       isNegativeBalance: schoolBal < 0,
-      forecastChildren: students.toLocaleString(),
-      forecastChildrenUnit: isEn ? 'primary students' : isUa ? 'учнів шкіл' : 'uczniów w SP',
-      coverageLabel: isEn ? 'Average class size' : isUa ? 'Середній розмір класу' : 'Średnia wielkość klasy',
-      coverageValue: isEn ? `${avgClass} std. / class` : isUa ? `${avgClass} учн. / клас` : `${avgClass} os. / oddział`,
-      progressPercent: Math.min(100, (avgClass / 25) * 100),
+      forecastChildren: c714.toLocaleString(),
+      forecastChildrenUnit: isEn ? 'children (7–14)' : isUa ? 'дітей (7–14)' : 'dzieci (7–14)',
+      coverageLabel: isEn ? 'Catchment demand coverage' : isUa ? 'Покриття районного попиту' : 'Pokrycie popytu rejonowego',
+      coverageValue: `${covPct}%`,
+      progressPercent: Math.min(100, covPct),
       status: { isWhiteSpot, isSurplus, isBalanced },
       statusBadge,
     };
   }
 
-  // 3. INFANT: Pure arithmetic (places minus projected 2028 toddlers)
+  // 3. INFANT (0–3) – Pure current state arithmetic
   if (cohort === 'infant') {
     const carePlaces: number = rawE?.totalCarePlaces0To3 ?? rawE?.totalCarePlaces0to3 ?? 0;
     const nurseriesCount: number =
@@ -246,12 +249,11 @@ export function getDistrictCohortData(
       (rawE?.nurseriesContractedCount ?? 0) +
       (rawE?.nurseriesPrivateCount ?? 0) +
       (rawE?.kidsClubsCount ?? 0);
-    const p03: number = rawF?.forecastedAge0To3_2028 ?? rawF?.forecastedAge0to3_2028 ?? rawD?.age0To3 ?? rawD?.age0to3 ?? 1;
-    const balance: number = carePlaces - p03;
-    const b2b: string = rawF?.nurseryInvestmentPotentialB2B ?? 'LOW';
-    const isWhiteSpot = balance <= -750 || b2b === 'HIGH';
-    const covPct = p03 > 0 ? Math.round((carePlaces / p03) * 100) : 0;
-    const isSurplus = covPct >= 75 || balance >= -150;
+    const c03: number = rawD?.age0To3 ?? rawD?.age0to3 ?? 1;
+    const balance: number = carePlaces - c03;
+    const covPct = c03 > 0 ? Math.round((carePlaces / c03) * 100) : 0;
+    const isWhiteSpot = covPct < 50 || balance <= -600;
+    const isSurplus = covPct >= 75 && balance >= -200;
     const isBalanced = !isWhiteSpot && !isSurplus;
 
     const statusBadge = isWhiteSpot
@@ -271,7 +273,7 @@ export function getDistrictCohortData(
         ? (isEn ? 'recruitment reserve' : isUa ? 'рекрутинговий резерв' : 'rezerwa rekrutacyjna')
         : (isEn ? 'care supply deficit' : isUa ? 'дефіцит пропозиції' : 'luka podażowa opieki'),
       isNegativeBalance: balance < 0,
-      forecastChildren: p03.toLocaleString(),
+      forecastChildren: c03.toLocaleString(),
       forecastChildrenUnit: isEn ? 'toddlers (0–3)' : isUa ? 'малюків (0–3)' : 'maluchów (0–3)',
       coverageLabel: isEn ? 'Nursery demand coverage' : isUa ? 'Покриття попиту в яслах' : 'Pokrycie popytu żłobkowego',
       coverageValue: `${covPct}%`,
@@ -281,7 +283,7 @@ export function getDistrictCohortData(
     };
   }
 
-  // 4. ALL COHORTS (0–14)
+  // 4. ALL COHORTS (0–14) – Pure current demographic population (0–3 + 4–6 + 7–14)
   const carePlaces: number = rawE?.totalCarePlaces0To3 ?? rawE?.totalCarePlaces0to3 ?? 0;
   const kgPlaces: number = rawE?.kindergartenPlacesTotal ?? 0;
   const schools: number = rawE?.primarySchoolsCount ?? 0;
@@ -296,18 +298,18 @@ export function getDistrictCohortData(
   const kgCount: number = rawE?.kindergartensCount ?? 0;
   const totalFacilities = nurseriesCount + kgCount + schools;
 
-  const p03: number = rawF?.forecastedAge0To3_2028 ?? rawF?.forecastedAge0to3_2028 ?? rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
-  const p46: number = rawF?.forecastedAge4To6_2028 ?? rawF?.forecastedAge4to6_2028 ?? rawD?.age4To6 ?? rawD?.age4to6 ?? 0;
-  const students: number = rawE?.primarySchoolStudentsTotal ?? 0;
-  const totalChildren = p03 + p46 + students;
+  const c03: number = rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
+  const c46: number = rawD?.age4To6 ?? rawD?.age4to6 ?? 0;
+  const c714: number = rawD?.age7To14 ?? rawD?.age7to14 ?? 0;
+  const totalChildren = c03 + c46 + c714;
   const totalBal = totalCapacity - totalChildren;
 
   // Real Demand Coverage (Supply vs Demand):
   const totalCovPct = totalChildren > 0 ? Math.round((totalCapacity / totalChildren) * 100) : 100;
 
-  // Clean, consistent status logic for aggregated balance:
-  const isWhiteSpot = totalBal <= 150;
-  const isSurplus = totalBal >= 1600;
+  // Fair, percentage-based market classification (consistent across districts of all sizes):
+  const isWhiteSpot = totalCovPct < 100 || totalBal <= 0;
+  const isSurplus = totalCovPct >= 120 && totalBal >= 300;
   const isBalanced = !isWhiteSpot && !isSurplus;
 
   const statusBadge = isWhiteSpot

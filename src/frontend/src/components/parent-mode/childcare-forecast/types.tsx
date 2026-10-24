@@ -64,7 +64,7 @@ export function getPageNumbers(currentPage: number, totalPages: number): (number
 }
 
 export function renderHighlightedTitle(title: string, _language?: string): React.ReactNode {
-  const triggers = ['(Prognoza 2028)', '(2028 Forecast)', '(Прогноз 2028)'];
+  const triggers = ['(Stan Bieżący)', '(Current)', '(Поточний стан)'];
   for (const trigger of triggers) {
     if (title.includes(trigger)) {
       const parts = title.split(trigger);

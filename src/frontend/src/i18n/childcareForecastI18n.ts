@@ -28,6 +28,27 @@ export function formatFacilitiesLabel(count: number, language: Language): string
   return `${count} placówek edu-care`;
 }
 
+export function formatFacilitiesTotalLabel(count: number, language: Language): string {
+  if (language === 'en') {
+    return count === 1 ? '1 facility total' : `${count} facilities total`;
+  }
+  if (language === 'ua') {
+    const mod10 = count % 10;
+    const mod100 = count % 100;
+    if (mod10 === 1 && mod100 !== 11) return `${count} заклад разом`;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return `${count} заклади разом`;
+    return `${count} закладів разом`;
+  }
+  // Polish
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+  if (count === 1) return '1 placówka ogółem';
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) {
+    return `${count} placówki ogółem`;
+  }
+  return `${count} placówek ogółem`;
+}
+
 export function formatKindergartensLabel(count: number, language: Language): string {
   if (language === 'en') {
     return count === 1 ? '1 kindergarten' : `${count} kindergartens`;
@@ -35,7 +56,7 @@ export function formatKindergartensLabel(count: number, language: Language): str
   if (language === 'ua') {
     const mod10 = count % 10;
     const mod100 = count % 100;
-    if (mod10 === 1 && mod100 !== 11) return `${count} дитsадок`;
+    if (mod10 === 1 && mod100 !== 11) return `${count} дитсадок`;
     if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return `${count} дитсадки`;
     return `${count} дитсадків`;
   }
@@ -235,104 +256,104 @@ export function formatToddlerInfraBreakdown(
   return `${publicCount} ${pubWord}, ${privateCount} ${privWord}, ${clubsCount} ${clubWord}`;
 }
 
-// Localized Titles & Descriptions
+// Localized Macro Titles & Current State Descriptions
 export function getMacroTitles(cohort: ChildAgeCohort, language: Language): MacroTitles {
   if (language === 'en') {
     if (cohort === 'infant') {
       return {
-        balance: 'Places Balance (2028)',
+        balance: 'Places Balance',
         whiteSpots: 'Districts with Deficit',
         coverage: 'Average Demand Coverage',
-        demand: 'Toddler Population (2028)',
+        demand: 'Toddler Population (0–3)',
       };
     }
     if (cohort === 'preschool') {
       return {
-        balance: 'Places Balance (2028)',
+        balance: 'Places Balance',
         whiteSpots: 'High Demand Districts',
         coverage: 'Average Demand Coverage',
-        demand: 'Preschool Population (2028)',
+        demand: 'Preschool Population (4–6)',
       };
     }
     if (cohort === 'school') {
       return {
-        balance: 'Places Balance (2028)',
+        balance: 'Places Balance',
         whiteSpots: 'High Density Classes',
-        coverage: 'Educational Comfort',
-        demand: 'Primary Students (2028)',
+        coverage: 'Average Demand Coverage',
+        demand: 'School Age Children (7–14)',
       };
     }
     return {
-      balance: 'Places Balance (2028)',
+      balance: 'Places Balance',
       whiteSpots: 'Tight Balance Districts',
       coverage: 'Average Demand Coverage',
-      demand: 'Total Child Population (2028)',
+      demand: 'Total Child Population (0–14)',
     };
   }
 
   if (language === 'ua') {
     if (cohort === 'infant') {
       return {
-        balance: 'Баланс Місць (2028)',
+        balance: 'Баланс Місць',
         whiteSpots: 'Райони з Дефіцитом',
         coverage: 'Середнє Покриття Попиту',
-        demand: 'Популяція Малюків (2028)',
+        demand: 'Популяція Малюків (0–3)',
       };
     }
     if (cohort === 'preschool') {
       return {
-        balance: 'Баланс Місць (2028)',
+        balance: 'Баланс Місць',
         whiteSpots: 'Райони з Вищим Попитом',
         coverage: 'Середнє Покриття Попиту',
-        demand: 'Популяція Дошкільнят (2028)',
+        demand: 'Популяція Дошкільнят (4–6)',
       };
     }
     if (cohort === 'school') {
       return {
-        balance: 'Баланс Місць (2028)',
+        balance: 'Баланс Місць',
         whiteSpots: 'Класи з Вищою Щільністю',
-        coverage: 'Освітній Комфорт',
-        demand: 'Учні Початкових Шкіл (2028)',
+        coverage: 'Середнє Покриття Попиту',
+        demand: 'Діти Шкільного Віку (7–14)',
       };
     }
     return {
-      balance: 'Баланс Місць (2028)',
+      balance: 'Баланс Місць',
       whiteSpots: 'Райони зі Щільним Балансом',
       coverage: 'Середнє Покриття Попиту',
-      demand: 'Загальна Популяція Дітей (2028)',
+      demand: 'Загальна Популяція Дітей (0–14)',
     };
   }
 
   // Polish default
   if (cohort === 'infant') {
     return {
-      balance: 'Bilans Miejsc (2028)',
+      balance: 'Aktualny Bilans Miejsc',
       whiteSpots: 'Dzielnice z Deficytem',
       coverage: 'Średnie Pokrycie Popytu',
-      demand: 'Populacja Maluchów (2028)',
+      demand: 'Populacja Maluchów (0–3)',
     };
   }
   if (cohort === 'preschool') {
     return {
-      balance: 'Bilans Miejsc (2028)',
+      balance: 'Aktualny Bilans Miejsc',
       whiteSpots: 'Dzielnice o Wyższym Popycie',
       coverage: 'Średnie Pokrycie Popytu',
-      demand: 'Populacja Przedszkolaków (2028)',
+      demand: 'Populacja Przedszkolaków (4–6)',
     };
   }
   if (cohort === 'school') {
     return {
-      balance: 'Bilans Miejsc (2028)',
+      balance: 'Aktualny Bilans Miejsc',
       whiteSpots: 'Oddziały z Zagęszczeniem',
-      coverage: 'Komfort Edukacyjny',
-      demand: 'Uczniowie Szkół SP (2028)',
+      coverage: 'Średnie Pokrycie Popytu',
+      demand: 'Dzieci w Wieku Szkolnym (7–14)',
     };
   }
   return {
-    balance: 'Bilans Miejsc (2028)',
+    balance: 'Aktualny Bilans Miejsc',
     whiteSpots: 'Dzielnice z Napiętym Bilansem',
     coverage: 'Średnie Pokrycie Popytu',
-    demand: 'Łączna Populacja Dzieci (2028)',
+    demand: 'Łączna Populacja Dzieci (0–14)',
   };
 }
 
@@ -443,18 +464,18 @@ export function getMacroPillDescriptions(cohort: ChildAgeCohort, language: Langu
   if (language === 'en') {
     if (cohort === 'infant') {
       return {
-        balanceSub: 'Supply gap in nursery care through 2028',
+        balanceSub: 'Supply gap in early nursery care',
         criticalSub: 'White spots of 0–3 care deficit',
         coverageSub: 'Care needs satisfaction rate',
-        childrenSub: 'Children aged 0–3 years (2028 forecast)',
+        childrenSub: 'Children aged 0–3 years (current count)',
       };
     }
     if (cohort === 'preschool') {
       return {
         balanceSub: 'Recruitment surplus of kindergarten places',
         criticalSub: 'Districts with tighter reserve buffer (<1.62x)',
-        coverageSub: 'Universal right to preschool education',
-        childrenSub: 'Children aged 4–6 years (2028 forecast)',
+        coverageSub: 'Capacity ratio relative to 4–6 cohorts (1.53x)',
+        childrenSub: 'Children aged 4–6 years (current count)',
       };
     }
     if (cohort === 'school') {
@@ -466,76 +487,76 @@ export function getMacroPillDescriptions(cohort: ChildAgeCohort, language: Langu
       };
     }
     return {
-      balanceSub: 'Aggregated municipal supply balance 2028',
+      balanceSub: 'Current municipal supply balance',
       criticalSub: 'Districts with deficit or tight reserve (≤150)',
       coverageSub: 'Total municipal demand satisfaction rate',
-      childrenSub: 'Demographic demand forecast 2028',
+      childrenSub: 'Current child population (0–14)',
     };
   }
 
   if (language === 'ua') {
     if (cohort === 'infant') {
       return {
-        balanceSub: 'Дефіцит пропозиції ясельного догляду до 2028 р.',
+        balanceSub: 'Дефіцит пропозиції ясельного догляду',
         criticalSub: 'Білі плями дефіциту догляду 0–3',
         coverageSub: 'Показник задоволення потреб догляду',
-        childrenSub: 'Діти віком 0–3 роки (прогноз 2028)',
+        childrenSub: 'Діти віком 0–3 роки (поточний стан)',
       };
     }
     if (cohort === 'preschool') {
       return {
         balanceSub: 'Набірний надлишок місць у дитсадках',
         criticalSub: 'Райони з меншим буфером резерву (<1.62x)',
-        coverageSub: 'Загальне право на дошкільну освіту',
-        childrenSub: 'Діти віком 4–6 років (прогноз 2028)',
+        coverageSub: 'Місткість місць відносно дітей 4–6 років (1.53x)',
+        childrenSub: 'Діти віком 4–6 років (поточний стан)',
       };
     }
     if (cohort === 'school') {
       return {
-        balanceSub: 'Резерв місткості мережі початкових шкіл',
+        balanceSub: 'Резерв місткості для районних класів',
         criticalSub: 'Райони із середнім >20 учнів / клас',
-        coverageSub: 'Показник задоволення потреб початкових шкіл',
-        childrenSub: 'Учні краківських початкових шкіл (7–14)',
+        coverageSub: 'Показник забезпеченості місцями для учнів',
+        childrenSub: 'Діти віком 7–14 років (зареєстровані мешканці)',
       };
     }
     return {
-      balanceSub: 'Сукупний муніципальний баланс пропозиції 2028',
+      balanceSub: 'Поточний муніципальний баланс пропозиції',
       criticalSub: 'Райони з дефіцитом або щільним резервом (≤150)',
       coverageSub: 'Загальний муніципальний рівень покриття попиту',
-      childrenSub: 'Прогноз демографічного попиту 2028',
+      childrenSub: 'Поточна популяція дітей (0–14)',
     };
   }
 
   // Polish default
   if (cohort === 'infant') {
     return {
-      balanceSub: 'Luka podażowa opieki żłobkowej do 2028 r.',
+      balanceSub: 'Bieżąca luka podażowa opieki żłobkowej',
       criticalSub: 'Białe plamy deficytu opieki 0–3',
       coverageSub: 'Wskaźnik zaspokojenia potrzeb opiekuńczych',
-      childrenSub: 'Dzieci w wieku 0–3 lat (prognoza 2028)',
+      childrenSub: 'Dzieci w wieku 0–3 lat (stan bieżący)',
     };
   }
   if (cohort === 'preschool') {
     return {
       balanceSub: 'Nadwyżka rekrutacyjna miejsc przedszkolnych',
       criticalSub: 'Dzielnice o niższym buforze rezerwy (<1.62x)',
-      coverageSub: 'Powszechne prawo do wychowania przedszkolnego',
-      childrenSub: 'Dzieci w wieku 4–6 lat (prognoza 2028)',
+      coverageSub: 'Baza miejsc w relacji do roczników 4–6 (1.53x)',
+      childrenSub: 'Dzieci w wieku 4–6 lat (stan bieżący)',
     };
   }
   if (cohort === 'school') {
     return {
-      balanceSub: 'Rezerwa pojemności sieci szkół podstawowych',
+      balanceSub: 'Rezerwa pojemności dla roczników rejonowych',
       criticalSub: 'Dzielnice ze średnią >20 uczniów / oddział',
-      coverageSub: 'Wskaźnik zaspokojenia potrzeb rejonowych SP',
-      childrenSub: 'Uczniowie krakowskich szkół podstawowych (7–14)',
+      coverageSub: 'Wskaźnik zabezpieczenia bazy dla roczników SP',
+      childrenSub: 'Dzieci w wieku 7–14 lat (meldunki BDK)',
     };
   }
   return {
-    balanceSub: 'Zagregowana równowaga podaży miejskiej 2028',
+    balanceSub: 'Bieżąca równowaga podaży miejskiej',
     criticalSub: 'Dzielnice z deficytem lub niską rezerwą (≤150)',
     coverageSub: 'Ogólnomiejski stopień zaspokojenia potrzeb rodzin',
-    childrenSub: 'Prognoza popytu demograficznego 2028',
+    childrenSub: 'Dzieci objęte opieką i edukacją (0–14 lat)',
   };
 }
 
@@ -545,17 +566,13 @@ export function getParentPracticalInsight(
   cohort: ChildAgeCohort,
   language: Language
 ): string {
-  const cleanName = district.districtName.replace(/^(Dzielnica|Район|District)\\s+/i, '');
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  const rawF = district.forecastsAndB2B as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const cleanName = district.districtName.replace(/^(Dzielnica|Район|District)\s+/i, '');
   const rawD = district.demographics as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawE = district.educationAndCare as any;
 
   const carePlaces03: number = rawE?.totalCarePlaces0To3 ?? rawE?.totalCarePlaces0to3 ?? 0;
-  const p03: number = rawF?.forecastedAge0To3_2028 ?? rawF?.forecastedAge0to3_2028 ?? rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
-  const balance: number = carePlaces03 - p03;
+  const c03: number = rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
+  const balance: number = carePlaces03 - c03;
   const nurseriesPublic: number = rawE?.nurseriesPublicCount ?? 0;
   const nurseriesTotal: number =
     nurseriesPublic +
@@ -563,14 +580,14 @@ export function getParentPracticalInsight(
     (rawE?.nurseriesPrivateCount ?? 0) +
     (rawE?.kidsClubsCount ?? 0);
   const kgPlaces: number = rawE?.kindergartenPlacesTotal ?? 0;
-  const p46: number = rawF?.forecastedAge4To6_2028 ?? rawF?.forecastedAge4to6_2028 ?? rawD?.age4To6 ?? rawD?.age4to6 ?? 1;
-  const kgRatio = kgPlaces / Math.max(1, p46);
+  const c46: number = rawD?.age4To6 ?? rawD?.age4to6 ?? 1;
+  const kgRatio = kgPlaces / Math.max(1, c46);
   const avgClass: number = rawE?.avgStudentsPerClass ?? 0;
 
   if (language === 'en') {
     if (cohort === 'infant') {
       if (balance <= -750 || nurseriesPublic === 0) {
-        return `In District ${cleanName}, demand for nursery care significantly exceeds available capacity in municipal facilities (projected places deficit through 2028). We recommend submitting an application in the municipal enrollment system well in advance and exploring subsidized private nurseries and city childcare programs.`;
+        return `In District ${cleanName}, demand for nursery care significantly exceeds available capacity in municipal facilities (current places deficit). We recommend submitting an application in the municipal enrollment system well in advance and exploring subsidized private nurseries and city childcare programs.`;
       }
       return `In District ${cleanName}, early childcare infrastructure is well-developed (${nurseriesTotal} facilities, including ${nurseriesPublic} municipal). Parents benefit from stable recruitment conditions, proximity of Parents Clubs, and walking-friendly stroller routes.`;
     }
@@ -599,7 +616,7 @@ export function getParentPracticalInsight(
   if (language === 'ua') {
     if (cohort === 'infant') {
       if (balance <= -750 || nurseriesPublic === 0) {
-        return `У Районі ${cleanName} попит на ясельний догляд значно перевищує місткість муніципальних закладів (прогнозований дефіцит місць до 2028 р.). Рекомендуємо подавати заявку в міській системі набору завчасно та ознайомитися з пропозиціями субсидованих приватних ясел і міських програм підтримки.`;
+        return `У Районі ${cleanName} попит на ясельний догляд значно перевищує місткість муніципальних закладів (поточний дефіцит місць). Рекомендуємо подавати заявку в міській системі набору завчасно та ознайомитися з пропозиціями субсидованих приватних ясел і міських програм підтримки.`;
       }
       return `У Районі ${cleanName} інфраструктура догляду за малюками добре розвинена (${nurseriesTotal} закладів, зокрема ${nurseriesPublic} муніципальних). Батьки можуть розраховувати на стабільні умови набору, близькість Клубів Батьків та зручну прогулянкову інфраструктуру.`;
     }
@@ -628,7 +645,7 @@ export function getParentPracticalInsight(
   // Polish default
   if (cohort === 'infant') {
     if (balance <= -750 || nurseriesPublic === 0) {
-      return `W Dzielnicy ${cleanName} popyt na opiekę żłobkową istotnie przewyższa dostępną bazę placówek samorządowych (prognozowany deficyt miejsc do 2028 r.). Rekomendujemy wcześniejsze złożenie wniosku w miejskim systemie rekrutacji oraz sprawdzenie dotowanych żłobków niepublicznych i miejskiego bonu żłobkowego.`;
+      return `W Dzielnicy ${cleanName} popyt na opiekę żłobkową istotnie przewyższa dostępną bazę placówek samorządowych (bieżący deficyt miejsc). Rekomendujemy wcześniejsze złożenie wniosku w miejskim systemie rekrutacji oraz sprawdzenie dotowanych żłobków niepublicznych i miejskiego bonu żłobkowego.`;
     }
     return `W Dzielnicy ${cleanName} infrastruktura wczesnej opieki nad dziećmi jest dobrze rozwinięta (${nurseriesTotal} placówek opieki, w tym ${nurseriesPublic} samorządowych). Rodzice mogą liczyć na stabilniejsze warunki rekrutacji, bliskość Klubów Rodziców oraz dogodne ciągi spacerowe dla wózków.`;
   }
@@ -669,7 +686,7 @@ export function getDrawerLabels(language: Language) {
       kgBalanceTitle: 'Kindergarten Places & Balance',
       kgInfraTitle: 'Kindergarten Network',
       kgStandardTitle: 'Preschool Accessibility',
-      studentsTitle: 'Primary Students (7–14)',
+      studentsTitle: 'School Age Children (7–14)',
       schoolBalanceTitle: 'School Network Capacity & Balance',
       schoolInfraTitle: 'Primary School Network',
       comfortTitle: 'Learning Comfort & Class Size',
@@ -677,12 +694,12 @@ export function getDrawerLabels(language: Language) {
       allBalanceTitle: 'Edu-Care Base & Balance',
       allInfraTitle: 'Child Infrastructure',
       allStandardTitle: 'School & Care Conditions',
-      childrenUnit2028: 'children (2028)',
+      childrenUnit: 'children',
       currently: 'Currently:',
       children: 'children',
-      balanceUnit2028: 'balance 2028',
-      deficitUnit2028: 'deficit 2028',
-      reserveUnit2028: 'reserve 2028',
+      balanceUnit: 'places balance',
+      deficitUnit: 'places deficit',
+      reserveUnit: 'places reserve',
       currentBase: 'Current capacity:',
       places: 'places',
       facilities: 'facilities total',
@@ -697,7 +714,7 @@ export function getDrawerLabels(language: Language) {
       placesPerChild: 'places / child',
       universalAccess: 'Universal preschool education right guaranteed',
       standardEnrollment: 'Standard enrollment with multiple choices recommended',
-      students: 'students (2028)',
+      students: 'students',
       registeredWord: 'Registered:',
       estimatedCapacity: 'Estimated capacity:',
       primarySchools: 'primary schools',
@@ -728,7 +745,7 @@ export function getDrawerLabels(language: Language) {
       kgBalanceTitle: 'База Дитсадків та Баланс',
       kgInfraTitle: 'Мережа Дитсадків',
       kgStandardTitle: 'Доступність Дошкільної Освіти',
-      studentsTitle: 'Учні Початкових Шкіл (7–14)',
+      studentsTitle: 'Діти Шкільного Віку (7–14)',
       schoolBalanceTitle: 'Місткість Шкіл та Баланс',
       schoolInfraTitle: 'Мережа Початкових Шкіл',
       comfortTitle: 'Освітній Комфорт та Розмір Класу',
@@ -736,12 +753,12 @@ export function getDrawerLabels(language: Language) {
       allBalanceTitle: 'База Edu-Care та Баланс',
       allInfraTitle: 'Дитяча Інфраструктура',
       allStandardTitle: 'Шкільні та Опікунські Умови',
-      childrenUnit2028: 'дітей (2028)',
+      childrenUnit: 'дітей',
       currently: 'Зараз:',
       children: 'дітей',
-      balanceUnit2028: 'баланс 2028',
-      deficitUnit2028: 'дефіцит 2028',
-      reserveUnit2028: 'резерв 2028',
+      balanceUnit: 'баланс місць',
+      deficitUnit: 'дефіцит місць',
+      reserveUnit: 'резерв місць',
       currentBase: 'Поточна місткість:',
       places: 'місць',
       facilities: 'закладів разом',
@@ -756,7 +773,7 @@ export function getDrawerLabels(language: Language) {
       placesPerChild: 'місць / дитину',
       universalAccess: 'Гарантоване право на дошкільну освіту',
       standardEnrollment: 'Стандартний набір із вибором кількох закладів',
-      students: 'учнів (2028)',
+      students: 'учнів',
       registeredWord: 'Зареєстровано:',
       estimatedCapacity: 'Розрахункова місткість:',
       primarySchools: 'початкових шкіл',
@@ -787,20 +804,20 @@ export function getDrawerLabels(language: Language) {
     kgBalanceTitle: 'Miejsca w Przedszkolach & Bilans',
     kgInfraTitle: 'Sieć Przedszkoli',
     kgStandardTitle: 'Wskaźnik Dostępności Przedszkolnej',
-    studentsTitle: 'Uczniowie Szkół SP (7–14)',
-    schoolBalanceTitle: 'Pojemność Szkół & Bilans 2028',
+    studentsTitle: 'Dzieci w Wieku Szkolnym (7–14)',
+    schoolBalanceTitle: 'Pojemność Szkół & Bilans',
     schoolInfraTitle: 'Sieć Szkół Podstawowych',
     comfortTitle: 'Komfort Nauki & Liczebność Klas',
     childrenAllTitle: 'Populacja Dzieci (0–14)',
     allBalanceTitle: 'Baza Edu-Care & Bilans',
     allInfraTitle: 'Infrastruktura Dziecięca',
     allStandardTitle: 'Warunki Szkolne i Opiekuńcze',
-    childrenUnit2028: 'dzieci (2028)',
+    childrenUnit: 'dzieci',
     currently: 'Obecnie:',
     children: 'dzieci',
-    balanceUnit2028: 'bilans 2028',
-    deficitUnit2028: 'deficyt 2028',
-    reserveUnit2028: 'rezerwa 2028',
+    balanceUnit: 'bilans miejsc',
+    deficitUnit: 'deficyt miejsc',
+    reserveUnit: 'rezerwa miejsc',
     currentBase: 'Aktualna baza:',
     places: 'miejsc',
     facilities: 'placówek ogółem',
@@ -815,7 +832,7 @@ export function getDrawerLabels(language: Language) {
     placesPerChild: 'miejsc / dziecko',
     universalAccess: 'Zagwarantowane ustawowe prawo do miejsca',
     standardEnrollment: 'Standardowa rekrutacja z wyborem kilku preferencji',
-    students: 'uczniów (2028)',
+    students: 'uczniów',
     registeredWord: 'Meldunek:',
     estimatedCapacity: 'Szacowana pojemność:',
     primarySchools: 'szkół podstawowych',
@@ -850,9 +867,9 @@ export function getTableColumnHeaders(language: Language): TableColumnHeaders {
       district: 'District',
       districtPrefix: 'District',
       base: 'Current Base',
-      balance: 'Places Balance (2028)',
+      balance: 'Current Places Balance',
       coverage: 'Coverage / Standard',
-      forecast: 'Projected Children (2028)',
+      forecast: 'Child Population',
       details: 'Details',
     };
   }
@@ -861,9 +878,9 @@ export function getTableColumnHeaders(language: Language): TableColumnHeaders {
       district: 'Район',
       districtPrefix: 'Район',
       base: 'Поточна База',
-      balance: 'Баланс Місць (2028)',
+      balance: 'Поточний Баланс Місць',
       coverage: 'Покриття / Стандарт',
-      forecast: 'Прогноз Дітей (2028)',
+      forecast: 'Кількість Дітей',
       details: 'Деталі',
     };
   }
@@ -871,9 +888,9 @@ export function getTableColumnHeaders(language: Language): TableColumnHeaders {
     district: 'Dzielnica',
     districtPrefix: 'Dzielnica',
     base: 'Aktualna Baza',
-    balance: 'Bilans Miejsc (2028)',
+    balance: 'Aktualny Bilans Miejsc',
     coverage: 'Pokrycie / Standard',
-    forecast: 'Prognoza Dzieci (2028)',
+    forecast: 'Liczba Dzieci',
     details: 'Szczegóły',
   };
 }

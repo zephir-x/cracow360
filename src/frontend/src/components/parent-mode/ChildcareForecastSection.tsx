@@ -33,7 +33,7 @@ export interface ChildcareForecastSectionProps {
 }
 
 /// <summary>
-/// Childcare and Education Balance Section orchestrator (2028 Demographic Projection).
+/// Childcare and Education Balance Section orchestrator (Current State Demographics & Capacity).
 /// Cleanly modularized into specialized subcomponents under childcare-forecast/ directory
 /// with complete trilingual Polish, English, and Ukrainian localization.
 /// </summary>
