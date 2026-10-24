@@ -6,6 +6,7 @@
   ChevronUp,
   GraduationCap,
   LineChart,
+  Sliders,
   Sparkles,
   TrendingUp,
   Users,
@@ -58,13 +59,13 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
           const seniors = dem?.age65Plus ?? dem?.age65plus ?? 0;
           sumSeniors += seniors;
 
-          const carePlaces = edu?.totalCarePlaces0to3 ?? edu?.totalCarePlaces0To3 ?? 0;
-          const kinderPlaces = edu?.kindergartenPlacesTotal ?? edu?.kindergartensPlacesTotal ?? 0;
-          const primaryCapacity = edu?.primarySchoolStudentsTotal ?? 0;
+          const nurseryPlaces = edu?.nurseriesCapacityTotal ?? edu?.careCapacityTotal ?? 0;
+          const kinderPlaces = edu?.kindergartensPlacesTotal ?? 0;
+          const schoolPlaces = edu?.primarySchoolsCapacityTotal ?? 0;
 
-          sumCarePlaces += carePlaces;
+          sumCarePlaces += nurseryPlaces;
           sumKinderPlaces += kinderPlaces;
-          sumSchoolCapacity += primaryCapacity;
+          sumSchoolCapacity += schoolPlaces;
 
           const avgPrice = hst?.avgPricePerM2 ?? 0;
           if (avgPrice > 0) sumPrice += avgPrice;
@@ -123,6 +124,10 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
       document.getElementById('investor-forecast-section') ||
       document.getElementById('forecast-2028');
     target?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToSimulator = () => {
+    document.getElementById('investor-simulator-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -196,6 +201,15 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
               >
                 <LineChart className="w-4 h-4 text-sky-200 shrink-0" />
                 <span>{labels.heroCtaForecast}</span>
+                <ArrowDownRight className="w-3.5 h-3.5 text-sky-200 shrink-0" />
+              </button>
+
+              <button
+                onClick={scrollToSimulator}
+                className="inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white border border-white/25 backdrop-blur-md transition cursor-pointer"
+              >
+                <Sliders className="w-4 h-4 text-sky-200 shrink-0" />
+                <span>{labels.heroCtaSimulator}</span>
                 <ArrowDownRight className="w-3.5 h-3.5 text-sky-200 shrink-0" />
               </button>
             </div>

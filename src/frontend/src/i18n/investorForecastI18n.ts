@@ -4,6 +4,7 @@ export interface InvestorForecastLabels {
   // Hero CTA & Capabilities Toggle
   heroCtaRanking: string;
   heroCtaForecast: string;
+  heroCtaSimulator: string;
   heroCapabilitiesToggleBtn: string;
   heroCapabilitiesCloseBtn: string;
 
@@ -90,6 +91,7 @@ export function getInvestorForecastLabels(language: Language): InvestorForecastL
     return {
       heroCtaRanking: 'TOP 6 Vitality Ranking',
       heroCtaForecast: '2028 Projections & B2B',
+      heroCtaSimulator: 'What-If Simulator & Guidelines',
       heroCapabilitiesToggleBtn: 'What does Official & Investor Mode offer? (Explore features)',
       heroCapabilitiesCloseBtn: 'Collapse module features',
 
@@ -179,6 +181,7 @@ export function getInvestorForecastLabels(language: Language): InvestorForecastL
     return {
       heroCtaRanking: 'Рейтинг ТОП 6 Вітальності',
       heroCtaForecast: 'Прогнози 2028 та B2B',
+      heroCtaSimulator: 'Симулятор „Що-Якщо” та Орієнтири',
       heroCapabilitiesToggleBtn: 'Що пропонує Режим Посадовця та Інвестора? (Дізнатися більше)',
       heroCapabilitiesCloseBtn: 'Згорнути можливості модуля',
 
@@ -268,6 +271,7 @@ export function getInvestorForecastLabels(language: Language): InvestorForecastL
   return {
     heroCtaRanking: 'Ranking Witalności TOP 6',
     heroCtaForecast: 'Predykcje 2028 & B2B',
+    heroCtaSimulator: 'Symulator „Co-Jeśli” & Wytyczne',
     heroCapabilitiesToggleBtn: 'Co oferuje Tryb Urzędnika i Inwestora? (Poznaj możliwości)',
     heroCapabilitiesCloseBtn: 'Zwiń możliwości modułu',
 
