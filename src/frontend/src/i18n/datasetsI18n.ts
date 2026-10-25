@@ -123,7 +123,7 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
   'demo-2': {
     pl: 'Populacja czasowa (studenci, pracownicy relokowani) w podziale na 18 dzielnic',
     en: 'Temporary resident population (students, relocated professionals) across 18 districts',
-    ua: 'Тимчасове населення (студенти, релоковані спеціалісти) у розрізі 18 районів',
+    ua: 'Тимчасове населення (студенти, релоковані фахівці) у розрізі 18 районів',
   },
   'demo-3': {
     pl: 'Grupy wieku: 0–3 (żłobkowy), 4–6 (przedszkolny), 7–14 (podstawowy), 15–64 (produkcyjny), 65+ (seniorzy)',
@@ -199,6 +199,26 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     pl: 'Niepubliczne szkoły podstawowe, uzupełniająca baza edukacji wczesnoszkolnej',
     en: 'Private primary schools, complementary early-education registry',
     ua: 'Приватні початкові школи, додаткова база початкової освіти',
+  },
+  'inv-1': {
+    pl: 'Oficjalna prognoza demograficzna UMK/BDK do 2030 r., kohorty wiekowe 0–3, 4–6, 7–14, 65+ w 18 dzielnicach',
+    en: 'Official UMK/BDK demographic forecast to 2030, age cohorts 0–3, 4–6, 7–14, 65+ across 18 districts',
+    ua: 'Офіційний демографічний прогноз UMK/BDK до 2030 р., вікові когорти 0–3, 4–6, 7–14, 65+ у 18 районах',
+  },
+  'inv-2': {
+    pl: 'Standardy kosztorysowe programu Aktywny Maluch (MRPiPS), benchmark CAPEX 30–70 tys. zł/miejsce żłobkowe',
+    en: 'Cost estimation standards of the Active Toddler (MRPiPS) program, CAPEX benchmark 30–70k PLN/nursery place',
+    ua: 'Кошторисні стандарти програми Активний Малюк (MRPiPS), бенчмарк CAPEX 30–70 тис. зл/ясельне місце',
+  },
+  'inv-3': {
+    pl: 'Program Kraków dla Seniora (UMK), standardy grantowe na wyposażenie i uruchomienie CAS (100–150 tys. zł)',
+    en: 'Krakow for Seniors Program (UMK), grant standards for equipping and establishing CAS centers (100–150k PLN)',
+    ua: 'Програма Краків для Сеньйора (UMK), грантові стандарти на облаштування та відкриття центрів CAS (100–150 тис. зл)',
+  },
+  'inv-4': {
+    pl: 'Program Zarządu Zieleni Miejskiej (ZZM) – Ogród Krakowian, nakłady na parki kieszonkowe 1500–3000 m² (250–500 tys. zł)',
+    en: 'Municipal Greenery Board (ZZM) program – Krakowians Garden, pocket park expenditures 1500–3000 m² (250–500k PLN)',
+    ua: 'Програма Управління міських зелених насаджень (ZZM) – Сад Краків’ян, витрати на кишенькові парки 1500–3000 м² (250–500 тис. зл)',
   },
 };
 

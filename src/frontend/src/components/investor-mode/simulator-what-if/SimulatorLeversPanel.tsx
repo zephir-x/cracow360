@@ -67,7 +67,7 @@ export function SimulatorLeversPanel({
                 {labels.nurseryLeverTitle}
               </span>
               <span className="px-2.5 py-0.5 rounded-full bg-indigo-600 text-white font-black text-xs shadow-xs">
-                +{inputs.additionalNurseryPlaces} {labels.nurseryLeverUnit}
+                +{inputs.additionalNurseryPlaces} {labels.nurseryLeverUnit(inputs.additionalNurseryPlaces)}
               </span>
             </div>
             <p className="text-[11px] text-slate-500 leading-tight">
@@ -138,7 +138,7 @@ export function SimulatorLeversPanel({
                 {labels.casLeverTitle}
               </span>
               <span className="px-2.5 py-0.5 rounded-full bg-amber-600 text-white font-black text-xs shadow-xs">
-                +{inputs.additionalCasCount} {labels.casLeverUnit}
+                +{inputs.additionalCasCount} {labels.casLeverUnit(inputs.additionalCasCount)}
               </span>
             </div>
             <p className="text-[11px] text-slate-500 leading-tight">
@@ -180,7 +180,7 @@ export function SimulatorLeversPanel({
                 {labels.parksLeverTitle}
               </span>
               <span className="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white font-black text-xs shadow-xs">
-                +{inputs.additionalPocketParks} {labels.parksLeverUnit}
+                +{inputs.additionalPocketParks} {labels.parksLeverUnit(inputs.additionalPocketParks)}
               </span>
             </div>
             <p className="text-[11px] text-slate-500 leading-tight">

@@ -20,15 +20,10 @@ export const DEFAULT_SIMULATOR_INPUTS: SimulatorInputs = {
 };
 
 export function mapDetailsToBaseline(d: DistrictDetailsDto): BaselineDistrictMetrics {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawD = d.demographics as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawF = d.forecastsAndB2B as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawEdu = d.educationAndCare as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawGreen = d.greeneryAndSport as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawCulture = d.cultureAndSociety as any;
 
   const population: number = rawD?.totalPopulation ?? 0;
@@ -40,7 +35,7 @@ export function mapDetailsToBaseline(d: DistrictDetailsDto): BaselineDistrictMet
   const carePlaces: number = rawEdu?.totalCarePlaces0to3 ?? rawEdu?.totalCarePlaces0To3 ?? 0;
   const baselineCoverage: number = f03 > 0 ? Math.round((carePlaces / f03) * 100) : 100;
 
-  const seniors: number = rawD?.seniors65Plus ?? 0;
+  const seniors: number = rawD?.age65Plus ?? rawD?.age65plus ?? rawD?.seniors65Plus ?? 0;
   const seniorShare: number = population > 0 ? Number(((seniors / population) * 100).toFixed(1)) : 21.9;
   const currentCas: number = rawCulture?.seniorActivityCentersCount ?? 0;
 
@@ -93,78 +88,71 @@ export function calculateWhatIfImpact(
       : 100;
   const coverageImprovementPct = Math.max(0, newCoveragePct2028 - baseline.baselineCoveragePct2028);
 
-  // 2. Senior CAS calculation
+  // 2. CAS & Pocket Parks calculation
   const newCasCount = baseline.currentCasCount + inputs.additionalCasCount;
-  const casImprovement = inputs.additionalCasCount;
-  const seniorDeficitRelieved =
-    baseline.seniorDeficitLevel === 'HIGH' ? inputs.additionalCasCount >= 1 : true;
-
-  // 3. Greenery & Pocket Parks calculation
   const newPocketParksCount = baseline.pocketParksCount + inputs.additionalPocketParks;
-  const parksImprovement = inputs.additionalPocketParks;
+
+  // Green Area added: each pocket park adds ~2,500 m2
   const additionalGreenM2 = inputs.additionalPocketParks * CAPEX_COSTS.AVG_POCKET_PARK_M2;
-  const baseGreenM2Total = baseline.totalGreenAreaHa * 10000;
-  const totalNewGreenM2 = baseGreenM2Total + additionalGreenM2;
-  const estimatedNewGreenM2PerCapita =
-    baseline.population > 0
-      ? Number((totalNewGreenM2 / baseline.population).toFixed(1))
-      : baseline.greenAreaM2PerCapita;
-  const greenDeficitRelieved =
-    baseline.greenDeficitLevel === 'HIGH' ? inputs.additionalPocketParks >= 1 : true;
-
-  // 4. Score bump modeling
-  // Coverage bump: up to 3.2 pts for substantial coverage expansion
-  const coverageRatio = coverageImprovementPct / 30; // normalized
-  const nurseryScoreBump = Math.min(3.2, coverageRatio * 3.2);
-  // CAS bump: 0.7 pt per CAS facility (up to 2.1)
-  const casScoreBump = inputs.additionalCasCount * 0.7;
-  // Pocket park bump: 0.6 pt per park (up to 2.4)
-  const parkScoreBump = inputs.additionalPocketParks * 0.6;
-
-  const totalScoreDelta = Number((nurseryScoreBump + casScoreBump + parkScoreBump).toFixed(1));
-  const newVitalityScore = Math.min(
-    100,
-    Number((baseline.demographicVitalityScore + totalScoreDelta).toFixed(1))
+  const greenAreaM2PerCapitaDelta =
+    baseline.population > 0 ? Number((additionalGreenM2 / baseline.population).toFixed(2)) : 0;
+  const estimatedNewGreenM2PerCapita = Number(
+    (baseline.greenAreaM2PerCapita + greenAreaM2PerCapitaDelta).toFixed(2)
   );
 
-  // 5. Market classification
+  // 3. Demographic Vitality Index Boost
+  // Formula:
+  // - each 10 nursery places reduces deficit -> +0.15 pts (up to +2.5 pts)
+  // - each CAS adds +0.35 pts (up to +1.0 pts)
+  // - each pocket park adds +0.25 pts (up to +1.0 pts)
+  const nurseryVitalityBoost = Math.min(2.5, (inputs.additionalNurseryPlaces / 10) * 0.15);
+  const casVitalityBoost = Math.min(1.0, inputs.additionalCasCount * 0.35);
+  const parksVitalityBoost = Math.min(1.0, inputs.additionalPocketParks * 0.25);
+  const vitalityScoreDelta = Number(
+    (nurseryVitalityBoost + casVitalityBoost + parksVitalityBoost).toFixed(1)
+  );
+  const newVitalityScore = Number(
+    Math.min(100, baseline.demographicVitalityScore + vitalityScoreDelta).toFixed(1)
+  );
+
+  // 4. Simulated Market Status
   let newMarketStatus: SimulatedMarketStatus = 'CRITICAL_DEFICIT';
-  if (newBalance2028 >= 40) {
+  if (newBalance2028 >= 100) {
     newMarketStatus = 'SURPLUS';
-  } else if (newBalance2028 >= -100) {
+  } else if (newBalance2028 >= -50) {
     newMarketStatus = 'BALANCED';
-  } else if (newBalance2028 >= -400) {
+  } else if (newBalance2028 >= -200) {
     newMarketStatus = 'MODERATE_DEFICIT';
   } else {
     newMarketStatus = 'CRITICAL_DEFICIT';
   }
 
-  // 6. CAPEX modeling
-  const estimatedNurseryCapexPln = inputs.additionalNurseryPlaces * CAPEX_COSTS.NURSERY_PLACE_PLN;
-  const estimatedCasCapexPln = inputs.additionalCasCount * CAPEX_COSTS.CAS_FACILITY_PLN;
-  const estimatedParksCapexPln = inputs.additionalPocketParks * CAPEX_COSTS.POCKET_PARK_PLN;
-  const estimatedCapexPln =
-    estimatedNurseryCapexPln + estimatedCasCapexPln + estimatedParksCapexPln;
+  // 5. Estimated Financial Capex
+  const nurseryCapexPln = inputs.additionalNurseryPlaces * CAPEX_COSTS.NURSERY_PLACE_PLN;
+  const casCapexPln = inputs.additionalCasCount * CAPEX_COSTS.CAS_FACILITY_PLN;
+  const parksCapexPln = inputs.additionalPocketParks * CAPEX_COSTS.POCKET_PARK_PLN;
+  const estimatedCapexPln = nurseryCapexPln + casCapexPln + parksCapexPln;
 
   return {
+    inputs,
     newCarePlaces0To3,
     newBalance2028,
-    balanceImprovement,
     newCoveragePct2028,
+    balanceImprovement,
     coverageImprovementPct,
     newCasCount,
-    casImprovement,
-    seniorDeficitRelieved,
+    casImprovement: inputs.additionalCasCount,
+    seniorDeficitRelieved: newCasCount >= 2 || baseline.seniorDeficitLevel === 'LOW',
     newPocketParksCount,
-    parksImprovement,
+    parksImprovement: inputs.additionalPocketParks,
     estimatedNewGreenM2PerCapita,
-    greenDeficitRelieved,
+    greenDeficitRelieved: estimatedNewGreenM2PerCapita >= 25 || baseline.greenDeficitLevel === 'LOW',
+    vitalityScoreDelta,
     newVitalityScore,
-    vitalityScoreDelta: totalScoreDelta,
     newMarketStatus,
     estimatedCapexPln,
-    estimatedNurseryCapexPln,
-    estimatedCasCapexPln,
-    estimatedParksCapexPln,
+    estimatedNurseryCapexPln: nurseryCapexPln,
+    estimatedCasCapexPln: casCapexPln,
+    estimatedParksCapexPln: parksCapexPln,
   };
 }

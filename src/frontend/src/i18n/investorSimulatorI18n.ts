@@ -28,13 +28,13 @@ export interface InvestorSimulatorLabels {
   leversHeaderSubtitle: string;
   nurseryLeverTitle: string;
   nurseryLeverSubtitle: string;
-  nurseryLeverUnit: string;
+  nurseryLeverUnit: (count: number) => string;
   casLeverTitle: string;
   casLeverSubtitle: string;
-  casLeverUnit: string;
+  casLeverUnit: (count: number) => string;
   parksLeverTitle: string;
   parksLeverSubtitle: string;
-  parksLeverUnit: string;
+  parksLeverUnit: (count: number) => string;
 
   // Estimated Investment CAPEX
   capexTotalTitle: string;
@@ -127,13 +127,13 @@ export function getInvestorSimulatorLabels(language: Language): InvestorSimulato
       leversHeaderSubtitle: 'Adjust scale of planned municipal or private capital interventions:',
       nurseryLeverTitle: 'New Nursery Places (0–3 yrs)',
       nurseryLeverSubtitle: 'New facilities or kindergarten room conversions (Maluch+ / B2B)',
-      nurseryLeverUnit: 'places',
+      nurseryLeverUnit: (count) => (count === 1 ? 'place' : 'places'),
       casLeverTitle: 'New Senior Activity Centers (CAS)',
       casLeverSubtitle: 'Dedicated integration & cultural hubs for seniors (65+)',
-      casLeverUnit: 'clubs',
+      casLeverUnit: (count) => (count === 1 ? 'center' : 'centers'),
       parksLeverTitle: 'New Pocket Parks & Green Spaces',
       parksLeverSubtitle: 'Micro-parks within 300m walking radius (Krakowian Gardens)',
-      parksLeverUnit: 'parks',
+      parksLeverUnit: (count) => (count === 1 ? 'park' : 'parks'),
 
       capexTotalTitle: 'Estimated Investment Outlay (CAPEX)',
       capexTotalSubtitle: 'Benchmark municipal / private capital expenditure estimate',
@@ -180,12 +180,12 @@ export function getInvestorSimulatorLabels(language: Language): InvestorSimulato
         const places = simulated.balanceImprovement;
         const pts = simulated.vitalityScoreDelta;
         if (places > 0 && simulated.newCasCount > baseline.currentCasCount) {
-          return `In ${districtName}, the planned addition of ${places} nursery places and ${simulated.casImprovement} CAS center elevates demand coverage to ${simulated.newCoveragePct2028}% and boosts the vitality score by +${pts} pts. This intervention effectively relieves both young family childcare pressure and senior isolation.`;
+          return `For district ${districtName}, the planned addition of ${places} nursery places and ${simulated.casImprovement} CAS center elevates demand coverage to ${simulated.newCoveragePct2028}% and boosts the vitality score by +${pts} pts. This intervention effectively relieves both young family childcare pressure and senior isolation.`;
         }
         if (places > 0) {
-          return `Injecting ${places} nursery places in ${districtName} improves the 2028 balance to ${simulated.newBalance2028 >= 0 ? `+${simulated.newBalance2028}` : simulated.newBalance2028} places, reducing the local childcare gap by ${simulated.coverageImprovementPct} percentage points. Recommended for co-financing via UMK municipal subsidies.`;
+          return `Injecting ${places} nursery places in district ${districtName} improves the 2028 balance to ${simulated.newBalance2028 >= 0 ? `+${simulated.newBalance2028}` : simulated.newBalance2028} places, reducing the local childcare gap by ${simulated.coverageImprovementPct} percentage points. Recommended for co-financing via UMK municipal subsidies.`;
         }
-        return `Enhancing green and senior infrastructure in ${districtName} (+${simulated.parksImprovement} pocket parks, +${simulated.casImprovement} CAS) lifts the district vitality index to ${simulated.newVitalityScore} pts and expands biologically active green area per resident.`;
+        return `Enhancing green and senior infrastructure in district ${districtName} (+${simulated.parksImprovement} pocket parks, +${simulated.casImprovement} CAS) lifts the district vitality index to ${simulated.newVitalityScore} pts and expands biologically active green area per resident.`;
       },
 
       guidelinesBadge: 'Strategic Municipal & B2B Guidelines',
@@ -246,13 +246,13 @@ export function getInvestorSimulatorLabels(language: Language): InvestorSimulato
       leversHeaderSubtitle: 'Налаштуйте обсяг запланованих муніципальних чи приватних інвестицій:',
       nurseryLeverTitle: 'Нові Місця в Яслах (0–3 роки)',
       nurseryLeverSubtitle: 'Будівництво або адаптація приміщень дитсадків (Maluch+ / B2B)',
-      nurseryLeverUnit: 'місць',
+      nurseryLeverUnit: (count) => (count === 1 ? 'місце' : count >= 2 && count <= 4 ? 'місця' : 'місць'),
       casLeverTitle: 'Нові Центри для Сеньйорів (CAS)',
       casLeverSubtitle: 'Осередки інтеграції, дозвілля та активності літніх людей (65+)',
-      casLeverUnit: 'клубів',
+      casLeverUnit: (count) => (count === 1 ? 'осередок' : count >= 2 && count <= 4 ? 'осередки' : 'осередків'),
       parksLeverTitle: 'Нові Кишенькові Парки та Сквери',
-      parksLeverSubtitle: 'Зелені зони у радіусі 300 метрів (Сади Краков\'ян)',
-      parksLeverUnit: 'парків',
+      parksLeverSubtitle: 'Зелені зони у радіусі 300 метрів (Сади Краков’ян)',
+      parksLeverUnit: (count) => (count === 1 ? 'парк' : count >= 2 && count <= 4 ? 'парки' : 'парків'),
 
       capexTotalTitle: 'Орієнтовні Капітальні Витрати (CAPEX)',
       capexTotalSubtitle: 'Бюджетний орієнтир міських або комерційних інвестицій',
@@ -299,12 +299,12 @@ export function getInvestorSimulatorLabels(language: Language): InvestorSimulato
         const places = simulated.balanceImprovement;
         const pts = simulated.vitalityScoreDelta;
         if (places > 0 && simulated.newCasCount > baseline.currentCasCount) {
-          return `У ${districtName} заплановане введення ${places} місць у яслах та ${simulated.casImprovement} CAS збільшує охоплення попиту до ${simulated.newCoveragePct2028}% та підвищує індекс вітальності на +${pts} балів. Це одночасно зменшує черги для молодих сімей та підтримує сеньйорів.`;
+          return `Для району ${districtName} заплановане введення ${places} місць у яслах та ${simulated.casImprovement} CAS збільшує охоплення попиту до ${simulated.newCoveragePct2028}% та підвищує індекс вітальності на +${pts} балів. Це одночасно зменшує черги для молодих сімей та підтримує сеньйорів.`;
         }
         if (places > 0) {
-          return `Створення ${places} місць у яслах у ${districtName} скорочує дефіцит 2028 року до ${simulated.newBalance2028 >= 0 ? `+${simulated.newBalance2028}` : simulated.newBalance2028} місць (+${simulated.coverageImprovementPct} в.п. покриття). Рекомендовано співфінансування за програмами UMK.`;
+          return `Створення ${places} місць у яслах для району ${districtName} скорочує дефіцит 2028 року до ${simulated.newBalance2028 >= 0 ? `+${simulated.newBalance2028}` : simulated.newBalance2028} місць (+${simulated.coverageImprovementPct} в.п. покриття). Рекомендовано співфінансування за програмами UMK.`;
         }
-        return `Розбудова зеленої та ветеранської інфраструктури в ${districtName} (+${simulated.parksImprovement} парків, +${simulated.casImprovement} CAS) підвищує вітальність до ${simulated.newVitalityScore} балів та забезпечує доступність зон відпочинку біля дому.`;
+        return `Розбудова зеленої та ветеранської інфраструктури для району ${districtName} (+${simulated.parksImprovement} парків, +${simulated.casImprovement} CAS) підвищує вітальність до ${simulated.newVitalityScore} балів та забезпечує доступність зон відпочинку біля дому.`;
       },
 
       guidelinesBadge: 'Стратегічні Муніципальні Директиви',
@@ -316,13 +316,13 @@ export function getInvestorSimulatorLabels(language: Language): InvestorSimulato
       casMatrixSubtitle: 'Райони з найвищою часткою літніх людей 65+ та дефіцитом осередків CAS',
       casPriorityDistricts: 'Пріоритет: Район I Старе Місто, II Гжегужкі, V Кроводжа, XVIII Нова Гута',
       casRecommendationText:
-        'Частка сеньйорів у центральних районах сягає 28%. Рекомендується переобладнання перших поверхів муніципальних будівель під клуби активного довголіття CAS з оздоровчими та комп\'ютерними програмами.',
+        'Частка сеньйорів у центральних районах сягає 28%. Рекомендується переобладнання перших поверхів муніципальних будівель під клуби активного довголіття CAS з оздоровчими та комп’ютерними програмами.',
 
       greenMatrixTitle: 'Кишенькові Парки та Буферні Зони',
       greenMatrixSubtitle: 'Зони щільної забудови, які потребують доступної рекреації у пішій доступності',
       greenPriorityDistricts: 'Пріоритет: Район IV Пронднік Бяли, XIII Подгуже, XIV Чижини',
       greenRecommendationText:
-        'Райони інтенсивного житлового будівництва потребують мікропарків (Сади Краков\'ян) площею 1500–3000 м² у радіусі 300 метрів для запобігання міським тепловим островам та комфорту сімей.',
+        'Райони інтенсивного житлового будівництва потребують мікропарків (Сади Краков’ян) площею 1500–3000 м² у радіусі 300 метрів для запобігання міським тепловим островам та комфорту сімей.',
 
       financeMatrixTitle: 'Фінансові Моделі та Партнерство',
       financeMatrixSubtitle: 'Інструменти фінансування для міської влади (UMK) та інвесторів',
@@ -365,13 +365,13 @@ export function getInvestorSimulatorLabels(language: Language): InvestorSimulato
     leversHeaderSubtitle: 'Dostosuj skalę planowanej interwencji samorządowej lub prywatnej:',
     nurseryLeverTitle: 'Nowe Miejsca Żłobkowe (0–3 lata)',
     nurseryLeverSubtitle: 'Budowa nowej placówki lub adaptacja sal (Maluch+ / partnerstwo B2B)',
-    nurseryLeverUnit: 'miejsc',
+    nurseryLeverUnit: (count) => (count === 1 ? 'miejsce' : count >= 2 && count <= 4 ? 'miejsca' : 'miejsc'),
     casLeverTitle: 'Nowe Centra Aktywności Seniora (CAS)',
     casLeverSubtitle: 'Kluby integracji, aktywizacji prozdrowotnej i warsztatowej (65+)',
-    casLeverUnit: 'placówki',
+    casLeverUnit: (count) => (count === 1 ? 'placówka' : count >= 2 && count <= 4 ? 'placówki' : 'placówek'),
     parksLeverTitle: 'Nowe Parki Kieszonkowe / Ogrody Krakowian',
     parksLeverSubtitle: 'Biologicznie czynne enklawy zieleni w buforze 300m od osiedli',
-    parksLeverUnit: 'parki',
+    parksLeverUnit: (count) => (count === 1 ? 'park' : count >= 2 && count <= 4 ? 'parki' : 'parków'),
 
     capexTotalTitle: 'Szacunkowy Nakład Inwestycyjny (CAPEX)',
     capexTotalSubtitle: 'Benchmarkowy koszt inwestycji publicznej lub wkładu prywatnego',
@@ -417,13 +417,20 @@ export function getInvestorSimulatorLabels(language: Language): InvestorSimulato
     generateDecisionNote: (baseline, simulated, districtName) => {
       const places = simulated.balanceImprovement;
       const pts = simulated.vitalityScoreDelta;
+      const casUnit = simulated.casImprovement === 1 ? 'nowego CAS' : 'nowych placówek CAS';
       if (places > 0 && simulated.newCasCount > baseline.currentCasCount) {
-        return `W ${districtName} planowane uruchomienie ${places} miejsc żłobkowych oraz ${simulated.casImprovement} nowego CAS podnosi wskaźnik pokrycia popytu do ${simulated.newCoveragePct2028}% oraz zwiększa witalność dzielnicy o +${pts} pkt. Działanie to jednocześnie odciąża młode rodziny i niweluje samotność seniorów w dynamicznie rozwijającej się dzielnicy.`;
+        return `Dla obszaru: ${districtName} planowane uruchomienie ${places} miejsc żłobkowych oraz ${simulated.casImprovement} ${casUnit} podnosi wskaźnik pokrycia popytu do ${simulated.newCoveragePct2028}% oraz zwiększa witalność dzielnicy o +${pts} pkt. Działanie to jednocześnie odciąża młode rodziny i niweluje samotność seniorów w dynamicznie rozwijającej się dzielnicy.`;
       }
       if (places > 0) {
-        return `Dodanie ${places} miejsc żłobkowych w ${districtName} redukuje deficyt 2028 roku do ${simulated.newBalance2028 >= 0 ? `+${simulated.newBalance2028}` : simulated.newBalance2028} miejsc, zmniejszając lukę opiekuńczą o ${simulated.coverageImprovementPct} punktów procentowych. Inwestycja rekomendowana do wsparcia w ramach miejskiego programu dotacji celowych UMK.`;
+        return `Dodanie ${places} miejsc żłobkowych w obszarze: ${districtName} redukuje deficyt 2028 roku do ${simulated.newBalance2028 >= 0 ? `+${simulated.newBalance2028}` : simulated.newBalance2028} miejsc, zmniejszając lukę opiekuńczą o ${simulated.coverageImprovementPct} punktów procentowych. Inwestycja rekomendowana do wsparcia w ramach miejskiego programu dotacji celowych UMK.`;
       }
-      return `Rozwój infrastruktury zielonej i senioralnej w ${districtName} (+${simulated.parksImprovement} parki kieszonkowe, +${simulated.casImprovement} CAS) podnosi indeks witalności do ${simulated.newVitalityScore} pkt oraz polepsza wskaźnik dostępności biologicznie czynnej zieleni przy osiedlach.`;
+      const parksUnit =
+        simulated.parksImprovement === 1
+          ? 'park kieszonkowy'
+          : simulated.parksImprovement <= 4
+          ? 'parki kieszonkowe'
+          : 'parków kieszonkowych';
+      return `Rozwój infrastruktury zielonej i senioralnej w obszarze: ${districtName} (+${simulated.parksImprovement} ${parksUnit}, +${simulated.casImprovement} ${casUnit}) podnosi indeks witalności do ${simulated.newVitalityScore} pkt oraz polepsza wskaźnik dostępności biologicznie czynnej zieleni przy osiedlach.`;
     },
 
     guidelinesBadge: 'Strategiczne Wytyczne Miejskie (B2G / B2B)',
@@ -449,12 +456,12 @@ export function getInvestorSimulatorLabels(language: Language): InvestorSimulato
       pppTitle: 'Partnerstwo Publiczno-Prywatne (PPP)',
       pppDesc:
         'Miasto udostępnia uzbrojony grunt lub preferencyjny najem lokalu, a prywatny operator realizuje inwestycję kubaturową i standard opiekuńczy.',
-      maluchTitle: 'Integracja z Programem Maluch+ / Aktywny Rodzic',
+      maluchTitle: 'Program Maluch+ / Aktywny Rodzic',
       maluchDesc:
         'Dotacja państwowa i miejska (do 1500 zł/mies. na dziecko) wyrównująca czesne w placówkach niepublicznych do poziomu żłobków samorządowych.',
       grantsTitle: 'Miejskie Granty Celowe i Budżet Obywatelski',
       grantsDesc:
-        'Dedykowane pule środków Zarządu Zieleni Miejskiej i Rad Dzielnic na tworzenie Ogrodów Krakowian i wyposażenie klubów seniora.',
+        'Dedykowane pule na parki kieszonkowe i wyposażenie klubów seniora realizowane przez Rady Dzielnic.',
     },
 
     finalExecutiveNotice:

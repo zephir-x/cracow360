@@ -43,6 +43,8 @@ export interface BaselineDistrictMetrics {
 }
 
 export interface SimulatedDistrictMetrics {
+  inputs: SimulatorInputs;
+
   // Childcare 0-3
   newCarePlaces0To3: number;
   newBalance2028: number;

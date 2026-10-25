@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { useTranslation } from '../i18n/I18nContext';
 import { getLocalizedDatasetMetrics } from '../i18n/datasetsI18n';
 import { ALL_DATA_SOURCES } from '../data/methodologyDataSources';
+import { getPageNumbers } from '../components/parent-mode/childcare-forecast/types';
 import {
   ArrowLeft,
   BookOpen,
@@ -29,7 +30,7 @@ const ITEMS_PER_PAGE = 10;
 export function AboutDataMethodologyPage({
   onBackToResidentMode,
 }: AboutDataMethodologyPageProps) {
-  const { t, language, formatWithPlural } = useTranslation();
+  const { t, language, plural, formatWithPlural } = useTranslation();
 
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
@@ -279,7 +280,7 @@ export function AboutDataMethodologyPage({
           className="overflow-x-auto animate-fade-in"
         >
           <table className="w-full text-left text-xs">
-            <thead className="bg-slate-50 text-slate-700 font-bold border-b border-slate-200">
+            <thead className="bg-slate-50/90 text-slate-500 font-bold border-b border-slate-200">
               <tr>
                 <th className="py-3 px-4 w-12 text-center">{t.methodology.tableIndex}</th>
                 <th className="py-3 px-4 w-48">{t.methodology.tableCategory}</th>
@@ -304,7 +305,7 @@ export function AboutDataMethodologyPage({
                   const localizedMetrics = getLocalizedDatasetMetrics(source.id, source.metrics, language);
 
                   return (
-                    <tr key={source.id} className="hover:bg-blue-50/40 transition">
+                    <tr key={source.id} className="hover:bg-slate-50/80 transition-colors">
                       <td className="py-3 px-4 font-bold text-slate-400 text-center">
                         {globalIndex}
                       </td>
@@ -343,31 +344,57 @@ export function AboutDataMethodologyPage({
           </table>
         </div>
 
-        {/* Pagination Bar */}
-        <div className="px-6 py-4 bg-slate-50 border-t border-slate-100 flex items-center justify-between">
-          <span className="text-xs text-slate-500">
-            {t.methodology.showingPrefix} {startIndex + 1}–{endIndex} {t.methodology.ofPrefix} {filteredSources.length}{' '}
-            {formatWithPlural(filteredSources.length, t.methodology.registryPlural)}
-          </span>
-          <div className="flex items-center gap-2">
-            <button
-              onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
-              disabled={validCurrentPage === 1}
-              className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center gap-1 cursor-pointer"
-            >
-              <ChevronLeft className="w-3.5 h-3.5" /> {t.methodology.prevPage}
-            </button>
-            <span className="text-xs font-bold text-slate-700 px-2">
-              {validCurrentPage} / {totalPages}
-            </span>
-            <button
-              onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
-              disabled={validCurrentPage >= totalPages}
-              className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-semibold text-slate-600 hover:bg-white disabled:opacity-40 disabled:cursor-not-allowed transition flex items-center gap-1 cursor-pointer"
-            >
-              {t.methodology.nextPage} <ChevronRight className="w-3.5 h-3.5" />
-            </button>
+        {/* Pagination Controls – Identical Layout & Styling to Parent / Investor Mode */}
+        <div className="px-6 py-4 flex flex-col sm:flex-row items-center justify-between gap-3 border-t border-slate-100 text-xs text-slate-500">
+          <div>
+            {t.methodology.showingPrefix} {filteredSources.length > 0 ? startIndex + 1 : 0}–{endIndex}{' '}
+            {t.methodology.ofPrefix} {filteredSources.length}{' '}
+            {plural(filteredSources.length, t.methodology.registryPlural)}
           </div>
+
+          {totalPages > 1 && (
+            <div className="flex items-center gap-1.5">
+              <button
+                onClick={() => setCurrentPage((p) => Math.max(1, Math.min(p, totalPages) - 1))}
+                disabled={validCurrentPage === 1}
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+              >
+                <ChevronLeft className="w-3.5 h-3.5" />
+                <span>{t.methodology.prevPage}</span>
+              </button>
+
+              <div className="flex items-center gap-1">
+                {getPageNumbers(validCurrentPage, totalPages).map((p, idx) =>
+                  typeof p === 'number' ? (
+                    <button
+                      key={idx}
+                      onClick={() => setCurrentPage(p)}
+                      className={`w-7 h-7 rounded-lg text-xs font-semibold transition cursor-pointer ${
+                        validCurrentPage === p
+                          ? 'bg-blue-600 text-white shadow-xs'
+                          : 'border border-slate-200 bg-white text-slate-700 hover:bg-slate-100'
+                      }`}
+                    >
+                      {p}
+                    </button>
+                  ) : (
+                    <span key={idx} className="px-1 text-slate-400">
+                      {p}
+                    </span>
+                  )
+                )}
+              </div>
+
+              <button
+                onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
+                disabled={validCurrentPage >= totalPages}
+                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+              >
+                <span>{t.methodology.nextPage}</span>
+                <ChevronRight className="w-3.5 h-3.5" />
+              </button>
+            </div>
+          )}
         </div>
       </section>
     </div>
