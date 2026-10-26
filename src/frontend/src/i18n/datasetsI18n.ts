@@ -36,9 +36,9 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Середньорічні концентрації пилу PM10 і PM2.5, річна кількість днів зі смогом, карта дорожнього шуму >65 дБ',
   },
   'gis-3': {
-    pl: 'Państwowy rejestr adresowy posesji w Krakowie, transformacja PUWG 1992 (EPSG:2180) do WGS84 dla placówek edukacyjnych i 115 instytucji',
-    en: 'National address register of properties in Krakow, PUWG 1992 (EPSG:2180) to WGS84 transformation for educational facilities and 115 institutions',
-    ua: 'Державний адресний реєстр садиб у Кракові, трансформація PUWG 1992 (EPSG:2180) у WGS84 для навчальних закладів та 115 установ',
+    pl: 'Państwowy rejestr adresowy posesji w Krakowie, transformacja PUWG 1992 (EPSG:2180) do WGS84 dla placówek edukacyjnych i instytucji',
+    en: 'National address register of properties in Krakow, PUWG 1992 (EPSG:2180) to WGS84 transformation for educational facilities and institutions',
+    ua: 'Державний адресний реєстр садиб у Кракові, трансформація PUWG 1992 (EPSG:2180) у WGS84 для навчальних закладів та установ',
   },
   'trans-1': {
     pl: 'Przystanki komunikacji miejskiej (tramwaje i autobusy), gęstość sieci KMK na km²',

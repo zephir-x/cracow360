@@ -32,7 +32,7 @@ export interface FamilyInteractiveMapProps {
   selectedCohort?: ChildAgeCohort;
 }
 
-// Center point of Krakow (harmonized exactly with KrakowChoroplethMap)
+// Center point of Krakow
 const KRAKOW_CENTER: [number, number] = [50.055, 20.005];
 
 // Bounding box locked strictly to Krakow administrative area
@@ -413,7 +413,7 @@ export function FamilyInteractiveMap({
         {/* Bottom-Right: Permanently Displayed Static Legend */}
         <FamilyMapStaticLegend bufferRadius={bufferRadius} />
 
-        {/* React Leaflet Map Engine locked strictly to Krakow boundaries (matching KrakowChoroplethMap) */}
+        {/* React Leaflet Map Engine locked strictly to Krakow boundaries */}
         <MapContainer
           center={KRAKOW_CENTER}
           zoom={12}

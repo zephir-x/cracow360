@@ -6,7 +6,7 @@
   Clock,
   Compass,
   GraduationCap,
-  Sparkles,
+  HelpCircle,
   Trees,
   TrendingUp,
 } from 'lucide-react';
@@ -339,7 +339,7 @@ export function ParentHeroHeader({
               onClick={() => setShowCapabilities((prev) => !prev)}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-md shadow-sm transition transform hover:-translate-y-0.5 cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-sky-200" />
+              <HelpCircle className="w-4 h-4 text-sky-200" />
               {showCapabilities
                 ? t.parent.hero.capabilitiesCloseBtn
                 : t.parent.hero.capabilitiesToggleBtn}

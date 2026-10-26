@@ -35,7 +35,7 @@ export interface InvestorSimulatorLabels {
     culture: { title: string; subtitle: string };
   };
 
-  // 14 Infrastructure Levers
+  // Infrastructure Levers
   levers: {
     nurseries: LeverItemLabels;
     kindergartens: LeverItemLabels;
@@ -59,7 +59,7 @@ export interface InvestorSimulatorLabels {
   impactSectionSubtitle: string;
   noChangesHint: string;
 
-  // Part A: Overall Index & 8 Pillars
+  // Overall Index & 8 Pillars
   overallIndexCardTitle: string;
   overallIndexCardSub: string;
   rankingCardTitle: string;
@@ -83,7 +83,7 @@ export interface InvestorSimulatorLabels {
     housing: string;
   };
 
-  // Part B: Childcare & School Balances (Current State)
+  // Childcare & School Balances (Current State)
   balancesSectionTitle: string;
   balancesSectionSubtitle: string;
   balanceCards: {
@@ -105,7 +105,7 @@ export interface InvestorSimulatorLabels {
   placesUnit: string;
   pupilsUnit: string;
 
-  // Part C: Concrete Field Metrics (Greenery, Transit, Seniors & Culture)
+  // Concrete Field Metrics (Greenery, Transit, Seniors & Culture)
   fieldMetricsTitle: string;
   fieldMetricsSubtitle: string;
   greeneryCardTitle: string;
@@ -124,7 +124,7 @@ export interface InvestorSimulatorLabels {
   seniorsPerCasLabel: string;
   librariesAndCultureLabel: string;
 
-  // Part D: Dynamic Summary & Recommendation Banner
+  // Dynamic Summary & Recommendation Banner
   recommendationBannerTitle: string;
 }
 

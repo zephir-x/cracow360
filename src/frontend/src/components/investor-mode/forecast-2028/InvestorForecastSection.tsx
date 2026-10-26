@@ -2,7 +2,7 @@
 import {
   ChevronLeft,
   ChevronRight,
-  Sparkles,
+  TrendingUp,
 } from 'lucide-react';
 import { useTranslation } from '../../../i18n/I18nContext';
 import { getInvestorForecastLabels } from '../../../i18n/investorForecastI18n';
@@ -171,7 +171,7 @@ export function InvestorForecastSection({ districts }: InvestorForecastSectionPr
         {/* Section Header */}
         <div className="space-y-1.5">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-900">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+            <TrendingUp className="w-3.5 h-3.5 text-blue-600" />
             {labels.badgeSection}
           </div>
           <h2 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">

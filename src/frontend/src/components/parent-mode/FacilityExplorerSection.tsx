@@ -3,8 +3,8 @@ import {
   ChevronLeft,
   ChevronRight,
   MapPin,
+  School,
   Search,
-  Sparkles,
 } from 'lucide-react';
 import { cracow360Api } from '../../api/client';
 import { useTranslation } from '../../i18n/I18nContext';
@@ -162,7 +162,7 @@ export function FacilityExplorerSection({
       <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
         <div className="flex items-center gap-3">
           <div className="p-2.5 rounded-2xl bg-sky-50 text-sky-600 border border-sky-200">
-            <Sparkles className="w-5 h-5" />
+            <School className="w-5 h-5" />
           </div>
           <div>
             <h2 className="text-base font-extrabold text-slate-900">

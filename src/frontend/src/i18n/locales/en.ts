@@ -104,35 +104,35 @@ export const enTranslations: TranslationDictionary = {
     pillars: {
       mobility: {
         name: 'Mobility & Public Transit',
-        desc: 'KMK transit, isochrones, bike paths DDR',
+        desc: 'KMK network, trams & bike paths',
       },
       education: {
         name: 'Education & Childcare',
-        desc: 'Nurseries, kindergartens, primary schools',
+        desc: 'Nurseries, preschools & schools',
       },
       greenery: {
         name: 'Greenery & Recreation',
-        desc: 'Parks, municipal forests, sports & pools',
+        desc: 'Parks, forests, sports & pools',
       },
       culture: {
         name: 'Culture & Community',
-        desc: 'Libraries, cultural centers, senior clubs',
+        desc: 'Libraries, culture & CAS clubs',
       },
       environment: {
         name: 'Environment & Peace',
-        desc: 'GIOŚ PM10 monitoring, acoustics & noise',
+        desc: 'GIOŚ PM10 air, acoustics & noise',
       },
       safety: {
         name: 'Safety & Public Order',
-        desc: 'Safe traffic, pedestrian accident protection',
+        desc: 'Safe traffic & pedestrian safety',
       },
       housingAffordability: {
         name: 'Housing Affordability',
-        desc: 'Purchase & rental m² rates, purchasing power',
+        desc: 'Buy & rent rates, buying power',
       },
       demographicVitality: {
         name: 'Demographic Vitality & Growth',
-        desc: 'Population growth, age 15–64, foreign residents',
+        desc: 'Growth, age 15–64 & young inflow',
       },
     },
     presets: {

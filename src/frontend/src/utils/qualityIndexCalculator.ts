@@ -3,53 +3,65 @@ import type { DistrictScoresDto, QualityWeights, ResidentPreset } from '../types
 /**
  * Dynamically calculates the personalized Quality of Life Index on the client side
  * with zero network latency across all 8 urban pillars.
- * 
- * Formula: sum(score_i * weight_i) / sum(weight_i)
- * If total weight <= 0, falls back to unweighted arithmetic average.
+ *
+ * Uses a Constant Elasticity of Substitution (CES) / Bottleneck-Aware weighted index:
+ * 1. Linear weighted mean across all 8 pillars: mu_w = sum(S_i * w_i) / sum(w_i)
+ * 2. Non-compensatory bottleneck penalty for severe urban deficits (S_i < 52.0 pts)
+ *    weighted by the square of the user's relative priority (w_i / 10)^2:
+ *    Penalty = [ sum((w_i / 10)^2 * max(0, 52 - S_i)^1.5) / sum(w_i / 10) ] * 0.25
+ * 3. Urban contrast calibration around Krakow's reference standard (70.0 pts):
+ *    Q = 70.0 + ((mu_w - Penalty) - 62.8) * 1.35
  */
 export function calculateClientSideQualityIndex(
   scores: DistrictScoresDto,
   weights: QualityWeights
 ): number {
-  const totalWeight =
-    weights.mobility +
-    weights.education +
-    weights.greenery +
-    weights.culture +
-    weights.environment +
-    weights.safety +
-    weights.housingAffordability +
-    weights.demographicVitality;
+  const pillars: Array<{ score: number; weight: number }> = [
+    { score: scores.mobilityScore, weight: Math.max(0, weights.mobility) },
+    { score: scores.educationScore, weight: Math.max(0, weights.education) },
+    { score: scores.greeneryScore, weight: Math.max(0, weights.greenery) },
+    { score: scores.cultureAndSeniorScore, weight: Math.max(0, weights.culture) },
+    { score: scores.environmentScore, weight: Math.max(0, weights.environment) },
+    { score: scores.safetyScore, weight: Math.max(0, weights.safety) },
+    { score: scores.housingAffordabilityScore, weight: Math.max(0, weights.housingAffordability) },
+    { score: scores.demographicVitalityScore, weight: Math.max(0, weights.demographicVitality) },
+  ];
 
-  // Fallback to unweighted arithmetic mean if all weights are zero
-  if (totalWeight <= 0) {
-    return Number(
-      (
-        (scores.mobilityScore +
-          scores.educationScore +
-          scores.greeneryScore +
-          scores.cultureAndSeniorScore +
-          scores.environmentScore +
-          scores.safetyScore +
-          scores.housingAffordabilityScore +
-          scores.demographicVitalityScore) /
-        8
-      ).toFixed(2)
-    );
+  const totalWeight = pillars.reduce((acc, p) => acc + p.weight, 0);
+
+  // If all sliders are pulled to 0, treat as equal weights (5.0 each)
+  const effectivePillars =
+    totalWeight <= 0
+      ? pillars.map((p) => ({ score: p.score, weight: 5.0 }))
+      : pillars;
+  const effectiveTotalWeight = totalWeight <= 0 ? 40.0 : totalWeight;
+
+  // 1. Linear weighted mean across all 8 calibrated urban pillars
+  const weightedMean =
+    effectivePillars.reduce((acc, p) => acc + p.score * p.weight, 0) / effectiveTotalWeight;
+
+  // 2. Non-compensatory bottleneck penalty for critical deficits below the 52.0 pts threshold
+  const BOTTLENECK_THRESHOLD = 52.0;
+  let penaltyNumerator = 0;
+  let normalizedWeightSum = 0;
+
+  for (const p of effectivePillars) {
+    const relWeight = p.weight / 10.0;
+    normalizedWeightSum += relWeight;
+    if (p.score < BOTTLENECK_THRESHOLD && relWeight > 0) {
+      const deficit = BOTTLENECK_THRESHOLD - p.score;
+      penaltyNumerator += relWeight * relWeight * Math.pow(deficit, 1.5);
+    }
   }
 
-  // Linear weighted sum across all 8 calibrated urban pillars
-  const weightedSum =
-    scores.mobilityScore * weights.mobility +
-    scores.educationScore * weights.education +
-    scores.greeneryScore * weights.greenery +
-    scores.cultureAndSeniorScore * weights.culture +
-    scores.environmentScore * weights.environment +
-    scores.safetyScore * weights.safety +
-    scores.housingAffordabilityScore * weights.housingAffordability +
-    scores.demographicVitalityScore * weights.demographicVitality;
+  const bottleneckPenalty =
+    normalizedWeightSum > 0 ? (penaltyNumerator / normalizedWeightSum) * 0.25 : 0;
 
-  return Number((weightedSum / totalWeight).toFixed(2));
+  // 3. Contrast calibration around the healthy municipal standard (70.0 pts)
+  const rawNetScore = weightedMean - bottleneckPenalty;
+  const calibratedIndex = 70.0 + (rawNetScore - 62.8) * 1.35;
+
+  return Number(Math.min(100, Math.max(0, calibratedIndex)).toFixed(2));
 }
 
 // 6 Curated Resident Persona Presets for 1-click preference configuration
@@ -57,16 +69,16 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
   {
     id: 'rodzina_z_dziecmi',
     label: 'Rodzina z Dziećmi',
-    description: 'Priorytet: żłobki, szkoły, bezpieczeństwo, czyste powietrze, tereny zielone i rozwój',
+    description: 'Priorytet: żłobki, szkoły, bezpieczeństwo, czyste powietrze, tereny zielone i dojazd',
     weights: {
       education: 10,
-      safety: 10,
+      safety: 9,
       greenery: 9,
-      environment: 9,
-      housingAffordability: 8,
-      demographicVitality: 8,
-      mobility: 6,
-      culture: 3,
+      environment: 8,
+      mobility: 7,
+      housingAffordability: 7,
+      demographicVitality: 6,
+      culture: 4,
     },
   },
   {
@@ -75,10 +87,10 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
     description: 'Priorytet: szybka komunikacja KMK/DDR, witalność i młodość, kultura, przystępny najem',
     weights: {
       mobility: 10,
-      culture: 10,
+      culture: 9,
       demographicVitality: 9,
       housingAffordability: 8,
-      greenery: 4,
+      greenery: 5,
       safety: 3,
       environment: 2,
       education: 1,
@@ -87,15 +99,15 @@ export const RESIDENT_PRESETS: ResidentPreset[] = [
   {
     id: 'senior',
     label: 'Aktywny Senior',
-    description: 'Priorytet: Centra Seniora (CAS), parki, biblioteki, bezpieczeństwo, czyste powietrze',
+    description: 'Priorytet: Centra Seniora (CAS), parki, komunikacja KMK, bezpieczeństwo i spokój',
     weights: {
-      culture: 10,
-      safety: 9,
+      culture: 9,
+      greenery: 9,
       environment: 9,
-      greenery: 8,
-      mobility: 7,
+      safety: 9,
+      mobility: 8,
       housingAffordability: 5,
-      demographicVitality: 4,
+      demographicVitality: 3,
       education: 1,
     },
   },

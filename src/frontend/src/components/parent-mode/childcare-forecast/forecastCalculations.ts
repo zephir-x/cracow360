@@ -34,9 +34,7 @@ export function getMacroIndicators(
   let allTightDistricts = 0;
 
   districts.forEach((d) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const rawD = d.demographics as any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const rawE = d.educationAndCare as any;
 
     const c03 = rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
@@ -158,10 +156,8 @@ export function getDistrictCohortData(
 
   const isEn = language === 'en';
   const isUa = language === 'ua';
-
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  
   const rawD = details.demographics as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawE = details.educationAndCare as any;
 
   // 1. PRESCHOOL (4–6)

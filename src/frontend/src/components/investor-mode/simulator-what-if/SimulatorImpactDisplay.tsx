@@ -294,7 +294,7 @@ export function SimulatorImpactDisplay({
         </div>
       </div>
 
-      {/* Part B: Childcare & School Places Balance (Current Real-Time State) */}
+      {/* Childcare & School Places Balance (Current Real-Time State) */}
       <div className="p-5 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-4">
         <div className="space-y-0.5 border-b border-slate-100 pb-3">
           <h4 className="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
@@ -499,7 +499,7 @@ export function SimulatorImpactDisplay({
         </div>
       </div>
 
-      {/* Part C: Greenery, Mobility & Senior/Culture Concrete District Metrics */}
+      {/* Greenery, Mobility & Senior/Culture Concrete District Metrics */}
       <div className="p-5 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-4">
         <div className="space-y-0.5 border-b border-slate-100 pb-3">
           <h4 className="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
@@ -627,7 +627,7 @@ export function SimulatorImpactDisplay({
         </div>
       </div>
 
-      {/* Part D: Dynamic Summary & Practical Recommendation Banner */}
+      {/* Dynamic Summary & Practical Recommendation Banner */}
       <div className="rounded-3xl bg-linear-to-r from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white p-5 sm:p-6 shadow-md border border-blue-400/40 space-y-2">
         <div className="flex items-center gap-2 text-xs font-extrabold text-sky-200 uppercase tracking-wider">
           <Sparkles className="w-4 h-4 text-sky-300 shrink-0" />

@@ -50,7 +50,7 @@ export function DistrictSimulatorToolbar({
             value={selectedDistrictId}
             onChange={(e) => onSelectDistrict(Number(e.target.value))}
             aria-label={labels.selectDistrictLabel}
-            className="w-full sm:w-auto sm:min-w-[260px] px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-slate-900 text-xs sm:text-sm font-bold shadow-2xs focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-600 transition cursor-pointer"
+            className="w-full sm:w-auto sm:min-w-65 px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-slate-900 text-xs sm:text-sm font-bold shadow-2xs focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-600 transition cursor-pointer"
           >
             {districts.map((d) => (
               <option key={d.districtId} value={d.districtId}>

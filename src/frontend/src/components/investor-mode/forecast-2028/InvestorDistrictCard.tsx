@@ -1,4 +1,4 @@
-﻿import { ArrowRight, ChevronDown, ChevronUp, Sparkles } from 'lucide-react';
+﻿import { ArrowRight, ChevronDown, ChevronUp, Scale } from 'lucide-react';
 import type { InvestorForecastLabels } from '../../../i18n/investorForecastI18n';
 import type { InvestorDistrictForecastData } from './types';
 
@@ -184,7 +184,7 @@ export function InvestorDistrictCard({
         {/* 4. Slot 4: Modern Civic Blue Ribbon (Harmonized with site colors) */}
         <div className="flex items-center justify-between text-xs px-3 py-2 bg-linear-to-r from-blue-50 via-indigo-50/70 to-blue-50 rounded-2xl border border-blue-200/90 shadow-2xs">
           <div className="flex items-center gap-1.5 font-bold text-blue-950">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+            <Scale className="w-3.5 h-3.5 text-blue-600 shrink-0" />
             <span>{labels.totalCardSummaryLabel}</span>
           </div>
           <div className="flex items-center gap-1.5 text-right">

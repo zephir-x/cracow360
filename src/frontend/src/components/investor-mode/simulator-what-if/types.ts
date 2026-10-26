@@ -8,27 +8,27 @@ export type SimulatorPresetId =
   | 'senior_culture_package';
 
 export interface SimulatorLeversState {
-  // 1. Edukacja i Opieka (0-14 lat)
-  addedNurseries: number;       // 0..10 (+100 miejsc 0-3 lat każdy)
-  addedKindergartens: number;   // 0..10 (+125 miejsc 4-6 lat każde)
-  addedPrimarySchools: number;  // 0..5  (+400 miejsc 7-14 lat każda)
-  addedParentClubs: number;     // 0..10 (+1 Klub Rodzica każdy)
+  // 1. Education and Care (0–14 years)
+  addedNurseries: number;       // 0..10 (+100 places for 0-3 year olds each)
+  addedKindergartens: number;   // 0..10 (+125 places for 4-6 year olds each)
+  addedPrimarySchools: number;  // 0..5  (+400 places for 7-14 year olds each)
+  addedParentClubs: number;     // 0..10 (+1 Parent Club each)
 
-  // 2. Zieleń i Sport
-  addedPocketParks: number;     // 0..15 (+0.25 ha zieleni każdy)
-  addedCityParks: number;       // 0..5  (+2.0 ha zieleni każdy)
-  addedSchoolSports: number;    // 0..10 (+1 obiekt sportowy / pływalnia)
+  // 2. Greenery and Sport
+  addedPocketParks: number;     // 0..15 (+0.25 ha of greenery each)
+  addedCityParks: number;       // 0..5  (+2.0 ha of greenery each)
+  addedSchoolSports: number;    // 0..10 (+1 sports facility / swimming pool)
 
-  // 3. Komunikacja i Rower (KMK / ZTP)
-  addedBusStops: number;        // 0..15 (+1 przystanek autobusowy KMK)
-  addedTramStops: number;       // 0..10 (+1 przystanek tramwajowy KMK)
-  addedBikeLanesKm: number;     // 0..15 (+1 km dróg dla rowerów DDR)
-  addedParkAndRide: number;     // 0..5  (+1 parking P+R i +15 stojaków rowerowych)
+  // 3. Transportation and the Bicycle (KMK / ZTP)
+  addedBusStops: number;        // 0..15 (+1 bus stop KMK)
+  addedTramStops: number;       // 0..10 (+1 tram stop KMK)
+  addedBikeLanesKm: number;     // 0..15 (+1 km of bike lanes DDR)
+  addedParkAndRide: number;     // 0..5  (+1 parking P+R and +15 bike racks)
 
-  // 4. Kultura i Seniorzy (65+)
-  addedCasCenters: number;      // 0..10 (+1 Centrum Aktywności Seniora CAS)
-  addedLibraries: number;       // 0..8  (+1 filia Biblioteki Kraków)
-  addedCulturalCenters: number; // 0..5  (+1 dom / ośrodek kultury)
+  // 4. Culture and Seniors (65+)
+  addedCasCenters: number;      // 0..10 (+1 Senior Activity Center CAS)
+  addedLibraries: number;       // 0..8  (+1 branch of Kraków Library)
+  addedCulturalCenters: number; // 0..5  (+1 cultural center / cultural center)
 }
 
 export interface SimulatorScoresWithComposite extends DistrictScoresDto {
@@ -50,10 +50,10 @@ export interface SimulatorImpactMetrics {
   districtName: string;
   totalAddedItemsCount: number;
 
-  // 1. Wyniki 8 filarów Jakości Życia i pozycja w rankingu 18 dzielnic (Tryb Mieszkańca)
+  // 1. Results of 8 Quality of Life pillars and position in the ranking of 18 districts (Resident-centric Approach)
   scores: SimulatorScoreComparison;
 
-  // 2. Edukacja i Opieka (0-14 lat) - bilans miejsc 2028 (Tryb Rodzica i Prognoza 2028)
+  // 2. Education and Care (0–14 years) – 2028 capacity assessment (Parent-Centric Approach and 2028 Forecast)
   age0To3_2028: number;
   targetNurseryDemand2028: number;
   nurseryPlacesBefore: number;
@@ -93,7 +93,7 @@ export interface SimulatorImpactMetrics {
   totalEduCoverageBeforePct: number;
   totalEduCoverageAfterPct: number;
 
-  // 3. Zieleń i Sport
+  // 3. Greenery and Sport
   parksCountBefore: number;
   parksCountAfter: number;
   pocketParksBefore: number;
@@ -107,7 +107,7 @@ export interface SimulatorImpactMetrics {
   sportsFacilitiesBefore: number;
   sportsFacilitiesAfter: number;
 
-  // 4. Komunikacja i Rower
+  // 4. Transportation and the Bicycle
   busStopsBefore: number;
   busStopsAfter: number;
   tramStopsBefore: number;
@@ -123,7 +123,7 @@ export interface SimulatorImpactMetrics {
   bikeRacksBefore: number;
   bikeRacksAfter: number;
 
-  // 5. Kultura i Seniorzy (65+)
+  // 5. Culture and Seniors (65+)
   seniors2028: number;
   casCountBefore: number;
   casCountAfter: number;
@@ -134,7 +134,7 @@ export interface SimulatorImpactMetrics {
   culturalCentersBefore: number;
   culturalCentersAfter: number;
 
-  // Potencjał / deficyty do rekomendacji
+  // Potential / deficits for recommendations
   nurseryPotentialB2B: 'HIGH' | 'MEDIUM' | 'LOW';
   seniorDeficit: 'HIGH' | 'MEDIUM' | 'LOW';
   greenDeficit: 'HIGH' | 'MEDIUM' | 'LOW';

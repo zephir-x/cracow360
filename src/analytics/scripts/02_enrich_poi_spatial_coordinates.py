@@ -1,17 +1,18 @@
 ﻿"""
 PURPOSE:
-    High-precision spatial geocoding and coordinates enrichment pipeline for Krakow360.
-    Upgrades municipal Points of Interest (POIs) - particularly 646 childcare/educational
-    facilities and 142 parks/forests - from coarse street/district centroids to exact, pinpoint WGS84
-    coordinates using verified address numbers and the official Polish GUGiK / OpenStreetMap geocoding registry.
+    Step 04 in the Krakow360 Python analytics pipeline.
+    High-precision spatial geocoding and coordinates enrichment for municipal Points of Interest (POIs).
+    Upgrades municipal POIs (childcare/educational facilities, parks, forests, and mobility hubs)
+    from coarse anchors to exact WGS84 coordinates using verified address numbers and the official
+    Polish GUGiK / OpenStreetMap geocoding registry.
 
 PRINCIPLES:
-    - Zero manual work required by user.
-    - Persistent disk cache (`data/contracts/spatial_geocoding_cache.json`) ensuring fast, resumeable execution.
-    - 100% verified pinpoint coordinates for all 142 green spaces (parks, forests, pocket parks) and mobility hubs.
+    - Zero manual intervention: automated geocoding with caching.
+    - Persistent disk cache (`data/contracts/spatial_geocoding_cache.json`) for fast, deterministic execution.
+    - 100% verified pinpoint coordinates for all 142 green spaces and mobility hubs.
     - Official GUGiK address resolution with PUWG92 (EPSG:2180) to WGS84 conversion.
     - Bounding-box validation ensuring every coordinate strictly falls within Kraków administrative bounds.
-    - Dual persistence: writes `data/contracts/krakow_poi_locations.json` and updates SQLite `data/db/cracow360.db`.
+    - Single Source of Truth: writes updated `data/contracts/krakow_poi_locations.json`.
 """
 
 from __future__ import annotations
@@ -20,26 +21,20 @@ import csv
 import json
 import math
 import re
-import sqlite3
 import sys
-import time
 import urllib.parse
 import urllib.request
 from pathlib import Path
 
-# Paths
-BASE_DIR = Path(__file__).resolve().parent.parent
-RAW_DATA_DIR = BASE_DIR / "data_raw"
-CONTRACTS_DIR = BASE_DIR.parent.parent / "data" / "contracts"
-POI_CONTRACT_PATH = CONTRACTS_DIR / "krakow_poi_locations.json"
-CACHE_PATH = CONTRACTS_DIR / "spatial_geocoding_cache.json"
-DB_PATH = BASE_DIR.parent.parent / "data" / "db" / "cracow360.db"
+# Ensure script-level imports resolve config cleanly regardless of execution working directory
+sys.path.append(str(Path(__file__).resolve().parent))
 
-# Kraków Bounding Box (WGS84)
-KRAKOW_MIN_LAT = 49.94
-KRAKOW_MAX_LAT = 50.16
-KRAKOW_MIN_LNG = 19.72
-KRAKOW_MAX_LNG = 20.28
+from config import (
+    CACHE_PATH,
+    POI_CONTRACT_PATH,
+    RAW_DATA_DIR,
+    is_in_krakow_bbox,
+)
 
 # 1. VERIFIED PINPOINT COORDINATES FOR GREENERY (142) & MOBILITY HUBS (10)
 EXACT_COORDINATES: dict[str, tuple[float, float]] = {
@@ -218,7 +213,7 @@ def epsg2180_to_wgs84(x_str: str, y_str: str) -> tuple[float, float]:
     m0 = 0.9993
     L0 = math.radians(19.0)
 
-    # In GUGIK UUG: x is Easting, y is Northing
+    # In GUGiK UUG: x is Easting, y is Northing
     x_gk = (x - 500000.0) / m0
     y_gk = (y - (-5300000.0)) / m0
 
@@ -286,7 +281,7 @@ def read_clean_csv(file_path: Path) -> list[dict[str, str]]:
         clean_row = {}
         for k, v in row.items():
             if k is not None:
-                clean_k = k.strip().lstrip("\ufeff")
+                clean_k = k.strip().replace("\ufeff", "")
                 clean_row[clean_k] = v.strip() if v else ""
         clean_rows.append(clean_row)
     return clean_rows
@@ -308,11 +303,7 @@ def save_cache(cache: dict[str, list[float]]) -> None:
         json.dump(cache, f, ensure_ascii=False, indent=2)
 
 
-def is_in_krakow(lat: float, lng: float) -> bool:
-    return KRAKOW_MIN_LAT <= lat <= KRAKOW_MAX_LAT and KRAKOW_MIN_LNG <= lng <= KRAKOW_MAX_LNG
-
-
-def geocode_gugik(address_query: str, cache: dict[str, list[float]]) -> tuple[float, float] | None:
+def geocode_gugik(address_query: str, cache: dict[str, list[float]]) -> tuple[float, float]:
     clean_q = address_query.strip()
     if not clean_q:
         return None
@@ -320,11 +311,10 @@ def geocode_gugik(address_query: str, cache: dict[str, list[float]]) -> tuple[fl
     norm_key = re.sub(r"\s+", " ", clean_q.lower())
     if norm_key in cache:
         cached = cache[norm_key]
-        if cached and len(cached) == 2 and is_in_krakow(cached[0], cached[1]):
+        if cached and len(cached) == 2 and is_in_krakow_bbox(cached[0], cached[1]):
             return cached[0], cached[1]
 
     # Query GUGiK UUG API
-    # Prefix with Kraków if missing
     q_str = clean_q if "kraków" in clean_q.lower() or "krakow" in clean_q.lower() else f"Kraków, {clean_q}"
     url = f"https://services.gugik.gov.pl/uug/?request=GetAddress&address={urllib.parse.quote(q_str)}"
     req = urllib.request.Request(
@@ -342,7 +332,7 @@ def geocode_gugik(address_query: str, cache: dict[str, list[float]]) -> tuple[fl
                 y_val = first.get("y")
                 if x_val and y_val:
                     lat, lng = epsg2180_to_wgs84(x_val, y_val)
-                    if is_in_krakow(lat, lng):
+                    if is_in_krakow_bbox(lat, lng):
                         cache[norm_key] = [lat, lng]
                         return lat, lng
     except Exception:
@@ -353,7 +343,7 @@ def geocode_gugik(address_query: str, cache: dict[str, list[float]]) -> tuple[fl
 
 def run_spatial_enrichment():
     print("=" * 70, flush=True)
-    print("Cracow360 Spatial Coordinates Enrichment Pipeline (Variant 1)", flush=True)
+    print("Cracow360 Spatial Coordinates Enrichment Pipeline (Step 04)", flush=True)
     print("Upgrading POI locations from coarse anchors to exact WGS84 positions", flush=True)
     print("=" * 70, flush=True)
 
@@ -464,37 +454,14 @@ def run_spatial_enrichment():
 
     save_cache(cache)
 
-    # 4. Save enriched JSON contract
+    # Save enriched JSON contract
     with open(POI_CONTRACT_PATH, "w", encoding="utf-8") as f:
         json.dump(poi_contract, f, ensure_ascii=False, indent=2)
     print(f"\nSuccessfully saved updated POI contract: {POI_CONTRACT_PATH}", flush=True)
 
-    # 5. Synchronize SQLite Database
-    if DB_PATH.exists():
-        try:
-            conn = sqlite3.connect(DB_PATH)
-            cur = conn.cursor()
-            db_updates = 0
-            for poi in pois:
-                p_id = poi.get("id")
-                p_lat = poi.get("lat")
-                p_lng = poi.get("lng")
-                p_addr = poi.get("address")
-                if p_id and p_lat is not None and p_lng is not None:
-                    cur.execute(
-                        "UPDATE PointsOfInterest SET Lat = ?, Lng = ?, Address = ? WHERE Id = ?",
-                        (p_lat, p_lng, p_addr, p_id),
-                    )
-                    db_updates += cur.rowcount
-            conn.commit()
-            conn.close()
-            print(f"Successfully synchronized SQLite database ({db_updates} records updated in {DB_PATH.name}).", flush=True)
-        except Exception as ex:
-            print(f"Notice: SQLite update deferred ({ex}).", flush=True)
-
     total_upgraded = exact_applied + geocoded_applied
     print("\n" + "=" * 70, flush=True)
-    print("SPATIAL ENRICHMENT REPORT (VARIANT 1):", flush=True)
+    print("SPATIAL ENRICHMENT REPORT (STEP 04):", flush=True)
     print(f"  * Total POIs in registry:          {len(pois)}", flush=True)
     print(f"  * Verified pinpoint Greenery & PR: {exact_applied} / 152 (100% precision)", flush=True)
     print(f"  * GUGiK / Official Geocoded POIs:  {geocoded_applied} / {len(meta_lookup)}", flush=True)

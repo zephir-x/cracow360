@@ -5,9 +5,9 @@
   ChevronDown,
   ChevronUp,
   GraduationCap,
+  HelpCircle,
   LineChart,
   Sliders,
-  Sparkles,
   TrendingUp,
   Users,
 } from 'lucide-react';
@@ -64,9 +64,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
         const highRomans: string[] = [];
 
         detailsList.forEach((d) => {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const dem = d.demographics as any;
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const hst = d.housingMarket as any;
           const mappedForecast = mapDistrictForecastData(d, 'pl');
 
@@ -285,7 +283,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
               </div>
             </div>
 
-            {/* 4. Urgent Expansion Districts (100% synchronized with Section 2) */}
+            {/* 4. Urgent Expansion Districts */}
             <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-violet-50 border border-violet-200 flex items-center justify-center text-violet-600 shrink-0">
                 <TrendingUp className="w-5 h-5" />
@@ -310,7 +308,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
               onClick={() => setShowCapabilities((prev) => !prev)}
               className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-md shadow-sm transition transform hover:-translate-y-0.5 cursor-pointer"
             >
-              <Sparkles className="w-4 h-4 text-sky-200" />
+              <HelpCircle className="w-4 h-4 text-sky-200" />
               {showCapabilities
                 ? labels.heroCapabilitiesCloseBtn
                 : labels.heroCapabilitiesToggleBtn}

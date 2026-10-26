@@ -104,19 +104,19 @@ export const plTranslations: TranslationDictionary = {
     pillars: {
       mobility: {
         name: 'Komunikacja i Transport',
-        desc: 'Transport KMK, izochrony, drogi rowerowe DDR',
+        desc: 'Sieć KMK, tramwaje i trasy DDR',
       },
       education: {
         name: 'Edukacja i Opieka nad Dziećmi',
-        desc: 'Żłobki, przedszkola, małe liczebności klas',
+        desc: 'Żłobki, przedszkola i szkoły',
       },
       greenery: {
         name: 'Zieleń, Rekreacja i Sport',
-        desc: 'Parki, lasy miejskie, sport i baseny',
+        desc: 'Parki, lasy miejskie i baseny',
       },
       culture: {
         name: 'Kultura i Społeczność',
-        desc: 'Biblioteki, domy kultury, centra CAS',
+        desc: 'Biblioteki, domy kultury i CAS',
       },
       environment: {
         name: 'Środowisko i Spokój',
@@ -128,11 +128,11 @@ export const plTranslations: TranslationDictionary = {
       },
       housingAffordability: {
         name: 'Dostępność Mieszkaniowa',
-        desc: 'Ceny zakupu i najmu m², siła nabywcza',
+        desc: 'Ceny zakupu i najmu, siła nabywcza',
       },
       demographicVitality: {
         name: 'Witalność i Rozwój Dzielnicy',
-        desc: 'Wzrost ludności, wiek 15–64, cudzoziemcy',
+        desc: 'Wzrost ludności i młodzi mieszkańcy',
       },
     },
     presets: {

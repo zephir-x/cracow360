@@ -19,6 +19,9 @@ PROCESSED_DATA_DIR = BASE_DIR / "data_processed"
 CHARTS_DIR = BASE_DIR / "charts"
 SCHEMAS_DIR = BASE_DIR / "schemas"
 CONTRACTS_OUTPUT_DIR = BASE_DIR.parent.parent / "data" / "contracts"
+POI_CONTRACT_PATH = CONTRACTS_OUTPUT_DIR / "krakow_poi_locations.json"
+MASTER_CONTRACT_PATH = CONTRACTS_OUTPUT_DIR / "krakow_districts_master.json"
+CACHE_PATH = CONTRACTS_OUTPUT_DIR / "spatial_geocoding_cache.json"
 
 # 2. OFFICIAL 18 ADMINISTRATIVE DISTRICTS OF KRAKOW (MSIP / District Statutes)
 # Every district record in `krakow_districts_master.json` MUST use these exact
@@ -160,3 +163,14 @@ def parse_roman_districts(text: str) -> list[int]:
         if did and did not in result:
             result.append(did)
     return result
+
+# 6. KRAKOW METROPOLITAN BOUNDING BOX (WGS84)
+KRAKOW_MIN_LAT = 49.90
+KRAKOW_MAX_LAT = 50.20
+KRAKOW_MIN_LNG = 19.70
+KRAKOW_MAX_LNG = 20.30
+
+
+def is_in_krakow_bbox(lat: float, lng: float) -> bool:
+    """Checks whether a WGS84 coordinate pair lies within the Kraków metropolitan bounding box."""
+    return KRAKOW_MIN_LAT <= lat <= KRAKOW_MAX_LAT and KRAKOW_MIN_LNG <= lng <= KRAKOW_MAX_LNG

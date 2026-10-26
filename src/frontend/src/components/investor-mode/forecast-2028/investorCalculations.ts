@@ -122,11 +122,8 @@ export function mapDistrictForecastData(
   d: DistrictDetailsDto,
   language: Language = 'pl'
 ): InvestorDistrictForecastData {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawD = d.demographics as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawF = d.forecastsAndB2B as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawEdu = d.educationAndCare as any;
 
   const c03: number = rawD?.age0To3 ?? rawD?.age0to3 ?? 0;

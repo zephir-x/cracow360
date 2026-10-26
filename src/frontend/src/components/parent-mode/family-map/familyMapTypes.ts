@@ -1,4 +1,4 @@
-﻿﻿import type { Language } from '../../../i18n/types';
+﻿import type { Language } from '../../../i18n/types';
 import type { PointOfInterestDto } from '../../../types/contracts';
 
 export type PoiType = 'nursery' | 'kindergarten' | 'school' | 'park' | 'center';

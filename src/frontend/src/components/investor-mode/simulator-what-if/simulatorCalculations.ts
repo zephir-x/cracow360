@@ -1,4 +1,5 @@
-﻿import type { DistrictDetailsDto, DistrictScoresDto } from '../../../types/contracts';
+﻿import type { DistrictDetailsDto, DistrictScoresDto, QualityWeights } from '../../../types/contracts';
+import { calculateClientSideQualityIndex } from '../../../utils/qualityIndexCalculator';
 import type {
   SimulatorImpactMetrics,
   SimulatorLeversState,
@@ -12,6 +13,17 @@ export const PRIMARY_SCHOOL_PLACES_PER_UNIT = 400;
 export const POCKET_PARK_AREA_HA = 0.25;
 export const CITY_PARK_AREA_HA = 2.0;
 export const BIKE_RACKS_PER_HUB = 15;
+
+const EQUAL_WEIGHTS: QualityWeights = {
+  mobility: 5,
+  education: 5,
+  greenery: 5,
+  culture: 5,
+  environment: 5,
+  safety: 5,
+  housingAffordability: 5,
+  demographicVitality: 5,
+};
 
 export const INITIAL_LEVERS_STATE: SimulatorLeversState = {
   addedNurseries: 0,
@@ -97,16 +109,7 @@ function clampScore(val: number): number {
 }
 
 function computeCompositeIndex(scores: DistrictScoresDto): number {
-  const sum =
-    scores.mobilityScore +
-    scores.educationScore +
-    scores.greeneryScore +
-    scores.cultureAndSeniorScore +
-    scores.environmentScore +
-    scores.safetyScore +
-    scores.housingAffordabilityScore +
-    scores.demographicVitalityScore;
-  return Number((sum / 8).toFixed(1));
+  return Number(calculateClientSideQualityIndex(scores, EQUAL_WEIGHTS).toFixed(1));
 }
 
 export function calculateSimulationImpact(
@@ -114,24 +117,16 @@ export function calculateSimulationImpact(
   levers: SimulatorLeversState,
   allDistrictsDetails?: DistrictDetailsDto[]
 ): SimulatorImpactMetrics {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawD = d.demographics as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawF = d.forecastsAndB2B as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawEdu = d.educationAndCare as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawGrn = d.greeneryAndSport as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawMob = d.mobilityAndTransport as any;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const rawCult = d.cultureAndSociety as any;
 
   const totalPop: number = Math.max(1, rawD?.totalPopulation ?? 1);
-
-  // ---------------------------------------------------------------------------
-  // 1. EDUKACJA I OPIEKA (0-3, 4-6, 7-14, 0-14) - STAN AKTUALNY NA ŻYWO
-  // ---------------------------------------------------------------------------
+  
+  // 1. EDUCATION AND CARE (0-3, 4-6, 7-14, 0-14) – CURRENT STATUS (LIVE)
   const c03: number = rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
 
   const nurseryPlacesBefore: number =
@@ -159,7 +154,7 @@ export function calculateSimulationImpact(
   const parentClubsBefore: number = rawEdu?.parentClubsCount ?? 0;
   const parentClubsAfter = parentClubsBefore + Math.round(levers.addedParentClubs);
 
-  // Przedszkola (4-6 lat - stan aktualny)
+  // Kindergartens (ages 4–6 – current status)
   const c46: number = rawD?.age4To6 ?? rawD?.age4to6 ?? 0;
   const kindergartenPlacesBefore: number =
     rawEdu?.kindergartenPlacesTotal ?? rawEdu?.kindergartensPlacesTotal ?? 0;
@@ -174,7 +169,7 @@ export function calculateSimulationImpact(
   const kindergartenCoverageAfterPct =
     c46 > 0 ? Math.min(150, Math.round((kindergartenPlacesAfter / c46) * 100)) : 100;
 
-  // Szkoły podstawowe (7-14 lat - stan aktualny)
+  // Primary schools (ages 7–14 – current status)
   const c714: number = rawD?.age7To14 ?? rawD?.age7to14 ?? 0;
   const schoolPlacesBefore: number = rawEdu?.primarySchoolStudentsTotal ?? 0;
   const schoolPlacesAdded = Math.round(
@@ -190,18 +185,20 @@ export function calculateSimulationImpact(
 
   const avgClassSizeBefore: number = Number((rawEdu?.avgStudentsPerClass ?? 21).toFixed(1));
   const primarySchoolsBefore: number = Math.max(1, rawEdu?.primarySchoolsCount ?? 5);
-  // Każda nowa szkoła dodaje ~18 oddziałów klasowych i rozładowuje zagęszczenie w obwodach
+  // Each new school adds ~18 class sections and relieves overcrowding within the school districts.
   const estimatedClassesBefore =
     avgClassSizeBefore > 0
       ? Math.max(10, schoolPlacesBefore / avgClassSizeBefore)
       : primarySchoolsBefore * 16;
   const estimatedClassesAfter = estimatedClassesBefore + levers.addedPrimarySchools * 18;
+  const rawAvgClassAfter =
+    estimatedClassesAfter > 0 ? schoolPlacesBefore / estimatedClassesAfter : avgClassSizeBefore;
   const avgClassSizeAfter: number =
     levers.addedPrimarySchools > 0.01
-      ? Number(Math.max(14.0, schoolPlacesBefore / estimatedClassesAfter).toFixed(1))
+      ? Number(Math.min(avgClassSizeBefore, Math.max(8.0, rawAvgClassAfter)).toFixed(1))
       : avgClassSizeBefore;
 
-  // Łączny bilans 0-14 (stan aktualny)
+  // Overall record 0-14 (current status)
   const totalChildren0To14 = c03 + c46 + c714;
   const totalEduPlacesBefore =
     nurseryPlacesBefore + kindergartenPlacesBefore + schoolPlacesBefore;
@@ -217,10 +214,8 @@ export function calculateSimulationImpact(
     totalChildren0To14 > 0
       ? Math.min(150, Math.round((totalEduPlacesAfter / totalChildren0To14) * 100))
       : 100;
-
-  // ---------------------------------------------------------------------------
-  // 2. ZIELEŃ MIEJSKA I SPORT
-  // ---------------------------------------------------------------------------
+  
+  // 2. URBAN GREENERY AND SPORT
   const pocketParksBefore: number = rawGrn?.pocketParksCount ?? 0;
   const pocketParksAfter = pocketParksBefore + Math.round(levers.addedPocketParks);
   const cityParksBefore: number = rawGrn?.cityParksCount ?? 0;
@@ -245,10 +240,8 @@ export function calculateSimulationImpact(
   const sportsFacilitiesBefore: number =
     (rawGrn?.schoolSportsFacilitiesCount ?? 0) + (rawGrn?.schoolSwimmingPoolsCount ?? 0);
   const sportsFacilitiesAfter = sportsFacilitiesBefore + Math.round(levers.addedSchoolSports);
-
-  // ---------------------------------------------------------------------------
-  // 3. KOMUNIKACJA I ROWER (KMK / ZTP)
-  // ---------------------------------------------------------------------------
+  
+  // 3. TRANSPORT AND BICYCLES (KMK / ZTP)
   const busStopsBefore: number = rawMob?.busStopsCount ?? 0;
   const busStopsAfter = busStopsBefore + Math.round(levers.addedBusStops);
   const tramStopsBefore: number = rawMob?.tramStopsCount ?? 0;
@@ -271,10 +264,8 @@ export function calculateSimulationImpact(
   const bikeRacksBefore: number = rawMob?.bikeRacksCount ?? 0;
   const bikeRacksAfter =
     bikeRacksBefore + Math.round(levers.addedParkAndRide * BIKE_RACKS_PER_HUB);
-
-  // ---------------------------------------------------------------------------
-  // 4. KULTURA I SENIORZY (65+ - STAN AKTUALNY NA ŻYWO)
-  // ---------------------------------------------------------------------------
+  
+  // 4. CULTURE AND SENIORS (65+ – CURRENT STATUS, LIVE)
   const seniorsCurrent: number = rawD?.age65Plus ?? rawD?.age65plus ?? 0;
   const casCountBefore: number = rawCult?.seniorActivityCentersCount ?? 0;
   const casCountAfter = casCountBefore + Math.round(levers.addedCasCenters);
@@ -287,10 +278,8 @@ export function calculateSimulationImpact(
   const librariesAfter = librariesBefore + Math.round(levers.addedLibraries);
   const culturalCentersBefore: number = rawCult?.culturalCentersCount ?? 0;
   const culturalCentersAfter = culturalCentersBefore + Math.round(levers.addedCulturalCenters);
-
-  // ---------------------------------------------------------------------------
-  // 5. PRZELICZENIE 8 FILARÓW JAKOŚCI ŻYCIA I POZYCJI W RANKINGU (W CZASIE RZECZYWISTYM)
-  // ---------------------------------------------------------------------------
+  
+  // 5. CALCULATION OF THE 8 PILLARS OF QUALITY OF LIFE AND RANKING POSITION (IN REAL TIME)
   const baseScores = d.scores;
   const beforeComposite = computeCompositeIndex(baseScores);
 
@@ -299,7 +288,7 @@ export function calculateSimulationImpact(
     weightedQualityOfLifeIndex: beforeComposite,
   };
 
-  // Wpływ na Filar Edukacji i Opieki (0-100 pkt)
+  // Impact on the Education and Care Pillar (0–100 points)
   const eduBoost =
     levers.addedNurseries * 2.8 +
     levers.addedKindergartens * 2.2 +
@@ -307,7 +296,7 @@ export function calculateSimulationImpact(
     levers.addedParentClubs * 1.4;
   const educationAfter = clampScore(baseScores.educationScore + eduBoost);
 
-  // Wpływ na Filar Zieleni i Rekreacji (0-100 pkt)
+  // Impact on the Greenery and Recreation Pillar (0–100 pts)
   const greenBoost =
     levers.addedPocketParks * 1.6 +
     levers.addedCityParks * 3.8 +
@@ -315,7 +304,7 @@ export function calculateSimulationImpact(
     addedGreenM2PerCapita * 0.35;
   const greeneryAfter = clampScore(baseScores.greeneryScore + greenBoost);
 
-  // Wpływ na Filar Komunikacji i Mobilności (0-100 pkt)
+  // Impact on the Communication and Mobility Pillar (0–100 points)
   const mobilityBoost =
     levers.addedBusStops * 1.1 +
     levers.addedTramStops * 2.4 +
@@ -323,7 +312,7 @@ export function calculateSimulationImpact(
     levers.addedParkAndRide * 1.8;
   const mobilityAfter = clampScore(baseScores.mobilityScore + mobilityBoost);
 
-  // Wpływ na Filar Kultury i Seniorów (0-100 pkt)
+  // Impact on the Culture and Seniors Pillar (0–100 pts)
   const cultureBoost =
     levers.addedCasCenters * 3.2 +
     levers.addedLibraries * 2.2 +
@@ -331,7 +320,7 @@ export function calculateSimulationImpact(
     levers.addedParentClubs * 0.6;
   const cultureAfter = clampScore(baseScores.cultureAndSeniorScore + cultureBoost);
 
-  // Wpływ na Filar Środowiska i Mikroklimatu (nowa zieleń i transport niskoemisyjny)
+  // Impact on the Environment and Microclimate Pillar (new greenery and low-emission transport)
   const envBoost =
     levers.addedPocketParks * 0.45 +
     levers.addedCityParks * 1.3 +
@@ -339,7 +328,7 @@ export function calculateSimulationImpact(
     levers.addedTramStops * 0.35;
   const environmentAfter = clampScore(baseScores.environmentScore + envBoost);
 
-  // Wpływ na Filar Potencjału Demograficznego (przyciąganie rodzin i mieszkańców dzięki nowej infrastrukturze)
+  // Impact on the Demographic Potential Pillar (attracting families and residents through new infrastructure)
   const vitalityBoost =
     (levers.addedNurseries + levers.addedKindergartens + levers.addedPrimarySchools) * 0.9 +
     levers.addedParentClubs * 0.5 +
@@ -348,7 +337,7 @@ export function calculateSimulationImpact(
     (levers.addedCasCenters + levers.addedLibraries + levers.addedCulturalCenters) * 0.45;
   const vitalityAfter = clampScore(baseScores.demographicVitalityScore + vitalityBoost);
 
-  // Wpływ na Bezpieczeństwo (nowe ścieżki rowerowe DDR, boiska szkolne, przystanki)
+  // Impact on Safety (new bicycle paths, school sports grounds, bus stops)
   const safetyBoost =
     levers.addedBikeLanesKm * 0.35 +
     levers.addedSchoolSports * 0.25 +
@@ -393,7 +382,7 @@ export function calculateSimulationImpact(
     weightedQualityOfLifeIndex: Number((afterComposite - beforeComposite).toFixed(1)),
   };
 
-  // Pozycja w rankingu 18 dzielnic przed i po symulacji
+  // Ranking position of 18 districts before and after the simulation
   let rankBefore = 1;
   let rankAfter = 1;
   if (allDistrictsDetails && allDistrictsDetails.length > 0) {
@@ -431,7 +420,7 @@ export function calculateSimulationImpact(
       deltas,
       rankBefore,
       rankAfter,
-      rankDelta: rankBefore - rankAfter, // dodatnia wartość = awans w górę rankingu
+      rankDelta: rankBefore - rankAfter, // positive value = move up in the rankings
     },
     age0To3_2028: c03,
     targetNurseryDemand2028: c03,

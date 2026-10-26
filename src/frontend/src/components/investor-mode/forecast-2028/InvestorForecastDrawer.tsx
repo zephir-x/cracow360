@@ -1,9 +1,10 @@
 ﻿import {
   Baby,
-  Compass,
   GraduationCap,
+  Scale,
   School,
   Sparkles,
+  Users,
   X,
 } from 'lucide-react';
 import type React from 'react';
@@ -55,7 +56,7 @@ export function InvestorForecastDrawer({
             <div className="flex items-start justify-between gap-4 border-b border-slate-100 pb-4">
               <div className="space-y-1">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-900">
-                  <Compass className="w-3.5 h-3.5 text-blue-600" />
+                  <Sparkles className="w-3.5 h-3.5 text-blue-600" />
                   {labels.drawerBadge}
                 </div>
                 <h3 className="text-xl sm:text-2xl font-black text-slate-900 tracking-tight">
@@ -84,7 +85,7 @@ export function InvestorForecastDrawer({
               </div>
             </div>
 
-            {/* 1. Core Educational & Childcare Strategic Recommendation (Trilingual: PL, EN, UA) */}
+            {/* 1. Core Educational & Childcare Strategic Recommendation */}
             <div className="rounded-2xl bg-linear-to-r from-blue-600 via-indigo-600 to-blue-700 text-white p-5 sm:p-6 shadow-md border border-blue-400/40 space-y-2.5">
               <div className="flex items-center gap-2 text-xs font-bold text-sky-200 tracking-wide uppercase">
                 <GraduationCap className="w-4 h-4 text-sky-300" />
@@ -99,7 +100,7 @@ export function InvestorForecastDrawer({
             <div className="p-5 rounded-2xl bg-white border border-slate-200/90 shadow-xs space-y-3.5">
               <div className="flex items-center justify-between">
                 <h4 className="text-xs font-extrabold uppercase tracking-wider text-slate-700 flex items-center gap-1.5">
-                  <Sparkles className="w-4 h-4 text-blue-600" />
+                  <Users className="w-4 h-4 text-blue-600" />
                   {labels.demographics2028Title}
                 </h4>
                 <span className="text-xs text-slate-500 font-semibold">
@@ -178,7 +179,7 @@ export function InvestorForecastDrawer({
                 <div className="p-4 rounded-2xl bg-linear-to-br from-indigo-50/70 via-white to-slate-50/90 border border-indigo-200/90 flex flex-col justify-between shadow-xs">
                   <div>
                     <div className="font-bold text-slate-900 mb-0.5 flex items-center gap-1.5">
-                      <Sparkles className="w-4 h-4 text-indigo-600 inline shrink-0" />
+                      <Scale className="w-4 h-4 text-indigo-600 inline shrink-0" />
                       <span>{labels.totalSummaryTitle}: {data.totalChildren2028}</span>
                     </div>
                     <div className="text-[11px] text-slate-500">

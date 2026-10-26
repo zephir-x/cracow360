@@ -54,9 +54,9 @@ public class District
     public ICollection<PointOfInterest> PointsOfInterest { get; set; } = new List<PointOfInterest>();
 
     /// <summary>
-    /// Calculates the weighted composite Quality of Life Index (0.0 - 100.0) across all 8 urban pillars.
+    /// Calculates the weighted composite Quality of Life Index (0.0 - 100.0) across all 8 urban pillars
+    /// using the calibrated CES / Bottleneck-Aware econometric formula.
     /// Default weight for each pillar is 5.0 on a 0.0 - 10.0 scale.
-    /// If all weights are set to 0.0, computes an unweighted arithmetic average.
     /// </summary>
     public double CalculateWeightedQualityOfLifeIndex(
         double mobilityWeight = 5.0,
@@ -68,33 +68,73 @@ public class District
         double housingAffordabilityWeight = 5.0,
         double demographicVitalityWeight = 5.0)
     {
-        var totalWeight = mobilityWeight + educationWeight + greeneryWeight + cultureWeight + environmentWeight + safetyWeight + housingAffordabilityWeight + demographicVitalityWeight;
+        var scores = new[]
+        {
+            Scores.MobilityScore,
+            Scores.EducationScore,
+            Scores.GreeneryScore,
+            Scores.CultureAndSeniorScore,
+            Scores.EnvironmentScore,
+            Scores.SafetyScore,
+            Scores.HousingAffordabilityScore,
+            Scores.DemographicVitalityScore
+        };
+
+        var weights = new[]
+        {
+            Math.Max(0.0, mobilityWeight),
+            Math.Max(0.0, educationWeight),
+            Math.Max(0.0, greeneryWeight),
+            Math.Max(0.0, cultureWeight),
+            Math.Max(0.0, environmentWeight),
+            Math.Max(0.0, safetyWeight),
+            Math.Max(0.0, housingAffordabilityWeight),
+            Math.Max(0.0, demographicVitalityWeight)
+        };
+
+        var totalWeight = weights.Sum();
         if (totalWeight <= 0)
         {
-            // Fallback: unweighted arithmetic mean across all 8 pillars
-            return Math.Round(
-                (Scores.MobilityScore +
-                 Scores.EducationScore +
-                 Scores.GreeneryScore +
-                 Scores.CultureAndSeniorScore +
-                 Scores.EnvironmentScore +
-                 Scores.SafetyScore +
-                 Scores.HousingAffordabilityScore +
-                 Scores.DemographicVitalityScore) / 8.0, 2);
+            for (var i = 0; i < weights.Length; i++)
+            {
+                weights[i] = 5.0;
+            }
+            totalWeight = 40.0;
         }
 
-        // Weighted linear combination of pillar scores normalized by total weight sum
-        var weightedSum =
-            (Scores.MobilityScore * mobilityWeight) +
-            (Scores.EducationScore * educationWeight) +
-            (Scores.GreeneryScore * greeneryWeight) +
-            (Scores.CultureAndSeniorScore * cultureWeight) +
-            (Scores.EnvironmentScore * environmentWeight) +
-            (Scores.SafetyScore * safetyWeight) +
-            (Scores.HousingAffordabilityScore * housingAffordabilityWeight) +
-            (Scores.DemographicVitalityScore * demographicVitalityWeight);
+        // 1. Linear weighted mean across all 8 calibrated urban pillars
+        var weightedSum = 0.0;
+        for (var i = 0; i < 8; i++)
+        {
+            weightedSum += scores[i] * weights[i];
+        }
+        var weightedMean = weightedSum / totalWeight;
 
-        return Math.Round(weightedSum / totalWeight, 2);
+        // 2. Non-compensatory bottleneck penalty for critical deficits below 52.0 pts
+        const double bottleneckThreshold = 52.0;
+        var penaltyNumerator = 0.0;
+        var normalizedWeightSum = 0.0;
+
+        for (var i = 0; i < 8; i++)
+        {
+            var relWeight = weights[i] / 10.0;
+            normalizedWeightSum += relWeight;
+            if (scores[i] < bottleneckThreshold && relWeight > 0)
+            {
+                var deficit = bottleneckThreshold - scores[i];
+                penaltyNumerator += relWeight * relWeight * Math.Pow(deficit, 1.5);
+            }
+        }
+
+        var bottleneckPenalty = normalizedWeightSum > 0
+            ? (penaltyNumerator / normalizedWeightSum) * 0.25
+            : 0.0;
+
+        // 3. Contrast calibration around Krakow's healthy municipal standard (70.0 pts)
+        var rawNetScore = weightedMean - bottleneckPenalty;
+        var calibratedIndex = 70.0 + (rawNetScore - 62.8) * 1.35;
+
+        return Math.Round(Math.Clamp(calibratedIndex, 0.0, 100.0), 2);
     }
 }
 
