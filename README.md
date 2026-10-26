@@ -17,6 +17,6 @@ dotnet run --project src/backend/Cracow360.Api/Cracow360.Api.csproj
 # 2. Frontend (React + Vite -> http://localhost:5173)
 npm --prefix src/frontend run dev
 
-# 3. (Opcjonalnie) Przeglądarka bazy SQLite w Dockerze (-> http://localhost:8080)
+# 3. (Opcjonalnie) Przeglądarka bazy SQLite w Dockerze (-> http://localhost:8080) - docker-compose.yml do modyfikacji według instrukcji
 docker compose up -d sqlite-db
 ```

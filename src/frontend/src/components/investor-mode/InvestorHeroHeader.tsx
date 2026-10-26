@@ -16,6 +16,7 @@ import { cracow360Api } from '../../api/client';
 import { useTranslation } from '../../i18n/I18nContext';
 import { getInvestorForecastLabels } from '../../i18n/investorForecastI18n';
 import type { DistrictSummaryDto } from '../../types/contracts';
+import { mapDistrictForecastData } from './forecast-2028/investorCalculations';
 import { InvestorCapabilitiesGrid } from './InvestorCapabilitiesGrid';
 
 export interface InvestorHeroHeaderProps {
@@ -28,69 +29,80 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
   const labels = useMemo(() => getInvestorForecastLabels(language), [language]);
   const [showCapabilities, setShowCapabilities] = useState<boolean>(false);
 
-  // Dynamic statistics for official & investor mode (harmonized 100% with citywide baseline)
-  const [seniorsTotal, setSeniorsTotal] = useState<number>(161384);
-  const [totalEduCarePlaces, setTotalEduCarePlaces] = useState<number>(119016);
-  const [schoolsSharePct, setSchoolsSharePct] = useState<number>(61);
-  const [avgPriceM2, setAvgPriceM2] = useState<number>(14794);
-  const [b2bHotspotsCount, setB2bHotspotsCount] = useState<number>(3);
-  const [b2bHotspotDistrictsStr, setB2bHotspotDistrictsStr] = useState<string>('IV, VIII i XIII');
+  // Dynamic statistics for official & investor mode (0 / '—' when database is disconnected)
+  const [seniorsTotal, setSeniorsTotal] = useState<number>(0);
+  const [seniorsSharePct, setSeniorsSharePct] = useState<number>(0);
+  const [totalEduCarePlaces, setTotalEduCarePlaces] = useState<number>(0);
+  const [schoolsSharePct, setSchoolsSharePct] = useState<number>(0);
+  const [avgPriceM2, setAvgPriceM2] = useState<number>(0);
+  const [b2bHotspotsCount, setB2bHotspotsCount] = useState<number>(0);
+  const [b2bHotspotDistrictsStr, setB2bHotspotDistrictsStr] = useState<string>('—');
 
   useEffect(() => {
     let cancelled = false;
-    if (!districts || districts.length === 0) return;
+    if (!districts || districts.length === 0) {
+      setSeniorsTotal(0);
+      setSeniorsSharePct(0);
+      setTotalEduCarePlaces(0);
+      setSchoolsSharePct(0);
+      setAvgPriceM2(0);
+      setB2bHotspotsCount(0);
+      setB2bHotspotDistrictsStr('—');
+      return;
+    }
 
     Promise.all(districts.map((d) => cracow360Api.getDistrictDetails(d.districtId)))
       .then((detailsList) => {
         if (cancelled) return;
         let sumSeniors = 0;
+        let sumPopulation = 0;
         let sumCarePlaces = 0;
         let sumKinderPlaces = 0;
         let sumSchoolCapacity = 0;
         let sumPrice = 0;
+        let priceCount = 0;
         const highRomans: string[] = [];
 
         detailsList.forEach((d) => {
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const dem = d.demographics as any;
-          const edu = d.educationAndCare as any;
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const hst = d.housingMarket as any;
-          const fcast = d.forecastsAndB2B as any;
+          const mappedForecast = mapDistrictForecastData(d, 'pl');
 
-          const seniors = dem?.age65Plus ?? dem?.age65plus ?? 0;
+          const seniors = dem?.age65Plus ?? dem?.age65plus ?? dem?.seniors65Plus ?? 0;
+          const pop = dem?.totalPopulation ?? 0;
           sumSeniors += seniors;
+          sumPopulation += pop;
 
-          const nurseryPlaces = edu?.nurseriesCapacityTotal ?? edu?.careCapacityTotal ?? 0;
-          const kinderPlaces = edu?.kindergartensPlacesTotal ?? 0;
-          const schoolPlaces = edu?.primarySchoolsCapacityTotal ?? 0;
-
-          sumCarePlaces += nurseryPlaces;
-          sumKinderPlaces += kinderPlaces;
-          sumSchoolCapacity += schoolPlaces;
+          sumCarePlaces += mappedForecast.carePlaces0to3;
+          sumKinderPlaces += mappedForecast.kindergartenPlacesTotal;
+          sumSchoolCapacity += mappedForecast.primarySchoolStudentsTotal;
 
           const avgPrice = hst?.avgPricePerM2 ?? 0;
-          if (avgPrice > 0) sumPrice += avgPrice;
+          if (avgPrice > 0) {
+            sumPrice += avgPrice;
+            priceCount++;
+          }
 
-          if (fcast?.nurseryInvestmentPotentialB2B === 'HIGH') {
+          if (mappedForecast.nurseryPotentialB2B === 'HIGH') {
             highRomans.push(d.districtRoman);
           }
         });
 
-        // 13,328 (nurseries) + 32,888 (kindergartens) + 72,800 (schools) = 119,016 places
-        // 119,016 places - 101,498 children = +17,518 balance (exact match with parent mode!)
         const totalPlaces = sumCarePlaces + sumKinderPlaces + sumSchoolCapacity;
 
-        if (sumSeniors > 0) setSeniorsTotal(sumSeniors);
-        if (totalPlaces > 0) {
-          setTotalEduCarePlaces(totalPlaces);
-          setSchoolsSharePct(Math.round((sumSchoolCapacity / totalPlaces) * 100));
-        }
-        if (sumPrice > 0 && detailsList.length > 0) {
-          setAvgPriceM2(Math.round(sumPrice / detailsList.length));
-        }
-        if (highRomans.length > 0) {
-          setB2bHotspotsCount(highRomans.length);
-          setB2bHotspotDistrictsStr(highRomans.join(', '));
-        }
+        setSeniorsTotal(sumSeniors);
+        setSeniorsSharePct(
+          sumPopulation > 0 ? Number(((sumSeniors / sumPopulation) * 100).toFixed(1)) : 0
+        );
+        setTotalEduCarePlaces(totalPlaces);
+        setSchoolsSharePct(
+          totalPlaces > 0 ? Math.round((sumSchoolCapacity / totalPlaces) * 100) : 0
+        );
+        setAvgPriceM2(priceCount > 0 ? Math.round(sumPrice / priceCount) : 0);
+        setB2bHotspotsCount(highRomans.length);
+        setB2bHotspotDistrictsStr(highRomans.length > 0 ? highRomans.join(', ') : '—');
       })
       .catch((err) => {
         console.error('Failed to calculate investor hero dynamic stats:', err);
@@ -102,6 +114,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
   }, [districts]);
 
   const seniorsFormatted = useMemo(() => {
+    if (seniorsTotal <= 0) return '0';
     const inThousands = (seniorsTotal / 1000).toFixed(1);
     if (language === 'en') return `${inThousands}k`;
     if (language === 'ua') return `${inThousands} тис.`;
@@ -109,6 +122,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
   }, [seniorsTotal, language]);
 
   const eduPlacesFormatted = useMemo(() => {
+    if (totalEduCarePlaces <= 0) return '0';
     const inThousands = (totalEduCarePlaces / 1000).toFixed(1);
     if (language === 'en') return `${inThousands}k`;
     if (language === 'ua') return `${inThousands} тис.`;
@@ -132,11 +146,11 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
 
   return (
     <>
-      {/* Hero Banner – Deep Navy, Royal Blue & Cyan with civic econometric backdrop */}
-      <section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#071d36] via-[#124294] to-[#0284c7] text-white shadow-2xl border border-blue-400/30">
+      {/* Hero Banner – Unified Kraków Blue & Royal Indigo palette matching all other subpages */}
+      <section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white shadow-2xl shadow-blue-950/15 border border-blue-400/30">
         {/* Animated Background Vector Shapes */}
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
-          <div className="absolute -top-24 -right-20 w-96 h-96 rounded-full bg-sky-300/15 blur-3xl" />
+          <div className="absolute -top-24 -right-20 w-96 h-96 rounded-full bg-sky-300/20 blur-3xl animate-pulse-glow" />
           <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-indigo-400/20 blur-3xl" />
 
           {/* Econometric & Civic Infrastructure Vector Shapes (Positioned gracefully in upper half) */}
@@ -230,7 +244,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
                   {labels.heroStatSeniorsLabel}
                 </div>
                 <div className="text-[11px] text-slate-500 truncate">
-                  {labels.heroStatSeniorsSub}
+                  {labels.heroStatSeniorsSub(seniorsSharePct)}
                 </div>
               </div>
             </div>
@@ -260,7 +274,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
               </div>
               <div className="min-w-0">
                 <div className="text-xl font-black text-sky-700 leading-none">
-                  {avgPriceM2.toLocaleString()} zł/m²
+                  {avgPriceM2 > 0 ? `${avgPriceM2.toLocaleString()} zł/m²` : '0 zł/m²'}
                 </div>
                 <div className="text-xs font-bold text-slate-800 mt-1 truncate">
                   {labels.heroStatPriceLabel}
@@ -271,7 +285,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
               </div>
             </div>
 
-            {/* 4. High Priority B2B Zones (100% dynamic district list) */}
+            {/* 4. Urgent Expansion Districts (100% synchronized with Section 2) */}
             <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-violet-50 border border-violet-200 flex items-center justify-center text-violet-600 shrink-0">
                 <TrendingUp className="w-5 h-5" />

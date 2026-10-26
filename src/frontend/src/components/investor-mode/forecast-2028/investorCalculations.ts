@@ -3,6 +3,36 @@ import type { Language } from '../../../i18n/types';
 import { getEducationalRecommendation as getEduRec } from '../../../i18n/investorForecastI18n';
 import type { InvestorDistrictForecastData, InvestorMacro2028 } from './types';
 
+export function determineEducationExpansionPriority(
+  nurseryBalance2028: number,
+  kindergartenBalance2028: number,
+  schoolPlacesBalance2028: number,
+  totalBalance2028: number,
+  totalCoveragePct2028: number
+): 'HIGH' | 'MEDIUM' | 'LOW' {
+  // HIGH ("Pilna potrzeba rozbudowy"): negative total 0-14 balance OR severe deficit in nurseries (<= -800) or schools (<= -400)
+  if (
+    totalBalance2028 < 0 ||
+    nurseryBalance2028 <= -800 ||
+    schoolPlacesBalance2028 <= -400
+  ) {
+    return 'HIGH';
+  }
+
+  // LOW ("Dobra dostępność miejsc"): high overall coverage (>= 135%), no school/kindergarten deficit, and mild/positive nursery balance (>= -350)
+  if (
+    totalCoveragePct2028 >= 135 &&
+    schoolPlacesBalance2028 >= 0 &&
+    kindergartenBalance2028 >= 0 &&
+    nurseryBalance2028 >= -350
+  ) {
+    return 'LOW';
+  }
+
+  // MEDIUM ("Umiarkowane zapotrzebowanie"): positive overall balance, but moderate gap in one of the age brackets
+  return 'MEDIUM';
+}
+
 export function getEducationalRecommendation(
   nurseryPotential: 'HIGH' | 'MEDIUM' | 'LOW',
   nurseryBal2028: number,
@@ -28,33 +58,23 @@ export function calculateInvestorMacro2028(details: DistrictDetailsDto[]): Inves
   let currentToddlers = 0;
   let projectedPreschoolers = 0;
   let currentPreschoolers = 0;
+  let projectedPrimaryStudents = 0;
   let currentPrimaryStudents = 0;
   let projectedNurseryBalance = 0;
   let highPotentialCount = 0;
 
   details.forEach((d) => {
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const rawD = d.demographics as any;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    const rawF = d.forecastsAndB2B as any;
+    const mapped = mapDistrictForecastData(d, 'pl');
 
-    const c03 = rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
-    const c46 = rawD?.age4To6 ?? rawD?.age4to6 ?? 0;
-    const c714 = rawD?.age7To14 ?? rawD?.age7to14 ?? 0;
+    currentToddlers += mapped.age0To3_current;
+    projectedToddlers += mapped.age0To3_2028;
+    currentPreschoolers += mapped.age4To6_current;
+    projectedPreschoolers += mapped.age4To6_2028;
+    currentPrimaryStudents += mapped.age7To14_current;
+    projectedPrimaryStudents += mapped.age7To14_2028;
+    projectedNurseryBalance += mapped.nurseryBalance2028;
 
-    const f03 = rawF?.forecastedAge0To3_2028 ?? rawF?.forecastedAge0to3_2028 ?? c03;
-    const f46 = rawF?.forecastedAge4To6_2028 ?? rawF?.forecastedAge4to6_2028 ?? c46;
-    const fBal = rawF?.forecastedCarePlacesBalance_2028 ?? rawF?.forecastedCarePlacesBalance2028 ?? 0;
-    const b2b = rawF?.nurseryInvestmentPotentialB2B ?? 'LOW';
-
-    currentToddlers += c03;
-    projectedToddlers += f03;
-    currentPreschoolers += c46;
-    projectedPreschoolers += f46;
-    currentPrimaryStudents += c714;
-    projectedNurseryBalance += fBal;
-
-    if (b2b === 'HIGH') {
+    if (mapped.nurseryPotentialB2B === 'HIGH') {
       highPotentialCount++;
     }
   });
@@ -62,18 +82,25 @@ export function calculateInvestorMacro2028(details: DistrictDetailsDto[]): Inves
   const toddlerGrowthPct =
     currentToddlers > 0
       ? Number((((projectedToddlers - currentToddlers) / currentToddlers) * 100).toFixed(1))
-      : 0.8;
+      : 0;
 
   const preschoolGrowthPct =
     currentPreschoolers > 0
       ? Number((((projectedPreschoolers - currentPreschoolers) / currentPreschoolers) * 100).toFixed(1))
-      : -21.7;
+      : 0;
 
-  const totalKidsCity = currentToddlers + currentPreschoolers + currentPrimaryStudents;
+  const primaryStudentsGrowthPct =
+    currentPrimaryStudents > 0
+      ? Number(
+          (((projectedPrimaryStudents - currentPrimaryStudents) / currentPrimaryStudents) * 100).toFixed(1)
+        )
+      : 0;
+
+  const totalKids2028 = projectedToddlers + projectedPreschoolers + projectedPrimaryStudents;
   const primarySharePct =
-    totalKidsCity > 0
-      ? Number(((currentPrimaryStudents / totalKidsCity) * 100).toFixed(1))
-      : 56.7;
+    totalKids2028 > 0
+      ? Number(((projectedPrimaryStudents / totalKids2028) * 100).toFixed(1))
+      : 0;
 
   return {
     projectedToddlers2028: projectedToddlers,
@@ -82,7 +109,9 @@ export function calculateInvestorMacro2028(details: DistrictDetailsDto[]): Inves
     projectedPreschoolers2028: projectedPreschoolers,
     currentPreschoolers,
     preschoolGrowthPct,
+    projectedPrimaryStudents2028: projectedPrimaryStudents,
     currentPrimaryStudents,
+    primaryStudentsGrowthPct,
     primarySharePct,
     projectedNurseryBalance2028: projectedNurseryBalance,
     highPotentialDistrictsCount: highPotentialCount,
@@ -106,7 +135,6 @@ export function mapDistrictForecastData(
 
   const f03: number = rawF?.forecastedAge0To3_2028 ?? rawF?.forecastedAge0to3_2028 ?? c03;
   const f46: number = rawF?.forecastedAge4To6_2028 ?? rawF?.forecastedAge4to6_2028 ?? c46;
-  const fBal: number = rawF?.forecastedCarePlacesBalance_2028 ?? rawF?.forecastedCarePlacesBalance2028 ?? 0;
 
   // Econometric demographic projection for 7-14 based on 3-year district growth trends
   const growthRate3Yr: number = rawD?.populationGrowthRate3YrPct ?? 0;
@@ -114,7 +142,11 @@ export function mapDistrictForecastData(
   const studentDelta: number = f714 - c714;
 
   const carePlaces0to3: number = rawEdu?.totalCarePlaces0to3 ?? rawEdu?.totalCarePlaces0To3 ?? 0;
-  const kindergartenPlacesTotal: number = rawEdu?.kindergartenPlacesTotal ?? rawEdu?.kindergartensPlacesTotal ?? 0;
+  // Consistent 100% cohort balance so 0-3 + 4-6 + 7-14 balances sum identically to totalBalance2028
+  const nurseryBalance2028: number = carePlaces0to3 - f03;
+
+  const kindergartenPlacesTotal: number =
+    rawEdu?.kindergartenPlacesTotal ?? rawEdu?.kindergartensPlacesTotal ?? 0;
   const kindergartenBalance2028: number = kindergartenPlacesTotal - f46;
 
   const primarySchoolsCount: number = rawEdu?.primarySchoolsCount ?? 0;
@@ -131,18 +163,25 @@ export function mapDistrictForecastData(
   const totalBalance0To14 = totalCapacity0To14 - totalChildren0To14;
   const totalBalance2028 = totalCapacity0To14 - totalChildren2028;
   const totalCoveragePct0To14 =
-    totalChildren0To14 > 0 ? Math.round((totalCapacity0To14 / totalChildren0To14) * 100) : 100;
+    totalChildren0To14 > 0 ? Math.round((totalCapacity0To14 / totalChildren0To14) * 100) : 0;
   const totalCoveragePct2028 =
-    totalChildren2028 > 0 ? Math.round((totalCapacity0To14 / totalChildren2028) * 100) : 100;
+    totalChildren2028 > 0 ? Math.round((totalCapacity0To14 / totalChildren2028) * 100) : 0;
 
-  const nurseryPotentialB2B = (rawF?.nurseryInvestmentPotentialB2B as 'HIGH' | 'MEDIUM' | 'LOW') || 'LOW';
+  const nurseryPotentialB2B = determineEducationExpansionPriority(
+    nurseryBalance2028,
+    kindergartenBalance2028,
+    schoolPlacesBalance2028,
+    totalBalance2028,
+    totalCoveragePct2028
+  );
+
   const seniorDeficit = (rawF?.seniorInfrastructureDeficit as 'HIGH' | 'MEDIUM' | 'LOW') || 'LOW';
   const greenDeficit = (rawF?.greenSpaceDeficit as 'HIGH' | 'MEDIUM' | 'LOW') || 'LOW';
   const recommendedAction: string = rawF?.recommendedMunicipalAction ?? '';
 
   const educationalAction = getEducationalRecommendation(
     nurseryPotentialB2B,
-    fBal,
+    nurseryBalance2028,
     kindergartenBalance2028,
     schoolPlacesBalance2028,
     avgStudentsPerClass,
@@ -157,7 +196,7 @@ export function mapDistrictForecastData(
     age0To3_current: c03,
     age0To3_2028: f03,
     toddlerDelta: f03 - c03,
-    nurseryBalance2028: fBal,
+    nurseryBalance2028,
     kindergartenPlacesTotal,
     age4To6_current: c46,
     age4To6_2028: f46,

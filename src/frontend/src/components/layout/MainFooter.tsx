@@ -13,7 +13,7 @@ export interface MainFooterProps {
 /// Fully localized with dynamic plural forms for districts and points of interest.
 /// </summary>
 export function MainFooter({ onSelectTab }: MainFooterProps) {
-  const { t, formatWithPlural } = useTranslation();
+  const { t, language, formatWithPlural } = useTranslation();
 
   // Live system diagnostic metadata fetched from backend Minimal API
   const [systemInfo, setSystemInfo] = useState<SystemHelloDto | null>(null);
@@ -27,7 +27,7 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
         if (!cancelled) setSystemInfo(data);
       })
       .catch(() => {
-        // Graceful fallback when API is still booting
+        if (!cancelled) setSystemInfo(null);
       });
     return () => {
       cancelled = true;
@@ -39,8 +39,16 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const districtsCount = systemInfo?.seededDistrictsCount ?? 18;
-  const poisCount = systemInfo?.seededPoisCount ?? 913;
+  const districtsCount = systemInfo?.seededDistrictsCount ?? 0;
+  const poisCount = systemInfo?.seededPoisCount ?? 0;
+  const isDbConnected = Boolean(systemInfo && districtsCount > 0);
+
+  const offlineDataLabel =
+    language === 'en'
+      ? 'Database connection unavailable:'
+      : language === 'ua'
+      ? 'Немає з’єднання з базою даних:'
+      : 'Brak połączenia z bazą danych:';
 
   return (
     <footer className="mt-14 border-t border-blue-100 bg-white/90 backdrop-blur-md">
@@ -62,9 +70,13 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
                 </span>
               </div>
               <div className="flex items-center gap-2 mt-1 text-[11px] text-slate-500">
-                <span className="inline-block w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                <span className="font-medium text-emerald-700">
-                  {t.footer.verifiedData}{' '}
+                <span
+                  className={`inline-block w-2 h-2 rounded-full ${
+                    isDbConnected ? 'bg-emerald-500 animate-pulse' : 'bg-rose-500'
+                  }`}
+                />
+                <span className={`font-medium ${isDbConnected ? 'text-emerald-700' : 'text-rose-600'}`}>
+                  {isDbConnected ? t.footer.verifiedData : offlineDataLabel}{' '}
                   {formatWithPlural(districtsCount, t.footer.districtsPlural)}{' • '}
                   {formatWithPlural(poisCount, t.footer.poisPlural)}
                 </span>

@@ -16,9 +16,9 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Квартальна динаміка транзакційних цін на житлову нерухомість у Кракові',
   },
   'safe-1': {
-    pl: 'Roczna liczba kolizji drogowych, wypadki z udziałem pieszych, wypadki z rannymi w podziale na 18 dzielnic',
-    en: 'Annual road traffic collisions, pedestrian-involved accidents, injury accidents across 18 districts',
-    ua: 'Річна кількість ДТП, аварії за участю пішоходів, ДТП із постраждалими у розрізі 18 районів',
+    pl: 'Roczna liczba kolizji drogowych, wypadki z udziałem pieszych, wypadki z rannymi w podziale na dzielnice',
+    en: 'Annual road traffic collisions, pedestrian-involved accidents, injury accidents across districts',
+    ua: 'Річна кількість ДТП, аварії за участю пішоходів, ДТП із постраждалими у розрізі районів',
   },
   'safe-2': {
     pl: 'Łączna liczba interwencji porządkowych, zgłoszenia zakłócania ciszy nocnej i porządku publicznego',
@@ -26,9 +26,9 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Загальна кількість викликів щодо порушення порядку, скарги на порушення нічного спокою та громадського порядку',
   },
   'gis-1': {
-    pl: 'Wektorowe granice Polygon/MultiPolygon 18 dzielnic, powierzchnia administracyjna w km²',
-    en: 'Polygon/MultiPolygon vector boundaries of 18 districts, administrative area in km²',
-    ua: 'Векторні межі Polygon/MultiPolygon 18 районів, адміністративна площа в км²',
+    pl: 'Wektorowe granice Polygon/MultiPolygon dzielnic, powierzchnia administracyjna w km²',
+    en: 'Polygon/MultiPolygon vector boundaries of districts, administrative area in km²',
+    ua: 'Векторні межі Polygon/MultiPolygon районів, адміністративна площа в км²',
   },
   'gis-2': {
     pl: 'Średnioroczne stężenia pyłów PM10 i PM2.5, roczna liczba dni smogowych, mapa hałasu drogowego >65 dB',
@@ -36,14 +36,14 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Середньорічні концентрації пилу PM10 і PM2.5, річна кількість днів зі смогом, карта дорожнього шуму >65 дБ',
   },
   'gis-3': {
-    pl: 'Państwowy rejestr adresowy posesji w Krakowie, transformacja PUWG 1992 (EPSG:2180) do WGS84 dla 646 placówek edukacyjnych i 115 instytucji',
-    en: 'National address register of properties in Krakow, PUWG 1992 (EPSG:2180) to WGS84 transformation for 646 educational facilities and 115 institutions',
-    ua: 'Державний адресний реєстр садиб у Кракові, трансформація PUWG 1992 (EPSG:2180) у WGS84 для 646 навчальних закладів та 115 установ',
+    pl: 'Państwowy rejestr adresowy posesji w Krakowie, transformacja PUWG 1992 (EPSG:2180) do WGS84 dla placówek edukacyjnych i 115 instytucji',
+    en: 'National address register of properties in Krakow, PUWG 1992 (EPSG:2180) to WGS84 transformation for educational facilities and 115 institutions',
+    ua: 'Державний адресний реєстр садиб у Кракові, трансформація PUWG 1992 (EPSG:2180) у WGS84 для навчальних закладів та 115 установ',
   },
   'trans-1': {
-    pl: '1 378 przystanków komunikacji miejskiej (tramwaje i autobusy), gęstość sieci KMK na km²',
-    en: '1,378 public transit stops (trams and buses), KMK network density per km²',
-    ua: '1 378 зупинок громадського транспорту (трамваї та автобуси), густота мережі KMK на км²',
+    pl: 'Przystanki komunikacji miejskiej (tramwaje i autobusy), gęstość sieci KMK na km²',
+    en: 'Public transit stops (trams and buses), KMK network density per km²',
+    ua: 'Зупинки громадського транспорту (трамваї та автобуси), густота мережі KMK на км²',
   },
   'trans-2': {
     pl: 'Długość wydzielonych dróg rowerowych DDR, pasów rowerowych i ciągów pieszo-rowerowych w km',
@@ -91,24 +91,24 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Криті пришкільні басейни та спортивні комплекси, POI SCHOOL_SPORT',
   },
   'gis-4': {
-    pl: 'Wektorowe poligony parków miejskich, lasów komunalnych i rezerwatów przyrody (leisure=park, landuse=forest), precyzyjne centroidy dla 142 obiektów',
-    en: 'Vector polygons of municipal parks, community forests, and nature reserves (leisure=park, landuse=forest), precise centroids for 142 green assets',
-    ua: 'Векторні полігони міських парків, комунальних лісів та природних заповідників (leisure=park, landuse=forest), точні центроїди для 142 об’єктів',
+    pl: 'Wektorowe poligony parków miejskich, lasów komunalnych i rezerwatów przyrody (leisure=park, landuse=forest), precyzyjne centroidy dla obiektów',
+    en: 'Vector polygons of municipal parks, community forests, and nature reserves (leisure=park, landuse=forest), precise centroids for green assets',
+    ua: 'Векторні полігони міських парків, комунальних лісів та природних заповідників (leisure=park, landuse=forest), точні центроїди для об’єктів',
   },
   'gis-5': {
-    pl: 'Miejscowe plany zagospodarowania i lokalizacje kwartałowe dla 44 parków kieszonkowych Zarządu Zieleni Miejskiej',
-    en: 'Local zoning plans and residential block locations for 44 pocket parks managed by the Municipal Greenery Board',
-    ua: 'Місцеві плани просторового планування та квартальні локації для 44 кишенькових парків Управління міських зелених насаджень',
+    pl: 'Miejscowe plany zagospodarowania i lokalizacje kwartałowe dla parków kieszonkowych Zarządu Zieleni Miejskiej',
+    en: 'Local zoning plans and residential block locations for pocket parks managed by the Municipal Greenery Board',
+    ua: 'Місцеві плани просторового планування та квартальні локації для кишенькових парків Управління міських зелених насаджень',
   },
   'cult-1': {
-    pl: '53 aktywne Centra Seniora we wszystkich 18 dzielnicach, adresy, operatorzy NGO, POI SENIOR_CENTER',
-    en: '53 active Senior Activity Centers (CAS) across all 18 districts, addresses, NGO operators, POI SENIOR_CENTER',
-    ua: '53 активні Центри Сеньйорів (CAS) у всіх 18 районах, адреси, оператори NGO, POI SENIOR_CENTER',
+    pl: 'Aktywne Centra Seniora we wszystkich dzielnicach, adresy, operatorzy NGO, POI SENIOR_CENTER',
+    en: 'Active Senior Activity Centers (CAS) across all districts, addresses, NGO operators, POI SENIOR_CENTER',
+    ua: 'Активні Центри Сеньйорів (CAS) у всіх районах, адреси, оператори NGO, POI SENIOR_CENTER',
   },
   'cult-2': {
-    pl: '56 filii Biblioteki Kraków w 18 dzielnicach, księgozbiory, komputeryzacja, POI LIBRARY',
-    en: '56 Krakow Public Library branches across 18 districts, book collections, workstations, POI LIBRARY',
-    ua: '56 філій Бібліотеки Кракова у 18 районах, книжкові фонди, комп’ютеризація, POI LIBRARY',
+    pl: 'Filie Biblioteki Kraków w dzielnicach, księgozbiory, komputeryzacja, POI LIBRARY',
+    en: 'Krakow Public Library branches across districts, book collections, workstations, POI LIBRARY',
+    ua: 'Філії Бібліотеки Кракова у районах, книжкові фонди, комп’ютеризація, POI LIBRARY',
   },
   'cult-3': {
     pl: 'Instytucje kultury, domy kultury, oferta zajęć lokalnych, dotacje podmiotowe',
@@ -116,14 +116,14 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Заклади культури, будинки культури, місцеві гуртки та події, статутні дотації',
   },
   'demo-1': {
-    pl: 'Oficjalna liczba mieszkańców zameldowanych na pobyt stały w 18 dzielnicach (2024–2025)',
-    en: 'Official permanent registered resident counts across 18 districts (2024–2025)',
-    ua: 'Офіційна чисельність постійно зареєстрованих мешканців у 18 районах (2024–2025)',
+    pl: 'Oficjalna liczba mieszkańców zameldowanych na pobyt stały w dzielnicach (2024–2025)',
+    en: 'Official permanent registered resident counts across districts (2024–2025)',
+    ua: 'Офіційна чисельність постійно зареєстрованих мешканців у районах (2024–2025)',
   },
   'demo-2': {
-    pl: 'Populacja czasowa (studenci, pracownicy relokowani) w podziale na 18 dzielnic',
-    en: 'Temporary resident population (students, relocated professionals) across 18 districts',
-    ua: 'Тимчасове населення (студенти, релоковані фахівці) у розрізі 18 районів',
+    pl: 'Populacja czasowa (studenci, pracownicy relokowani) w podziale na dzielnice',
+    en: 'Temporary resident population (students, relocated professionals) across districts',
+    ua: 'Тимчасове населення (студенти, релоковані фахівці) у розрізі районів',
   },
   'demo-3': {
     pl: 'Grupy wieku: 0–3 (żłobkowy), 4–6 (przedszkolny), 7–14 (podstawowy), 15–64 (produkcyjny), 65+ (seniorzy)',
@@ -151,14 +151,14 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Сеньйорське населення, потреба в інфраструктурі догляду та центрах CAS',
   },
   'demo-8': {
-    pl: 'Liczba i odsetek obcokrajowców zameldowanych na pobyt stały w 18 dzielnicach',
-    en: 'Count and percentage of foreign citizens registered permanently in 18 districts',
-    ua: 'Кількість і частка іноземців, зареєстрованих на постійне проживання у 18 районах',
+    pl: 'Liczba i odsetek obcokrajowców zameldowanych na pobyt stały w dzielnicach',
+    en: 'Count and percentage of foreign citizens registered permanently in districts',
+    ua: 'Кількість і частка іноземців, зареєстрованих на постійне проживання у районах',
   },
   'edu-1': {
-    pl: '34 samorządowe żłobki miejskie, pojemność miejsc, lista oczekujących, POI NURSERY_PUBLIC',
-    en: '34 municipal public nurseries, spot capacity, waiting lists, POI NURSERY_PUBLIC',
-    ua: '34 муніципальні комунальні ясла, місткість, списки очікування, POI NURSERY_PUBLIC',
+    pl: 'Samorządowe żłobki miejskie, pojemność miejsc, lista oczekujących, POI NURSERY_PUBLIC',
+    en: 'Municipal public nurseries, spot capacity, waiting lists, POI NURSERY_PUBLIC',
+    ua: 'Муніципальні комунальні ясла, місткість, списки очікування, POI NURSERY_PUBLIC',
   },
   'edu-2': {
     pl: 'Żłobki niesamorządowe na zlecenie GMK, dotowane miejsca opieki maluchów, POI NURSERY_CONTRACTED',
@@ -199,26 +199,6 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     pl: 'Niepubliczne szkoły podstawowe, uzupełniająca baza edukacji wczesnoszkolnej',
     en: 'Private primary schools, complementary early-education registry',
     ua: 'Приватні початкові школи, додаткова база початкової освіти',
-  },
-  'inv-1': {
-    pl: 'Oficjalna prognoza demograficzna UMK/BDK do 2030 r., kohorty wiekowe 0–3, 4–6, 7–14, 65+ w 18 dzielnicach',
-    en: 'Official UMK/BDK demographic forecast to 2030, age cohorts 0–3, 4–6, 7–14, 65+ across 18 districts',
-    ua: 'Офіційний демографічний прогноз UMK/BDK до 2030 р., вікові когорти 0–3, 4–6, 7–14, 65+ у 18 районах',
-  },
-  'inv-2': {
-    pl: 'Standardy kosztorysowe programu Aktywny Maluch (MRPiPS), benchmark CAPEX 30–70 tys. zł/miejsce żłobkowe',
-    en: 'Cost estimation standards of the Active Toddler (MRPiPS) program, CAPEX benchmark 30–70k PLN/nursery place',
-    ua: 'Кошторисні стандарти програми Активний Малюк (MRPiPS), бенчмарк CAPEX 30–70 тис. зл/ясельне місце',
-  },
-  'inv-3': {
-    pl: 'Program Kraków dla Seniora (UMK), standardy grantowe na wyposażenie i uruchomienie CAS (100–150 tys. zł)',
-    en: 'Krakow for Seniors Program (UMK), grant standards for equipping and establishing CAS centers (100–150k PLN)',
-    ua: 'Програма Краків для Сеньйора (UMK), грантові стандарти на облаштування та відкриття центрів CAS (100–150 тис. зл)',
-  },
-  'inv-4': {
-    pl: 'Program Zarządu Zieleni Miejskiej (ZZM) – Ogród Krakowian, nakłady na parki kieszonkowe 1500–3000 m² (250–500 tys. zł)',
-    en: 'Municipal Greenery Board (ZZM) program – Krakowians Garden, pocket park expenditures 1500–3000 m² (250–500k PLN)',
-    ua: 'Програма Управління міських зелених насаджень (ZZM) – Сад Краків’ян, витрати на кишенькові парки 1500–3000 м² (250–500 тис. зл)',
   },
 };
 

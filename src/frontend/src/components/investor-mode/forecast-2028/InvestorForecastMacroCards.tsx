@@ -31,7 +31,7 @@ export function InvestorForecastMacroCards({
         </div>
       </div>
 
-      {/* 2. Projected Preschoolers 2028 (4-6) - Modern Teal instead of yellow/amber */}
+      {/* 2. Projected Preschoolers 2028 (4-6) */}
       <div className="p-5 rounded-3xl border border-slate-200/90 bg-white/95 hover:border-teal-300 hover:shadow-md transition-all shadow-xs flex items-center gap-3.5">
         <div className="w-12 h-12 rounded-2xl bg-teal-50 border border-teal-100/90 text-teal-700 flex items-center justify-center shrink-0 shadow-xs">
           <GraduationCap className="w-6 h-6" />
@@ -49,25 +49,25 @@ export function InvestorForecastMacroCards({
         </div>
       </div>
 
-      {/* 3. Primary Students Demand (7-14) */}
+      {/* 3. Projected Primary Students 2028 (7-14) */}
       <div className="p-5 rounded-3xl border border-slate-200/90 bg-white/95 hover:border-sky-300 hover:shadow-md transition-all shadow-xs flex items-center gap-3.5">
         <div className="w-12 h-12 rounded-2xl bg-sky-50 border border-sky-100/90 text-sky-700 flex items-center justify-center shrink-0 shadow-xs">
           <School className="w-6 h-6" />
         </div>
         <div className="min-w-0">
           <div className="text-2xl font-black text-slate-900 leading-tight">
-            {macro.currentPrimaryStudents.toLocaleString()}
+            {macro.projectedPrimaryStudents2028.toLocaleString()}
           </div>
           <div className="text-xs font-bold text-slate-800 mt-0.5 leading-snug">
             {labels.macroStudentsTitle}
           </div>
           <div className="text-[11px] text-slate-500 font-medium leading-snug">
-            {labels.macroStudentsSub(macro.primarySharePct)}
+            {labels.macroStudentsSub(macro.primaryStudentsGrowthPct)}
           </div>
         </div>
       </div>
 
-      {/* 4. High B2B Investment Priority */}
+      {/* 4. Urgent Expansion Need Districts */}
       <div className="p-5 rounded-3xl border border-slate-200/90 bg-white/95 hover:border-violet-300 hover:shadow-md transition-all shadow-xs flex items-center gap-3.5">
         <div className="w-12 h-12 rounded-2xl bg-violet-50 border border-violet-100/90 text-violet-700 flex items-center justify-center shrink-0 shadow-xs">
           <TrendingUp className="w-6 h-6" />

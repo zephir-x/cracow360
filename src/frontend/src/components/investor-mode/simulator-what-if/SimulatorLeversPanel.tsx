@@ -1,251 +1,550 @@
 ﻿import {
   Baby,
-  Coins,
+  Bike,
+  BookOpen,
+  Building2,
+  Bus,
+  Dumbbell,
+  Flower2,
+  GraduationCap,
+  HeartHandshake,
+  Landmark,
+  LayoutGrid,
   Minus,
+  ParkingSquare,
   Plus,
+  School,
   Sliders,
+  TrainFront,
   Trees,
   Users,
 } from 'lucide-react';
-import type { InvestorSimulatorLabels } from '../../../i18n/investorSimulatorI18n';
-import type { SimulatorInputs } from './types';
+import type React from 'react';
+import { useState } from 'react';
+import type {
+  InvestorSimulatorLabels,
+  LeverItemLabels,
+} from '../../../i18n/investorSimulatorI18n';
+import type { SimulatorImpactMetrics, SimulatorLeversState } from './types';
 
 export interface SimulatorLeversPanelProps {
-  inputs: SimulatorInputs;
-  onChangeInputs: (newInputs: SimulatorInputs) => void;
+  levers: SimulatorLeversState;
+  onChangeLever: (
+    key: keyof SimulatorLeversState,
+    value: number,
+    immediate?: boolean
+  ) => void;
+  impact: SimulatorImpactMetrics;
   labels: InvestorSimulatorLabels;
-  estimatedCapexPln: number;
-  nurseryCapexPln: number;
-  casCapexPln: number;
-  parksCapexPln: number;
+}
+
+type CategoryFilter = 'all' | 'education' | 'mobility' | 'greenery' | 'culture';
+
+interface LeverRowConfig {
+  key: keyof SimulatorLeversState;
+  max: number;
+  icon: React.ReactNode;
+  itemLabels: LeverItemLabels;
+  baselineValue: string;
+  accentColor: 'indigo' | 'emerald' | 'sky' | 'amber';
 }
 
 export function SimulatorLeversPanel({
-  inputs,
-  onChangeInputs,
+  levers,
+  onChangeLever,
+  impact,
   labels,
-  estimatedCapexPln,
-  nurseryCapexPln,
-  casCapexPln,
-  parksCapexPln,
 }: SimulatorLeversPanelProps) {
-  const setNursery = (val: number) => {
-    const clamped = Math.max(0, Math.min(300, val));
-    onChangeInputs({ ...inputs, additionalNurseryPlaces: clamped });
-  };
+  const [activeCategory, setActiveCategory] = useState<CategoryFilter>('all');
 
-  const setCas = (val: number) => {
-    const clamped = Math.max(0, Math.min(3, val));
-    onChangeInputs({ ...inputs, additionalCasCount: clamped });
-  };
+  const eduAddedCount = Math.round(
+    levers.addedNurseries +
+      levers.addedKindergartens +
+      levers.addedPrimarySchools +
+      levers.addedParentClubs
+  );
 
-  const setParks = (val: number) => {
-    const clamped = Math.max(0, Math.min(4, val));
-    onChangeInputs({ ...inputs, additionalPocketParks: clamped });
+  const mobilityAddedCount = Math.round(
+    levers.addedBusStops +
+      levers.addedTramStops +
+      levers.addedBikeLanesKm +
+      levers.addedParkAndRide
+  );
+
+  const greenAddedCount = Math.round(
+    levers.addedPocketParks + levers.addedCityParks + levers.addedSchoolSports
+  );
+
+  const cultureAddedCount = Math.round(
+    levers.addedCasCenters + levers.addedLibraries + levers.addedCulturalCenters
+  );
+
+  const educationRows: LeverRowConfig[] = [
+    {
+      key: 'addedNurseries',
+      max: 10,
+      icon: <Baby className="w-4 h-4 text-indigo-600" />,
+      itemLabels: labels.levers.nurseries,
+      baselineValue: `${impact.nurseryPlacesBefore}`,
+      accentColor: 'indigo',
+    },
+    {
+      key: 'addedKindergartens',
+      max: 10,
+      icon: <GraduationCap className="w-4 h-4 text-indigo-600" />,
+      itemLabels: labels.levers.kindergartens,
+      baselineValue: `${impact.kindergartenPlacesBefore}`,
+      accentColor: 'indigo',
+    },
+    {
+      key: 'addedPrimarySchools',
+      max: 5,
+      icon: <School className="w-4 h-4 text-indigo-600" />,
+      itemLabels: labels.levers.primarySchools,
+      baselineValue: `${impact.schoolPlacesBefore} (${impact.avgClassSizeBefore.toFixed(1)} / kl.)`,
+      accentColor: 'indigo',
+    },
+    {
+      key: 'addedParentClubs',
+      max: 10,
+      icon: <Users className="w-4 h-4 text-indigo-600" />,
+      itemLabels: labels.levers.parentClubs,
+      baselineValue: `${impact.parentClubsBefore}`,
+      accentColor: 'indigo',
+    },
+  ];
+
+  const mobilityRows: LeverRowConfig[] = [
+    {
+      key: 'addedBusStops',
+      max: 15,
+      icon: <Bus className="w-4 h-4 text-sky-600" />,
+      itemLabels: labels.levers.busStops,
+      baselineValue: `${impact.busStopsBefore} (${impact.isochroneBeforePct.toFixed(1)}% 500m)`,
+      accentColor: 'sky',
+    },
+    {
+      key: 'addedTramStops',
+      max: 10,
+      icon: <TrainFront className="w-4 h-4 text-sky-600" />,
+      itemLabels: labels.levers.tramStops,
+      baselineValue: `${impact.tramStopsBefore}`,
+      accentColor: 'sky',
+    },
+    {
+      key: 'addedBikeLanesKm',
+      max: 15,
+      icon: <Bike className="w-4 h-4 text-sky-600" />,
+      itemLabels: labels.levers.bikeLanesKm,
+      baselineValue: `${impact.bikeLanesKmBefore.toFixed(1)} km`,
+      accentColor: 'sky',
+    },
+    {
+      key: 'addedParkAndRide',
+      max: 5,
+      icon: <ParkingSquare className="w-4 h-4 text-sky-600" />,
+      itemLabels: labels.levers.parkAndRide,
+      baselineValue: `${impact.parkAndRideBefore} P+R (${impact.bikeRacksBefore} stoj.)`,
+      accentColor: 'sky',
+    },
+  ];
+
+  const greeneryRows: LeverRowConfig[] = [
+    {
+      key: 'addedPocketParks',
+      max: 15,
+      icon: <Flower2 className="w-4 h-4 text-emerald-600" />,
+      itemLabels: labels.levers.pocketParks,
+      baselineValue: `${impact.pocketParksBefore}`,
+      accentColor: 'emerald',
+    },
+    {
+      key: 'addedCityParks',
+      max: 5,
+      icon: <Trees className="w-4 h-4 text-emerald-600" />,
+      itemLabels: labels.levers.cityParks,
+      baselineValue: `${impact.cityParksBefore} (${impact.greenM2PerCapitaBefore.toFixed(1)} m²/os.)`,
+      accentColor: 'emerald',
+    },
+    {
+      key: 'addedSchoolSports',
+      max: 10,
+      icon: <Dumbbell className="w-4 h-4 text-emerald-600" />,
+      itemLabels: labels.levers.schoolSports,
+      baselineValue: `${impact.sportsFacilitiesBefore}`,
+      accentColor: 'emerald',
+    },
+  ];
+
+  const cultureRows: LeverRowConfig[] = [
+    {
+      key: 'addedCasCenters',
+      max: 10,
+      icon: <HeartHandshake className="w-4 h-4 text-amber-600" />,
+      itemLabels: labels.levers.casCenters,
+      baselineValue: `${impact.casCountBefore} (${impact.seniorsPerCasBefore} os./CAS)`,
+      accentColor: 'amber',
+    },
+    {
+      key: 'addedLibraries',
+      max: 8,
+      icon: <BookOpen className="w-4 h-4 text-amber-600" />,
+      itemLabels: labels.levers.libraries,
+      baselineValue: `${impact.librariesBefore}`,
+      accentColor: 'amber',
+    },
+    {
+      key: 'addedCulturalCenters',
+      max: 5,
+      icon: <Landmark className="w-4 h-4 text-amber-600" />,
+      itemLabels: labels.levers.culturalCenters,
+      baselineValue: `${impact.culturalCentersBefore}`,
+      accentColor: 'amber',
+    },
+  ];
+
+  const renderLeverRow = (row: LeverRowConfig) => {
+    const val = levers[row.key];
+    const roundedVal = Math.round(val);
+    const isChanged = roundedVal > 0;
+
+    const badgeTheme =
+      row.accentColor === 'indigo'
+        ? 'bg-indigo-50 text-indigo-700 border-indigo-200/80'
+        : row.accentColor === 'emerald'
+          ? 'bg-emerald-50 text-emerald-700 border-emerald-200/80'
+          : row.accentColor === 'sky'
+            ? 'bg-sky-50 text-sky-700 border-sky-200/80'
+            : 'bg-amber-50 text-amber-700 border-amber-200/80';
+
+    const activeBorderTheme =
+      row.accentColor === 'indigo'
+        ? 'border-indigo-300 bg-indigo-50/25'
+        : row.accentColor === 'emerald'
+          ? 'border-emerald-300 bg-emerald-50/25'
+          : row.accentColor === 'sky'
+            ? 'border-sky-300 bg-sky-50/25'
+            : 'border-amber-300 bg-amber-50/25';
+
+    const sliderAccent =
+      row.accentColor === 'indigo'
+        ? 'accent-indigo-600'
+        : row.accentColor === 'emerald'
+          ? 'accent-emerald-600'
+          : row.accentColor === 'sky'
+            ? 'accent-sky-600'
+            : 'accent-amber-600';
+
+    return (
+      <div
+        key={row.key}
+        className={`p-3.5 rounded-2xl border transition-all duration-300 ${
+          isChanged
+            ? `${activeBorderTheme} shadow-2xs`
+            : 'bg-slate-50/70 border-slate-200/80 hover:border-slate-300'
+        }`}
+      >
+        <div className="flex items-start justify-between gap-3">
+          {/* Left: Icon, Title, Subtitle, Baseline & Unit Effect */}
+          <div className="min-w-0 flex-1 space-y-1">
+            <div className="flex items-center gap-2">
+              <div className="w-7 h-7 rounded-xl bg-white border border-slate-200/90 flex items-center justify-center shrink-0 shadow-2xs">
+                {row.icon}
+              </div>
+              <span className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
+                {row.itemLabels.title}
+              </span>
+            </div>
+
+            <p className="text-[11px] text-slate-500 leading-snug pl-9">
+              {row.itemLabels.subtitle}
+            </p>
+
+            <div className="flex flex-wrap items-center gap-2 pl-9 pt-0.5 text-[11px]">
+              <span className={`px-2 py-0.5 rounded-md border font-bold ${badgeTheme}`}>
+                {row.itemLabels.unitEffect}
+              </span>
+              <span className="text-slate-500 font-medium tabular-nums">
+                {row.itemLabels.currentBaselinePrefix}{' '}
+                <strong className="text-slate-800">{row.baselineValue}</strong>
+              </span>
+            </div>
+          </div>
+
+          {/* Right: Counter Stepper (- / value / +) */}
+          <div className="flex items-center gap-1.5 shrink-0 bg-white p-1 rounded-xl border border-slate-200/90 shadow-2xs">
+            <button
+              type="button"
+              onClick={() => onChangeLever(row.key, Math.max(0, roundedVal - 1), false)}
+              disabled={roundedVal <= 0}
+              aria-label={`Decrease ${row.itemLabels.title}`}
+              className="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed transition cursor-pointer active:scale-95"
+            >
+              <Minus className="w-3.5 h-3.5" />
+            </button>
+
+            <span
+              className={`min-w-[2.2rem] text-center text-xs sm:text-sm font-black tabular-nums transition-colors duration-200 ${
+                isChanged ? 'text-blue-700' : 'text-slate-700'
+              }`}
+            >
+              {isChanged ? `+${roundedVal}` : '0'}
+            </span>
+
+            <button
+              type="button"
+              onClick={() => onChangeLever(row.key, Math.min(row.max, roundedVal + 1), false)}
+              disabled={roundedVal >= row.max}
+              aria-label={`Increase ${row.itemLabels.title}`}
+              className="w-7 h-7 rounded-lg bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed transition cursor-pointer shadow-2xs active:scale-95"
+            >
+              <Plus className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Range Slider with smooth gliding step="0.05" (matching WeightsConfiguratorPanel) */}
+        <div className="mt-2.5 pl-9 flex items-center gap-3">
+          <input
+            type="range"
+            min={0}
+            max={row.max}
+            step={0.05}
+            value={val}
+            aria-label={row.itemLabels.title}
+            onChange={(e) =>
+              onChangeLever(row.key, Math.round(Number(e.target.value)), true)
+            }
+            className={`w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer ${sliderAccent}`}
+          />
+          <span className="text-[10px] font-bold text-slate-400 shrink-0 w-10 text-right tabular-nums">
+            max +{row.max}
+          </span>
+        </div>
+      </div>
+    );
   };
 
   return (
-    <div className="rounded-3xl bg-white border border-slate-200/90 shadow-sm p-6 sm:p-7 space-y-6">
-      {/* Header */}
-      <div className="space-y-1 border-b border-slate-100 pb-4">
-        <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-slate-700">
-          <Sliders className="w-4 h-4 text-blue-600" />
-          <span>{labels.leversHeaderTitle}</span>
-        </div>
-        <p className="text-xs text-slate-500">
-          {labels.leversHeaderSubtitle}
-        </p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
-        {/* Lever 1: Nursery places (0-300 slider + steppers) */}
-        <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-200/80 flex flex-col justify-between space-y-4">
-          <div className="space-y-1">
-            <div className="flex items-center justify-between gap-2">
-              <span className="font-extrabold text-slate-900 text-xs flex items-center gap-1.5">
-                <Baby className="w-4 h-4 text-indigo-600" />
-                {labels.nurseryLeverTitle}
-              </span>
-              <span className="px-2.5 py-0.5 rounded-full bg-indigo-600 text-white font-black text-xs shadow-xs">
-                +{inputs.additionalNurseryPlaces} {labels.nurseryLeverUnit(inputs.additionalNurseryPlaces)}
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-500 leading-tight">
-              {labels.nurseryLeverSubtitle}
-            </p>
-          </div>
-
-          <div className="space-y-3 pt-2">
-            <input
-              type="range"
-              min="0"
-              max="300"
-              step="10"
-              value={inputs.additionalNurseryPlaces}
-              onChange={(e) => setNursery(Number(e.target.value))}
-              className="w-full h-2 bg-indigo-200 rounded-lg appearance-none cursor-pointer accent-indigo-600"
-              aria-label={labels.nurseryLeverTitle}
-            />
-
-            <div className="flex items-center justify-between gap-1 text-[11px]">
-              <div className="flex items-center gap-1">
-                <button
-                  type="button"
-                  onClick={() => setNursery(inputs.additionalNurseryPlaces - 20)}
-                  disabled={inputs.additionalNurseryPlaces === 0}
-                  className="px-2 py-1 rounded-lg bg-white border border-indigo-200 text-indigo-700 font-bold hover:bg-indigo-100 disabled:opacity-40 transition cursor-pointer"
-                >
-                  -20
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setNursery(inputs.additionalNurseryPlaces - 10)}
-                  disabled={inputs.additionalNurseryPlaces === 0}
-                  className="px-2 py-1 rounded-lg bg-white border border-indigo-200 text-indigo-700 font-bold hover:bg-indigo-100 disabled:opacity-40 transition cursor-pointer"
-                >
-                  -10
-                </button>
-              </div>
-
-              <div className="flex items-center gap-1">
-                <button
-                  type="button"
-                  onClick={() => setNursery(inputs.additionalNurseryPlaces + 10)}
-                  disabled={inputs.additionalNurseryPlaces >= 300}
-                  className="px-2 py-1 rounded-lg bg-white border border-indigo-200 text-indigo-700 font-bold hover:bg-indigo-100 disabled:opacity-40 transition cursor-pointer"
-                >
-                  +10
-                </button>
-                <button
-                  type="button"
-                  onClick={() => setNursery(inputs.additionalNurseryPlaces + 20)}
-                  disabled={inputs.additionalNurseryPlaces >= 300}
-                  className="px-2 py-1 rounded-lg bg-white border border-indigo-200 text-indigo-700 font-bold hover:bg-indigo-100 disabled:opacity-40 transition cursor-pointer"
-                >
-                  +20
-                </button>
-              </div>
-            </div>
-          </div>
+    <div className="space-y-4">
+      {/* Header & Symmetrical Category Filter Pills */}
+      <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/90 border border-slate-200/90 space-y-3.5 shadow-2xs">
+        <div>
+          <h3 className="text-sm sm:text-base font-extrabold text-slate-900 flex items-center gap-2">
+            <Sliders className="w-4 h-4 text-blue-600 shrink-0" />
+            <span>{labels.leversPanelTitle}</span>
+          </h3>
+          <p className="text-xs text-slate-500 mt-0.5">{labels.leversPanelSubtitle}</p>
         </div>
 
-        {/* Lever 2: Senior Activity Centers (0-3 steppers) */}
-        <div className="p-4 rounded-2xl bg-amber-50/50 border border-amber-200/80 flex flex-col justify-between space-y-4">
-          <div className="space-y-1">
-            <div className="flex items-center justify-between gap-2">
-              <span className="font-extrabold text-slate-900 text-xs flex items-center gap-1.5">
-                <Users className="w-4 h-4 text-amber-600" />
-                {labels.casLeverTitle}
-              </span>
-              <span className="px-2.5 py-0.5 rounded-full bg-amber-600 text-white font-black text-xs shadow-xs">
-                +{inputs.additionalCasCount} {labels.casLeverUnit(inputs.additionalCasCount)}
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-500 leading-tight">
-              {labels.casLeverSubtitle}
-            </p>
-          </div>
+        {/* Symmetrical 5-Column Category Filter Grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+          {/* 0. All Categories */}
+          <button
+            type="button"
+            onClick={() => setActiveCategory('all')}
+            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+              activeCategory === 'all'
+                ? 'bg-blue-600 text-white border-blue-600 shadow-xs'
+                : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50/40'
+            }`}
+          >
+            <LayoutGrid className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">{labels.categoryFilterAll}</span>
+          </button>
 
-          <div className="flex items-center justify-center gap-3 pt-4">
-            <button
-              type="button"
-              onClick={() => setCas(inputs.additionalCasCount - 1)}
-              disabled={inputs.additionalCasCount === 0}
-              className="w-9 h-9 rounded-xl bg-white border border-amber-300 text-amber-800 flex items-center justify-center hover:bg-amber-100 disabled:opacity-40 disabled:cursor-not-allowed transition font-bold cursor-pointer shadow-2xs"
-              aria-label="Decrease CAS"
-            >
-              <Minus className="w-4 h-4" />
-            </button>
-            <span className="w-12 text-center text-lg font-black text-slate-900">
-              +{inputs.additionalCasCount}
-            </span>
-            <button
-              type="button"
-              onClick={() => setCas(inputs.additionalCasCount + 1)}
-              disabled={inputs.additionalCasCount >= 3}
-              className="w-9 h-9 rounded-xl bg-white border border-amber-300 text-amber-800 flex items-center justify-center hover:bg-amber-100 disabled:opacity-40 disabled:cursor-not-allowed transition font-bold cursor-pointer shadow-2xs"
-              aria-label="Increase CAS"
-            >
-              <Plus className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
-
-        {/* Lever 3: Pocket Parks (0-4 steppers) */}
-        <div className="p-4 rounded-2xl bg-emerald-50/50 border border-emerald-200/80 flex flex-col justify-between space-y-4">
-          <div className="space-y-1">
-            <div className="flex items-center justify-between gap-2">
-              <span className="font-extrabold text-slate-900 text-xs flex items-center gap-1.5">
-                <Trees className="w-4 h-4 text-emerald-600" />
-                {labels.parksLeverTitle}
+          {/* 1. Education & Family Care (4 sliders) */}
+          <button
+            type="button"
+            onClick={() => setActiveCategory('education')}
+            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+              activeCategory === 'education'
+                ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs'
+                : 'bg-white text-indigo-700 border-indigo-200/80 hover:border-indigo-300 hover:bg-indigo-50/60'
+            }`}
+          >
+            <GraduationCap className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">{labels.categories.education.title.split(' (')[0]}</span>
+            {eduAddedCount > 0 && (
+              <span className="px-1.5 py-0.2 rounded-full bg-indigo-700 text-white text-[10px] shrink-0 tabular-nums">
+                +{eduAddedCount}
               </span>
-              <span className="px-2.5 py-0.5 rounded-full bg-emerald-600 text-white font-black text-xs shadow-xs">
-                +{inputs.additionalPocketParks} {labels.parksLeverUnit(inputs.additionalPocketParks)}
-              </span>
-            </div>
-            <p className="text-[11px] text-slate-500 leading-tight">
-              {labels.parksLeverSubtitle}
-            </p>
-          </div>
+            )}
+          </button>
 
-          <div className="flex items-center justify-center gap-3 pt-4">
-            <button
-              type="button"
-              onClick={() => setParks(inputs.additionalPocketParks - 1)}
-              disabled={inputs.additionalPocketParks === 0}
-              className="w-9 h-9 rounded-xl bg-white border border-emerald-300 text-emerald-800 flex items-center justify-center hover:bg-emerald-100 disabled:opacity-40 disabled:cursor-not-allowed transition font-bold cursor-pointer shadow-2xs"
-              aria-label="Decrease Parks"
-            >
-              <Minus className="w-4 h-4" />
-            </button>
-            <span className="w-12 text-center text-lg font-black text-slate-900">
-              +{inputs.additionalPocketParks}
-            </span>
-            <button
-              type="button"
-              onClick={() => setParks(inputs.additionalPocketParks + 1)}
-              disabled={inputs.additionalPocketParks >= 4}
-              className="w-9 h-9 rounded-xl bg-white border border-emerald-300 text-emerald-800 flex items-center justify-center hover:bg-emerald-100 disabled:opacity-40 disabled:cursor-not-allowed transition font-bold cursor-pointer shadow-2xs"
-              aria-label="Increase Parks"
-            >
-              <Plus className="w-4 h-4" />
-            </button>
-          </div>
+          {/* 2. Public Transit (KMK) & Cycling (4 sliders) */}
+          <button
+            type="button"
+            onClick={() => setActiveCategory('mobility')}
+            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+              activeCategory === 'mobility'
+                ? 'bg-sky-600 text-white border-sky-600 shadow-xs'
+                : 'bg-white text-sky-700 border-sky-200/80 hover:border-sky-300 hover:bg-sky-50/60'
+            }`}
+          >
+            <Bus className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">{labels.categories.mobility.title.split(' (')[0]}</span>
+            {mobilityAddedCount > 0 && (
+              <span className="px-1.5 py-0.2 rounded-full bg-sky-700 text-white text-[10px] shrink-0 tabular-nums">
+                +{mobilityAddedCount}
+              </span>
+            )}
+          </button>
+
+          {/* 3. Greenery, Parks & Sports (3 sliders) */}
+          <button
+            type="button"
+            onClick={() => setActiveCategory('greenery')}
+            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+              activeCategory === 'greenery'
+                ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs'
+                : 'bg-white text-emerald-700 border-emerald-200/80 hover:border-emerald-300 hover:bg-emerald-50/60'
+            }`}
+          >
+            <Trees className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">{labels.categories.greenery.title.split(',')[0]}</span>
+            {greenAddedCount > 0 && (
+              <span className="px-1.5 py-0.2 rounded-full bg-emerald-700 text-white text-[10px] shrink-0 tabular-nums">
+                +{greenAddedCount}
+              </span>
+            )}
+          </button>
+
+          {/* 4. Senior Support (65+) & Culture (3 sliders) */}
+          <button
+            type="button"
+            onClick={() => setActiveCategory('culture')}
+            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+              activeCategory === 'culture'
+                ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
+                : 'bg-white text-amber-700 border-amber-200/80 hover:border-amber-300 hover:bg-amber-50/60'
+            }`}
+          >
+            <HeartHandshake className="w-3.5 h-3.5 shrink-0" />
+            <span className="truncate">{labels.categories.culture.title.split(' (')[0]}</span>
+            {cultureAddedCount > 0 && (
+              <span className="px-1.5 py-0.2 rounded-full bg-amber-700 text-white text-[10px] shrink-0 tabular-nums">
+                +{cultureAddedCount}
+              </span>
+            )}
+          </button>
         </div>
       </div>
 
-      {/* Live Financial CAPEX Estimate Banner */}
-      <div className="p-4 rounded-2xl bg-linear-to-r from-blue-50 via-indigo-50/60 to-blue-50 border border-blue-200/90 flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
-        <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
-            <Coins className="w-4 h-4" />
-          </div>
-          <div>
-            <div className="font-extrabold text-blue-950">
-              {labels.capexTotalTitle}:{' '}
-              <strong className="text-sm font-black text-blue-700">
-                {estimatedCapexPln.toLocaleString()} {labels.capexCurrency}
-              </strong>
+      {/* Category Cards Grid with blur + opacity + scale entrance transition (animate-fade-in) */}
+      <div
+        key={`sim_cat_${activeCategory}_${impact.districtId}`}
+        className={`grid grid-cols-1 ${
+          activeCategory === 'all' ? 'lg:grid-cols-2' : 'lg:grid-cols-1'
+        } gap-4 items-start animate-fade-in`}
+      >
+        {/* 1. Education & Family Care (4 sliders - Row 1 Left) */}
+        {(activeCategory === 'all' || activeCategory === 'education') && (
+          <div className="p-4 sm:p-5 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-3 h-full">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-2xl bg-indigo-50 border border-indigo-200/80 text-indigo-600 flex items-center justify-center shrink-0">
+                  <GraduationCap className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs sm:text-sm font-black text-slate-900">
+                    {labels.categories.education.title}
+                  </h4>
+                  <p className="text-[11px] text-slate-500">
+                    {labels.categories.education.subtitle}
+                  </p>
+                </div>
+              </div>
+              {eduAddedCount > 0 && (
+                <span className="px-2.5 py-1 rounded-xl bg-indigo-600 text-white text-xs font-black tabular-nums">
+                  +{eduAddedCount}
+                </span>
+              )}
             </div>
-            <div className="text-[11px] text-slate-500">
-              {labels.capexTotalSubtitle}
-            </div>
+            <div className="space-y-2.5">{educationRows.map(renderLeverRow)}</div>
           </div>
-        </div>
+        )}
 
-        <div className="flex flex-wrap items-center gap-2.5 text-[11px] text-slate-600 font-medium">
-          <span>
-            {labels.capexNurseryPart} <strong className="text-slate-900">{nurseryCapexPln.toLocaleString()} {labels.capexCurrency}</strong>
-          </span>
-          <span className="text-slate-300">•</span>
-          <span>
-            {labels.capexCasPart} <strong className="text-slate-900">{casCapexPln.toLocaleString()} {labels.capexCurrency}</strong>
-          </span>
-          <span className="text-slate-300">•</span>
-          <span>
-            {labels.capexParksPart} <strong className="text-slate-900">{parksCapexPln.toLocaleString()} {labels.capexCurrency}</strong>
-          </span>
-        </div>
+        {/* 2. Public Transit (KMK) & Cycling (4 sliders - Row 1 Right) */}
+        {(activeCategory === 'all' || activeCategory === 'mobility') && (
+          <div className="p-4 sm:p-5 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-3 h-full">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-2xl bg-sky-50 border border-sky-200/80 text-sky-600 flex items-center justify-center shrink-0">
+                  <Bus className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs sm:text-sm font-black text-slate-900">
+                    {labels.categories.mobility.title}
+                  </h4>
+                  <p className="text-[11px] text-slate-500">
+                    {labels.categories.mobility.subtitle}
+                  </p>
+                </div>
+              </div>
+              {mobilityAddedCount > 0 && (
+                <span className="px-2.5 py-1 rounded-xl bg-sky-600 text-white text-xs font-black tabular-nums">
+                  +{mobilityAddedCount}
+                </span>
+              )}
+            </div>
+            <div className="space-y-2.5">{mobilityRows.map(renderLeverRow)}</div>
+          </div>
+        )}
+
+        {/* 3. Greenery, Parks & Sports (3 sliders - Row 2 Left) */}
+        {(activeCategory === 'all' || activeCategory === 'greenery') && (
+          <div className="p-4 sm:p-5 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-3 h-full">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-2xl bg-emerald-50 border border-emerald-200/80 text-emerald-600 flex items-center justify-center shrink-0">
+                  <Trees className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs sm:text-sm font-black text-slate-900">
+                    {labels.categories.greenery.title}
+                  </h4>
+                  <p className="text-[11px] text-slate-500">
+                    {labels.categories.greenery.subtitle}
+                  </p>
+                </div>
+              </div>
+              {greenAddedCount > 0 && (
+                <span className="px-2.5 py-1 rounded-xl bg-emerald-600 text-white text-xs font-black tabular-nums">
+                  +{greenAddedCount}
+                </span>
+              )}
+            </div>
+            <div className="space-y-2.5">{greeneryRows.map(renderLeverRow)}</div>
+          </div>
+        )}
+
+        {/* 4. Senior Support (65+) & Culture (3 sliders - Row 2 Right) */}
+        {(activeCategory === 'all' || activeCategory === 'culture') && (
+          <div className="p-4 sm:p-5 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-3 h-full">
+            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-2xl bg-amber-50 border border-amber-200/80 text-amber-600 flex items-center justify-center shrink-0">
+                  <Building2 className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-xs sm:text-sm font-black text-slate-900">
+                    {labels.categories.culture.title}
+                  </h4>
+                  <p className="text-[11px] text-slate-500">
+                    {labels.categories.culture.subtitle}
+                  </p>
+                </div>
+              </div>
+              {cultureAddedCount > 0 && (
+                <span className="px-2.5 py-1 rounded-xl bg-amber-600 text-white text-xs font-black tabular-nums">
+                  +{cultureAddedCount}
+                </span>
+              )}
+            </div>
+            <div className="space-y-2.5">{cultureRows.map(renderLeverRow)}</div>
+          </div>
+        )}
       </div>
     </div>
   );

@@ -9,7 +9,9 @@ export interface InvestorMacro2028 {
   projectedPreschoolers2028: number;
   currentPreschoolers: number;
   preschoolGrowthPct: number;
+  projectedPrimaryStudents2028: number;
   currentPrimaryStudents: number;
+  primaryStudentsGrowthPct: number;
   primarySharePct: number;
   projectedNurseryBalance2028: number;
   highPotentialDistrictsCount: number;
@@ -54,7 +56,7 @@ export interface InvestorDistrictForecastData {
   totalCoveragePct0To14: number;
   totalCoveragePct2028: number;
 
-  // B2B & Deficits
+  // Priority & Deficits
   nurseryPotentialB2B: 'HIGH' | 'MEDIUM' | 'LOW';
   seniorDeficit: 'HIGH' | 'MEDIUM' | 'LOW';
   greenDeficit: 'HIGH' | 'MEDIUM' | 'LOW';

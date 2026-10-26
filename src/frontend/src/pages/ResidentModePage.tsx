@@ -195,7 +195,7 @@ export function ResidentModePage({
                 <div className="text-2xl font-black text-sky-700 leading-none">
                   {totalCityPopulation > 0
                     ? `${Math.round(totalCityPopulation / 1000)} ${t.stats.thousands}`
-                    : `736 ${t.stats.thousands}`}
+                    : '0'}
                 </div>
                 <div className="text-xs font-bold text-slate-800 mt-1">{t.stats.populationLabel}</div>
                 <div className="text-[11px] text-slate-500">{t.stats.populationSub}</div>

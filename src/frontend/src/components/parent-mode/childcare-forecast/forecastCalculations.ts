@@ -61,7 +61,7 @@ export function getMacroIndicators(
     // 2. Preschool (4–6)
     const kPlaces = rawE?.kindergartenPlacesTotal ?? 0;
     kgPlaces += kPlaces;
-    const kCov = c46 > 0 ? (kPlaces / c46) * 100 : 100;
+    const kCov = c46 > 0 ? (kPlaces / c46) * 100 : 0;
     const kBal = kPlaces - c46;
     if (kCov < 125 || kBal < 150) {
       kgDistrictsHighDemand++;
@@ -72,16 +72,16 @@ export function getMacroIndicators(
     primarySchools += schCount;
     const schCap = schCount * 350;
     const schBal = schCap - c714;
-    const schCov = c714 > 0 ? (schCap / c714) * 100 : 100;
+    const schCov = c714 > 0 ? (schCap / c714) * 100 : 0;
     if (schCov < 100 || schBal <= 0) {
       crowdedSchoolsDistricts++;
     }
 
-    // 4. All Cohorts (0–14) – Pure Demographics 0–3, 4–6, 7–14 (harmonized with Hero 101.5k)
+    // 4. All Cohorts (0–14) – Pure Demographics 0–3, 4–6, 7–14
     const totCap = carePlaces + kPlaces + schCap;
     const totKids = c03 + c46 + c714;
     const totBal = totCap - totKids;
-    const covPct = totKids > 0 ? (totCap / totKids) * 100 : 100;
+    const covPct = totKids > 0 ? (totCap / totKids) * 100 : 0;
 
     allTotalCapacity += totCap;
     allTotalChildren += totKids;
@@ -92,15 +92,15 @@ export function getMacroIndicators(
   });
 
   const nurseryBalance = nurseryPlaces - current0To3;
-  const infantCoverage = current0To3 > 0 ? Math.round((nurseryPlaces / current0To3) * 100) : 60;
+  const infantCoverage = current0To3 > 0 ? Math.round((nurseryPlaces / current0To3) * 100) : 0;
   const preschoolBalance = kgPlaces - current4To6;
-  const preschoolCoverage = current4To6 > 0 ? Math.round((kgPlaces / current4To6) * 100) : 153;
+  const preschoolCoverage = current4To6 > 0 ? Math.round((kgPlaces / current4To6) * 100) : 0;
   const schoolCapacity = primarySchools * 350;
   const schoolBalance = schoolCapacity - current7To14;
-  const schoolCoverage = current7To14 > 0 ? Math.round((schoolCapacity / current7To14) * 100) : 126;
+  const schoolCoverage = current7To14 > 0 ? Math.round((schoolCapacity / current7To14) * 100) : 0;
 
   const allTotalBalance = allTotalCapacity - allTotalChildren;
-  const allCoveragePct = allTotalChildren > 0 ? Math.round((allTotalCapacity / allTotalChildren) * 100) : 117;
+  const allCoveragePct = allTotalChildren > 0 ? Math.round((allTotalCapacity / allTotalChildren) * 100) : 0;
 
   return {
     infant: {
@@ -113,7 +113,7 @@ export function getMacroIndicators(
       balance: preschoolBalance,
       criticalDistricts: kgDistrictsHighDemand,
       coveragePct: preschoolCoverage,
-      projectedChildren: current4To6 > 0 ? current4To6 : 21556,
+      projectedChildren: current4To6,
     },
     school: {
       balance: schoolBalance,
@@ -168,9 +168,9 @@ export function getDistrictCohortData(
   if (cohort === 'preschool') {
     const kgPlaces: number = rawE?.kindergartenPlacesTotal ?? 0;
     const kgCount: number = rawE?.kindergartensCount ?? 0;
-    const c46: number = rawD?.age4To6 ?? rawD?.age4to6 ?? 1;
+    const c46: number = rawD?.age4To6 ?? rawD?.age4to6 ?? 0;
     const kgBal = kgPlaces - c46;
-    const covPct = c46 > 0 ? Math.round((kgPlaces / c46) * 100) : 100;
+    const covPct = c46 > 0 ? Math.round((kgPlaces / c46) * 100) : 0;
     const isWhiteSpot = covPct < 125 || kgBal < 150;
     const isSurplus = covPct >= 140 && kgBal >= 400;
     const isBalanced = !isWhiteSpot && !isSurplus;
@@ -195,8 +195,8 @@ export function getDistrictCohortData(
       forecastChildren: c46.toLocaleString(),
       forecastChildrenUnit: isEn ? 'preschoolers' : isUa ? 'дошкільнят' : 'przedszkolaków',
       coverageLabel: isEn ? 'Preschool demand coverage' : isUa ? 'Покриття попиту в дитсадках' : 'Pokrycie popytu przedszkolnego',
-      coverageValue: `${Math.round((kgPlaces / Math.max(1, c46)) * 100)}%`,
-      progressPercent: Math.min(100, Math.round((kgPlaces / Math.max(1, c46)) * 100)),
+      coverageValue: `${covPct}%`,
+      progressPercent: Math.min(100, covPct),
       status: { isWhiteSpot, isSurplus, isBalanced },
       statusBadge,
     };
@@ -206,9 +206,9 @@ export function getDistrictCohortData(
   if (cohort === 'school') {
     const schools: number = rawE?.primarySchoolsCount ?? 0;
     const schoolCap = schools * 350;
-    const c714: number = rawD?.age7To14 ?? rawD?.age7to14 ?? 1;
+    const c714: number = rawD?.age7To14 ?? rawD?.age7to14 ?? 0;
     const schoolBal = schoolCap - c714;
-    const covPct = c714 > 0 ? Math.round((schoolCap / c714) * 100) : 100;
+    const covPct = c714 > 0 ? Math.round((schoolCap / c714) * 100) : 0;
 
     const isWhiteSpot = covPct < 100 || schoolBal <= 0;
     const isSurplus = covPct >= 120 && schoolBal >= 300;
@@ -249,7 +249,7 @@ export function getDistrictCohortData(
       (rawE?.nurseriesContractedCount ?? 0) +
       (rawE?.nurseriesPrivateCount ?? 0) +
       (rawE?.kidsClubsCount ?? 0);
-    const c03: number = rawD?.age0To3 ?? rawD?.age0to3 ?? 1;
+    const c03: number = rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
     const balance: number = carePlaces - c03;
     const covPct = c03 > 0 ? Math.round((carePlaces / c03) * 100) : 0;
     const isWhiteSpot = covPct < 50 || balance <= -600;
@@ -305,7 +305,7 @@ export function getDistrictCohortData(
   const totalBal = totalCapacity - totalChildren;
 
   // Real Demand Coverage (Supply vs Demand):
-  const totalCovPct = totalChildren > 0 ? Math.round((totalCapacity / totalChildren) * 100) : 100;
+  const totalCovPct = totalChildren > 0 ? Math.round((totalCapacity / totalChildren) * 100) : 0;
 
   // Fair, percentage-based market classification (consistent across districts of all sizes):
   const isWhiteSpot = totalCovPct < 100 || totalBal <= 0;

@@ -390,42 +390,4 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     portalUrl: 'https://otwartedane.um.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
-
-  // Official Investor Mode & Municipal Decision Support Standards (B2G / B2B)
-  {
-    id: 'inv-1',
-    category: 'demographics',
-    categoryLabel: 'Demografia',
-    officialDatasetName: 'Prognoza demograficzna ludności Krakowa wg grup wieku do 2030 r. (BDK / UMK & GUS)',
-    metrics: 'Wieloletnie modele kohortowe (0–3, 4–6, 7–14, 65+), ekonometryczna dynamika meldunków, saldo migracji wewnętrznych w 18 dzielnicach',
-    portalUrl: 'https://bip.krakow.pl',
-    status: 'Zintegrowane w ETL',
-  },
-  {
-    id: 'inv-2',
-    category: 'education',
-    categoryLabel: 'Edukacja i Opieka',
-    officialDatasetName: 'Program Rządowy „Aktywny Maluch 2022–2029” (MRPiPS) – Normatywy Kosztowe',
-    metrics: 'Standardy kosztowe tworzenia miejsc opieki w żłobkach (~30 tys. zł / miejsce w adaptacji, do 70 tys. zł w budowie), dofinansowanie do 1500 zł/mies.',
-    portalUrl: 'https://www.gov.pl/web/rodzina/aktywny-maluch',
-    status: 'Normatyw CAPEX / B2B',
-  },
-  {
-    id: 'inv-3',
-    category: 'culture',
-    categoryLabel: 'Kultura & Społeczność',
-    officialDatasetName: 'Wydział Polityki Społecznej i Zdrowia UMK – Program Działań Senioralnych i Granty CAS',
-    metrics: 'Standardy wyposażenia i adaptacji lokali klubowych Centrów Aktywności Seniora (~120 tys. zł / placówkę), wytyczne dostępności 65+',
-    portalUrl: 'https://dlaseniora.krakow.pl',
-    status: 'Wytyczne B2G UMK',
-  },
-  {
-    id: 'inv-4',
-    category: 'greenery',
-    categoryLabel: 'Zieleń & Rekreacja',
-    officialDatasetName: 'Zarząd Zieleni Miejskiej (ZZM) – Program Inwestycyjny „Ogrody Krakowian – Parki Kieszonkowe”',
-    metrics: 'Kosztorys referencyjny urządzania parków kieszonkowych (~250 tys. zł / park 1000–2500 m²), standard bufora dojścia pieszego 300m',
-    portalUrl: 'https://zzm.krakow.pl',
-    status: 'Wytyczne ZZM',
-  },
 ];

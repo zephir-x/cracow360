@@ -22,16 +22,16 @@ export interface ParentHeroHeaderProps {
 }
 
 export function ParentHeroHeader({
-  totalDistrictsCount: _totalDistrictsCount = 18,
+  totalDistrictsCount: _totalDistrictsCount = 0,
   districts,
 }: ParentHeroHeaderProps) {
   const { language, t } = useTranslation();
   const [showCapabilities, setShowCapabilities] = useState<boolean>(false);
 
-  // Dynamic municipal counts calculated live from backend API
-  const [eduCareCount, setEduCareCount] = useState<number>(646);
-  const [greeneryCount, setGreeneryCount] = useState<number>(142);
-  const [childrenCount, setChildrenCount] = useState<number>(101498);
+  // Dynamic municipal counts calculated live from backend API (0 when disconnected)
+  const [eduCareCount, setEduCareCount] = useState<number>(0);
+  const [greeneryCount, setGreeneryCount] = useState<number>(0);
+  const [childrenCount, setChildrenCount] = useState<number>(0);
 
   useEffect(() => {
     let cancelled = false;
@@ -56,8 +56,8 @@ export function ParentHeroHeader({
           ['CITY_PARK', 'POCKET_PARK'].includes(p.subCategory)
         ).length;
 
-        if (eduCare > 0) setEduCareCount(eduCare);
-        if (greenery > 0) setGreeneryCount(greenery);
+        setEduCareCount(eduCare);
+        setGreeneryCount(greenery);
       })
       .catch((err) => {
         console.error('Failed to load dynamic POIs in hero header:', err);
@@ -70,7 +70,10 @@ export function ParentHeroHeader({
 
   useEffect(() => {
     let cancelled = false;
-    if (!districts || districts.length === 0) return;
+    if (!districts || districts.length === 0) {
+      setChildrenCount(0);
+      return;
+    }
 
     Promise.all(districts.map((d) => cracow360Api.getDistrictDetails(d.districtId)))
       .then((detailsList) => {
@@ -84,9 +87,7 @@ export function ParentHeroHeader({
           const c714 = dem?.age7To14 ?? dem?.age7to14 ?? 0;
           totalKids += c03 + c46 + c714;
         });
-        if (totalKids > 0) {
-          setChildrenCount(totalKids);
-        }
+        setChildrenCount(totalKids);
       })
       .catch((err) => {
         console.error('Failed to load dynamic children count in hero header:', err);
@@ -98,6 +99,7 @@ export function ParentHeroHeader({
   }, [districts]);
 
   const childrenCountFormatted = useMemo(() => {
+    if (childrenCount <= 0) return '0';
     const inThousands = (childrenCount / 1000).toFixed(1);
     if (language === 'en') return `${inThousands}k`;
     if (language === 'ua') return `${inThousands} тис.`;

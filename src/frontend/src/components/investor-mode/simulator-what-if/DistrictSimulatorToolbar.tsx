@@ -1,185 +1,154 @@
 ﻿import {
+  Baby,
+  Bus,
+  HeartHandshake,
+  MapPin,
   RotateCcw,
   Sparkles,
-  SlidersHorizontal,
-  Building,
-  Baby,
-  Users,
   Trees,
 } from 'lucide-react';
-import type { Language } from '../../../i18n/types';
+import { useTranslation } from '../../../i18n/I18nContext';
 import type { InvestorSimulatorLabels } from '../../../i18n/investorSimulatorI18n';
+import type { DistrictSummaryDto } from '../../../types/contracts';
 import { localizeDistrictName } from '../../../utils/districtLocalization';
-import type { BaselineDistrictMetrics, SimulatorInputs } from './types';
-import { DEFAULT_SIMULATOR_INPUTS } from './simulatorCalculations';
+import type { SimulatorPresetId } from './types';
 
 export interface DistrictSimulatorToolbarProps {
-  districts: BaselineDistrictMetrics[];
+  districts: DistrictSummaryDto[];
   selectedDistrictId: number;
-  onSelectDistrict: (id: number) => void;
-  inputs: SimulatorInputs;
-  onUpdateInputs: (newInputs: SimulatorInputs) => void;
-  activeBaseline: BaselineDistrictMetrics | null;
+  onSelectDistrict: (districtId: number) => void;
+  activePreset: SimulatorPresetId;
+  onApplyPreset: (preset: SimulatorPresetId) => void;
+  onReset: () => void;
+  totalAddedItemsCount: number;
   labels: InvestorSimulatorLabels;
-  language: Language;
 }
 
 export function DistrictSimulatorToolbar({
   districts,
   selectedDistrictId,
   onSelectDistrict,
-  inputs,
-  onUpdateInputs,
-  activeBaseline,
+  activePreset,
+  onApplyPreset,
+  onReset,
+  totalAddedItemsCount,
   labels,
-  language,
 }: DistrictSimulatorToolbarProps) {
-  const isDefault =
-    inputs.additionalNurseryPlaces === DEFAULT_SIMULATOR_INPUTS.additionalNurseryPlaces &&
-    inputs.additionalCasCount === DEFAULT_SIMULATOR_INPUTS.additionalCasCount &&
-    inputs.additionalPocketParks === DEFAULT_SIMULATOR_INPUTS.additionalPocketParks;
-
-  const handleApplyPreset = (preset: 'municipal' | 'b2b' | 'green') => {
-    switch (preset) {
-      case 'municipal':
-        onUpdateInputs({
-          additionalNurseryPlaces: 120,
-          additionalCasCount: 1,
-          additionalPocketParks: 1,
-        });
-        break;
-      case 'b2b':
-        onUpdateInputs({
-          additionalNurseryPlaces: 180,
-          additionalCasCount: 0,
-          additionalPocketParks: 0,
-        });
-        break;
-      case 'green':
-        onUpdateInputs({
-          additionalNurseryPlaces: 0,
-          additionalCasCount: 2,
-          additionalPocketParks: 2,
-        });
-        break;
-    }
-  };
+  const { language } = useTranslation();
 
   return (
-    <div className="rounded-3xl bg-slate-50/80 border border-slate-200/90 p-5 sm:p-6 space-y-5">
-      {/* Top Row: District Selector & Reset button */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
-        <div className="flex-1 max-w-xl space-y-1.5">
-          <label
-            htmlFor="simulator-district-select"
-            className="text-xs font-extrabold uppercase tracking-wider text-slate-700 flex items-center gap-1.5"
-          >
-            <Building className="w-4 h-4 text-blue-600" />
-            {labels.selectDistrictLabel}
-          </label>
-          <div className="relative">
-            <select
-              id="simulator-district-select"
-              value={selectedDistrictId}
-              onChange={(e) => onSelectDistrict(Number(e.target.value))}
-              className="w-full text-sm font-bold py-2.5 px-3.5 pr-8 rounded-2xl bg-white border border-slate-300 text-slate-900 shadow-2xs hover:border-blue-400 focus:outline-hidden focus:ring-2 focus:ring-blue-500 transition cursor-pointer"
-            >
-              <option value="" disabled>
-                {labels.selectDistrictPlaceholder}
-              </option>
-              {districts.map((d) => (
-                <option key={d.districtId} value={d.districtId}>
-                  {localizeDistrictName(d.districtName, language)} ({d.districtRoman})
-                </option>
-              ))}
-            </select>
+    <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/90 border border-slate-200/90 space-y-4 shadow-2xs">
+      {/* Row 1: District Selector (Left) & Active Changes Status + Reset (Right) */}
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3.5 border-b border-slate-200/80">
+        <div className="flex flex-col sm:flex-row sm:items-center gap-2.5">
+          <div className="flex items-center gap-2 text-xs font-extrabold text-slate-700 shrink-0">
+            <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
+            <span>{labels.selectDistrictLabel}</span>
           </div>
+
+          <select
+            value={selectedDistrictId}
+            onChange={(e) => onSelectDistrict(Number(e.target.value))}
+            aria-label={labels.selectDistrictLabel}
+            className="w-full sm:w-auto sm:min-w-[260px] px-3.5 py-2 rounded-xl border border-slate-300 bg-white text-slate-900 text-xs sm:text-sm font-bold shadow-2xs focus:outline-none focus:ring-2 focus:ring-blue-500/30 focus:border-blue-600 transition cursor-pointer"
+          >
+            {districts.map((d) => (
+              <option key={d.districtId} value={d.districtId}>
+                {localizeDistrictName(d.districtName, language)}
+              </option>
+            ))}
+          </select>
         </div>
 
-        {/* Reset button */}
-        <div className="self-end md:self-center shrink-0">
+        {/* Status Badge & Reset Button */}
+        <div className="flex flex-wrap items-center gap-2 sm:justify-end">
+          <span
+            className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold border shrink-0 transition ${
+              totalAddedItemsCount > 0
+                ? 'bg-blue-600 text-white border-blue-600 shadow-xs shadow-blue-500/20'
+                : 'bg-white text-slate-600 border-slate-200'
+            }`}
+          >
+            <Sparkles className="w-3.5 h-3.5 shrink-0" />
+            <span>{labels.activeChangesBadge(totalAddedItemsCount)}</span>
+          </span>
+
           <button
             type="button"
-            onClick={() => onUpdateInputs(DEFAULT_SIMULATOR_INPUTS)}
-            disabled={isDefault}
-            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-semibold text-slate-600 hover:text-slate-900 bg-white border border-slate-200 hover:bg-slate-100 disabled:opacity-40 disabled:cursor-not-allowed transition cursor-pointer shadow-2xs"
+            onClick={onReset}
+            disabled={totalAddedItemsCount === 0}
+            className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-bold bg-white text-slate-700 border border-slate-200 hover:bg-slate-100 hover:border-slate-300 disabled:opacity-40 disabled:cursor-not-allowed transition cursor-pointer shadow-2xs"
           >
-            <RotateCcw className="w-3.5 h-3.5 text-slate-500" />
-            <span>{labels.resetLeversBtn}</span>
+            <RotateCcw className="w-3.5 h-3.5 shrink-0" />
+            <span>{labels.resetBtn}</span>
           </button>
         </div>
       </div>
 
-      {/* Quick Presets Ribbon */}
-      <div className="pt-2 border-t border-slate-200/70 flex flex-wrap items-center gap-2 text-xs">
-        <span className="font-bold text-slate-500 mr-1 flex items-center gap-1">
-          <SlidersHorizontal className="w-3.5 h-3.5 text-blue-600" />
-          {labels.presetTitle}
-        </span>
-        <button
-          type="button"
-          onClick={() => handleApplyPreset('municipal')}
-          className="px-3 py-1.5 rounded-xl bg-blue-50 hover:bg-blue-100 text-blue-800 border border-blue-200/80 font-bold transition cursor-pointer"
-        >
-          {labels.presets.municipalPackage}
-        </button>
-        <button
-          type="button"
-          onClick={() => handleApplyPreset('b2b')}
-          className="px-3 py-1.5 rounded-xl bg-violet-50 hover:bg-violet-100 text-violet-800 border border-violet-200/80 font-bold transition cursor-pointer"
-        >
-          {labels.presets.b2bNurseries}
-        </button>
-        <button
-          type="button"
-          onClick={() => handleApplyPreset('green')}
-          className="px-3 py-1.5 rounded-xl bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200/80 font-bold transition cursor-pointer"
-        >
-          {labels.presets.greenAndSenior}
-        </button>
-      </div>
-
-      {/* Baseline snapshot telemetry bar */}
-      {activeBaseline && (
-        <div className="p-3.5 rounded-2xl bg-white border border-slate-200/80 shadow-2xs flex flex-wrap items-center justify-between gap-3 text-xs text-slate-600">
-          <div className="flex items-center gap-2">
-            <span className="font-extrabold text-slate-900">
-              {localizeDistrictName(activeBaseline.districtName, language)} ({activeBaseline.districtRoman})
-            </span>
-            <span className="text-slate-400">•</span>
-            <span>{activeBaseline.population.toLocaleString()} mieszk.</span>
-            <span className="text-slate-400">•</span>
-            <span>{activeBaseline.areaKm2} km²</span>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-3">
-            <div className="flex items-center gap-1">
-              <Baby className="w-3.5 h-3.5 text-indigo-600" />
-              <span>Bilans 0–3:</span>
-              <strong className={activeBaseline.baselineBalance2028 < 0 ? 'text-rose-700' : 'text-emerald-700'}>
-                {activeBaseline.baselineBalance2028 >= 0 ? `+${activeBaseline.baselineBalance2028}` : activeBaseline.baselineBalance2028}
-              </strong>
-            </div>
-
-            <div className="flex items-center gap-1">
-              <Users className="w-3.5 h-3.5 text-amber-600" />
-              <span>Seniorzy (65+):</span>
-              <strong className="text-slate-900">{activeBaseline.seniorSharePct}% ({activeBaseline.currentCasCount} CAS)</strong>
-            </div>
-
-            <div className="flex items-center gap-1">
-              <Trees className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Zieleń:</span>
-              <strong className="text-slate-900">{activeBaseline.greenAreaM2PerCapita} m²/os. ({activeBaseline.pocketParksCount} parków)</strong>
-            </div>
-
-            <div className="flex items-center gap-1 text-blue-700 font-bold">
-              <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-              <span>Witalność: {activeBaseline.demographicVitalityScore.toFixed(1)}/100</span>
-            </div>
-          </div>
+      {/* Row 2: Symmetrical Quick Test Packages Grid */}
+      <div className="space-y-2">
+        <div className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider">
+          {labels.presetsLabel}
         </div>
-      )}
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-2.5">
+          {/* 1. Family & Kids Package */}
+          <button
+            type="button"
+            onClick={() => onApplyPreset('family_package')}
+            className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer border ${
+              activePreset === 'family_package'
+                ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs shadow-indigo-500/25'
+                : 'bg-white text-slate-700 border-slate-200 hover:border-indigo-300 hover:bg-indigo-50/50'
+            }`}
+          >
+            <Baby className="w-4 h-4 shrink-0" />
+            <span className="truncate">{labels.presetFamily}</span>
+          </button>
+
+          {/* 2. Better Transit Package */}
+          <button
+            type="button"
+            onClick={() => onApplyPreset('mobility_package')}
+            className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer border ${
+              activePreset === 'mobility_package'
+                ? 'bg-sky-600 text-white border-sky-600 shadow-xs shadow-sky-500/25'
+                : 'bg-white text-slate-700 border-slate-200 hover:border-sky-300 hover:bg-sky-50/50'
+            }`}
+          >
+            <Bus className="w-4 h-4 shrink-0" />
+            <span className="truncate">{labels.presetMobility}</span>
+          </button>
+
+          {/* 3. Green District Package */}
+          <button
+            type="button"
+            onClick={() => onApplyPreset('green_package')}
+            className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer border ${
+              activePreset === 'green_package'
+                ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs shadow-emerald-500/25'
+                : 'bg-white text-slate-700 border-slate-200 hover:border-emerald-300 hover:bg-emerald-50/50'
+            }`}
+          >
+            <Trees className="w-4 h-4 shrink-0" />
+            <span className="truncate">{labels.presetGreen}</span>
+          </button>
+
+          {/* 4. Senior & Culture Package */}
+          <button
+            type="button"
+            onClick={() => onApplyPreset('senior_culture_package')}
+            className={`flex items-center justify-center gap-2 px-3.5 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer border ${
+              activePreset === 'senior_culture_package'
+                ? 'bg-amber-600 text-white border-amber-600 shadow-xs shadow-amber-500/25'
+                : 'bg-white text-slate-700 border-slate-200 hover:border-amber-300 hover:bg-amber-50/50'
+            }`}
+          >
+            <HeartHandshake className="w-4 h-4 shrink-0" />
+            <span className="truncate">{labels.presetSenior}</span>
+          </button>
+        </div>
+      </div>
     </div>
   );
 }

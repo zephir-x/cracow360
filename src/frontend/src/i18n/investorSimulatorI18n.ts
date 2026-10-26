@@ -1,9 +1,12 @@
-﻿import type { Language } from './types';
-import type {
-  BaselineDistrictMetrics,
-  SimulatedDistrictMetrics,
-  SimulatedMarketStatus,
-} from '../components/investor-mode/simulator-what-if/types';
+﻿import type { SimulatorImpactMetrics } from '../components/investor-mode/simulator-what-if/types';
+import type { Language } from './types';
+
+export interface LeverItemLabels {
+  title: string;
+  subtitle: string;
+  unitEffect: string;
+  currentBaselinePrefix: string;
+}
 
 export interface InvestorSimulatorLabels {
   // Section Header
@@ -11,460 +14,1038 @@ export interface InvestorSimulatorLabels {
   sectionTitle: string;
   sectionSubtitle: string;
 
-  // Toolbar & District Selector
+  // Toolbar
   selectDistrictLabel: string;
-  selectDistrictPlaceholder: string;
-  resetLeversBtn: string;
-  baselineSnapshotTitle: string;
-  presetTitle: string;
-  presets: {
-    municipalPackage: string;
-    b2bNurseries: string;
-    greenAndSenior: string;
+  presetsLabel: string;
+  presetFamily: string;
+  presetGreen: string;
+  presetMobility: string;
+  presetSenior: string;
+  resetBtn: string;
+  activeChangesBadge: (count: number) => string;
+
+  // Levers Panel Header & Categories
+  leversPanelTitle: string;
+  leversPanelSubtitle: string;
+  categoryFilterAll: string;
+  categories: {
+    education: { title: string; subtitle: string };
+    greenery: { title: string; subtitle: string };
+    mobility: { title: string; subtitle: string };
+    culture: { title: string; subtitle: string };
   };
 
-  // Levers
-  leversHeaderTitle: string;
-  leversHeaderSubtitle: string;
-  nurseryLeverTitle: string;
-  nurseryLeverSubtitle: string;
-  nurseryLeverUnit: (count: number) => string;
-  casLeverTitle: string;
-  casLeverSubtitle: string;
-  casLeverUnit: (count: number) => string;
-  parksLeverTitle: string;
-  parksLeverSubtitle: string;
-  parksLeverUnit: (count: number) => string;
+  // 14 Infrastructure Levers
+  levers: {
+    nurseries: LeverItemLabels;
+    kindergartens: LeverItemLabels;
+    primarySchools: LeverItemLabels;
+    parentClubs: LeverItemLabels;
+    pocketParks: LeverItemLabels;
+    cityParks: LeverItemLabels;
+    schoolSports: LeverItemLabels;
+    busStops: LeverItemLabels;
+    tramStops: LeverItemLabels;
+    bikeLanesKm: LeverItemLabels;
+    parkAndRide: LeverItemLabels;
+    casCenters: LeverItemLabels;
+    libraries: LeverItemLabels;
+    culturalCenters: LeverItemLabels;
+  };
 
-  // Estimated Investment CAPEX
-  capexTotalTitle: string;
-  capexTotalSubtitle: string;
-  capexCurrency: string;
-  capexNurseryPart: string;
-  capexCasPart: string;
-  capexParksPart: string;
+  // Dynamic Impact Display
+  impactSectionBadge: string;
+  impactSectionTitle: string;
+  impactSectionSubtitle: string;
+  noChangesHint: string;
 
-  // Impact Display Cards
-  impactHeaderTitle: string;
-  impactHeaderSubtitle: string;
+  // Part A: Overall Index & 8 Pillars
+  overallIndexCardTitle: string;
+  overallIndexCardSub: string;
+  rankingCardTitle: string;
+  rankingCardSub: string;
+  rankImprovedBadge: (delta: number) => string;
+  rankUnchangedBadge: string;
+  pointsUnit: string;
   beforeLabel: string;
   afterLabel: string;
-  deltaLabel: string;
 
-  cardNurseryTitle: string;
-  cardNurseryCoverageLabel: string;
-  cardNurseryDeficitRelief: (places: number, pct: number) => string;
-
-  cardVitalityTitle: string;
-  cardVitalitySub: string;
-  cardVitalityPoints: string;
-
-  cardInfraTitle: string;
-  cardInfraCasLabel: string;
-  cardInfraParksLabel: string;
-  cardInfraGreenPerCapita: string;
-
-  cardStatusTitle: string;
-  marketStatuses: Record<SimulatedMarketStatus, string>;
-  marketStatusDesc: Record<SimulatedMarketStatus, string>;
-
-  // Dynamic Municipal Justification Note
-  generateDecisionNote: (
-    baseline: BaselineDistrictMetrics,
-    simulated: SimulatedDistrictMetrics,
-    districtLocalized: string
-  ) => string;
-
-  // Municipal Guidelines Matrix (Senior CAS & Greenery deficits)
-  guidelinesBadge: string;
-  guidelinesTitle: string;
-  guidelinesSubtitle: string;
-
-  casMatrixTitle: string;
-  casMatrixSubtitle: string;
-  casPriorityDistricts: string;
-  casRecommendationText: string;
-
-  greenMatrixTitle: string;
-  greenMatrixSubtitle: string;
-  greenPriorityDistricts: string;
-  greenRecommendationText: string;
-
-  financeMatrixTitle: string;
-  financeMatrixSubtitle: string;
-  financeModels: {
-    pppTitle: string;
-    pppDesc: string;
-    maluchTitle: string;
-    maluchDesc: string;
-    grantsTitle: string;
-    grantsDesc: string;
+  pillarsSectionTitle: string;
+  pillarsSectionSubtitle: string;
+  pillarNames: {
+    education: string;
+    greenery: string;
+    mobility: string;
+    culture: string;
+    environment: string;
+    demographic: string;
+    safety: string;
+    housing: string;
   };
 
-  finalExecutiveNotice: string;
+  // Part B: Childcare & School Balances (Current State)
+  balancesSectionTitle: string;
+  balancesSectionSubtitle: string;
+  balanceCards: {
+    nurseryTitle: string;
+    nurserySub: string;
+    kindergartenTitle: string;
+    kindergartenSub: string;
+    schoolTitle: string;
+    schoolSub: string;
+    totalEduTitle: string;
+    totalEduSub: string;
+  };
+  placesLabel: string;
+  balance2028Label: string;
+  coverageLabel: string;
+  avgClassSizeLabel: string;
+  parentClubsCountLabel: string;
+  childrenPerPlaceLabel: string;
+  placesUnit: string;
+  pupilsUnit: string;
+
+  // Part C: Concrete Field Metrics (Greenery, Transit, Seniors & Culture)
+  fieldMetricsTitle: string;
+  fieldMetricsSubtitle: string;
+  greeneryCardTitle: string;
+  greeneryPerCapitaLabel: string;
+  totalParksLabel: string;
+  sportsObjectsLabel: string;
+
+  mobilityCardTitle: string;
+  kmkStopsTotalLabel: string;
+  isochrone500mLabel: string;
+  bikeLanesLabel: string;
+  prAndRacksLabel: string;
+
+  seniorCultureCardTitle: string;
+  casCentersCountLabel: string;
+  seniorsPerCasLabel: string;
+  librariesAndCultureLabel: string;
+
+  // Part D: Dynamic Summary & Recommendation Banner
+  recommendationBannerTitle: string;
 }
 
+const PL_SIMULATOR: InvestorSimulatorLabels = {
+  sectionBadge: 'Interaktywny Symulator „Co-Jeśli” • Przeliczanie na Żywo',
+  sectionTitle: 'Symulator Rozbudowy Infrastruktury Dzielnicy',
+  sectionSubtitle:
+    'Wybierz dzielnicę i dodaj za pomocą liczników nowe żłobki, przedszkola, szkoły, parki kieszonkowe, przystanki KMK lub kluby seniora CAS. Moduł przelicza wskaźniki w czasie rzeczywistym na stan aktualny — zobacz, jak natychmiast zmieni się Indeks Jakości Życia, pozycja w rankingu 18 dzielnic oraz bieżący bilans miejsc.',
+
+  selectDistrictLabel: 'Symulowana dzielnica:',
+  presetsLabel: 'Szybkie pakiety testowe:',
+  presetFamily: 'Pakiet Rodzina i Dzieci',
+  presetGreen: 'Pakiet Zielona Dzielnica',
+  presetMobility: 'Pakiet Lepszy Transport',
+  presetSenior: 'Pakiet Senior i Kultura',
+  resetBtn: 'Wyzeruj liczniki',
+  activeChangesBadge: (count) =>
+    count === 0
+      ? 'Brak zmian (stan obecny)'
+      : `Dodano łącznie: +${count}`,
+
+  leversPanelTitle: '1. Wybierz nowe inwestycje i obiekty do dodania w dzielnicy',
+  leversPanelSubtitle:
+    'Użyj przycisków „-” oraz „+” lub wybierz gotowy pakiet powyżej, aby przetestować rozbudowę dzielnicy',
+  categoryFilterAll: 'Wszystkie kategorie (14)',
+  categories: {
+    education: {
+      title: 'Edukacja i Opieka Rodzinna (0–14 lat)',
+      subtitle: 'Żłobki, przedszkola, szkoły podstawowe i Kluby Rodzica',
+    },
+    greenery: {
+      title: 'Zieleń Miejska, Parki i Sport',
+      subtitle: 'Parki kieszonkowe, Ogrody Krakowian, parki miejskie i boiska',
+    },
+    mobility: {
+      title: 'Komunikacja Miejska (KMK) i Rower',
+      subtitle: 'Przystanki autobusowe, tramwajowe, ścieżki DDR i Park & Ride',
+    },
+    culture: {
+      title: 'Wsparcie Seniorów (65+) i Kultura',
+      subtitle: 'Centra Aktywności Seniora (CAS), biblioteki i domy kultury',
+    },
+  },
+
+  levers: {
+    nurseries: {
+      title: 'Nowe żłobki / kluby dziecięce (0–3 lata)',
+      subtitle: 'Zwiększa bazę miejsc opieki dla najmłodszych dzieci',
+      unitEffect: '+100 miejsc / placówka',
+      currentBaselinePrefix: 'Obecnie miejsc 0–3:',
+    },
+    kindergartens: {
+      title: 'Nowe przedszkola (4–6 lat)',
+      subtitle: 'Rozbudowa sieci przedszkoli samorządowych i publicznych',
+      unitEffect: '+125 miejsc / przedszkole',
+      currentBaselinePrefix: 'Obecnie miejsc 4–6:',
+    },
+    primarySchools: {
+      title: 'Nowe szkoły podstawowe (7–14 lat)',
+      subtitle: 'Nowe obwody szkolne i mniejsza liczba uczniów w klasach',
+      unitEffect: '+400 miejsc / szkoła',
+      currentBaselinePrefix: 'Obecnie miejsc 7–14:',
+    },
+    parentClubs: {
+      title: 'Kluby Rodzica (wsparcie rodzin z dziećmi do lat 3)',
+      subtitle: 'Lokalne punkty spotkań, warsztatów i integracji rodziców',
+      unitEffect: '+1 Klub Rodzica',
+      currentBaselinePrefix: 'Obecnie klubów:',
+    },
+    pocketParks: {
+      title: 'Parki kieszonkowe / Ogrody Krakowian',
+      subtitle: 'Kameralne zieleńce sąsiedzkie blisko zabudowy mieszkalnej',
+      unitEffect: '+0,25 ha zieleni / park',
+      currentBaselinePrefix: 'Obecnie parków kiesz.:',
+    },
+    cityParks: {
+      title: 'Parki miejskie i duże skwery rekreacyjne',
+      subtitle: 'Większe tereny zielone poprawiające mikroklimat i rekreację',
+      unitEffect: '+2,0 ha zieleni / park',
+      currentBaselinePrefix: 'Obecnie parków miejskich:',
+    },
+    schoolSports: {
+      title: 'Boiska i pływalnie przyszkolne',
+      subtitle: 'Nowoczesna baza sportowa dla uczniów i mieszkańców dzielnicy',
+      unitEffect: '+1 obiekt sportowy',
+      currentBaselinePrefix: 'Obecnie obiektów:',
+    },
+    busStops: {
+      title: 'Przystanki autobusowe KMK',
+      subtitle: 'Lepszy dostęp pieszy (500 m) do linii autobusowych',
+      unitEffect: '+1 przystanek autobusowy',
+      currentBaselinePrefix: 'Obecnie przystanków aut.:',
+    },
+    tramStops: {
+      title: 'Przystanki tramwajowe KMK',
+      subtitle: 'Rozbudowa szybkiej komunikacji szynowej w dzielnicy',
+      unitEffect: '+1 przystanek tramwajowy',
+      currentBaselinePrefix: 'Obecnie przystanków tram.:',
+    },
+    bikeLanesKm: {
+      title: 'Drogi dla rowerów (DDR)',
+      subtitle: 'Nowe kilometry bezpiecznych ścieżek i pasów rowerowych',
+      unitEffect: '+1 km ścieżki DDR',
+      currentBaselinePrefix: 'Obecnie sieci DDR:',
+    },
+    parkAndRide: {
+      title: 'Strefy Park & Ride i stojaki rowerowe',
+      subtitle: 'Węzły przesiadkowe P+R wraz z nowymi stojakami ZTP',
+      unitEffect: '+1 P+R i +15 stojaków',
+      currentBaselinePrefix: 'Obecnie parkingów P+R:',
+    },
+    casCenters: {
+      title: 'Centra Aktywności Seniora (CAS 65+)',
+      subtitle: 'Kluby integracji, zajęć ruchowych i wsparcia dla seniorów',
+      unitEffect: '+1 centrum CAS',
+      currentBaselinePrefix: 'Obecnie placówek CAS:',
+    },
+    libraries: {
+      title: 'Filie Biblioteki Kraków',
+      subtitle: 'Lokalne wypożyczalnie książek, mediów i miejsca spotkań',
+      unitEffect: '+1 filia biblioteczna',
+      currentBaselinePrefix: 'Obecnie filii:',
+    },
+    culturalCenters: {
+      title: 'Domy i ośrodki kultury',
+      subtitle: 'Miejskie instytucje kultury, warsztatów i wydarzeń lokalnych',
+      unitEffect: '+1 ośrodek kultury',
+      currentBaselinePrefix: 'Obecnie ośrodków:',
+    },
+  },
+
+  impactSectionBadge: 'Dynamiczny Podgląd Efektów w Czasie Rzeczywistym (Przed ➔ Po)',
+  impactSectionTitle: '2. Co dokładnie zmieni się w dzielnicy po wprowadzeniu zmian?',
+  impactSectionSubtitle:
+    'Wszystkie wskaźniki poniżej przeliczają się na żywo dla aktualnego stanu demograficznego i infrastrukturalnego dzielnicy.',
+  noChangesHint:
+    'Zwiększ dowolny licznik powyżej lub kliknij jeden z szybkich pakietów testowych, aby zobaczyć, jak nowe inwestycje zmienią wyniki dzielnicy.',
+
+  overallIndexCardTitle: 'Łączny Indeks Jakości Życia',
+  overallIndexCardSub: 'Średni wynik z 8 filarów jakości życia (skala 0–100 pkt)',
+  rankingCardTitle: 'Pozycja w Rankingu 18 Dzielnic',
+  rankingCardSub: 'Miejsce wybranej dzielnicy na tle całego Krakowa',
+  rankImprovedBadge: (delta) => `Awans o +${delta} poz. w górę!`,
+  rankUnchangedBadge: 'Pozycja bez zmian',
+  pointsUnit: 'pkt',
+  beforeLabel: 'Przed:',
+  afterLabel: 'Po zmianach:',
+
+  pillarsSectionTitle: 'Zmiana wyników w filarach Jakości Życia (0–100 pkt)',
+  pillarsSectionSubtitle: 'Dokładny wpływ dodanych obiektów na poszczególne kategorie oceny dzielnicy',
+  pillarNames: {
+    education: 'Edukacja i Opieka (0–14)',
+    greenery: 'Zieleń i Rekreacja',
+    mobility: 'Komunikacja i Mobilność',
+    culture: 'Kultura i Seniorzy (CAS)',
+    environment: 'Środowisko i Powietrze',
+    demographic: 'Potencjał Demograficzny',
+    safety: 'Bezpieczeństwo',
+    housing: 'Dostępność Cenowa Mieszkań',
+  },
+
+  balancesSectionTitle: 'Wpływ na aktualny bilans miejsc w placówkach dla dzieci (0–14 lat)',
+  balancesSectionSubtitle:
+    'Sprawdź, jak dodane żłobki, przedszkola, szkoły podstawowe i Kluby Rodzica poprawiają bieżącą dostępność miejsc w dzielnicy',
+  balanceCards: {
+    nurseryTitle: 'Żłobki i Kluby (0–3 lata)',
+    nurserySub: 'Miejsca opieki dla maluchów i Kluby Rodzica',
+    kindergartenTitle: 'Przedszkola (4–6 lat)',
+    kindergartenSub: 'Dostępność miejsc przedszkolnych w dzielnicy',
+    schoolTitle: 'Szkoły Podstawowe (7–14 lat)',
+    schoolSub: 'Pojemność szkół i średnia wielkość klas',
+    totalEduTitle: 'Łączny Bilans Miejsc (0–14 lat)',
+    totalEduSub: 'Suma miejsc w żłobkach, przedszkolach i szkołach',
+  },
+  placesLabel: 'Liczba miejsc:',
+  balance2028Label: 'Bilans miejsc (obecnie):',
+  coverageLabel: 'Pokrycie potrzeb:',
+  avgClassSizeLabel: 'Średnio w klasie:',
+  parentClubsCountLabel: 'Kluby Rodzica:',
+  childrenPerPlaceLabel: 'Dzieci na 1 miejsce:',
+  placesUnit: 'miejsc',
+  pupilsUnit: 'uczniów',
+
+  fieldMetricsTitle: 'Zmiana pozostałych wskaźników w dzielnicy (Zieleń, Transport, Seniorzy)',
+  fieldMetricsSubtitle:
+    'Bezpośrednie przełożenie nowych parków, przystanków KMK, ścieżek DDR oraz klubów CAS na aktualne dane dzielnicy',
+  greeneryCardTitle: 'Zieleń Miejska i Sport',
+  greeneryPerCapitaLabel: 'Zieleń na mieszkańca:',
+  totalParksLabel: 'Parki miejskie i kieszonkowe:',
+  sportsObjectsLabel: 'Boiska i pływalnie szkolne:',
+
+  mobilityCardTitle: 'Komunikacja KMK i Rower',
+  kmkStopsTotalLabel: 'Przystanki KMK (aut. + tram.):',
+  isochrone500mLabel: 'Zasięg dojścia 500 m (5–7 min):',
+  bikeLanesLabel: 'Długość ścieżek rowerowych DDR:',
+  prAndRacksLabel: 'Parkingi P+R / stojaki ZTP:',
+
+  seniorCultureCardTitle: 'Seniorzy (65+) i Kultura',
+  casCentersCountLabel: 'Centra Aktywności Seniora (CAS):',
+  seniorsPerCasLabel: 'Seniorów na 1 placówkę CAS:',
+  librariesAndCultureLabel: 'Biblioteki i domy kultury:',
+
+  recommendationBannerTitle: 'Podsumowanie i wskazówki dla wybranej dzielnicy',
+};
+
+const EN_SIMULATOR: InvestorSimulatorLabels = {
+  sectionBadge: 'Interactive "What-If" Simulator • Real-Time Recalculation',
+  sectionTitle: 'District Infrastructure Expansion Simulator',
+  sectionSubtitle:
+    'Select a district and use the counters to add new nurseries, kindergartens, primary schools, pocket parks, KMK transit stops, or senior clubs (CAS). The simulator recalculates indicators in real time on the current state — see how the Quality of Life Index, 18-district ranking position, and current facility balances change.',
+
+  selectDistrictLabel: 'Simulated district:',
+  presetsLabel: 'Quick test packages:',
+  presetFamily: 'Family & Kids Package',
+  presetGreen: 'Green District Package',
+  presetMobility: 'Better Transit Package',
+  presetSenior: 'Senior & Culture Package',
+  resetBtn: 'Reset counters',
+  activeChangesBadge: (count) =>
+    count === 0
+      ? 'No changes (current baseline)'
+      : `Total items added: +${count}`,
+
+  leversPanelTitle: '1. Choose new facilities and infrastructure to add in the district',
+  leversPanelSubtitle:
+    'Use the "-" and "+" buttons or select a quick package above to test expanding the district',
+  categoryFilterAll: 'All categories (14)',
+  categories: {
+    education: {
+      title: 'Education & Family Care (0–14 yrs)',
+      subtitle: 'Nurseries, kindergartens, primary schools, and Parent Clubs',
+    },
+    greenery: {
+      title: 'Urban Greenery, Parks & Sports',
+      subtitle: 'Pocket parks, Krakowian Gardens, city parks, and school sports',
+    },
+    mobility: {
+      title: 'Public Transit (KMK) & Cycling',
+      subtitle: 'Bus stops, tram stops, DDR bike lanes, and Park & Ride',
+    },
+    culture: {
+      title: 'Senior Support (65+) & Culture',
+      subtitle: 'Senior Activity Centers (CAS), libraries, and cultural centers',
+    },
+  },
+
+  levers: {
+    nurseries: {
+      title: 'New nurseries / kids clubs (0–3 yrs)',
+      subtitle: 'Expands childcare capacity for infants and toddlers',
+      unitEffect: '+100 places / facility',
+      currentBaselinePrefix: 'Current 0–3 places:',
+    },
+    kindergartens: {
+      title: 'New kindergartens (4–6 yrs)',
+      subtitle: 'Expands municipal and public preschool capacity',
+      unitEffect: '+125 places / kindergarten',
+      currentBaselinePrefix: 'Current 4–6 places:',
+    },
+    primarySchools: {
+      title: 'New primary schools (7–14 yrs)',
+      subtitle: 'Adds school capacity and lowers average class size',
+      unitEffect: '+400 places / school',
+      currentBaselinePrefix: 'Current 7–14 places:',
+    },
+    parentClubs: {
+      title: 'Parent Clubs (support for families with kids 0–3)',
+      subtitle: 'Local neighborhood hubs for workshops and parent integration',
+      unitEffect: '+1 Parent Club',
+      currentBaselinePrefix: 'Current clubs:',
+    },
+    pocketParks: {
+      title: 'Pocket parks / Krakowian Gardens',
+      subtitle: 'Neighborhood green spaces within a 5-minute walk',
+      unitEffect: '+0.25 ha greenery / park',
+      currentBaselinePrefix: 'Current pocket parks:',
+    },
+    cityParks: {
+      title: 'City parks & large recreational squares',
+      subtitle: 'Larger green areas improving microclimate and leisure',
+      unitEffect: '+2.0 ha greenery / park',
+      currentBaselinePrefix: 'Current city parks:',
+    },
+    schoolSports: {
+      title: 'School sports fields & swimming pools',
+      subtitle: 'Modern sports facilities for pupils and local residents',
+      unitEffect: '+1 sports facility',
+      currentBaselinePrefix: 'Current facilities:',
+    },
+    busStops: {
+      title: 'KMK bus stops',
+      subtitle: 'Improves 500 m walking access to bus feeder lines',
+      unitEffect: '+1 bus stop',
+      currentBaselinePrefix: 'Current bus stops:',
+    },
+    tramStops: {
+      title: 'KMK tram stops',
+      subtitle: 'Expands rapid rail transit access in the district',
+      unitEffect: '+1 tram stop',
+      currentBaselinePrefix: 'Current tram stops:',
+    },
+    bikeLanesKm: {
+      title: 'Bicycle lanes & tracks (DDR)',
+      subtitle: 'New kilometers of dedicated cycling infrastructure',
+      unitEffect: '+1 km DDR bike lane',
+      currentBaselinePrefix: 'Current DDR length:',
+    },
+    parkAndRide: {
+      title: 'Park & Ride hubs & bike racks',
+      subtitle: 'Interchange parking facilities with new ZTP bike racks',
+      unitEffect: '+1 P+R & +15 racks',
+      currentBaselinePrefix: 'Current P+R hubs:',
+    },
+    casCenters: {
+      title: 'Senior Activity Centers (CAS 65+)',
+      subtitle: 'Local integration, health, and activity clubs for seniors',
+      unitEffect: '+1 CAS center',
+      currentBaselinePrefix: 'Current CAS centers:',
+    },
+    libraries: {
+      title: 'Krakow Public Library branches',
+      subtitle: 'Neighborhood library branches and reading rooms',
+      unitEffect: '+1 library branch',
+      currentBaselinePrefix: 'Current branches:',
+    },
+    culturalCenters: {
+      title: 'Community & cultural centers',
+      subtitle: 'Municipal cultural institutions and local event venues',
+      unitEffect: '+1 cultural center',
+      currentBaselinePrefix: 'Current centers:',
+    },
+  },
+
+  impactSectionBadge: 'Dynamic Real-Time Impact Preview (Before ➔ After)',
+  impactSectionTitle: '2. What exactly will change in the district after adding these items?',
+  impactSectionSubtitle:
+    'All indicators below recalculate live based on the current demographic and infrastructure baseline of the district.',
+  noChangesHint:
+    'Increase any counter above or click one of the quick test packages to see how new investments improve the district scores.',
+
+  overallIndexCardTitle: 'Overall Quality of Life Index',
+  overallIndexCardSub: 'Composite score across all 8 pillars (0–100 pts scale)',
+  rankingCardTitle: '18-District Ranking Position',
+  rankingCardSub: 'District rank across all 18 districts of Krakow',
+  rankImprovedBadge: (delta) => `Up by +${delta} pos.!`,
+  rankUnchangedBadge: 'Rank unchanged',
+  pointsUnit: 'pts',
+  beforeLabel: 'Before:',
+  afterLabel: 'After changes:',
+
+  pillarsSectionTitle: 'Score changes across Quality of Life Pillars (0–100 pts)',
+  pillarsSectionSubtitle: 'Exact impact of added facilities on each evaluation dimension',
+  pillarNames: {
+    education: 'Education & Childcare (0–14)',
+    greenery: 'Greenery & Recreation',
+    mobility: 'Mobility & Public Transit',
+    culture: 'Culture & Seniors (CAS)',
+    environment: 'Environment & Clean Air',
+    demographic: 'Demographic Potential',
+    safety: 'Public Safety',
+    housing: 'Housing Affordability',
+  },
+
+  balancesSectionTitle: 'Impact on Current Childcare & School Places Balance (0–14 yrs)',
+  balancesSectionSubtitle:
+    'See how added nurseries, kindergartens, primary schools, and Parent Clubs improve current place availability in the district',
+  balanceCards: {
+    nurseryTitle: 'Nurseries & Clubs (0–3 yrs)',
+    nurserySub: 'Toddler childcare places and Parent Clubs',
+    kindergartenTitle: 'Kindergartens (4–6 yrs)',
+    kindergartenSub: 'Preschool place availability in the district',
+    schoolTitle: 'Primary Schools (7–14 yrs)',
+    schoolSub: 'School capacity and average class size',
+    totalEduTitle: 'Combined Places Balance (0–14 yrs)',
+    totalEduSub: 'Total places across nurseries, kindergartens & schools',
+  },
+  placesLabel: 'Places capacity:',
+  balance2028Label: 'Current balance:',
+  coverageLabel: 'Demand coverage:',
+  avgClassSizeLabel: 'Avg. class size:',
+  parentClubsCountLabel: 'Parent Clubs:',
+  childrenPerPlaceLabel: 'Children per 1 place:',
+  placesUnit: 'places',
+  pupilsUnit: 'pupils',
+
+  fieldMetricsTitle: 'Changes in Other District Metrics (Greenery, Transit, Seniors)',
+  fieldMetricsSubtitle:
+    'Direct impact of new parks, KMK stops, DDR bike lanes, and CAS clubs on current district infrastructure indicators',
+  greeneryCardTitle: 'Urban Greenery & Sports',
+  greeneryPerCapitaLabel: 'Greenery per resident:',
+  totalParksLabel: 'City & pocket parks:',
+  sportsObjectsLabel: 'School sports & pools:',
+
+  mobilityCardTitle: 'KMK Transit & Cycling',
+  kmkStopsTotalLabel: 'KMK stops (bus + tram):',
+  isochrone500mLabel: '500 m walking reach (5–7 min):',
+  bikeLanesLabel: 'DDR bike lanes length:',
+  prAndRacksLabel: 'P+R hubs / bike racks:',
+
+  seniorCultureCardTitle: 'Seniors (65+) & Culture',
+  casCentersCountLabel: 'Senior Activity Centers (CAS):',
+  seniorsPerCasLabel: 'Seniors per 1 CAS center:',
+  librariesAndCultureLabel: 'Libraries & cultural centers:',
+
+  recommendationBannerTitle: 'Summary & Practical Tips for the Selected District',
+};
+
+const UA_SIMULATOR: InvestorSimulatorLabels = {
+  sectionBadge: 'Інтерактивний Симулятор «Що-Якщо» • Перерахунок у Реальному Часі',
+  sectionTitle: 'Симулятор Розбудови Інфраструктури Району',
+  sectionSubtitle:
+    'Оберіть район і додайте за допомогою лічильників нові ясла, дитсадки, школи, кишенькові парки, зупинки KMK або клуби сеньйорів CAS. Модуль перераховує показники в реальному часі на поточний стан — подивіться, як зміниться Індекс Якості Життя, місце в рейтингу 18 районів та поточний баланс місць.',
+
+  selectDistrictLabel: 'Симульований район:',
+  presetsLabel: 'Швидкі тестові пакети:',
+  presetFamily: 'Пакет Родина та Діти',
+  presetGreen: 'Пакет Зелений Район',
+  presetMobility: 'Пакет Кращий Транспорт',
+  presetSenior: 'Пакет Сеньйор і Культура',
+  resetBtn: 'Скинути лічильники',
+  activeChangesBadge: (count) =>
+    count === 0
+      ? 'Без змін (поточний стан)'
+      : `Додано загалом: +${count}`,
+
+  leversPanelTitle: '1. Оберіть нові об’єкти для додавання в районі',
+  leversPanelSubtitle:
+    'Використовуйте кнопки «-» та «+» або оберіть готовий пакет вище, щоб протестувати розбудову району',
+  categoryFilterAll: 'Усі категорії (14)',
+  categories: {
+    education: {
+      title: 'Освіта та Сімейна Опіка (0–14 років)',
+      subtitle: 'Ясла, дитсадки, початкові школи та Клуби Батьків',
+    },
+    greenery: {
+      title: 'Міська Зелень, Парки та Спорт',
+      subtitle: 'Кишенькові парки, Сади Краків’ян, міські парки та стадіони',
+    },
+    mobility: {
+      title: 'Громадський Транспорт (KMK) та Велосипед',
+      subtitle: 'Автобусні й трамвайні зупинки, велодоріжки DDR та Park & Ride',
+    },
+    culture: {
+      title: 'Підтримка Сеньйорів (65+) та Культура',
+      subtitle: 'Центри Активності Сеньйорів (CAS), бібліотеки та будинки культури',
+    },
+  },
+
+  levers: {
+    nurseries: {
+      title: 'Нові ясла / дитячі клуби (0–3 роки)',
+      subtitle: 'Збільшує кількість місць догляду для найменших дітей',
+      unitEffect: '+100 місць / заклад',
+      currentBaselinePrefix: 'Зараз місць 0–3:',
+    },
+    kindergartens: {
+      title: 'Нові дитсадки (4–6 років)',
+      subtitle: 'Розширення мережі муніципальних і громадських дитсадків',
+      unitEffect: '+125 місць / дитсадок',
+      currentBaselinePrefix: 'Зараз місць 4–6:',
+    },
+    primarySchools: {
+      title: 'Нові початкові школи (7–14 років)',
+      subtitle: 'Нові шкільні місця та зменшення середнього розміру класів',
+      unitEffect: '+400 місць / школа',
+      currentBaselinePrefix: 'Зараз місць 7–14:',
+    },
+    parentClubs: {
+      title: 'Клуби Батьків (підтримка родин із дітьми до 3 р.)',
+      subtitle: 'Локальні центри зустрічей, майстер-класів та інтеграції батьків',
+      unitEffect: '+1 Клуб Батьків',
+      currentBaselinePrefix: 'Зараз клубів:',
+    },
+    pocketParks: {
+      title: 'Кишенькові парки / Сади Краків’ян',
+      subtitle: 'Затишні сквери поруч із житловою забудовою',
+      unitEffect: '+0,25 га зелені / парк',
+      currentBaselinePrefix: 'Зараз киш. парків:',
+    },
+    cityParks: {
+      title: 'Міські парки та великі рекреаційні сквери',
+      subtitle: 'Більші зелені зони для покращення мікроклімату та відпочинку',
+      unitEffect: '+2,0 га зелені / парк',
+      currentBaselinePrefix: 'Зараз міських парків:',
+    },
+    schoolSports: {
+      title: 'Шкільні спортивні поля та басейни',
+      subtitle: 'Сучасна спортивна база для учнів і мешканців району',
+      unitEffect: '+1 спортивний об’єкт',
+      currentBaselinePrefix: 'Зараз об’єктів:',
+    },
+    busStops: {
+      title: 'Автобусні зупинки KMK',
+      subtitle: 'Краща піша доступність (500 м) до автобусних ліній',
+      unitEffect: '+1 автобусна зупинка',
+      currentBaselinePrefix: 'Зараз авт. зупинок:',
+    },
+    tramStops: {
+      title: 'Трамвайні зупинки KMK',
+      subtitle: 'Розвиток швидкого рейкового транспорту в районі',
+      unitEffect: '+1 трамвайна зупинка',
+      currentBaselinePrefix: 'Зараз трамв. зупинок:',
+    },
+    bikeLanesKm: {
+      title: 'Велосипедні доріжки (DDR)',
+      subtitle: 'Нові кілометри безпечних велодоріжок і велосмуг',
+      unitEffect: '+1 км доріжки DDR',
+      currentBaselinePrefix: 'Зараз мережі DDR:',
+    },
+    parkAndRide: {
+      title: 'Паркінги Park & Ride та велостійки',
+      subtitle: 'Пересадочні вузли P+R разом із новими велостійками ZTP',
+      unitEffect: '+1 P+R та +15 стійок',
+      currentBaselinePrefix: 'Зараз паркінгів P+R:',
+    },
+    casCenters: {
+      title: 'Центри Активності Сеньйорів (CAS 65+)',
+      subtitle: 'Клуби інтеграції, активності та підтримки людей 65+',
+      unitEffect: '+1 центр CAS',
+      currentBaselinePrefix: 'Зараз центрів CAS:',
+    },
+    libraries: {
+      title: 'Філії Бібліотеки Кракова',
+      subtitle: 'Локальні бібліотеки, медіатеки та простори для читання',
+      unitEffect: '+1 філія бібліотеки',
+      currentBaselinePrefix: 'Зараз філій:',
+    },
+    culturalCenters: {
+      title: 'Будинки та центри культури',
+      subtitle: 'Міські заклади культури, гуртків та локальних подій',
+      unitEffect: '+1 центр культури',
+      currentBaselinePrefix: 'Зараз центрів:',
+    },
+  },
+
+  impactSectionBadge: 'Динамічний Перегляд Ефектів у Реальному Часі (До ➔ Після)',
+  impactSectionTitle: '2. Що саме зміниться в районі після впровадження змін?',
+  impactSectionSubtitle:
+    'Усі показники нижче перераховуються наживо для поточного демографічного та інфраструктурного стану району.',
+  noChangesHint:
+    'Збільште будь-який лічильник вище або натисніть один зі швидких тестових пакетів, щоб побачити, як нові об’єкти покращать показники району.',
+
+  overallIndexCardTitle: 'Загальний Індекс Якості Життя',
+  overallIndexCardSub: 'Середній бал за 8 стовпами якості життя (шкала 0–100 балів)',
+  rankingCardTitle: 'Позиція в Рейтингу 18 Районів',
+  rankingCardSub: 'Місце вибраного району на тлі всіх 18 районів Кракова',
+  rankImprovedBadge: (delta) => `Підйом на +${delta} поз. вгору!`,
+  rankUnchangedBadge: 'Позиція без змін',
+  pointsUnit: 'бал.',
+  beforeLabel: 'До:',
+  afterLabel: 'Після змін:',
+
+  pillarsSectionTitle: 'Зміна оцінок у стовпах Якості Життя (0–100 балів)',
+  pillarsSectionSubtitle: 'Точний вплив доданих об’єктів на окремі категорії оцінки району',
+  pillarNames: {
+    education: 'Освіта та Опіка (0–14)',
+    greenery: 'Зелень і Рекреація',
+    mobility: 'Транспорт і Мобільність',
+    culture: 'Культура та Сеньйори (CAS)',
+    environment: 'Довкілля та Повітря',
+    demographic: 'Демографічний Потенціал',
+    safety: 'Безпека',
+    housing: 'Цінова Доступність Житла',
+  },
+
+  balancesSectionTitle: 'Вплив на поточний баланс місць у закладах для дітей (0–14 років)',
+  balancesSectionSubtitle:
+    'Перевірте, як додані ясла, дитсадки, початкові школи та Клуби Батьків покращують поточну доступність місць у районі',
+  balanceCards: {
+    nurseryTitle: 'Ясла та Клуби (0–3 роки)',
+    nurserySub: 'Місця догляду для малюків та Клуби Батьків',
+    kindergartenTitle: 'Дитсадки (4–6 років)',
+    kindergartenSub: 'Доступність місць у дитсадках району',
+    schoolTitle: 'Початкові Школи (7–14 років)',
+    schoolSub: 'Місткість шкіл та середній розмір класів',
+    totalEduTitle: 'Сукупний Баланс Місць (0–14 років)',
+    totalEduSub: 'Сума місць у яслах, дитсадках та школах',
+  },
+  placesLabel: 'Кількість місць:',
+  balance2028Label: 'Баланс місць (зараз):',
+  coverageLabel: 'Покриття потреб:',
+  avgClassSizeLabel: 'У середньому в класі:',
+  parentClubsCountLabel: 'Клуби Батьків:',
+  childrenPerPlaceLabel: 'Дітей на 1 місце:',
+  placesUnit: 'місць',
+  pupilsUnit: 'учнів',
+
+  fieldMetricsTitle: 'Зміна інших показників у районі (Зелень, Транспорт, Сеньйори)',
+  fieldMetricsSubtitle:
+    'Прямий вплив нових парків, зупинок KMK, велодоріжок DDR та клубів CAS на поточні дані району',
+  greeneryCardTitle: 'Міська Зелень та Спорт',
+  greeneryPerCapitaLabel: 'Зелень на мешканця:',
+  totalParksLabel: 'Міські та кишенькові парки:',
+  sportsObjectsLabel: 'Шкільні поля та басейни:',
+
+  mobilityCardTitle: 'Транспорт KMK та Велосипед',
+  kmkStopsTotalLabel: 'Зупинки KMK (авт. + трамв.):',
+  isochrone500mLabel: 'Піша доступність 500 м (5–7 хв):',
+  bikeLanesLabel: 'Довжина велодоріжок DDR:',
+  prAndRacksLabel: 'Паркінги P+R / велостійки:',
+
+  seniorCultureCardTitle: 'Сеньйори (65+) та Культура',
+  casCentersCountLabel: 'Центри Активності Сеньйорів (CAS):',
+  seniorsPerCasLabel: 'Сеньйорів на 1 заклад CAS:',
+  librariesAndCultureLabel: 'Бібліотеки та будинки культури:',
+
+  recommendationBannerTitle: 'Підсумок та практичні поради для обраного району',
+};
+
 export function getInvestorSimulatorLabels(language: Language): InvestorSimulatorLabels {
+  if (language === 'en') return EN_SIMULATOR;
+  if (language === 'ua') return UA_SIMULATOR;
+  return PL_SIMULATOR;
+}
+
+export function getDynamicSimulatorRecommendation(
+  impact: SimulatorImpactMetrics,
+  language: Language = 'pl'
+): string {
+  const {
+    totalAddedItemsCount,
+    scores,
+    nurseryBalanceBefore,
+    nurseryBalanceAfter,
+    kindergartenBalanceBefore,
+    kindergartenBalanceAfter,
+    schoolBalanceBefore,
+    schoolBalanceAfter,
+    avgClassSizeBefore,
+    avgClassSizeAfter,
+    parentClubsBefore,
+    parentClubsAfter,
+    greenM2PerCapitaBefore,
+    greenM2PerCapitaAfter,
+    parksCountBefore,
+    parksCountAfter,
+    sportsFacilitiesBefore,
+    sportsFacilitiesAfter,
+    kmkStopsBefore,
+    kmkStopsAfter,
+    isochroneBeforePct,
+    isochroneAfterPct,
+    bikeLanesKmBefore,
+    bikeLanesKmAfter,
+    parkAndRideBefore,
+    parkAndRideAfter,
+    casCountBefore,
+    casCountAfter,
+    seniorsPerCasBefore,
+    seniorsPerCasAfter,
+    librariesBefore,
+    librariesAfter,
+    culturalCentersBefore,
+    culturalCentersAfter,
+  } = impact;
+
+  const formatSigned = (val: number) => (val >= 0 ? `+${val}` : `${val}`);
+
   if (language === 'en') {
-    return {
-      sectionBadge: 'What-If Investment Simulator & Municipal Guidelines',
-      sectionTitle: 'Infrastructure Impact Simulator & Strategic Directives (B2G / B2B)',
-      sectionSubtitle:
-        'Interactive econometric sandbox for municipal decision-makers (UMK) and institutional investors: test the live impact of opening new nursery places, Senior Activity Centers (CAS), or pocket parks on district vitality, deficit relief, and coverage indices.',
+    const needs: string[] = [];
+    if (nurseryBalanceBefore < -50) {
+      needs.push(`current shortage of nursery places (${nurseryBalanceBefore})`);
+    }
+    if (avgClassSizeBefore > 21) {
+      needs.push(`crowded primary school classes (avg. ${avgClassSizeBefore.toFixed(1)} pupils)`);
+    }
+    if (greenM2PerCapitaBefore < 12) {
+      needs.push(`low park greenery (${greenM2PerCapitaBefore.toFixed(1)} m²/resident)`);
+    }
+    if (isochroneBeforePct < 78) {
+      needs.push(`transit walking gaps (${isochroneBeforePct.toFixed(1)}% within 500 m)`);
+    }
+    if (seniorsPerCasBefore > 3500) {
+      needs.push(`high senior load per CAS club (${seniorsPerCasBefore} seniors/CAS)`);
+    }
 
-      selectDistrictLabel: 'Target District for Simulation:',
-      selectDistrictPlaceholder: 'Select one of 18 districts...',
-      resetLeversBtn: 'Reset Levers',
-      baselineSnapshotTitle: 'Baseline District Snapshot',
-      presetTitle: 'Quick Investment Presets:',
-      presets: {
-        municipalPackage: 'Standard Municipal Package (+120 places, +1 CAS, +1 park)',
-        b2bNurseries: 'Private Nursery B2B Focus (+180 places)',
-        greenAndSenior: 'Civic Revitalization (+2 CAS, +2 parks)',
-      },
+    const baseDiagnose =
+      needs.length > 0
+        ? `Main challenges in this district: ${needs.join(', ')}.`
+        : `This district has a well-balanced infrastructure baseline across most categories.`;
 
-      leversHeaderTitle: 'Investment Levers & Capital Outlay',
-      leversHeaderSubtitle: 'Adjust scale of planned municipal or private capital interventions:',
-      nurseryLeverTitle: 'New Nursery Places (0–3 yrs)',
-      nurseryLeverSubtitle: 'New facilities or kindergarten room conversions (Maluch+ / B2B)',
-      nurseryLeverUnit: (count) => (count === 1 ? 'place' : 'places'),
-      casLeverTitle: 'New Senior Activity Centers (CAS)',
-      casLeverSubtitle: 'Dedicated integration & cultural hubs for seniors (65+)',
-      casLeverUnit: (count) => (count === 1 ? 'center' : 'centers'),
-      parksLeverTitle: 'New Pocket Parks & Green Spaces',
-      parksLeverSubtitle: 'Micro-parks within 300m walking radius (Krakowian Gardens)',
-      parksLeverUnit: (count) => (count === 1 ? 'park' : 'parks'),
+    if (totalAddedItemsCount === 0) {
+      return `${baseDiagnose} Use the counters above to test adding new facilities and see how the district's Quality of Life Index (${scores.before.weightedQualityOfLifeIndex.toFixed(1)} pts, rank #${scores.rankBefore}/18) improves in real time!`;
+    }
 
-      capexTotalTitle: 'Estimated Investment Outlay (CAPEX)',
-      capexTotalSubtitle: 'Benchmark municipal / private capital expenditure estimate',
-      capexCurrency: 'PLN',
-      capexNurseryPart: 'Childcare:',
-      capexCasPart: 'Senior Centers:',
-      capexParksPart: 'Pocket Parks:',
+    const changedEffects: string[] = [];
+    if (nurseryBalanceAfter !== nurseryBalanceBefore) {
+      changedEffects.push(
+        `nursery balance improves from ${formatSigned(nurseryBalanceBefore)} to ${formatSigned(nurseryBalanceAfter)} places`
+      );
+    }
+    if (kindergartenBalanceAfter !== kindergartenBalanceBefore) {
+      changedEffects.push(
+        `kindergarten balance improves from ${formatSigned(kindergartenBalanceBefore)} to ${formatSigned(kindergartenBalanceAfter)} places`
+      );
+    }
+    if (schoolBalanceAfter !== schoolBalanceBefore) {
+      changedEffects.push(
+        `school places balance changes from ${formatSigned(schoolBalanceBefore)} to ${formatSigned(schoolBalanceAfter)} (avg. class size: ${avgClassSizeBefore.toFixed(1)} ➔ ${avgClassSizeAfter.toFixed(1)} pupils)`
+      );
+    }
+    if (parentClubsAfter !== parentClubsBefore) {
+      changedEffects.push(`Parent Clubs increase from ${parentClubsBefore} to ${parentClubsAfter}`);
+    }
+    if (parksCountAfter !== parksCountBefore) {
+      changedEffects.push(
+        `parks increase from ${parksCountBefore} to ${parksCountAfter} (${greenM2PerCapitaBefore.toFixed(1)} ➔ ${greenM2PerCapitaAfter.toFixed(1)} m²/resident)`
+      );
+    }
+    if (sportsFacilitiesAfter !== sportsFacilitiesBefore) {
+      changedEffects.push(
+        `school sports facilities rise from ${sportsFacilitiesBefore} to ${sportsFacilitiesAfter}`
+      );
+    }
+    if (kmkStopsAfter !== kmkStopsBefore || isochroneAfterPct !== isochroneBeforePct) {
+      changedEffects.push(
+        `500 m KMK transit access rises from ${isochroneBeforePct.toFixed(1)}% to ${isochroneAfterPct.toFixed(1)}% (${kmkStopsBefore} ➔ ${kmkStopsAfter} stops)`
+      );
+    }
+    if (bikeLanesKmAfter !== bikeLanesKmBefore) {
+      changedEffects.push(
+        `DDR bike lanes expand from ${bikeLanesKmBefore.toFixed(1)} to ${bikeLanesKmAfter.toFixed(1)} km`
+      );
+    }
+    if (parkAndRideAfter !== parkAndRideBefore) {
+      changedEffects.push(`P+R hubs increase from ${parkAndRideBefore} to ${parkAndRideAfter}`);
+    }
+    if (casCountAfter !== casCountBefore) {
+      changedEffects.push(
+        `CAS senior clubs expand from ${casCountBefore} to ${casCountAfter} (${seniorsPerCasBefore} ➔ ${seniorsPerCasAfter} seniors/CAS)`
+      );
+    }
+    if (
+      librariesAfter + culturalCentersAfter !==
+      librariesBefore + culturalCentersBefore
+    ) {
+      changedEffects.push(
+        `libraries & cultural centers grow from ${librariesBefore + culturalCentersBefore} to ${librariesAfter + culturalCentersAfter}`
+      );
+    }
 
-      impactHeaderTitle: 'Simulated Impact & Outcome Telemetry',
-      impactHeaderSubtitle: 'Live comparison: Current Baseline vs. Post-Investment Projections',
-      beforeLabel: 'Baseline',
-      afterLabel: 'Post-Investment',
-      deltaLabel: 'Net Change',
+    const effectsSentence =
+      changedEffects.length > 0 ? ` Key improvements: ${changedEffects.join('; ')}.` : '';
 
-      cardNurseryTitle: '2028 Childcare Balance & Coverage',
-      cardNurseryCoverageLabel: 'Demand coverage:',
-      cardNurseryDeficitRelief: (places, pct) =>
-        `Deficit reduced by ${places} places (+${pct}% coverage)`,
-
-      cardVitalityTitle: 'Demographic Vitality Index',
-      cardVitalitySub: 'Composite quality of life & migration attraction index',
-      cardVitalityPoints: 'pts',
-
-      cardInfraTitle: 'Social & Green Infrastructure',
-      cardInfraCasLabel: 'Senior Activity Centers:',
-      cardInfraParksLabel: 'Pocket Parks:',
-      cardInfraGreenPerCapita: 'm² green/capita',
-
-      cardStatusTitle: 'District Investment Status',
-      marketStatuses: {
-        CRITICAL_DEFICIT: 'Severe Supply Deficit',
-        MODERATE_DEFICIT: 'Moderate Deficit',
-        BALANCED: 'Balanced Market',
-        SURPLUS: 'Supply Reserve (Surplus)',
-      },
-      marketStatusDesc: {
-        CRITICAL_DEFICIT: 'Urgent priority for new public nurseries and private operator subsidies.',
-        MODERATE_DEFICIT: 'Stabilizing market; recommended expansion of selective private centers.',
-        BALANCED: 'Satisfactory supply matching demand; focus on quality and proximity.',
-        SURPLUS: 'Saturated market; optimal conditions for specialized offerings.',
-      },
-
-      generateDecisionNote: (baseline, simulated, districtName) => {
-        const places = simulated.balanceImprovement;
-        const pts = simulated.vitalityScoreDelta;
-        if (places > 0 && simulated.newCasCount > baseline.currentCasCount) {
-          return `For district ${districtName}, the planned addition of ${places} nursery places and ${simulated.casImprovement} CAS center elevates demand coverage to ${simulated.newCoveragePct2028}% and boosts the vitality score by +${pts} pts. This intervention effectively relieves both young family childcare pressure and senior isolation.`;
-        }
-        if (places > 0) {
-          return `Injecting ${places} nursery places in district ${districtName} improves the 2028 balance to ${simulated.newBalance2028 >= 0 ? `+${simulated.newBalance2028}` : simulated.newBalance2028} places, reducing the local childcare gap by ${simulated.coverageImprovementPct} percentage points. Recommended for co-financing via UMK municipal subsidies.`;
-        }
-        return `Enhancing green and senior infrastructure in district ${districtName} (+${simulated.parksImprovement} pocket parks, +${simulated.casImprovement} CAS) lifts the district vitality index to ${simulated.newVitalityScore} pts and expands biologically active green area per resident.`;
-      },
-
-      guidelinesBadge: 'Strategic Municipal & B2B Guidelines',
-      guidelinesTitle: 'Cross-Sector Infrastructure Priority Directives',
-      guidelinesSubtitle:
-        'Targeted municipal policy matrix coordinating Senior Centers (CAS), Urban Greenery, and Public-Private Partnership mechanisms.',
-
-      casMatrixTitle: 'Senior Infrastructure (CAS Priorities)',
-      casMatrixSubtitle: 'Districts with highest 65+ senior population shares and CAS shortages',
-      casPriorityDistricts: 'Priority: District I Stare Miasto, II Grzegórzki, V Krowodrza, XVIII Nowa Huta',
-      casRecommendationText:
-        'Seniors represent up to 28% of residents in central and historic quarters. We recommend repurposing municipal commercial premises on ground floors for CAS community hubs with active health and digital literacy workshops.',
-
-      greenMatrixTitle: 'Pocket Parks & Biological Buffer',
-      greenMatrixSubtitle: 'Dense residential development zones lacking accessible neighborhood greenery',
-      greenPriorityDistricts: 'Priority: District IV Prądnik Biały, XIII Podgórze, XIV Czyżyny',
-      greenRecommendationText:
-        'Intensive residential developments require high-density micro-greenery. Pocket parks (Krakowian Gardens) of 1,500–3,000 m² within a 300m walking radius provide vital biological buffering, urban heat mitigation, and family gathering spots.',
-
-      financeMatrixTitle: 'Financing & Institutional Models',
-      financeMatrixSubtitle: 'Operational mechanisms for municipal authorities (UMK) and institutional partners',
-      financeModels: {
-        pppTitle: 'Public-Private Partnerships (PPP)',
-        pppDesc:
-          'City provides land plots or lease rebates; private operators build and run modern non-public daycare centers.',
-        maluchTitle: 'Maluch+ / Active Parent Integration',
-        maluchDesc:
-          'Direct state and municipal subsidies (up to 1,500 PLN/month per infant) bridging parent tuition to affordable municipal parity.',
-        grantsTitle: 'Municipal Civic Grants & Participatory Budget',
-        grantsDesc:
-          'Dedicated budget reserves for Pocket Parks and Senior Clubs through district councils (Rady Dzielnic).',
-      },
-
-      finalExecutiveNotice:
-        'Official Decision Support System – Kraków360. All econometric calculations and spatial buffers are computed from verified municipal data (BDK, EMUiA, BIP Kraków).',
-    };
+    return `${baseDiagnose} With your +${totalAddedItemsCount} added items, the overall Quality of Life Index rises from ${scores.before.weightedQualityOfLifeIndex.toFixed(1)} to ${scores.after.weightedQualityOfLifeIndex.toFixed(1)} pts (+${scores.deltas.weightedQualityOfLifeIndex.toFixed(1)} pts, rank #${scores.rankBefore} ➔ #${scores.rankAfter}/18).${effectsSentence}`;
   }
 
   if (language === 'ua') {
-    return {
-      sectionBadge: 'Симулятор Інвестицій „Що-Якщо” та Муніципальні Вимоги',
-      sectionTitle: 'Симулятор Впливу Інфраструктури та Стратегічні Директиви (B2G / B2B)',
-      sectionSubtitle:
-        'Інтерактивна економетрична пісочниця для міської влади (UMK) та інституційних інвесторів: перевірте в прямому ефірі вплив відкриття нових місць у яслах, Центрів для Сеньйорів (CAS) або кишенькових парків на вітальність району, баланс місць та охоплення попиту.',
+    const needs: string[] = [];
+    if (nurseryBalanceBefore < -50) {
+      needs.push(`поточний дефіцит місць у яслах (${nurseryBalanceBefore})`);
+    }
+    if (avgClassSizeBefore > 21) {
+      needs.push(`великі класи у школах (сер. ${avgClassSizeBefore.toFixed(1)} учнів)`);
+    }
+    if (greenM2PerCapitaBefore < 12) {
+      needs.push(`невелика площа парків (${greenM2PerCapitaBefore.toFixed(1)} м²/мешк.)`);
+    }
+    if (isochroneBeforePct < 78) {
+      needs.push(`нижча піша доступність транспорту (${isochroneBeforePct.toFixed(1)}% у радіусі 500 м)`);
+    }
+    if (seniorsPerCasBefore > 3500) {
+      needs.push(`високе навантаження на центри CAS (${seniorsPerCasBefore} сеньйорів/CAS)`);
+    }
 
-      selectDistrictLabel: 'Цільовий Район для Симуляції:',
-      selectDistrictPlaceholder: 'Оберіть один із 18 районів...',
-      resetLeversBtn: 'Скинути Параметри',
-      baselineSnapshotTitle: 'Базовий Зріз Показників Району',
-      presetTitle: 'Швидкі Інвестиційні Пресети:',
-      presets: {
-        municipalPackage: 'Стандартний Міський Пакет (+120 місць, +1 CAS, +1 парк)',
-        b2bNurseries: 'Фокус на Приватні Ясла B2B (+180 місць)',
-        greenAndSenior: 'Громадська Ревіталізація (+2 CAS, +2 парки)',
-      },
+    const baseDiagnose =
+      needs.length > 0
+        ? `Головні потреби цього району: ${needs.join(', ')}.`
+        : `Цей район має добре збалансовану інфраструктуру у більшості категорій.`;
 
-      leversHeaderTitle: 'Інвестиційні Важелі та Капітальні Витрати',
-      leversHeaderSubtitle: 'Налаштуйте обсяг запланованих муніципальних чи приватних інвестицій:',
-      nurseryLeverTitle: 'Нові Місця в Яслах (0–3 роки)',
-      nurseryLeverSubtitle: 'Будівництво або адаптація приміщень дитсадків (Maluch+ / B2B)',
-      nurseryLeverUnit: (count) => (count === 1 ? 'місце' : count >= 2 && count <= 4 ? 'місця' : 'місць'),
-      casLeverTitle: 'Нові Центри для Сеньйорів (CAS)',
-      casLeverSubtitle: 'Осередки інтеграції, дозвілля та активності літніх людей (65+)',
-      casLeverUnit: (count) => (count === 1 ? 'осередок' : count >= 2 && count <= 4 ? 'осередки' : 'осередків'),
-      parksLeverTitle: 'Нові Кишенькові Парки та Сквери',
-      parksLeverSubtitle: 'Зелені зони у радіусі 300 метрів (Сади Краков’ян)',
-      parksLeverUnit: (count) => (count === 1 ? 'парк' : count >= 2 && count <= 4 ? 'парки' : 'парків'),
+    if (totalAddedItemsCount === 0) {
+      return `${baseDiagnose} Додайте нові об’єкти за допомогою лічильників вище, щоб у реальному часі перевірити, як зросте Індекс Якості Життя (${scores.before.weightedQualityOfLifeIndex.toFixed(1)} бал., місце #${scores.rankBefore}/18)!`;
+    }
 
-      capexTotalTitle: 'Орієнтовні Капітальні Витрати (CAPEX)',
-      capexTotalSubtitle: 'Бюджетний орієнтир міських або комерційних інвестицій',
-      capexCurrency: 'PLN',
-      capexNurseryPart: 'Ясла:',
-      capexCasPart: 'Клуби Сеньйорів:',
-      capexParksPart: 'Кишенькові парки:',
+    const changedEffects: string[] = [];
+    if (nurseryBalanceAfter !== nurseryBalanceBefore) {
+      changedEffects.push(
+        `баланс ясел змінюється з ${formatSigned(nurseryBalanceBefore)} до ${formatSigned(nurseryBalanceAfter)} місць`
+      );
+    }
+    if (kindergartenBalanceAfter !== kindergartenBalanceBefore) {
+      changedEffects.push(
+        `баланс дитсадків змінюється з ${formatSigned(kindergartenBalanceBefore)} до ${formatSigned(kindergartenBalanceAfter)} місць`
+      );
+    }
+    if (schoolBalanceAfter !== schoolBalanceBefore) {
+      changedEffects.push(
+        `баланс шкіл змінюється з ${formatSigned(schoolBalanceBefore)} до ${formatSigned(schoolBalanceAfter)} (сер. клас: ${avgClassSizeBefore.toFixed(1)} ➔ ${avgClassSizeAfter.toFixed(1)} учнів)`
+      );
+    }
+    if (parentClubsAfter !== parentClubsBefore) {
+      changedEffects.push(`Клуби Батьків зростають з ${parentClubsBefore} до ${parentClubsAfter}`);
+    }
+    if (parksCountAfter !== parksCountBefore) {
+      changedEffects.push(
+        `кількість парків зростає з ${parksCountBefore} до ${parksCountAfter} (${greenM2PerCapitaBefore.toFixed(1)} ➔ ${greenM2PerCapitaAfter.toFixed(1)} м²/мешк.)`
+      );
+    }
+    if (sportsFacilitiesAfter !== sportsFacilitiesBefore) {
+      changedEffects.push(
+        `шкільні спорт. об’єкти зростають з ${sportsFacilitiesBefore} до ${sportsFacilitiesAfter}`
+      );
+    }
+    if (kmkStopsAfter !== kmkStopsBefore || isochroneAfterPct !== isochroneBeforePct) {
+      changedEffects.push(
+        `піша доступність KMK 500 м зростає з ${isochroneBeforePct.toFixed(1)}% до ${isochroneAfterPct.toFixed(1)}% (${kmkStopsBefore} ➔ ${kmkStopsAfter} зупинок)`
+      );
+    }
+    if (bikeLanesKmAfter !== bikeLanesKmBefore) {
+      changedEffects.push(
+        `мережа велодоріжок DDR зростає з ${bikeLanesKmBefore.toFixed(1)} до ${bikeLanesKmAfter.toFixed(1)} км`
+      );
+    }
+    if (parkAndRideAfter !== parkAndRideBefore) {
+      changedEffects.push(`паркінги P+R зростають з ${parkAndRideBefore} до ${parkAndRideAfter}`);
+    }
+    if (casCountAfter !== casCountBefore) {
+      changedEffects.push(
+        `центри CAS зростають з ${casCountBefore} до ${casCountAfter} (${seniorsPerCasBefore} ➔ ${seniorsPerCasAfter} сеньйорів/CAS)`
+      );
+    }
+    if (
+      librariesAfter + culturalCentersAfter !==
+      librariesBefore + culturalCentersBefore
+    ) {
+      changedEffects.push(
+        `бібліотеки та доми культури зростають з ${librariesBefore + culturalCentersBefore} до ${librariesAfter + culturalCentersAfter}`
+      );
+    }
 
-      impactHeaderTitle: 'Результати Симуляції на Живо',
-      impactHeaderSubtitle: 'Порівняння: Поточний Базовий Стан vs. Після Інвестицій',
-      beforeLabel: 'Базовий стан',
-      afterLabel: 'Після інвестицій',
-      deltaLabel: 'Чиста зміна',
+    const effectsSentence =
+      changedEffects.length > 0 ? ` Ключові зміни: ${changedEffects.join('; ')}.` : '';
 
-      cardNurseryTitle: 'Баланс Ясел 2028 та Покриття Попиту',
-      cardNurseryCoverageLabel: 'Покриття попиту:',
-      cardNurseryDeficitRelief: (places, pct) =>
-        `Дефіцит зменшено на ${places} місць (+${pct}% покриття)`,
-
-      cardVitalityTitle: 'Індекс Демографічної Вітальності',
-      cardVitalitySub: 'Комплексний показник якості життя та міграційної привабливості',
-      cardVitalityPoints: 'балів',
-
-      cardInfraTitle: 'Соціальна та Зелена Інфраструктура',
-      cardInfraCasLabel: 'Центри для Сеньйорів (CAS):',
-      cardInfraParksLabel: 'Кишенькові парки:',
-      cardInfraGreenPerCapita: 'м² зелені/мешканця',
-
-      cardStatusTitle: 'Інвестиційний Статус Району',
-      marketStatuses: {
-        CRITICAL_DEFICIT: 'Гострий Дефіцит Пропозиції',
-        MODERATE_DEFICIT: 'Помірний Дефіцит',
-        BALANCED: 'Збалансований Ринок',
-        SURPLUS: 'Резерв Пропозиції (Профіцит)',
-      },
-      marketStatusDesc: {
-        CRITICAL_DEFICIT: 'Терміновий пріоритет для муніципальних ясел та грантів приватним операторам.',
-        MODERATE_DEFICIT: 'Ринок стабілізується; рекомендується вибіркове розширення мережі.',
-        BALANCED: 'Задовільне покриття попиту; акцент на близькості та якості послуг.',
-        SURPLUS: 'Насичений ринок; сприятливі умови для відкриття профільних закладів.',
-      },
-
-      generateDecisionNote: (baseline, simulated, districtName) => {
-        const places = simulated.balanceImprovement;
-        const pts = simulated.vitalityScoreDelta;
-        if (places > 0 && simulated.newCasCount > baseline.currentCasCount) {
-          return `Для району ${districtName} заплановане введення ${places} місць у яслах та ${simulated.casImprovement} CAS збільшує охоплення попиту до ${simulated.newCoveragePct2028}% та підвищує індекс вітальності на +${pts} балів. Це одночасно зменшує черги для молодих сімей та підтримує сеньйорів.`;
-        }
-        if (places > 0) {
-          return `Створення ${places} місць у яслах для району ${districtName} скорочує дефіцит 2028 року до ${simulated.newBalance2028 >= 0 ? `+${simulated.newBalance2028}` : simulated.newBalance2028} місць (+${simulated.coverageImprovementPct} в.п. покриття). Рекомендовано співфінансування за програмами UMK.`;
-        }
-        return `Розбудова зеленої та ветеранської інфраструктури для району ${districtName} (+${simulated.parksImprovement} парків, +${simulated.casImprovement} CAS) підвищує вітальність до ${simulated.newVitalityScore} балів та забезпечує доступність зон відпочинку біля дому.`;
-      },
-
-      guidelinesBadge: 'Стратегічні Муніципальні Директиви',
-      guidelinesTitle: 'Міжгалузеві Пріоритети Розвитку Інфраструктури',
-      guidelinesSubtitle:
-        'Комплексна матриця політики міського розвитку: Центри Сеньйорів (CAS), Міська Зелень та Механізми B2B / ДПП.',
-
-      casMatrixTitle: 'Інфраструктура для Сеньйорів (CAS)',
-      casMatrixSubtitle: 'Райони з найвищою часткою літніх людей 65+ та дефіцитом осередків CAS',
-      casPriorityDistricts: 'Пріоритет: Район I Старе Місто, II Гжегужкі, V Кроводжа, XVIII Нова Гута',
-      casRecommendationText:
-        'Частка сеньйорів у центральних районах сягає 28%. Рекомендується переобладнання перших поверхів муніципальних будівель під клуби активного довголіття CAS з оздоровчими та комп’ютерними програмами.',
-
-      greenMatrixTitle: 'Кишенькові Парки та Буферні Зони',
-      greenMatrixSubtitle: 'Зони щільної забудови, які потребують доступної рекреації у пішій доступності',
-      greenPriorityDistricts: 'Пріоритет: Район IV Пронднік Бяли, XIII Подгуже, XIV Чижини',
-      greenRecommendationText:
-        'Райони інтенсивного житлового будівництва потребують мікропарків (Сади Краков’ян) площею 1500–3000 м² у радіусі 300 метрів для запобігання міським тепловим островам та комфорту сімей.',
-
-      financeMatrixTitle: 'Фінансові Моделі та Партнерство',
-      financeMatrixSubtitle: 'Інструменти фінансування для міської влади (UMK) та інвесторів',
-      financeModels: {
-        pppTitle: 'Державно-Приватне Партнерство (ДПП)',
-        pppDesc:
-          'Місто виділяє ділянки або надає пільгову оренду; приватний оператор інвестує в будівництво та стандарти.',
-        maluchTitle: 'Програма Maluch+ / Активні Батьки',
-        maluchDesc:
-          'Субсидії до 1500 PLN/місяць на дитину, що зрівнюють вартість приватних ясел з муніципальними.',
-        grantsTitle: 'Міські Гранти та Громадський Бюджет',
-        grantsDesc:
-          'Фінансування кишенькових парків та оснащення клубів літніх людей через Ради Районів.',
-      },
-
-      finalExecutiveNotice:
-        'Офіційна Система Підтримки Рішень – Kraków360. Усі розрахунки та просторові буфери базуються на верифікованих муніципальних реєстрах (BDK, EMUiA, BIP Kraków).',
-    };
+    return `${baseDiagnose} Завдяки обраним змінам (+${totalAddedItemsCount} об’єктів) загальний Індекс Якості Життя зростає з ${scores.before.weightedQualityOfLifeIndex.toFixed(1)} до ${scores.after.weightedQualityOfLifeIndex.toFixed(1)} бал. (+${scores.deltas.weightedQualityOfLifeIndex.toFixed(1)} бал., позиція в рейтингу #${scores.rankBefore} ➔ #${scores.rankAfter}/18).${effectsSentence}`;
   }
 
-  // Polish default
-  return {
-    sectionBadge: 'Symulator Inwestycyjny „Co-Jeśli” & Wytyczne B2G/B2B',
-    sectionTitle: 'Symulator Wpływu Inwestycji & Strategiczne Wytyczne Miejskie',
-    sectionSubtitle:
-      'Interaktywny sandbox ekonometryczny dla decydentów Urzędu Miasta Krakowa oraz inwestorów prywatnych: przetestuj na żywo wpływ budowy nowego żłobka, CAS lub parku kieszonkowego na bilans 2028, pokrycie popytu i wskaźnik witalności dzielnicy.',
+  // Polish (Default)
+  const needs: string[] = [];
+  if (nurseryBalanceBefore < -50) {
+    needs.push(`bieżący niedobór miejsc w żłobkach (${nurseryBalanceBefore} miejsc)`);
+  }
+  if (avgClassSizeBefore > 21) {
+    needs.push(`duże zagęszczenie klas w szkołach (śr. ${avgClassSizeBefore.toFixed(1)} uczniów)`);
+  }
+  if (greenM2PerCapitaBefore < 12) {
+    needs.push(`mniejsza ilość zieleni parkowej (${greenM2PerCapitaBefore.toFixed(1)} m²/os.)`);
+  }
+  if (isochroneBeforePct < 78) {
+    needs.push(`słabszy zasięg dojścia do przystanków KMK (${isochroneBeforePct.toFixed(1)}% w 500 m)`);
+  }
+  if (seniorsPerCasBefore > 3500) {
+    needs.push(`duża liczba seniorów na jeden klub CAS (${seniorsPerCasBefore} os./CAS)`);
+  }
 
-    selectDistrictLabel: 'Wybierz Dzielnicę do Symulacji Inwestycyjnej:',
-    selectDistrictPlaceholder: 'Wybierz jedną z 18 dzielnic Krakowa...',
-    resetLeversBtn: 'Zresetuj Suwaki',
-    baselineSnapshotTitle: 'Aktualny Stan Wyjściowy Dzielnicy',
-    presetTitle: 'Szybkie Scenariusze Inwestycyjne:',
-    presets: {
-      municipalPackage: 'Standardowy Pakiet Miejski (+120 miejsc, +1 CAS, +1 park)',
-      b2bNurseries: 'Prywatny Inwestor Żłobkowy B2B (+180 miejsc)',
-      greenAndSenior: 'Rewitalizacja Społeczno-Zielona (+2 CAS, +2 parki)',
-    },
+  const baseDiagnose =
+    needs.length > 0
+      ? `Główne potrzeby w tej dzielnicy to: ${needs.join(', ')}.`
+      : `Dzielnica ma dobrze rozwiniętą bazę w większości kategorii.`;
 
-    leversHeaderTitle: 'Suwaki Inwestycyjne & Szacunkowy Nakład (CAPEX)',
-    leversHeaderSubtitle: 'Dostosuj skalę planowanej interwencji samorządowej lub prywatnej:',
-    nurseryLeverTitle: 'Nowe Miejsca Żłobkowe (0–3 lata)',
-    nurseryLeverSubtitle: 'Budowa nowej placówki lub adaptacja sal (Maluch+ / partnerstwo B2B)',
-    nurseryLeverUnit: (count) => (count === 1 ? 'miejsce' : count >= 2 && count <= 4 ? 'miejsca' : 'miejsc'),
-    casLeverTitle: 'Nowe Centra Aktywności Seniora (CAS)',
-    casLeverSubtitle: 'Kluby integracji, aktywizacji prozdrowotnej i warsztatowej (65+)',
-    casLeverUnit: (count) => (count === 1 ? 'placówka' : count >= 2 && count <= 4 ? 'placówki' : 'placówek'),
-    parksLeverTitle: 'Nowe Parki Kieszonkowe / Ogrody Krakowian',
-    parksLeverSubtitle: 'Biologicznie czynne enklawy zieleni w buforze 300m od osiedli',
-    parksLeverUnit: (count) => (count === 1 ? 'park' : count >= 2 && count <= 4 ? 'parki' : 'parków'),
+  if (totalAddedItemsCount === 0) {
+    return `${baseDiagnose} Zwiększ wybrane liczniki powyżej, aby w czasie rzeczywistym sprawdzić, jak nowe placówki, parki czy przystanki podniosą Indeks Jakości Życia dzielnicy (obecnie ${scores.before.weightedQualityOfLifeIndex.toFixed(1)} pkt, miejsce #${scores.rankBefore}/18 w Krakowie)!`;
+  }
 
-    capexTotalTitle: 'Szacunkowy Nakład Inwestycyjny (CAPEX)',
-    capexTotalSubtitle: 'Benchmarkowy koszt inwestycji publicznej lub wkładu prywatnego',
-    capexCurrency: 'zł',
-    capexNurseryPart: 'Żłobki:',
-    capexCasPart: 'Kluby Seniora:',
-    capexParksPart: 'Parki Kieszonkowe:',
+  const changedEffects: string[] = [];
+  if (nurseryBalanceAfter !== nurseryBalanceBefore) {
+    changedEffects.push(
+      `bilans miejsc w żłobkach poprawia się z ${formatSigned(nurseryBalanceBefore)} do ${formatSigned(nurseryBalanceAfter)}`
+    );
+  }
+  if (kindergartenBalanceAfter !== kindergartenBalanceBefore) {
+    changedEffects.push(
+      `bilans w przedszkolach zmienia się z ${formatSigned(kindergartenBalanceBefore)} do ${formatSigned(kindergartenBalanceAfter)}`
+    );
+  }
+  if (schoolBalanceAfter !== schoolBalanceBefore) {
+    changedEffects.push(
+      `bilans w szkołach podstawowych rośnie z ${formatSigned(schoolBalanceBefore)} do ${formatSigned(schoolBalanceAfter)} (śr. klasa: ${avgClassSizeBefore.toFixed(1)} ➔ ${avgClassSizeAfter.toFixed(1)} uczniów)`
+    );
+  }
+  if (parentClubsAfter !== parentClubsBefore) {
+    changedEffects.push(`liczba Klubów Rodzica rośnie z ${parentClubsBefore} do ${parentClubsAfter}`);
+  }
+  if (parksCountAfter !== parksCountBefore) {
+    changedEffects.push(
+      `liczba parków rośnie z ${parksCountBefore} do ${parksCountAfter} (zieleń: ${greenM2PerCapitaBefore.toFixed(1)} ➔ ${greenM2PerCapitaAfter.toFixed(1)} m²/os.)`
+    );
+  }
+  if (sportsFacilitiesAfter !== sportsFacilitiesBefore) {
+    changedEffects.push(
+      `baza boisk i pływalni szkolnych rośnie z ${sportsFacilitiesBefore} do ${sportsFacilitiesAfter}`
+    );
+  }
+  if (kmkStopsAfter !== kmkStopsBefore || isochroneAfterPct !== isochroneBeforePct) {
+    changedEffects.push(
+      `zasięg dojścia 500 m do KMK rośnie z ${isochroneBeforePct.toFixed(1)}% do ${isochroneAfterPct.toFixed(1)}% (przystanki: ${kmkStopsBefore} ➔ ${kmkStopsAfter})`
+    );
+  }
+  if (bikeLanesKmAfter !== bikeLanesKmBefore) {
+    changedEffects.push(
+      `długość ścieżek rowerowych DDR rośnie z ${bikeLanesKmBefore.toFixed(1)} do ${bikeLanesKmAfter.toFixed(1)} km`
+    );
+  }
+  if (parkAndRideAfter !== parkAndRideBefore) {
+    changedEffects.push(`węzły P+R rosną z ${parkAndRideBefore} do ${parkAndRideAfter}`);
+  }
+  if (casCountAfter !== casCountBefore) {
+    changedEffects.push(
+      `liczba klubów CAS rośnie z ${casCountBefore} do ${casCountAfter} (${seniorsPerCasBefore} ➔ ${seniorsPerCasAfter} seniorów/CAS)`
+    );
+  }
+  if (
+    librariesAfter + culturalCentersAfter !==
+    librariesBefore + culturalCentersBefore
+  ) {
+    changedEffects.push(
+      `biblioteki i domy kultury rosną z ${librariesBefore + culturalCentersBefore} do ${librariesAfter + culturalCentersAfter}`
+    );
+  }
 
-    impactHeaderTitle: 'Wyniki Symulacji NA ŻYWO (Przed vs Po)',
-    impactHeaderSubtitle: 'Bezpośrednie porównanie stanu bazowego z prognozą po realizacji inwestycji',
-    beforeLabel: 'Stan bazowy',
-    afterLabel: 'Po inwestycji',
-    deltaLabel: 'Efekt netto',
+  const effectsSentence =
+    changedEffects.length > 0 ? ` Efekty wybranych inwestycji: ${changedEffects.join('; ')}.` : '';
 
-    cardNurseryTitle: 'Bilans Żłobków 2028 & Pokrycie Popytu',
-    cardNurseryCoverageLabel: 'Pokrycie popytu:',
-    cardNurseryDeficitRelief: (places, pct) =>
-      `Redukcja deficytu o ${places} miejsc (+${pct}% pokrycia)`,
-
-    cardVitalityTitle: 'Wskaźnik Witalności Demograficznej',
-    cardVitalitySub: 'Syntetyczny indeks atrakcyjności osiedleńczej i dynamiki rozwoju',
-    cardVitalityPoints: 'pkt',
-
-    cardInfraTitle: 'Infrastruktura Społeczna i Zieleń',
-    cardInfraCasLabel: 'Centra Aktywności Seniora:',
-    cardInfraParksLabel: 'Parki Kieszonkowe:',
-    cardInfraGreenPerCapita: 'm² zieleni/mieszkańca',
-
-    cardStatusTitle: 'Status Strategiczny Rynku w Dzielnicy',
-    marketStatuses: {
-      CRITICAL_DEFICIT: 'Pilny Deficyt Inwestycyjny',
-      MODERATE_DEFICIT: 'Umiarkowany Deficyt',
-      BALANCED: 'Rynek Zrównoważony',
-      SURPLUS: 'Rezerwa Podażowa (Nasycenie)',
-    },
-    marketStatusDesc: {
-      CRITICAL_DEFICIT: 'Priorytet dla miejskich inwestycji żłobkowych i dotacji celowych B2B.',
-      MODERATE_DEFICIT: 'Stopniowa stabilizacja; zalecane punktowe wsparcie operatorów niepublicznych.',
-      BALANCED: 'Baza zaspokaja zapotrzebowanie; priorytet jakości i bliskości dojścia.',
-      SURPLUS: 'Wysokie nasycenie; optymalne warunki dla placówek profilowanych i autorskich.',
-    },
-
-    generateDecisionNote: (baseline, simulated, districtName) => {
-      const places = simulated.balanceImprovement;
-      const pts = simulated.vitalityScoreDelta;
-      const casUnit = simulated.casImprovement === 1 ? 'nowego CAS' : 'nowych placówek CAS';
-      if (places > 0 && simulated.newCasCount > baseline.currentCasCount) {
-        return `Dla obszaru: ${districtName} planowane uruchomienie ${places} miejsc żłobkowych oraz ${simulated.casImprovement} ${casUnit} podnosi wskaźnik pokrycia popytu do ${simulated.newCoveragePct2028}% oraz zwiększa witalność dzielnicy o +${pts} pkt. Działanie to jednocześnie odciąża młode rodziny i niweluje samotność seniorów w dynamicznie rozwijającej się dzielnicy.`;
-      }
-      if (places > 0) {
-        return `Dodanie ${places} miejsc żłobkowych w obszarze: ${districtName} redukuje deficyt 2028 roku do ${simulated.newBalance2028 >= 0 ? `+${simulated.newBalance2028}` : simulated.newBalance2028} miejsc, zmniejszając lukę opiekuńczą o ${simulated.coverageImprovementPct} punktów procentowych. Inwestycja rekomendowana do wsparcia w ramach miejskiego programu dotacji celowych UMK.`;
-      }
-      const parksUnit =
-        simulated.parksImprovement === 1
-          ? 'park kieszonkowy'
-          : simulated.parksImprovement <= 4
-          ? 'parki kieszonkowe'
-          : 'parków kieszonkowych';
-      return `Rozwój infrastruktury zielonej i senioralnej w obszarze: ${districtName} (+${simulated.parksImprovement} ${parksUnit}, +${simulated.casImprovement} ${casUnit}) podnosi indeks witalności do ${simulated.newVitalityScore} pkt oraz polepsza wskaźnik dostępności biologicznie czynnej zieleni przy osiedlach.`;
-    },
-
-    guidelinesBadge: 'Strategiczne Wytyczne Miejskie (B2G / B2B)',
-    guidelinesTitle: 'Międzysektorowe Wytyczne Inwestycyjne dla Miasta Krakowa',
-    guidelinesSubtitle:
-      'Zintegrowana matryca priorytetów: Centra Aktywności Seniora (CAS), Parki Kieszonkowe oraz Modele Partnerstwa Publiczno-Prywatnego.',
-
-    casMatrixTitle: 'Sektor Senioralny (Priorytety CAS 65+)',
-    casMatrixSubtitle: 'Dzielnice o najwyższym udziale seniorów (22–28%) i pilnej potrzebie nowych klubów',
-    casPriorityDistricts: 'Priorytet UMK: Dzielnica I Stare Miasto, II Grzegórzki, V Krowodrza, XVIII Nowa Huta',
-    casRecommendationText:
-      'W dzielnicach centralnych i nowohuckich odsetek seniorów sięga 28% populacji. Rekomendowana adaptacja parterów w miejskich lokalach użytkowych na CAS z bezpłatną ofertą prozdrowotną, cyfrową i integracyjną.',
-
-    greenMatrixTitle: 'Zieleń Miejska (Parki Kieszonkowe / Ogrody Krakowian)',
-    greenMatrixSubtitle: 'Strefy intensywnej zabudowy deweloperskiej z deficytem zieleni w buforze 300m',
-    greenPriorityDistricts: 'Priorytet ZZM: Dzielnica IV Prądnik Biały, XIII Podgórze, XIV Czyżyny',
-    greenRecommendationText:
-      'Rejony nowej urbanizacji wymagają gęstej sieci mikrozieleni. Parki kieszonkowe o powierzchni 1500–3000 m² zlokalizowane do 5 minut spacerem stanowią kluczowy bufor biologiczny, obniżają miejską wyspę ciepła i służą integracji sąsiedzkiej.',
-
-    financeMatrixTitle: 'Modele Finansowania i Partnerstwa B2B/B2G',
-    financeMatrixSubtitle: 'Dostępne narzędzia realizacyjne dla Wydziału Polityki Społecznej UMK i inwestorów',
-    financeModels: {
-      pppTitle: 'Partnerstwo Publiczno-Prywatne (PPP)',
-      pppDesc:
-        'Miasto udostępnia uzbrojony grunt lub preferencyjny najem lokalu, a prywatny operator realizuje inwestycję kubaturową i standard opiekuńczy.',
-      maluchTitle: 'Program Maluch+ / Aktywny Rodzic',
-      maluchDesc:
-        'Dotacja państwowa i miejska (do 1500 zł/mies. na dziecko) wyrównująca czesne w placówkach niepublicznych do poziomu żłobków samorządowych.',
-      grantsTitle: 'Miejskie Granty Celowe i Budżet Obywatelski',
-      grantsDesc:
-        'Dedykowane pule na parki kieszonkowe i wyposażenie klubów seniora realizowane przez Rady Dzielnic.',
-    },
-
-    finalExecutiveNotice:
-      'Oficjalne Narzędzie Wspomagania Decyzji Inwestycyjnych Kraków360. Wszystkie modele ekonometryczne i bufory przestrzenne oparto na zweryfikowanych rejestrach miejskich (BDK, EMUiA, BIP Kraków).',
-  };
+  return `${baseDiagnose} Po wprowadzeniu wybranych zmian (+${totalAddedItemsCount} nowych elementów) łączny Indeks Jakości Życia rośnie z ${scores.before.weightedQualityOfLifeIndex.toFixed(1)} do ${scores.after.weightedQualityOfLifeIndex.toFixed(1)} pkt (+${scores.deltas.weightedQualityOfLifeIndex.toFixed(1)} pkt, pozycja w rankingu: #${scores.rankBefore} ➔ #${scores.rankAfter}/18).${effectsSentence}`;
 }
