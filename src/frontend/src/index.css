@@ -8,6 +8,11 @@ html, body {
   color: #0f172a;
 }
 
+/* Smooth scrolling across the application */
+html {
+  scroll-behavior: smooth;
+}
+
 /* Page tab enter: dramatic scale and focal blur transition matching user's visual request */
 @keyframes tabEnterDramatic {
   0% {
@@ -99,17 +104,44 @@ html, body {
   transform-origin: center top;
 }
 
-/* Expandable drawer with smooth open AND close transitions (height, blur, scale, opacity) */
+/* Custom keyframe animations for the Kraków360 Hero & Interactive UI */
+@keyframes floatSlow {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-8px) scale(1.02);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.animate-float-slow {
+  animation: floatSlow 7s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 5s ease-in-out infinite;
+}
+
+/* Expandable drawer with gentle, graceful open AND close transitions (slowed down for smooth slide in/out) */
 .drawer-expandable {
   display: grid;
   grid-template-rows: 0fr;
   opacity: 0;
   filter: blur(8px);
   transform: scale(0.985);
-  transition: grid-template-rows 0.55s cubic-bezier(0.16, 1, 0.3, 1),
-              opacity 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              filter 0.45s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.55s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: grid-template-rows 0.95s cubic-bezier(0.16, 1, 0.3, 1),
+              opacity 0.80s cubic-bezier(0.16, 1, 0.3, 1),
+              filter 0.80s cubic-bezier(0.16, 1, 0.3, 1),
+              transform 0.95s cubic-bezier(0.16, 1, 0.3, 1);
   pointer-events: none;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
@@ -144,38 +176,11 @@ html, body {
   overflow: visible !important;
 }
 
-/* Cushion buffer for child box-shadows to bloom naturally without edge clipping */
+/* Cushion buffer for child box-shadows, borders and glow to bloom naturally without edge clipping */
 .drawer-expandable.is-open > div {
   min-height: 0;
   overflow: visible !important;
-  padding: 8px 12px 28px 12px;
-}
-
-/* Custom keyframe animations for the Kraków360 Hero & Interactive UI */
-@keyframes floatSlow {
-  0%, 100% {
-    transform: translateY(0px) scale(1);
-  }
-  50% {
-    transform: translateY(-8px) scale(1.02);
-  }
-}
-
-@keyframes pulseGlow {
-  0%, 100% {
-    opacity: 0.45;
-  }
-  50% {
-    opacity: 0.8;
-  }
-}
-
-.animate-float-slow {
-  animation: floatSlow 7s ease-in-out infinite;
-}
-
-.animate-pulse-glow {
-  animation: pulseGlow 5s ease-in-out infinite;
+  padding: 6px 8px 24px 8px;
 }
 
 /* Smooth color & opacity crossfades for Leaflet choropleth district polygons (extended to 0.8s for silky GIS transition) */
@@ -196,11 +201,6 @@ html, body {
 .leaflet-container {
   background-color: #e0f2fe;
   font-family: inherit;
-}
-
-/* Smooth scrolling across the application */
-html {
-  scroll-behavior: smooth;
 }
 
 /* Custom subtle scrollbars for ranking lists */
@@ -261,9 +261,9 @@ html {
    SVG compatibility and zero wheel-zoom sliding glitch. */
 .family-interactive-map .leaflet-overlay-pane path {
   transition: fill 0.4s ease-out,
-              fill-opacity 0.4s ease-out,
-              stroke 0.4s ease-out,
-              stroke-width 0.3s ease-out;
+  fill-opacity 0.4s ease-out,
+  stroke 0.4s ease-out,
+  stroke-width 0.3s ease-out;
 }
 
 /* Cluster badge styling for high performance at city overview zoom levels */

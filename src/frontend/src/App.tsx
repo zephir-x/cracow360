@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { cracow360Api } from './api/client';
+import { LiveAtmosphereBar } from './components/atmosphere/LiveAtmosphereBar';
 import { MainFooter } from './components/layout/MainFooter';
 import { MainNavbar, type AppTabId } from './components/layout/MainNavbar';
 import { useTranslation } from './i18n/I18nContext';
@@ -50,7 +51,7 @@ function getTabFromUrl(): AppTabId {
 
 /// <summary>
 /// Root application shell orchestrating global state, dynamic quality-of-life recalculations,
-/// district comparisons, and tabbed view navigation with URL hash persistence.
+/// district comparisons, live atmosphere ribbon, and tabbed view navigation with URL hash persistence.
 /// </summary>
 export function App() {
   const { language, t } = useTranslation();
@@ -210,6 +211,9 @@ export function App() {
     <div className="min-h-screen text-slate-900 flex flex-col bg-transparent">
       {/* Top Civic Navigation Bar */}
       <MainNavbar activeTab={activeTab} onSelectTab={handleSelectTab} />
+
+      {/* Live Atmospheric Conditions & Air Quality Ribbon */}
+      <LiveAtmosphereBar />
 
       {/* Main Content Container with smooth tab & language transition */}
       <main className="flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">

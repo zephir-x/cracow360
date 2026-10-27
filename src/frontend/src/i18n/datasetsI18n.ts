@@ -40,6 +40,16 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     en: 'National address register of properties in Krakow, PUWG 1992 (EPSG:2180) to WGS84 transformation for educational facilities and institutions',
     ua: 'Державний адресний реєстр садиб у Кракові, трансформація PUWG 1992 (EPSG:2180) у WGS84 для навчальних закладів та установ',
   },
+  'gis-6': {
+    pl: 'Real-time temperatura (°C), temperatura odczuwalna, wilgotność względna (%), kody pogodowe WMO, szansa opadów (%), suma deszczu/śniegu (mm/cm), prędkość i kierunek wiatru, prognoza godzinowa 24h',
+    en: 'Real-time temperature (°C), apparent temperature, relative humidity (%), WMO weather codes, precipitation probability (%), rain/snow volume (mm/cm), wind speed and direction, 24-hour hourly forecast',
+    ua: 'Поточна температура (°C), температура за відчуттями, відносна вологість (%), погодні коди WMO, ймовірність опадів (%), обсяг дощу/снігу (мм/см), швидкість і напрямок вітру, 24-годинний погодинний прогноз',
+  },
+  'gis-7': {
+    pl: 'Europejski Indeks Jakości Powietrza (European AQI 0–100), pyły PM10 i PM2.5 (µg/m³), stężenie spalin NO₂ (µg/m³), indeks promieniowania UV, pyłki roślinne (trawy, brzoza, olcha, bylica, ambrozja)',
+    en: 'European Air Quality Index (European AQI 0–100), PM10 and PM2.5 particulate matter (µg/m³), NO₂ vehicular exhaust (µg/m³), UV radiation index, botanical pollen allergens (grass, birch, alder, mugwort, ragweed)',
+    ua: 'Європейський індекс якості повітря (European AQI 0–100), тверді частки PM10 та PM2.5 (мкг/м³), концентрація вихлопних газів NO₂ (мкг/м³), індекс УФ-випромінювання, пилок рослин (трави, береза, вільха, полин, амброзія)',
+  },
   'trans-1': {
     pl: 'Przystanki komunikacji miejskiej (tramwaje i autobusy), gęstość sieci KMK na km²',
     en: 'Public transit stops (trams and buses), KMK network density per km²',

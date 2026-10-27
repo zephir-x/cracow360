@@ -1,9 +1,11 @@
 import axios from 'axios';
 import type {
+  DistrictAtmosphereSummaryDto,
   DistrictComparisonDto,
   DistrictDetailsDto,
   DistrictsGeoJsonCollection,
   DistrictSummaryDto,
+  LiveAtmosphereDto,
   PointOfInterestDto,
   QualityWeights,
   SystemHelloDto,
@@ -18,8 +20,20 @@ export const apiClient = axios.create({
   },
 });
 
+// Explicit typed contract for the centralized Cracow360 API client.
+export interface Cracow360ApiClient {
+  getDistricts: (weights?: QualityWeights) => Promise<DistrictSummaryDto[]>;
+  getDistrictDetails: (id: number) => Promise<DistrictDetailsDto>;
+  compareDistricts: (firstId: number, secondId: number, weights?: QualityWeights) => Promise<DistrictComparisonDto>;
+  getDistrictsGeoJson: () => Promise<DistrictsGeoJsonCollection>;
+  getPois: (params?: { districtId?: number; category?: string; subCategory?: string }) => Promise<PointOfInterestDto[]>;
+  getSystemHello: () => Promise<SystemHelloDto>;
+  getLiveAtmosphere: (districtId?: number) => Promise<LiveAtmosphereDto>;
+  getLiveAtmosphereSummary: () => Promise<DistrictAtmosphereSummaryDto[]>;
+}
+
 // Centralized API client service methods matching backend Minimal API endpoints
-export const cracow360Api = {
+export const cracow360Api: Cracow360ApiClient = {
   // Retrieves list of districts with calculated Quality of Life index (supports optional custom weights)
   getDistricts: async (weights?: QualityWeights): Promise<DistrictSummaryDto[]> => {
     const params = weights
@@ -84,6 +98,19 @@ export const cracow360Api = {
   // Retrieves runtime health, database connection, and seeded entities diagnostic status
   getSystemHello: async (): Promise<SystemHelloDto> => {
     const { data } = await apiClient.get<SystemHelloDto>('/system/hello');
+    return data;
+  },
+
+  // Retrieves live weather, 24h hourly forecast, air quality (AQI, PM10, PM2.5, NO2), UV, and botanical pollen
+  getLiveAtmosphere: async (districtId?: number): Promise<LiveAtmosphereDto> => {
+    const params = districtId ? { districtId } : undefined;
+    const { data } = await apiClient.get<LiveAtmosphereDto>('/live/atmosphere', { params });
+    return data;
+  },
+
+  // Retrieves compact ambient summary across all 18 districts for tickers and map overlays
+  getLiveAtmosphereSummary: async (): Promise<DistrictAtmosphereSummaryDto[]> => {
+    const { data } = await apiClient.get<DistrictAtmosphereSummaryDto[]>('/live/atmosphere/summary');
     return data;
   },
 };

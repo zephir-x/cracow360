@@ -114,6 +114,8 @@ export function WeightsConfiguratorPanel({
 }: WeightsConfiguratorPanelProps) {
   const { t } = useTranslation();
   const animationFrameRef = useRef<number | null>(null);
+  const weightsRef = useRef<QualityWeights>(weights);
+  weightsRef.current = weights;
 
   // Cancel any running animation on unmount
   useEffect(() => {
@@ -134,9 +136,9 @@ export function WeightsConfiguratorPanel({
       cancelAnimationFrame(animationFrameRef.current);
     }
 
-    const startWeights = { ...weights };
+    const startWeights = { ...weightsRef.current };
     const startTime = performance.now();
-    const duration = 450; // Smooth 450ms physical gliding
+    const duration = 450; // Smooth 450ms physical gliding matching Investor Simulator
 
     const step = (now: number) => {
       const elapsed = now - startTime;
@@ -144,15 +146,18 @@ export function WeightsConfiguratorPanel({
       // easeOutCubic curve for realistic physical gliding
       const ease = 1 - Math.pow(1 - progress, 3);
 
+      const interp = (start: number, target: number) =>
+        Number((start + (target - start) * ease).toFixed(2));
+
       const interpolated: QualityWeights = {
-        mobility: Number((startWeights.mobility + (targetWeights.mobility - startWeights.mobility) * ease).toFixed(1)),
-        education: Number((startWeights.education + (targetWeights.education - startWeights.education) * ease).toFixed(1)),
-        greenery: Number((startWeights.greenery + (targetWeights.greenery - startWeights.greenery) * ease).toFixed(1)),
-        culture: Number((startWeights.culture + (targetWeights.culture - startWeights.culture) * ease).toFixed(1)),
-        environment: Number((startWeights.environment + (targetWeights.environment - startWeights.environment) * ease).toFixed(1)),
-        safety: Number((startWeights.safety + (targetWeights.safety - startWeights.safety) * ease).toFixed(1)),
-        housingAffordability: Number((startWeights.housingAffordability + (targetWeights.housingAffordability - startWeights.housingAffordability) * ease).toFixed(1)),
-        demographicVitality: Number((startWeights.demographicVitality + (targetWeights.demographicVitality - startWeights.demographicVitality) * ease).toFixed(1)),
+        mobility: interp(startWeights.mobility, targetWeights.mobility),
+        education: interp(startWeights.education, targetWeights.education),
+        greenery: interp(startWeights.greenery, targetWeights.greenery),
+        culture: interp(startWeights.culture, targetWeights.culture),
+        environment: interp(startWeights.environment, targetWeights.environment),
+        safety: interp(startWeights.safety, targetWeights.safety),
+        housingAffordability: interp(startWeights.housingAffordability, targetWeights.housingAffordability),
+        demographicVitality: interp(startWeights.demographicVitality, targetWeights.demographicVitality),
       };
 
       if (progress < 1) {
@@ -304,13 +309,13 @@ export function WeightsConfiguratorPanel({
                   </span>
                 </div>
 
-                {/* Slider Input with smooth gliding step */}
+                {/* Slider Input with smooth gliding step="0.05" matching Investor Simulator */}
                 <div className="pt-0.5">
                   <input
                     type="range"
                     min="0"
                     max="10"
-                    step="0.1"
+                    step={0.05}
                     value={currentValue}
                     onChange={(e) => handleSliderChange(slider.key, Number(e.target.value))}
                     className={`w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer ${slider.accentColor}`}

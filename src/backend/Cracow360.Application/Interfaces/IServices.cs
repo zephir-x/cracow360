@@ -51,3 +51,19 @@ public interface IPointOfInterestService
         string? subCategory = null,
         CancellationToken cancellationToken = default);
 }
+
+/// <summary>
+/// Application service contract for real-time live atmosphere and air quality telemetry.
+/// Ingests and synchronizes data from Open-Meteo European Weather & Air Quality models with GIOŚ stations.
+/// </summary>
+public interface ILiveAtmosphereService
+{
+    // Retrieves detailed live atmosphere (weather, 24h forecast, air quality, pollen, health recommendations) for a specific district
+    Task<LiveAtmosphereDto> GetDistrictAtmosphereAsync(int districtId, CancellationToken cancellationToken = default);
+
+    // Retrieves compact live summary for all 18 districts for map overlays and quick selection
+    Task<IReadOnlyList<DistrictAtmosphereSummaryDto>> GetAllDistrictsSummaryAsync(CancellationToken cancellationToken = default);
+
+    // Refreshes the cache in the background
+    Task WarmUpCacheAsync(CancellationToken cancellationToken = default);
+}

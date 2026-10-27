@@ -13,7 +13,7 @@ export interface SystemHelloDto {
   serverTimeUtc: string;
 }
 
-// 8 Calibrated Quality of Life Category Scores (0.0 to 100.0)
+// Calibrated Quality of Life Category Scores (0.0 to 100.0)
 export interface DistrictScoresDto {
   mobilityScore: number;
   educationScore: number;
@@ -144,7 +144,7 @@ export interface DistrictForecastsAndB2BDto {
   recommendedMunicipalAction: string;
 }
 
-// Complete granular district metrics across all 10 domain facets
+// Complete granular district metrics across all domain facets
 export interface DistrictDetailsDto {
   districtId: number;
   districtRoman: string;
@@ -257,4 +257,94 @@ export interface PointOfInterestDto {
   lat: number;
   lng: number;
   metrics: PoiMetricsDto;
+}
+
+// Real-Time Weather & Air Quality Live Atmosphere Contracts
+export interface CurrentWeatherDto {
+  temperatureC: number;
+  apparentTemperatureC: number;
+  relativeHumidityPct: number;
+  weatherCode: number;
+  weatherLabel: string;
+  precipitationMm: number;
+  rainMm: number;
+  snowfallCm: number;
+  windSpeedKmh: number;
+  windDirectionDegrees: number;
+  cloudCoverPct: number;
+  isDay: boolean;
+}
+
+export interface PollenLevelsDto {
+  grassPollen: number;
+  birchPollen: number;
+  alderPollen: number;
+  mugwortPollen: number;
+  ragweedPollen: number;
+}
+
+export interface CurrentAirQualityDto {
+  europeanAqi: number;
+  aqiLevelName: string;
+  aqiColorHex: string;
+  pm10UgM3: number;
+  pm25UgM3: number;
+  nitrogenDioxideUgM3: number;
+  uvIndex: number;
+  pollen: PollenLevelsDto;
+}
+
+export interface HourlyAtmospherePointDto {
+  timeIso: string;
+  hourLabel: string;
+  temperatureC: number;
+  precipitationProbabilityPct: number;
+  precipitationMm: number;
+  snowfallCm: number;
+  windSpeedKmh: number;
+  weatherCode: number;
+}
+
+export interface HealthAdviceItemDto {
+  level: 'safe' | 'moderate' | 'warning' | 'danger';
+  shortLabel: string;
+  message: string;
+}
+
+export interface HealthRecommendationsDto {
+  uv: HealthAdviceItemDto;
+  outdoorSport: HealthAdviceItemDto;
+  trafficExhaust: HealthAdviceItemDto;
+  allergens: HealthAdviceItemDto;
+  sensitiveGroups: HealthAdviceItemDto;
+}
+
+export interface LiveAtmosphereDto {
+  districtId: number;
+  districtRoman: string;
+  districtName: string;
+  measuredAtUtc: string;
+  cachedUntilUtc: string;
+  currentWeather: CurrentWeatherDto;
+  currentAirQuality: CurrentAirQualityDto;
+  hourlyForecast24H: HourlyAtmospherePointDto[];
+  recommendations: HealthRecommendationsDto;
+  dataSource: string;
+}
+
+export interface DistrictAtmosphereSummaryDto {
+  districtId: number;
+  districtRoman: string;
+  districtName: string;
+  temperatureC: number;
+  apparentTemperatureC: number;
+  weatherCode: number;
+  weatherLabel: string;
+  europeanAqi: number;
+  aqiLevelName: string;
+  aqiColorHex: string;
+  windSpeedKmh: number;
+  precipitationProbabilityPct: number;
+  pm25UgM3: number;
+  pm10UgM3: number;
 }

@@ -92,6 +92,24 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     portalUrl: 'https://geoportal.gov.pl',
     status: 'Zintegrowane w ETL',
   },
+  {
+    id: 'gis-6',
+    category: 'gis_env',
+    categoryLabel: 'Granice & Środowisko',
+    officialDatasetName: 'Europejski System Prognoz Numerycznych ECMWF / Open-Meteo Weather Forecast',
+    metrics: 'Real-time temperatura (°C), temperatura odczuwalna, wilgotność względna (%), kody pogodowe WMO, szansa opadów (%), suma deszczu/śniegu (mm/cm), prędkość i kierunek wiatru, prognoza godzinowa 24h',
+    portalUrl: 'https://open-meteo.com/en/docs',
+    status: 'Transmisja Live API',
+  },
+  {
+    id: 'gis-7',
+    category: 'gis_env',
+    categoryLabel: 'Granice & Środowisko',
+    officialDatasetName: 'Copernicus Atmosphere Monitoring Service (CAMS) & GIOŚ / Open-Meteo Air Quality',
+    metrics: 'Europejski Indeks Jakości Powietrza (European AQI 0–100), pyły PM10 i PM2.5 (µg/m³), stężenie spalin NO₂ (µg/m³), indeks promieniowania UV, pyłki roślinne (trawy, brzoza, olcha, bylica, ambrozja)',
+    portalUrl: 'https://open-meteo.com/en/docs/air-quality-api',
+    status: 'Transmisja Live API',
+  },
 
   // Mobility & Transport
   {

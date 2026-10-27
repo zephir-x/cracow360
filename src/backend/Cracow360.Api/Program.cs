@@ -75,6 +75,7 @@ app.MapHealthChecks("/health").WithTags("System");
 app.MapSystemEndpoints();
 app.MapDistrictEndpoints();
 app.MapPoiEndpoints();
+app.MapLiveAtmosphereEndpoints();
 
 // Redirect root route directly to Swagger documentation
 app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();

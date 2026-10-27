@@ -59,6 +59,7 @@ public static class DependencyInjection
         // 5. Register application domain services
         services.AddScoped<IDistrictService, DistrictService>();
         services.AddScoped<IPointOfInterestService, PointOfInterestService>();
+        services.AddScoped<ILiveAtmosphereService, LiveAtmosphereService>();
 
         // 6. Register contract seeder and background workers
         services.AddScoped<DatabaseSeeder>();
