@@ -17,6 +17,7 @@ export const plTranslations: TranslationDictionary = {
       'Dostosuj wagi 8 kluczowych wymiarów miejskich (w tym witalność demograficzną, bezpieczeństwo i rynek mieszkań) do swoich priorytetów. Przeglądaj interaktywną kartogramę 18 dzielnic w czasie rzeczywistym i analizuj twarde wskaźniki z oficjalnych rejestrów Otwartych Danych.',
     ctaExplore: 'Eksploruj Mapę i Ranking',
     ctaCompare: 'Porównaj 2 Dzielnice',
+    ctaAccessibility: 'Dostępność',
     howItWorksBtn: 'Jak to działa? (Metodologia obliczeń)',
     howItWorksTitle: 'Jak wyliczamy spersonalizowany Indeks Jakości Życia (0–100 pkt)?',
     howItWorksClose: 'Zamknij instrukcję',

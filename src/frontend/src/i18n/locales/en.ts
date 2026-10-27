@@ -17,6 +17,7 @@ export const enTranslations: TranslationDictionary = {
       'Customize the weights of 8 key urban dimensions (including demographic vitality, public safety, and housing affordability) to reflect your priorities. Explore the real-time interactive 18-district choropleth map and evaluate hard metrics from official Open Data registries.',
     ctaExplore: 'Explore Map & Ranking',
     ctaCompare: 'Compare 2 Districts',
+    ctaAccessibility: 'Availability',
     howItWorksBtn: 'How it works? (Calculation Methodology)',
     howItWorksTitle: 'How do we calculate the personalized Quality of Life Index (0–100 pts)?',
     howItWorksClose: 'Close Guide',

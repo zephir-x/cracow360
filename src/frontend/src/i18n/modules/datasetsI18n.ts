@@ -70,6 +70,11 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     en: 'Park & Ride (P+R) transfer parking system integrated with tram terminals, POI PARK_AND_RIDE',
     ua: 'Система перехоплюючих паркінгів P+R, інтегрованих із трамвайними розворотними кільцями, POI PARK_AND_RIDE',
   },
+  'trans-5': {
+    pl: '862 lokalizacje, 1 709 zastrzeżonych stanowisk postojowych dla pojazdów osób z niepełnosprawnościami w 18 dzielnicach Krakowa',
+    en: '862 locations, 1,709 designated accessible parking spaces for persons with disabilities across 18 Krakow districts',
+    ua: '862 локації, 1 709 виділених місць для паркування транспортних засобів осіб з інвалідністю у 18 районах Кракова',
+  },
   'green-1': {
     pl: 'Wykaz parków miejskich, powierzchnia w ha, geolokalizacja i izochrony dojścia, POI CITY_PARK',
     en: 'Directory of municipal parks, surface area in ha, geolocation, and walking isochrones, POI CITY_PARK',
@@ -124,6 +129,11 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     pl: 'Instytucje kultury, domy kultury, oferta zajęć lokalnych, dotacje podmiotowe',
     en: 'Cultural institutions, community centers, local cultural events, operational subsidies',
     ua: 'Заклади культури, будинки культури, місцеві гуртки та події, статутні дотації',
+  },
+  'cult-4': {
+    pl: 'Rejestr 25 budynków UMK i jednostek miejskich z audytem ramp, wind, toalet PRM, pętli indukcyjnych i obsługi tłumacza PJM',
+    en: 'Registry of 25 UMK and municipal facilities audited for ramps, elevators, PRM toilets, hearing loops, and sign language support',
+    ua: 'Реєстр 25 будівель UMK та комунальних закладів з аудитом пандусів, ліфтів, туалетів для осіб з інвалідністю, індукційних петель та перекладача PJM',
   },
   'demo-1': {
     pl: 'Oficjalna liczba mieszkańców zameldowanych na pobyt stały w dzielnicach (2024–2025)',

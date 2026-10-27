@@ -348,3 +348,122 @@ export interface DistrictAtmosphereSummaryDto {
   pm25UgM3: number;
   pm10UgM3: number;
 }
+
+// Civic Accessibility & Inclusion Contracts
+export type AccessibilityProfileKey =
+  | 'mobility'
+  | 'visual'
+  | 'hearing'
+  | 'senior'
+  | 'familyStroller';
+
+export interface PrmParkingMetricsDto {
+  totalSpots: number;
+  locationsCount: number;
+  spotsPer10kPop: number;
+  spotsPerKm2: number;
+}
+
+export interface TransitAccessibilityMetricsDto {
+  totalStops: number;
+  kasselKerbStops: number;
+  kasselKerbPct: number;
+  tactilePavingStops: number;
+  tactilePavingPct: number;
+}
+
+export interface PublicFacilitiesMetricsDto {
+  auditedTotal: number;
+  wheelchairFull: number;
+  wheelchairPartial: number;
+  elevators: number;
+  ramps: number;
+  accessibleToilets: number;
+  hearingLoops: number;
+  signLanguagePJM: number;
+  brailleTactile: number;
+}
+
+export interface SeniorCareMetricsDto {
+  casCount: number;
+  casPer10kSeniors: number;
+}
+
+export interface RecreationAccessibilityMetricsDto {
+  cityParks: number;
+  pocketParks: number;
+}
+
+export interface AccessibilityMetricsDto {
+  prmParking: PrmParkingMetricsDto;
+  transit: TransitAccessibilityMetricsDto;
+  publicFacilities: PublicFacilitiesMetricsDto;
+  seniorCare: SeniorCareMetricsDto;
+  recreation: RecreationAccessibilityMetricsDto;
+}
+
+export interface AccessibilityScoresDto {
+  overallScore: number;
+  mobilityScore: number;
+  visualScore: number;
+  hearingScore: number;
+  seniorScore: number;
+  familyStrollerScore: number;
+}
+
+export interface PublicFacilityAuditDto {
+  name: string;
+  departments: string;
+  address: string;
+  wheelchairAccessible: string;
+  hasRamp: boolean;
+  hasElevatorOrPlatform: boolean;
+  accessibleToilet: boolean;
+  hearingLoop: boolean;
+  signLanguageTranslator: boolean;
+  brailleOrTactile: boolean;
+  auditDescription: string;
+}
+
+export interface DistrictAccessibilityProfileDto {
+  districtId: number;
+  districtRoman: string;
+  districtName: string;
+  areaKm2: number;
+  totalPopulation: number;
+  seniors65Plus: number;
+  metrics: AccessibilityMetricsDto;
+  scores: AccessibilityScoresDto;
+  keyStrengths: string[];
+  facilities: PublicFacilityAuditDto[];
+}
+
+export interface AccessibilityCityAveragesDto {
+  totalPrmParkingSpots: number;
+  totalPrmLocations: number;
+  totalAuditedFacilities: number;
+  totalSeniorCenters: number;
+  avgKasselKerbPct: number;
+  avgTactilePavingPct: number;
+  avgOverallScore: number;
+}
+
+export interface AccessibilitySourceDto {
+  id: string;
+  name: string;
+  url: string;
+}
+
+export interface AccessibilityMetaDto {
+  title: string;
+  description: string;
+  sources: AccessibilitySourceDto[];
+  profilesSupported: string[];
+}
+
+export interface AccessibilityDatasetDto {
+  generatedAt: string;
+  meta: AccessibilityMetaDto;
+  cityAverages: AccessibilityCityAveragesDto;
+  districts: DistrictAccessibilityProfileDto[];
+}

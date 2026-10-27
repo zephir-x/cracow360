@@ -1,6 +1,6 @@
 ﻿"""
 PURPOSE:
-    Step 04 in the Krakow360 Python analytics pipeline.
+    Step 02 in the Krakow360 Python analytics pipeline.
     High-precision spatial geocoding and coordinates enrichment for municipal Points of Interest (POIs).
     Upgrades municipal POIs (childcare/educational facilities, parks, forests, and mobility hubs)
     from coarse anchors to exact WGS84 coordinates using verified address numbers and the official

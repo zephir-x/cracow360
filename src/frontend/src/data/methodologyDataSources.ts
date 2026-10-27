@@ -148,6 +148,15 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     portalUrl: 'https://ztp.krakow.pl',
     status: 'Zintegrowane w ETL',
   },
+  {
+    id: 'trans-5',
+    category: 'transport',
+    categoryLabel: 'Mobilność & KMK',
+    officialDatasetName: 'Miejsca postojowe dla osób z niepełnosprawnościami w Krakowie (ZDMK – Niebieskie Koperty)',
+    metrics: '862 lokalizacje, 1 709 zastrzeżonych stanowisk postojowych dla pojazdów osób z niepełnosprawnościami w 18 dzielnicach Krakowa',
+    portalUrl: 'https://www.bip.krakow.pl/zalaczniki/dokumenty/n/598657/karta',
+    status: 'Zintegrowane w ETL',
+  },
 
   // Greenery, Recreation & Sports
   {
@@ -249,6 +258,15 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     officialDatasetName: 'Miejskie Domy i Ośrodki Kultury w Krakowie',
     metrics: 'Instytucje kultury, domy kultury, oferta zajęć lokalnych, dotacje podmiotowe',
     portalUrl: 'https://krakow.pl',
+    status: 'Zintegrowane w ETL',
+  },
+  {
+    id: 'cult-4',
+    category: 'culture',
+    categoryLabel: 'Kultura & Społeczność',
+    officialDatasetName: 'Dostępność architektoniczna obiektów publicznych w Krakowie (UMK / MFiPR)',
+    metrics: 'Rejestr 25 budynków UMK i jednostek miejskich z audytem ramp, wind, toalet PRM, pętli indukcyjnych i obsługi tłumacza PJM',
+    portalUrl: 'https://www.bip.krakow.pl/?dok_id=139318',
     status: 'Zintegrowane w ETL',
   },
 

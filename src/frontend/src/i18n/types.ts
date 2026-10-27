@@ -16,6 +16,7 @@ export interface TranslationDictionary {
     description: string;
     ctaExplore: string;
     ctaCompare: string;
+    ctaAccessibility?: string;
     howItWorksBtn: string;
     howItWorksTitle: string;
     howItWorksClose: string;

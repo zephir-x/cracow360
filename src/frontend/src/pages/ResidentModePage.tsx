@@ -1,5 +1,6 @@
-import { useState } from 'react';
+﻿import { useState } from 'react';
 import {
+  Accessibility,
   ArrowDownRight,
   BarChart3,
   ChevronDown,
@@ -10,11 +11,13 @@ import {
   MapPin,
   Trophy,
   Users,
+  Sparkles,
 } from 'lucide-react';
 import { DistrictComparisonView } from '../components/resident-mode/DistrictComparisonView';
 import { DistrictRankingList } from '../components/resident-mode/DistrictRankingList';
 import { KrakowChoroplethMap } from '../components/resident-mode/KrakowChoroplethMap';
 import { WeightsConfiguratorPanel } from '../components/resident-mode/WeightsConfiguratorPanel';
+import { CivicAccessibilityNavigator } from '../components/resident-mode/accessibility/CivicAccessibilityNavigator';
 import type {
   DistrictsGeoJsonCollection,
   DistrictSummaryDto,
@@ -82,6 +85,10 @@ export function ResidentModePage({
 
   const scrollToComparison = () => {
     document.getElementById('comparison-section')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
+  const scrollToAccessibility = () => {
+    document.getElementById('accessibility-section')?.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -154,6 +161,14 @@ export function ResidentModePage({
                 <GitCompareArrows className="w-4 h-4 text-sky-200" />
                 {t.hero.ctaCompare}
               </button>
+
+              <button
+                onClick={scrollToAccessibility}
+                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-blue-500/30 hover:bg-blue-500/45 text-white border border-white/30 backdrop-blur-md transition cursor-pointer"
+              >
+                <Accessibility className="w-4 h-4 text-sky-200" />
+                {t.hero.ctaAccessibility || 'Przestrzeń bez Barier'}
+              </button>
             </div>
           </div>
 
@@ -220,59 +235,62 @@ export function ResidentModePage({
           <div className="flex justify-center pt-2">
             <button
               onClick={() => setShowHowItWorks((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-6 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-md shadow-sm transition transform hover:-translate-y-0.5 cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition cursor-pointer"
             >
-              <HelpCircle className="w-4 h-4 text-sky-200" />
-              {t.hero.howItWorksBtn}
+              <HelpCircle className="w-4 h-4 text-sky-300" />
+              <span>{t.hero.howItWorksBtn}</span>
               {showHowItWorks ? (
-                <ChevronUp className="w-3.5 h-3.5" />
+                <ChevronUp className="w-3.5 h-3.5 text-sky-200" />
               ) : (
-                <ChevronDown className="w-3.5 h-3.5" />
+                <ChevronDown className="w-3.5 h-3.5 text-sky-200" />
               )}
             </button>
           </div>
-        </div>
-      </section>
 
-      {/* Expandable "How does it work?" Drawer with smooth open & close animation */}
-      <div className={`drawer-expandable ${showHowItWorks ? 'is-open' : ''}`}>
-        <div className="overflow-hidden">
-          <section className="rounded-3xl bg-white border border-blue-200 p-6 shadow-lg shadow-blue-900/5 space-y-4">
-            <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-              <h3 className="text-base font-extrabold text-slate-900 flex items-center gap-2">
-                <HelpCircle className="w-5 h-5 text-blue-600" />
-                {t.hero.howItWorksTitle}
-              </h3>
-              <button
-                onClick={() => setShowHowItWorks(false)}
-                className="text-xs font-semibold text-slate-500 hover:text-slate-800 cursor-pointer"
-              >
-                {t.hero.howItWorksClose}
-              </button>
-            </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed">
-              <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
-                <div className="font-extrabold text-blue-900 mb-1">
-                  {t.hero.step1Title}
+          {/* Collapsible 3-Step Educational Guide */}
+          <section
+            aria-label="Jak działa indeks"
+            className={`overflow-hidden transition-all duration-300 ease-in-out ${
+              showHowItWorks ? 'max-h-96 opacity-100 pt-2' : 'max-h-0 opacity-0 pointer-events-none'
+            }`}
+          >
+            <div className="rounded-2xl bg-white/95 backdrop-blur-md border border-white text-slate-900 p-6 shadow-xl space-y-4">
+              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+                <div className="flex items-center gap-2 font-black text-sm text-slate-900">
+                  <Sparkles className="w-4 h-4 text-blue-600" />
+                  <span>{t.hero.howItWorksTitle}</span>
                 </div>
-                {t.hero.step1Desc}
+                <button
+                  onClick={() => setShowHowItWorks(false)}
+                  className="text-xs font-bold text-slate-400 hover:text-slate-600 cursor-pointer"
+                >
+                  {t.hero.howItWorksClose}
+                </button>
               </div>
-              <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
-                <div className="font-extrabold text-sky-900 mb-1">
-                  {t.hero.step2Title}
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed">
+                <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
+                  <div className="font-extrabold text-blue-900 mb-1">
+                    {t.hero.step1Title}
+                  </div>
+                  {t.hero.step1Desc}
                 </div>
-                {t.hero.step2Desc}
-              </div>
-              <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
-                <div className="font-extrabold text-indigo-900 mb-1">
-                  {t.hero.step3Title}
+                <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
+                  <div className="font-extrabold text-sky-900 mb-1">
+                    {t.hero.step2Title}
+                  </div>
+                  {t.hero.step2Desc}
                 </div>
-                {t.hero.step3Desc}
+                <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
+                  <div className="font-extrabold text-indigo-900 mb-1">
+                    {t.hero.step3Title}
+                  </div>
+                  {t.hero.step3Desc}
+                </div>
               </div>
             </div>
           </section>
         </div>
-      </div>
+      </section>
 
       {/* Main 3-Column Interactive Workspace: Left Configurator + Center Map + Right Ranking */}
       <section
@@ -325,6 +343,11 @@ export function ResidentModePage({
           onSelectSecondary={onSelectSecondary}
           onClearSelection={onClearSelection}
         />
+      </div>
+
+      {/* Civic Accessibility & Barrier-Free Navigator */}
+      <div id="accessibility-section" className="scroll-mt-20">
+        <CivicAccessibilityNavigator onSelectDistrictOnMap={onSelectDistrict} />
       </div>
     </div>
   );

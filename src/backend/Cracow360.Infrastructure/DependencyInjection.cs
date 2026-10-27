@@ -60,6 +60,7 @@ public static class DependencyInjection
         services.AddScoped<IDistrictService, DistrictService>();
         services.AddScoped<IPointOfInterestService, PointOfInterestService>();
         services.AddScoped<ILiveAtmosphereService, LiveAtmosphereService>();
+        services.AddScoped<IAccessibilityService, AccessibilityService>();
 
         // 6. Register contract seeder and background workers
         services.AddScoped<DatabaseSeeder>();

@@ -1,4 +1,4 @@
-"""
+﻿"""
 GOAL / PURPOSE:
     Build econometric / cohort-component predictive models forecasting demographic
     changes and public infrastructure deficits for the year 2028 across all 18
@@ -205,7 +205,7 @@ def run_econometric_forecasts() -> None:
     """
     in_path = PROCESSED_DATA_DIR / "districts_scored.json"
     if not in_path.exists():
-        raise FileNotFoundError(f"Missing {in_path}. Run 02_calculate_quality_scores.py first.")
+        raise FileNotFoundError(f"Missing {in_path}. Run 04_calculate_quality_scores.py first.")
 
     with open(in_path, "r", encoding="utf-8") as f:
         payload = json.load(f)
