@@ -10,20 +10,20 @@ import {
   XAxis,
   YAxis,
 } from 'recharts';
-import { ATMOSPHERE_I18N } from '../../i18n/atmosphereI18n';
+import { ATMOSPHERE_I18N } from '../../i18n/modules';
 import { useTranslation } from '../../i18n/I18nContext';
 import type { LiveAtmosphereDto } from '../../types/contracts';
 
 interface AtmosphereForecastCardProps {
   data: LiveAtmosphereDto;
-  expandCount: number;
   selectedDistrictId: number;
+  animationKey?: number;
 }
 
 export function AtmosphereForecastCard({
   data,
-  expandCount,
   selectedDistrictId,
+  animationKey = 0,
 }: AtmosphereForecastCardProps) {
   const { language } = useTranslation();
   const text = ATMOSPHERE_I18N[language] || ATMOSPHERE_I18N.pl;
@@ -99,11 +99,11 @@ export function AtmosphereForecastCard({
           </div>
         </div>
 
-        {/* Recharts 24h Curve (Harmonious height, animated on every expansion via expandCount key) */}
+        {/* Recharts 24h Curve */}
         <div className="w-full h-52 sm:h-56 pt-1">
-          <ResponsiveContainer width="100%" height="100%">
+          <ResponsiveContainer width="100%" height="100%" minHeight={208}>
             <ComposedChart
-              key={`chart-${expandCount}-${selectedDistrictId}`}
+              key={`chart-${selectedDistrictId}-${animationKey}`}
               data={chartData}
               margin={{ top: 10, right: 10, left: -15, bottom: 6 }}
             >
@@ -158,8 +158,9 @@ export function AtmosphereForecastCard({
                 }}
                 labelFormatter={(label) => `${text.measuredAt}: ${label}`}
               />
-              {/* Bar is decorative background fill; tooltipType="none" prevents duplicate rainProb in the hover tooltip */}
+              {/* Bar is decorative background fill */}
               <Bar
+                key={`bar-${animationKey}`}
                 yAxisId="rain"
                 dataKey="rainProb"
                 tooltipType="none"
@@ -172,6 +173,7 @@ export function AtmosphereForecastCard({
                 animationEasing="ease-out"
               />
               <Area
+                key={`area-${animationKey}`}
                 yAxisId="temp"
                 type="monotone"
                 dataKey="temp"
@@ -183,8 +185,9 @@ export function AtmosphereForecastCard({
                 animationDuration={900}
                 animationEasing="ease-out"
               />
-              {/* Secondary dashed line with cyan beads for rain probability so it is always visible even at 0% */}
+              {/* Secondary dashed line with cyan beads for rain probability */}
               <Line
+                key={`line-${animationKey}`}
                 yAxisId="rain"
                 type="monotone"
                 dataKey="rainProb"

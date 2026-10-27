@@ -1,4 +1,4 @@
-﻿import type { Language } from './types';
+﻿import type { Language } from '../types';
 
 export interface EduRecommendationInput {
   nurseryPotentialB2B: 'HIGH' | 'MEDIUM' | 'LOW';
@@ -281,6 +281,12 @@ const UA_LABELS: InvestorForecastLabels = {
   totalPlacesLabel: 'Усі місця 0–14:',
   totalBalanceLabel: 'Загальний баланс 2028:',
   coverageLabel: 'покриття',
+};
+
+export const INVESTOR_FORECAST_I18N = {
+  pl: PL_LABELS,
+  en: EN_LABELS,
+  ua: UA_LABELS,
 };
 
 export function getInvestorForecastLabels(language: Language): InvestorForecastLabels {

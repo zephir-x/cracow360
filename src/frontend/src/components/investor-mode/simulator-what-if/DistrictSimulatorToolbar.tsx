@@ -8,7 +8,7 @@
   Trees,
 } from 'lucide-react';
 import { useTranslation } from '../../../i18n/I18nContext';
-import type { InvestorSimulatorLabels } from '../../../i18n/investorSimulatorI18n';
+import type { InvestorSimulatorLabels } from '../../../i18n/modules';
 import type { DistrictSummaryDto } from '../../../types/contracts';
 import { localizeDistrictName } from '../../../utils/districtLocalization';
 import type { SimulatorPresetId } from './types';

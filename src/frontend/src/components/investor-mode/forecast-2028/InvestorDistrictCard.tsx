@@ -1,5 +1,5 @@
 ﻿import { ArrowRight, ChevronDown, ChevronUp, Scale } from 'lucide-react';
-import type { InvestorForecastLabels } from '../../../i18n/investorForecastI18n';
+import type { InvestorForecastLabels } from '../../../i18n/modules';
 import type { InvestorDistrictForecastData } from './types';
 
 export interface InvestorDistrictCardProps {

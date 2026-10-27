@@ -5,7 +5,7 @@ import {
   TrendingUp,
 } from 'lucide-react';
 import { useTranslation } from '../../../i18n/I18nContext';
-import { getInvestorForecastLabels } from '../../../i18n/investorForecastI18n';
+import { getInvestorForecastLabels } from '../../../i18n/modules';
 import { cracow360Api } from '../../../api/client';
 import type { DistrictDetailsDto, DistrictSummaryDto } from '../../../types/contracts';
 import { localizeDistrictName } from '../../../utils/districtLocalization';

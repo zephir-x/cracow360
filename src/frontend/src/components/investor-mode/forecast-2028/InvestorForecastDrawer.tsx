@@ -12,7 +12,7 @@ import type { Language } from '../../../i18n/types';
 import {
   getEducationalRecommendation,
   type InvestorForecastLabels,
-} from '../../../i18n/investorForecastI18n';
+} from '../../../i18n/modules';
 import type { InvestorDistrictForecastData } from './types';
 
 export interface InvestorForecastDrawerProps {

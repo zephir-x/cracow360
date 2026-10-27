@@ -10,7 +10,7 @@ import {
   formatKindergartensLabel,
   formatSchoolsLabel,
   formatNurseriesLabel,
-} from '../../../i18n/childcareForecastI18n';
+} from '../../../i18n/modules';
 
 // City-wide Macro Aggregations (Infants, Preschool, Primary, All) – Pure Current State
 export function getMacroIndicators(

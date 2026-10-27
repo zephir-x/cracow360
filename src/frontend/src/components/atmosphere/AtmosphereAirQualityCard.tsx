@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import { Droplets, Flower2 } from 'lucide-react';
 import type { LiveAtmosphereDto } from '../../types/contracts';
-import { getLocalizedUvTag, type AtmosphereText } from '../../i18n/atmosphereI18n';
+import { getLocalizedUvTag, type AtmosphereText } from '../../i18n/modules';
 import type { Language } from '../../i18n/types';
 
 interface AtmosphereAirQualityCardProps {

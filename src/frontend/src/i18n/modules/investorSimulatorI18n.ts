@@ -1,5 +1,5 @@
-﻿import type { SimulatorImpactMetrics } from '../components/investor-mode/simulator-what-if/types';
-import type { Language } from './types';
+﻿import type { SimulatorImpactMetrics } from '../../components/investor-mode/simulator-what-if/types';
+import type { Language } from '../types';
 
 export interface LeverItemLabels {
   title: string;
@@ -732,6 +732,12 @@ const UA_SIMULATOR: InvestorSimulatorLabels = {
   librariesAndCultureLabel: 'Бібліотеки та будинки культури:',
 
   recommendationBannerTitle: 'Підсумок та практичні поради для обраного району',
+};
+
+export const INVESTOR_SIMULATOR_I18N = {
+  pl: PL_SIMULATOR,
+  en: EN_SIMULATOR,
+  ua: UA_SIMULATOR,
 };
 
 export function getInvestorSimulatorLabels(language: Language): InvestorSimulatorLabels {

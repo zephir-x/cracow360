@@ -2,7 +2,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { cracow360Api } from '../../../api/client';
 import { useTranslation } from '../../../i18n/I18nContext';
-import { getInvestorSimulatorLabels } from '../../../i18n/investorSimulatorI18n';
+import { getInvestorSimulatorLabels } from '../../../i18n/modules';
 import type { DistrictDetailsDto, DistrictSummaryDto } from '../../../types/contracts';
 import { DistrictSimulatorToolbar } from './DistrictSimulatorToolbar';
 import {

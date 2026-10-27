@@ -15,10 +15,11 @@ import {
   getDistrictCohortData,
 } from './childcare-forecast/forecastCalculations';
 import {
+  getChildcareForecastLabels,
   getForecastFilterLabels,
   getMacroPillDescriptions,
   getMacroTitles,
-} from '../../i18n/childcareForecastI18n';
+} from '../../i18n/modules';
 import {
   getPageNumbers,
   ITEMS_PER_PAGE,
@@ -43,6 +44,7 @@ export function ChildcareForecastSection({
   onSelectCohort,
 }: ChildcareForecastSectionProps) {
   const { language, t } = useTranslation();
+  const fLabels = useMemo(() => getChildcareForecastLabels(language), [language]);
 
   // Local cohort state synchronized with parent page prop
   const [activeCohort, setActiveCohort] = useState<ChildAgeCohort>(selectedCohort);
@@ -112,8 +114,8 @@ export function ChildcareForecastSection({
   );
 
   // Cohort-aware titles & subtitles
-  const sectionTitle = t.parent.forecast.cohortTitles[activeCohort];
-  const sectionSubtitle = t.parent.forecast.cohortSubtitles[activeCohort];
+  const sectionTitle = fLabels.cohortTitles[activeCohort];
+  const sectionSubtitle = fLabels.cohortSubtitles[activeCohort];
 
   // Helper to determine district status under active cohort
   const getDistrictStatus = (details: DistrictDetailsDto | undefined) => {
@@ -211,17 +213,17 @@ export function ChildcareForecastSection({
           cohortsDef={t.parent.cohorts}
           filterLabels={filterLabels}
           viewModeLabels={{
-            grid: t.parent.forecast.viewGrid || 'Siatka',
-            table: t.parent.forecast.viewTable || 'Tabela',
+            grid: fLabels.viewGrid || 'Siatka',
+            table: fLabels.viewTable || 'Tabela',
           }}
-          switcherTitle={t.parent.forecast.switcherTitle}
+          switcherTitle={fLabels.switcherTitle}
         />
 
         <ForecastMacroCards
           currentMacro={currentMacro}
           macroTitles={macroTitles}
           macroPillDescriptions={macroPillDescriptions}
-          placesUnit={t.parent.forecast.placesUnit}
+          placesUnit={fLabels.placesUnit}
         />
 
         {viewMode === 'grid' ? (
@@ -235,12 +237,12 @@ export function ChildcareForecastSection({
             onSelectDistrict={handleSelectDistrict}
             language={language}
             localizeDistrictName={localizeDistrictName}
-            whiteSpotBadge={t.parent.forecast.whiteSpotBadge}
-            balancedBadge={t.parent.forecast.balancedBadge}
-            surplusBadge={t.parent.forecast.surplusBadge}
-            placesUnit={t.parent.forecast.placesUnit}
-            closeCard={t.parent.forecast.closeCard}
-            recommendationActionBtn={t.parent.forecast.recommendationActionBtn}
+            whiteSpotBadge={fLabels.whiteSpotBadge}
+            balancedBadge={fLabels.balancedBadge}
+            surplusBadge={fLabels.surplusBadge}
+            placesUnit={fLabels.placesUnit}
+            closeCard={fLabels.closeCard}
+            recommendationActionBtn={fLabels.recommendationActionBtn}
           />
         ) : (
           <ForecastTableView
@@ -253,9 +255,9 @@ export function ChildcareForecastSection({
             onSelectDistrict={handleSelectDistrict}
             language={language}
             localizeDistrictName={localizeDistrictName}
-            placesUnit={t.parent.forecast.placesUnit}
-            closeCard={t.parent.forecast.closeCard}
-            recommendationActionBtn={t.parent.forecast.recommendationActionBtn}
+            placesUnit={fLabels.placesUnit}
+            closeCard={fLabels.closeCard}
+            recommendationActionBtn={fLabels.recommendationActionBtn}
           />
         )}
 
@@ -263,7 +265,7 @@ export function ChildcareForecastSection({
         {totalPages > 1 && (
           <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-500">
             <div>
-              {t.parent.forecast.showingDistricts(
+              {fLabels.showingDistricts(
                 filteredDistricts.length > 0 ? startIndex + 1 : 0,
                 Math.min(startIndex + ITEMS_PER_PAGE, filteredDistricts.length),
                 filteredDistricts.length
@@ -277,7 +279,7 @@ export function ChildcareForecastSection({
                 className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
               >
                 <ChevronLeft className="w-3.5 h-3.5" />
-                <span>{t.parent.forecast.prevPage}</span>
+                <span>{fLabels.prevPage}</span>
               </button>
 
               <div className="flex items-center gap-1">
@@ -307,7 +309,7 @@ export function ChildcareForecastSection({
                 disabled={currentPage === totalPages}
                 className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
               >
-                <span>{t.parent.forecast.nextPage}</span>
+                <span>{fLabels.nextPage}</span>
                 <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>

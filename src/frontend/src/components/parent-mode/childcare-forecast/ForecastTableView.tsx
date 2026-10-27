@@ -3,7 +3,7 @@ import type { Language } from '../../../i18n/types';
 import type { DistrictDetailsDto, DistrictSummaryDto } from '../../../types/contracts';
 import type { ChildAgeCohort } from '../FamilyAgeCohortSelector';
 import { getDistrictCohortData } from './forecastCalculations';
-import { formatPlacesUnit, getTableColumnHeaders } from '../../../i18n/childcareForecastI18n';
+import { formatPlacesUnit, getTableColumnHeaders } from '../../../i18n/modules';
 import type { ForecastFilter } from './types';
 
 export interface ForecastTableViewProps {

@@ -24,7 +24,7 @@ import { useState } from 'react';
 import type {
   InvestorSimulatorLabels,
   LeverItemLabels,
-} from '../../../i18n/investorSimulatorI18n';
+} from '../../../i18n/modules';
 import type { SimulatorImpactMetrics, SimulatorLeversState } from './types';
 
 export interface SimulatorLeversPanelProps {
@@ -309,7 +309,7 @@ export function SimulatorLeversPanel({
             type="range"
             min={0}
             max={row.max}
-            step={0.05}
+            step={0.01}
             value={val}
             aria-label={row.itemLabels.title}
             onChange={(e) =>

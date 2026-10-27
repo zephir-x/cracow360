@@ -1,6 +1,6 @@
 ﻿import React from 'react';
 import { Activity, Sun, Car, Flower2, ShieldAlert, CheckCircle, AlertTriangle } from 'lucide-react';
-import type { AtmosphereText, AtmosphereRecommendationsText } from '../../i18n/atmosphereI18n';
+import type { AtmosphereText, AtmosphereRecommendationsText } from '../../i18n/modules';
 
 interface AtmosphereGuidelinesCardProps {
   text: AtmosphereText;

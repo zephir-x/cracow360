@@ -9,7 +9,7 @@
 } from 'lucide-react';
 import { DISTRICTS_LIST } from './atmosphereConstants';
 import { WeatherIcon } from './WeatherIcon';
-import { ATMOSPHERE_I18N } from '../../i18n/atmosphereI18n';
+import { ATMOSPHERE_I18N } from '../../i18n/modules';
 import { useTranslation } from '../../i18n/I18nContext';
 import type { LiveAtmosphereDto } from '../../types/contracts';
 
@@ -44,11 +44,11 @@ export function AtmosphereTopBar({
   const text = ATMOSPHERE_I18N[language] || ATMOSPHERE_I18N.pl;
 
   return (
-    <div className="py-2.5 flex flex-wrap items-center justify-between gap-x-4 gap-y-2 text-xs">
+    <div className="py-2 flex items-center justify-between gap-x-3 text-xs overflow-x-auto no-scrollbar">
       {/* Left Block: Live badge + Current weather + Air quality pill */}
       <div
         key={`ticker-${contentKey}-${selectedDistrictId}`}
-        className="flex flex-wrap items-center gap-3 sm:gap-4 shrink-0 animate-content-enter"
+        className="flex items-center gap-2.5 sm:gap-3 shrink-0 animate-content-enter whitespace-nowrap"
       >
         {/* Live Indicator Pulse */}
         <div className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-[11px] font-bold text-sky-100 tracking-wider uppercase shadow-xs shrink-0">
@@ -66,7 +66,7 @@ export function AtmosphereTopBar({
 
         {/* Current Weather (Icon + Temp + Apparent Temp) */}
         {data ? (
-          <div className="flex items-center gap-2 shrink-0">
+          <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
             <WeatherIcon code={data.currentWeather.weatherCode} isDay={data.currentWeather.isDay} />
             <span className="font-extrabold text-sm tracking-tight text-white drop-shadow-xs">
               {Math.round(data.currentWeather.temperatureC)}°C
@@ -102,15 +102,12 @@ export function AtmosphereTopBar({
                 {text.airQuality}: <strong>{localizedAqiLabel}</strong> (AQI {data.currentAirQuality.europeanAqi})
               </span>
             </div>
-            <span className="hidden lg:inline text-sky-100/80 text-[11px]">
-              PM2.5: {data.currentAirQuality.pm25UgM3.toFixed(1)} {text.ugM3}
-            </span>
           </div>
         )}
 
         {/* Precipitation & Wind snippet */}
         {data && (
-          <div className="hidden xl:flex items-center gap-3 text-sky-100 text-[11px] shrink-0">
+          <div className="hidden 2xl:flex items-center gap-3 text-sky-100 text-[11px] shrink-0">
             <div className="flex items-center gap-1">
               <Droplets className="w-3.5 h-3.5 text-sky-300" />
               <span>
@@ -125,9 +122,8 @@ export function AtmosphereTopBar({
         )}
       </div>
 
-      {/* Right Block: District Selector + Refresh Button + Expand / Collapse Accordion Toggle
-          All action buttons have fixed widths so state text changes NEVER shift surrounding elements horizontally */}
-      <div className="flex items-center gap-2 sm:gap-2.5 ml-auto shrink-0">
+      {/* Right Block: District Selector + Refresh Button + Expand / Collapse Accordion Toggle */}
+      <div className="flex items-center gap-1.5 sm:gap-2 ml-auto shrink-0 whitespace-nowrap">
         {/* District Quick Dropdown */}
         <div className="relative inline-flex items-center shrink-0">
           <MapPin className="w-3.5 h-3.5 text-sky-300 mr-1.5 shrink-0" />
@@ -150,16 +146,16 @@ export function AtmosphereTopBar({
           onClick={onRefresh}
           disabled={isRefreshing}
           title={text.refreshButton}
-          className="inline-flex items-center justify-center gap-1.5 w-24 sm:w-26 px-2.5 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-white border border-white/25 text-xs font-semibold cursor-pointer transition-all duration-200 disabled:opacity-50 shadow-xs shrink-0"
+          className="inline-flex items-center justify-center gap-1.5 w-22 sm:w-24 px-2 py-1.5 rounded-xl bg-white/15 hover:bg-white/25 text-white border border-white/25 text-xs font-semibold cursor-pointer transition-all duration-200 disabled:opacity-50 shadow-xs shrink-0"
         >
           <RefreshCw className={`w-3.5 h-3.5 text-sky-200 shrink-0 ${isRefreshing ? 'animate-spin' : ''}`} />
           <span className="truncate">{isRefreshing ? text.refreshing : text.refreshButton}</span>
         </button>
 
-        {/* Expand / Collapse Toggle Button with fixed width */}
+        {/* Expand / Collapse Toggle Button */}
         <button
           onClick={onToggleExpand}
-          className="inline-flex items-center justify-center gap-1.5 w-28 sm:w-29.5 px-2.5 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white border border-white/30 text-xs font-bold cursor-pointer transition-all duration-200 shadow-xs hover:shadow-md shrink-0"
+          className="inline-flex items-center justify-center gap-1.5 w-24 sm:w-26 px-2 py-1.5 rounded-xl bg-white/20 hover:bg-white/30 text-white border border-white/30 text-xs font-bold cursor-pointer transition-all duration-200 shadow-xs hover:shadow-md shrink-0"
         >
           <span className="truncate">{isExpanded ? text.collapsePrompt : text.expandPrompt}</span>
           {isExpanded ? (

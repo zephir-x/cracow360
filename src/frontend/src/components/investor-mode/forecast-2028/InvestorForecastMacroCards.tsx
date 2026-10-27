@@ -1,5 +1,5 @@
 ﻿import { Baby, GraduationCap, School, TrendingUp } from 'lucide-react';
-import type { InvestorForecastLabels } from '../../../i18n/investorForecastI18n';
+import type { InvestorForecastLabels } from '../../../i18n/modules';
 import type { InvestorMacro2028 } from './types';
 
 export interface InvestorForecastMacroCardsProps {

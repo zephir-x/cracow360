@@ -1,6 +1,6 @@
 import { useMemo, useState } from 'react';
 import { useTranslation } from '../i18n/I18nContext';
-import { getLocalizedDatasetMetrics } from '../i18n/datasetsI18n';
+import { getLocalizedDatasetMetrics } from '../i18n/modules';
 import { ALL_DATA_SOURCES } from '../data/methodologyDataSources';
 import { getPageNumbers } from '../components/parent-mode/childcare-forecast/types';
 import {

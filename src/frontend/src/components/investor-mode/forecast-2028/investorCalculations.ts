@@ -1,6 +1,6 @@
 ﻿import type { DistrictDetailsDto } from '../../../types/contracts';
 import type { Language } from '../../../i18n/types';
-import { getEducationalRecommendation as getEduRec } from '../../../i18n/investorForecastI18n';
+import { getEducationalRecommendation as getEduRec } from '../../../i18n/modules/investorForecastI18n';
 import type { InvestorDistrictForecastData, InvestorMacro2028 } from './types';
 
 export function determineEducationExpansionPriority(
@@ -10,7 +10,7 @@ export function determineEducationExpansionPriority(
   totalBalance2028: number,
   totalCoveragePct2028: number
 ): 'HIGH' | 'MEDIUM' | 'LOW' {
-  // HIGH ("Pilna potrzeba rozbudowy"): negative total 0-14 balance OR severe deficit in nurseries (<= -800) or schools (<= -400)
+  // HIGH: negative total 0-14 balance OR severe deficit in nurseries (<= -800) or schools (<= -400)
   if (
     totalBalance2028 < 0 ||
     nurseryBalance2028 <= -800 ||
@@ -19,7 +19,7 @@ export function determineEducationExpansionPriority(
     return 'HIGH';
   }
 
-  // LOW ("Dobra dostępność miejsc"): high overall coverage (>= 135%), no school/kindergarten deficit, and mild/positive nursery balance (>= -350)
+  // LOW: high overall coverage (>= 135%), no school/kindergarten deficit, and mild/positive nursery balance (>= -350)
   if (
     totalCoveragePct2028 >= 135 &&
     schoolPlacesBalance2028 >= 0 &&
@@ -29,7 +29,7 @@ export function determineEducationExpansionPriority(
     return 'LOW';
   }
 
-  // MEDIUM ("Umiarkowane zapotrzebowanie"): positive overall balance, but moderate gap in one of the age brackets
+  // MEDIUM: positive overall balance, but moderate gap in one of the age brackets
   return 'MEDIUM';
 }
 

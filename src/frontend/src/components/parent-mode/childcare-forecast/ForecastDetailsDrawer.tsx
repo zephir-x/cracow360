@@ -14,7 +14,7 @@ import {
   formatFacilitiesTotalLabel,
   getDrawerLabels,
   getParentPracticalInsight,
-} from '../../../i18n/childcareForecastI18n';
+} from '../../../i18n/modules';
 
 export interface ForecastDetailsDrawerProps {
   isOpen: boolean;

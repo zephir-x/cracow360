@@ -14,7 +14,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { cracow360Api } from '../../api/client';
 import { useTranslation } from '../../i18n/I18nContext';
-import { getInvestorForecastLabels } from '../../i18n/investorForecastI18n';
+import { getInvestorForecastLabels } from '../../i18n/modules';
 import type { DistrictSummaryDto } from '../../types/contracts';
 import { mapDistrictForecastData } from './forecast-2028/investorCalculations';
 import { InvestorCapabilitiesGrid } from './InvestorCapabilitiesGrid';

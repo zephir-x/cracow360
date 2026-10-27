@@ -1,5 +1,5 @@
-﻿import type { CurrentAirQualityDto } from '../types/contracts';
-import type { Language } from './types';
+﻿import type { CurrentAirQualityDto } from '../../types/contracts';
+import type { Language } from '../types';
 
 export interface LocalizedHealthAdviceItem {
   level: 'safe' | 'moderate' | 'warning' | 'danger';

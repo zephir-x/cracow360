@@ -15,7 +15,7 @@ import { useTranslation } from '../../../i18n/I18nContext';
 import {
   getDynamicSimulatorRecommendation,
   type InvestorSimulatorLabels,
-} from '../../../i18n/investorSimulatorI18n';
+} from '../../../i18n/modules';
 import { localizeDistrictName } from '../../../utils/districtLocalization';
 import type { SimulatorImpactMetrics } from './types';
 

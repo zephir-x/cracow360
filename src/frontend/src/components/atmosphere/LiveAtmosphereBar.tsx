@@ -1,20 +1,20 @@
-﻿import { useState, useEffect, useMemo } from 'react';
-import { useTranslation } from '../../i18n/I18nContext';
+﻿import React, { useEffect, useMemo, useState } from 'react';
 import { cracow360Api } from '../../api/client';
-import type { LiveAtmosphereDto } from '../../types/contracts';
+import { useTranslation } from '../../i18n/I18nContext';
 import {
   ATMOSPHERE_I18N,
-  getLocalizedWeatherLabel,
   getLocalizedAqiLabel,
   getLocalizedHealthRecommendations,
-} from '../../i18n/atmosphereI18n';
+  getLocalizedWeatherLabel,
+} from '../../i18n/modules';
+import type { LiveAtmosphereDto } from '../../types/contracts';
 import { DISTRICTS_LIST } from './atmosphereConstants';
 import { AtmosphereTopBar } from './AtmosphereTopBar';
 import { AtmosphereForecastCard } from './AtmosphereForecastCard';
 import { AtmosphereAirQualityCard } from './AtmosphereAirQualityCard';
 import { AtmosphereGuidelinesCard } from './AtmosphereGuidelinesCard';
 
-export function LiveAtmosphereBar() {
+export const LiveAtmosphereBar = React.memo(function LiveAtmosphereBar() {
   const { language } = useTranslation();
   const text = ATMOSPHERE_I18N[language] || ATMOSPHERE_I18N.pl;
 
@@ -33,19 +33,36 @@ export function LiveAtmosphereBar() {
     return false;
   });
 
+  // Keep content mounted during close animation (550ms) to ensure smooth slide-up,
+  // but unmount when closed so hidden charts never consume CPU/GPU during slider interactions
+  const [shouldRenderDetails, setShouldRenderDetails] = useState<boolean>(isExpanded);
+
+  useEffect(() => {
+    if (isExpanded) {
+      setShouldRenderDetails(true);
+    } else {
+      const timer = setTimeout(() => {
+        setShouldRenderDetails(false);
+      }, 550);
+      return () => clearTimeout(timer);
+    }
+  }, [isExpanded]);
+
   const [data, setData] = useState<LiveAtmosphereDto | null>(null);
   const [isRefreshing, setIsRefreshing] = useState<boolean>(false);
   const [isOfflineFallback, setIsOfflineFallback] = useState<boolean>(false);
   const [lastFetchTime, setLastFetchTime] = useState<Date>(new Date());
   const [contentKey, setContentKey] = useState<number>(0);
   const [expandCount, setExpandCount] = useState<number>(0);
+  const [animationKey, setAnimationKey] = useState<number>(1);
 
-  // Persist expanded state and increment expandCount to replay chart entry animation on every reveal
+  // Persist expanded state and increment counters so fresh chart entrance animation triggers cleanly
   const handleToggleExpand = () => {
     setIsExpanded((prev) => {
       const next = !prev;
       if (next) {
         setExpandCount((c) => c + 1);
+        setAnimationKey((k) => k + 1);
       }
       if (typeof window !== 'undefined') {
         localStorage.setItem('cracow360_atmosphere_expanded', String(next));
@@ -58,6 +75,7 @@ export function LiveAtmosphereBar() {
   const handleSelectDistrict = (id: number) => {
     setSelectedDistrictId(id);
     setContentKey((k) => k + 1);
+    setAnimationKey((k) => k + 1);
     if (typeof window !== 'undefined') {
       localStorage.setItem('cracow360_atmosphere_district', String(id));
     }
@@ -71,12 +89,14 @@ export function LiveAtmosphereBar() {
       setData(res);
       setIsOfflineFallback(false);
       setLastFetchTime(new Date());
+      setAnimationKey((k) => k + 1);
       if (isManual) {
         setContentKey((k) => k + 1);
       }
     } catch (err) {
       console.warn('Live atmosphere API unavailable, engaging resilient local state:', err);
       setIsOfflineFallback(true);
+      setAnimationKey((k) => k + 1);
       if (!data) {
         const now = new Date();
         setData({
@@ -218,9 +238,9 @@ export function LiveAtmosphereBar() {
         {/* EXPANDED DETAILED PANEL */}
         <div className={`drawer-expandable ${isExpanded ? 'is-open' : ''}`}>
           <div className="overflow-hidden">
-            {data && (
+            {shouldRenderDetails && data && (
               <div
-                key={`panel-${contentKey}-${selectedDistrictId}`}
+                key={`panel-${expandCount}-${selectedDistrictId}`}
                 className="pt-4 pb-6 border-t border-white/15 space-y-4 animate-content-enter"
               >
                 {/* Header info strip: District Name + Coordinates + Relative Update time */}
@@ -243,8 +263,8 @@ export function LiveAtmosphereBar() {
                   {/* COLUMN 1: 24h Hourly Forecast Distribution & Curves */}
                   <AtmosphereForecastCard
                     data={data}
-                    expandCount={expandCount}
                     selectedDistrictId={selectedDistrictId}
+                    animationKey={animationKey}
                   />
 
                   {/* COLUMN 2: Air Quality & Botanical Allergens */}
@@ -268,4 +288,4 @@ export function LiveAtmosphereBar() {
       </div>
     </section>
   );
-}
+});
