@@ -5,6 +5,7 @@ export interface TranslationDictionary {
     residentMode: string;
     parentMode: string;
     investorMode: string;
+    touristMode?: string;
     methodology: string;
     smartCityBadge: string;
     subtitle: string;
@@ -358,6 +359,7 @@ export interface TranslationDictionary {
       culture: string;
       demographics: string;
       gis_env: string;
+      tourism: string;
     };
     statuses: {
       integrated: string;

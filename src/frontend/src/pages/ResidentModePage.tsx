@@ -1,34 +1,32 @@
 ﻿import { useState } from 'react';
 import {
-  Accessibility,
-  ArrowDownRight,
+  Compass,
+  Scale,
+  Sparkles,
+  Users,
   BarChart3,
+  HelpCircle,
   ChevronDown,
   ChevronUp,
-  Compass,
-  GitCompareArrows,
-  HelpCircle,
   MapPin,
-  Trophy,
-  Users,
-  Sparkles,
+  Accessibility,
 } from 'lucide-react';
-import { DistrictComparisonView } from '../components/resident-mode/DistrictComparisonView';
-import { DistrictRankingList } from '../components/resident-mode/DistrictRankingList';
 import { KrakowChoroplethMap } from '../components/resident-mode/KrakowChoroplethMap';
 import { WeightsConfiguratorPanel } from '../components/resident-mode/WeightsConfiguratorPanel';
+import { DistrictRankingList } from '../components/resident-mode/DistrictRankingList';
+import { DistrictComparisonView } from '../components/resident-mode/DistrictComparisonView';
 import { CivicAccessibilityNavigator } from '../components/resident-mode/accessibility/CivicAccessibilityNavigator';
-import type {
-  DistrictsGeoJsonCollection,
-  DistrictSummaryDto,
-  QualityWeights,
-} from '../types/contracts';
 import { useTranslation } from '../i18n/I18nContext';
 import { getShortDistrictName } from '../utils/districtLocalization';
+import type {
+  DistrictSummaryDto,
+  DistrictsGeoJsonCollection,
+  QualityWeights,
+} from '../types/contracts';
 
-export interface ResidentModePageProps {
-  rankedDistricts: DistrictSummaryDto[];
+interface ResidentModePageProps {
   geoJsonData: DistrictsGeoJsonCollection | null;
+  rankedDistricts: DistrictSummaryDto[];
   weights: QualityWeights;
   activePresetId: string | null;
   selectedPrimaryId: number | null;
@@ -37,15 +35,15 @@ export interface ResidentModePageProps {
   onSetActiveTargetSlot: (slot: 1 | 2) => void;
   onChangeWeights: (newWeights: QualityWeights, presetId?: string | null) => void;
   onResetWeights: () => void;
-  onSelectDistrict: (districtId: number) => void;
+  onSelectDistrict: (id: number) => void;
   onSelectPrimary: (id: number) => void;
   onSelectSecondary: (id: number) => void;
   onClearSelection: () => void;
 }
 
 export function ResidentModePage({
-  rankedDistricts,
   geoJsonData,
+  rankedDistricts,
   weights,
   activePresetId,
   selectedPrimaryId,
@@ -118,70 +116,81 @@ export function ResidentModePage({
               strokeWidth="4"
               strokeLinecap="round"
             />
-            <circle cx="465" cy="185" r="7" fill="#ffffff" />
-            <circle cx="555" cy="222" r="6" fill="#38bdf8" />
-            <circle cx="620" cy="210" r="9" fill="#ffffff" stroke="#0284c7" strokeWidth="3" />
-            <circle cx="695" cy="198" r="6" fill="#bae6fd" />
+            <path
+              d="M200 120 C 340 180, 420 320, 560 300 C 640 290, 700 360, 790 340"
+              stroke="#38bdf8"
+              strokeWidth="2.5"
+              strokeDasharray="8 8"
+            />
+            <rect x="520" y="140" width="36" height="36" rx="8" stroke="white" strokeWidth="1.5" strokeDasharray="4 4" />
+            <rect x="680" y="240" width="48" height="48" rx="10" stroke="#bae6fd" strokeWidth="1.5" />
+            <circle cx="480" cy="270" r="6" fill="#38bdf8" />
+            <circle cx="590" cy="180" r="8" fill="#bae6fd" />
+            <circle cx="660" cy="310" r="5" fill="white" />
+            <circle cx="730" cy="160" r="7" fill="#7dd3fc" />
           </svg>
         </div>
 
-        {/* Hero Foreground Content */}
-        <div className="relative z-10 px-6 sm:px-10 pt-8 sm:pt-10 pb-8 space-y-8">
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
-              <Compass className="w-4 h-4 text-sky-300" />
-              {t.hero.badge}
-            </div>
-
-            <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-black tracking-tight leading-[1.12] text-white">
-              {t.hero.titleLead}
-              <br />
-              <span className="text-sky-200">{t.hero.titleAccent}</span>
-            </h1>
-
-            <p className="text-sm sm:text-base text-blue-100/95 leading-relaxed max-w-xl">
-              {t.hero.description}
-            </p>
-
-            {/* Interactive CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-3 pt-2">
-              <button
-                onClick={scrollToWorkspace}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-white text-blue-900 hover:bg-sky-50 shadow-lg shadow-blue-950/20 transition transform hover:-translate-y-0.5 cursor-pointer"
-              >
-                <Compass className="w-4 h-4 text-blue-600" />
-                {t.hero.ctaExplore}
-                <ArrowDownRight className="w-4 h-4 text-blue-600" />
-              </button>
-
-              <button
-                onClick={scrollToComparison}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-blue-500/30 hover:bg-blue-500/45 text-white border border-white/30 backdrop-blur-md transition cursor-pointer"
-              >
-                <GitCompareArrows className="w-4 h-4 text-sky-200" />
-                {t.hero.ctaCompare}
-              </button>
-
-              <button
-                onClick={scrollToAccessibility}
-                className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full text-xs sm:text-sm font-bold bg-blue-500/30 hover:bg-blue-500/45 text-white border border-white/30 backdrop-blur-md transition cursor-pointer"
-              >
-                <Accessibility className="w-4 h-4 text-sky-200" />
-                {t.hero.ctaAccessibility || 'Przestrzeń bez Barier'}
-              </button>
-            </div>
+        {/* Foreground Content Container */}
+        <div className="relative z-10 p-6 sm:p-8 lg:p-10 space-y-6">
+          {/* Header Badge */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs font-bold text-sky-100 tracking-wide uppercase shadow-sm">
+            <Sparkles className="w-3.5 h-3.5 text-sky-300 animate-spin-slow" />
+            <span>{t.hero.badge}</span>
           </div>
 
-          {/* Bottom Floating Glassmorphic Stat Cards with Linguistically Accurate Grammatical Inflections */}
+          {/* Main Title & Lead */}
+          <div className="max-w-3xl space-y-3">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tight leading-[1.12]">
+              {t.hero.titleLead}
+              <span className="block text-transparent bg-clip-text bg-linear-to-r from-sky-200 via-sky-100 to-white">
+                {t.hero.titleAccent}
+              </span>
+            </h1>
+            <p className="text-sm sm:text-base text-sky-100/90 leading-relaxed max-w-2xl font-normal">
+              {t.hero.description}
+            </p>
+          </div>
+
+          {/* Action CTAs */}
+          <div className="flex flex-wrap items-center gap-3 pt-1">
+            <button
+              onClick={scrollToWorkspace}
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-blue-900 shadow-xl shadow-blue-950/20 hover:bg-sky-50 active:scale-98 transition transform cursor-pointer"
+            >
+              <Compass className="w-4 h-4 text-blue-600" />
+              <span>{t.hero.ctaExplore}</span>
+            </button>
+
+            <button
+              onClick={scrollToComparison}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-white/10 hover:bg-white/20 active:scale-98 text-white border border-white/20 backdrop-blur-md transition transform cursor-pointer"
+            >
+              <Scale className="w-4 h-4 text-sky-200" />
+              <span>{t.hero.ctaCompare}</span>
+            </button>
+
+            <button
+              onClick={scrollToAccessibility}
+              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-white/10 hover:bg-white/20 active:scale-98 text-white border border-white/20 backdrop-blur-md transition transform cursor-pointer"
+            >
+              <Accessibility className="w-4 h-4 text-sky-200" />
+              <span>{t.hero.ctaAccessibility}</span>
+            </button>
+          </div>
+
+          {/* Real-Data Live Telemetry Cards */}
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
             <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0">
                 <MapPin className="w-5 h-5" />
               </div>
               <div>
-                <div className="text-2xl font-black text-blue-700 leading-none">{rankedDistricts.length}</div>
+                <div className="text-2xl font-black text-blue-900 leading-none">
+                  {rankedDistricts.length > 0 ? rankedDistricts.length : '18'}
+                </div>
                 <div className="text-xs font-bold text-slate-800 mt-1">
-                  {plural(rankedDistricts.length, districtPluralForms)}
+                  {plural(rankedDistricts.length || 18, districtPluralForms)}
                 </div>
                 <div className="text-[11px] text-slate-500">{t.stats.districtsSub}</div>
               </div>
@@ -189,7 +198,7 @@ export function ResidentModePage({
 
             <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-amber-50 border border-amber-200 flex items-center justify-center text-amber-600 shrink-0">
-                <Trophy className="w-5 h-5" />
+                <Sparkles className="w-5 h-5" />
               </div>
               <div className="min-w-0">
                 <div className="text-lg font-black text-slate-900 truncate leading-tight">
@@ -246,51 +255,51 @@ export function ResidentModePage({
               )}
             </button>
           </div>
+        </div>
+      </section>
 
-          {/* Collapsible 3-Step Educational Guide */}
+      {/* Expandable "How does it work?" Drawer placed below the Hero Card with smooth open & close animation */}
+      <div className={`drawer-expandable ${showHowItWorks ? 'is-open' : ''}`}>
+        <div className="overflow-hidden">
           <section
             aria-label="Jak działa indeks"
-            className={`overflow-hidden transition-all duration-300 ease-in-out ${
-              showHowItWorks ? 'max-h-96 opacity-100 pt-2' : 'max-h-0 opacity-0 pointer-events-none'
-            }`}
+            className="rounded-3xl bg-white border border-blue-200 p-6 shadow-lg shadow-blue-900/5 space-y-4 text-slate-900"
           >
-            <div className="rounded-2xl bg-white/95 backdrop-blur-md border border-white text-slate-900 p-6 shadow-xl space-y-4">
-              <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-                <div className="flex items-center gap-2 font-black text-sm text-slate-900">
-                  <Sparkles className="w-4 h-4 text-blue-600" />
-                  <span>{t.hero.howItWorksTitle}</span>
-                </div>
-                <button
-                  onClick={() => setShowHowItWorks(false)}
-                  className="text-xs font-bold text-slate-400 hover:text-slate-600 cursor-pointer"
-                >
-                  {t.hero.howItWorksClose}
-                </button>
+            <div className="flex items-center justify-between pb-3 border-b border-slate-100">
+              <div className="flex items-center gap-2 font-black text-sm text-slate-900">
+                <Sparkles className="w-4 h-4 text-blue-600" />
+                <span>{t.hero.howItWorksTitle}</span>
               </div>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed">
-                <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
-                  <div className="font-extrabold text-blue-900 mb-1">
-                    {t.hero.step1Title}
-                  </div>
-                  {t.hero.step1Desc}
+              <button
+                onClick={() => setShowHowItWorks(false)}
+                className="text-xs font-bold text-slate-400 hover:text-slate-600 cursor-pointer"
+              >
+                {t.hero.howItWorksClose}
+              </button>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed">
+              <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
+                <div className="font-extrabold text-blue-900 mb-1">
+                  {t.hero.step1Title}
                 </div>
-                <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
-                  <div className="font-extrabold text-sky-900 mb-1">
-                    {t.hero.step2Title}
-                  </div>
-                  {t.hero.step2Desc}
+                {t.hero.step1Desc}
+              </div>
+              <div className="p-4 rounded-2xl bg-sky-50/50 border border-sky-100">
+                <div className="font-extrabold text-sky-900 mb-1">
+                  {t.hero.step2Title}
                 </div>
-                <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
-                  <div className="font-extrabold text-indigo-900 mb-1">
-                    {t.hero.step3Title}
-                  </div>
-                  {t.hero.step3Desc}
+                {t.hero.step2Desc}
+              </div>
+              <div className="p-4 rounded-2xl bg-indigo-50/50 border border-indigo-100">
+                <div className="font-extrabold text-indigo-900 mb-1">
+                  {t.hero.step3Title}
                 </div>
+                {t.hero.step3Desc}
               </div>
             </div>
           </section>
         </div>
-      </section>
+      </div>
 
       {/* Main 3-Column Interactive Workspace: Left Configurator + Center Map + Right Ranking */}
       <section

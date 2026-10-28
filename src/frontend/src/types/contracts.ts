@@ -467,3 +467,142 @@ export interface AccessibilityDatasetDto {
   cityAverages: AccessibilityCityAveragesDto;
   districts: DistrictAccessibilityProfileDto[];
 }
+
+// Smart Tourism & Exploration Contracts
+export type TourismAttractionCategory =
+  | 'HISTORIC_HERITAGE'
+  | 'CULTURE_ART'
+  | 'GREEN_NATURE'
+  | 'MODERN_EXPERIENCE';
+
+export type TourismCrowdLevel =
+  | 'PEAK'
+  | 'VERY_HIGH'
+  | 'HIGH'
+  | 'MODERATE'
+  | 'LOW'
+  | 'PEACEFUL';
+
+export interface DirectTransitInfoDto {
+  line: string;
+  timeMinutes: number;
+}
+
+export interface TourismAttractionDto {
+  id: string;
+  districtId: number;
+  name: string;
+  category: TourismAttractionCategory | string;
+  crowdLevel: TourismCrowdLevel | string;
+  lat: number;
+  lng: number;
+  estimatedVisitMinutes: number;
+  isUnesco: boolean;
+  directTransitFromMainStation: DirectTransitInfoDto;
+  description: string;
+  tags: string[];
+}
+
+export interface OvertourismAlternativeDto {
+  id: string;
+  crowdedAttractionId: string;
+  crowdedName: string;
+  crowdedCrowdLevel: TourismCrowdLevel | string;
+  peacefulAttractionId: string;
+  peacefulName: string;
+  peacefulCrowdLevel: TourismCrowdLevel | string;
+  reasonPl: string;
+  reasonEn: string;
+  reasonUa: string;
+}
+
+export interface ItineraryStopDto {
+  stepNumber: number;
+  attractionId: string;
+  name: string;
+  category: string;
+  crowdLevel: string;
+  lat: number;
+  lng: number;
+  visitMinutes: number;
+  walkToNextMinutes: number;
+  distanceToNextKm: number;
+  districtId: number;
+}
+
+export interface ThematicItineraryDto {
+  id: string;
+  titlePl: string;
+  titleEn: string;
+  titleUa: string;
+  targetHours: number;
+  theme: string;
+  stopIds: string[];
+  suitableFor: string[];
+  descriptionPl: string;
+  descriptionEn: string;
+  descriptionUa: string;
+  calculatedDurationMinutes: number;
+  stops: ItineraryStopDto[];
+}
+
+export interface DistrictTopAttractionDto {
+  id: string;
+  name: string;
+  category: string;
+  crowdLevel: string;
+  estimatedVisitMinutes: number;
+}
+
+export interface DistrictTouristPassportDto {
+  districtId: number;
+  districtRoman: string;
+  districtName: string;
+  distanceFromMainStationKm: number;
+  transitTimeFromStationMinutes: number;
+  directTransitLines: string;
+  totalAttractionsCount: number;
+  topAttractions: DistrictTopAttractionDto[];
+}
+
+export interface TopMarketDto {
+  country: string;
+  sharePct: number;
+  flag: string;
+}
+
+export interface CityTourismSummaryDto {
+  annualVisitorsTotal: number;
+  overnightTourists: number;
+  domesticVisitors: number;
+  internationalVisitors: number;
+  estimatedEconomicImpactPln: number;
+  totalCuratedAttractions: number;
+  unescoSitesCount: number;
+  curatedItinerariesCount: number;
+  overtourismAlternativePairsCount: number;
+  topInternationalMarkets: TopMarketDto[];
+}
+
+export interface TourismSourceDto {
+  id: string;
+  name: string;
+  url: string;
+}
+
+export interface TourismMetaDto {
+  title: string;
+  description: string;
+  version: string;
+  sources: TourismSourceDto[];
+}
+
+export interface TourismDatasetDto {
+  generatedAt: string;
+  meta: TourismMetaDto;
+  cityTourismSummary: CityTourismSummaryDto;
+  attractions: TourismAttractionDto[];
+  overtourismAlternatives: OvertourismAlternativeDto[];
+  thematicItineraries: ThematicItineraryDto[];
+  districtPassports: DistrictTouristPassportDto[];
+}

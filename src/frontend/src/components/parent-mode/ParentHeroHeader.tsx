@@ -172,7 +172,9 @@ export function ParentHeroHeader({
               <path d="M14 36 L 0 10 L -8 10" stroke="#bae6fd" strokeWidth="2.5" strokeLinecap="round" fill="none" />
               {/* Parent figure beside handle */}
               <circle cx="-16" cy="-2" r="7" stroke="#ffffff" strokeWidth="2" />
-              <path d="M-16 6 L -16 28 L -22 48" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+              <line x1="-16" y1="6" x2="-16" y2="28" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+              <line x1="-16" y1="28" x2="-22" y2="48" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+              <line x1="-16" y1="28" x2="-10" y2="48" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
               <path d="M-16 16 L -6 10" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
             </g>
 

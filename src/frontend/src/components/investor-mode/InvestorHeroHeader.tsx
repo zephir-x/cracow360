@@ -153,7 +153,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
 
           {/* Econometric & Civic Infrastructure Vector Shapes (Positioned gracefully in upper half) */}
           <svg
-            className="absolute right-0 top-0 h-[68%] w-full lg:w-6/12 opacity-30 pointer-events-none select-none"
+            className="absolute right-8 sm:right-14 lg:right-24 top-8 sm:top-12 lg:top-16 h-[60%] lg:h-[62%] w-full lg:w-6/12 opacity-30 pointer-events-none select-none"
             viewBox="0 0 600 360"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"

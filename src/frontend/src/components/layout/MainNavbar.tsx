@@ -1,9 +1,9 @@
-import { Baby, BookOpen, Building2, Compass } from 'lucide-react';
+import { Baby, BookOpen, Building2, Compass, Landmark } from 'lucide-react';
 import React, { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from '../../i18n/I18nContext';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
-export type AppTabId = 'resident' | 'parent' | 'investor' | 'methodology';
+export type AppTabId = 'resident' | 'parent' | 'investor' | 'tourist' | 'methodology';
 
 export interface MainNavbarProps {
   activeTab: AppTabId;
@@ -48,6 +48,11 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
       id: 'investor',
       label: t.nav.investorMode,
       icon: <Building2 className="w-4 h-4" />,
+    },
+    {
+      id: 'tourist',
+      label: t.nav.touristMode ?? 'Odkrywaj Kraków',
+      icon: <Landmark className="w-4 h-4" />,
     },
     {
       id: 'methodology',
@@ -117,12 +122,16 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
               className={`absolute top-0 left-0 rounded-xl bg-blue-600 shadow-md shadow-blue-600/25 pointer-events-none z-0 ${
                 isTransitionEnabled ? 'transition-all duration-300 ease-out' : 'transition-none'
               }`}
-              style={{
-                transform: `translate3d(${indicatorStyle.left}px, ${indicatorStyle.top}px, 0)`,
-                width: `${indicatorStyle.width}px`,
-                height: `${indicatorStyle.height}px`,
-                opacity: indicatorStyle.opacity,
-              }}
+              style={
+                indicatorStyle.width > 0
+                  ? {
+                      transform: `translate3d(${indicatorStyle.left}px, ${indicatorStyle.top}px, 0)`,
+                      width: `${indicatorStyle.width}px`,
+                      height: `${indicatorStyle.height}px`,
+                      opacity: indicatorStyle.opacity,
+                    }
+                  : { opacity: 0 }
+              }
             />
 
             {navItems.map((item) => {
@@ -140,13 +149,14 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
                       : 'text-slate-600 hover:text-blue-600'
                   }`}
                 >
-                  <span className="shrink-0">{item.icon}</span>
-                  <span>{item.label}</span>
+                  {item.icon}
+                  {item.label}
                 </button>
               );
             })}
           </nav>
 
+          {/* Multilingual Switcher (PL / EN / UA) */}
           <LanguageSwitcher />
         </div>
       </div>

@@ -11,7 +11,8 @@ export type MethodologyCategory =
   | 'culture'
   | 'gis_env'
   | 'safety'
-  | 'housing';
+  | 'housing'
+  | 'tourism';
 
 export interface DataSourceItem {
   id: string;
@@ -267,6 +268,35 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     officialDatasetName: 'Dostępność architektoniczna obiektów publicznych w Krakowie (UMK / MFiPR)',
     metrics: 'Rejestr 25 budynków UMK i jednostek miejskich z audytem ramp, wind, toalet PRM, pętli indukcyjnych i obsługi tłumacza PJM',
     portalUrl: 'https://www.bip.krakow.pl/?dok_id=139318',
+    status: 'Zintegrowane w ETL',
+  },
+
+  // Tourism, Heritage & City Exploration
+  {
+    id: 'tour-1',
+    category: 'tourism',
+    categoryLabel: 'Turystyka & Odkrywanie',
+    officialDatasetName: 'Ruch turystyczny w Krakowie (Wydział ds. Turystyki UMK / Otwarte Dane)',
+    metrics: 'Łączna roczna liczba odwiedzających Kraków (14,72 mln), turyści nocujący (9,85 mln), ruch krajowy i zagraniczny, wpływ ekonomiczny (11,8 mld PLN), struktura rynków zagranicznych (UK, DE, IT, USA, ES, FR)',
+    portalUrl: 'https://otwartedane.um.krakow.pl/zbiory-danych/ruch-turystyczny-w-krakowie-od-2015-roku',
+    status: 'Zintegrowane w ETL',
+  },
+  {
+    id: 'tour-2',
+    category: 'tourism',
+    categoryLabel: 'Turystyka & Odkrywanie',
+    officialDatasetName: 'Rejestr Miejskich Instytucji Kultury i Muzeów w Krakowie (BIP UMK)',
+    metrics: 'Oficjalny wykaz miejskich instytucji kultury i oddziałów muzealnych Muzeum Krakowa w 18 dzielnicach wraz z szacunkowym czasem zwiedzania',
+    portalUrl: 'https://www.bip.krakow.pl/?mmi=22',
+    status: 'Zintegrowane w ETL',
+  },
+  {
+    id: 'tour-3',
+    category: 'tourism',
+    categoryLabel: 'Turystyka & Odkrywanie',
+    officialDatasetName: 'Krajowy Rejestr Zabytków i Pomników Historii (NID / MSIP Kraków)',
+    metrics: 'Zabytki architektury, obiekty UNESCO, kopce krakowskie i forty Twierdzy Kraków z koordynatami WGS84, poziomem tłoczności i dojazdem KMK z Dworca Głównego',
+    portalUrl: 'https://zabytek.pl/pl/obiekty',
     status: 'Zintegrowane w ETL',
   },
 

@@ -1,4 +1,7 @@
-﻿using Cracow360.Application.Interfaces;
+﻿using System;
+using System.IO;
+using System.Linq;
+using Cracow360.Application.Interfaces;
 using Cracow360.Application.Services;
 using Cracow360.Domain.Interfaces;
 using Cracow360.Infrastructure.ExternalServices;
@@ -12,8 +15,8 @@ using Microsoft.Extensions.DependencyInjection;
 namespace Cracow360.Infrastructure;
 
 /// <summary>
-/// Dependency injection registration for the Infrastructure layer.
-/// Registers EF Core SQLite database context, in-memory caching, HTTP clients, repositories, and workers.
+/// Dependency Injection extensions registering Infrastructure persistence,
+/// repositories, application services, caching, and background workers.
 /// </summary>
 public static class DependencyInjection
 {
@@ -22,11 +25,11 @@ public static class DependencyInjection
         IConfiguration configuration,
         string contentRootPath)
     {
-        // 1. Resolve SQLite connection string from configuration or discover local database path dynamically
-        var configuredConnectionString = configuration.GetConnectionString("DefaultConnection");
+        // 1. Resolve SQLite connection string with automatic folder fallback
         string connectionString;
+        var configuredConnectionString = configuration.GetConnectionString("DefaultConnection");
 
-        if (string.IsNullOrWhiteSpace(configuredConnectionString))
+        if (string.IsNullOrWhiteSpace(configuredConnectionString) || configuredConnectionString.Contains("cracow360.db"))
         {
             var candidates = new[]
             {
@@ -61,6 +64,7 @@ public static class DependencyInjection
         services.AddScoped<IPointOfInterestService, PointOfInterestService>();
         services.AddScoped<ILiveAtmosphereService, LiveAtmosphereService>();
         services.AddScoped<IAccessibilityService, AccessibilityService>();
+        services.AddScoped<ITourismService, TourismService>();
 
         // 6. Register contract seeder and background workers
         services.AddScoped<DatabaseSeeder>();

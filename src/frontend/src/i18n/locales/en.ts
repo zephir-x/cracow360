@@ -5,6 +5,7 @@ export const enTranslations: TranslationDictionary = {
     residentMode: 'For Residents',
     parentMode: 'For Parents',
     investorMode: 'For Officials & Investors',
+    touristMode: 'Discover Krakow',
     methodology: 'Methodology & Data Sources',
     smartCityBadge: 'Smart City',
     subtitle: 'Quality of Life, Urban Accessibility & District Analytics for Krakow',
@@ -472,6 +473,7 @@ export const enTranslations: TranslationDictionary = {
       culture: 'Culture & Seniors',
       demographics: 'Demographics',
       gis_env: 'Boundaries & Air',
+      tourism: 'Tourism & Exploration',
     },
     statuses: {
       integrated: 'Integrated in ETL',

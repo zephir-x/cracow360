@@ -135,6 +135,21 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     en: 'Registry of 25 UMK and municipal facilities audited for ramps, elevators, PRM toilets, hearing loops, and sign language support',
     ua: 'Реєстр 25 будівель UMK та комунальних закладів з аудитом пандусів, ліфтів, туалетів для осіб з інвалідністю, індукційних петель та перекладача PJM',
   },
+  'tour-1': {
+    pl: 'Łączna roczna liczba odwiedzających Kraków (14,72 mln), turyści nocujący (9,85 mln), ruch krajowy i zagraniczny, wpływ ekonomiczny (11,8 mld PLN), rynki zagraniczne (UK, DE, IT, USA, ES, FR)',
+    en: 'Annual visitors to Krakow (14.72M), overnight tourists (9.85M), domestic and foreign traffic, economic impact (11.8B PLN), foreign market breakdown (UK, DE, IT, USA, ES, FR)',
+    ua: 'Загальна річна кількість відвідувачів Кракова (14,72 млн), туристи з ночівлею (9,85 млн), внутрішній і міжнародний трафік, економічний вплив (11,8 млрд PLN), структура іноземних ринків (UK, DE, IT, USA, ES, FR)',
+  },
+  'tour-2': {
+    pl: 'Oficjalny wykaz miejskich instytucji kultury i oddziałów muzealnych Muzeum Krakowa w 18 dzielnicach wraz z czasem zwiedzania',
+    en: 'Official registry of municipal cultural institutions and Museum of Krakow branches across 18 districts with visit durations',
+    ua: 'Офіційний перелік міських закладів культури та філій Музею Кракова у 18 районах із розрахунковим часом огляду',
+  },
+  'tour-3': {
+    pl: 'Zabytki architektury, obiekty UNESCO, kopce krakowskie i forty Twierdzy Kraków z koordynatami WGS84, poziomem tłoczności i dojazdem KMK z Dworca Głównego',
+    en: 'Architectural heritage, UNESCO sites, Krakow mounds, and Fortress Krakow forts with WGS84 coordinates, crowd levels, and transit from Main Station',
+    ua: 'Пам’ятки архітектури, об’єкти ЮНЕСКО, краківські кургани та форти Краківської фортеці з координатами WGS84, рівнем людності та доїздом від Головного вокзалу',
+  },
   'demo-1': {
     pl: 'Oficjalna liczba mieszkańców zameldowanych na pobyt stały w dzielnicach (2024–2025)',
     en: 'Official permanent registered resident counts across districts (2024–2025)',

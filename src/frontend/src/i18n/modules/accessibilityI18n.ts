@@ -1,5 +1,5 @@
 ﻿import type { Language } from '../types';
-import type { AccessibilityMetricsDto, AccessibilityProfileKey } from '../../types/contracts';
+import type { PluralForms } from '../../utils/pluralization';
 
 export const ACCESSIBILITY_I18N = {
   pl: {
@@ -85,30 +85,31 @@ export const ACCESSIBILITY_I18N = {
 
     inspectorCards: {
       prmTitle: 'Niebieskie Koperty',
-      prmUnit: 'miejsc',
       prmLocations: 'ulic i lokalizacji',
       prmPer10k: 'na 10 tys. mieszkańców',
       prmPerKm2: 'miejsc na km²',
 
       transitTitle: 'Dostępność transportu publicznego',
       transitUnit: 'peronów bez stopni',
-      transitKassel: 'przystanków z krawędzią bez barier',
-      transitTactile: 'płyt i pasów dotykowych dla osób niewidomych',
-      transitTactileUnit: 'przystanków ze ścieżkami dotykowymi',
-      transitTotal: 'przystanków w całej dzielnicy',
+      transitPer10k: 'przystanków na 10 tys. mieszkańców',
 
       facilitiesTitle: 'Dostępne urzędy i placówki miejskie',
-      facilitiesUnit: 'sprawdzonych obiektów',
-      facilitiesElevators: 'wind / podnośników',
-      facilitiesToilets: 'toalet przystosowanych bez barier',
-      facilitiesHearingLoops: 'pętli indukcyjnych',
-      facilitiesSignLanguage: 'tłum. języka migowego PJM',
-
       seniorTitle: 'Wsparcie seniorów i tereny zielone',
-      seniorUnit: 'Centrów Seniora (CAS)',
       seniorPer10k: 'placówek na 10 tys. seniorów',
-      seniorParks: 'parków miejskich',
-      seniorPockets: 'ogrodów kieszonkowych',
+    },
+
+    plurals: {
+      prmSpots: ['miejsce', 'miejsca', 'miejsc'] as PluralForms,
+      transitKasselStops: ['przystanek z krawędzią bez barier', 'przystanki z krawędzią bez barier', 'przystanków z krawędzią bez barier'] as PluralForms,
+      transitTactileStops: ['przystanek ze ścieżkami dotykowymi', 'przystanki ze ścieżkami dotykowymi', 'przystanków ze ścieżkami dotykowymi'] as PluralForms,
+      transitTotalStops: ['przystanek w całej dzielnicy', 'przystanki w całej dzielnicy', 'przystanków w całej dzielnicy'] as PluralForms,
+      facilitiesAudited: ['sprawdzony obiekt', 'sprawdzone obiekty', 'sprawdzonych obiektów'] as PluralForms,
+      facilitiesElevators: ['winda / podnośnik', 'windy / podnośniki', 'wind / podnośników'] as PluralForms,
+      facilitiesToilets: ['toaleta przystosowana bez barier', 'toalety przystosowane bez barier', 'toalet przystosowanych bez barier'] as PluralForms,
+      facilitiesHearingLoops: ['pętla indukcyjna', 'pętle indukcyjne', 'pętli indukcyjnych'] as PluralForms,
+      facilitiesSignLanguage: ['tłum. języka migowego PJM', 'tłum. języka migowego PJM', 'tłum. języka migowego PJM'] as PluralForms,
+      recreationCityParks: ['park miejski', 'parki miejskie', 'parków miejskich'] as PluralForms,
+      recreationPocketParks: ['ogród kieszonkowy', 'ogrody kieszonkowe', 'ogrodów kieszonkowych'] as PluralForms,
     },
 
     keyStrengthsTitle: 'Kluczowe atuty infrastrukturalne:',
@@ -169,20 +170,20 @@ export const ACCESSIBILITY_I18N = {
       visual: {
         title: 'Visual',
         badge: 'Visual & Orientation',
-        desc: 'Blind and visually impaired citizens requiring tactile navigation',
-        keyFactor: 'Tactile warning paving on transit platforms, Braille signage in halls',
+        desc: 'Blind, visually impaired citizens and people needing tactile orientation',
+        keyFactor: 'Tactile paving & guidance strips at KMK platforms, braille signage in offices',
       },
       hearing: {
         title: 'Hearing',
         badge: 'Hearing & Comms',
         desc: 'Deaf and hard-of-hearing residents using hearing aids or sign language',
-        keyFactor: 'Hearing induction loops in service halls and certified PJM translators',
+        keyFactor: 'Hearing induction loops in service halls and certified PJM sign language interpreters',
       },
       senior: {
         title: 'Seniors',
         badge: 'Seniors',
-        desc: 'Elderly citizens prioritizing easy transit boarding, green spaces, and clubs',
-        keyFactor: 'Senior Activity Centers (CAS), low-floor KMK boarding, safe paths',
+        desc: 'Older adults who value comfortable transit, close parks, and community clubs',
+        keyFactor: 'Senior Activity Clubs (CAS), low-floor KMK vehicles, safe flat park pathways',
       },
       familyStroller: {
         title: 'Baby Strollers',
@@ -217,30 +218,31 @@ export const ACCESSIBILITY_I18N = {
 
     inspectorCards: {
       prmTitle: 'Blue Parking Spaces',
-      prmUnit: 'spaces',
       prmLocations: 'street locations',
       prmPer10k: 'per 10k residents',
       prmPerKm2: 'spaces per km²',
 
       transitTitle: 'Public Transit Accessibility',
       transitUnit: 'step-free platforms',
-      transitKassel: 'stops with barrier-free boarding curbs',
-      transitTactile: 'tactile warning pavers for visually impaired',
-      transitTactileUnit: 'stops with tactile guidance paths',
-      transitTotal: 'total transit stops in district',
+      transitPer10k: 'stops per 10k residents',
 
       facilitiesTitle: 'Accessible City Offices & Public Facilities',
-      facilitiesUnit: 'audited facilities',
-      facilitiesElevators: 'elevators / wheelchair lifts',
-      facilitiesToilets: 'accessible barrier-free restrooms',
-      facilitiesHearingLoops: 'hearing induction loops',
-      facilitiesSignLanguage: 'PJM sign language translators',
-
       seniorTitle: 'Senior Care & Accessible Greenery',
-      seniorUnit: 'Senior Activity Clubs (CAS)',
       seniorPer10k: 'clubs per 10k seniors',
-      seniorParks: 'city parks',
-      seniorPockets: 'pocket parks',
+    },
+
+    plurals: {
+      prmSpots: ['space', 'spaces', 'spaces'] as PluralForms,
+      transitKasselStops: ['stop with barrier-free boarding curb', 'stops with barrier-free boarding curbs', 'stops with barrier-free boarding curbs'] as PluralForms,
+      transitTactileStops: ['stop with tactile guidance paths', 'stops with tactile guidance paths', 'stops with tactile guidance paths'] as PluralForms,
+      transitTotalStops: ['transit stop in district', 'transit stops in district', 'transit stops in district'] as PluralForms,
+      facilitiesAudited: ['audited facility', 'audited facilities', 'audited facilities'] as PluralForms,
+      facilitiesElevators: ['elevator / wheelchair lift', 'elevators / wheelchair lifts', 'elevators / wheelchair lifts'] as PluralForms,
+      facilitiesToilets: ['accessible barrier-free restroom', 'accessible barrier-free restrooms', 'accessible barrier-free restrooms'] as PluralForms,
+      facilitiesHearingLoops: ['hearing induction loop', 'hearing induction loops', 'hearing induction loops'] as PluralForms,
+      facilitiesSignLanguage: ['PJM sign language translator', 'PJM sign language translators', 'PJM sign language translators'] as PluralForms,
+      recreationCityParks: ['city park', 'city parks', 'city parks'] as PluralForms,
+      recreationPocketParks: ['pocket park', 'pocket parks', 'pocket parks'] as PluralForms,
     },
 
     keyStrengthsTitle: 'Key Infrastructure Strengths:',
@@ -293,9 +295,9 @@ export const ACCESSIBILITY_I18N = {
     keyCriteriaLabel: 'Ключові критерії оцінки',
     profiles: {
       mobility: {
-        title: 'Крісло колісне / Рух',
-        badge: 'Рух & Крісло',
-        desc: 'Люди на кріслах колісних та з порушеннями опорно-рухового апарату',
+        title: 'Візок / Рух',
+        badge: 'Рух & Візок',
+        desc: 'Люди, які пересуваються на кріслах колісних та мають порушення опорно-рухового апарату',
         keyFactor: 'Зручні платформи без сходинок, сині конверти, ліфти та пандуси',
       },
       visual: {
@@ -349,34 +351,35 @@ export const ACCESSIBILITY_I18N = {
 
     inspectorCards: {
       prmTitle: 'Сині конверти',
-      prmUnit: 'місць',
       prmLocations: 'вулиць та локацій',
       prmPer10k: 'на 10 тис. мешканців',
       prmPerKm2: 'місць на км²',
 
       transitTitle: 'Доступність громадського транспорту',
       transitUnit: 'платформ без сходинок',
-      transitKassel: 'зупинок зі зручним бордюром без сходинок',
-      transitTactile: 'тактильних плит та смуг для незрячих',
-      transitTactileUnit: 'зупинок з тактильними смугами',
-      transitTotal: 'зупинок у всьому районі',
+      transitPer10k: 'зупинок на 10 тис. мешканців',
 
       facilitiesTitle: 'Доступні міські установи та офіси',
-      facilitiesUnit: 'перевірених об\'єктів',
-      facilitiesElevators: 'ліфтів / підйомників',
-      facilitiesToilets: 'адаптованих санвузлів без бар\'єрів',
-      facilitiesHearingLoops: 'індукційних петель',
-      facilitiesSignLanguage: 'перекладачів жестової мови PJM',
+      seniorTitle: 'Підтримка сеньйорів та зелені зони',
+      seniorPer10k: 'клубів на 10 тис. сеньйорів',
+    },
 
-      seniorTitle: 'Підтримка літніх людей та зелені зони',
-      seniorUnit: 'Centrów Seniora (CAS)',
-      seniorPer10k: 'закладів на 10 тис. сеньйорів',
-      seniorParks: 'міських парків',
-      seniorPockets: 'кишенькових парків',
+    plurals: {
+      prmSpots: ['місце', 'місця', 'місць'] as PluralForms,
+      transitKasselStops: ['зупинка зі зручним бордюром без сходинок', 'зупинки зі зручним бордюром без сходинок', 'зупинок зі зручним бордюром без сходинок'] as PluralForms,
+      transitTactileStops: ['зупинка з тактильними смугами', 'зупинки з тактильними смугами', 'зупинок з тактильними смугами'] as PluralForms,
+      transitTotalStops: ['зупинка у всьому районі', 'зупинки у всьому районі', 'зупинок у всьому районі'] as PluralForms,
+      facilitiesAudited: ['перевірений об\'єкт', 'перевірених об\'єкти', 'перевірених об\'єктів'] as PluralForms,
+      facilitiesElevators: ['ліфт / підйомник', 'ліфти / підйомники', 'ліфтів / підйомників'] as PluralForms,
+      facilitiesToilets: ['адаптований санвузол без бар\'єрів', 'адаптовані санвузли без бар\'єрів', 'адаптованих санвузлів без бар\'єрів'] as PluralForms,
+      facilitiesHearingLoops: ['індукційна петля', 'індукційні петлі', 'індукційних петель'] as PluralForms,
+      facilitiesSignLanguage: ['перекладач жестової мови PJM', 'перекладачі жестової мови PJM', 'перекладачів жестової мови PJM'] as PluralForms,
+      recreationCityParks: ['міський парк', 'міські парки', 'міських парків'] as PluralForms,
+      recreationPocketParks: ['кишеньковий парк', 'кишенькові парки', 'кишенькових парків'] as PluralForms,
     },
 
     keyStrengthsTitle: 'Ключові інфраструктурні переваги:',
-    facilitiesListTitle: 'Перевірені громадські об\'єкти в обраному районі',
+    facilitiesListTitle: 'Перевірені об\'єкти громадського призначення в районі',
     noFacilitiesNotice:
       'У цьому районі немає головного офісу UMK, охопленого міністерським аудитом. Мешканці обслуговуються в центральних адміністративних центрах із повним безбар\'єрним облаштуванням.',
     wheelchairFull: 'Повна доступність',
@@ -450,7 +453,7 @@ interface FacilityLocEntry {
 }
 
 export const FACILITY_LOCALIZATION: Record<string, FacilityLocEntry> = {
-  'Siedziba Główna Magistratu - Pałac Wielopolskich': {
+  'Siedziba G\u0142\u00f3wna Magistratu - Pa\u0142ac Wielopolskich': {
     en: {
       name: 'City Hall Headquarters - Wielopolski Palace',
       departments: 'Mayor of Krakow, Krakow City Council, Council Office',
@@ -462,7 +465,7 @@ export const FACILITY_LOCALIZATION: Record<string, FacilityLocEntry> = {
       auditDescription: 'Електрична платформа у під\'їзді F з внутрішнього двору, ліфт, адаптовані вбиральні, індукційна петля у Залі засідань.',
     },
   },
-  'Urząd Miasta Krakowa - Zespół Obsługi Mieszkańców': {
+  'Urz\u0105d Miasta Krakowa - Zesp\u00f3\u0142 Obs\u0142ugi Mieszka\u0144c\u00f3w': {
     en: {
       name: 'Krakow City Hall - Resident Service Complex',
       departments: 'Department of Administrative Affairs, Vehicle & Driver Registration, Taxes and Fees, Mayor\'s Office',
@@ -474,79 +477,175 @@ export const FACILITY_LOCALIZATION: Record<string, FacilityLocEntry> = {
       auditDescription: 'Два безпорогові пандуси, сучасний ліфт, повністю адаптований санвузол, підтримка перекладача PJM, індукційні петлі.',
     },
   },
-  'Urząd Miasta Krakowa - Wydział Architektury i Urbanistyki': {
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 Architektury i Urbanistyki': {
     en: {
       name: 'Krakow City Hall - Department of Architecture and Urban Planning',
       departments: 'Department of Architecture and Urban Planning, Spatial Planning Department',
-      auditDescription: 'Barrier-free entrance, elevator, accessible restrooms, counters equipped with induction loops for hard of hearing.',
+      auditDescription: 'Ground-level entrance, adapted elevator, accessible restrooms, portable induction loop for client service.',
     },
     ua: {
-      name: 'Мерія Кракова - Відділ архітектури та містобудування',
-      departments: 'Відділ архітектури та містобудування, Відділ просторового планування',
-      auditDescription: 'Безбар\'єрний вхід, ліфт, адаптовані санвузли, робочі місця з індукційними петлями для слабочуючих.',
+      name: 'Мерія Кракова - Департамент архітектури та містобудування',
+      departments: 'Департамент архітектури та містобудування, Відділ просторового планування',
+      auditDescription: 'Вхід на рівні землі, адаптований ліфт, пристосовані вбиральні, портативна індукційна петля для відвідувачів.',
     },
   },
-  'Krakowskie Centrum Świadczeń': {
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 Spraw Administracyjnych': {
     en: {
-      name: 'Krakow Benefits Center',
-      departments: 'Krakow Benefits Center, Department of Education',
-      auditDescription: 'Ramp access from inner courtyard, smooth elevator, wheelchair-accessible restroom, PJM sign language service.',
+      name: 'Krakow City Hall - Department of Administrative Affairs',
+      departments: 'ID Cards, Vital Records, Population Registry, Commercial Activity',
+      auditDescription: 'External driveway ramp, wide door passageways, adapted elevator, certified sign language staff assistance.',
     },
     ua: {
-      name: 'Краківський центр соціальних виплат',
-      departments: 'Краківський центр виплат, Відділ освіти',
-      auditDescription: 'Пандус із внутрішнього двору, тихий ліфт, пристосований для крісел колісних санвузол, перекладач PJM.',
+      name: 'Мерія Кракова - Департамент адміністративних справ',
+      departments: 'Паспорти, Реєстрація актів, Облік населення, Підприємницька діяльність',
+      auditDescription: 'Зовнішній пологий пандус, широкі дверні прорізи, адаптований ліфт, сертифікована допомога жестовою мовою.',
     },
   },
-  'Urząd Miasta Krakowa - Rynek Podgórski 1': {
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 Geodezji': {
     en: {
-      name: 'Krakow City Hall - Rynek Podgórski 1',
-      departments: 'Housing Department, Department of Environment, Climate and Air',
-      auditDescription: 'Ramp access, video intercom at entrance, wide elevator, accessible ground-floor restroom, barrier-free service counters.',
+      name: 'Krakow City Hall - Department of Geodesy',
+      departments: 'City Geodesy and Cartography Resource, Cadastre Office',
+      auditDescription: 'Barrier-free ramp, automatic doors, modern elevator, tactile guidance markers for visually impaired.',
     },
     ua: {
-      name: 'Мерія Кракова - Ринек Подгурський 1',
-      departments: 'Відділ житлового господарства, Відділ довкілля, клімату та повітря',
-      auditDescription: 'Пандус, відеодомофон на вході, широкий ліфт, пристосований санвузол на 1 поверсі, безбар\'єрні робочі місця.',
+      name: 'Мерія Кракова - Департамент геодезії',
+      departments: 'Міський геодезичний та картографічний фонд, Кадастрове бюро',
+      auditDescription: 'Безбар\'єрний пандус, автоматичні двері, сучасний ліфт, тактильні смуги навігації для слабозорих.',
     },
   },
-  'Urząd Miasta Krakowa - Rynek Podgórski 2': {
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 Finansowy': {
     en: {
-      name: 'Krakow City Hall - Rynek Podgórski 2',
-      departments: 'Housing Department (selected divisions)',
-      auditDescription: 'Historic townhouse with complex staircase. Barrier-free resident service is provided by officials assisting on the ground floor.',
+      name: 'Krakow City Hall - Financial Department',
+      departments: 'Taxes and Local Fees, Debt Enforcement, Budget Accounting',
+      auditDescription: 'External ramp with handrails, adapted elevator, accessible customer counter desk, induction hearing loop.',
     },
     ua: {
-      name: 'Мерія Кракова - Ринек Подгурський 2',
-      departments: 'Відділ житлового господарства (частина відділів)',
-      auditDescription: 'Історична кам\'яниця зі сходами. Обслуговування маломобільних громадян здійснюється шляхом спуску працівника на 1 поверх.',
+      name: 'Мерія Кракова - Фінансовий департамент',
+      departments: 'Місцеві податки та збори, Стягнення заборгованостей, Бюджетний облік',
+      auditDescription: 'Зовнішній пандус із поручнями, ліфт, знижена стійка обслуговування клієнтів, індукційна петля.',
     },
   },
-  'Centrum Administracyjne Podgórze / Wielicka': {
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 Edukacji i MCOO': {
     en: {
-      name: 'Podgórze Administrative Center / Wielicka',
-      departments: 'Department of Vehicle & Driver Registration, Administrative Affairs, Building Inspection, Taxes',
-      auditDescription: 'Full accessibility: wide ramp, passenger elevator, accessible PRM restroom, tactile guiding paths, induction loops.',
+      name: 'Krakow City Hall - Department of Education & MCOO',
+      departments: 'Department of Education, Municipal Centre of Education Operations (MCOO)',
+      auditDescription: 'Step-free main entrance, elevator to all office floors, adapted restroom, remote PJM sign language interpreter on site.',
     },
     ua: {
-      name: 'Адміністративний центр Подгуже / Вєліцька',
-      departments: 'Реєстрація транспорту та водіїв, Адміністративні справи, Будівельна інспекція, Податки',
-      auditDescription: 'Повна доступність: зручний пандус, пасажирський ліфт, адаптований санвузол, тактильні смуги, індукційна петля.',
+      name: 'Мерія Кракова - Департамент освіти та MCOO',
+      departments: 'Департамент освіти, Міський центр обслуговування освіти (MCOO)',
+      auditDescription: 'Вхід без сходинок, ліфт на всі робочі поверхи, адаптований санвузол, дистанційний перекладач PJM.',
     },
   },
-  'Urząd Stanu Cywilnego i Wydziały UMK - Nowa Huta': {
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 Bezpiecze\u0144stwa i Zarz\u0105dzania Kryzysowego': {
     en: {
-      name: 'Civil Registry Office & City Hall Departments - Nowa Huta',
-      departments: 'Civil Registry Office, Population & Vehicle Records, Environment, Public Safety and Crisis Management',
-      auditDescription: 'Model accessibility in Nowa Huta: wide ramp, elevator, accessible restrooms, certified PJM translator on site, induction loops.',
+      name: 'Department of Public Safety and Crisis Management',
+      departments: 'Crisis Management Centre, Safety Monitoring, Civic Protection',
+      auditDescription: 'Ramp at main entrance, wide corridors, adapted ground-floor office for citizen appointments, accessible restroom.',
     },
     ua: {
-      name: 'РАЦС та відділи мерії - Нова Гута',
-      departments: 'Відділ РАЦС, Облік населення та транспорту, Довкілля, Безпека та кризовий менеджмент',
-      auditDescription: 'Зразкова доступність у Новій Гуті: пандус, ліфт, адаптовані вбиральні, перекладач PJM на місці, індукційні петлі.',
+      name: 'Департамент безпеки та кризового управління',
+      departments: 'Центр кризового управління, Моніторинг безпеки, Цивільний захист',
+      auditDescription: 'Пандус на головному вході, широкі коридори, кабінет прийому громадян на першому поверсі, адаптований санвузол.',
     },
   },
-  'Urząd Miasta Krakowa - Wydziały Kultury i Gospodarki': {
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 Mieszkalnictwa': {
+    en: {
+      name: 'Krakow City Hall - Department of Housing',
+      departments: 'Municipal Housing Supply, Residential Support, Tenant Relations',
+      auditDescription: 'Entrance platform lift, adapted elevator, accessible restrooms, designated ground-floor appointment room.',
+    },
+    ua: {
+      name: 'Мерія Кракова - Департамент житлового господарства',
+      departments: 'Муніципальне житло, Житлова підтримка, Робота з орендарями',
+      auditDescription: 'Підйомник на вході, адаптований ліфт, доступні вбиральні, спеціальна кімната прийому на першому поверсі.',
+    },
+  },
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 \u015arodowiska': {
+    en: {
+      name: 'Krakow City Hall - Department of Environment',
+      departments: 'Air Quality Protection, Environmental Permits, Waste Management',
+      auditDescription: 'Wheelchair ramp, passenger elevator, adapted restroom, induction loop installed at resident service window.',
+    },
+    ua: {
+      name: 'Мерія Кракова - Департамент охорони довкілля',
+      departments: 'Охорона чистоти повітря, Екологічні дозволи, Управління відходами',
+      auditDescription: 'Пандус для візків, пасажирський ліфт, адаптований санвузол, індукційна петля біля вікна обслуговування.',
+    },
+  },
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 Kultury i Dziedzictwa': {
+    en: {
+      name: 'Department of Culture and National Heritage',
+      departments: 'Culture and National Heritage, Art Promotion, Monuments Protection',
+      auditDescription: 'External ramp with certified slope, adapted elevator, accessible restroom, sign language support available.',
+    },
+    ua: {
+      name: 'Департамент культури та національної спадщини',
+      departments: 'Культура та спадщина, Промоція мистецтва, Охорона пам\'яток',
+      auditDescription: 'Зовнішній пандус нормативного нахилу, ліфт, адаптований санвузол, підтримка жестової мови.',
+    },
+  },
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 Sportu': {
+    en: {
+      name: 'Krakow City Hall - Department of Sports',
+      departments: 'Sports Infrastructure Development, Recreation Programs',
+      auditDescription: 'Ground-level entry, wide doors, adapted elevator, accessible restrooms, tactile directional tiles.',
+    },
+    ua: {
+      name: 'Мерія Кракова - Департамент спорту',
+      departments: 'Розвиток спортивної інфраструктури, Рекреаційні програми',
+      auditDescription: 'Вхід на рівні землі, широкі двері, адаптований ліфт, доступні санвузли, тактильна плитка навігації.',
+    },
+  },
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142 ds. Przedsi\u0119biorc\u00f3w': {
+    en: {
+      name: 'Krakow City Hall - Entrepreneurs Service Centre',
+      departments: 'Investor Service, Business Activity Registry (CEIDG)',
+      auditDescription: 'Fully barrier-free: automatic entrance doors, accessible ramp, elevator, accessible restrooms, induction loops.',
+    },
+    ua: {
+      name: 'Мерія Кракова - Центр обслуговування підприємців',
+      departments: 'Обслуговування інвесторів, Реєстрація бізнесу (CEIDG)',
+      auditDescription: 'Повна доступність: автоматичні двері, пологий пандус, ліфт, адаптований санвузол, індукційні петлі.',
+    },
+  },
+  'Urz\u0105d Miasta Krakowa - Zesp\u00f3\u0142 ds. Dzielnic': {
+    en: {
+      name: 'Krakow City Hall - Districts Coordination Office',
+      departments: 'Cooperation with 18 District Councils, Civic Participatory Budget',
+      auditDescription: 'Ramp at courtyard entrance, adapted passenger elevator, accessible restroom, certified sign language service.',
+    },
+    ua: {
+      name: 'Мерія Кракова - Бюро координації районів',
+      departments: 'Співпраця з радами 18 районів, Громадський бюджет участі',
+      auditDescription: 'Пандус із боку внутрішнього двору, пасажирський ліфт, адаптований санвузол, обслуговування жестовою мовою.',
+    },
+  },
+  'Urz\u0105d Stanu Cywilnego - Podg\u00f3rze': {
+    en: {
+      name: 'Civil Registry Office - Podgorze',
+      departments: 'Civil Registry, Marriage Ceremonies Hall, Birth & Death Registry',
+      auditDescription: 'Electric platform lift at exterior entrance, adapted elevator, accessible restroom, ceremony hall with induction loop.',
+    },
+    ua: {
+      name: 'РАЦС - Подгуже',
+      departments: 'Реєстрація актів цивільного стану, Зала шлюбних церемоній',
+      auditDescription: 'Електричний підйомник біля входу, адаптований ліфт, пристосований санвузол, церемоніальна зала з індукційною петлею.',
+    },
+  },
+  'Urz\u0105d Stanu Cywilnego - Nowa Huta': {
+    en: {
+      name: 'Civil Registry Office - Nowa Huta',
+      departments: 'Civil Registry, Marriage Hall, Certificates Issuance',
+      auditDescription: 'Step-free main entrance, ground-floor client service area, accessible restroom, induction loops.',
+    },
+    ua: {
+      name: 'РАЦС - Нова Гута',
+      departments: 'Реєстрація актів цивільного стану, Зала шлюбів, Видача свідоцтв',
+      auditDescription: 'Вхід без сходинок, зона прийому громадян на першому поверсі, адаптований санвузол, індукційні петлі.',
+    },
+  },
+  'Urz\u0105d Miasta Krakowa - Wydzia\u0142y Kultury i Gospodarki': {
     en: {
       name: 'Krakow City Hall - Culture & Economy Departments',
       departments: 'Department of Culture, Municipal Economy, Department of Districts',
@@ -558,7 +657,7 @@ export const FACILITY_LOCALIZATION: Record<string, FacilityLocEntry> = {
       auditDescription: 'Мобільний сходолаз, обслуговування жестовою мовою, можливість прямого спуску працівника до відвідувача.',
     },
   },
-  'Wydział Gospodarki Komunalnej i Klimatu': {
+  'Wydzia\u0142 Gospodarki Komunalnej i Klimatu': {
     en: {
       name: 'Department of Municipal Economy and Climate',
       departments: 'Department of Municipal Economy and Climate',
@@ -570,7 +669,7 @@ export const FACILITY_LOCALIZATION: Record<string, FacilityLocEntry> = {
       auditDescription: 'Ліфт усередині будівлі; на головному вході є сходи; за потреби надається супровід працівника.',
     },
   },
-  'Urząd Stanu Cywilnego - Krowodrza': {
+  'Urz\u0105d Stanu Cywilnego - Krowodrza': {
     en: {
       name: 'Civil Registry Office - Krowodrza',
       departments: 'Civil Registry Office - Vital Records Division',
@@ -582,7 +681,7 @@ export const FACILITY_LOCALIZATION: Record<string, FacilityLocEntry> = {
       auditDescription: 'Сходолаз, адаптована вбиральня, обслуговування жестовою мовою, прийом працівником на першому поверсі.',
     },
   },
-  'Miejski Ośrodek Pomocy Społecznej w Krakowie (Centrala)': {
+  'Miejski O\u015brodek Pomocy Spo\u0142ecznej w Krakowie (Centrala)': {
     en: {
       name: 'Municipal Social Welfare Centre (Headquarters)',
       departments: 'MOPS Krakow - Directorate & Disability Support Departments',
@@ -594,119 +693,59 @@ export const FACILITY_LOCALIZATION: Record<string, FacilityLocEntry> = {
       auditDescription: 'Повністю безбар\'єрний об\'єкт: автоматичні двері, пандус, ліфт, адаптовані вбиральні, індукційні петлі.',
     },
   },
-  'Wydział Polityki Społecznej i Zdrowia': {
+  'Wydzia\u0142 Polityki Spo\u0142ecznej i Zdrowia': {
     en: {
       name: 'Department of Social Policy and Health',
       departments: 'Department of Social Policy, Equality and Health, Plenipotentiary for Persons with Disabilities',
-      auditDescription: 'Headquarters of Mayor\'s Disability Plenipotentiary: ramp, elevator, PRM restroom, PJM translator, induction loop.',
+      auditDescription: 'Step-free entrance ramp, adapted elevator, accessible restrooms, induction loops, sign language certified staff.',
     },
     ua: {
-      name: 'Відділ соціальної політики та охорони здоров\'я',
-      departments: 'Відділ соціальної політики, рівності та здоров\'я, Уповноважений у справах людей з інвалідністю',
-      auditDescription: 'Офіс Уповноваженого у справах людей з інвалідністю: пандус, ліфт, туалет PRM, переклад PJM, індукційна петля.',
+      name: 'Департамент соціальної політики та охорони здоров\'я',
+      departments: 'Департамент соціальної політики, рівності та здоров\'я, Уповноважений у справах людей з інвалідністю',
+      auditDescription: 'Безпороговий пандус, адаптований ліфт, пристосовані санвузли, індукційні петлі, перекладач жестової мови.',
     },
   },
-  'Punkt Pomocy Prawnej i Obsługi Mieszkańców': {
+  'Zarz\u0105d Dr\u00f3g Miasta Krakowa (ZDMK)': {
     en: {
-      name: 'Legal Aid & Resident Service Point',
-      departments: 'Free Legal Aid Point, Civic Participation Office',
-      auditDescription: 'Powered wheelchair platform lift, wide access ramp by the reception, accessible restroom.',
+      name: 'Municipal Roads Authority (ZDMK)',
+      departments: 'Paid Parking Zone Service, Road Maintenance, Traffic Engineering',
+      auditDescription: 'Threshold-free main entrance, elevator, accessible restrooms, dedicated disability parking directly at entrance.',
     },
     ua: {
-      name: 'Пункт безоплатної правової допомоги та обслуговування',
-      departments: 'Пункт безоплатної правової допомоги, Бюро громадської участі',
-      auditDescription: 'Сходовий електричний підйомник, широкий пандус від чергового, адаптований санвузол.',
+      name: 'Управління доріг міста Кракова (ZDMK)',
+      departments: 'Служба платних зон паркування, Утримання доріг, Організація дорожнього руху',
+      auditDescription: 'Вхід без порогів, ліфт, пристосований санвузол, виділені паркомісця для людей з інвалідністю безпосередньо біля входу.',
     },
   },
-  'Urząd Miasta Krakowa - Sarego': {
+  'Zarz\u0105d Transportu Publicznego w Krakowie (ZTP)': {
     en: {
-      name: 'Krakow City Hall - Sarego Branch',
-      departments: 'Internal Audit Department, Organization and Supervision Department',
-      auditDescription: 'Transport stair climber, accessible restroom, staff assistance and ground-floor direct consultations.',
+      name: 'Public Transport Authority (ZTP)',
+      departments: 'ZTP Krakow - Ticket Operations, Resident Transit Card Office',
+      auditDescription: 'Passenger Service Point with induction loop and staff assistance, internal elevator.',
     },
     ua: {
-      name: 'Мерія Кракова - відділення Сарего',
-      departments: 'Відділ внутрішнього контролю, Відділ організації та нагляду',
-      auditDescription: 'Транспортний сходолаз, адаптований санвузол, супровід персоналу та спуск фахівця для консультації.',
-    },
-  },
-  'Wydział Podatków i Opłat': {
-    en: {
-      name: 'Department of Taxes and Fees',
-      departments: 'Department of Taxes and Fees - Customer Service',
-      auditDescription: 'Ground floor with ramp access, accessible restroom, service desks equipped with hearing induction loops.',
-    },
-    ua: {
-      name: 'Відділ податків та зборів',
-      departments: 'Відділ податків та зборів - Відділи обслуговування',
-      auditDescription: 'Перший поверх із пандусом, адаптований санвузол, робочі місця оснащені індукційними петлями.',
-    },
-  },
-  'Punkt Obsługi Mieszkańców Galeria Serenada': {
-    en: {
-      name: 'Resident Service Point - Serenada Mall',
-      departments: 'Administrative Affairs, Vehicle & Driver Registration',
-      auditDescription: 'Modern shopping centre branch: elevator from parking, step-free access, PRM restrooms, induction hearing loop.',
-    },
-    ua: {
-      name: 'Пункт обслуговування мешканців - ТЦ Серенада',
-      departments: 'Відділ адміністративних справ, Реєстрація транспорту та водіїв',
-      auditDescription: 'Сучасний пункт у торговому центрі: ліфт із паркінгу, повна безбар\'єрність, туалети PRM, індукційна петля.',
-    },
-  },
-  'Punkt Obsługi Mieszkańców Galeria Bonarka': {
-    en: {
-      name: 'Resident Service Point - Bonarka Mall',
-      departments: 'Administrative Affairs, Vehicle & Driver Registration',
-      auditDescription: 'Full step-free accessibility, blue parking stalls right at entrance, accessible restrooms, induction loops.',
-    },
-    ua: {
-      name: 'Пункт обслуговування мешканців - ТЦ Бонарка',
-      departments: 'Відділ адміністративних справ, Реєстрація транспорту та водіїв',
-      auditDescription: 'Повна безступінчаста доступність, сині паркомісця перед входом, адаптовані вбиральні, індукційні петлі.',
-    },
-  },
-  'Zarząd Transportu Publicznego w Krakowie (ZTP)': {
-    en: {
-      name: 'Public Transport Authority (ZTP Krakow)',
-      departments: 'ZTP Krakow - Passenger Service & Ticketing Department',
-      auditDescription: 'Passenger Service Point with induction hearing loop and staff assistance, building elevator.',
-    },
-    ua: {
-      name: 'Управління громадського транспорту (ZTP Краків)',
-      departments: 'ZTP Краків - Відділ обслуговування пасажирів та квитків',
+      name: 'Управління громадського транспорту (ZTP)',
+      departments: 'ZTP Краків - Пункт обслуговування пасажирів, Проїзні квитки',
       auditDescription: 'Пункт обслуговування пасажирів з індукційною петлею та супроводом, ліфт у будівлі.',
     },
   },
-  'Zarząd Dróg Miasta Krakowa (ZDMK Centrala)': {
+  'Urz\u0105d Miasta Krakowa - Sarego': {
     en: {
-      name: 'Municipal Roads Authority (ZDMK Headquarters)',
-      departments: 'ZDMK - Resident Service, Permits & Paid Parking Zone',
-      auditDescription: 'Single-storey customer pavilion: step-free entrance, PRM restrooms, dedicated low-counter service.',
+      name: 'Krakow City Hall - Sarego Branch',
+      departments: 'Internal Audit Department, Organization and Supervision',
+      auditDescription: 'Transport stair climber, accessible restroom, staff assistance and ground-floor direct meeting service.',
     },
     ua: {
-      name: 'Управління доріг міста Кракова (Головний офіс ZDMK)',
-      departments: 'ZDMK - Обслуговування мешканців, Дозволи та платне паркування',
-      auditDescription: 'Одноповерховий модернізований павільйон: безпороговий вхід, туалети PRM, спеціальні робочі місця.',
+      name: 'Мерія Кракова - Відділення на Сарего',
+      departments: 'Відділ внутрішнього контролю, Відділ організації та нагляду',
+      auditDescription: 'Транспортний сходолаз, адаптований санвузол, асистентська допомога персоналу та спуск фахівця до відвідувача.',
     },
   },
-  'Zarząd Zieleni Miejskiej w Krakowie (ZZM)': {
-    en: {
-      name: 'Municipal Greenery Authority (ZZM Krakow)',
-      departments: 'ZZM - Main Headquarters',
-      auditDescription: 'Entrance ramp, accessible restroom, ground-floor customer service with no threshold barriers.',
-    },
-    ua: {
-      name: 'Управління зелених насаджень (ZZM Краків)',
-      departments: 'ZZM - Головний офіс',
-      auditDescription: 'Пандус біля входу, адаптована вбиральня, прийом на першому поверсі без порогів.',
-    },
-  },
-  'Biblioteka Kraków - Biblioteka Główna': {
+  'Biblioteka Krak\u00f3w - Filia G\u0142\u00f3wna': {
     en: {
       name: 'Krakow Library - Main Branch',
-      departments: 'Main Library, Lending Room & Reading Hall for Special Needs',
-      auditDescription: 'Exemplary accessible library: Braille books and audiobooks, ramp, elevator, accessible restrooms, induction loop.',
+      departments: 'Central Library, Lending Room & Reading Hall for Readers with Disabilities',
+      auditDescription: 'Exemplary accessible venue: Braille collection and audiobooks, entrance ramp, elevator, adapted restrooms, induction loop.',
     },
     ua: {
       name: 'Краківська бібліотека - Головна філія',
@@ -776,387 +815,84 @@ export function getLocalizedFacility(
     };
   }
 
-  const loc = entry[lang] || entry.en;
+  const loc = lang === 'ua' ? entry.ua : entry.en;
   return {
-    name: loc.name || fac.name,
-    departments: loc.departments || fac.departments || '',
-    auditDescription: loc.auditDescription || fac.auditDescription || '',
+    name: loc.name,
+    departments: loc.departments,
+    auditDescription: loc.auditDescription,
   };
 }
 
 /**
- * Returns dynamic, grammatically natural, profile-contextual strengths for a district
- * in Polish, English, or Ukrainian.
+ * Synthesizes data-driven localized strengths for district cards.
  */
 export function getLocalizedDistrictStrengths(
-  metrics: AccessibilityMetricsDto,
+  metrics: {
+    prmParking: { totalSpots: number; locationsCount: number };
+    transit: { kasselKerbPct: number; tactilePavingPct: number; kasselKerbStops: number; tactilePavingStops: number };
+    publicFacilities: { auditedTotal: number; elevators: number; accessibleToilets: number; hearingLoops: number; signLanguagePJM: number };
+    seniorCare: { casCount: number };
+  },
   lang: Language,
-  profile?: AccessibilityProfileKey
+  activeProfile: string
 ): string[] {
   const strengths: string[] = [];
 
-  if (profile === 'mobility') {
-    // 1. Kassel-kerb step-free transit
+  // Mobility profile
+  if (activeProfile === 'mobility') {
     if (metrics.transit.kasselKerbPct >= 15) {
-      if (lang === 'en') {
-        strengths.push(
-          `Step-free platforms on ${metrics.transit.kasselKerbPct}% of transit stops for level boarding`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Зручні платформи без сходинок на ${metrics.transit.kasselKerbPct}% зупинок для посадки на рівні тротуару`
-        );
-      } else {
-        strengths.push(
-          `Wygodne perony bez stopni (${metrics.transit.kasselKerbPct}% przystanków) ułatwiające wsiadanie z poziomu chodnika`
-        );
-      }
+      if (lang === 'en') strengths.push(`Step-free platforms on ${metrics.transit.kasselKerbPct}% of transit stops for level boarding`);
+      else if (lang === 'ua') strengths.push(`Зручні платформи без сходинок на ${metrics.transit.kasselKerbPct}% зупинок KMK`);
+      else strengths.push(`Wygodne perony bez stopni (${metrics.transit.kasselKerbPct}% przystanków) ułatwiające wsiadanie z poziomu chodnika`);
     }
+    if (metrics.prmParking.totalSpots >= 25) {
+      if (lang === 'en') strengths.push(`Dedicated disability parking: ${metrics.prmParking.totalSpots} blue spaces across ${metrics.prmParking.locationsCount} locations`);
+      else if (lang === 'ua') strengths.push(`Висока доступність паркомісць PRM (${metrics.prmParking.totalSpots} синіх місць у ${metrics.prmParking.locationsCount} локаціях)`);
+      else strengths.push(`Wysoka dostępność miejsc postojowych PRM (${metrics.prmParking.totalSpots} niebieskich kopert w ${metrics.prmParking.locationsCount} lokalizacjach)`);
+    }
+    if (metrics.publicFacilities.elevators >= 1) {
+      if (lang === 'en') strengths.push(`Barrier-free public buildings with wheelchair lifts and elevators (${metrics.publicFacilities.elevators})`);
+      else if (lang === 'ua') strengths.push(`Доступні адміністративні будівлі з ліфтами та підйомниками (${metrics.publicFacilities.elevators})`);
+      else strengths.push(`Dostępne budynki publiczne z windami (${metrics.publicFacilities.elevators}), rampami i toaletami bez barier`);
+    }
+  }
 
-    // 2. PRM parking spaces
-    if (metrics.prmParking.totalSpots >= 25 || metrics.prmParking.spotsPer10kPop >= 15) {
-      const prmWord = getPrmPillLabel(metrics.prmParking.totalSpots, lang);
-      if (lang === 'en') {
-        strengths.push(
-          `Dedicated disability parking: ${metrics.prmParking.totalSpots} ${prmWord} across ${metrics.prmParking.locationsCount} locations`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Виділені місця для людей з інвалідністю: ${metrics.prmParking.totalSpots} ${prmWord} у ${metrics.prmParking.locationsCount} локаціях`
-        );
-      } else {
-        strengths.push(
-          `Wysoka dostępność miejsc postojowych PRM (${metrics.prmParking.totalSpots} ${prmWord} w ${metrics.prmParking.locationsCount} lokalizacjach)`
-        );
-      }
+  // Visual profile
+  else if (activeProfile === 'visual') {
+    if (metrics.transit.tactilePavingPct >= 20) {
+      if (lang === 'en') strengths.push(`Tactile paving and guidance paths on ${metrics.transit.tactilePavingPct}% of transit stops`);
+      else if (lang === 'ua') strengths.push(`Тактильні смуги та плити для незрячих на ${metrics.transit.tactilePavingPct}% зупинок`);
+      else strengths.push(`Pasy i płyty dotykowe dla osób niewidomych na ${metrics.transit.tactilePavingPct}% przystanków KMK`);
     }
+    if (lang === 'en') strengths.push(`Braille signage and tyflographic orientation plans in municipal offices`);
+    else if (lang === 'ua') strengths.push(`Позначення шрифтом Брайля та тактильні плани в установах`);
+    else strengths.push(`Oznaczenia w alfabecie Braille'a i plany tyflograficzne w urzędach miejskich`);
+  }
 
-    // 3. Elevators / ramps in facilities
-    if (metrics.publicFacilities.elevators >= 1 || metrics.publicFacilities.ramps >= 1) {
-      if (lang === 'en') {
-        strengths.push(
-          `Barrier-free public buildings with wheelchair lifts and elevators (${metrics.publicFacilities.elevators})`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Безбар'єрні громадські будівлі з підйомниками та ліфтами (${metrics.publicFacilities.elevators})`
-        );
-      } else {
-        strengths.push(
-          `Dostępne budynki publiczne z windami (${metrics.publicFacilities.elevators}), rampami i toaletami bez barier`
-        );
-      }
+  // Hearing profile
+  else if (activeProfile === 'hearing') {
+    if (metrics.publicFacilities.hearingLoops >= 1 || metrics.publicFacilities.signLanguagePJM >= 1) {
+      if (lang === 'en') strengths.push(`Certified PJM sign language support and hearing induction loops in city hall`);
+      else if (lang === 'ua') strengths.push(`Індукційні петлі та сертифікований супровід жестовою мовою PJM у мерії`);
+      else strengths.push(`Pętle indukcyjne oraz obsługa tłumacza Polskiego Języka Migowego (PJM) w placówkach`);
     }
-  } else if (profile === 'visual') {
-    // 1. Tactile paving
-    if (metrics.transit.tactilePavingPct >= 25) {
-      if (lang === 'en') {
-        strengths.push(
-          `Tactile warning strips and guidance pavers on ${metrics.transit.tactilePavingPct}% of transit stops`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Тактильні смуги та рельєфні плити орієнтування на ${metrics.transit.tactilePavingPct}% зупинок KMK`
-        );
-      } else {
-        strengths.push(
-          `Pasy i płyty dotykowe dla osób niewidomych na ${metrics.transit.tactilePavingPct}% przystanków KMK`
-        );
-      }
-    }
+  }
 
-    // 2. Braille signage
-    if (metrics.publicFacilities.brailleTactile >= 1) {
-      if (lang === 'en') {
-        strengths.push(
-          'Braille signage and tactile orientation maps in municipal offices'
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          'Шрифт Брайля та тактильні плани орієнтування в міських установах'
-        );
-      } else {
-        strengths.push(
-          'Oznaczenia w alfabecie Braille\'a i plany tyflograficzne w urzędach miejskich'
-        );
-      }
-    }
-
-    // 3. Kassel-kerb edge guidance
-    if (metrics.transit.kasselKerbPct >= 10) {
-      if (lang === 'en') {
-        strengths.push(
-          'Standardized curb edges with tactile transition zones for safe transit approach'
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          'Стандартизовані краї платформ із тактильними зонами безпеки'
-        );
-      } else {
-        strengths.push(
-          'Bezpieczne perony z liniami krawędziowymi ułatwiające orientację przestrzenną'
-        );
-      }
-    }
-  } else if (profile === 'hearing') {
-    // 1. Induction loops with proper Polish inflection: 1 instalacja, 2-4 instalacje, 5+ instalacji
-    if (metrics.publicFacilities.hearingLoops >= 1) {
-      const loopCount = metrics.publicFacilities.hearingLoops;
-      const loopWord =
-        lang === 'pl'
-          ? loopCount === 1
-            ? 'instalacja'
-            : loopCount >= 2 && loopCount <= 4
-            ? 'instalacje'
-            : 'instalacji'
-          : lang === 'ua'
-          ? loopCount === 1
-            ? 'установка'
-            : loopCount >= 2 && loopCount <= 4
-            ? 'установки'
-            : 'установок'
-          : loopCount === 1
-          ? 'installed hall'
-          : 'installed halls';
-
-      if (lang === 'en') {
-        strengths.push(
-          `Hearing induction loops in resident service halls (${loopCount} ${loopWord})`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Індукційні петлі для слухових апаратів у залах обслуговування (${loopCount} ${loopWord})`
-        );
-      } else {
-        strengths.push(
-          `Pętle indukcyjne dla aparatów słuchowych w salach obsługi mieszkańców (${loopCount} ${loopWord})`
-        );
-      }
-    }
-
-    // 2. Sign language
-    if (metrics.publicFacilities.signLanguagePJM >= 1) {
-      if (lang === 'en') {
-        strengths.push(
-          'Certified Polish Sign Language (PJM) translation support in municipal branch'
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          'Сертифікований сурдопереклад польською жестовою мовою (PJM) в установах'
-        );
-      } else {
-        strengths.push(
-          'Certyfikowana obsługa tłumacza Polskiego Języka Migowego (PJM) w magistracie'
-        );
-      }
-    }
-
-    // 3. Digital visual info
-    if (lang === 'en') {
-      strengths.push(
-        'Digital visual passenger information screens deployed across district transit lines'
-      );
-    } else if (lang === 'ua') {
-      strengths.push(
-        'Цифрові інформаційні табло на зупинках та у вагонах міського транспорту'
-      );
-    } else {
-      strengths.push(
-        'Cyfrowa informacja pasażerska na przystankach i wizualne systemy kolejkowe'
-      );
-    }
-  } else if (profile === 'senior') {
-    // 1. CAS clubs
+  // Senior profile
+  else if (activeProfile === 'senior') {
     if (metrics.seniorCare.casCount >= 1) {
-      const casLabel = getCasPillLabel(metrics.seniorCare.casCount, lang);
-      if (lang === 'en') {
-        strengths.push(
-          `Active senior support network (${metrics.seniorCare.casCount} ${casLabel})`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Розвинена мережа дозвілля (${metrics.seniorCare.casCount} ${casLabel})`
-        );
-      } else {
-        strengths.push(
-          `Rozbudowana sieć wsparcia (${metrics.seniorCare.casCount} ${casLabel})`
-        );
-      }
-    }
-
-    // 2. Level boarding
-    if (metrics.transit.kasselKerbPct >= 10) {
-      if (lang === 'en') {
-        strengths.push(
-          `Level sidewalk boarding on ${metrics.transit.kasselKerbPct}% of transit stops for comfortable access`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Посадка в транспорт на рівні тротуару на ${metrics.transit.kasselKerbPct}% зупинок для літніх людей`
-        );
-      } else {
-        strengths.push(
-          `Wygodne wsiadanie do transportu z poziomu chodnika na ${metrics.transit.kasselKerbPct}% przystanków`
-        );
-      }
-    }
-
-    // 3. Parks & benches with natural grammar: 1 park miejski, 2-4 parki miejskie, 5+ parków miejskich
-    if (metrics.recreation.cityParks + metrics.recreation.pocketParks >= 2) {
-      const pCount = metrics.recreation.cityParks;
-      const kCount = metrics.recreation.pocketParks;
-
-      const parkWord =
-        lang === 'pl'
-          ? pCount === 1
-            ? 'park miejski'
-            : pCount >= 2 && pCount <= 4
-            ? 'parki miejskie'
-            : 'parków miejskich'
-          : lang === 'ua'
-          ? pCount === 1
-            ? 'міський парк'
-            : pCount >= 2 && pCount <= 4
-            ? 'міські парки'
-            : 'міських парків'
-          : pCount === 1
-          ? 'city park'
-          : 'city parks';
-
-      const pocketWord =
-        lang === 'pl'
-          ? kCount === 1
-            ? 'ogród kieszonkowy'
-            : kCount >= 2 && kCount <= 4
-            ? 'ogrody kieszonkowe'
-            : 'ogrodów kieszonkowych'
-          : lang === 'ua'
-          ? kCount === 1
-            ? 'кишеньковий сад'
-            : kCount >= 2 && kCount <= 4
-            ? 'кишенькові сади'
-            : 'кишенькових садів'
-          : kCount === 1
-          ? 'pocket park'
-          : 'pocket parks';
-
-      if (lang === 'en') {
-        strengths.push(
-          `Peaceful green areas: ${pCount} ${parkWord} and ${kCount} ${pocketWord} with resting benches`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Затишні зелені зони: ${pCount} ${parkWord} та ${kCount} ${pocketWord} з лавками`
-        );
-      } else {
-        strengths.push(
-          `Przyjazne tereny zielone: ${pCount} ${parkWord} i ${kCount} ${pocketWord} z ławkami`
-        );
-      }
-    }
-  } else if (profile === 'familyStroller') {
-    // 1. Step-free transit
-    if (metrics.transit.kasselKerbPct >= 15) {
-      if (lang === 'en') {
-        strengths.push(
-          `Effortless baby pram boarding without steps on ${metrics.transit.kasselKerbPct}% of transit stops`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Зручний заїзд дитячим візком без сходинок на ${metrics.transit.kasselKerbPct}% зупинок транспорту`
-        );
-      } else {
-        strengths.push(
-          `Wygodne wprowadzanie wózka dziecięcego bez stopni na ${metrics.transit.kasselKerbPct}% przystanków`
-        );
-      }
-    }
-
-    // 2. Parks
-    if (metrics.recreation.cityParks >= 2) {
-      const pCount = metrics.recreation.cityParks;
-      const parkWord =
-        lang === 'pl'
-          ? pCount === 1
-            ? 'park miejski'
-            : pCount >= 2 && pCount <= 4
-            ? 'parki miejskie'
-            : 'parków miejskich'
-          : lang === 'ua'
-          ? pCount === 1
-            ? 'міський парк'
-            : pCount >= 2 && pCount <= 4
-            ? 'міські парки'
-            : 'міських парків'
-          : pCount === 1
-          ? 'city park'
-          : 'city parks';
-
-      if (lang === 'en') {
-        strengths.push(
-          `Expansive parks (${pCount} ${parkWord}) with paved barrier-free stroller alleys`
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          `Великі парки (${pCount} ${parkWord}) із заасфальтованими алеями для дитячих прогулянок`
-        );
-      } else {
-        strengths.push(
-          `Liczne parki miejskie (${pCount} ${parkWord}) z utwardzonymi alejkami bez barier`
-        );
-      }
-    }
-
-    // 3. Facilities
-    if (metrics.publicFacilities.elevators >= 1 || metrics.publicFacilities.ramps >= 1) {
-      if (lang === 'en') {
-        strengths.push(
-          'Accessible public facilities with ramps and wide elevators for prams'
-        );
-      } else if (lang === 'ua') {
-        strengths.push(
-          'Доступні будівлі з пандусами та просторими ліфтами для дитячих візків'
-        );
-      } else {
-        strengths.push(
-          'Dostępne obiekty publiczne z podjazdami i windami mieszczącymi wózki'
-        );
-      }
+      if (lang === 'en') strengths.push(`Well-developed network of Senior Activity Clubs (${metrics.seniorCare.casCount} CAS)`);
+      else if (lang === 'ua') strengths.push(`Розгалужена мережа Центрів активності сеньйорів (${metrics.seniorCare.casCount} CAS)`);
+      else strengths.push(`Rozbudowana sieć Centrów Aktywności Seniora (${metrics.seniorCare.casCount} CAS)`);
     }
   }
 
-  // Fallbacks if fewer than 2 strengths matched
-  if (strengths.length < 2) {
-    if (metrics.transit.kasselKerbPct >= 10) {
-      if (lang === 'en') {
-        strengths.push(`Step-free transit boarding on ${metrics.transit.kasselKerbPct}% of stops`);
-      } else if (lang === 'ua') {
-        strengths.push(`Платформи без сходинок на ${metrics.transit.kasselKerbPct}% зупинок`);
-      } else {
-        strengths.push(`Wygodne perony bez stopni (${metrics.transit.kasselKerbPct}% przystanków)`);
-      }
-    }
-    if (metrics.prmParking.totalSpots >= 20) {
-      const prmLabel = getPrmPillLabel(metrics.prmParking.totalSpots, lang);
-      if (lang === 'en') {
-        strengths.push(`${metrics.prmParking.totalSpots} ${prmLabel} across ${metrics.prmParking.locationsCount} locations`);
-      } else if (lang === 'ua') {
-        strengths.push(`${metrics.prmParking.totalSpots} ${prmLabel} у ${metrics.prmParking.locationsCount} локаціях`);
-      } else {
-        strengths.push(`${metrics.prmParking.totalSpots} ${prmLabel} w ${metrics.prmParking.locationsCount} lokalizacjach`);
-      }
-    }
-  }
-
+  // Fallback if needed
   if (strengths.length === 0) {
-    if (lang === 'en') {
-      strengths.push('Standard municipal amenities and continuously modernized KMK transit infrastructure');
-    } else if (lang === 'ua') {
-      strengths.push('Базові міські зручності та постійно модернізована інфраструктура зупинок KMK');
-    } else {
-      strengths.push('Podstawowe udogodnienia miejskie i stale modernizowana infrastruktura przystankowa KMK');
-    }
+    if (lang === 'en') strengths.push(`Comprehensive barrier-free municipal infrastructure`);
+    else if (lang === 'ua') strengths.push(`Комплексна безбар'єрна міська інфраструктура`);
+    else strengths.push(`Zrównoważona infrastruktura dostępności miejskiej`);
   }
 
-  return strengths.slice(0, 3);
+  return strengths;
 }

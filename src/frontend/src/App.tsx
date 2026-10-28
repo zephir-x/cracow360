@@ -8,6 +8,7 @@ import { AboutDataMethodologyPage } from './pages/AboutDataMethodologyPage';
 import { OfficialInvestorModePage } from './pages/OfficialInvestorModePage';
 import { ParentModePage } from './pages/ParentModePage';
 import { ResidentModePage } from './pages/ResidentModePage';
+import { TouristModePage } from './pages/TouristModePage';
 import type {
   DistrictsGeoJsonCollection,
   DistrictSummaryDto,
@@ -32,6 +33,7 @@ const TAB_ROUTING: Record<AppTabId, { hash: string; keywords: string[] }> = {
   resident: { hash: '/resident', keywords: ['mieszkaniec', 'resident'] },
   parent: { hash: '/parent', keywords: ['rodzic', 'parent', 'family', 'rodzina'] },
   investor: { hash: '/investor', keywords: ['inwestor', 'investor', 'urzednik'] },
+  tourist: { hash: '/tourist', keywords: ['turyst', 'tourist', 'odkrywaj', 'zwiedzanie', 'trasy'] },
   methodology: { hash: '/methodology', keywords: ['metodologia', 'methodology', 'zrodla'] },
 };
 
@@ -43,6 +45,7 @@ function getTabFromUrl(): AppTabId {
 
   if (TAB_ROUTING.parent.keywords.some((kw) => target.includes(kw))) return 'parent';
   if (TAB_ROUTING.investor.keywords.some((kw) => target.includes(kw))) return 'investor';
+  if (TAB_ROUTING.tourist.keywords.some((kw) => target.includes(kw))) return 'tourist';
   if (TAB_ROUTING.methodology.keywords.some((kw) => target.includes(kw))) return 'methodology';
   if (TAB_ROUTING.resident.keywords.some((kw) => target.includes(kw))) return 'resident';
 
@@ -258,6 +261,11 @@ export function App() {
               districts={rankedDistricts}
               onBackToResidentMode={() => handleSelectTab('resident')}
             />
+          )}
+
+          {/* Smart Tourism & Discovery Mode */}
+          {activeTab === 'tourist' && (
+            <TouristModePage onSelectDistrictOnMap={handleSelectDistrict} />
           )}
 
           {/* Methodology & Open Data Sources Documentation */}

@@ -22,6 +22,7 @@ data/db/*.db-wal
 # Temporary geocoding & pipeline caches
 data/contracts/*_cache.json
 *spatial_geocoding_cache.json
+data/contracts/krakow_tourism_seed.json
 
 # Python isolated environment & caches
 .venv/

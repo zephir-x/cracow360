@@ -52,6 +52,7 @@ export function AboutDataMethodologyPage({
       { key: 'culture', label: t.methodology.categories.culture, count: counts['culture'] || 0 },
       { key: 'demographics', label: t.methodology.categories.demographics, count: counts['demographics'] || 0 },
       { key: 'gis_env', label: t.methodology.categories.gis_env, count: counts['gis_env'] || 0 },
+      { key: 'tourism', label: t.methodology.categories.tourism, count: counts['tourism'] || 0 },
     ];
   }, [t]);
 
@@ -236,7 +237,7 @@ export function AboutDataMethodologyPage({
 
               {/* Row 2: 4 Category Pills */}
               <div className="flex flex-wrap items-center gap-1.5">
-                {categoryTabs.slice(5, 9).map((tab) => (
+                {categoryTabs.slice(5, 10).map((tab) => (
                   <button
                     key={tab.key}
                     onClick={() => handleCategoryChange(tab.key)}

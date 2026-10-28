@@ -5,6 +5,7 @@ export const uaTranslations: TranslationDictionary = {
     residentMode: 'Для Мешканця',
     parentMode: 'Для Батьків',
     investorMode: 'Для Посадовців та Інвесторів',
+    touristMode: 'Відкривай Краків',
     methodology: 'Методологія та Джерела Даних',
     smartCityBadge: 'Smart City',
     subtitle: 'Аналіз Якості Життя, Доступності Послуг та Розвитку Районів Кракова',
@@ -472,6 +473,7 @@ export const uaTranslations: TranslationDictionary = {
       culture: 'Культура та Сеньйори',
       demographics: 'Демографія',
       gis_env: 'Межі та Довкілля',
+      tourism: 'Туризм та відкриття',
     },
     statuses: {
       integrated: 'Інтегровано в ETL',

@@ -7,10 +7,15 @@ import type {
   DistrictDetailsDto,
   DistrictsGeoJsonCollection,
   DistrictSummaryDto,
+  DistrictTouristPassportDto,
   LiveAtmosphereDto,
+  OvertourismAlternativeDto,
   PointOfInterestDto,
   QualityWeights,
   SystemHelloDto,
+  ThematicItineraryDto,
+  TourismAttractionDto,
+  TourismDatasetDto,
 } from '../types/contracts';
 
 // Axios HTTP client configured for Vite dev proxy and production API paths
@@ -35,6 +40,11 @@ export interface Cracow360ApiClient {
   getLiveAtmosphereSummary: () => Promise<DistrictAtmosphereSummaryDto[]>;
   getAccessibilityDataset: () => Promise<AccessibilityDatasetDto>;
   getDistrictAccessibility: (id: number) => Promise<DistrictAccessibilityProfileDto>;
+  getTourismDataset: () => Promise<TourismDatasetDto>;
+  getCuratedAttractions: (params?: { districtId?: number; category?: string; crowdLevel?: string }) => Promise<TourismAttractionDto[]>;
+  getOvertourismAlternatives: () => Promise<OvertourismAlternativeDto[]>;
+  getThematicItineraries: (params?: { targetHours?: number; theme?: string }) => Promise<ThematicItineraryDto[]>;
+  getDistrictTouristPassport: (id: number) => Promise<DistrictTouristPassportDto>;
 }
 
 // Centralized API client service methods matching backend Minimal API endpoints
@@ -60,41 +70,40 @@ export const cracow360Api: Cracow360ApiClient = {
     return cracow360Api.getDistricts(weights);
   },
 
-  // Retrieves full granular metrics and 2028 forecasts for a specific district
+  // Retrieves deep analytical indicators, full metrics set and history for a single district
   getDistrictDetails: async (id: number): Promise<DistrictDetailsDto> => {
     const { data } = await apiClient.get<DistrictDetailsDto>(`/districts/${id}`);
     return data;
   },
 
-  // Compares two districts side-by-side with calculated index and metric deltas across all 8 pillars
+  // Performs pairwise district comparison across all 8 quality dimensions
   compareDistricts: async (
     firstId: number,
     secondId: number,
     weights?: QualityWeights
   ): Promise<DistrictComparisonDto> => {
-    const { data } = await apiClient.get<DistrictComparisonDto>('/districts/compare', {
-      params: {
-        firstId,
-        secondId,
-        mobilityWeight: weights?.mobility ?? 5,
-        educationWeight: weights?.education ?? 5,
-        greeneryWeight: weights?.greenery ?? 5,
-        cultureWeight: weights?.culture ?? 5,
-        environmentWeight: weights?.environment ?? 5,
-        safetyWeight: weights?.safety ?? 5,
-        housingAffordabilityWeight: weights?.housingAffordability ?? 5,
-      },
-    });
+    const params = weights
+      ? {
+          mobilityWeight: weights.mobility,
+          educationWeight: weights.education,
+          greeneryWeight: weights.greenery,
+          cultureWeight: weights.culture,
+          environmentWeight: weights.environment,
+          safetyWeight: weights.safety,
+          housingAffordabilityWeight: weights.housingAffordability,
+        }
+      : undefined;
+    const { data } = await apiClient.get<DistrictComparisonDto>(`/districts/compare/${firstId}/${secondId}`, { params });
     return data;
   },
 
-  // Retrieves the official vector boundaries (GeoJSON FeatureCollection) of all 18 Krakow districts
+  // Retrieves official WGS84 GeoJSON polygons for all 18 Krakow administrative districts
   getDistrictsGeoJson: async (): Promise<DistrictsGeoJsonCollection> => {
     const { data } = await apiClient.get<DistrictsGeoJsonCollection>('/districts/geojson');
     return data;
   },
 
-  // Queries geocoded municipal Points of Interest with optional district and category filters
+  // Retrieves Points of Interest with optional spatial and category filters
   getPois: async (params?: {
     districtId?: number;
     category?: string;
@@ -104,16 +113,17 @@ export const cracow360Api: Cracow360ApiClient = {
     return data;
   },
 
-  // Retrieves runtime health, database connection, and seeded entities diagnostic status
+  // System diagnostic handshake endpoint
   getSystemHello: async (): Promise<SystemHelloDto> => {
     const { data } = await apiClient.get<SystemHelloDto>('/system/hello');
     return data;
   },
 
-  // Retrieves live weather, 24h hourly forecast, air quality (AQI, PM10, PM2.5, NO2), UV, and botanical pollen
+  // Retrieves real-time weather and air quality for a selected district or City Hall baseline
   getLiveAtmosphere: async (districtId?: number): Promise<LiveAtmosphereDto> => {
-    const params = districtId ? { districtId } : undefined;
-    const { data } = await apiClient.get<LiveAtmosphereDto>('/live/atmosphere', { params });
+    const { data } = await apiClient.get<LiveAtmosphereDto>('/live/atmosphere', {
+      params: districtId ? { districtId } : undefined,
+    });
     return data;
   },
 
@@ -132,6 +142,43 @@ export const cracow360Api: Cracow360ApiClient = {
   // Retrieves granular accessibility indicators and facility audits for a district
   getDistrictAccessibility: async (id: number): Promise<DistrictAccessibilityProfileDto> => {
     const { data } = await apiClient.get<DistrictAccessibilityProfileDto>(`/accessibility/districts/${id}`);
+    return data;
+  },
+
+  // Retrieves the complete municipal tourism exploration dataset
+  getTourismDataset: async (): Promise<TourismDatasetDto> => {
+    const { data } = await apiClient.get<TourismDatasetDto>('/tourism');
+    return data;
+  },
+
+  // Retrieves curated municipal attractions with optional filtering
+  getCuratedAttractions: async (params?: {
+    districtId?: number;
+    category?: string;
+    crowdLevel?: string;
+  }): Promise<TourismAttractionDto[]> => {
+    const { data } = await apiClient.get<TourismAttractionDto[]>('/tourism/attractions', { params });
+    return data;
+  },
+
+  // Retrieves overtourism alleviation pairs
+  getOvertourismAlternatives: async (): Promise<OvertourismAlternativeDto[]> => {
+    const { data } = await apiClient.get<OvertourismAlternativeDto[]>('/tourism/alternatives');
+    return data;
+  },
+
+  // Retrieves multi-step thematic itineraries
+  getThematicItineraries: async (params?: {
+    targetHours?: number;
+    theme?: string;
+  }): Promise<ThematicItineraryDto[]> => {
+    const { data } = await apiClient.get<ThematicItineraryDto[]>('/tourism/itineraries', { params });
+    return data;
+  },
+
+  // Retrieves tourist passport for a specific district
+  getDistrictTouristPassport: async (id: number): Promise<DistrictTouristPassportDto> => {
+    const { data } = await apiClient.get<DistrictTouristPassportDto>(`/tourism/districts/${id}`);
     return data;
   },
 };

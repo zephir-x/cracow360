@@ -77,6 +77,7 @@ app.MapDistrictEndpoints();
 app.MapPoiEndpoints();
 app.MapLiveAtmosphereEndpoints();
 app.MapAccessibilityEndpoints();
+app.MapTourismEndpoints();
 
 // Redirect root route directly to Swagger documentation
 app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();

@@ -105,6 +105,12 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
               {t.nav.investorMode}
             </button>
             <button
+              onClick={() => handleTabClick('tourist')}
+              className="hover:text-blue-600 transition cursor-pointer"
+            >
+              {t.nav.touristMode ?? 'Odkrywaj Kraków'}
+            </button>
+            <button
               onClick={() => handleTabClick('methodology')}
               className="hover:text-blue-600 transition cursor-pointer"
             >
