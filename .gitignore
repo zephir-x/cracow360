@@ -34,10 +34,10 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 src/analytics/data_raw/*
-!src/analytics/data_raw/README.md
+!src/analytics/data_raw/README*.md
 !src/analytics/data_raw/.gitkeep
 src/analytics/data_processed/*
-!src/analytics/data_processed/README.md
+!src/analytics/data_processed/README*.md
 !src/analytics/data_processed/.gitkeep
 
 # Environment variables

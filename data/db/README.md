@@ -1,38 +1,40 @@
-﻿# Baza Danych SQLite (Database)
+﻿> 🌐 **Documentation in two languages / Dokumentacja w dwóch językach:** [<img src="https://flagcdn.com/20x15/gb.png" alt="English" width="20" height="15" /> English](README.md) | [<img src="https://flagcdn.com/20x15/pl.png" alt="Polski" width="20" height="15" /> Polski](README-pl.md)
 
-## Do czego służy ten folder?
-W tym katalogu przechowywany jest lokalny plik bazy danych SQLite: `cracow360.db`. Jest to relacyjna baza danych, z której korzysta backend aplikacji (`Cracow360.Api` w technologii .NET 9 i Entity Framework Core).
+# SQLite Database
+
+## What is this folder used for?
+This directory stores the local SQLite database file: `cracow360.db`. It is a relational database used by the application backend (`Cracow360.Api` powered by .NET 9 and Entity Framework Core).
 
 ---
 
-## Jak i kiedy powstaje plik bazy danych?
-Plik `cracow360.db` **nie jest tworzony przez skrypty analityczne w Pythonie**, lecz powstaje w pełni automatycznie przy pierwszym uruchomieniu backendu aplikacji:
+## How and when is the database file created?
+The `cracow360.db` file **is not created by Python analytics scripts**; instead, it is generated fully automatically upon the first launch of the backend application:
 ```bash
 dotnet run --project src/backend/Cracow360.Api
 ```
 
-### Mechanizm automatycznego zasilania (Seeding):
-1. Podczas startu aplikacji backend sprawdza, czy plik `data/db/cracow360.db` istnieje na dysku.
-2. Jeśli plik nie istnieje:
-   - Tworzy nową strukturę tabel w oparciu o modele domenowe EF Core (`Districts`, `Scores`, `Forecasts`, `PointsOfInterest`).
-   - Klasa `DatabaseSeeder.cs` automatycznie czyta pliki kontraktów z folderu `data/contracts/` (`krakow_districts_master.json` oraz `krakow_poi_locations.json`).
-   - Wypełnia bazę danych wszystkimi 18 dzielnicami oraz ponad 900 punktami POI.
-3. Gdy baza już istnieje, backend łączy się z nią bezpośrednio i natychmiast serwuje dane do API.
+### Automatic Seeding Mechanism:
+1. During application startup, the backend checks whether `data/db/cracow360.db` exists on disk.
+2. If the file does not exist:
+   - It creates a new table structure based on EF Core domain models (`Districts`, `Scores`, `Forecasts`, `PointsOfInterest`).
+   - The `DatabaseSeeder.cs` class automatically reads contract files from the `data/contracts/` folder (`krakow_districts_master.json` and `krakow_poi_locations.json`).
+   - It populates the database with all 18 districts and over 900 POI points.
+3. Once the database exists, the backend connects to it directly and serves data to the API immediately.
 
 ---
 
-## Dlaczego plik bazy nie znajduje się w repozytorium Git?
-Plik `cracow360.db` oraz pliki pomocnicze (`*.db-shm`, `*.db-wal`) są celowo wpisane do `.gitignore`. 
+## Why is the database file not tracked in the Git repository?
+The `cracow360.db` file and associated auxiliary files (`*.db-shm`, `*.db-wal`) are intentionally listed in `.gitignore`.
 
-Dzięki temu:
-- repozytorium kodu pozostaje lekkie i czyste,
-- nie dochodzi do konfliktów scalania (merge conflicts) bazy binarnej pomiędzy programistami,
-- każdy użytkownik ma gwarancję, że jego lokalna baza danych zostanie wiernie odtworzona z najświeższych kontraktów JSON.
+Because of this:
+- the code repository remains lightweight and clean,
+- binary database merge conflicts between developers are avoided,
+- each user is guaranteed that their local database will be faithfully recreated from the latest JSON contracts.
 
 ---
 
-## Co zrobić w razie potrzeby zresetowania danych?
-Jeśli zmieniłeś dane w skryptach Pythona i chcesz, aby backend zaczął korzystać ze świeżych danych:
-1. Zatrzymaj backend.
-2. Po prostu skasuj plik `cracow360.db` z tego folderu.
-3. Uruchom ponownie backend – baza utworzy się od nowa w ułamku sekundy, pobierając najświeższe dane z `data/contracts/`.
+## What to do if you need to reset the data?
+If you have modified data in the Python scripts and want the backend to start using fresh data:
+1. Stop the backend.
+2. Simply delete the `cracow360.db` file from this folder.
+3. Restart the backend – the database will be recreated from scratch in a fraction of a second, fetching the latest data from `data/contracts/`.
