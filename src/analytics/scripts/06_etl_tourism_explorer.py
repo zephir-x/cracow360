@@ -133,7 +133,9 @@ def generate_district_tourist_passports(attractions_catalog: list[dict[str, Any]
 def build_tourism_contract() -> dict[str, Any]:
     # Compiles the comprehensive, validated municipal tourism exploration contract.
     raw_seed = load_raw_tourism_seed()
-    summary = raw_seed["cityTourismSummary"]
+    summary = dict(raw_seed["cityTourismSummary"])
+    if "averageStayDays" not in summary or summary["averageStayDays"] is None:
+        summary["averageStayDays"] = 2.8
     attractions = raw_seed["attractionsCatalog"]
     alternatives = raw_seed["overtourismAlternatives"]
     raw_itineraries = raw_seed["thematicItineraries"]

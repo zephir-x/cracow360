@@ -577,6 +577,7 @@ export interface CityTourismSummaryDto {
   domesticVisitors: number;
   internationalVisitors: number;
   estimatedEconomicImpactPln: number;
+  averageStayDays: number;
   totalCuratedAttractions: number;
   unescoSitesCount: number;
   curatedItinerariesCount: number;

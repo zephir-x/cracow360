@@ -16,7 +16,14 @@ import {
   CalendarDays,
 } from 'lucide-react';
 import { useTranslation } from '../../i18n/I18nContext';
-import { getTourismI18n } from '../../i18n/modules';
+import {
+  getTourismI18n,
+  formatAnnualVisitors,
+  formatStayDuration,
+  formatEconomicImpact,
+  formatCuratedSites,
+  formatForeignVisitorsTotal,
+} from '../../i18n/modules';
 import type { CityTourismSummaryDto } from '../../types/contracts';
 import { TouristCapabilitiesGrid } from './TouristCapabilitiesGrid';
 
@@ -30,16 +37,8 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
 
   const [showHowItWorks, setShowHowItWorks] = useState<boolean>(false);
 
-  const topMarkets = summary?.topInternationalMarkets ?? [
-    { country: 'Wielka Brytania', sharePct: 20.6, flag: '🇬🇧' },
-    { country: 'Niemcy', sharePct: 9.1, flag: '🇩🇪' },
-    { country: 'Włochy', sharePct: 7.6, flag: '🇮🇹' },
-    { country: 'Stany Zjednoczone', sharePct: 6.7, flag: '🇺🇸' },
-    { country: 'Francja', sharePct: 5.8, flag: '🇫🇷' },
-    { country: 'Hiszpania', sharePct: 5.2, flag: '🇪🇸' },
-  ];
-
-  const maxShare = Math.max(...topMarkets.map((m) => m.sharePct), 20.6);
+  const topMarkets = summary?.topInternationalMarkets ?? [];
+  const maxShare = topMarkets.length > 0 ? Math.max(...topMarkets.map((m) => m.sharePct)) : 100;
 
   const scrollToSection = (id: string) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
@@ -189,7 +188,7 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
               </div>
               <div className="min-w-0">
                 <div className="text-2xl font-black text-blue-900 leading-none">
-                  {t.telemetry.annualVisitors}
+                  {formatAnnualVisitors(summary?.annualVisitorsTotal ?? 0, language)}
                 </div>
                 <div className="text-xs font-bold text-slate-800 mt-1 truncate">
                   {t.telemetry.annualVisitorsLabel}
@@ -207,7 +206,7 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
               </div>
               <div className="min-w-0">
                 <div className="text-2xl font-black text-indigo-700 leading-none">
-                  {t.telemetry.stayDuration}
+                  {formatStayDuration(summary?.averageStayDays ?? 0, language)}
                 </div>
                 <div className="text-xs font-bold text-slate-800 mt-1 truncate">
                   {t.telemetry.stayDurationLabel}
@@ -225,7 +224,7 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
               </div>
               <div className="min-w-0">
                 <div className="text-2xl font-black text-emerald-700 leading-none">
-                  {t.telemetry.economicImpact}
+                  {formatEconomicImpact(summary?.estimatedEconomicImpactPln ?? 0, language)}
                 </div>
                 <div className="text-xs font-bold text-slate-800 mt-1 truncate">
                   {t.telemetry.economicImpactLabel}
@@ -243,7 +242,7 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
               </div>
               <div className="min-w-0">
                 <div className="text-2xl font-black text-purple-700 leading-none">
-                  {t.telemetry.curatedSites}
+                  {formatCuratedSites(summary?.totalCuratedAttractions ?? 0, language)}
                 </div>
                 <div className="text-xs font-bold text-slate-800 mt-1 truncate">
                   {t.telemetry.curatedSitesLabel}
@@ -297,7 +296,7 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
             </div>
           </div>
           <span className="text-[11px] font-semibold text-slate-400 self-start sm:self-auto">
-            {t.markets.totalForeign}
+            {formatForeignVisitorsTotal(summary?.internationalVisitors ?? 0, language)}
           </span>
         </div>
 

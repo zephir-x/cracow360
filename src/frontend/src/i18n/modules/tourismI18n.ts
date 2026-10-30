@@ -59,12 +59,104 @@ export function formatAttractionsCountLabel(count: number, language: Language): 
     if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return 'локації';
     return 'локацій';
   }
-  // Polish
   const mod10 = count % 10;
   const mod100 = count % 100;
   if (count === 1) return 'atrakcja';
   if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return 'atrakcje';
   return 'atrakcji';
+}
+
+export function formatAnnualVisitors(count: number, language: Language): string {
+  if (!count || count <= 0) {
+    return '0';
+  }
+  const val = (count / 1_000_000).toFixed(2);
+  if (language === 'en') {
+    return `${val}M`;
+  }
+  if (language === 'ua') {
+    return `${val} млн`;
+  }
+  return `${val} mln`;
+}
+
+export function formatStayDuration(days: number, language: Language): string {
+  if (!days || days <= 0) {
+    return '0';
+  }
+  if (language === 'en') {
+    return days === 1 ? '1 day' : `${days} days`;
+  }
+  if (language === 'ua') {
+    if (Number.isInteger(days)) {
+      const mod10 = days % 10;
+      const mod100 = days % 100;
+      if (mod10 === 1 && mod100 !== 11) return `${days} день`;
+      if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return `${days} дні`;
+      return `${days} днів`;
+    }
+    return `${days} дня`;
+  }
+  if (Number.isInteger(days)) {
+    if (days === 1) return '1 dzień';
+    const mod10 = days % 10;
+    const mod100 = days % 100;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return `${days} dni`;
+    return `${days} dni`;
+  }
+  return `${days} dnia`;
+}
+
+export function formatEconomicImpact(amountPln: number, language: Language): string {
+  if (!amountPln || amountPln <= 0) {
+    if (language === 'en') return '0 PLN';
+    return '0 zł';
+  }
+  const val = (amountPln / 1_000_000_000).toFixed(1);
+  if (language === 'en') {
+    return `${val}B PLN`;
+  }
+  if (language === 'ua') {
+    return `${val} млрд zł`;
+  }
+  return `${val} mld zł`;
+}
+
+export function formatCuratedSites(count: number, language: Language): string {
+  if (!count || count <= 0) {
+    return '0';
+  }
+  if (language === 'en') {
+    return count === 1 ? `${count} site` : `${count} sites`;
+  }
+  if (language === 'ua') {
+    const mod10 = count % 10;
+    const mod100 = count % 100;
+    if (mod10 === 1 && mod100 !== 11) return `${count} об'єкт`;
+    if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return `${count} об'єкти`;
+    return `${count} об'єктів`;
+  }
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+  if (count === 1) return `${count} obiekt`;
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) return `${count} obiekty`;
+  return `${count} obiektów`;
+}
+
+export function formatForeignVisitorsTotal(count: number, language: Language): string {
+  if (!count || count <= 0) {
+    if (language === 'en') return 'Total foreign markets: 0';
+    if (language === 'ua') return 'Загалом міжнародні ринки: 0';
+    return 'Łącznie rynki zagraniczne: 0';
+  }
+  const val = (count / 1_000_000).toFixed(2);
+  if (language === 'en') {
+    return `Total foreign markets: ${val}M visitors`;
+  }
+  if (language === 'ua') {
+    return `Загалом міжнародні ринки: ${val} млн гостей`;
+  }
+  return `Łącznie rynki zagraniczne: ${val} mln gości`;
 }
 
 export const TOURISM_I18N = {
@@ -88,7 +180,6 @@ export const TOURISM_I18N = {
     markets: {
       title: 'Struktura Turystyki Zagranicznej',
       subtitle: 'Główne rynki przyjazdowe turystów zagranicznych w Krakowie',
-      totalForeign: 'Łącznie rynki zagraniczne: 3.15 mln gości',
       leaderBadge: 'Lider',
       countries: {
         'Wielka Brytania': 'Wielka Brytania',
@@ -113,18 +204,13 @@ export const TOURISM_I18N = {
         'Oficjalne dane przewozowe ZTP i komunikacji miejskiej: bezpośrednie linie tramwajowe i autobusowe z Dworca Głównego, realne średnie czasy dojazdu w minutach oraz audytowane atrakcje w każdej z 18 jednostek samorządowych Krakowa.',
     },
 
-    // Telemetry strip (MOT Report)
     telemetry: {
-      annualVisitors: '14.72 mln',
       annualVisitorsLabel: 'Roczna liczba odwiedzających',
       annualVisitorsSub: 'Raport UMK & MOT 2024',
-      stayDuration: '2.8 dnia',
       stayDurationLabel: 'Średnia długość pobytu',
       stayDurationSub: 'Średni czas wizyty w mieście',
-      economicImpact: '11.8 mld zł',
       economicImpactLabel: 'Szacunkowe wydatki gości',
       economicImpactSub: 'Wpływ na gospodarkę i usługi Krakowa',
-      curatedSites: '110 obiektów',
       curatedSitesLabel: 'Audytowanych atrakcji miejskich',
       curatedSitesSub: 'We wszystkich 18 dzielnicach Krakowa',
     },
@@ -276,7 +362,6 @@ export const TOURISM_I18N = {
     markets: {
       title: 'Foreign Tourism Structure',
       subtitle: 'Top international inbound tourism markets in Krakow',
-      totalForeign: 'Total foreign markets: 3.15M visitors',
       leaderBadge: 'Leader',
       countries: {
         'Wielka Brytania': 'United Kingdom',
@@ -301,16 +386,12 @@ export const TOURISM_I18N = {
     },
 
     telemetry: {
-      annualVisitors: '14.72 M',
       annualVisitorsLabel: 'Annual visitors',
       annualVisitorsSub: 'Official UMK & MOT report',
-      stayDuration: '2.8 days',
       stayDurationLabel: 'Average length of stay',
       stayDurationSub: 'Average tourist visit duration',
-      economicImpact: '11.8B PLN',
       economicImpactLabel: 'Estimated tourist spend',
       economicImpactSub: 'Contribution to municipal economy & services',
-      curatedSites: '110 sites',
       curatedSitesLabel: 'Audited exploration sites',
       curatedSitesSub: 'Across all 18 administrative districts',
     },
@@ -456,7 +537,6 @@ export const TOURISM_I18N = {
     markets: {
       title: 'Структура Міжнародного Туризму',
       subtitle: 'Головні міжнародні ринки в’їзного туризму у Кракові',
-      totalForeign: 'Загалом міжнародні ринки: 3.15 млн гостей',
       leaderBadge: 'Лідер',
       countries: {
         'Wielka Brytania': 'Велика Британія',
@@ -481,16 +561,12 @@ export const TOURISM_I18N = {
     },
 
     telemetry: {
-      annualVisitors: '14.72 млн',
       annualVisitorsLabel: 'Річна кількість відвідувачів',
       annualVisitorsSub: 'Офіційний звіт UMK & MOT',
-      stayDuration: '2.8 дня',
       stayDurationLabel: 'Середня тривалість перебування',
       stayDurationSub: 'Середній час візиту туриста',
-      economicImpact: '11.8 млрд zł',
       economicImpactLabel: 'Орієнтовні витрати гостей',
       economicImpactSub: 'Внесок в економіку та послуги Кракова',
-      curatedSites: '110 об’єктів',
       curatedSitesLabel: 'Аудитованих міських локацій',
       curatedSitesSub: 'У всіх 18 районах Кракова',
     },

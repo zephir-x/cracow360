@@ -364,6 +364,10 @@ def validate_tourism_explorer(file_path: Path) -> list[str]:
     if not isinstance(annual_visitors, (int, float)) or annual_visitors < 10_000_000:
         errors.append(f"cityTourismSummary.annualVisitorsTotal seems unrealistically low: {annual_visitors}")
 
+    avg_stay = summary.get("averageStayDays", 0)
+    if not isinstance(avg_stay, (int, float)) or avg_stay <= 0:
+        errors.append(f"cityTourismSummary.averageStayDays must be a positive number: {avg_stay}")
+
     markets = summary.get("topInternationalMarkets", [])
     if not isinstance(markets, list) or len(markets) < 5:
         errors.append(f"Expected at least 5 topInternationalMarkets in cityTourismSummary, got {len(markets)}")

@@ -45,6 +45,7 @@ public record CityTourismSummaryDto(
     long DomesticVisitors,
     long InternationalVisitors,
     long EstimatedEconomicImpactPln,
+    double AverageStayDays,
     int TotalCuratedAttractions,
     int UnescoSitesCount,
     int CuratedItinerariesCount,

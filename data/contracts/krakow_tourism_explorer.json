@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T21:11:11.533848+00:00",
+  "generatedAt": "2026-10-30T09:56:26.016980+00:00",
   "meta": {
     "title": "Krakow360 Smart Tourism & Hidden Gems Explorer",
     "description": "Oficjalny rejestr i generator tras turystycznych w 18 dzielnicach Krakowa oparty na danych UMK i MOT.",
@@ -33,6 +33,7 @@
     "domesticVisitors": 10950000,
     "internationalVisitors": 3770000,
     "estimatedEconomicImpactPln": 11800000000,
+    "averageStayDays": 2.8,
     "totalCuratedAttractions": 110,
     "unescoSitesCount": 3,
     "curatedItinerariesCount": 5,

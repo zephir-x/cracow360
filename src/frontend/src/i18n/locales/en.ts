@@ -27,7 +27,7 @@ export const enTranslations: TranslationDictionary = {
       'Raw municipal indicators (demographic vitality, housing prices, road safety, transit density, parks, nurseries, libraries, and clean air) are standardized onto an objective 0–100 scale across 8 quality dimensions.',
     step2Title: '2. Your Weights and Presets (0–10 pts)',
     step2Desc:
-      'Tune category sliders on the left or choose a persona profile (Family with Kids, Student / Young Pro, Active Senior, Investor). The engine recalculates all 18 district scores in 0 ms at 60 FPS.',
+      'Tune category sliders on the left or choose a persona profile (Family with Kids, Student / Young Pro, Active Senior, Investor). The engine recalculates all 18 district scores in 0 ms.',
     step3Title: '3. Comparative 8-Axis Radar Chart',
     step3Desc:
       'Select any 2 districts on the map or ranking list to overlay their multi-dimensional profiles onto an 8-axis radar chart and examine granular indicators in the comparison matrix.',

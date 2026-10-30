@@ -134,7 +134,7 @@ export function ResidentModePage({
         {/* Foreground Content Container */}
         <div className="relative z-10 p-6 sm:p-8 lg:p-10 space-y-6">
           {/* Header Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs font-bold text-sky-100 tracking-wide uppercase shadow-sm">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs font-bold text-sky-100 tracking-wide shadow-sm">
             <Sparkles className="w-3.5 h-3.5 text-sky-300 animate-spin-slow" />
             <span>{t.hero.badge}</span>
           </div>
