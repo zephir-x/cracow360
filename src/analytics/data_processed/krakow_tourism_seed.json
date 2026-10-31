@@ -1,0 +1,2856 @@
+{
+  "cityTourismSummary": {
+    "annualVisitorsTotal": 14720000,
+    "overnightTourists": 9850000,
+    "domesticVisitors": 10950000,
+    "internationalVisitors": 3770000,
+    "estimatedEconomicImpactPln": 11800000000,
+    "averageStayDays": 2.8,
+    "totalCuratedAttractions": 110,
+    "unescoSitesCount": 3,
+    "curatedItinerariesCount": 5,
+    "overtourismAlternativePairsCount": 5,
+    "topInternationalMarkets": [
+      {
+        "country": "Wielka Brytania",
+        "sharePct": 20.6,
+        "flag": "🇬🇧"
+      },
+      {
+        "country": "Niemcy",
+        "sharePct": 9.1,
+        "flag": "🇩🇪"
+      },
+      {
+        "country": "Włochy",
+        "sharePct": 7.6,
+        "flag": "🇮🇹"
+      },
+      {
+        "country": "Stany Zjednoczone",
+        "sharePct": 6.7,
+        "flag": "🇺🇸"
+      },
+      {
+        "country": "Francja",
+        "sharePct": 5.8,
+        "flag": "🇫🇷"
+      },
+      {
+        "country": "Hiszpania",
+        "sharePct": 5.2,
+        "flag": "🇪🇸"
+      }
+    ]
+  },
+  "attractionsCatalog": [
+    {
+      "id": "att_wawel",
+      "districtId": 1,
+      "name": "Zamek Królewski na Wawelu i Katedra",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEAK",
+      "lat": 50.054,
+      "lng": 19.9354,
+      "estimatedVisitMinutes": 90,
+      "isUnesco": true,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 10, 24",
+        "timeMinutes": 10
+      },
+      "description": "Renesansowa rezydencja królów Polski, skarbiec koronny, zbrojownia oraz katedra z grobami królewskimi.",
+      "tags": [
+        "unesco",
+        "monument",
+        "castle",
+        "history",
+        "heritage",
+        "icon"
+      ]
+    },
+    {
+      "id": "att_sukiennice",
+      "districtId": 1,
+      "name": "Rynek Główny i Sukiennice",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEAK",
+      "lat": 50.0617,
+      "lng": 19.9373,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": true,
+      "directTransitFromMainStation": {
+        "line": "Spacer pieszy lub Tramwaj 2, 4, 14",
+        "timeMinutes": 6
+      },
+      "description": "Największy średniowieczny rynek Europy z gotycką Bazyliką Mariacką, Sukiennicami i Podziemiami Rynku.",
+      "tags": [
+        "unesco",
+        "square",
+        "architecture",
+        "icon",
+        "heritage",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_kazimierz_szeroka",
+      "districtId": 1,
+      "name": "Kazimierz – Ulica Szeroka i Synagogi",
+      "category": "CULTURE_ART",
+      "crowdLevel": "PEAK",
+      "lat": 50.0526,
+      "lng": 19.9482,
+      "estimatedVisitMinutes": 40,
+      "isUnesco": true,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 24",
+        "timeMinutes": 11
+      },
+      "description": "Historyczne serce żydowskiego Kazimierza ze Starą Synagogą, klimatycznymi zaułkami i kawiarniami.",
+      "tags": [
+        "unesco",
+        "jewish_heritage",
+        "boho",
+        "culture",
+        "art",
+        "heritage"
+      ]
+    },
+    {
+      "id": "att_planty",
+      "districtId": 1,
+      "name": "Planty Krakowskie i Barbakan",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "VERY_HIGH",
+      "lat": 50.0655,
+      "lng": 19.9416,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": true,
+      "directTransitFromMainStation": {
+        "line": "Spacer pieszy 3 min",
+        "timeMinutes": 3
+      },
+      "description": "Zabytkowy park miejski o długości 4 km otaczający Stare Miasto w miejscu dawnych murów obronnych z Barbakanem.",
+      "tags": [
+        "park",
+        "unesco",
+        "relax",
+        "walking",
+        "green",
+        "nature",
+        "heritage"
+      ]
+    },
+    {
+      "id": "att_mariacki_plac",
+      "districtId": 1,
+      "name": "Bazylika Mariacka i Ołtarz Wita Stwosza",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEAK",
+      "lat": 50.0616,
+      "lng": 19.9392,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": true,
+      "directTransitFromMainStation": {
+        "line": "Spacer pieszy",
+        "timeMinutes": 7
+      },
+      "description": "Gotycka bazylika z dwiema asymetrycznymi wieżami, hejnałem mariackim i bezcennym drewnianym ołtarzem Wita Stwosza.",
+      "tags": [
+        "unesco",
+        "church",
+        "monument",
+        "art",
+        "history",
+        "icon"
+      ]
+    },
+    {
+      "id": "att_bunkier_sztuki",
+      "districtId": 1,
+      "name": "Plac Szczepański i Galeria Bunkier Sztuki",
+      "category": "CULTURE_ART",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0637,
+      "lng": 19.9344,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": true,
+      "directTransitFromMainStation": {
+        "line": "Spacer pieszy",
+        "timeMinutes": 8
+      },
+      "description": "Zmodernizowany zabytkowy plac ze zjawiskową fontanną, Pałacem Sztuki i awangardową galerią Bunkier Sztuki.",
+      "tags": [
+        "art",
+        "gallery",
+        "culture",
+        "boho",
+        "modernism"
+      ]
+    },
+    {
+      "id": "att_smocza_jama_bulwary",
+      "districtId": 1,
+      "name": "Smocza Jama i Bulwary Wiślane pod Wawelem",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "HIGH",
+      "lat": 50.0532,
+      "lng": 19.9332,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": true,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 10, 24",
+        "timeMinutes": 12
+      },
+      "description": "Legendarne wapienne jaskinie pod zamkiem ze ziejącym ogniem rzeźbionym Smokiem Wawelskim i nadrzecznym deptakiem.",
+      "tags": [
+        "legend",
+        "cave",
+        "vistula",
+        "family",
+        "walking",
+        "park",
+        "active"
+      ]
+    },
+    {
+      "id": "att_botaniczny",
+      "districtId": 2,
+      "name": "Ogród Botaniczny Uniwersytetu Jagiellońskiego",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0617,
+      "lng": 19.9578,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Spacer pieszy lub Tramwaj 2, 10",
+        "timeMinutes": 8
+      },
+      "description": "Najstarszy w Polsce ogród botaniczny założony w 1783 r., z monumentalnymi szklarniami, palmami i rzadkimi okazami.",
+      "tags": [
+        "botanic",
+        "green",
+        "science",
+        "calm",
+        "park",
+        "nature",
+        "heritage",
+        "history"
+      ]
+    },
+    {
+      "id": "att_opera_krakowska",
+      "districtId": 2,
+      "name": "Opera Krakowska i Rondo Mogilskie",
+      "category": "CULTURE_ART",
+      "crowdLevel": "LOW",
+      "lat": 50.0664,
+      "lng": 19.9568,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 14, 50 lub pieszo 8 min",
+        "timeMinutes": 6
+      },
+      "description": "Nowoczesny gmach Opery Krakowskiej oraz podziemny węzeł Ronda Mogilskiego z odsłoniętymi ruinami bastionu Fortu Mogilskiego.",
+      "tags": [
+        "theatre",
+        "music",
+        "modern",
+        "fortress",
+        "history",
+        "culture"
+      ]
+    },
+    {
+      "id": "att_hala_targowa",
+      "districtId": 2,
+      "name": "Zabytkowa Hala Targowa & Kiełbaski z Niebieskiej Nyski",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0583,
+      "lng": 19.9508,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 1, 3, 19 do Hali Targowej",
+        "timeMinutes": 6
+      },
+      "description": "Historyczna modernistyczna hala targowa z 1940 r. oraz kultowa tradycja nocnych kiełbasek z grilla bukowego z zabytkowej Nyski.",
+      "tags": [
+        "heritage",
+        "culinary",
+        "tradition",
+        "history",
+        "hidden_gem",
+        "icon"
+      ]
+    },
+    {
+      "id": "att_park_grzegorzecki",
+      "districtId": 2,
+      "name": "Park Grzegórzecki i Bulwary Wiślane nad Dąbiem",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0538,
+      "lng": 19.9652,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 1, 14, 22",
+        "timeMinutes": 10
+      },
+      "description": "Nowo zrewitalizowany zielony park miejski z bezpośrednim dostępem do Bulwaru Kurlandzkiego i malowniczego koryta Wisły.",
+      "tags": [
+        "park",
+        "nature",
+        "green",
+        "vistula",
+        "walking",
+        "calm"
+      ]
+    },
+    {
+      "id": "att_kladka_grzegorzki",
+      "districtId": 2,
+      "name": "Kładka kolejowo-piesza na Wiśle & Przystań Dąbie",
+      "category": "VIEWPOINT",
+      "crowdLevel": "LOW",
+      "lat": 50.0521,
+      "lng": 19.9572,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 1, 19, 22 do przystanku Zabłocie/Grzegórzki",
+        "timeMinutes": 8
+      },
+      "description": "Spektakularna nowa kładka pieszo-rowerowa zawieszona nad Wisłą na filarach zabytkowego mostu kolejowego z panoramą Wawelu.",
+      "tags": [
+        "viewpoint",
+        "panorama",
+        "modernism",
+        "cycling",
+        "walking",
+        "vistula"
+      ]
+    },
+    {
+      "id": "att_teatr_variete",
+      "districtId": 2,
+      "name": "Krakowski Teatr Variete i Fabryka Maszyn",
+      "category": "CULTURE_ART",
+      "crowdLevel": "LOW",
+      "lat": 50.0589,
+      "lng": 19.9658,
+      "estimatedVisitMinutes": 45,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 1, 14, 22",
+        "timeMinutes": 9
+      },
+      "description": "Kameralny teatr muzyczno-broadwayowski urządzony w zrewitalizowanym historycznym budynku dawnego kina Związkowiec.",
+      "tags": [
+        "theatre",
+        "art",
+        "culture",
+        "industrial",
+        "music"
+      ]
+    },
+    {
+      "id": "att_zaczarowana_dorozka",
+      "districtId": 3,
+      "name": "Park Zaczarowanej Dorożki i Dolina Prądnika",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0818,
+      "lng": 19.9642,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 105, 129, 139 do Dobrego Pasterza",
+        "timeMinutes": 12
+      },
+      "description": "Malowniczy park ze stawem rybnym, wierzbami płaczącymi i pomnikiem zaczarowanej dorożki Gałczyńskiego.",
+      "tags": [
+        "park",
+        "calm",
+        "hidden_gem",
+        "nature",
+        "green",
+        "family",
+        "walking"
+      ]
+    },
+    {
+      "id": "att_park_reduta",
+      "districtId": 3,
+      "name": "Park Reduta z Wieżą Widokową i Łąkami",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0912,
+      "lng": 19.9725,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 105, 139",
+        "timeMinutes": 15
+      },
+      "description": "Jeden z najnowocześniejszych parków ekologicznych Krakowa z drewnianą wieżą widokową, łąkami kwietnymi i pawilonem.",
+      "tags": [
+        "park",
+        "nature",
+        "viewpoint",
+        "family",
+        "active",
+        "green"
+      ]
+    },
+    {
+      "id": "att_cmentarz_rakowicki",
+      "districtId": 3,
+      "name": "Cmentarz Rakowicki – Zabytkowa Nekropolia i Panteon",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "LOW",
+      "lat": 50.0755,
+      "lng": 19.9545,
+      "estimatedVisitMinutes": 45,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 2 do Cmentarza Rakowickiego",
+        "timeMinutes": 6
+      },
+      "description": "Jedna z najwspanialszych zabytkowych nekropolii w Europie (1803 r.) z grobami Jana Matejki, Wisławy Szymborskiej i Marka Grechuty.",
+      "tags": [
+        "monument",
+        "history",
+        "heritage",
+        "art",
+        "hidden_gem",
+        "matejko"
+      ]
+    },
+    {
+      "id": "att_celestat_strzelecki",
+      "districtId": 3,
+      "name": "Ogród Strzelecki & Pałacyk Celestat (Muzeum Krakowa)",
+      "category": "CULTURE_ART",
+      "crowdLevel": "LOW",
+      "lat": 50.0674,
+      "lng": 19.9508,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Spacer pieszy 5 min",
+        "timeMinutes": 5
+      },
+      "description": "Zabytkowa neogotycka siedziba Krakowskiego Bractwa Kurkowego ze skarbami cechowymi, Srebrnym Kurem i ogrodem ze starodrzewem.",
+      "tags": [
+        "museum",
+        "heritage",
+        "history",
+        "park",
+        "art",
+        "tradition"
+      ]
+    },
+    {
+      "id": "att_kaplica_chrzciciela",
+      "districtId": 3,
+      "name": "Zabytkowa Kaplica św. Jana Chrzciciela (XVII w.)",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0845,
+      "lng": 19.9678,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 105, 129",
+        "timeMinutes": 13
+      },
+      "description": "Barokowa kaplica z 1642 r. malowniczo położona na wzgórzu w dawnym majątku prądnickim, otoczona zabytkowymi lipami.",
+      "tags": [
+        "church",
+        "heritage",
+        "history",
+        "baroque",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_fort_wegrzce",
+      "districtId": 3,
+      "name": "Fort 47a Węgrzce (Szlak Twierdzy Kraków)",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.1042,
+      "lng": 19.9782,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 139, 217",
+        "timeMinutes": 18
+      },
+      "description": "Monumentalny pancerny fort Twierdzy Kraków z zachowanymi potężnymi kaponierami i wałami ziemnymi.",
+      "tags": [
+        "fortress",
+        "austrian_heritage",
+        "history",
+        "viewpoint",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_dworek_bialopradnicki",
+      "districtId": 4,
+      "name": "Centrum Kultury „Dworek Białoprądnicki”",
+      "category": "CULTURE_ART",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0864,
+      "lng": 19.9288,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 18, 50 do Papierni Prądnickich",
+        "timeMinutes": 14
+      },
+      "description": "Renesansowy dworek biskupów krakowskich goszczący niegdyś Kochanowskiego i Kościuszkę, otoczony zabytkowym parkiem nad Prądnikiem.",
+      "tags": [
+        "manor",
+        "renaissance",
+        "park",
+        "culture",
+        "art",
+        "heritage",
+        "history"
+      ]
+    },
+    {
+      "id": "att_park_krowoderski",
+      "districtId": 4,
+      "name": "Park Krowoderski i Szlak Twierdzy Kraków",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0838,
+      "lng": 19.9215,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 18, 50 do Krowodrza Górka",
+        "timeMinutes": 12
+      },
+      "description": "Rozległy park z trasami biegowymi, boiskami i pozostałościami dawnego szańca Twierdzy Kraków.",
+      "tags": [
+        "sport",
+        "park",
+        "fortress",
+        "active",
+        "walking",
+        "nature",
+        "green"
+      ]
+    },
+    {
+      "id": "att_fort_tonie",
+      "districtId": 4,
+      "name": "Fort pancerny 44 „Tonie” (Twierdza Kraków)",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.1082,
+      "lng": 19.8965,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 120 z Krowodrza Górka",
+        "timeMinutes": 22
+      },
+      "description": "Unikatowy fort pancerny z oryginalnymi stalowymi wieżami pancernymi Senkpanzer i działami – perełka inżynierii wojskowej.",
+      "tags": [
+        "fortress",
+        "history",
+        "austrian_heritage",
+        "military",
+        "hidden_gem",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_park_kosciuszki_bialy",
+      "districtId": 4,
+      "name": "Zabytkowy Park Kościuszki nad Prądnikiem",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0872,
+      "lng": 19.9325,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 18, 50",
+        "timeMinutes": 13
+      },
+      "description": "Spokojny podworski park z pomnikowymi platanami, starodrzewem i rzeźbami plenerowymi wzdłuż rzeki Prądnik.",
+      "tags": [
+        "park",
+        "green",
+        "nature",
+        "river",
+        "calm",
+        "walking"
+      ]
+    },
+    {
+      "id": "att_fort_pasternik",
+      "districtId": 4,
+      "name": "Fort 43 Pasternik i Uroczysko Leśne",
+      "category": "VIEWPOINT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.1018,
+      "lng": 19.8785,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 172, 572",
+        "timeMinutes": 24
+      },
+      "description": "Otoczony bujną zielenią fort artyleryjski na północno-zachodnich rubieżach Krakowa ze wspaniałą leśną trasą spacerową.",
+      "tags": [
+        "fortress",
+        "forest",
+        "viewpoint",
+        "nature",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_dolina_pradnika_mlyn",
+      "districtId": 4,
+      "name": "Dolina Prądnika i Zabytkowy Młyn Prądnicki",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0895,
+      "lng": 19.9348,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 18, 50",
+        "timeMinutes": 15
+      },
+      "description": "Ślad dawnych tradycji młynarskich doliny Prądnika z malowniczymi meandrami rzecznymi i zabytkową architekturą drewnianą.",
+      "tags": [
+        "history",
+        "heritage",
+        "river",
+        "nature",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_park_jordana",
+      "districtId": 5,
+      "name": "Park im. Henryka Jordana i Błonia",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0628,
+      "lng": 19.9168,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 20 do Oleandrów",
+        "timeMinutes": 10
+      },
+      "description": "Zabytkowy park pioniera edukacji fizycznej w Europie (1889 r.) z popiersiami wielkich Polaków, stawem i widokiem na Błonia.",
+      "tags": [
+        "park",
+        "sport",
+        "blonia",
+        "family",
+        "green",
+        "nature",
+        "history",
+        "active"
+      ]
+    },
+    {
+      "id": "att_muzeum_narodowe",
+      "districtId": 5,
+      "name": "Gmach Główny Muzeum Narodowego w Krakowie",
+      "category": "CULTURE_ART",
+      "crowdLevel": "HIGH",
+      "lat": 50.0602,
+      "lng": 19.9238,
+      "estimatedVisitMinutes": 75,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 20 do Muzeum Narodowego",
+        "timeMinutes": 9
+      },
+      "description": "Monumentalny modernistyczny gmach mieszczący Galerię Sztuki Polskiej XX i XXI wieku, kolekcję militariów i designu.",
+      "tags": [
+        "museum",
+        "art",
+        "modernism",
+        "culture",
+        "heritage",
+        "icon"
+      ]
+    },
+    {
+      "id": "att_blonia_krakowskie",
+      "districtId": 5,
+      "name": "Błonia Krakowskie – Wielka Łąka Miejska",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0595,
+      "lng": 19.9055,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 1, 20 do Cichego Kącika",
+        "timeMinutes": 12
+      },
+      "description": "Jedna z największych w Europie śródmiejskich łąk (48 hektarów) ze statusem pomnika historii i panoramą Wawelu oraz Kopca Kościuszki.",
+      "tags": [
+        "blonia",
+        "nature",
+        "sport",
+        "active",
+        "viewpoint",
+        "cycling",
+        "relax"
+      ]
+    },
+    {
+      "id": "att_mlynowka_krolewska",
+      "districtId": 5,
+      "name": "Park Młynówka Królewska – Szlak Koryta Rzeki",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0712,
+      "lng": 19.9145,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 8, 14 do Placu Inwalidów",
+        "timeMinutes": 8
+      },
+      "description": "Najdłuższy park linearny w Polsce o długości 8 km, biegnący dawnym korytem sztucznej rzeki z czasów króla Kazimierza Wielkiego.",
+      "tags": [
+        "park",
+        "walking",
+        "green",
+        "cycling",
+        "history",
+        "nature"
+      ]
+    },
+    {
+      "id": "att_mufo_jozefitow",
+      "districtId": 5,
+      "name": "MuFo – Muzeum Fotografii (ul. Józefitów)",
+      "category": "CULTURE_ART",
+      "crowdLevel": "LOW",
+      "lat": 50.0718,
+      "lng": 19.9248,
+      "estimatedVisitMinutes": 45,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 8, 14",
+        "timeMinutes": 8
+      },
+      "description": "Wzorcowe centrum magazynowo-konserwatorskie i galeria fotografii artystycznej w zabytkowej modernistycznej willi.",
+      "tags": [
+        "museum",
+        "art",
+        "culture",
+        "photography",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_kosciol_szczepana",
+      "districtId": 5,
+      "name": "Kościół św. Szczepana i Plac Inwalidów",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "LOW",
+      "lat": 50.0705,
+      "lng": 19.9285,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 14",
+        "timeMinutes": 7
+      },
+      "description": "Modernistyczna świątynia z lat 30. XX w. z cennymi polichromiami oraz historyczny plac z dawną siedzibą urzędów miejskich.",
+      "tags": [
+        "church",
+        "architecture",
+        "history",
+        "modernism",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_rydlowka",
+      "districtId": 6,
+      "name": "Rydlówka – Muzeum Młodej Polski (Muzeum Krakowa)",
+      "category": "CULTURE_ART",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0782,
+      "lng": 19.8925,
+      "estimatedVisitMinutes": 45,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 8, 24 do Bronowic",
+        "timeMinutes": 16
+      },
+      "description": "Zabytkowy dworek Włodzimierza Tetmajera i Lucjana Rydla – miejsce słynnego wesela opisanego w dramacie Stanisława Wyspiańskiego.",
+      "tags": [
+        "literature",
+        "wyspianski",
+        "tradition",
+        "hidden_gem",
+        "culture",
+        "art",
+        "museum",
+        "heritage"
+      ]
+    },
+    {
+      "id": "att_tetmajerowka",
+      "districtId": 6,
+      "name": "Tetmajerówka – Dworek Włodzimierza Tetmajera",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0815,
+      "lng": 19.8862,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 8, 24",
+        "timeMinutes": 18
+      },
+      "description": "Klasycystyczny dworek z gankiem kolumnowym i malowniczym ogrodem, serce młodopolskiego nurtu chłopomanii i sztuki.",
+      "tags": [
+        "manor",
+        "heritage",
+        "history",
+        "art",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_fort_bronowice",
+      "districtId": 6,
+      "name": "Fort 41 Bronowice i Park Forteczny",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0848,
+      "lng": 19.8942,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 8, 24",
+        "timeMinutes": 17
+      },
+      "description": "Austriacki fort piechoty z 1884 r. zaadaptowany na tereny rekreacyjne z zachowanymi fosami i schronami.",
+      "tags": [
+        "fortress",
+        "history",
+        "park",
+        "austrian_heritage",
+        "military"
+      ]
+    },
+    {
+      "id": "att_mlynowka_bronowicka",
+      "districtId": 6,
+      "name": "Młynówka Królewska – Stare Bronowice",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0768,
+      "lng": 19.8975,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 8",
+        "timeMinutes": 15
+      },
+      "description": "Cieniste aleje starodrzewu nad historycznym ciekiem wodnym, łączące wiejski urok dawnych Bronowic z centrum Krakowa.",
+      "tags": [
+        "park",
+        "nature",
+        "green",
+        "walking",
+        "calm"
+      ]
+    },
+    {
+      "id": "att_kosciol_wojciecha_bronowice",
+      "districtId": 6,
+      "name": "Kościół św. Wojciecha i Tradycje Bronowickie",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0805,
+      "lng": 19.8895,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 8",
+        "timeMinutes": 17
+      },
+      "description": "Zabytkowa parafia z rzeźbionym ołtarzem, otoczona starą bronowicką zabudową wiejską ze szlakiem pamięci Wyspiańskiego.",
+      "tags": [
+        "church",
+        "heritage",
+        "history",
+        "tradition",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_staw_bronowicki",
+      "districtId": 6,
+      "name": "Staw Bronowicki i Uroczysko przy Rydlówce",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0792,
+      "lng": 19.8912,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 8",
+        "timeMinutes": 16
+      },
+      "description": "Urokliwy staw z pływającym ptactwem i drewnianymi pomostami obok Rydlówki – oaza ciszy wśród miejskiego zgiełku.",
+      "tags": [
+        "nature",
+        "green",
+        "calm",
+        "relax",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_kopiec_kosciuszki",
+      "districtId": 7,
+      "name": "Kopiec Kościuszki i Fort 2 Kościuszko",
+      "category": "VIEWPOINT",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0548,
+      "lng": 19.8935,
+      "estimatedVisitMinutes": 45,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 152, 192 do Salwatora + spacer",
+        "timeMinutes": 22
+      },
+      "description": "Mogiła narodowa Tadeusza Kościuszki usypana na wzgórzu św. Bronisławy z muzeum i cytadelowym fortem armii austro-węgierskiej.",
+      "tags": [
+        "viewpoint",
+        "panorama",
+        "history",
+        "fortress",
+        "heritage",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_lasek_wolski",
+      "districtId": 7,
+      "name": "Las Wolski, Kopiec Piłsudskiego i Polana Sowiniec",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0542,
+      "lng": 19.8475,
+      "estimatedVisitMinutes": 60,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 152 do alei Kasztanowej lub 134 do ZOO",
+        "timeMinutes": 28
+      },
+      "description": "Prawie 400 hektarów bukowego lasu z wąwozami jurajskimi oraz najwyższym kopcem w Polsce usypanym w hołdzie marszałkowi Piłsudskiemu.",
+      "tags": [
+        "forest",
+        "nature",
+        "hiking",
+        "viewpoint",
+        "green",
+        "park",
+        "calm"
+      ]
+    },
+    {
+      "id": "att_klasztor_kamedulow",
+      "districtId": 7,
+      "name": "Klasztor Kamedułów na Srebrnej Górze (Bielany)",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0468,
+      "lng": 19.8445,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 109, 209 z Salwatora",
+        "timeMinutes": 30
+      },
+      "description": "Eremicki wczesnobarokowy klasztor z 1605 r. wznoszący się spektakularnie nad przełomem Wisły w otoczeniu winnic bielańskich.",
+      "tags": [
+        "monastery",
+        "baroque",
+        "spiritual",
+        "hidden_gem",
+        "heritage",
+        "history"
+      ]
+    },
+    {
+      "id": "att_zoo_krakow",
+      "districtId": 7,
+      "name": "Ogród Zoologiczny w Krakowie (w Lesie Wolskim)",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "HIGH",
+      "lat": 50.0545,
+      "lng": 19.8558,
+      "estimatedVisitMinutes": 90,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 134 z Cracovii prosto pod bramę ZOO",
+        "timeMinutes": 26
+      },
+      "description": "Zabytkowy ogród zoologiczny wkomponowany w naturalny las dębowo-bukowy, dom dla 1500 zwierząt z całego świata.",
+      "tags": [
+        "family",
+        "active",
+        "forest",
+        "nature",
+        "animals"
+      ]
+    },
+    {
+      "id": "att_salwator_norbertanki",
+      "districtId": 7,
+      "name": "Klasztor Norbertanek i Romański Kościółek Salwatora",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "LOW",
+      "lat": 50.0528,
+      "lng": 19.9075,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 1, 2 do Salwatora",
+        "timeMinutes": 15
+      },
+      "description": "XII-wieczny romański kościół Najświętszego Salwatora oraz potężny kompleks obronny norbertanek nad brzegiem rzeki Rudawy.",
+      "tags": [
+        "heritage",
+        "church",
+        "monastery",
+        "history",
+        "monument",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_zamek_przegorzaly",
+      "districtId": 7,
+      "name": "Zamek w Przegorzałach & Rezerwat Panieńskie Skały",
+      "category": "VIEWPOINT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0525,
+      "lng": 19.8665,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 109, 209 z Salwatora",
+        "timeMinutes": 25
+      },
+      "description": "Willa Baszta prof. Szyszko-Bohusza w formie romantycznego zamku na wapiennej skale z widokiem na dolinę Wisły i pasmo Babiej Góry.",
+      "tags": [
+        "viewpoint",
+        "castle",
+        "architecture",
+        "panorama",
+        "nature",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_zakrzowek",
+      "districtId": 8,
+      "name": "Park Zakrzówek i Wiszące Baseny",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "HIGH",
+      "lat": 50.0395,
+      "lng": 19.9145,
+      "estimatedVisitMinutes": 50,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 18, 52 do Norymberskiej",
+        "timeMinutes": 18
+      },
+      "description": "Lazurowy zalew w dawnym kamieniołomie wapiennym z drewnianymi pomostami kąpielowymi, białymi klifami i ścieżkami widokowymi.",
+      "tags": [
+        "nature",
+        "swimming",
+        "rocks",
+        "icon",
+        "green",
+        "park",
+        "active",
+        "viewpoint"
+      ]
+    },
+    {
+      "id": "att_skalki_twardowskiego",
+      "districtId": 8,
+      "name": "Skałki Twardowskiego i Jaskinia Jasna",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0418,
+      "lng": 19.9095,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 18, 52 do Norymberskiej",
+        "timeMinutes": 19
+      },
+      "description": "Wapienne turnie wspinaczkowe i jaskinie owiane legendami o mistrzu Twardowskim, z widokiem na panoramę Wawelu.",
+      "tags": [
+        "climbing",
+        "geology",
+        "legends",
+        "viewpoint",
+        "active",
+        "nature"
+      ]
+    },
+    {
+      "id": "att_tyniec",
+      "districtId": 8,
+      "name": "Opactwo Benedyktynów w Tyńcu",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0162,
+      "lng": 19.8028,
+      "estimatedVisitMinutes": 60,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 112 z Ronda Grunwaldzkiego",
+        "timeMinutes": 35
+      },
+      "description": "Najstarszy istniejący klasztor w Polsce (1044 r.) wznoszący się na wapiennym urwisku nad Wisłą, z muzeum i produktami benedyktyńskimi.",
+      "tags": [
+        "monastery",
+        "history",
+        "vistula",
+        "scenic",
+        "heritage",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_manggha",
+      "districtId": 8,
+      "name": "Muzeum Sztuki i Techniki Japońskiej Manggha",
+      "category": "CULTURE_ART",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0505,
+      "lng": 19.9328,
+      "estimatedVisitMinutes": 45,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 18, 22, 52 do Ronda Grunwaldzkiego",
+        "timeMinutes": 11
+      },
+      "description": "Wybitne dzieło japońskiego architekta Araty Isozakiego nad brzegiem Wisły, stworzone z inicjatywy Andrzeja Wajdy.",
+      "tags": [
+        "art",
+        "japan",
+        "architecture",
+        "vistula_view",
+        "culture",
+        "museum"
+      ]
+    },
+    {
+      "id": "att_fort_borek_skotniki",
+      "districtId": 8,
+      "name": "Uroczysko Skotniki i Fort pancerny 52b",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0135,
+      "lng": 19.8785,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 106, 196",
+        "timeMinutes": 26
+      },
+      "description": "Doskonale odrestaurowany fort pancerny z wieżami obrotowymi, centrum kultury i otaczającym parkiem leśnym.",
+      "tags": [
+        "fortress",
+        "history",
+        "park",
+        "austrian_heritage",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_bulwary_tynieckie",
+      "districtId": 8,
+      "name": "Bulwary Tynieckie i Trasa Rowerowa VeloMałopolska",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0315,
+      "lng": 19.8455,
+      "estimatedVisitMinutes": 40,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Trasa rowerowa lub Autobus 112",
+        "timeMinutes": 25
+      },
+      "description": "Widokowa trasa pieszo-rowerowa biegnąca koroną wałów wiślanych od Wawelu aż po klify opactwa w Tyńcu.",
+      "tags": [
+        "cycling",
+        "active",
+        "vistula",
+        "nature",
+        "viewpoint",
+        "sport"
+      ]
+    },
+    {
+      "id": "att_lagiewniki_sanktuarium",
+      "districtId": 9,
+      "name": "Sanktuarium Bożego Miłosierdzia w Łagiewnikach",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "HIGH",
+      "lat": 50.0205,
+      "lng": 19.9385,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 8, 10, 22 do Sanktuarium",
+        "timeMinutes": 18
+      },
+      "description": "Światowe centrum kultu Miłosierdzia Bożego z zabytkową kaplicą św. Faustyny Kowalskiej oraz 77-metrową wieżą widokową.",
+      "tags": [
+        "spiritual",
+        "pilgrimage",
+        "viewpoint",
+        "heritage",
+        "history",
+        "church"
+      ]
+    },
+    {
+      "id": "att_jp2_biale_morza",
+      "districtId": 9,
+      "name": "Sanktuarium św. Jana Pawła II na Białych Morzach",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0135,
+      "lng": 19.9348,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 8, 50 do przystanku Sanktuarium JP2",
+        "timeMinutes": 19
+      },
+      "description": "Monumentalna bazylika wzniesiona na dawnych osadnikach sodowych fabryki Solvay, ze wspaniałymi mozaikami o. Rupnika.",
+      "tags": [
+        "spiritual",
+        "modernism",
+        "history",
+        "church",
+        "art",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_solvay_park",
+      "districtId": 9,
+      "name": "Centrum Sztuki Współczesnej Solvay i Park",
+      "category": "CULTURE_ART",
+      "crowdLevel": "LOW",
+      "lat": 50.0168,
+      "lng": 19.9285,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 8, 22 do Borek Fałęcki I",
+        "timeMinutes": 19
+      },
+      "description": "Zrewitalizowany poprzemysłowy ośrodek sztuki w historycznych zakładach Solvay, gdzie w latach 40. pracował Karol Wojtyła.",
+      "tags": [
+        "industrial",
+        "history",
+        "park",
+        "art",
+        "culture",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_las_borkowski",
+      "districtId": 9,
+      "name": "Las Borkowski – Uroczysko Przyrodnicze",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0085,
+      "lng": 19.9145,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 151, 178 z Borku Fałęckiego",
+        "timeMinutes": 22
+      },
+      "description": "Zwarty, 15-hektarowy naturalny las dębowo-sosnowy ze ścieżkami zdrowia, ostoją ptaków śpiewających i ciszą.",
+      "tags": [
+        "forest",
+        "nature",
+        "green",
+        "calm",
+        "relax",
+        "walking"
+      ]
+    },
+    {
+      "id": "att_park_stacji_borkowskiej",
+      "districtId": 9,
+      "name": "Zabytkowy Rynek Borku Fałęckiego i Trakt Wiedeński",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "LOW",
+      "lat": 50.0142,
+      "lng": 19.9235,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 8, 19, 22 do pętli Borek Fałęcki",
+        "timeMinutes": 20
+      },
+      "description": "Ślady dawnej osady podgórskiej przy trakcie cesarskim z zabytkową karczmą, kapliczkami i dawną stacją kolejową.",
+      "tags": [
+        "history",
+        "heritage",
+        "tradition",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_ogrod_spoleczny_lagiewniki",
+      "districtId": 9,
+      "name": "Park Rzeczny Wilga w Łagiewnikach",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0245,
+      "lng": 19.9325,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 8, 10",
+        "timeMinutes": 16
+      },
+      "description": "Zielony korytarz meandrującej rzeki Wilgi z pomostami edukacyjnymi, strefą piknikową i bujną roślinnością nadrzeczną.",
+      "tags": [
+        "park",
+        "river",
+        "nature",
+        "green",
+        "walking"
+      ]
+    },
+    {
+      "id": "att_swoszowice_uzdrowisko",
+      "districtId": 10,
+      "name": "Uzdrowisko Swoszowice – Pijalnia Wód Siarczkowych",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 49.9962,
+      "lng": 19.9402,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Kolej SKA2 do Kraków Swoszowice (14 min) lub Autobus 135",
+        "timeMinutes": 20
+      },
+      "description": "Jedyne w Polsce czynne uzdrowisko w granicach metropolii (1811 r.), słynące z unikalnych wód siarczkowych i borowin.",
+      "tags": [
+        "spa",
+        "health",
+        "park",
+        "hidden_gem",
+        "green",
+        "heritage",
+        "history"
+      ]
+    },
+    {
+      "id": "att_park_zdrojowy_swoszowice",
+      "districtId": 10,
+      "name": "Park Zdrojowy w Swoszowicach",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 49.9975,
+      "lng": 19.9425,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 135 lub pociąg SKA2",
+        "timeMinutes": 22
+      },
+      "description": "Zabytkowy park kuracyjny ze stuletnimi modrzewiami, alejami lipowymi i ujęciami źródeł mineralnych 'Zdrój Główny' i 'Napoleon'.",
+      "tags": [
+        "park",
+        "nature",
+        "calm",
+        "relax",
+        "walking",
+        "green"
+      ]
+    },
+    {
+      "id": "att_fort_rajsko",
+      "districtId": 10,
+      "name": "Fort 51 Rajsko i Panorama Beskidów",
+      "category": "VIEWPOINT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 49.9928,
+      "lng": 19.9675,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 107, 135",
+        "timeMinutes": 26
+      },
+      "description": "Najwyżej położony fort Twierdzy Kraków (349 m n.p.m.) z zachwycającą panoramą Krakowa, Pogórza Wielickiego i Tatr.",
+      "tags": [
+        "viewpoint",
+        "panorama",
+        "fortress",
+        "history",
+        "nature",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_park_macka_doroty",
+      "districtId": 10,
+      "name": "Park Maćka i Doroty na Klinach",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 49.9992,
+      "lng": 19.9055,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 151, 191",
+        "timeMinutes": 24
+      },
+      "description": "Rozległy park rekreacyjny na południu miasta ze stawem, alejkami biegowymi i nowoczesną infrastrukturą rodzinną.",
+      "tags": [
+        "park",
+        "family",
+        "active",
+        "sport",
+        "nature",
+        "green"
+      ]
+    },
+    {
+      "id": "att_dwor_wroblowice",
+      "districtId": 10,
+      "name": "Zabytkowy Zespół Dworsko-Parkowy we Wróblowicach",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 49.9882,
+      "lng": 19.9545,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 135, 254",
+        "timeMinutes": 28
+      },
+      "description": "Klasycystyczny dwór szlachecki z XIX w. otoczony parkiem krajobrazowym ze stawami podworskimi.",
+      "tags": [
+        "manor",
+        "heritage",
+        "history",
+        "park",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_szlak_siarkowy_swoszowice",
+      "districtId": 10,
+      "name": "Szlak Dawnego Górnictwa Siarkowego",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 49.9945,
+      "lng": 19.9365,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Kolej SKA2 lub Autobus 135",
+        "timeMinutes": 22
+      },
+      "description": "Historyczna trasa dydaktyczna dokumentująca jedne z najstarszych w Europie kopalni siarki działające od XV wieku.",
+      "tags": [
+        "industrial",
+        "history",
+        "heritage",
+        "walking",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_kurdwanow_park",
+      "districtId": 11,
+      "name": "Park Kurdwanów z Tężnią Solankową",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0118,
+      "lng": 19.9542,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 24, 50 do Kurdwanowa",
+        "timeMinutes": 21
+      },
+      "description": "Zrewitalizowany park miejski z drewnianą tężnią solankową, boiskami, amfiteatrem i trasami rolkowymi.",
+      "tags": [
+        "park",
+        "spa",
+        "health",
+        "active",
+        "green",
+        "family",
+        "relax"
+      ]
+    },
+    {
+      "id": "att_drwinka_park",
+      "districtId": 11,
+      "name": "Park Rzeczny Drwinka – Korytarz Ekologiczny",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0185,
+      "lng": 19.9682,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 24, 50",
+        "timeMinutes": 20
+      },
+      "description": "Dzikie uroczysko leśno-łąkowe w dolinie rzeki Drwinki z drewnianymi pomostami edukacyjnymi i unikalną fauną nadrzeczną.",
+      "tags": [
+        "nature",
+        "river",
+        "forest",
+        "birds",
+        "calm",
+        "green",
+        "walking"
+      ]
+    },
+    {
+      "id": "att_wola_duchacka_dwor",
+      "districtId": 11,
+      "name": "Zespół Dworsko-Parkowy na Woli Duchackiej",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0195,
+      "lng": 19.9555,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 164, 174",
+        "timeMinutes": 18
+      },
+      "description": "Zabytkowy park podworski ze stawem i wiekowymi dębami szypułkowymi, dawna posiadłość duchaków krakowskich.",
+      "tags": [
+        "manor",
+        "park",
+        "heritage",
+        "history",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_fort_barycz",
+      "districtId": 11,
+      "name": "Fort 50 ½ Barycz i Szlak Południowy",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0035,
+      "lng": 19.9855,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 133, 204",
+        "timeMinutes": 27
+      },
+      "description": "Częściowo zachowany fort międzypolowy obrony południowej Twierdzy Kraków z panoramicznym widokiem na Wieliczkę.",
+      "tags": [
+        "fortress",
+        "history",
+        "viewpoint",
+        "austrian_heritage"
+      ]
+    },
+    {
+      "id": "att_dolina_wilgi_duchackie",
+      "districtId": 11,
+      "name": "Dolina Wilgi – Zielony Szlak Duchacki",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0145,
+      "lng": 19.9482,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 24, 50",
+        "timeMinutes": 19
+      },
+      "description": "Malownicza trasa nadrzeczna z wydzieloną ścieżką rowerowo-biegową, łącząca Podgórze Duchackie z Łagiewnikami.",
+      "tags": [
+        "cycling",
+        "active",
+        "river",
+        "nature",
+        "green"
+      ]
+    },
+    {
+      "id": "att_kosciol_zmartwychwstancow",
+      "districtId": 11,
+      "name": "Sanktuarium Zmartwychwstańców na Woli Duchackiej",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0215,
+      "lng": 19.9612,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 24, 50",
+        "timeMinutes": 17
+      },
+      "description": "Nowoczesna świątynia z unikalną ekspresyjną architekturą sakralną oraz parkiem pamięci lokalnej.",
+      "tags": [
+        "church",
+        "architecture",
+        "modernism",
+        "history"
+      ]
+    },
+    {
+      "id": "att_park_jerzmanowskich",
+      "districtId": 12,
+      "name": "Zabytkowy Park Anny i Erazma Jerzmanowskich",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0165,
+      "lng": 20.0078,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 9, 13 do Prokocimia",
+        "timeMinutes": 20
+      },
+      "description": "Perła architektury krajobrazu z neorenesansowym pałacem, pomnikowymi platanami i słynną fontanną prof. Wiktora Zina.",
+      "tags": [
+        "palace",
+        "park",
+        "heritage",
+        "hidden_gem",
+        "green",
+        "nature",
+        "history"
+      ]
+    },
+    {
+      "id": "att_dwor_czeczow",
+      "districtId": 12,
+      "name": "Dwór Czeczów w Bieżanowie",
+      "category": "CULTURE_ART",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0125,
+      "lng": 20.0385,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Pociąg SKA1 do stacji Kraków Bieżanów (11 min) lub Tramwaj 9, 13",
+        "timeMinutes": 18
+      },
+      "description": "Eklektyczny dwór szlachecki rodu Czeczów z XIX w. tętniący życiem kulturalnym, koncertami i warsztatami artystycznymi.",
+      "tags": [
+        "manor",
+        "culture",
+        "art",
+        "heritage",
+        "history",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_fort_prokocim",
+      "districtId": 12,
+      "name": "Fort pancerny 50 „Prokocim”",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0195,
+      "lng": 20.0145,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 9, 13",
+        "timeMinutes": 21
+      },
+      "description": "Pancerny fort artyleryjski z 1895 r. wznoszący się w otoczeniu starych drzew na wzgórzu prokaryckim.",
+      "tags": [
+        "fortress",
+        "history",
+        "austrian_heritage",
+        "military",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_park_aleksandry",
+      "districtId": 12,
+      "name": "Park Aleksandry i Dolina Rzeki Serafy",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0105,
+      "lng": 20.0125,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 9, 13",
+        "timeMinutes": 22
+      },
+      "description": "Zróżnicowany przyrodniczo park nadrzeczny ze strefami rekreacji, ścieżkami dydaktycznymi i ostoją płazów.",
+      "tags": [
+        "park",
+        "nature",
+        "green",
+        "river",
+        "walking"
+      ]
+    },
+    {
+      "id": "att_kosciol_biezanow",
+      "districtId": 12,
+      "name": "Gotycki Kościół Narodzenia NMP w Bieżanowie (1422 r.)",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0098,
+      "lng": 20.0415,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Kolej SKA1 lub Autobus 133",
+        "timeMinutes": 20
+      },
+      "description": "Średniowieczny ceglano-kamienny kościół ufundowany ponad 600 lat temu, z unikatowym gotyckim portalem i polichromią.",
+      "tags": [
+        "church",
+        "heritage",
+        "history",
+        "monument",
+        "medieval"
+      ]
+    },
+    {
+      "id": "att_wzgorze_kaim",
+      "districtId": 12,
+      "name": "Wzgórze Kaim i Obelisk Pamiątkowy z 1914 r.",
+      "category": "VIEWPOINT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0042,
+      "lng": 20.0575,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Kolej SKA1 do stacji Kraków Bieżanów Drożdżownia",
+        "timeMinutes": 24
+      },
+      "description": "Miejsce najdalszego natarcia wojsk carskich w grudniu 1914 r. z monumentalnym obeliskiem i panoramą Bramy Krakowskiej.",
+      "tags": [
+        "viewpoint",
+        "monument",
+        "history",
+        "military",
+        "panorama"
+      ]
+    },
+    {
+      "id": "att_kopiec_krakusa",
+      "districtId": 13,
+      "name": "Kopiec Krakusa i Kamieniołom Liban",
+      "category": "VIEWPOINT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0381,
+      "lng": 19.9585,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 24 do Powstańców Wielkopolskich",
+        "timeMinutes": 16
+      },
+      "description": "Tajemniczy prehistoryczny kopiec z VIII w. oferujący najpiękniejszą, 360-stopniową panoramę historycznego Krakowa i Wawelu.",
+      "tags": [
+        "viewpoint",
+        "panorama",
+        "prehistory",
+        "sunset",
+        "heritage",
+        "nature",
+        "legend"
+      ]
+    },
+    {
+      "id": "att_schindler_mocak",
+      "districtId": 13,
+      "name": "Zabłocie – Fabryka Emalia Oskara Schindlera i MOCAK",
+      "category": "CULTURE_ART",
+      "crowdLevel": "PEAK",
+      "lat": 50.0474,
+      "lng": 19.9618,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 50 do Placu Bohaterów Getta lub SKA Zabłocie",
+        "timeMinutes": 11
+      },
+      "description": "Słynne muzeum czasu okupacji w fabryce Schindlera oraz Muzeum Sztuki Współczesnej MOCAK w industrialnych halach.",
+      "tags": [
+        "museum",
+        "history",
+        "ww2",
+        "contemporary_art",
+        "art",
+        "culture",
+        "industrial"
+      ]
+    },
+    {
+      "id": "att_park_bednarskiego",
+      "districtId": 13,
+      "name": "Park im. Wojciecha Bednarskiego i Rynek Podgórski",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0438,
+      "lng": 19.9515,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 10, 24",
+        "timeMinutes": 14
+      },
+      "description": "Unikatowy park krajobrazowy urządzony w wyrobisku dawnego kamieniołomu z neogotyckim kościołem św. Józefa.",
+      "tags": [
+        "park",
+        "calm",
+        "neogothic",
+        "romantic",
+        "green",
+        "nature",
+        "heritage"
+      ]
+    },
+    {
+      "id": "att_cricoteka",
+      "districtId": 13,
+      "name": "Cricoteka – Ośrodek Dokumentacji Sztuki Tadeusza Kantora",
+      "category": "CULTURE_ART",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0478,
+      "lng": 19.9535,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 24",
+        "timeMinutes": 12
+      },
+      "description": "Niezwykły architektonicznie budynek w formie rzeźbiarskiego mostu nad dawną elektrownią podgórską nad Wisłą.",
+      "tags": [
+        "architecture",
+        "kantor",
+        "theatre",
+        "vistula",
+        "art",
+        "modernism"
+      ]
+    },
+    {
+      "id": "att_fort_benedykt",
+      "districtId": 13,
+      "name": "Fort 31 św. Benedykt i Kościółek św. Benedykta",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0428,
+      "lng": 19.9575,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 24",
+        "timeMinutes": 15
+      },
+      "description": "Jedyna zachowana w Europie wieża maksymiliańska (1853 r.) oraz najmniejszy kościółek Krakowa pochodzący z X wieku.",
+      "tags": [
+        "fortress",
+        "history",
+        "heritage",
+        "monument",
+        "medieval",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_kladka_bernatka_podgorze",
+      "districtId": 13,
+      "name": "Kładka Ojca Bernatka i Bulwar Podolski",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "HIGH",
+      "lat": 50.0495,
+      "lng": 19.9465,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 3, 24",
+        "timeMinutes": 12
+      },
+      "description": "Podwieszana kładka z rzeźbami balansującymi Jerzego Kędziory, łącząca Kazimierz z kawiarniami i traktami Starego Podgórza.",
+      "tags": [
+        "vistula",
+        "art",
+        "sculpture",
+        "walking",
+        "cycling",
+        "boho",
+        "romantic"
+      ]
+    },
+    {
+      "id": "att_muzeum_lotnictwa",
+      "districtId": 14,
+      "name": "Muzeum Lotnictwa Polskiego i Dawne Lotnisko",
+      "category": "CULTURE_ART",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0778,
+      "lng": 19.9912,
+      "estimatedVisitMinutes": 60,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 5, 9, 52 do Muzeum Lotnictwa",
+        "timeMinutes": 15
+      },
+      "description": "Jedno z największych muzeów lotnictwa na świecie na historycznym lotnisku Rakowice-Czyżyny, z 200 samolotami i śmigłowcami.",
+      "tags": [
+        "aviation",
+        "museum",
+        "history",
+        "family",
+        "culture",
+        "industrial",
+        "heritage"
+      ]
+    },
+    {
+      "id": "att_park_lotnikow",
+      "districtId": 14,
+      "name": "Park Lotników Polskich (60 ha)",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0682,
+      "lng": 19.9982,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 52 do Parku Lotników",
+        "timeMinutes": 16
+      },
+      "description": "Drugi największy park miejski w Krakowie z alejami dębowymi, jeziorkiem, tężnią solankową i trasami rowerowymi.",
+      "tags": [
+        "park",
+        "nature",
+        "green",
+        "active",
+        "family",
+        "walking",
+        "cycling",
+        "relax"
+      ]
+    },
+    {
+      "id": "att_ogrod_doswiadczen",
+      "districtId": 14,
+      "name": "Ogród Doświadczeń im. Stanisława Lema",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0665,
+      "lng": 20.0035,
+      "estimatedVisitMinutes": 40,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 52 do Tauron Arena Kraków",
+        "timeMinutes": 17
+      },
+      "description": "Pierwszy w Polsce plenerowy park edukacji sensorycznej z ponad 100 interaktywnymi urządzeniami fizycznymi w zieleni.",
+      "tags": [
+        "lem",
+        "science",
+        "family",
+        "active",
+        "park",
+        "sport"
+      ]
+    },
+    {
+      "id": "att_fort_dlubnia",
+      "districtId": 14,
+      "name": "Fort 49a Dłubnia i Polana Forteczna",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0885,
+      "lng": 20.0125,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 9, 52",
+        "timeMinutes": 20
+      },
+      "description": "Pancerny fort obrony bliskiej górujący nad doliną rzeki Dłubni, otoczony malowniczą fosą i wiekowymi kasztanowcami.",
+      "tags": [
+        "fortress",
+        "history",
+        "austrian_heritage",
+        "nature",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_kosciol_judy_tadeusza",
+      "districtId": 14,
+      "name": "Zabytkowy Kościół św. Judy Tadeusza w Czyżynach",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0715,
+      "lng": 20.0095,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 52",
+        "timeMinutes": 18
+      },
+      "description": "Świątynia z 1936 r. zaprojektowana przez Franciszka Mączyńskiego, łącząca formy modernizmu i tradycyjnej architektury sakralnej.",
+      "tags": [
+        "church",
+        "architecture",
+        "history",
+        "modernism",
+        "heritage"
+      ]
+    },
+    {
+      "id": "att_hangar_czyzyny",
+      "districtId": 14,
+      "name": "Zabytkowy Hangar Główny Lotniska Rakowice",
+      "category": "CULTURE_ART",
+      "crowdLevel": "LOW",
+      "lat": 50.0795,
+      "lng": 19.9945,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 9",
+        "timeMinutes": 16
+      },
+      "description": "Unikatowa konstrukcja stalowa hangaru z 1929 r. autorstwa Izydora Stella-Sawickiego – majstersztyw inżynierii II RP.",
+      "tags": [
+        "industrial",
+        "architecture",
+        "aviation",
+        "heritage",
+        "history"
+      ]
+    },
+    {
+      "id": "att_fort_batowice",
+      "districtId": 15,
+      "name": "Fort pancerny 48 „Batowice” i Park Tysiąclecia",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0988,
+      "lng": 19.9965,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 14, 16 lub Autobus 182",
+        "timeMinutes": 22
+      },
+      "description": "Doskonale zachowany pancerny fort zewnętrznego pierścienia Twierdzy Kraków wkomponowany w zielony park miejski.",
+      "tags": [
+        "fortress",
+        "austrian_heritage",
+        "park",
+        "history",
+        "heritage",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_park_tysiaclecia_mistrzejowice",
+      "districtId": 15,
+      "name": "Park Tysiąclecia ze Strefą Rekreacji",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0945,
+      "lng": 19.9985,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 14, 16",
+        "timeMinutes": 21
+      },
+      "description": "Rozległy park ze strefą skateparku, wybiegami dla psów, alejami spacerowymi i plenerową siłownią.",
+      "tags": [
+        "park",
+        "green",
+        "nature",
+        "family",
+        "active",
+        "sport"
+      ]
+    },
+    {
+      "id": "att_planty_mistrzejowickie",
+      "districtId": 15,
+      "name": "Planty Mistrzejowickie i Ogród Sensoryczny",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0995,
+      "lng": 20.0125,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 9, 14 do Mistrzejowic",
+        "timeMinutes": 23
+      },
+      "description": "Zielona wstęga ogrodów spacerowych biegnąca wzdłuż osiedli mistrzejowickich z kaskadami zieleni i tężnią.",
+      "tags": [
+        "park",
+        "nature",
+        "green",
+        "relax",
+        "walking"
+      ]
+    },
+    {
+      "id": "att_kosciol_kolbe_mistrzejowice",
+      "districtId": 15,
+      "name": "Kościół św. Maksymiliana Kolbego w Mistrzejowicach",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0968,
+      "lng": 20.0075,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 9, 14",
+        "timeMinutes": 22
+      },
+      "description": "Kościół-symbol konsekrowany przez papieża Jana Pawła II w 1983 r., bastion wolności robotniczej lat 80.",
+      "tags": [
+        "church",
+        "history",
+        "solidarnosc",
+        "modernism",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_fort_mistrzejowice",
+      "districtId": 15,
+      "name": "Fort pancerny 48a Mistrzejowice",
+      "category": "VIEWPOINT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.1045,
+      "lng": 20.0085,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 9, 14 + spacer",
+        "timeMinutes": 26
+      },
+      "description": "Mniejszy fort pancerny położony na wzgórzu z panoramicznym widokiem na pasmo północnych wzgórz Krakowa.",
+      "tags": [
+        "fortress",
+        "viewpoint",
+        "panorama",
+        "history",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_dolina_dlubni_mistrzejowice",
+      "districtId": 15,
+      "name": "Ścieżka Przyrodnicza Doliny Dłubni w Mistrzejowicach",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0925,
+      "lng": 20.0195,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 9, 14, 16",
+        "timeMinutes": 24
+      },
+      "description": "Malowniczy szlak nadrzeczny biegnący meandrami czystej rzeki Dłubni, ostoja bobrów i ptactwa wodnego.",
+      "tags": [
+        "river",
+        "nature",
+        "walking",
+        "cycling",
+        "active",
+        "birds"
+      ]
+    },
+    {
+      "id": "att_arka_pana",
+      "districtId": 16,
+      "name": "Kościół Arka Pana (Matki Bożej Królowej Polski)",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0825,
+      "lng": 20.0275,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 14, 52 do DH Wanda",
+        "timeMinutes": 21
+      },
+      "description": "Światowy pomnik walki o wiarę i wolność w PRL; awangardowa architektura w kształcie arki wyłożona milionami kamieni rzecznych.",
+      "tags": [
+        "modernism",
+        "history",
+        "solidarnosc",
+        "architecture",
+        "church",
+        "monument",
+        "icon"
+      ]
+    },
+    {
+      "id": "att_planty_bienczyckie",
+      "districtId": 16,
+      "name": "Planty Bieńczyckie z Promenadą Lipową",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0845,
+      "lng": 20.0345,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 14, 52",
+        "timeMinutes": 22
+      },
+      "description": "Szeroki zielony pas parkowy przecinający dzielnicę z aleją zabytkowych lip, placami zabaw i ścieżkami rowerowymi.",
+      "tags": [
+        "park",
+        "green",
+        "nature",
+        "walking",
+        "calm",
+        "family"
+      ]
+    },
+    {
+      "id": "att_staw_bienczycki",
+      "districtId": 16,
+      "name": "Staw Bieńczycki i Przystań Rekreacyjna",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0812,
+      "lng": 20.0215,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 14, 52",
+        "timeMinutes": 20
+      },
+      "description": "Rewitalizowany akwen wodny z drewnianym molo, strefą leżaków, trasą wokół stawu i stanowiskami ornitologicznymi.",
+      "tags": [
+        "nature",
+        "water",
+        "sport",
+        "active",
+        "calm",
+        "relax"
+      ]
+    },
+    {
+      "id": "att_teatr_ludowy_stolarnia",
+      "districtId": 16,
+      "name": "Teatr Ludowy – Scena Stolarnia i Pamięć Robotnicza",
+      "category": "CULTURE_ART",
+      "crowdLevel": "LOW",
+      "lat": 50.0805,
+      "lng": 20.0375,
+      "estimatedVisitMinutes": 45,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 14, 52",
+        "timeMinutes": 23
+      },
+      "description": "Eksperymentalna scena Teatru Ludowego mieszcząca się w oryginalnych zabytkowych warsztatach stolarskich budowniczych Nowej Huty.",
+      "tags": [
+        "theatre",
+        "art",
+        "culture",
+        "industrial",
+        "history"
+      ]
+    },
+    {
+      "id": "att_dwor_bienczyce",
+      "districtId": 16,
+      "name": "Zabytkowy Dwór w Bieńczycach nad Dłubnią",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0862,
+      "lng": 20.0295,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 14, 52",
+        "timeMinutes": 22
+      },
+      "description": "Pozostałości dawnego szlacheckiego zespołu dworskiego z początków XX wieku malowniczo otoczone zakolem rzeki Dłubni.",
+      "tags": [
+        "manor",
+        "heritage",
+        "history",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_park_szwedzki_bienczyce",
+      "districtId": 16,
+      "name": "Park Szwedzki i Błonia Bieńczyckie",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0785,
+      "lng": 20.0285,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 14, 52",
+        "timeMinutes": 20
+      },
+      "description": "Ustronny zielony park osiedlowy ze strefą plenerowej kalisteniki, stołami szachowymi i zacisznymi alejkami.",
+      "tags": [
+        "park",
+        "nature",
+        "green",
+        "calm",
+        "relax"
+      ]
+    },
+    {
+      "id": "att_dworek_matejki",
+      "districtId": 17,
+      "name": "Dworek Jana Matejki w Krzesławicach",
+      "category": "CULTURE_ART",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0882,
+      "lng": 20.0825,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4 do Wzgórz Krzesławickich + spacer",
+        "timeMinutes": 28
+      },
+      "description": "Zabytkowy modrzewiowy dworek kupiony przez Jana Matejkę w 1876 r., w którym malarz stworzył słynny cykl 'Dzieje cywilizacji w Polsce'.",
+      "tags": [
+        "matejko",
+        "art",
+        "park",
+        "hidden_gem",
+        "culture",
+        "heritage",
+        "history",
+        "manor"
+      ]
+    },
+    {
+      "id": "att_drewniany_kosciol_krzeslawice",
+      "districtId": 17,
+      "name": "Drewniany Kościół św. Jana Chrzciciela (XV w.)",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0875,
+      "lng": 20.0815,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4 do Wzgórz Krzesławickich",
+        "timeMinutes": 28
+      },
+      "description": "Cenny zabytek Szlaku Architektury Drewnianej z 1426 r. z zachowanym gontowym dachem, rokokowym ołtarzem i dzwonnicą.",
+      "tags": [
+        "church",
+        "heritage",
+        "wooden_architecture",
+        "history",
+        "medieval",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_fort_krzeslawice",
+      "districtId": 17,
+      "name": "Fort 49 Krzesławice i Miejsce Pamięci Narodowej",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0935,
+      "lng": 20.0765,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4 do Wzgórz Krzesławickich",
+        "timeMinutes": 26
+      },
+      "description": "Austriacki fort artyleryjski z 1886 r. zaadaptowany na Młodzieżowy Dom Kultury i uświęcone krwią miejsce pamięci narodowej.",
+      "tags": [
+        "fortress",
+        "history",
+        "military",
+        "austrian_heritage",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_zalew_zeslawice",
+      "districtId": 17,
+      "name": "Zalew Zesławice i Ostoja Ptactwa na Dłubni",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0985,
+      "lng": 20.0655,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Autobus 122, 422 ze Wzgórz Krzesławickich",
+        "timeMinutes": 30
+      },
+      "description": "Dwa zbiorniki retencyjne na rzece Dłubni otoczone dziką roślinnością szuwarową, doskonałe na spokojny spacer ornitologiczny.",
+      "tags": [
+        "nature",
+        "birds",
+        "water",
+        "green",
+        "calm",
+        "relax"
+      ]
+    },
+    {
+      "id": "att_punkt_widokowy_wzgorza",
+      "districtId": 17,
+      "name": "Punkt Widokowy na Wzgórzach Krzesławickich",
+      "category": "VIEWPOINT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0955,
+      "lng": 20.0895,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, Autobus 142",
+        "timeMinutes": 30
+      },
+      "description": "Jeden z najwyższych punktów wschodniego Krakowa z rozległą panoramą kombinatu nowohuckiego, doliny Wisły i pasma Beskidu Wyspowego.",
+      "tags": [
+        "viewpoint",
+        "panorama",
+        "nature",
+        "hidden_gem"
+      ]
+    },
+    {
+      "id": "att_mlyn_krzeslawice",
+      "districtId": 17,
+      "name": "Zabytkowy Młyn na Dłubni w Krzesławicach",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0892,
+      "lng": 20.0785,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4",
+        "timeMinutes": 27
+      },
+      "description": "Historyczny drewniano-murowany młyn wodny z przełomu XIX i XX wieku dokumentujący tradycje techniki rolniczej podkrakowskich wsi.",
+      "tags": [
+        "industrial",
+        "heritage",
+        "history",
+        "hidden_gem",
+        "river"
+      ]
+    },
+    {
+      "id": "att_plac_centralny",
+      "districtId": 18,
+      "name": "Plac Centralny i Aleja Róż – Perła Socrealizmu",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0718,
+      "lng": 20.0375,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 52 do Placu Centralnego",
+        "timeMinutes": 22
+      },
+      "description": "Unikatowy w skali świata, monumentalny układ urbanistyczny 'miasta idealnego' socrealizmu z szerokimi osiami i zieloną Aleją Róż.",
+      "tags": [
+        "socrealism",
+        "architecture",
+        "urbanism",
+        "icon",
+        "heritage",
+        "history",
+        "monument"
+      ]
+    },
+    {
+      "id": "att_nck_galeria_beksinskiego",
+      "districtId": 18,
+      "name": "Nowohuckie Centrum Kultury i Galeria Beksińskiego",
+      "category": "CULTURE_ART",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0688,
+      "lng": 20.0345,
+      "estimatedVisitMinutes": 45,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 52 do Placu Centralnego",
+        "timeMinutes": 21
+      },
+      "description": "Kultowy ośrodek kultury ze stałą autorską kolekcją 250 dzieł Zdzisława Beksińskiego oraz wystawami Jerzego Dudy-Gracza.",
+      "tags": [
+        "art",
+        "beksinski",
+        "gallery",
+        "culture",
+        "museum"
+      ]
+    },
+    {
+      "id": "att_laki_nowohuckie",
+      "districtId": 18,
+      "name": "Użytek Ekologiczny Łąki Nowohuckie",
+      "category": "GREEN_NATURE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0642,
+      "lng": 20.0425,
+      "estimatedVisitMinutes": 35,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 52",
+        "timeMinutes": 24
+      },
+      "description": "Prawie 60 hektarów dzikich łąk torfowiskowych w dolinie Wisły z 370 gatunkami roślin, ostoją derkacza i pomostami edukacyjnymi.",
+      "tags": [
+        "nature",
+        "birds",
+        "wetlands",
+        "calm",
+        "green",
+        "walking",
+        "park"
+      ]
+    },
+    {
+      "id": "att_kopiec_wandy",
+      "districtId": 18,
+      "name": "Kopiec Wandy i Klasztor Cystersów w Mogile",
+      "category": "VIEWPOINT",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0705,
+      "lng": 20.0682,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 21, 22 do Kopca Wandy",
+        "timeMinutes": 32
+      },
+      "description": "Mogiła legendarnej córki Kraka (VIII w.) z rzeźbą orła projektu Jana Matejki oraz XIII-wieczne opactwo cysterskie w Mogile.",
+      "tags": [
+        "legends",
+        "cistercians",
+        "prehistory",
+        "viewpoint",
+        "heritage",
+        "monastery",
+        "church"
+      ]
+    },
+    {
+      "id": "att_zalew_nowohucki",
+      "districtId": 18,
+      "name": "Zalew Nowohucki z Tężnią Solankową i Plażą",
+      "category": "ACTIVE_SPORT",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0815,
+      "lng": 20.0442,
+      "estimatedVisitMinutes": 25,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 52 lub Autobus 139",
+        "timeMinutes": 24
+      },
+      "description": "Popularny zbiornik rekreacyjny z tężnią solankową, piaszczystą plażą, drewnianym molo, wyspą małp i wypożyczalnią kajaków.",
+      "tags": [
+        "water",
+        "active",
+        "spa",
+        "health",
+        "park",
+        "family",
+        "sport",
+        "green"
+      ]
+    },
+    {
+      "id": "att_schrony_nowa_huta",
+      "districtId": 18,
+      "name": "Podziemna Nowa Huta – Trasa Schronów Zimnej Wojny",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "MODERATE",
+      "lat": 50.0735,
+      "lng": 20.0385,
+      "estimatedVisitMinutes": 30,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 52 do Placu Centralnego",
+        "timeMinutes": 23
+      },
+      "description": "Fascynująca sieć ponad 250 przeciwatomowych schronów pod blokami mieszkalnymi i szpitalem Żeromskiego z czasów Zimnej Wojny.",
+      "tags": [
+        "history",
+        "military",
+        "cold_war",
+        "socrealism",
+        "hidden_gem",
+        "museum"
+      ]
+    },
+    {
+      "id": "att_drewniany_bartlomiej_mogila",
+      "districtId": 18,
+      "name": "Drewniany Kościół św. Bartłomieja w Mogile (1466 r.)",
+      "category": "HISTORIC_HERITAGE",
+      "crowdLevel": "PEACEFUL",
+      "lat": 50.0638,
+      "lng": 20.0525,
+      "estimatedVisitMinutes": 20,
+      "isUnesco": false,
+      "directTransitFromMainStation": {
+        "line": "Tramwaj 4, 10 do Klasztoru Cystersów",
+        "timeMinutes": 28
+      },
+      "description": "Jeden z najcenniejszych drewnianych kościołów w Polsce o konstrukcji zrębowej, wzniesiony przez królewskiego cieślę Macieja Mączkę.",
+      "tags": [
+        "church",
+        "wooden_architecture",
+        "heritage",
+        "history",
+        "medieval",
+        "hidden_gem"
+      ]
+    }
+  ],
+  "overtourismAlternatives": [
+    {
+      "id": "alt_wawel_vs_krakus",
+      "crowdedAttractionId": "att_wawel",
+      "crowdedName": "Wzgórze Wawelskie i Zamek",
+      "crowdedCrowdLevel": "PEAK",
+      "peacefulAttractionId": "att_kopiec_krakusa",
+      "peacefulName": "Kopiec Krakusa (Podgórze)",
+      "peacefulCrowdLevel": "PEACEFUL",
+      "reasonPl": "Zamiast wielotysięcznych tłumów na dziedzińcu wawelskim odkryj najstarszy kopiec Krakowa z 360-stopniową panoramą Starego Miasta, Wawelu i pasm Beskidów o zachodzie słońca.",
+      "reasonEn": "Skip crowded castle courtyards for Krakow oldest prehistoric mound offering 360-degree vistas of the skyline and mountains.",
+      "reasonUa": "Замість натовпів на Вавелі відкрийте найстаріший курган Кракова з панорамою 360 градусів на Старе Місто та гори."
+    },
+    {
+      "id": "alt_rynek_vs_plac_centralny",
+      "crowdedAttractionId": "att_sukiennice",
+      "crowdedName": "Rynek Główny i Sukiennice",
+      "crowdedCrowdLevel": "PEAK",
+      "peacefulAttractionId": "att_plac_centralny",
+      "peacefulName": "Plac Centralny i Aleja Róż (Nowa Huta)",
+      "peacefulCrowdLevel": "PEACEFUL",
+      "reasonPl": "Zamiast zatłoczonych kawiarni Rynku przeżyj spacer monumentalnymi osiami renesansowo-socrealistycznego miasta idealnego Nowej Huty bez pośpiechu i hałasu.",
+      "reasonEn": "Swap crowded Main Square cafes for the monumental architectural axes of Nowa Huta utopian city.",
+      "reasonUa": "Замість метушні Головного Ринку насолодіться монументальною архітектурою Нової Гути."
+    },
+    {
+      "id": "alt_kazimierz_vs_bednarski",
+      "crowdedAttractionId": "att_kazimierz_szeroka",
+      "crowdedName": "Ulica Szeroka i Kazimierz",
+      "crowdedCrowdLevel": "PEAK",
+      "peacefulAttractionId": "att_park_bednarskiego",
+      "peacefulName": "Park Bednarskiego i Stare Podgórze",
+      "peacefulCrowdLevel": "PEACEFUL",
+      "reasonPl": "Przejdź kładką Bernatką na prawy brzeg Wisły: romantyczny park w dawnym kamieniołomie wapiennym i zabytkowy Rynek Podgórski z klimatycznymi kawiarniami z dala od hałasu barowego.",
+      "reasonEn": "Cross Bernatka bridge into quiet romantic Podgorze, its historic limestone quarry park and scenic cafes.",
+      "reasonUa": "Перейдіть через міст Бернатка до романтичного Парку Беднарського в колишньому кар’єрі та затишних кав’ярень."
+    },
+    {
+      "id": "alt_planty_vs_lasek_wolski",
+      "crowdedAttractionId": "att_planty",
+      "crowdedName": "Droga Królewska i Planty wokół Rynku",
+      "crowdedCrowdLevel": "VERY_HIGH",
+      "peacefulAttractionId": "att_lasek_wolski",
+      "peacefulName": "Las Wolski i Kopiec Piłsudskiego",
+      "peacefulCrowdLevel": "PEACEFUL",
+      "reasonPl": "Zamiast miejskiego zgiełku wokół Rynku wybierz 400 hektarów prawdziwego lasu miejskiego z wąwozami jurajskimi, śpiewem ptaków i widokiem na Tatry.",
+      "reasonEn": "Trade crowded city centre paths for 400 hectares of serene woodland gorges and Pilsudski Mound panoramic summit.",
+      "reasonUa": "Замість метушні центру оберіть 400 гектарів лісу з ярами та панорамою Татр із Кургану Пілсудського."
+    },
+    {
+      "id": "alt_schindler_vs_matejko",
+      "crowdedAttractionId": "att_schindler_mocak",
+      "crowdedName": "Fabryka Schindlera (Zabłocie)",
+      "crowdedCrowdLevel": "PEAK",
+      "peacefulAttractionId": "att_dworek_matejki",
+      "peacefulName": "Dworek Jana Matejki (Krzesławice)",
+      "peacefulCrowdLevel": "PEACEFUL",
+      "reasonPl": "Zamiast stania w długich kolejkach po bilety na Zabłociu, odwiedź ustronny modrzewiowy dworek polskiego mistrza malarstwa z cichym parkiem krajobrazowym nad rzeką Dłubnią.",
+      "reasonEn": "Skip ticket lines at Schindler Factory to discover Polish master painter timber manor house and riverside park.",
+      "reasonUa": "Замість черг на Заблоці відвідайте садибу Яна Матейка з тихим парком біля річки Длубня."
+    }
+  ],
+  "thematicItineraries": [
+    {
+      "id": "itin_royal_classics",
+      "titlePl": "Królewski Szlak UNESCO & Złoty Wiek",
+      "titleEn": "Royal UNESCO Trail & Golden Age",
+      "titleUa": "Королівський шлях ЮНЕСКО та Золотий вік",
+      "vibe": "CLASSIC_HERITAGE",
+      "durationHours": 4,
+      "totalDistanceKm": 3.8,
+      "stopIds": [
+        "att_sukiennice",
+        "att_planty",
+        "att_wawel",
+        "att_kazimierz_szeroka"
+      ],
+      "summaryPl": "Najważniejsze perły światowego dziedzictwa UNESCO: od Barbakanu i Rynku przez Zamek Królewski aż po serce Kazimierza.",
+      "summaryEn": "The essential UNESCO World Heritage icons: from Barbican and Main Square through Wawel Castle to the heart of Kazimierz.",
+      "summaryUa": "Головні шедеври світової спадщини ЮНЕСКО: від Барбакана та Ринку через Вавельський замок до серця Казімєжа.",
+      "suitableFor": [
+        "Pierwszy raz w Krakowie",
+        "Miłośnicy historii",
+        "Turyści weekendowi"
+      ]
+    },
+    {
+      "id": "itin_green_escape",
+      "titlePl": "Zielona Ucieczka & Punkty Widokowe",
+      "titleEn": "Green Escape & Panoramic Viewpoints",
+      "titleUa": "Зелений відпочинок та панорамні вершини",
+      "vibe": "NATURE_AND_VIEWS",
+      "durationHours": 5,
+      "totalDistanceKm": 6.4,
+      "stopIds": [
+        "att_kopiec_kosciuszki",
+        "att_lasek_wolski",
+        "att_zakrzowek",
+        "att_kopiec_krakusa"
+      ],
+      "summaryPl": "Spacer ponad dachami miasta: najsłynniejsze kopce, szlaki Lasku Wolskiego oraz lazurowy Zakrzówek.",
+      "summaryEn": "Walk above the city rooftops: historic mounds, lush forest trails, and turquoise waters of Zakrzowek.",
+      "summaryUa": "Прогулянка над дахами міста: найвідоміші кургани, стежки Вольського лісу та бірюзовий Закшувек.",
+      "suitableFor": [
+        "Rowerzyści",
+        "Spacerowicze",
+        "Miłośnicy natury i panoram"
+      ]
+    },
+    {
+      "id": "itin_modernism_prl",
+      "titlePl": "Nowa Huta: Architektura & Miasto Idealne",
+      "titleEn": "Nowa Huta: Modernism & The Ideal City",
+      "titleUa": "Нова Гута: Модернізм та Ідеальне місто",
+      "vibe": "INDUSTRIAL_AND_MODERN",
+      "durationHours": 4,
+      "totalDistanceKm": 4.2,
+      "stopIds": [
+        "att_plac_centralny",
+        "att_nck_galeria_beksinskiego",
+        "att_laki_nowohuckie",
+        "att_arka_pana"
+      ],
+      "summaryPl": "Fascynująca podróż w czasie: monumentalny socrealizm, galeria Beksińskiego, dzikie łąki torfowiskowe i symboliczna Arka Pana.",
+      "summaryEn": "A fascinating journey through time: monumental socialist realism, Beksinski art gallery, and quiet nature reserves.",
+      "summaryUa": "Захоплююча мандрівка в часі: монументальний соцреалізм, галерея Бексінського, природні торфовища та Арка Господня.",
+      "suitableFor": [
+        "Fani architektury",
+        "Odkrywcy XX wieku",
+        "Fotografowie"
+      ]
+    },
+    {
+      "id": "itin_boho_art",
+      "titlePl": "Sztuka, Bohema & Zaułki Nadwiślańskie",
+      "titleEn": "Bohemian Art & Riverside Quarters",
+      "titleUa": "Мистецтво, богема та надвіслянські квартали",
+      "vibe": "ART_AND_BOHO",
+      "durationHours": 3,
+      "totalDistanceKm": 3.2,
+      "stopIds": [
+        "att_manggha",
+        "att_cricoteka",
+        "att_schindler_mocak",
+        "att_park_bednarskiego"
+      ],
+      "summaryPl": "Najciekawsza współczesna architektura i galerie Krakowa wzdłuż obu brzegów Wisły.",
+      "summaryEn": "Cutting-edge contemporary architecture, Kantor's avant-garde, and Schindler's factory along the Vistula riverbanks.",
+      "summaryUa": "Сучасна архітектура, авангардне мистецтво та музейні квартали вздовж мальовничих берегів Вісли.",
+      "suitableFor": [
+        "Młodzi dorośli",
+        "Miłośnicy sztuki współczesnej",
+        "Klimat kawiarniany"
+      ]
+    },
+    {
+      "id": "itin_relaxed_family",
+      "titlePl": "Spokojny Dzień: Parki & Odkrycia",
+      "titleEn": "Relaxed Family & Nature Explorers",
+      "titleUa": "Спокійний сімейний день: Парки та відкриття",
+      "vibe": "FAMILY_AND_RELAX",
+      "durationHours": 4,
+      "totalDistanceKm": 4.5,
+      "stopIds": [
+        "att_botaniczny",
+        "att_park_jordana",
+        "att_park_lotnikow",
+        "att_muzeum_lotnictwa"
+      ],
+      "summaryPl": "Relaksująca trasa pełna zieleni, eksperymentów Lema i zabytkowych samolotów bez miejskiego pośpiechu.",
+      "summaryEn": "A relaxed itinerary packed with botanical gardens, open parklands, science sensory playgrounds, and historic aircraft.",
+      "summaryUa": "Затишний сімейний маршрут: ботанічний сад, зелені парки, інтерактивні експерименти та музей авіації без поспіху.",
+      "suitableFor": [
+        "Rodziny z dziećmi",
+        "Wózki dziecięce",
+        "Seniorzy"
+      ]
+    }
+  ]
+}

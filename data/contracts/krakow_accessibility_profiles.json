@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-28T21:10:51.344111+00:00",
+  "generatedAt": "2026-10-31T17:40:19.990936+00:00",
   "meta": {
     "title": "Profile Dostępności Architektonicznej i Społecznej Dzielnic Krakowa",
     "description": "Zintegrowane wskaźniki dostępności dla osób z niepełnosprawnościami, seniorów i rodzin z dziećmi oparte w 100% na danych ZDMK, UMK, ZTP i BDK.",
@@ -37,10 +37,10 @@
     "totalPrmParkingSpots": 1709,
     "totalPrmLocations": 862,
     "totalAuditedFacilities": 25,
-    "totalSeniorCenters": 53,
+    "totalSeniorCenters": 68,
     "avgKasselKerbPct": 14.0,
     "avgTactilePavingPct": 35.1,
-    "avgOverallScore": 69.9
+    "avgOverallScore": 70.4
   },
   "districts": [
     {
@@ -67,7 +67,7 @@
         "publicFacilities": {
           "auditedTotal": 6,
           "wheelchairFull": 0,
-          "wheelchairPartial": 6,
+          "wheelchairPartial": 0,
           "elevators": 6,
           "ramps": 1,
           "accessibleToilets": 3,
@@ -96,7 +96,7 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Platforma elektryczna klatka F od dziedzińca, winda, dostosowane toalety, pętla indukcyjna na Sali Obrad."
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
         },
         {
           "name": "Urząd Miasta Krakowa - Wydziały Kultury i Gospodarki",
@@ -109,7 +109,7 @@
           "hearingLoop": false,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępny schodołaz, obsługa w języku migowym, możliwość bezpośredniego zejścia urzędnika do interesanta."
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, tłumacza PJM. Brak: podjazdu/rampy, toalety PRM, pętli indukcyjnej, oznaczeń dotykowych."
         },
         {
           "name": "Wydział Gospodarki Komunalnej i Klimatu",
@@ -122,7 +122,7 @@
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępna winda wewnątrz budynku, jednak wejście główne posiada stopnie; toaleta bez pełnego przystosowania."
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę. Brak: podjazdu/rampy, toalety PRM, pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
         },
         {
           "name": "Urząd Miasta Krakowa - Sarego",
@@ -135,7 +135,7 @@
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Schodołaz transportowy, toaleta przystosowana, asysta pracowników i zejście urzędnika do klienta."
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, toaletę PRM. Brak: podjazdu/rampy, pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
         },
         {
           "name": "Zarząd Transportu Publicznego w Krakowie (ZTP)",
@@ -148,7 +148,7 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Punkt Obsługi Pasażerów z pętlą indukcyjną i asystą, winda w budynku."
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, pętlę indukcyjną, tłumacza PJM. Brak: podjazdu/rampy, toalety PRM, oznaczeń dotykowych."
         },
         {
           "name": "Krakowskie Forum Kultury",
@@ -161,16 +161,16 @@
           "hearingLoop": true,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Zabytkowa kamienica: winda w oficynie, toaleta dostosowana, pętla indukcyjna w sali widowiskowej."
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, toaletę PRM, pętlę indukcyjną. Brak: podjazdu/rampy, tłumacza PJM, oznaczeń dotykowych."
         }
       ],
       "scores": {
-        "overallScore": 73.5,
-        "mobilityScore": 67.5,
-        "visualScore": 59.3,
+        "overallScore": 72.7,
+        "mobilityScore": 67.8,
+        "visualScore": 60.5,
         "hearingScore": 96.0,
-        "seniorScore": 79.9,
-        "familyStrollerScore": 73.6
+        "seniorScore": 72.2,
+        "familyStrollerScore": 75.6
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (525 niebieskich kopert w 196 lokalizacjach)",
@@ -211,11 +211,11 @@
           "brailleTactile": 1
         },
         "seniorCare": {
-          "casCount": 4,
-          "casPer10kSeniors": 5.5
+          "casCount": 5,
+          "casPer10kSeniors": 6.9
         },
         "recreation": {
-          "cityParks": 4,
+          "cityParks": 5,
           "pocketParks": 3
         }
       },
@@ -231,7 +231,7 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Dwa bezprogowe podjazdy, nowoczesna winda, w pełni przystosowane WC, obsługa tłumacza PJM, pętle indukcyjne."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
         },
         {
           "name": "Urząd Miasta Krakowa - Wydział Architektury i Urbanistyki",
@@ -244,21 +244,21 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Dostęp bez barier, winda, przystosowane toalety, stanowiska z pętlami indukcyjnymi dla słabosłyszących."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
         }
       ],
       "scores": {
-        "overallScore": 80.5,
-        "mobilityScore": 93.2,
-        "visualScore": 53.2,
+        "overallScore": 81.6,
+        "mobilityScore": 93.9,
+        "visualScore": 56.1,
         "hearingScore": 96.0,
-        "seniorScore": 79.5,
-        "familyStrollerScore": 81.7
+        "seniorScore": 78.4,
+        "familyStrollerScore": 84.4
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (216 niebieskich kopert w 87 lokalizacjach)",
         "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
-        "Rozbudowana sieć wsparcia seniorów (4 aktywne Centra Aktywności Seniora)"
+        "Rozbudowana sieć wsparcia seniorów (5 aktywne Centra Aktywności Seniora)"
       ]
     },
     {
@@ -314,16 +314,16 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Nowoczesny punkt w centrum handlowym: winda z parkingu, brak barier architektonicznych, toalety PRM, pętla indukcyjna."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
         }
       ],
       "scores": {
-        "overallScore": 85.8,
-        "mobilityScore": 94.3,
-        "visualScore": 93.4,
+        "overallScore": 86.2,
+        "mobilityScore": 95.0,
+        "visualScore": 94.0,
         "hearingScore": 82.2,
-        "seniorScore": 61.5,
-        "familyStrollerScore": 91.5
+        "seniorScore": 58.9,
+        "familyStrollerScore": 95.0
       },
       "keyStrengths": [
         "Wygodne perony bez stopni (28.6% przystanków) ułatwiające wsiadanie z poziomu chodnika",
@@ -364,8 +364,8 @@
           "brailleTactile": 0
         },
         "seniorCare": {
-          "casCount": 4,
-          "casPer10kSeniors": 2.6
+          "casCount": 3,
+          "casPer10kSeniors": 2.0
         },
         "recreation": {
           "cityParks": 3,
@@ -374,17 +374,17 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 70.7,
-        "mobilityScore": 75.7,
-        "visualScore": 79.9,
+        "overallScore": 70.9,
+        "mobilityScore": 76.1,
+        "visualScore": 81.9,
         "hearingScore": 50.0,
-        "seniorScore": 58.2,
-        "familyStrollerScore": 83.8
+        "seniorScore": 53.8,
+        "familyStrollerScore": 86.7
       },
       "keyStrengths": [
         "Wygodne perony bez stopni (30.9% przystanków) ułatwiające wsiadanie z poziomu chodnika",
         "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 48.0% przystanków",
-        "Rozbudowana sieć wsparcia seniorów (4 aktywne Centra Aktywności Seniora)"
+        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)"
       ]
     },
     {
@@ -411,7 +411,7 @@
         "publicFacilities": {
           "auditedTotal": 2,
           "wheelchairFull": 1,
-          "wheelchairPartial": 1,
+          "wheelchairPartial": 0,
           "elevators": 2,
           "ramps": 1,
           "accessibleToilets": 2,
@@ -440,7 +440,7 @@
           "hearingLoop": false,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Schodołaz, toaleta przystosowana dla niepełnosprawnych, obsługa w języku migowym, zejście urzędnika."
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, toaletę PRM, tłumacza PJM. Brak: podjazdu/rampy, pętli indukcyjnej, oznaczeń dotykowych."
         },
         {
           "name": "Zarząd Zieleni Miejskiej w Krakowie (ZZM)",
@@ -453,15 +453,15 @@
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Podjazd przy wejściu, toaleta przystosowana, obsługa na parterze bez barier progowych."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM. Brak: pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
         }
       ],
       "scores": {
-        "overallScore": 78.8,
-        "mobilityScore": 95.0,
-        "visualScore": 71.1,
+        "overallScore": 76.8,
+        "mobilityScore": 89.3,
+        "visualScore": 72.7,
         "hearingScore": 59.2,
-        "seniorScore": 65.8,
+        "seniorScore": 62.0,
         "familyStrollerScore": 95.0
       },
       "keyStrengths": [
@@ -503,8 +503,8 @@
           "brailleTactile": 0
         },
         "seniorCare": {
-          "casCount": 3,
-          "casPer10kSeniors": 5.1
+          "casCount": 2,
+          "casPer10kSeniors": 3.4
         },
         "recreation": {
           "cityParks": 4,
@@ -513,15 +513,15 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 58.3,
-        "mobilityScore": 55.4,
+        "overallScore": 56.2,
+        "mobilityScore": 55.5,
         "visualScore": 48.0,
         "hearingScore": 50.0,
-        "seniorScore": 72.6,
-        "familyStrollerScore": 70.0
+        "seniorScore": 59.1,
+        "familyStrollerScore": 71.7
       },
       "keyStrengths": [
-        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)",
+        "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)",
         "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
       ]
     },
@@ -562,7 +562,7 @@
           "casPer10kSeniors": 8.0
         },
         "recreation": {
-          "cityParks": 4,
+          "cityParks": 5,
           "pocketParks": 3
         }
       },
@@ -578,16 +578,16 @@
           "hearingLoop": false,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Podjazd od dziedzińca wewnętrznego, cichobieżna winda, WC przystosowane dla wózków, obsługa PJM."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, tłumacza PJM. Brak: pętli indukcyjnej, oznaczeń dotykowych."
         }
       ],
       "scores": {
-        "overallScore": 73.6,
-        "mobilityScore": 81.2,
-        "visualScore": 50.1,
+        "overallScore": 71.8,
+        "mobilityScore": 81.7,
+        "visualScore": 48.5,
         "hearingScore": 59.2,
-        "seniorScore": 95.0,
-        "familyStrollerScore": 83.2
+        "seniorScore": 83.2,
+        "familyStrollerScore": 86.0
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (62 niebieskich kopert w 45 lokalizacjach)",
@@ -632,7 +632,7 @@
           "casPer10kSeniors": 4.2
         },
         "recreation": {
-          "cityParks": 4,
+          "cityParks": 5,
           "pocketParks": 3
         }
       },
@@ -648,16 +648,16 @@
           "hearingLoop": true,
           "signLanguageTranslator": false,
           "brailleOrTactile": true,
-          "auditDescription": "Wzorcowy obiekt: książki braille'owskie i audiobooki, rampa, winda, przystosowane toalety, pętla indukcyjna."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, oznaczenia dotykowe. Brak: tłumacza PJM."
         }
       ],
       "scores": {
-        "overallScore": 71.1,
-        "mobilityScore": 75.8,
-        "visualScore": 64.3,
+        "overallScore": 70.2,
+        "mobilityScore": 76.2,
+        "visualScore": 61.6,
         "hearingScore": 63.8,
-        "seniorScore": 68.7,
-        "familyStrollerScore": 82.3
+        "seniorScore": 64.1,
+        "familyStrollerScore": 85.1
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (106 niebieskich kopert w 64 lokalizacjach)",
@@ -708,12 +708,12 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 62.4,
-        "mobilityScore": 59.7,
-        "visualScore": 62.4,
+        "overallScore": 61.8,
+        "mobilityScore": 59.8,
+        "visualScore": 65.0,
         "hearingScore": 50.0,
-        "seniorScore": 79.3,
-        "familyStrollerScore": 60.4
+        "seniorScore": 71.8,
+        "familyStrollerScore": 61.2
       },
       "keyStrengths": [
         "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)",
@@ -763,12 +763,12 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 55.5,
+        "overallScore": 54.6,
         "mobilityScore": 52.0,
-        "visualScore": 55.1,
+        "visualScore": 52.7,
         "hearingScore": 50.0,
-        "seniorScore": 61.8,
-        "familyStrollerScore": 60.5
+        "seniorScore": 59.1,
+        "familyStrollerScore": 61.4
       },
       "keyStrengths": [
         "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)"
@@ -827,16 +827,16 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Pełna dostępność bezstopniowa, miejsca postojowe PRM pod wejściem, toalety przystosowane, pętle indukcyjne."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
         }
       ],
       "scores": {
-        "overallScore": 62.9,
-        "mobilityScore": 62.1,
-        "visualScore": 54.7,
+        "overallScore": 63.8,
+        "mobilityScore": 62.2,
+        "visualScore": 57.4,
         "hearingScore": 82.2,
         "seniorScore": 52.0,
-        "familyStrollerScore": 68.6
+        "familyStrollerScore": 70.2
       },
       "keyStrengths": [
         "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
@@ -877,8 +877,8 @@
           "brailleTactile": 0
         },
         "seniorCare": {
-          "casCount": 3,
-          "casPer10kSeniors": 2.0
+          "casCount": 4,
+          "casPer10kSeniors": 2.6
         },
         "recreation": {
           "cityParks": 8,
@@ -887,16 +887,16 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 61.3,
-        "mobilityScore": 62.8,
-        "visualScore": 61.1,
+        "overallScore": 62.6,
+        "mobilityScore": 63.0,
+        "visualScore": 62.8,
         "hearingScore": 50.0,
-        "seniorScore": 52.5,
-        "familyStrollerScore": 80.3
+        "seniorScore": 55.1,
+        "familyStrollerScore": 82.8
       },
       "keyStrengths": [
         "Wygodne perony bez stopni (20.7% przystanków) ułatwiające wsiadanie z poziomu chodnika",
-        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)",
+        "Rozbudowana sieć wsparcia seniorów (4 aktywne Centra Aktywności Seniora)",
         "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
       ]
     },
@@ -933,11 +933,11 @@
           "brailleTactile": 3
         },
         "seniorCare": {
-          "casCount": 3,
-          "casPer10kSeniors": 4.7
+          "casCount": 6,
+          "casPer10kSeniors": 9.3
         },
         "recreation": {
-          "cityParks": 6,
+          "cityParks": 7,
           "pocketParks": 4
         }
       },
@@ -953,7 +953,7 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Podjazd, wideodomofon przy wejściu, szeroka winda, WC przystosowane na parterze, stanowiska obsługi."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
         },
         {
           "name": "Urząd Miasta Krakowa - Rynek Podgórski 2",
@@ -966,7 +966,7 @@
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Zabytkowa kamienica o skomplikowanym układzie schodowym. Obsługa klienta realizowana przez zejście urzędnika na parter."
+          "auditDescription": "Dostępność dla wózków: BRAK. Obiekt nie posiada wymienionych w rejestrze udogodnień dla osób z niepełnosprawnościami."
         },
         {
           "name": "Centrum Administracyjne Podgórze / Wielicka",
@@ -979,7 +979,7 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Pełen dostęp: wygodny podjazd, winda osobowa, WC przystosowane, oznakowanie ciągów dotykowych, pętla indukcyjna."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
         },
         {
           "name": "Miejski Ośrodek Pomocy Społecznej w Krakowie (Centrala)",
@@ -992,7 +992,7 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "W pełni przystosowany obiekt: automatyczne drzwi, rampa, winda, WC przystosowane, pętle indukcyjne."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
         },
         {
           "name": "Wydział Polityki Społecznej i Zdrowia",
@@ -1005,7 +1005,7 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Siedziba Pełnomocnika ds. Osób z Niepełnosprawnościami: rampa, winda, toaleta PRM, obsługa PJM, pętla indukcyjna."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
         },
         {
           "name": "Wydział Podatków i Opłat",
@@ -1018,21 +1018,21 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Parter z podjazdem, toaleta przystosowana, stanowiska obsługi wyposażone w pętle indukcyjne."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
         }
       ],
       "scores": {
-        "overallScore": 83.6,
-        "mobilityScore": 85.2,
-        "visualScore": 83.3,
+        "overallScore": 87.3,
+        "mobilityScore": 85.8,
+        "visualScore": 84.8,
         "hearingScore": 96.0,
-        "seniorScore": 73.1,
-        "familyStrollerScore": 80.8
+        "seniorScore": 88.4,
+        "familyStrollerScore": 83.4
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (140 niebieskich kopert w 63 lokalizacjach)",
         "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
-        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)"
+        "Rozbudowana sieć wsparcia seniorów (6 aktywne Centra Aktywności Seniora)"
       ]
     },
     {
@@ -1068,8 +1068,8 @@
           "brailleTactile": 1
         },
         "seniorCare": {
-          "casCount": 2,
-          "casPer10kSeniors": 3.1
+          "casCount": 1,
+          "casPer10kSeniors": 1.6
         },
         "recreation": {
           "cityParks": 4,
@@ -1088,20 +1088,19 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Parterowy, zmodernizowany pawilon obsługi klienta: bezstopniowe wejście, toalety PRM, dedykowane stanowiska."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
         }
       ],
       "scores": {
-        "overallScore": 71.0,
-        "mobilityScore": 72.3,
-        "visualScore": 64.0,
+        "overallScore": 70.4,
+        "mobilityScore": 72.6,
+        "visualScore": 66.6,
         "hearingScore": 82.2,
-        "seniorScore": 61.5,
-        "familyStrollerScore": 78.1
+        "seniorScore": 52.1,
+        "familyStrollerScore": 80.5
       },
       "keyStrengths": [
         "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
-        "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)",
         "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
       ]
     },
@@ -1138,8 +1137,8 @@
           "brailleTactile": 0
         },
         "seniorCare": {
-          "casCount": 2,
-          "casPer10kSeniors": 1.5
+          "casCount": 3,
+          "casPer10kSeniors": 2.3
         },
         "recreation": {
           "cityParks": 4,
@@ -1148,15 +1147,16 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 67.2,
-        "mobilityScore": 70.1,
-        "visualScore": 83.0,
+        "overallScore": 68.4,
+        "mobilityScore": 70.5,
+        "visualScore": 83.7,
         "hearingScore": 50.0,
-        "seniorScore": 52.6,
-        "familyStrollerScore": 73.8
+        "seniorScore": 56.1,
+        "familyStrollerScore": 75.9
       },
       "keyStrengths": [
         "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 48.4% przystanków",
+        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)",
         "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
       ]
     },
@@ -1193,8 +1193,8 @@
           "brailleTactile": 0
         },
         "seniorCare": {
-          "casCount": 2,
-          "casPer10kSeniors": 2.0
+          "casCount": 3,
+          "casPer10kSeniors": 3.0
         },
         "recreation": {
           "cityParks": 2,
@@ -1203,15 +1203,15 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 56.3,
-        "mobilityScore": 56.2,
-        "visualScore": 68.2,
+        "overallScore": 57.4,
+        "mobilityScore": 56.3,
+        "visualScore": 69.8,
         "hearingScore": 50.0,
-        "seniorScore": 52.9,
+        "seniorScore": 57.2,
         "familyStrollerScore": 50.0
       },
       "keyStrengths": [
-        "Podstawowe udogodnienia miejskie i stale modernizowana infrastruktura przystankowa KMK"
+        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)"
       ]
     },
     {
@@ -1247,8 +1247,8 @@
           "brailleTactile": 0
         },
         "seniorCare": {
-          "casCount": 1,
-          "casPer10kSeniors": 2.3
+          "casCount": 2,
+          "casPer10kSeniors": 4.5
         },
         "recreation": {
           "cityParks": 5,
@@ -1257,17 +1257,17 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 63.7,
-        "mobilityScore": 65.1,
-        "visualScore": 69.6,
+        "overallScore": 65.2,
+        "mobilityScore": 65.3,
+        "visualScore": 68.0,
         "hearingScore": 50.0,
-        "seniorScore": 58.0,
-        "familyStrollerScore": 73.4
+        "seniorScore": 66.4,
+        "familyStrollerScore": 75.3
       },
       "keyStrengths": [
         "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 41.4% przystanków",
         "Wysoka dostępność miejsc postojowych PRM (52 niebieskich kopert w 34 lokalizacjach)",
-        "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
+        "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)"
       ]
     },
     {
@@ -1303,8 +1303,8 @@
           "brailleTactile": 3
         },
         "seniorCare": {
-          "casCount": 3,
-          "casPer10kSeniors": 2.5
+          "casCount": 13,
+          "casPer10kSeniors": 10.8
         },
         "recreation": {
           "cityParks": 8,
@@ -1323,7 +1323,7 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Wzorcowa dostępność w Nowej Hucie: rampa, winda, WC przystosowane, tłumacz PJM na miejscu, pętle indukcyjne."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
         },
         {
           "name": "Punkt Pomocy Prawnej i Obsługi Mieszkańców",
@@ -1336,7 +1336,7 @@
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Platforma przyschodowa z napędem, szeroki podjazd od strony portierni, toaleta przystosowana."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM. Brak: pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
         },
         {
           "name": "Nowohuckie Centrum Kultury (NCK)",
@@ -1349,7 +1349,7 @@
           "hearingLoop": true,
           "signLanguageTranslator": false,
           "brailleOrTactile": true,
-          "auditDescription": "Zmodernizowany obiekt kultury: bezprogowe rampy zewnętrzne, winda panoramiczna, toalety PRM na każdym poziomie, pętla indukcyjna na widowni."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, oznaczenia dotykowe. Brak: tłumacza PJM."
         },
         {
           "name": "Centrum Obywatelskie Centrum C 10",
@@ -1362,16 +1362,16 @@
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Pełna dostępność architektoniczna i cyfrowa, platforma schodowa, toaleta PRM, sala spotkań z pętlą indukcyjną."
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
         }
       ],
       "scores": {
-        "overallScore": 82.7,
-        "mobilityScore": 82.6,
-        "visualScore": 94.0,
+        "overallScore": 88.5,
+        "mobilityScore": 83.1,
+        "visualScore": 87.9,
         "hearingScore": 96.0,
-        "seniorScore": 59.0,
-        "familyStrollerScore": 81.0
+        "seniorScore": 95.0,
+        "familyStrollerScore": 83.7
       },
       "keyStrengths": [
         "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 51.5% przystanków",

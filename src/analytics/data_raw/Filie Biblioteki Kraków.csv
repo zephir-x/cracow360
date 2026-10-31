@@ -1,0 +1,63 @@
+﻿Lp;Nazwa lub numer filii;Nazwa ulicy;Numer budynku;Numer lokalu;Kod pocztowy;Miasto;Województwo;Kraj;Adres
+1;Biblioteka Główna;Powroźnicza;2;;30-307;Kraków;małopolskie;Polska;Powroźnicza 2, Kraków
+2;Filia nr 1;Dietla ;80;82;31-073 ;Kraków;małopolskie;Polska;Dietla 80/82, Kraków
+3;Filia nr 2;Krakowska ;29;;31-062 ;Kraków;małopolskie;Polska;Krakowska 29, Kraków
+4;Klub Dziennikarzy 'Pod Gruszką';Szczepańska ;1;;31-011;Kraków;małopolskie;Polska;Szczepańska 1, Kraków
+5;Filia nr 3;Plac Jana Nowaka-Jeziorańskiego ;3;;31-154 ;Kraków;małopolskie;Polska;Jana Nowaka-Jeziorańskiego 3, Kraków
+6;Filia nr 4;Bobrowskiego ;11;;31-552 ;Kraków;małopolskie;Polska;Bobrowskiego 11, Kraków
+7;Filia nr 5;Lubomirskiego ;7a;;31-509 ;Kraków;małopolskie;Polska;Lubomirskiego 7a, Kraków
+8;Filia nr 6;Aleja Daszyńskiego ;22;;31-534 ;Kraków;małopolskie;Polska;Daszyńskiego 22, Kraków
+9;Filia nr 7;Aleja Pokoju ;33;;31-564 ;Kraków;małopolskie;Polska;Pokoju 33, Kraków
+10;Filia nr 8;Brodowicza ;1;;31-518 ;Kraków;małopolskie;Polska;Brodowicza 1, Kraków
+11;Filia nr 9;Dobrego Pasterza ;6;;31-416 ;Kraków;małopolskie;Polska;Dobrego Pasterza 6, Kraków
+12;Filia nr 10;Aleja 29 Listopada ;59;;31-425 ;Kraków;małopolskie;Polska;Aleja 29 Listopada 59, Kraków
+13;Filia nr 11;Bosaków ;11;;31-476 ;Kraków;małopolskie;Polska;Bosaków 11, Kraków
+14;Filia nr 12;Łąkowa ;27;;31-443 ;Kraków;małopolskie;Polska;Łąkowa 27, Kraków
+15;Filia nr 13;Dzielskiego ;2;;31-465 ;Kraków;małopolskie;Polska;Dzielskiego 2, Kraków
+16;Filia nr 14;Ugorek ;14;;31-456 ;Kraków;małopolskie;Polska;Ugorek 14, Kraków
+17;Filia nr 15;Dobrego Pasterza ;100;;31-416 ;Kraków;małopolskie;Polska;Dobrego Pasterza 100, Kraków
+18;Filia nr 16;Radzikowskiego ;29;;31-315 ;Kraków;małopolskie;Polska;Radzikowskiego 29, Kraków
+19;Filia nr 17;Ojcowska ;116;;31-344 ;Kraków;małopolskie;Polska;Ojcowska 116, Kraków
+20;Filia nr 18;Siemaszki ;31;;31-207 ;Kraków;małopolskie;Polska;Siemaszki 31, Kraków
+21;Filia nr 19;Łokietka ;267;;31-263 ;Kraków;małopolskie;Polska;Łokietka 267, Kraków
+22;Filia nr 20;Opolska ;37;;31-277 ;Kraków;małopolskie;Polska;Opolska 37, Kraków
+23;Filia nr 21;Królewska ;59;;30-084 ;Kraków;małopolskie;Polska;Królewska 59, Kraków
+24;Filia nr 22;Sienkiewicza ;2;;30-033 ;Kraków;małopolskie;Polska;Sienkiewicza 2, Kraków
+25;Filia nr 23;Balicka;297;;30-198 ;Kraków;małopolskie;Polska;Balicka 297, Kraków
+26;Filia nr 24;Na Błonie ;13d;;30-147 ;Kraków;małopolskie;Polska;Na Błonie 13d, Kraków
+27;Filia nr 25;Fałata ;2;;30-110 ;Kraków;małopolskie;Polska;Fałata 2, Kraków
+28;Filia nr 26;Komorowskiego ;11;;30-106 ;Kraków;małopolskie;Polska;Komorowskiego 11, Kraków
+29;Filia nr 27;Królowej Jadwigi ;37b;;30-209 ;Kraków;małopolskie;Polska;Królowej Jadwigi 37b, Kraków
+30;Filia nr 28;Komandosów ;1;;30-334;Kraków;małopolskie;Polska;Komandosów 1, Kraków
+31;Filia nr 29;Praska ;52;;30-322 ;Kraków;małopolskie;Polska;Praska 52, Kraków
+32;Filia nr 30;Dziewiarzy ;7;;30-398 ;Kraków;małopolskie;Polska;Dziewiarzy 7, Kraków
+33;Filia nr 31;Przyzby ;10;;30-385 ;Kraków;małopolskie;Polska;Przyzby 10, Kraków
+34;Punkt biblioteczny dla młodzieży Filii nr 31;Zachodnia ;7;;30-350 ;Kraków;małopolskie;Polska;Zachodnia 7, Kraków
+35;Filia nr 32;Żywiecka ;32;;30-427 ;Kraków;małopolskie;Polska;Żywiecka 32, Kraków
+36;Filia nr 33;Zakopiańska ;103;;30-418 ;Kraków;małopolskie;Polska;Zakopiańska 103, Kraków
+37;Filia nr 34;Borsucza ;12;;30-408 ;Kraków;małopolskie;Polska;Borsucza 12, Kraków
+38;Filia nr 35;Chałubińskiego ;47;;30-698 ;Kraków;małopolskie;Polska;Chałubińskiego 47, Kraków
+39;Filia nr 36;Niewodniczańskiego ;123;;30-698 ;Kraków;małopolskie;Polska;Niewodniczańskiego 123, Kraków
+40;Filia nr 37;Sztaudyngera ;5;;30-692 ;Kraków;małopolskie;Polska;Sztaudyngera 5, Kraków
+41;Filia nr 38;Walerego Sławka ;10;;30-633 ;Kraków;małopolskie;Polska;Walerego Sławka 10, Kraków
+42;Filia nr 39;Halszki ;1;;30-611 ;Kraków;małopolskie;Polska;Halszki 1, Kraków
+43;Filia nr 40;Łużycka ;55;103;30-658 ;Kraków;małopolskie;Polska;Łużycka 55/103, Kraków
+44;Filia nr 41;Gołaśka ;13;1;30-619 ;Kraków;małopolskie;Polska;Gołaśka 13/1, Kraków
+45;Filia nr 42;Agatowa ;33;;30-798 ;Kraków;małopolskie;Polska;Agatowa 33, Kraków
+46;Punkt biblioteczny Filii nr 42;Telimeny;9;;30-837 ;Kraków;małopolskie;Polska;Telimeny 9, Kraków
+47;Filia nr 43;Jasińskiego ;32;;30-815 ;Kraków;małopolskie;Polska;Jasińskiego 32, Kraków
+48;Filia nr 44 Pod Kawką;Spółdzielców ;3;;30-682 ;Kraków;małopolskie;Polska;Spółdzielców 3, Kraków
+49;Filia nr 45;Teligi ;24;;30-835 ;Kraków;małopolskie;Polska;Teligi 24, Kraków
+50;Filia nr 46;Limanowskiego ;4;;30-534 ;Kraków;małopolskie;Polska;Limanowskiego 4, Kraków
+51;Filia nr 47;Osiedle Dywizjonu 303;1;;31-871 ;Kraków;małopolskie;Polska;Osiedle Dywizjonu 303 1, Kraków
+52;Filia nr 48;Osiedle Bohaterów Września ;26;;31-621 ;Kraków;małopolskie;Polska;Osiedle Bohaterów Września 26, Kraków
+53;Filia nr 49;Osiedle Tysiąclecia ;42;;31-610 ;Kraków;małopolskie;Polska;Osiedle Tysiąclecia 42, Kraków
+54;Filia nr 50;Osiedle Kościuszkowskie ;5;;31-858 ;Kraków;małopolskie;Polska;Osiedle Kościuszkowskie 5, Kraków
+55;Filia nr 51;Osiedle Kalinowe ;4;;31-812 ;Kraków;małopolskie;Polska;Osiedle Kalinowe 4, Kraków
+56;Filia nr 52;Osiedle Na Stoku ;1;;31-701 ;Kraków;małopolskie;Polska;Osiedle Na Stoku 1, Kraków
+57;Filia nr 53;Osiedle Stalowe ;12;;31-921 ;Kraków;małopolskie;Polska;Osiedle Stalowe 12, Kraków
+58;Filia nr 54;Osiedle Młodości ;8;;31-908 ;Kraków;małopolskie;Polska;Osiedle Młodości 8, Kraków
+59;Filia nr 55 Teatralna;Osiedle Teatralne ;25;;31-946 ;Kraków;małopolskie;Polska;Osiedle Teatralne 25, Kraków
+60;Filia nr 56;Osiedle Zgody ;7;;31-949 ;Kraków;małopolskie;Polska;Osiedle Zgody 7, Kraków
+61;Filia nr 57 Gotyk;Ks. J. Meiera ;16c;;31-236;Kraków ;małopolskie;Polska;Ks. J. Meiera 16c, Kraków
+62;Filia nr 58 Kosmos;Borkowska;25;;30-438;Kraków ;małopolskie;Polska;Borkowska 25, Kraków

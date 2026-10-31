@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-28T21:11:06Z",
-    "dataVersion": "2.1.0-expanded-7-pillars-2025-2026",
+    "generatedAt": "2026-10-31T17:40:23Z",
+    "dataVersion": "2.1.0-expanded-8-pillars-2025-2026",
     "normalizationMethod": "MinMax_0_100_Calibrated"
   },
   "districts": [
@@ -25,16 +25,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 10,
+        "nurseriesPrivateCount": 6,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 500,
-        "childrenPerCarePlaceRatio": 1.03,
-        "parentClubsCount": 3,
-        "kindergartensCount": 26,
-        "kindergartenPlacesTotal": 1853,
-        "primarySchoolsCount": 20,
-        "primarySchoolStudentsTotal": 4164,
-        "avgStudentsPerClass": 15.6
+        "totalCarePlaces0to3": 361,
+        "childrenPerCarePlaceRatio": 1.43,
+        "parentClubsCount": 2,
+        "kindergartensCount": 129,
+        "kindergartenPlacesTotal": 6688,
+        "primarySchoolsCount": 33,
+        "primarySchoolStudentsTotal": 6206,
+        "avgStudentsPerClass": 15.7
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 95,
@@ -43,31 +43,33 @@
         "onDemandStopsCount": 5,
         "scheduleBoardsCount": 126,
         "tramNetworkSharePct": 54.7,
-        "isochroneCoveragePct": 81.8,
+        "isochroneCoveragePct": 99.1,
         "parkAndRideCount": 0,
         "bikeRacksCount": 2670,
         "bikeLanesLengthKm": 23.0,
         "bikeLanesSeparatedKm": 14.8,
         "bikeLanesCombinedKm": 8.2,
-        "bikeRepairStationsCount": 12
+        "bikeRepairStationsCount": 12,
+        "kasselKerbPct": 18.9,
+        "tactilePavingPct": 30.5
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
         "pocketParksCount": 3,
-        "totalParksAreaHa": 59.72,
+        "totalParksAreaHa": 30.91,
         "forestAreaHa": 0.0,
-        "totalGreenAreaHa": 59.72,
-        "greenAreaM2PerCapita": 20.09,
-        "totalGreenM2PerCapita": 20.09,
-        "schoolSportsFacilitiesCount": 268,
+        "totalGreenAreaHa": 30.91,
+        "greenAreaM2PerCapita": 10.4,
+        "totalGreenM2PerCapita": 10.4,
+        "schoolSportsFacilitiesCount": 242,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 4,
+        "culturalCentersCount": 44,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 305.06
+        "annualCulturalEventsCount": 5366,
+        "municipalSubsidyPerCapitaPln": 1161.88
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1420,
@@ -77,7 +79,7 @@
         "publicDisturbanceInterventions": 4450
       },
       "housingMarket": {
-        "avgPricePerM2": 18500.0,
+        "avgPricePerM2": 18615.0,
         "priceSecondaryM2": 18200.0,
         "pricePrimaryM2": 19800.0,
         "priceMedianM2": 18100.0,
@@ -94,7 +96,7 @@
       "scores": {
         "mobilityScore": 96.0,
         "educationScore": 92.0,
-        "greeneryScore": 78.1,
+        "greeneryScore": 68.2,
         "cultureAndSeniorScore": 96.0,
         "environmentScore": 26.0,
         "safetyScore": 38.0,
@@ -102,12 +104,12 @@
         "demographicVitalityScore": 66.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 502,
-        "forecastedCarePlacesBalance_2028": 124,
-        "forecastedAge4to6_2028": 380,
-        "nurseryInvestmentPotentialB2B": "LOW",
+        "forecastedAge0to3_2028": 424,
+        "forecastedCarePlacesBalance_2028": 43,
+        "forecastedAge4to6_2028": 390,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
-        "greenSpaceDeficit": "LOW",
+        "greenSpaceDeficit": "MEDIUM",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.3%)."
       }
     },
@@ -131,15 +133,15 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 19,
+        "nurseriesPrivateCount": 13,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 805,
-        "childrenPerCarePlaceRatio": 1.34,
-        "parentClubsCount": 3,
-        "kindergartensCount": 23,
-        "kindergartenPlacesTotal": 1772,
-        "primarySchoolsCount": 11,
-        "primarySchoolStudentsTotal": 3020,
+        "totalCarePlaces0to3": 631,
+        "childrenPerCarePlaceRatio": 1.7,
+        "parentClubsCount": 1,
+        "kindergartensCount": 14,
+        "kindergartenPlacesTotal": 1241,
+        "primarySchoolsCount": 9,
+        "primarySchoolStudentsTotal": 2568,
         "avgStudentsPerClass": 17.0
       },
       "mobilityAndTransport": {
@@ -149,31 +151,33 @@
         "onDemandStopsCount": 0,
         "scheduleBoardsCount": 73,
         "tramNetworkSharePct": 50.7,
-        "isochroneCoveragePct": 74.2,
+        "isochroneCoveragePct": 96.1,
         "parkAndRideCount": 0,
         "bikeRacksCount": 1095,
         "bikeLanesLengthKm": 22.9,
         "bikeLanesSeparatedKm": 16.5,
         "bikeLanesCombinedKm": 6.4,
-        "bikeRepairStationsCount": 10
+        "bikeRepairStationsCount": 10,
+        "kasselKerbPct": 6.0,
+        "tactilePavingPct": 17.9
       },
       "greeneryAndSport": {
-        "cityParksCount": 4,
+        "cityParksCount": 5,
         "pocketParksCount": 3,
-        "totalParksAreaHa": 16.94,
+        "totalParksAreaHa": 24.14,
         "forestAreaHa": 5.4,
-        "totalGreenAreaHa": 22.34,
-        "greenAreaM2PerCapita": 5.28,
-        "totalGreenM2PerCapita": 6.97,
-        "schoolSportsFacilitiesCount": 89,
+        "totalGreenAreaHa": 29.54,
+        "greenAreaM2PerCapita": 7.53,
+        "totalGreenM2PerCapita": 9.21,
+        "schoolSportsFacilitiesCount": 70,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 6,
+        "libraryBranchesCount": 5,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 212.09
+        "seniorActivityCentersCount": 5,
+        "annualCulturalEventsCount": 559,
+        "municipalSubsidyPerCapitaPln": 112.19
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1180,
@@ -183,7 +187,7 @@
         "publicDisturbanceInterventions": 1420
       },
       "housingMarket": {
-        "avgPricePerM2": 18200.0,
+        "avgPricePerM2": 17175.0,
         "priceSecondaryM2": 17900.0,
         "pricePrimaryM2": 19200.0,
         "priceMedianM2": 17800.0,
@@ -198,23 +202,23 @@
         "trafficNoiseExceededPct": 27.2
       },
       "scores": {
-        "mobilityScore": 72.4,
-        "educationScore": 75.3,
-        "greeneryScore": 67.0,
-        "cultureAndSeniorScore": 79.3,
-        "environmentScore": 34.8,
+        "mobilityScore": 76.8,
+        "educationScore": 75.5,
+        "greeneryScore": 70.4,
+        "cultureAndSeniorScore": 56.7,
+        "environmentScore": 37.1,
         "safetyScore": 50.9,
-        "housingAffordabilityScore": 27.2,
+        "housingAffordabilityScore": 31.0,
         "demographicVitalityScore": 73.6
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1078,
-        "forecastedCarePlacesBalance_2028": -4,
-        "forecastedAge4to6_2028": 808,
+        "forecastedAge0to3_2028": 882,
+        "forecastedCarePlacesBalance_2028": -30,
+        "forecastedAge4to6_2028": 821,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 5.28 m²/os. poniżej normy miejskiej 10 m²/os.)."
+        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 7.53 m²/os. poniżej normy miejskiej 10 m²/os.)."
       }
     },
     {
@@ -237,16 +241,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 1,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 12,
+        "nurseriesPrivateCount": 11,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 646,
-        "childrenPerCarePlaceRatio": 1.98,
-        "parentClubsCount": 4,
-        "kindergartensCount": 28,
-        "kindergartenPlacesTotal": 1989,
-        "primarySchoolsCount": 12,
-        "primarySchoolStudentsTotal": 4444,
-        "avgStudentsPerClass": 17.1
+        "totalCarePlaces0to3": 606,
+        "childrenPerCarePlaceRatio": 2.11,
+        "parentClubsCount": 3,
+        "kindergartensCount": 22,
+        "kindergartenPlacesTotal": 1634,
+        "primarySchoolsCount": 11,
+        "primarySchoolStudentsTotal": 3793,
+        "avgStudentsPerClass": 16.6
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 98,
@@ -255,13 +259,15 @@
         "onDemandStopsCount": 4,
         "scheduleBoardsCount": 132,
         "tramNetworkSharePct": 18.4,
-        "isochroneCoveragePct": 79.4,
+        "isochroneCoveragePct": 98.5,
         "parkAndRideCount": 1,
         "bikeRacksCount": 622,
         "bikeLanesLengthKm": 19.3,
         "bikeLanesSeparatedKm": 15.2,
         "bikeLanesCombinedKm": 4.1,
-        "bikeRepairStationsCount": 8
+        "bikeRepairStationsCount": 8,
+        "kasselKerbPct": 28.6,
+        "tactilePavingPct": 57.1
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
@@ -271,15 +277,15 @@
         "totalGreenAreaHa": 20.02,
         "greenAreaM2PerCapita": 4.27,
         "totalGreenM2PerCapita": 4.27,
-        "schoolSportsFacilitiesCount": 86,
+        "schoolSportsFacilitiesCount": 76,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 6,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 145.07
+        "annualCulturalEventsCount": 671,
+        "municipalSubsidyPerCapitaPln": 92.09
       },
       "publicSafety": {
         "roadCollisionsAnnual": 890,
@@ -289,7 +295,7 @@
         "publicDisturbanceInterventions": 1120
       },
       "housingMarket": {
-        "avgPricePerM2": 14600.0,
+        "avgPricePerM2": 14085.0,
         "priceSecondaryM2": 14400.0,
         "pricePrimaryM2": 15100.0,
         "priceMedianM2": 14500.0,
@@ -304,19 +310,19 @@
         "trafficNoiseExceededPct": 19.8
       },
       "scores": {
-        "mobilityScore": 75.1,
-        "educationScore": 58.6,
-        "greeneryScore": 58.3,
-        "cultureAndSeniorScore": 71.1,
-        "environmentScore": 54.2,
+        "mobilityScore": 76.1,
+        "educationScore": 75.5,
+        "greeneryScore": 58.4,
+        "cultureAndSeniorScore": 53.0,
+        "environmentScore": 55.2,
         "safetyScore": 70.1,
-        "housingAffordabilityScore": 61.3,
+        "housingAffordabilityScore": 63.9,
         "demographicVitalityScore": 60.4
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1267,
-        "forecastedCarePlacesBalance_2028": -304,
-        "forecastedAge4to6_2028": 952,
+        "forecastedAge0to3_2028": 1049,
+        "forecastedCarePlacesBalance_2028": -181,
+        "forecastedAge4to6_2028": 1005,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
@@ -341,18 +347,18 @@
         "populationGrowthRate3YrPct": 2.61
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 3,
+        "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 2,
-        "nurseriesPrivateCount": 26,
+        "nurseriesPrivateCount": 20,
         "kidsClubsCount": 4,
-        "totalCarePlaces0to3": 1426,
-        "childrenPerCarePlaceRatio": 1.97,
+        "totalCarePlaces0to3": 1103,
+        "childrenPerCarePlaceRatio": 2.55,
         "parentClubsCount": 1,
-        "kindergartensCount": 53,
-        "kindergartenPlacesTotal": 3565,
-        "primarySchoolsCount": 18,
-        "primarySchoolStudentsTotal": 6032,
-        "avgStudentsPerClass": 20.4
+        "kindergartensCount": 48,
+        "kindergartenPlacesTotal": 3152,
+        "primarySchoolsCount": 17,
+        "primarySchoolStudentsTotal": 5736,
+        "avgStudentsPerClass": 20.6
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 256,
@@ -361,13 +367,15 @@
         "onDemandStopsCount": 25,
         "scheduleBoardsCount": 321,
         "tramNetworkSharePct": 9.8,
-        "isochroneCoveragePct": 72.6,
+        "isochroneCoveragePct": 94.7,
         "parkAndRideCount": 3,
         "bikeRacksCount": 529,
         "bikeLanesLengthKm": 30.4,
         "bikeLanesSeparatedKm": 24.6,
         "bikeLanesCombinedKm": 5.8,
-        "bikeRepairStationsCount": 14
+        "bikeRepairStationsCount": 14,
+        "kasselKerbPct": 30.9,
+        "tactilePavingPct": 48.0
       },
       "greeneryAndSport": {
         "cityParksCount": 3,
@@ -377,15 +385,15 @@
         "totalGreenAreaHa": 33.18,
         "greenAreaM2PerCapita": 2.33,
         "totalGreenM2PerCapita": 4.32,
-        "schoolSportsFacilitiesCount": 125,
+        "schoolSportsFacilitiesCount": 109,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 1,
-        "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 73.79
+        "culturalCentersCount": 0,
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 447,
+        "municipalSubsidyPerCapitaPln": 37.47
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1340,
@@ -395,7 +403,7 @@
         "publicDisturbanceInterventions": 1610
       },
       "housingMarket": {
-        "avgPricePerM2": 15300.0,
+        "avgPricePerM2": 14578.0,
         "priceSecondaryM2": 15000.0,
         "pricePrimaryM2": 15800.0,
         "priceMedianM2": 15200.0,
@@ -410,23 +418,23 @@
         "trafficNoiseExceededPct": 21.4
       },
       "scores": {
-        "mobilityScore": 67.8,
-        "educationScore": 57.4,
+        "mobilityScore": 72.8,
+        "educationScore": 71.1,
         "greeneryScore": 52.0,
-        "cultureAndSeniorScore": 70.6,
-        "environmentScore": 49.2,
+        "cultureAndSeniorScore": 48.8,
+        "environmentScore": 50.3,
         "safetyScore": 69.6,
-        "housingAffordabilityScore": 54.6,
+        "housingAffordabilityScore": 57.8,
         "demographicVitalityScore": 72.7
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 2875,
-        "forecastedCarePlacesBalance_2028": -730,
-        "forecastedAge4to6_2028": 2146,
+        "forecastedAge0to3_2028": 2545,
+        "forecastedCarePlacesBalance_2028": -806,
+        "forecastedAge4to6_2028": 2159,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -730 miejsc) oraz tworzenie parków kieszonkowych (obecnie 2.33 m² zieleni/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -806 miejsc) oraz tworzenie parków kieszonkowych (obecnie 2.33 m² zieleni/os.)."
       }
     },
     {
@@ -449,16 +457,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 14,
+        "nurseriesPrivateCount": 10,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 649,
-        "childrenPerCarePlaceRatio": 1.16,
+        "totalCarePlaces0to3": 475,
+        "childrenPerCarePlaceRatio": 1.59,
         "parentClubsCount": 1,
-        "kindergartensCount": 29,
-        "kindergartenPlacesTotal": 1471,
-        "primarySchoolsCount": 13,
-        "primarySchoolStudentsTotal": 3392,
-        "avgStudentsPerClass": 13.2
+        "kindergartensCount": 19,
+        "kindergartenPlacesTotal": 866,
+        "primarySchoolsCount": 11,
+        "primarySchoolStudentsTotal": 3261,
+        "avgStudentsPerClass": 14.0
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 80,
@@ -467,13 +475,15 @@
         "onDemandStopsCount": 0,
         "scheduleBoardsCount": 114,
         "tramNetworkSharePct": 25.0,
-        "isochroneCoveragePct": 78.4,
+        "isochroneCoveragePct": 98.2,
         "parkAndRideCount": 0,
         "bikeRacksCount": 1520,
         "bikeLanesLengthKm": 19.0,
         "bikeLanesSeparatedKm": 13.8,
         "bikeLanesCombinedKm": 5.2,
-        "bikeRepairStationsCount": 9
+        "bikeRepairStationsCount": 9,
+        "kasselKerbPct": 23.8,
+        "tactilePavingPct": 43.8
       },
       "greeneryAndSport": {
         "cityParksCount": 6,
@@ -483,15 +493,15 @@
         "totalGreenAreaHa": 35.74,
         "greenAreaM2PerCapita": 11.34,
         "totalGreenM2PerCapita": 11.34,
-        "schoolSportsFacilitiesCount": 90,
+        "schoolSportsFacilitiesCount": 67,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 5,
-        "culturalCentersCount": 1,
+        "libraryBranchesCount": 3,
+        "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 215.75
+        "annualCulturalEventsCount": 335,
+        "municipalSubsidyPerCapitaPln": 68.48
       },
       "publicSafety": {
         "roadCollisionsAnnual": 920,
@@ -501,7 +511,7 @@
         "publicDisturbanceInterventions": 1250
       },
       "housingMarket": {
-        "avgPricePerM2": 16500.0,
+        "avgPricePerM2": 16022.0,
         "priceSecondaryM2": 16200.0,
         "pricePrimaryM2": 17400.0,
         "priceMedianM2": 16300.0,
@@ -516,20 +526,20 @@
         "trafficNoiseExceededPct": 23.0
       },
       "scores": {
-        "mobilityScore": 76.6,
-        "educationScore": 89.6,
-        "greeneryScore": 75.2,
-        "cultureAndSeniorScore": 76.8,
-        "environmentScore": 46.3,
+        "mobilityScore": 78.5,
+        "educationScore": 79.6,
+        "greeneryScore": 73.7,
+        "cultureAndSeniorScore": 49.9,
+        "environmentScore": 47.6,
         "safetyScore": 57.3,
-        "housingAffordabilityScore": 43.1,
+        "housingAffordabilityScore": 45.3,
         "demographicVitalityScore": 67.4
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 745,
-        "forecastedCarePlacesBalance_2028": 90,
-        "forecastedAge4to6_2028": 560,
-        "nurseryInvestmentPotentialB2B": "LOW",
+        "forecastedAge0to3_2028": 619,
+        "forecastedCarePlacesBalance_2028": 11,
+        "forecastedAge4to6_2028": 565,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "MEDIUM",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (26.6%)."
@@ -555,16 +565,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 0,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 13,
+        "nurseriesPrivateCount": 6,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 511,
-        "childrenPerCarePlaceRatio": 1.54,
-        "parentClubsCount": 4,
-        "kindergartensCount": 13,
-        "kindergartenPlacesTotal": 849,
-        "primarySchoolsCount": 8,
-        "primarySchoolStudentsTotal": 2379,
-        "avgStudentsPerClass": 20.3
+        "totalCarePlaces0to3": 284,
+        "childrenPerCarePlaceRatio": 2.77,
+        "parentClubsCount": 2,
+        "kindergartensCount": 9,
+        "kindergartenPlacesTotal": 578,
+        "primarySchoolsCount": 7,
+        "primarySchoolStudentsTotal": 2371,
+        "avgStudentsPerClass": 20.8
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 58,
@@ -573,13 +583,15 @@
         "onDemandStopsCount": 20,
         "scheduleBoardsCount": 88,
         "tramNetworkSharePct": 1.7,
-        "isochroneCoveragePct": 63.0,
+        "isochroneCoveragePct": 75.8,
         "parkAndRideCount": 1,
         "bikeRacksCount": 357,
         "bikeLanesLengthKm": 14.6,
         "bikeLanesSeparatedKm": 11.4,
         "bikeLanesCombinedKm": 3.2,
-        "bikeRepairStationsCount": 6
+        "bikeRepairStationsCount": 6,
+        "kasselKerbPct": 6.9,
+        "tactilePavingPct": 19.0
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
@@ -589,15 +601,15 @@
         "totalGreenAreaHa": 39.93,
         "greenAreaM2PerCapita": 15.58,
         "totalGreenM2PerCapita": 15.58,
-        "schoolSportsFacilitiesCount": 65,
+        "schoolSportsFacilitiesCount": 44,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
+        "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 132.69
+        "seniorActivityCentersCount": 2,
+        "annualCulturalEventsCount": 224,
+        "municipalSubsidyPerCapitaPln": 56.15
       },
       "publicSafety": {
         "roadCollisionsAnnual": 610,
@@ -607,7 +619,7 @@
         "publicDisturbanceInterventions": 510
       },
       "housingMarket": {
-        "avgPricePerM2": 15200.0,
+        "avgPricePerM2": 15345.0,
         "priceSecondaryM2": 14900.0,
         "pricePrimaryM2": 15900.0,
         "priceMedianM2": 15100.0,
@@ -622,23 +634,23 @@
         "trafficNoiseExceededPct": 14.5
       },
       "scores": {
-        "mobilityScore": 38.9,
-        "educationScore": 48.1,
-        "greeneryScore": 66.3,
-        "cultureAndSeniorScore": 64.6,
-        "environmentScore": 72.4,
+        "mobilityScore": 41.7,
+        "educationScore": 61.1,
+        "greeneryScore": 65.7,
+        "cultureAndSeniorScore": 46.3,
+        "environmentScore": 73.0,
         "safetyScore": 69.5,
-        "housingAffordabilityScore": 56.4,
+        "housingAffordabilityScore": 56.8,
         "demographicVitalityScore": 65.2
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 794,
-        "forecastedCarePlacesBalance_2028": -84,
-        "forecastedAge4to6_2028": 595,
+        "forecastedAge0to3_2028": 653,
+        "forecastedCarePlacesBalance_2028": -206,
+        "forecastedAge4to6_2028": 596,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 63.0%)."
+        "recommendedMunicipalAction": "Utrzymanie wysokiej dostępności usług publicznych w Dzielnica VI Bronowice przy wsparciu modernizacji przyszkolnej infrastruktury sportowej i oferty dla seniorów (23.1% populacji)."
       }
     },
     {
@@ -661,13 +673,13 @@
       "educationAndCare": {
         "nurseriesPublicCount": 1,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 7,
+        "nurseriesPrivateCount": 1,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 306,
-        "childrenPerCarePlaceRatio": 1.64,
+        "totalCarePlaces0to3": 96,
+        "childrenPerCarePlaceRatio": 5.23,
         "parentClubsCount": 3,
-        "kindergartensCount": 20,
-        "kindergartenPlacesTotal": 968,
+        "kindergartensCount": 12,
+        "kindergartenPlacesTotal": 632,
         "primarySchoolsCount": 7,
         "primarySchoolStudentsTotal": 1863,
         "avgStudentsPerClass": 19.2
@@ -679,31 +691,33 @@
         "onDemandStopsCount": 66,
         "scheduleBoardsCount": 180,
         "tramNetworkSharePct": 10.4,
-        "isochroneCoveragePct": 61.3,
+        "isochroneCoveragePct": 69.6,
         "parkAndRideCount": 0,
         "bikeRacksCount": 462,
         "bikeLanesLengthKm": 20.7,
         "bikeLanesSeparatedKm": 16.2,
         "bikeLanesCombinedKm": 4.5,
-        "bikeRepairStationsCount": 8
+        "bikeRepairStationsCount": 8,
+        "kasselKerbPct": 17.5,
+        "tactilePavingPct": 28.6
       },
       "greeneryAndSport": {
-        "cityParksCount": 4,
+        "cityParksCount": 5,
         "pocketParksCount": 3,
-        "totalParksAreaHa": 111.67,
+        "totalParksAreaHa": 118.87,
         "forestAreaHa": 419.0,
-        "totalGreenAreaHa": 530.67,
-        "greenAreaM2PerCapita": 51.55,
-        "totalGreenM2PerCapita": 244.99,
-        "schoolSportsFacilitiesCount": 59,
+        "totalGreenAreaHa": 537.87,
+        "greenAreaM2PerCapita": 54.88,
+        "totalGreenM2PerCapita": 248.31,
+        "schoolSportsFacilitiesCount": 41,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
-        "culturalCentersCount": 1,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 156.99
+        "annualCulturalEventsCount": 447,
+        "municipalSubsidyPerCapitaPln": 132.87
       },
       "publicSafety": {
         "roadCollisionsAnnual": 490,
@@ -713,7 +727,7 @@
         "publicDisturbanceInterventions": 405
       },
       "housingMarket": {
-        "avgPricePerM2": 17200.0,
+        "avgPricePerM2": 18580.0,
         "priceSecondaryM2": 16800.0,
         "pricePrimaryM2": 18400.0,
         "priceMedianM2": 17000.0,
@@ -728,23 +742,23 @@
         "trafficNoiseExceededPct": 11.2
       },
       "scores": {
-        "mobilityScore": 40.7,
-        "educationScore": 61.9,
+        "mobilityScore": 41.9,
+        "educationScore": 62.1,
         "greeneryScore": 96.0,
-        "cultureAndSeniorScore": 73.3,
+        "cultureAndSeniorScore": 55.5,
         "environmentScore": 94.0,
         "safetyScore": 76.8,
-        "housingAffordabilityScore": 36.1,
+        "housingAffordabilityScore": 32.1,
         "demographicVitalityScore": 67.2
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 505,
-        "forecastedCarePlacesBalance_2028": -73,
-        "forecastedAge4to6_2028": 378,
+        "forecastedAge0to3_2028": 412,
+        "forecastedCarePlacesBalance_2028": -213,
+        "forecastedAge4to6_2028": 381,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 61.3%)."
+        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 69.6%)."
       }
     },
     {
@@ -766,16 +780,16 @@
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 2,
-        "nurseriesPrivateCount": 26,
-        "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 1195,
-        "childrenPerCarePlaceRatio": 1.93,
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 22,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 1023,
+        "childrenPerCarePlaceRatio": 2.25,
         "parentClubsCount": 2,
-        "kindergartensCount": 43,
-        "kindergartenPlacesTotal": 2920,
-        "primarySchoolsCount": 22,
-        "primarySchoolStudentsTotal": 7601,
+        "kindergartensCount": 40,
+        "kindergartenPlacesTotal": 2843,
+        "primarySchoolsCount": 21,
+        "primarySchoolStudentsTotal": 7585,
         "avgStudentsPerClass": 18.0
       },
       "mobilityAndTransport": {
@@ -785,31 +799,33 @@
         "onDemandStopsCount": 48,
         "scheduleBoardsCount": 231,
         "tramNetworkSharePct": 12.5,
-        "isochroneCoveragePct": 60.8,
+        "isochroneCoveragePct": 67.6,
         "parkAndRideCount": 1,
         "bikeRacksCount": 734,
         "bikeLanesLengthKm": 35.3,
         "bikeLanesSeparatedKm": 28.5,
         "bikeLanesCombinedKm": 6.8,
-        "bikeRepairStationsCount": 15
+        "bikeRepairStationsCount": 15,
+        "kasselKerbPct": 16.3,
+        "tactilePavingPct": 34.1
       },
       "greeneryAndSport": {
-        "cityParksCount": 4,
+        "cityParksCount": 5,
         "pocketParksCount": 3,
-        "totalParksAreaHa": 56.62,
+        "totalParksAreaHa": 63.82,
         "forestAreaHa": 180.5,
-        "totalGreenAreaHa": 237.12,
-        "greenAreaM2PerCapita": 8.15,
-        "totalGreenM2PerCapita": 34.15,
-        "schoolSportsFacilitiesCount": 130,
+        "totalGreenAreaHa": 244.32,
+        "greenAreaM2PerCapita": 9.19,
+        "totalGreenM2PerCapita": 35.19,
+        "schoolSportsFacilitiesCount": 122,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 5,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 65.3
+        "annualCulturalEventsCount": 447,
+        "municipalSubsidyPerCapitaPln": 41.45
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1150,
@@ -819,7 +835,7 @@
         "publicDisturbanceInterventions": 1100
       },
       "housingMarket": {
-        "avgPricePerM2": 14900.0,
+        "avgPricePerM2": 14446.0,
         "priceSecondaryM2": 14600.0,
         "pricePrimaryM2": 15600.0,
         "priceMedianM2": 14800.0,
@@ -834,23 +850,23 @@
         "trafficNoiseExceededPct": 15.6
       },
       "scores": {
-        "mobilityScore": 40.9,
-        "educationScore": 59.0,
-        "greeneryScore": 81.0,
-        "cultureAndSeniorScore": 70.7,
-        "environmentScore": 75.8,
+        "mobilityScore": 41.5,
+        "educationScore": 75.3,
+        "greeneryScore": 80.8,
+        "cultureAndSeniorScore": 52.7,
+        "environmentScore": 76.4,
         "safetyScore": 76.6,
-        "housingAffordabilityScore": 58.9,
+        "housingAffordabilityScore": 61.3,
         "demographicVitalityScore": 77.1
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 2343,
-        "forecastedCarePlacesBalance_2028": -562,
-        "forecastedAge4to6_2028": 1751,
+        "forecastedAge0to3_2028": 1890,
+        "forecastedCarePlacesBalance_2028": -394,
+        "forecastedAge4to6_2028": 1811,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -562 miejsc) oraz tworzenie parków kieszonkowych (obecnie 8.15 m² zieleni/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -394 miejsc) oraz tworzenie parków kieszonkowych (obecnie 9.19 m² zieleni/os.)."
       }
     },
     {
@@ -871,18 +887,18 @@
         "populationGrowthRate3YrPct": 0.1
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 1,
+        "nurseriesPublicCount": 0,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 5,
-        "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 208,
-        "childrenPerCarePlaceRatio": 2.21,
-        "parentClubsCount": 3,
-        "kindergartensCount": 13,
-        "kindergartenPlacesTotal": 893,
-        "primarySchoolsCount": 4,
-        "primarySchoolStudentsTotal": 1332,
-        "avgStudentsPerClass": 19.6
+        "nurseriesPrivateCount": 1,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 45,
+        "childrenPerCarePlaceRatio": 10.22,
+        "parentClubsCount": 1,
+        "kindergartensCount": 3,
+        "kindergartenPlacesTotal": 290,
+        "primarySchoolsCount": 3,
+        "primarySchoolStudentsTotal": 1036,
+        "avgStudentsPerClass": 19.9
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 59,
@@ -891,13 +907,15 @@
         "onDemandStopsCount": 12,
         "scheduleBoardsCount": 60,
         "tramNetworkSharePct": 27.1,
-        "isochroneCoveragePct": 71.6,
+        "isochroneCoveragePct": 93.7,
         "parkAndRideCount": 0,
         "bikeRacksCount": 155,
         "bikeLanesLengthKm": 12.2,
         "bikeLanesSeparatedKm": 9.4,
         "bikeLanesCombinedKm": 2.8,
-        "bikeRepairStationsCount": 5
+        "bikeRepairStationsCount": 5,
+        "kasselKerbPct": 8.5,
+        "tactilePavingPct": 30.5
       },
       "greeneryAndSport": {
         "cityParksCount": 3,
@@ -907,15 +925,15 @@
         "totalGreenAreaHa": 102.01,
         "greenAreaM2PerCapita": 23.3,
         "totalGreenM2PerCapita": 64.58,
-        "schoolSportsFacilitiesCount": 25,
+        "schoolSportsFacilitiesCount": 7,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
+        "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 215.26
+        "annualCulturalEventsCount": 224,
+        "municipalSubsidyPerCapitaPln": 91.1
       },
       "publicSafety": {
         "roadCollisionsAnnual": 680,
@@ -925,7 +943,7 @@
         "publicDisturbanceInterventions": 435
       },
       "housingMarket": {
-        "avgPricePerM2": 13800.0,
+        "avgPricePerM2": 13810.0,
         "priceSecondaryM2": 13500.0,
         "pricePrimaryM2": 14400.0,
         "priceMedianM2": 13700.0,
@@ -940,23 +958,23 @@
         "trafficNoiseExceededPct": 18.4
       },
       "scores": {
-        "mobilityScore": 54.0,
-        "educationScore": 50.2,
-        "greeneryScore": 78.9,
-        "cultureAndSeniorScore": 62.7,
-        "environmentScore": 66.5,
+        "mobilityScore": 58.8,
+        "educationScore": 40.0,
+        "greeneryScore": 76.9,
+        "cultureAndSeniorScore": 47.6,
+        "environmentScore": 67.2,
         "safetyScore": 51.4,
-        "housingAffordabilityScore": 70.2,
+        "housingAffordabilityScore": 71.2,
         "demographicVitalityScore": 65.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 460,
-        "forecastedCarePlacesBalance_2028": -137,
-        "forecastedAge4to6_2028": 345,
+        "forecastedAge0to3_2028": 377,
+        "forecastedCarePlacesBalance_2028": -238,
+        "forecastedAge4to6_2028": 363,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 71.6%)."
+        "recommendedMunicipalAction": "Utrzymanie wysokiej dostępności usług publicznych w Dzielnica IX Łagiewniki-Borek Fałęcki przy wsparciu modernizacji przyszkolnej infrastruktury sportowej i oferty dla seniorów (21.0% populacji)."
       }
     },
     {
@@ -979,16 +997,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 1,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 7,
-        "kidsClubsCount": 3,
-        "totalCarePlaces0to3": 354,
-        "childrenPerCarePlaceRatio": 2.56,
+        "nurseriesPrivateCount": 4,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 265,
+        "childrenPerCarePlaceRatio": 3.43,
         "parentClubsCount": 2,
-        "kindergartensCount": 20,
-        "kindergartenPlacesTotal": 1353,
-        "primarySchoolsCount": 8,
-        "primarySchoolStudentsTotal": 2260,
-        "avgStudentsPerClass": 17.0
+        "kindergartensCount": 12,
+        "kindergartenPlacesTotal": 822,
+        "primarySchoolsCount": 6,
+        "primarySchoolStudentsTotal": 1912,
+        "avgStudentsPerClass": 17.5
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 126,
@@ -997,13 +1015,15 @@
         "onDemandStopsCount": 49,
         "scheduleBoardsCount": 155,
         "tramNetworkSharePct": 0.0,
-        "isochroneCoveragePct": 60.8,
+        "isochroneCoveragePct": 67.4,
         "parkAndRideCount": 1,
         "bikeRacksCount": 77,
         "bikeLanesLengthKm": 8.3,
         "bikeLanesSeparatedKm": 6.8,
         "bikeLanesCombinedKm": 1.5,
-        "bikeRepairStationsCount": 3
+        "bikeRepairStationsCount": 3,
+        "kasselKerbPct": 15.9,
+        "tactilePavingPct": 27.0
       },
       "greeneryAndSport": {
         "cityParksCount": 2,
@@ -1013,15 +1033,15 @@
         "totalGreenAreaHa": 97.23,
         "greenAreaM2PerCapita": 4.42,
         "totalGreenM2PerCapita": 32.25,
-        "schoolSportsFacilitiesCount": 46,
+        "schoolSportsFacilitiesCount": 22,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 112.8
+        "annualCulturalEventsCount": 335,
+        "municipalSubsidyPerCapitaPln": 71.6
       },
       "publicSafety": {
         "roadCollisionsAnnual": 450,
@@ -1031,7 +1051,7 @@
         "publicDisturbanceInterventions": 310
       },
       "housingMarket": {
-        "avgPricePerM2": 12400.0,
+        "avgPricePerM2": 13210.0,
         "priceSecondaryM2": 12100.0,
         "pricePrimaryM2": 13100.0,
         "priceMedianM2": 12300.0,
@@ -1047,18 +1067,18 @@
       },
       "scores": {
         "mobilityScore": 28.0,
-        "educationScore": 40.0,
-        "greeneryScore": 60.6,
-        "cultureAndSeniorScore": 59.0,
-        "environmentScore": 88.9,
+        "educationScore": 65.0,
+        "greeneryScore": 59.8,
+        "cultureAndSeniorScore": 48.4,
+        "environmentScore": 89.0,
         "safetyScore": 94.0,
-        "housingAffordabilityScore": 85.1,
+        "housingAffordabilityScore": 83.7,
         "demographicVitalityScore": 67.7
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 914,
-        "forecastedCarePlacesBalance_2028": -332,
-        "forecastedAge4to6_2028": 685,
+        "forecastedAge0to3_2028": 745,
+        "forecastedCarePlacesBalance_2028": -294,
+        "forecastedAge4to6_2028": 719,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "HIGH",
@@ -1085,16 +1105,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 16,
+        "nurseriesPrivateCount": 10,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 835,
-        "childrenPerCarePlaceRatio": 1.9,
-        "parentClubsCount": 4,
-        "kindergartensCount": 29,
-        "kindergartenPlacesTotal": 1945,
-        "primarySchoolsCount": 9,
-        "primarySchoolStudentsTotal": 4863,
-        "avgStudentsPerClass": 22.0
+        "totalCarePlaces0to3": 685,
+        "childrenPerCarePlaceRatio": 2.32,
+        "parentClubsCount": 3,
+        "kindergartensCount": 22,
+        "kindergartenPlacesTotal": 1452,
+        "primarySchoolsCount": 8,
+        "primarySchoolStudentsTotal": 4684,
+        "avgStudentsPerClass": 22.1
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 89,
@@ -1103,13 +1123,15 @@
         "onDemandStopsCount": 19,
         "scheduleBoardsCount": 92,
         "tramNetworkSharePct": 11.2,
-        "isochroneCoveragePct": 69.1,
+        "isochroneCoveragePct": 90.5,
         "parkAndRideCount": 1,
         "bikeRacksCount": 203,
         "bikeLanesLengthKm": 17.8,
         "bikeLanesSeparatedKm": 14.2,
         "bikeLanesCombinedKm": 3.6,
-        "bikeRepairStationsCount": 7
+        "bikeRepairStationsCount": 7,
+        "kasselKerbPct": 12.4,
+        "tactilePavingPct": 21.3
       },
       "greeneryAndSport": {
         "cityParksCount": 3,
@@ -1119,15 +1141,15 @@
         "totalGreenAreaHa": 54.93,
         "greenAreaM2PerCapita": 8.55,
         "totalGreenM2PerCapita": 9.96,
-        "schoolSportsFacilitiesCount": 81,
+        "schoolSportsFacilitiesCount": 67,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 61.68
+        "annualCulturalEventsCount": 335,
+        "municipalSubsidyPerCapitaPln": 39.15
       },
       "publicSafety": {
         "roadCollisionsAnnual": 980,
@@ -1137,7 +1159,7 @@
         "publicDisturbanceInterventions": 920
       },
       "housingMarket": {
-        "avgPricePerM2": 14100.0,
+        "avgPricePerM2": 13214.0,
         "priceSecondaryM2": 13800.0,
         "pricePrimaryM2": 14600.0,
         "priceMedianM2": 14000.0,
@@ -1152,19 +1174,19 @@
         "trafficNoiseExceededPct": 20.1
       },
       "scores": {
-        "mobilityScore": 51.3,
-        "educationScore": 46.4,
-        "greeneryScore": 63.8,
-        "cultureAndSeniorScore": 59.1,
-        "environmentScore": 49.5,
+        "mobilityScore": 56.6,
+        "educationScore": 64.2,
+        "greeneryScore": 63.6,
+        "cultureAndSeniorScore": 48.1,
+        "environmentScore": 50.6,
         "safetyScore": 74.6,
-        "housingAffordabilityScore": 66.2,
+        "housingAffordabilityScore": 70.1,
         "demographicVitalityScore": 59.8
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1596,
-        "forecastedCarePlacesBalance_2028": -362,
-        "forecastedAge4to6_2028": 1195,
+        "forecastedAge0to3_2028": 1302,
+        "forecastedCarePlacesBalance_2028": -292,
+        "forecastedAge4to6_2028": 1254,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
@@ -1191,13 +1213,13 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 17,
+        "nurseriesPrivateCount": 13,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 982,
-        "childrenPerCarePlaceRatio": 2.01,
-        "parentClubsCount": 3,
-        "kindergartensCount": 32,
-        "kindergartenPlacesTotal": 2449,
+        "totalCarePlaces0to3": 863,
+        "childrenPerCarePlaceRatio": 2.29,
+        "parentClubsCount": 2,
+        "kindergartensCount": 27,
+        "kindergartenPlacesTotal": 2326,
         "primarySchoolsCount": 15,
         "primarySchoolStudentsTotal": 4649,
         "avgStudentsPerClass": 17.0
@@ -1209,13 +1231,15 @@
         "onDemandStopsCount": 36,
         "scheduleBoardsCount": 169,
         "tramNetworkSharePct": 16.6,
-        "isochroneCoveragePct": 66.6,
+        "isochroneCoveragePct": 85.7,
         "parkAndRideCount": 1,
         "bikeRacksCount": 398,
         "bikeLanesLengthKm": 22.0,
         "bikeLanesSeparatedKm": 17.8,
         "bikeLanesCombinedKm": 4.2,
-        "bikeRepairStationsCount": 9
+        "bikeRepairStationsCount": 9,
+        "kasselKerbPct": 20.7,
+        "tactilePavingPct": 31.0
       },
       "greeneryAndSport": {
         "cityParksCount": 8,
@@ -1225,15 +1249,15 @@
         "totalGreenAreaHa": 56.74,
         "greenAreaM2PerCapita": 7.07,
         "totalGreenM2PerCapita": 8.8,
-        "schoolSportsFacilitiesCount": 83,
+        "schoolSportsFacilitiesCount": 63,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 4,
+        "libraryBranchesCount": 3,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 70.34
+        "seniorActivityCentersCount": 4,
+        "annualCulturalEventsCount": 335,
+        "municipalSubsidyPerCapitaPln": 33.49
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1040,
@@ -1243,7 +1267,7 @@
         "publicDisturbanceInterventions": 980
       },
       "housingMarket": {
-        "avgPricePerM2": 14300.0,
+        "avgPricePerM2": 12719.0,
         "priceSecondaryM2": 14000.0,
         "pricePrimaryM2": 14800.0,
         "priceMedianM2": 14200.0,
@@ -1258,19 +1282,19 @@
         "trafficNoiseExceededPct": 17.8
       },
       "scores": {
-        "mobilityScore": 53.4,
-        "educationScore": 56.5,
-        "greeneryScore": 67.4,
-        "cultureAndSeniorScore": 61.8,
-        "environmentScore": 58.4,
+        "mobilityScore": 58.7,
+        "educationScore": 75.4,
+        "greeneryScore": 66.9,
+        "cultureAndSeniorScore": 49.3,
+        "environmentScore": 59.4,
         "safetyScore": 78.2,
-        "housingAffordabilityScore": 65.2,
+        "housingAffordabilityScore": 71.3,
         "demographicVitalityScore": 58.7
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1973,
-        "forecastedCarePlacesBalance_2028": -498,
-        "forecastedAge4to6_2028": 1480,
+        "forecastedAge0to3_2028": 1685,
+        "forecastedCarePlacesBalance_2028": -401,
+        "forecastedAge4to6_2028": 1483,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
@@ -1297,16 +1321,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 25,
+        "nurseriesPrivateCount": 18,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 1153,
-        "childrenPerCarePlaceRatio": 1.75,
-        "parentClubsCount": 4,
-        "kindergartensCount": 37,
-        "kindergartenPlacesTotal": 2515,
-        "primarySchoolsCount": 16,
-        "primarySchoolStudentsTotal": 4782,
-        "avgStudentsPerClass": 16.8
+        "totalCarePlaces0to3": 948,
+        "childrenPerCarePlaceRatio": 2.13,
+        "parentClubsCount": 3,
+        "kindergartensCount": 31,
+        "kindergartenPlacesTotal": 2245,
+        "primarySchoolsCount": 15,
+        "primarySchoolStudentsTotal": 4658,
+        "avgStudentsPerClass": 16.9
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 213,
@@ -1315,31 +1339,33 @@
         "onDemandStopsCount": 18,
         "scheduleBoardsCount": 230,
         "tramNetworkSharePct": 22.5,
-        "isochroneCoveragePct": 68.5,
+        "isochroneCoveragePct": 89.4,
         "parkAndRideCount": 1,
         "bikeRacksCount": 904,
         "bikeLanesLengthKm": 29.5,
         "bikeLanesSeparatedKm": 22.4,
         "bikeLanesCombinedKm": 7.1,
-        "bikeRepairStationsCount": 13
+        "bikeRepairStationsCount": 13,
+        "kasselKerbPct": 4.7,
+        "tactilePavingPct": 37.1
       },
       "greeneryAndSport": {
-        "cityParksCount": 6,
+        "cityParksCount": 7,
         "pocketParksCount": 4,
-        "totalParksAreaHa": 85.35,
+        "totalParksAreaHa": 92.55,
         "forestAreaHa": 0.0,
-        "totalGreenAreaHa": 85.35,
-        "greenAreaM2PerCapita": 18.75,
-        "totalGreenM2PerCapita": 18.75,
-        "schoolSportsFacilitiesCount": 117,
+        "totalGreenAreaHa": 92.55,
+        "greenAreaM2PerCapita": 20.33,
+        "totalGreenM2PerCapita": 20.33,
+        "schoolSportsFacilitiesCount": 103,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
+        "libraryBranchesCount": 2,
         "culturalCentersCount": 1,
-        "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 99.61
+        "seniorActivityCentersCount": 6,
+        "annualCulturalEventsCount": 335,
+        "municipalSubsidyPerCapitaPln": 47.42
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1260,
@@ -1349,7 +1375,7 @@
         "publicDisturbanceInterventions": 1480
       },
       "housingMarket": {
-        "avgPricePerM2": 16200.0,
+        "avgPricePerM2": 16474.0,
         "priceSecondaryM2": 15800.0,
         "pricePrimaryM2": 17100.0,
         "priceMedianM2": 16000.0,
@@ -1364,23 +1390,23 @@
         "trafficNoiseExceededPct": 24.6
       },
       "scores": {
-        "mobilityScore": 60.8,
-        "educationScore": 64.3,
-        "greeneryScore": 73.6,
-        "cultureAndSeniorScore": 67.6,
-        "environmentScore": 43.5,
+        "mobilityScore": 66.5,
+        "educationScore": 76.1,
+        "greeneryScore": 75.0,
+        "cultureAndSeniorScore": 55.0,
+        "environmentScore": 45.1,
         "safetyScore": 56.5,
-        "housingAffordabilityScore": 46.0,
+        "housingAffordabilityScore": 45.8,
         "demographicVitalityScore": 95.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 2098,
-        "forecastedCarePlacesBalance_2028": -420,
-        "forecastedAge4to6_2028": 1559,
+        "forecastedAge0to3_2028": 1850,
+        "forecastedCarePlacesBalance_2028": -440,
+        "forecastedAge4to6_2028": 1606,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +4.8%, bilans 2028: -420 miejsc)."
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +4.8%, bilans 2028: -440 miejsc)."
       }
     },
     {
@@ -1401,15 +1427,15 @@
         "populationGrowthRate3YrPct": 3.31
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 2,
+        "nurseriesPublicCount": 1,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 26,
+        "nurseriesPrivateCount": 19,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 1217,
-        "childrenPerCarePlaceRatio": 1.4,
-        "parentClubsCount": 3,
-        "kindergartensCount": 29,
-        "kindergartenPlacesTotal": 1609,
+        "totalCarePlaces0to3": 884,
+        "childrenPerCarePlaceRatio": 1.93,
+        "parentClubsCount": 2,
+        "kindergartensCount": 21,
+        "kindergartenPlacesTotal": 1296,
         "primarySchoolsCount": 5,
         "primarySchoolStudentsTotal": 2286,
         "avgStudentsPerClass": 21.6
@@ -1421,13 +1447,15 @@
         "onDemandStopsCount": 18,
         "scheduleBoardsCount": 131,
         "tramNetworkSharePct": 13.9,
-        "isochroneCoveragePct": 70.6,
+        "isochroneCoveragePct": 92.6,
         "parkAndRideCount": 0,
         "bikeRacksCount": 229,
         "bikeLanesLengthKm": 23.4,
         "bikeLanesSeparatedKm": 18.6,
         "bikeLanesCombinedKm": 4.8,
-        "bikeRepairStationsCount": 11
+        "bikeRepairStationsCount": 11,
+        "kasselKerbPct": 10.7,
+        "tactilePavingPct": 30.3
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
@@ -1437,15 +1465,15 @@
         "totalGreenAreaHa": 54.88,
         "greenAreaM2PerCapita": 14.97,
         "totalGreenM2PerCapita": 14.97,
-        "schoolSportsFacilitiesCount": 69,
+        "schoolSportsFacilitiesCount": 45,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
-        "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 30.91
+        "culturalCentersCount": 1,
+        "seniorActivityCentersCount": 1,
+        "annualCulturalEventsCount": 224,
+        "municipalSubsidyPerCapitaPln": 39.24
       },
       "publicSafety": {
         "roadCollisionsAnnual": 950,
@@ -1455,7 +1483,7 @@
         "publicDisturbanceInterventions": 830
       },
       "housingMarket": {
-        "avgPricePerM2": 14400.0,
+        "avgPricePerM2": 14763.0,
         "priceSecondaryM2": 14100.0,
         "pricePrimaryM2": 15000.0,
         "priceMedianM2": 14300.0,
@@ -1470,23 +1498,23 @@
         "trafficNoiseExceededPct": 21.0
       },
       "scores": {
-        "mobilityScore": 57.6,
-        "educationScore": 53.6,
-        "greeneryScore": 71.9,
-        "cultureAndSeniorScore": 46.1,
-        "environmentScore": 52.8,
+        "mobilityScore": 63.0,
+        "educationScore": 65.0,
+        "greeneryScore": 70.4,
+        "cultureAndSeniorScore": 44.0,
+        "environmentScore": 53.9,
         "safetyScore": 58.9,
-        "housingAffordabilityScore": 63.4,
+        "housingAffordabilityScore": 63.1,
         "demographicVitalityScore": 77.8
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1754,
-        "forecastedCarePlacesBalance_2028": -98,
-        "forecastedAge4to6_2028": 1308,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge0to3_2028": 1617,
+        "forecastedCarePlacesBalance_2028": -329,
+        "forecastedAge4to6_2028": 1296,
+        "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 70.6%)."
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +3.3%, bilans 2028: -329 miejsc)."
       }
     },
     {
@@ -1509,16 +1537,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 13,
+        "nurseriesPrivateCount": 10,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 797,
-        "childrenPerCarePlaceRatio": 1.59,
+        "totalCarePlaces0to3": 723,
+        "childrenPerCarePlaceRatio": 1.76,
         "parentClubsCount": 3,
-        "kindergartensCount": 23,
-        "kindergartenPlacesTotal": 2001,
-        "primarySchoolsCount": 7,
-        "primarySchoolStudentsTotal": 3304,
-        "avgStudentsPerClass": 20.9
+        "kindergartensCount": 18,
+        "kindergartenPlacesTotal": 1729,
+        "primarySchoolsCount": 6,
+        "primarySchoolStudentsTotal": 3203,
+        "avgStudentsPerClass": 21.4
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 91,
@@ -1527,13 +1555,15 @@
         "onDemandStopsCount": 8,
         "scheduleBoardsCount": 94,
         "tramNetworkSharePct": 26.4,
-        "isochroneCoveragePct": 80.3,
+        "isochroneCoveragePct": 98.8,
         "parkAndRideCount": 0,
         "bikeRacksCount": 331,
         "bikeLanesLengthKm": 15.9,
         "bikeLanesSeparatedKm": 12.8,
         "bikeLanesCombinedKm": 3.1,
-        "bikeRepairStationsCount": 6
+        "bikeRepairStationsCount": 6,
+        "kasselKerbPct": 12.1,
+        "tactilePavingPct": 48.4
       },
       "greeneryAndSport": {
         "cityParksCount": 4,
@@ -1543,15 +1573,15 @@
         "totalGreenAreaHa": 38.41,
         "greenAreaM2PerCapita": 7.56,
         "totalGreenM2PerCapita": 7.56,
-        "schoolSportsFacilitiesCount": 52,
+        "schoolSportsFacilitiesCount": 44,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 44.61
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 224,
+        "municipalSubsidyPerCapitaPln": 28.32
       },
       "publicSafety": {
         "roadCollisionsAnnual": 690,
@@ -1561,7 +1591,7 @@
         "publicDisturbanceInterventions": 690
       },
       "housingMarket": {
-        "avgPricePerM2": 13300.0,
+        "avgPricePerM2": 12734.0,
         "priceSecondaryM2": 13000.0,
         "pricePrimaryM2": 13900.0,
         "priceMedianM2": 13200.0,
@@ -1576,21 +1606,21 @@
         "trafficNoiseExceededPct": 14.2
       },
       "scores": {
-        "mobilityScore": 71.5,
-        "educationScore": 59.9,
-        "greeneryScore": 64.8,
-        "cultureAndSeniorScore": 50.3,
-        "environmentScore": 67.4,
+        "mobilityScore": 71.8,
+        "educationScore": 71.1,
+        "greeneryScore": 64.9,
+        "cultureAndSeniorScore": 46.1,
+        "environmentScore": 68.2,
         "safetyScore": 86.1,
-        "housingAffordabilityScore": 75.3,
+        "housingAffordabilityScore": 78.2,
         "demographicVitalityScore": 54.2
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1259,
-        "forecastedCarePlacesBalance_2028": -147,
-        "forecastedAge4to6_2028": 946,
+        "forecastedAge0to3_2028": 1041,
+        "forecastedCarePlacesBalance_2028": -58,
+        "forecastedAge4to6_2028": 978,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
-        "seniorInfrastructureDeficit": "HIGH",
+        "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.8%)."
       }
@@ -1615,16 +1645,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 1,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 8,
-        "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 427,
-        "childrenPerCarePlaceRatio": 1.77,
+        "nurseriesPrivateCount": 6,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 335,
+        "childrenPerCarePlaceRatio": 2.25,
         "parentClubsCount": 1,
-        "kindergartensCount": 21,
-        "kindergartenPlacesTotal": 1737,
-        "primarySchoolsCount": 11,
-        "primarySchoolStudentsTotal": 3239,
-        "avgStudentsPerClass": 20.4
+        "kindergartensCount": 13,
+        "kindergartenPlacesTotal": 1291,
+        "primarySchoolsCount": 10,
+        "primarySchoolStudentsTotal": 3199,
+        "avgStudentsPerClass": 20.9
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 56,
@@ -1633,13 +1663,15 @@
         "onDemandStopsCount": 6,
         "scheduleBoardsCount": 67,
         "tramNetworkSharePct": 23.2,
-        "isochroneCoveragePct": 78.6,
+        "isochroneCoveragePct": 98.3,
         "parkAndRideCount": 0,
         "bikeRacksCount": 579,
         "bikeLanesLengthKm": 16.9,
         "bikeLanesSeparatedKm": 13.5,
         "bikeLanesCombinedKm": 3.4,
-        "bikeRepairStationsCount": 7
+        "bikeRepairStationsCount": 7,
+        "kasselKerbPct": 1.8,
+        "tactilePavingPct": 33.9
       },
       "greeneryAndSport": {
         "cityParksCount": 2,
@@ -1649,15 +1681,15 @@
         "totalGreenAreaHa": 31.95,
         "greenAreaM2PerCapita": 8.77,
         "totalGreenM2PerCapita": 8.77,
-        "schoolSportsFacilitiesCount": 84,
+        "schoolSportsFacilitiesCount": 65,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 4,
+        "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 124.43
+        "seniorActivityCentersCount": 3,
+        "annualCulturalEventsCount": 224,
+        "municipalSubsidyPerCapitaPln": 39.49
       },
       "publicSafety": {
         "roadCollisionsAnnual": 620,
@@ -1667,7 +1699,7 @@
         "publicDisturbanceInterventions": 740
       },
       "housingMarket": {
-        "avgPricePerM2": 12300.0,
+        "avgPricePerM2": 12658.0,
         "priceSecondaryM2": 12100.0,
         "pricePrimaryM2": 12900.0,
         "priceMedianM2": 12200.0,
@@ -1682,21 +1714,21 @@
         "trafficNoiseExceededPct": 15.8
       },
       "scores": {
-        "mobilityScore": 67.4,
-        "educationScore": 64.5,
-        "greeneryScore": 62.7,
-        "cultureAndSeniorScore": 61.4,
-        "environmentScore": 63.3,
+        "mobilityScore": 68.8,
+        "educationScore": 71.4,
+        "greeneryScore": 62.3,
+        "cultureAndSeniorScore": 47.1,
+        "environmentScore": 64.1,
         "safetyScore": 76.7,
-        "housingAffordabilityScore": 84.9,
+        "housingAffordabilityScore": 85.0,
         "demographicVitalityScore": 46.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 730,
-        "forecastedCarePlacesBalance_2028": -120,
-        "forecastedAge4to6_2028": 552,
+        "forecastedAge0to3_2028": 618,
+        "forecastedCarePlacesBalance_2028": -128,
+        "forecastedAge4to6_2028": 568,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
-        "seniorInfrastructureDeficit": "HIGH",
+        "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (27.2%)."
       }
@@ -1721,16 +1753,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 3,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 6,
-        "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 433,
-        "childrenPerCarePlaceRatio": 1.43,
+        "nurseriesPrivateCount": 1,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 234,
+        "childrenPerCarePlaceRatio": 2.64,
         "parentClubsCount": 0,
-        "kindergartensCount": 11,
-        "kindergartenPlacesTotal": 674,
-        "primarySchoolsCount": 6,
-        "primarySchoolStudentsTotal": 2813,
-        "avgStudentsPerClass": 20.2
+        "kindergartensCount": 6,
+        "kindergartenPlacesTotal": 435,
+        "primarySchoolsCount": 4,
+        "primarySchoolStudentsTotal": 1599,
+        "avgStudentsPerClass": 20.0
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 140,
@@ -1739,13 +1771,15 @@
         "onDemandStopsCount": 63,
         "scheduleBoardsCount": 147,
         "tramNetworkSharePct": 12.9,
-        "isochroneCoveragePct": 62.0,
+        "isochroneCoveragePct": 72.4,
         "parkAndRideCount": 0,
         "bikeRacksCount": 128,
         "bikeLanesLengthKm": 10.0,
         "bikeLanesSeparatedKm": 8.2,
         "bikeLanesCombinedKm": 1.8,
-        "bikeRepairStationsCount": 4
+        "bikeRepairStationsCount": 4,
+        "kasselKerbPct": 11.4,
+        "tactilePavingPct": 41.4
       },
       "greeneryAndSport": {
         "cityParksCount": 5,
@@ -1755,15 +1789,15 @@
         "totalGreenAreaHa": 55.59,
         "greenAreaM2PerCapita": 9.77,
         "totalGreenM2PerCapita": 27.16,
-        "schoolSportsFacilitiesCount": 46,
+        "schoolSportsFacilitiesCount": 20,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
-        "culturalCentersCount": 0,
-        "seniorActivityCentersCount": 1,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 55.39
+        "culturalCentersCount": 14,
+        "seniorActivityCentersCount": 2,
+        "annualCulturalEventsCount": 1677,
+        "municipalSubsidyPerCapitaPln": 527.38
       },
       "publicSafety": {
         "roadCollisionsAnnual": 380,
@@ -1773,7 +1807,7 @@
         "publicDisturbanceInterventions": 270
       },
       "housingMarket": {
-        "avgPricePerM2": 11800.0,
+        "avgPricePerM2": 12188.0,
         "priceSecondaryM2": 11600.0,
         "pricePrimaryM2": 12400.0,
         "priceMedianM2": 11700.0,
@@ -1788,19 +1822,19 @@
         "trafficNoiseExceededPct": 6.8
       },
       "scores": {
-        "mobilityScore": 37.7,
-        "educationScore": 48.1,
-        "greeneryScore": 65.4,
-        "cultureAndSeniorScore": 44.0,
-        "environmentScore": 88.6,
+        "mobilityScore": 39.6,
+        "educationScore": 61.4,
+        "greeneryScore": 64.2,
+        "cultureAndSeniorScore": 66.8,
+        "environmentScore": 88.7,
         "safetyScore": 87.8,
         "housingAffordabilityScore": 92.0,
         "demographicVitalityScore": 61.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 624,
-        "forecastedCarePlacesBalance_2028": -35,
-        "forecastedAge4to6_2028": 467,
+        "forecastedAge0to3_2028": 519,
+        "forecastedCarePlacesBalance_2028": -155,
+        "forecastedAge4to6_2028": 459,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
@@ -1827,16 +1861,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 4,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 16,
-        "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 884,
-        "childrenPerCarePlaceRatio": 1.2,
+        "nurseriesPrivateCount": 9,
+        "kidsClubsCount": 0,
+        "totalCarePlaces0to3": 702,
+        "childrenPerCarePlaceRatio": 1.51,
         "parentClubsCount": 6,
-        "kindergartensCount": 36,
-        "kindergartenPlacesTotal": 2325,
-        "primarySchoolsCount": 16,
-        "primarySchoolStudentsTotal": 4870,
-        "avgStudentsPerClass": 17.2
+        "kindergartensCount": 29,
+        "kindergartenPlacesTotal": 2079,
+        "primarySchoolsCount": 15,
+        "primarySchoolStudentsTotal": 4437,
+        "avgStudentsPerClass": 16.7
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 272,
@@ -1845,13 +1879,15 @@
         "onDemandStopsCount": 136,
         "scheduleBoardsCount": 313,
         "tramNetworkSharePct": 17.3,
-        "isochroneCoveragePct": 58.8,
+        "isochroneCoveragePct": 58.6,
         "parkAndRideCount": 0,
         "bikeRacksCount": 1485,
         "bikeLanesLengthKm": 40.0,
         "bikeLanesSeparatedKm": 31.4,
         "bikeLanesCombinedKm": 8.6,
-        "bikeRepairStationsCount": 16
+        "bikeRepairStationsCount": 16,
+        "kasselKerbPct": 5.1,
+        "tactilePavingPct": 51.5
       },
       "greeneryAndSport": {
         "cityParksCount": 8,
@@ -1861,15 +1897,15 @@
         "totalGreenAreaHa": 182.45,
         "greenAreaM2PerCapita": 31.23,
         "totalGreenM2PerCapita": 38.99,
-        "schoolSportsFacilitiesCount": 110,
+        "schoolSportsFacilitiesCount": 95,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 3,
-        "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 0,
-        "municipalSubsidyPerCapitaPln": 169.55
+        "culturalCentersCount": 0,
+        "seniorActivityCentersCount": 13,
+        "annualCulturalEventsCount": 447,
+        "municipalSubsidyPerCapitaPln": 61.5
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1080,
@@ -1879,7 +1915,7 @@
         "publicDisturbanceInterventions": 1290
       },
       "housingMarket": {
-        "avgPricePerM2": 13300.0,
+        "avgPricePerM2": 12520.0,
         "priceSecondaryM2": 12900.0,
         "pricePrimaryM2": 14100.0,
         "priceMedianM2": 13100.0,
@@ -1894,20 +1930,20 @@
         "trafficNoiseExceededPct": 16.5
       },
       "scores": {
-        "mobilityScore": 41.2,
-        "educationScore": 85.9,
-        "greeneryScore": 81.5,
-        "cultureAndSeniorScore": 81.0,
-        "environmentScore": 52.2,
+        "mobilityScore": 39.0,
+        "educationScore": 83.6,
+        "greeneryScore": 79.9,
+        "cultureAndSeniorScore": 67.5,
+        "environmentScore": 53.3,
         "safetyScore": 59.9,
-        "housingAffordabilityScore": 75.8,
+        "housingAffordabilityScore": 79.4,
         "demographicVitalityScore": 49.2
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1035,
-        "forecastedCarePlacesBalance_2028": 108,
-        "forecastedAge4to6_2028": 781,
-        "nurseryInvestmentPotentialB2B": "LOW",
+        "forecastedAge0to3_2028": 869,
+        "forecastedCarePlacesBalance_2028": 50,
+        "forecastedAge4to6_2028": 820,
+        "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.7%)."

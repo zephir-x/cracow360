@@ -1,31 +1,20 @@
 ﻿"""
 GOAL / PURPOSE:
-    Step 06 in the Krakow360 Python analytics pipeline.
+    Step 05 in the Krakow360 Python analytics pipeline.
     Synthesizes and exports the official municipal tourism and exploration contract
     (`data/contracts/krakow_tourism_explorer.json`) from verified seed datasets (`data/contracts/krakow_tourism_seed.json`).
 
 OFFICIAL OPEN DATA SOURCES INTEGRATED (100% Verified):
     1. `tour-1`: Oficjalny Raport Ruchu Turystycznego w Krakowie (UMK / MOT)
-       - Portal: https://mot.krakow.pl & https://krakow.pl
-       - Telemetria: 14.72 mln odwiedzających, 9.85 mln turystów nocujących, wskaźniki overtourismu,
-         udział rynków zagranicznych (UK 20.6%, DE 9.1%, IT 7.6%, USA 6.7%, FR 5.8%, ES 5.2%).
     2. `tour-2`: Miejskie Muzea i Instytucje Kultury w Krakowie (BIP UMK / Otwarte Dane UMK)
-       - Portal: https://otwartedane.um.krakow.pl & https://bip.krakow.pl/?dok_id=115533
-       - Frekwencja, filie, lokalizacje oddziałów Muzeum Krakowa, MOCAK, NCK, Cricoteka.
     3. `tour-3`: Rejestr Zabytków Nieruchomych i Pomników Historii (NID / MSIP Kraków)
-       - Portal: https://msip.krakow.pl & https://zabytek.pl/pl/obiekty
-       - Współrzędne GPS WGS84, kategoria zabytku UNESCO, strefy ochrony krajobrazowej.
     4. `trans-1`: Komunikacja Miejska w Krakowie (KMK / ZTP)
-       - Rejestr relacji tranzytowych z Dworca Głównego do 18 dzielnic (linie tramwajowe i autobusowe,
-         średni czas dojazdu w minutach).
     5. `green-1`, `green-2`, `green-3`: Parki miejskie, parki kieszonkowe oraz Lasy komunalne (ZZM)
-       - Integracja terenów zielonych (Zakrzówek, Lasek Wolski, Błonia, Park Jordana) z trasami.
 
 CALCULATED METRICS:
-    - Haversine Distance (km) + walking duration (4.5 km/h z faktorem 1.25) & cycling duration (15 km/h).
-    - Transit transitTimeMinutes & directLines from Krakow Main Station (Dworzec Główny: 50.0660°N, 19.9485°E).
-    - Objective Crowd/Overtourism Index: 'PEAK' (Overcrowded), 'MODERATE' (Balanced), 'PEACEFUL' (Hidden Gem).
-    - Balanced alternative pairs ("Zejdź z utartego szlaku") pairing crowded hotspots with serene counterparts.
+    - Haversine Distance (km) + walking duration (4.5 km/h) & cycling duration (15 km/h).
+    - Transit transitTimeMinutes & directLines from Krakow Main Station.
+    - Objective Crowd/Overtourism Index: 'PEAK', 'MODERATE', 'PEACEFUL'.
 """
 
 from __future__ import annotations
@@ -41,6 +30,7 @@ sys.path.append(str(Path(__file__).resolve().parent))
 
 from config import (
     CONTRACTS_OUTPUT_DIR,
+    PROCESSED_DATA_DIR,
     KRAKOW_DISTRICTS,
 )
 
@@ -64,7 +54,7 @@ def haversine_distance_km(lat1: float, lon1: float, lat2: float, lon2: float) ->
 
 def load_raw_tourism_seed() -> dict[str, Any]:
     # Loads curated tourism benchmarks and catalogs from data/contracts/krakow_tourism_seed.json.
-    seed_file = CONTRACTS_OUTPUT_DIR / "krakow_tourism_seed.json"
+    seed_file = PROCESSED_DATA_DIR / "krakow_tourism_seed.json"
     if not seed_file.exists():
         raise FileNotFoundError(f"Tourism seed file not found at {seed_file}")
 
@@ -228,7 +218,7 @@ def build_tourism_contract() -> dict[str, Any]:
 
 
 def main() -> int:
-    print("=== Step 06: Generating Krakow Tourism Explorer Contract ===")
+    print("=== Step 05: Generating Krakow Tourism Explorer Contract ===")
     contract = build_tourism_contract()
 
     out_file = CONTRACTS_OUTPUT_DIR / "krakow_tourism_explorer.json"
@@ -245,3 +235,4 @@ def main() -> int:
 
 if __name__ == "__main__":
     sys.exit(main())
+    

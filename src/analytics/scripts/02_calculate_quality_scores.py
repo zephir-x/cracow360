@@ -33,28 +33,12 @@ def rescale_to_practical_band(scores: list[float], low: float = 48.0, high: floa
     Maps a composite 0-100 Min-Max vector onto a realistic urban quality band [low, high]
     so that the lowest-scoring district in a category reflects actual severity of deficits
     while remaining on an interpretable 0-100 urban index scale.
-
-    Args:
-        scores: Raw composite score list across the 18 districts.
-        low: Calibrated lower bound of the practical urban band.
-        high: Calibrated upper bound of the practical urban band.
-
-    Returns:
-        List of rescaled float scores rounded to 1 decimal place.
     """
     norm = min_max_normalize_0_100(scores, invert=False)
     return [round(low + (x / 100.0) * (high - low), 1) for x in norm]
 
 
 def calculate_quality_scores() -> None:
-    """
-    Main analytical workflow:
-    1. Ingests cleaned aggregate indicators from `data_processed/districts_aggregated.json`.
-    2. Computes stimulants and destimulants across all 8 urban quality dimensions.
-    3. Applies logarithmic scaling (math.log1p), Bayesian population/area smoothing, and functional weighting.
-    4. Maps composite indices to calibrated practical score bands reflecting real-world urban deficits.
-    5. Saves the scored districts to `data_processed/districts_scored.json`.
-    """
     in_path = PROCESSED_DATA_DIR / "districts_aggregated.json"
     if not in_path.exists():
         raise FileNotFoundError(f"Missing {in_path}. Run 01_etl_demographics_and_infrastructure.py first.")
@@ -66,8 +50,6 @@ def calculate_quality_scores() -> None:
     n_districts = len(districts)
 
     # 1. MOBILITY & TRANSPORT SCORE
-    # Uses damped effective area (areaKm2 + 8.0) so large districts with extensive green/industrial fringes
-    # (like Podgórze 48 trams, Czyżyny 17 trams, Dębniki 26 trams) are evaluated on their inhabited transit corridors.
     iso_cov = [d["mobilityAndTransport"]["isochroneCoveragePct"] for d in districts]
     tram_network = [
         math.log1p(d["mobilityAndTransport"]["tramStopsCount"] / (d["areaKm2"] + 8.0))
@@ -90,25 +72,19 @@ def calculate_quality_scores() -> None:
         for d in districts
     ]
 
-    # Normalize components (all stimulants: higher values indicate superior transit access & frequency)
     s_iso = min_max_normalize_0_100(iso_cov, invert=False)
     s_tram = min_max_normalize_0_100(tram_network, invert=False)
     s_service = min_max_normalize_0_100(service_density, invert=False)
     s_bike = min_max_normalize_0_100(bike_lane_network, invert=False)
     s_intermodal = min_max_normalize_0_100(intermodal_hubs, invert=False)
 
-    # Weighting: 28% walking isochrone, 30% tram rapid network, 17% timetable service frequency, 15% bike lanes DDR, 10% intermodal P+R & racks
     raw_mobility = [
         0.28 * s_iso[i] + 0.30 * s_tram[i] + 0.17 * s_service[i] + 0.15 * s_bike[i] + 0.10 * s_intermodal[i]
         for i in range(n_districts)
     ]
-    # Practical band [28.0, 96.0]: appropriately penalizes car-dependent outer areas lacking tram lines
     mobility_scores = rescale_to_practical_band(raw_mobility, low=28.0, high=96.0)
 
-    # 2. EDUCATION & EARLY CARE SCORE (0-14 YEARS)
-    # Indicators: nursery place pressure (destimulant), kindergarten coverage %, primary school class size,
-    # and institutional network richness (total nurseries, kindergartens, schools, parent clubs) so
-    # tiny suburban districts with only 4 kindergartens don't outscore full urban educational networks.
+    # 2. EDUCATION & EARLY CARE SCORE
     nursery_ratio = [d["educationAndCare"]["childrenPerCarePlaceRatio"] for d in districts]
     kg_coverage = [
         min(2.2, d["educationAndCare"]["kindergartenPlacesTotal"] / max(d["demographics"]["age4to6"], 1))
@@ -126,23 +102,18 @@ def calculate_quality_scores() -> None:
         for d in districts
     ]
 
-    # Normalization: lower nursery ratio = better (invert=True), smaller classes = better (invert=True)
     s_nursery = min_max_normalize_0_100(nursery_ratio, invert=True)
     s_kg = min_max_normalize_0_100(kg_coverage, invert=False)
     s_class = min_max_normalize_0_100(class_size, invert=True)
     s_edu_mass = min_max_normalize_0_100(edu_network_mass, invert=False)
 
-    # Weighting: 38% nursery ratio, 25% kindergarten coverage, 19% primary school class size, 18% institutional network mass
     raw_education = [
         0.38 * s_nursery[i] + 0.25 * s_kg[i] + 0.19 * s_class[i] + 0.18 * s_edu_mass[i]
         for i in range(n_districts)
     ]
-    # Band [40.0, 92.0]: penalizes peripheral districts with severe nursery shortages or sparse school networks
     education_scores = rescale_to_practical_band(raw_education, low=40.0, high=92.0)
 
-    # 3. GREENERY & SPORT SCORE (Parks, Pocket Parks, Forests, Swimming Pools)
-    # Uses log-damped sports rooms to prevent school gymnasium clusters in dense historic tenements
-    # from artificially inflating accessible greenery scores.
+    # 3. GREENERY & SPORT SCORE
     total_green_per_cap = [math.log1p(d["greeneryAndSport"]["totalGreenM2PerCapita"]) for d in districts]
     green_area_share = [
         math.log1p((d["greeneryAndSport"]["totalGreenAreaHa"] / (d["areaKm2"] * 100.0)) * 100.0)
@@ -162,36 +133,30 @@ def calculate_quality_scores() -> None:
         for d in districts
     ]
 
-    # Normalize green components (stimulants: more nature, parks, and recreational facilities = better)
     s_green_cap = min_max_normalize_0_100(total_green_per_cap, invert=False)
     s_green_share = min_max_normalize_0_100(green_area_share, invert=False)
     s_parks_net = min_max_normalize_0_100(parks_network, invert=False)
     s_sport = min_max_normalize_0_100(sport_access, invert=False)
 
-    # Weighting: 35% green space per capita, 25% district green share, 25% municipal & pocket parks network, 15% sports & pools
     raw_greenery = [
         0.35 * s_green_cap[i] + 0.25 * s_green_share[i] + 0.25 * s_parks_net[i] + 0.15 * s_sport[i]
         for i in range(n_districts)
     ]
     greenery_scores = rescale_to_practical_band(raw_greenery, low=52.0, high=96.0)
 
-    # 4. CULTURE, LIBRARIES & SENIOR ACTIVITY (CAS) SCORE
-    # Applies Bayesian population smoothing (pop + 22,000) and combines per-capita density with
-    # absolute institutional mass so tiny peripheral districts with 0 cultural centers cannot outscore urban hubs.
+    # 4. CULTURE, LIBRARIES & SENIOR ACTIVITY
     inst_bayesian = [
         (
-            (d["cultureAndSociety"]["libraryBranchesCount"] + d["cultureAndSociety"]["culturalCentersCount"] * 2.2)
-            * 10000.0
-            / (d["demographics"]["totalPopulation"] + 22000.0)
+                (d["cultureAndSociety"]["libraryBranchesCount"] + d["cultureAndSociety"]["culturalCentersCount"] * 2.2) * 10000.0
+                / (d["demographics"]["totalPopulation"] + 22000.0)
         )
         + 0.45 * (d["cultureAndSociety"]["libraryBranchesCount"] + d["cultureAndSociety"]["culturalCentersCount"] * 2.0)
         for d in districts
     ]
     cas_bayesian = [
         (
-            d["cultureAndSociety"]["seniorActivityCentersCount"]
-            * 1000.0
-            / (d["demographics"]["age65Plus"] + 4500.0)
+                d["cultureAndSociety"]["seniorActivityCentersCount"] * 1000.0
+                / (d["demographics"]["age65Plus"] + 4500.0)
         )
         + 0.35 * d["cultureAndSociety"]["seniorActivityCentersCount"]
         for d in districts
@@ -205,41 +170,34 @@ def calculate_quality_scores() -> None:
         for d in districts
     ]
 
-    # Normalize cultural components
     s_inst = min_max_normalize_0_100(inst_bayesian, invert=False)
     s_cas = min_max_normalize_0_100(cas_bayesian, invert=False)
     s_sub = min_max_normalize_0_100(subsidy_and_events, invert=False)
 
-    # Weighting: 45% library & cultural centers, 30% senior centers (CAS), 25% cultural subsidy & events
     raw_culture = [
         0.45 * s_inst[i] + 0.30 * s_cas[i] + 0.25 * s_sub[i]
         for i in range(n_districts)
     ]
     culture_scores = rescale_to_practical_band(raw_culture, low=44.0, high=96.0)
 
-    # 5. ENVIRONMENT, AIR & ACOUSTIC QUIETNESS SCORE (GIOŚ, WIOŚ, MSIP)
-    # Indicators: PM10 concentration (destimulant), annual smog days (destimulant), noise >65dB (destimulant)
+    # 5. ENVIRONMENT, AIR & ACOUSTIC QUIETNESS SCORE
     pm10_vals = [d["environmentalQuality"]["pm10AnnualUgM3"] for d in districts]
     smog_days = [d["environmentalQuality"]["smogDaysCount"] for d in districts]
     noise_share = [d["environmentalQuality"]["trafficNoiseExceededPct"] for d in districts]
     green_buffer = [math.log1p(d["greeneryAndSport"]["totalGreenM2PerCapita"]) for d in districts]
 
-    # Normalize pollution destimulants and green buffer stimulant
     s_pm10 = min_max_normalize_0_100(pm10_vals, invert=True)
     s_smog = min_max_normalize_0_100(smog_days, invert=True)
     s_noise = min_max_normalize_0_100(noise_share, invert=True)
     s_green_buf = min_max_normalize_0_100(green_buffer, invert=False)
 
-    # Weighting: 25% PM10, 22% smog days, 38% traffic & nightlife noise >65dB, 15% green buffer
     raw_env = [
         0.25 * s_pm10[i] + 0.22 * s_smog[i] + 0.38 * s_noise[i] + 0.15 * s_green_buf[i]
         for i in range(n_districts)
     ]
-    # Practical band [26.0, 94.0]: reflects severe acoustic and smog burden in congested central avenues
     env_scores = rescale_to_practical_band(raw_env, low=26.0, high=94.0)
 
-    # 6. PUBLIC SAFETY & TRAFFIC SAFETY SCORE (SEWiK KGP, Municipal Police)
-    # Calibrated daytime commuter adjustment: accounts for visitor flows without erasing nightlife disturbance
+    # 6. PUBLIC SAFETY & TRAFFIC SAFETY SCORE
     daytime_factors = {1: 1.55, 2: 1.25, 5: 1.15, 13: 1.12}
 
     def effective_population(d: dict) -> float:
@@ -252,8 +210,7 @@ def calculate_quality_scores() -> None:
     ]
     pedestrians_per_10k = [
         math.log1p(
-            (d["publicSafety"]["pedestrianAccidents"] * 2.0 + d["publicSafety"]["injuryAccidents"])
-            * 10000.0
+            (d["publicSafety"]["pedestrianAccidents"] * 2.0 + d["publicSafety"]["injuryAccidents"]) * 10000.0
             / effective_population(d)
         )
         for d in districts
@@ -271,10 +228,9 @@ def calculate_quality_scores() -> None:
         0.32 * s_collisions[i] + 0.33 * s_pedestrians[i] + 0.35 * s_disturbance[i]
         for i in range(n_districts)
     ]
-    # Practical band [38.0, 94.0]: penalizes heavy public order disturbances and traffic hazards
     safety_scores = rescale_to_practical_band(raw_safety, low=38.0, high=94.0)
 
-    # 7. HOUSING MARKET & AFFORDABILITY SCORE (NBP BaRN, Otodom, RCN)
+    # 7. HOUSING MARKET & AFFORDABILITY SCORE
     price_m2 = [d["housingMarket"]["avgPricePerM2"] for d in districts]
     rent_m2 = [d["housingMarket"]["avgRentalPriceM2"] for d in districts]
     affordability = [d["housingMarket"]["m2PerAverageSalary"] for d in districts]
@@ -283,20 +239,13 @@ def calculate_quality_scores() -> None:
     s_rent = min_max_normalize_0_100(rent_m2, invert=True)
     s_afford = min_max_normalize_0_100(affordability, invert=False)
 
-    # Weighting: 30% purchase price per m2, 35% monthly rental rate per m2, 35% salary purchasing power
     raw_housing = [
         0.30 * s_price[i] + 0.35 * s_rent[i] + 0.35 * s_afford[i]
         for i in range(n_districts)
     ]
-    # Practical band [22.0, 92.0]: reflects prohibitive luxury housing & rent barriers in central districts
     housing_scores = rescale_to_practical_band(raw_housing, low=22.0, high=92.0)
 
-    # 8. DEMOGRAPHIC VITALITY & SETTLEMENT ATTRACTIVENESS SCORE (BDK, UMK 2023-2025)
-    # Indicators:
-    # - 3-year population growth rate (2023 to 2025 % dynamic)
-    # - Working-age demographic vitality share (age 15-64 / total population %)
-    # - Student & young professional mobility share (temporary residents / total population %)
-    # - International openness & migration inflow (foreigners / total population %)
+    # 8. DEMOGRAPHIC VITALITY & SETTLEMENT ATTRACTIVENESS SCORE
     growth_rate = [d["demographics"]["populationGrowthRate3YrPct"] for d in districts]
     working_age_share = [
         (d["demographics"]["age15to64"] * 100.0) / max(d["demographics"]["totalPopulation"], 1)
@@ -316,14 +265,12 @@ def calculate_quality_scores() -> None:
     s_young_mob = min_max_normalize_0_100(young_mobility_share, invert=False)
     s_intl = min_max_normalize_0_100(international_rate, invert=False)
 
-    # Weighting: 30% 3-year growth rate, 25% working-age share, 25% student/temporary mobility, 20% international openness
     raw_demographic = [
         0.30 * s_growth[i] + 0.25 * s_workforce[i] + 0.25 * s_young_mob[i] + 0.20 * s_intl[i]
         for i in range(n_districts)
     ]
     demographic_scores = rescale_to_practical_band(raw_demographic, low=46.0, high=95.0)
 
-    # Attach all 8 computed scores to each district entity
     for i, d in enumerate(districts):
         d["scores"] = {
             "mobilityScore": mobility_scores[i],
@@ -336,21 +283,14 @@ def calculate_quality_scores() -> None:
             "demographicVitalityScore": demographic_scores[i],
         }
 
-    # Save final scored dataset for Script 03
     out_path = PROCESSED_DATA_DIR / "districts_scored.json"
     with open(out_path, "w", encoding="utf-8") as f:
         json.dump({"districts": districts}, f, ensure_ascii=False, indent=2)
 
     print(f"[Step 02 - Scores] Computed all 8 Quality of Life category scores for {len(districts)} districts.")
-    for d in districts:
-        sc = d["scores"]
-        print(
-            f"  - {d['districtName']}: Mob={sc['mobilityScore']}, Edu={sc['educationScore']}, "
-            f"Green={sc['greeneryScore']}, Cult={sc['cultureAndSeniorScore']}, Env={sc['environmentScore']}, "
-            f"Safe={sc['safetyScore']}, House={sc['housingAffordabilityScore']}, Demo={sc['demographicVitalityScore']}"
-        )
     print(f"[Step 02 - Scores] Saved scored districts -> {out_path}")
 
 
 if __name__ == "__main__":
     calculate_quality_scores()
+    

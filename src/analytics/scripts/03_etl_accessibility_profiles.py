@@ -6,14 +6,13 @@ GOAL / PURPOSE:
 
 DATA SOURCES INTEGRATED (100% Real Municipal Open Data):
     1. `Miejsca postojowe dla osob z niepelnosprawnosciami w Krakowie.csv` (ZDMK - Niebieskie Koperty):
-       - 862 locations, 1,709 designated PRM parking stalls across 18 districts.
+        - locations, designated PRM parking stalls across 18 districts.
     2. `Dostepnosc architektoniczna obiektow publicznych w Krakowie.csv` (UMK / MFiPR Accessibility Audit):
-       - 25 municipal headquarters, branches, and cultural centres with audits of ramps, elevators,
-         PRM accessible toilets, hearing loops (pętle indukcyjne), and Polish Sign Language (PJM) support.
-    3. `Przystanki_Komunikacji_Miejskiej_w_Krakowie...csv` (KMK / ZTP):
-       - 1,378 transit stops evaluated for Kassel-kerb platform boarding curbs and tactile paving guidance strips.
-    4. `Centra Aktywnosci Seniora w Krakowie.csv` (UMK / DlaSeniora):
-       - 53 Senior Activity Centres (CAS) serving the elderly population across all 18 districts.
+        - municipal headquarters, branches, and cultural centres with audits of ramps, elevators,
+          PRM accessible toilets, hearing loops (pętle indukcyjne), and Polish Sign Language (PJM) support.
+    3. Aggregated Transit & Senior Data (`districts_aggregated.json` from Step 01):
+        - avoids redundant spatial reprocessing of 4000+ transit stops by leveraging 
+          pre-computed kassel-kerb and tactile paving percentages, as well as CAS center counts.
 
 OUTPUTS:
     - `data/contracts/krakow_accessibility_profiles.json` (Contract consumed by frontend Civic Accessibility Navigator)
@@ -29,41 +28,18 @@ import math
 from pathlib import Path
 import re
 import sys
+import numpy as np
 
 # Ensure script-level imports resolve config cleanly regardless of execution working directory
 sys.path.append(str(Path(__file__).resolve().parent))
-
-from matplotlib.path import Path as MplPath
-import numpy as np
 
 from config import (
     CONTRACTS_OUTPUT_DIR,
     KRAKOW_DISTRICTS,
     PROCESSED_DATA_DIR,
     RAW_DATA_DIR,
-    epsg3857_to_wgs84,
     min_max_normalize_0_100,
 )
-
-
-def load_district_polygons(geojson_path: Path) -> dict[int, list[MplPath]]:
-    # Loads WGS84 multi-polygon boundaries for point-in-polygon assignment of transit stops.
-    with open(geojson_path, "r", encoding="utf-8") as f:
-        gj = json.load(f)
-
-    district_polys: dict[int, list[MplPath]] = {}
-    for feat in gj["features"]:
-        did = int(feat["properties"]["districtId"])
-        geom = feat["geometry"]
-        polys: list[MplPath] = []
-        if geom["type"] == "Polygon":
-            polys.append(MplPath(geom["coordinates"][0]))
-        elif geom["type"] == "MultiPolygon":
-            for poly in geom["coordinates"]:
-                polys.append(MplPath(poly[0]))
-        district_polys[did] = polys
-
-    return district_polys
 
 
 def find_raw_file(pattern: str) -> Path:
@@ -84,7 +60,7 @@ def rescale_band(values: list[float], low: float = 45.0, high: float = 95.0, inv
 def generate_accessibility_profiles() -> None:
     print("[INFO] Starting Step 03: ETL for Municipal Accessibility Profiles...")
 
-    # 1. Load baseline district aggregates
+    # 1. Load baseline district aggregates (avoids reprocessing KMK and CAS CSVs)
     agg_path = PROCESSED_DATA_DIR / "districts_aggregated.json"
     if not agg_path.exists():
         raise FileNotFoundError(f"Missing {agg_path}. Run 01_etl_demographics_and_infrastructure.py first.")
@@ -94,7 +70,7 @@ def generate_accessibility_profiles() -> None:
 
     base_districts = {d["districtId"]: d for d in agg_data}
 
-    # 2. Ingest PRM Parking Spots (Niebieskie Koperty)
+    # 2. Ingest PRM Parking Spots
     prm_file = find_raw_file(r"Miejsca postojowe dla osob z niepelnosprawnosciami")
     print(f"[INFO] Ingesting PRM parking stalls from {prm_file.name}...")
     prm_spots = {d: 0 for d in range(1, 19)}
@@ -103,10 +79,13 @@ def generate_accessibility_profiles() -> None:
     with open(prm_file, "r", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f, delimiter=";")
         for row in reader:
-            did = int(row["Nr_Dzielnicy"])
-            count = int(row.get("Liczba_Miejsc_PRM", 1))
-            prm_spots[did] += count
-            prm_locations[did] += 1
+            did_str = row.get("Nr_Dzielnicy", "").strip()
+            if did_str.isdigit():
+                did = int(did_str)
+                if 1 <= did <= 18:
+                    count = int(row.get("Liczba_Miejsc_PRM", 1))
+                    prm_spots[did] += count
+                    prm_locations[did] += 1
 
     total_prm_spots = sum(prm_spots.values())
     print(f"[INFO] Parsed {total_prm_spots} designated PRM parking stalls across {sum(prm_locations.values())} locations.")
@@ -119,77 +98,29 @@ def generate_accessibility_profiles() -> None:
     with open(fac_file, "r", encoding="utf-8-sig") as f:
         reader = csv.DictReader(f, delimiter=";")
         for row in reader:
-            did = int(row["Nr_Dzielnicy"])
-            fac_item = {
-                "name": row.get("Nazwa_Obiektu", "").strip(),
-                "departments": row.get("Wydzialy_Referaty", "").strip(),
-                "address": row.get("Adres", "").strip(),
-                "wheelchairAccessible": row.get("Dostepnosc_Wozki", "").strip().upper(),
-                "hasRamp": row.get("Rampa_Podjazd", "").strip().upper() == "TAK",
-                "hasElevatorOrPlatform": row.get("Winda_Platforma", "").strip().upper() == "TAK",
-                "accessibleToilet": row.get("Toaleta_Dostosowana_PRM", "").strip().upper() == "TAK",
-                "hearingLoop": row.get("Petla_Indukcyjna", "").strip().upper() == "TAK",
-                "signLanguageTranslator": row.get("Tlumacz_Jezyka_Migowego_PJM", "").strip().upper() == "TAK",
-                "brailleOrTactile": row.get("Oznaczenia_Braille_Dotykowe", "").strip().upper() == "TAK",
-                "auditDescription": row.get("Opis_Audytu_Dostepnosci", "").strip(),
-            }
-            facilities_by_district[did].append(fac_item)
-
-    total_facilities = sum(len(v) for v in facilities_by_district.values())
-    print(f"[INFO] Parsed {total_facilities} public facility accessibility audits.")
-
-    # 4. Ingest KMK Transit Stops (Kassel-kerb curbs & tactile paving strips)
-    geojson_path = CONTRACTS_OUTPUT_DIR / "krakow_districts.geojson"
-    if not geojson_path.exists():
-        raise FileNotFoundError(f"Missing {geojson_path}. Required official district boundaries.")
-
-    district_polys = load_district_polygons(geojson_path)
-    stops_file = find_raw_file(r"Przystanki_Komunikacji_Miejskiej")
-    print(f"[INFO] Ingesting transit stops infrastructure from {stops_file.name}...")
-
-    transit_stats = {d: {"total": 0, "kassel": 0, "tactile": 0} for d in range(1, 19)}
-    with open(stops_file, "r", encoding="utf-8-sig", errors="ignore") as f:
-        reader = csv.DictReader(f)
-        col_names = reader.fieldnames or []
-        kraw_col = next((c for c in col_names if "kraw" in c.lower()), None)
-        pasy_col = next((c for c in col_names if "pasy" in c.lower()), None)
-
-        for row in reader:
-            if row.get("x") and row.get("y"):
-                try:
-                    lat, lng = epsg3857_to_wgs84(float(row["x"]), float(row["y"]))
-                    pt = (lng, lat)
-                    for did, polys in district_polys.items():
-                        if any(p.contains_point(pt) for p in polys):
-                            transit_stats[did]["total"] += 1
-                            kraw = (row.get(kraw_col) or "").lower() if kraw_col else ""
-                            if "kassel" in kraw:
-                                transit_stats[did]["kassel"] += 1
-                            pasy = (row.get(pasy_col) or "").lower() if pasy_col else ""
-                            if "tak" in pasy:
-                                transit_stats[did]["tactile"] += 1
-                            break
-                except (ValueError, TypeError):
-                    continue
-
-    print(f"[INFO] Ingested {sum(s['total'] for s in transit_stats.values())} transit stops with Kassel-kerb and tactile checks.")
-
-    # 5. Ingest Senior Activity Centres (CAS)
-    cas_file = find_raw_file(r"Centra Aktywnosci Seniora")
-    print(f"[INFO] Ingesting Senior Activity Centres (CAS) from {cas_file.name}...")
-    cas_counts = {d: 0 for d in range(1, 19)}
-    with open(cas_file, "r", encoding="utf-8-sig") as f:
-        reader = csv.DictReader(f, delimiter=";")
-        for row in reader:
             did_str = row.get("Nr_Dzielnicy", "").strip()
             if did_str.isdigit():
                 did = int(did_str)
                 if 1 <= did <= 18:
-                    cas_counts[did] += 1
+                    fac_item = {
+                        "name": row.get("Nazwa_Obiektu", "").strip(),
+                        "departments": row.get("Wydzialy_Referaty", "").strip(),
+                        "address": row.get("Adres", "").strip(),
+                        "wheelchairAccessible": row.get("Dostepnosc_Wozki", "").strip().upper(),
+                        "hasRamp": row.get("Rampa_Podjazd", "").strip().upper() == "TAK",
+                        "hasElevatorOrPlatform": row.get("Winda_Platforma", "").strip().upper() == "TAK",
+                        "accessibleToilet": row.get("Toaleta_Dostosowana_PRM", "").strip().upper() == "TAK",
+                        "hearingLoop": row.get("Petla_Indukcyjna", "").strip().upper() == "TAK",
+                        "signLanguageTranslator": row.get("Tlumacz_Jezyka_Migowego_PJM", "").strip().upper() == "TAK",
+                        "brailleOrTactile": row.get("Oznaczenia_Braille_Dotykowe", "").strip().upper() == "TAK",
+                        "auditDescription": row.get("Opis_Audytu_Dostepnosci", "").strip(),
+                    }
+                    facilities_by_district[did].append(fac_item)
 
-    print(f"[INFO] Parsed {sum(cas_counts.values())} Centra Aktywności Seniora.")
+    total_facilities = sum(len(v) for v in facilities_by_district.values())
+    print(f"[INFO] Parsed {total_facilities} public facility accessibility audits.")
 
-    # 6. Aggregate indicators across all 18 districts
+    # 4. Aggregate indicators across all 18 districts
     district_profiles = []
     raw_mobility_scores = []
     raw_visual_scores = []
@@ -211,19 +142,18 @@ def generate_accessibility_profiles() -> None:
         spots_per_10k = round(spots / (pop / 10000.0), 1) if pop > 0 else 0.0
         spots_per_km2 = round(spots / area, 1)
 
-        # Transit metrics
-        t_stat = transit_stats[did]
-        total_stops = t_stat["total"]
-        kassel_count = t_stat["kassel"]
-        kassel_pct = round((kassel_count / max(1, total_stops)) * 100.0, 1)
-        tactile_count = t_stat["tactile"]
-        tactile_pct = round((tactile_count / max(1, total_stops)) * 100.0, 1)
+        # Transit metrics (Loaded efficiently from Script 01 aggregates)
+        total_stops = base["mobilityAndTransport"]["kmkStopsCount"]
+        kassel_count = base.get("_internal", {}).get("kasselKerbStops", 0)
+        kassel_pct = base["mobilityAndTransport"]["kasselKerbPct"]
+        tactile_count = base.get("_internal", {}).get("tactilePavingStops", 0)
+        tactile_pct = base["mobilityAndTransport"]["tactilePavingPct"]
 
         # Public facilities metrics
         facs = facilities_by_district[did]
         audited_count = len(facs)
-        wheelchair_full = sum(1 for f in facs if "PE" in f["wheelchairAccessible"] and "NA" in f["wheelchairAccessible"])
-        wheelchair_part = sum(1 for f in facs if "CZ" in f["wheelchairAccessible"])
+        wheelchair_full = sum(1 for f in facs if "PEŁNA" in f["wheelchairAccessible"] or "PELNA" in f["wheelchairAccessible"])
+        wheelchair_part = sum(1 for f in facs if "CZĘŚCIOWA" in f["wheelchairAccessible"] or "CZESCIOWA" in f["wheelchairAccessible"])
         elevators = sum(1 for f in facs if f["hasElevatorOrPlatform"])
         ramps = sum(1 for f in facs if f["hasRamp"])
         toilets = sum(1 for f in facs if f["accessibleToilet"])
@@ -231,15 +161,12 @@ def generate_accessibility_profiles() -> None:
         pjm = sum(1 for f in facs if f["signLanguageTranslator"])
         braille = sum(1 for f in facs if f["brailleOrTactile"])
 
-        # CAS senior centers
-        cas = cas_counts[did]
+        # CAS senior centers (Loaded efficiently from Script 01)
+        cas = base["cultureAndSociety"]["seniorActivityCentersCount"]
         cas_per_10k_seniors = round(cas / (seniors / 10000.0), 1) if seniors > 0 else 0.0
 
         # Subscore raw inputs:
-        # A) Mobility (Wózek / Ruch):
-        # Emphasizes step-free public transport boarding (kassel-kerb curbs), barrier-free municipal facilities,
-        # and designated PRM parking.
-        # Historic cobblestone pavement ("kocie łby") in District I poses a major physical barrier to wheelchair rolling.
+        # A) Mobility
         prm_dampened_10k = min(35.0, spots_per_10k)
         prm_dampened_km2 = min(25.0, spots_per_km2)
         prm_density_factor = math.log1p(prm_dampened_10k) * 14.0 + math.log1p(prm_dampened_km2) * 8.0
@@ -252,24 +179,23 @@ def generate_accessibility_profiles() -> None:
             raw_mob -= 18.0
         raw_mobility_scores.append(raw_mob)
 
-        # B) Visual: tactile guidance strips on stops + braille/tactile signage + walking isochrone safety
+        # B) Visual
         isochrone = base["mobilityAndTransport"]["isochroneCoveragePct"]
         fac_braille_factor = min(50.0, braille * 20.0) if audited_count > 0 else 15.0
         raw_vis = (tactile_pct * 0.55) + (fac_braille_factor * 0.25) + (isochrone * 0.20)
         raw_visual_scores.append(raw_vis)
 
-        # C) Hearing: hearing loop availability + Polish Sign Language (PJM) support
-        # City hall central offices (Dzielnica I, II, XIII, XVIII) provide comprehensive certified PJM & loop service
+        # C) Hearing
         fac_hearing_factor = (loops * 25.0 + pjm * 20.0)
         fac_hearing_effective = min(90.0, 30.0 + fac_hearing_factor) if audited_count > 0 else 40.0
         raw_hearing_scores.append(fac_hearing_effective)
 
-        # D) Senior: CAS per capita + low floor boarding (kassel) + PRM parking + park access
+        # D) Senior
         park_density = math.log1p(parks / area) * 20.0
         raw_sen = (cas_per_10k_seniors * 18.0) + (kassel_pct * 0.35) + (math.log1p(prm_dampened_10k) * 10.0) + (park_density * 0.25)
         raw_senior_scores.append(raw_sen)
 
-        # E) Family Stroller: step-free transit (kassel) + parks/greenery + elevators/ramps in public venues
+        # E) Family Stroller
         greenery_score = base["greeneryAndSport"]["cityParksCount"] * 8.0 + base["greeneryAndSport"]["pocketParksCount"] * 10.0
         raw_stroller = (kassel_pct * 0.42) + (min(50.0, greenery_score) * 0.38) + (fac_mobility_effective * 0.20)
         if did == 1:
@@ -374,7 +300,7 @@ def generate_accessibility_profiles() -> None:
         "totalPrmParkingSpots": total_prm_spots,
         "totalPrmLocations": sum(prm_locations.values()),
         "totalAuditedFacilities": total_facilities,
-        "totalSeniorCenters": sum(cas_counts.values()),
+        "totalSeniorCenters": sum(d["metrics"]["seniorCare"]["casCount"] for d in district_profiles),
         "avgKasselKerbPct": round(float(np.mean([d["metrics"]["transit"]["kasselKerbPct"] for d in district_profiles])), 1),
         "avgTactilePavingPct": round(float(np.mean([d["metrics"]["transit"]["tactilePavingPct"] for d in district_profiles])), 1),
         "avgOverallScore": round(float(np.mean([d["scores"]["overallScore"] for d in district_profiles])), 1),
@@ -428,3 +354,4 @@ def generate_accessibility_profiles() -> None:
 
 if __name__ == "__main__":
     generate_accessibility_profiles()
+    

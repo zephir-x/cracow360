@@ -1,0 +1,267 @@
+﻿Lp;Nazwa;Ulica;Numer budynku;Numer lokalu ;Kod pocztowy ;Miasto;Województwo;Kraj;Adres;Telefon;Liczba miejsc 
+1;"Żłobek Niepubliczny nr 1 ""Misie-Pysie""";Raciborska;17;;30-384;Kraków;małopolskie;Polska;Raciborska 17, Kraków;505073737;44
+2;"Żłobek Niepubliczny ""Mali Geniusze""";Drzymały;15;;30-136;Kraków;małopolskie;Polska;Drzymały 15, Kraków;509513477;35
+3;"Żłobek Niepubliczny nr 7 ""Misie-Pysie""";Wincentego Kadłubka;3;;30-446;Kraków;małopolskie;Polska;Wincentego Kadłubka 3, Kraków;505073737;34
+4;"Niepubliczny Żłobek  ""Tosia""";Grzegórzecka;67c;U4;31-559;Kraków;małopolskie;Polska;Grzegórzecka 67c/U4, Kraków;530055955;23
+5;"Żłobek Integracyjny Punkt Opieki nad Dzieckiem ""Calineczka"" - Żłobek Niepubliczny";Pod Fortem;2a;1;31-302;Kraków;małopolskie;Polska;Pod Fortem 2a/1, Kraków;730010305;25
+6;"Żłobek ""Bąbelkowo""";Siewna;30a;2;31-212;Kraków;małopolskie;Polska;Siewna 30a/2, Kraków;600284634;37
+7;"Niepubliczny Żłobek ""Chatka Maluszka""";Trybuny Ludów;71;;30-660;Kraków;małopolskie;Polska;Trybuny Ludów 71, Kraków;881499141;12
+8;"Katolicki Żłobek ""Aniołek""";Zmartwychwstania Pańskiego;2a;;30-648;Kraków;małopolskie;Polska;Zmartwychwstania Pańskiego 2A, Kraków;124427444;42
+9;"Żłobek ""Krasnoludki""";Marii i Bolesława Wysłouchów;13;LU2;30-611;Kraków;małopolskie;Polska;Marii i Bolesława Wysłouchów 13/LU2, Kraków;785125412;24
+10;"Żłobek ""Terefere""";Plac gen. Władysława Sikorskiego;4;1;31-115;Kraków;małopolskie;Polska;Plac gen. Władysława Sikorskiego 4/1, Kraków;789137603;15
+11;"Żłobek ""Artystyczna Akademia Malucha""";Jurka Bitschana;4;;31-414;Kraków;małopolskie;Polska;Jurka Bitschana 4, Kraków;695052095;20
+12;"Żłobek ""Chatka Niedźwiadka""";Krawiecka;18;;30-649;Kraków;małopolskie;Polska;Krawiecka 18, Kraków;698899023;14
+13;"Żłobek ""Kubuś i przyjaciele""";Przemysłowa;4;125;31-701;Kraków;małopolskie;Polska;Przemysłowa 4/125, Kraków;693641124;20
+14;"Żłobek ""Malutkowo""";Józefa Łepkowskiego;5;1;31-423;Kraków;małopolskie;Polska;Józefa Łepkowskiego 5/1, Kraków;122948901;43
+15;"Żłobek ""Krasnoludki""";Osiede Oświecenia ;51;106;31-636;Kraków;małopolskie;Polska;Osiede Oświecenia 51/106, Kraków;785125412;14
+16;"Żłobek ""Magiczne Safari""";Myśliwska;5b;102;30-718;Kraków;małopolskie;Polska;Myśliwska 5B/102, Kraków;663609984;20
+17;"Niepubliczny Żłobek ""Złoty Kogucik""";Łupaszki;13;;30-198;Kraków;małopolskie;Polska;Łupaszki 13, Kraków;505392898;23
+18;"Niepubliczny Żłobek ""Centrum Maluszek""";Szuwarowa;4;64;30-384;Kraków;małopolskie;Polska;Szuwarowa 4/64, Kraków;502233762;14
+19;"Żłobek ""Mini Bambini""";Grodzisko;30;;30-398;Kraków;małopolskie;Polska;Grodzisko 30, Kraków;517705055;27
+20;"Żłobek ""Kolorowe Misie""";Feliksa Konecznego;6;15u;31-216;Kraków;małopolskie;Polska;Feliksa Konecznego 6/15u, Kraków;510904337;38
+21;"Niepubliczny Żłobek Językowy  ""Fair Play””";Francesco Nullo;42;U9;31-543;Kraków;małopolskie;Polska;Francesco Nullo 42/U9, Kraków;507513071;41
+22;"Niepubliczny Żłobek ""Bajkowy""";Samuela Bogumiła Lindego;13;20;30-148;Kraków;małopolskie;Polska;Samuela Bogumiła Lindego 13/20, Kraków;517712837;19
+23;"Żłobek ""Mini Mini""";Marii Dąbrowskiej;17i;;31-851;Kraków;małopolskie;Polska;Marii Dąbrowskiej 17i, Kraków;794394894;28
+24;"Żłobek Niepubliczny ""Gumisiowy Las""";Na Barciach;14;1LU;31-423;Kraków;małopolskie;Polska;Na Barciach 14/1LU, 2LU, Kraków;538437437;40
+25;"Niepubliczny Żłobek  ""Karmelkowy Zakątek""";Porucznika Wąchały;7;;30-608;Kraków;małopolskie;Polska;Porucznika Wąchały 7, Kraków;781336341;19
+26;"Niepubliczny Żłobek ""Stokrotki""";Skotnicka;101;;30-394;Kraków;małopolskie;Polska;Skotnicka 101, Kraków;608420602;21
+27;"Żłobek ""Kubuś i przyjaciele""";Gdańska;20;;31-411;Kraków;małopolskie;Polska;Gdańska 20, Kraków;693641124;35
+28;"Żłobek Niepubliczny ""Pompon""";Sportowa;2a;;30-625;Kraków;małopolskie;Polska;Sportowa 2A, Kraków;668409415;18
+29;"Niepubliczny Żłobek   ""Pyza i Ja""";Wincentego Danka;8;;31-229;Kraków;małopolskie;Polska;Wincentego Danka 8, Kraków;504194239;52
+30;"Niepubliczny Żłobek  ""Kącik Maluszka""";Kaczorówka;1;2;31-264;Kraków;małopolskie;Polska;Kaczorówka 1/2, Kraków;535836957;13
+31;"Niepubliczny Żłobek Językowy ""Fair Play""";Jana Dekerta;24;;30-703;Kraków;małopolskie;Polska;Jana Dekerta 24, Kraków;507513071;23
+32;"Niepubliczny Żłobek Językowy ""Fair Play""";Ruczaj;43;;30-703;Kraków;małopolskie;Polska;Ruczaj 43, Kraków;507513071;25
+33;Żłobek Montessori House;Ernesta Solvaya;4;1;30-427;Kraków;małopolskie;Polska;Ernesta Solvaya 4/1, Kraków;880247475;15
+34;"Żłobek ""Re-Re Kum-Kum""";Eliasza Radzikowskiego;104;1;31-315;Kraków;małopolskie;Polska;Eliasza Radzikowskiego 104/1, Kraków;509301283;30
+35;"Żłobek ""Re-Re Kum-Kum""";Stanisława Przybyszewskiego;20;;30-127;Kraków;małopolskie;Polska;Stanisława Przybyszewskiego 20, Kraków;509301283;30
+36;"Żłobek ""Fiku Miku""";Gwieździsta;7;;30-383;Kraków;małopolskie;Polska;Gwieździsta 7, Kraków;691424240;78
+37;"Niepubliczny Żłobek ""Mały Einsteinek"" ";Koszykarska;21c;3;30-717;Kraków;małopolskie;Polska;Koszykarska 21c/3, Kraków;501521920;20
+38;"Żłobek ""Dzieciaczkowo Due""";Juliana Tokarskiego;6;;30-065;Kraków;małopolskie;Polska;Juliana Tokarskiego 6, Kraków;883435512;30
+39;"Żłobek Uniwerytetu Jagiellońskiego ""Żaczuś""";Bydgoska;19b;;30-056;Kraków;małopolskie;Polska;Bydgoska 19B, Kraków;123635300;65
+40;Niepubliczny Żłobek nr 5;Jana Kurczaba;6;;30-809;Kraków;małopolskie;Polska;Jana Kurczaba 6, Kraków;600466847;90
+41;"Niepubliczny Żłobek Klub Malucha ""Panda"" ";Leona Petrażyckiego;52;;30-399;Kraków;małopolskie;Polska;Leona Petrażyckiego 52, Kraków;793381836;15
+42;"Niepubliczny Żłobek  ""Borowinka""";Mariusza Zaruskiego;4;;30-698;Kraków;małopolskie;Polska;Mariusza Zaruskiego 4, Kraków;501691520;19
+43;"Żłobek ""Re-Re Kum-Kum""";Żabiniec;70;;31-215;Kraków;małopolskie;Polska;Żabiniec 70, Kraków;509224570;27
+44;"Żłobek ""Kubuś i Przyjaciele""";Myśliwska;57;1UC;30-718;Kraków;małopolskie;Polska;Myśliwska 57/1UC i 1UD, Kraków;693641124;47
+45;"Niepubliczny Żłobek ""Majowa Łąka""";Komuny Paryskiej;2;;30-389;Kraków;małopolskie;Polska;Komuny Paryskiej 2, Kraków;782371110;35
+46;"Niepubliczny Żłobek  ""Świat Dziecka""";Jana Piltza;34;;30-392;Kraków;małopolskie;Polska;Jana Piltza 34, Kraków;788015205;35
+47;"Niepubliczny Żłobek  ""Krasnal""";Kobierzyńska;24;;30-363;Kraków;małopolskie;Polska;Kobierzyńska 24, Kraków;502474224;15
+48;"Żłobek ""Małe Tygryski""";Osiedle Oświecenia;21;U3;31-635;Kraków;małopolskie;Polska;Osiedle Oświecenia 21/U3, Kraków;507612745;49
+49;"Żłobek ""Clever Kids Nursery""";28 Lipca 1943;4;;30-233;Kraków;małopolskie;Polska;28 Lipca 1943 4, Kraków;722212221;59
+50;"Prywatny Żłobek ""Śpioszek 2"" ";Bieńczycka;15a;;31-860;Kraków;małopolskie;Polska;Bieńczycka 15a, Kraków;501160971;30
+51;"Niepubliczny Żłobek  ""GABI""";Piltza;20;;30-392;Kraków;małopolskie;Polska;Piltza 20, Kraków;570695380;16
+52;"Żłobek ""Pierwsze Kroczki"" Marta Młynarczyk";Osiedle 2 Pułku Lotniczego;44;LU5;31-870;Kraków;małopolskie;Polska;Osiedle 2 Pułku Lotniczego 44/LU5, Kraków;668437820;26
+53;"Prywatny Żłobek ""Kacperkowo 2""";Dobrego Pasterza;56;LU1;31-416;Kraków;małopolskie;Polska;Dobrego Pasterza 56/LU1, Kraków;537461355;49
+54;"Niepubliczny Żłobek Językowy ""Fair Play""";Michała Życzkowskiego;20;20;31-864;Kraków;małopolskie;Polska;Michała Życzkowskiego 20/20, Kraków;507513071;16
+55;"Żłobek ""Klasa Bobasa""";Przemiarki;23;3;30-384;Kraków;małopolskie;Polska;Przemiarki 23/3, Kraków;791651657;24
+56;"Żłobek ""Mini Mini""";Mistrzejowicka;2a;;31-651;Kraków;małopolskie;Polska;Mistrzejowicka 2A, Kraków;794394894;47
+57;"Żłobek Niepubliczny ""First Step""";Beskidzka;4c;;30-622;Kraków;małopolskie;Polska;Beskidzka 4c, Kraków;732700031;45
+58;"Niepubliczny Żłobek  ""Raj Maluszka""";Dąbska;18d;11;31-572;Kraków;małopolskie;Polska;Dąbska 18 d/11-13, Kraków;501582715;61
+59;"Niepubliczny Żłobek  ""Baby College""";Wandejska;4;;30-383;Kraków;małopolskie;Polska;Wandejska 4, Kraków;531151131;40
+60;"Żłobek Niepubliczny ""Międzynarodowa Akademia Malucha Daisy""";Grzegórzecka;76b;;31-559;Kraków;małopolskie;Polska;Grzegórzecka 76b, Kraków;518730818;21
+61;"Żłobek ""Wesołe Skrzaty""";Pańska;20;;30-565;Kraków;małopolskie;Polska;Pańska 20, Kraków;730730413;36
+62;"Niepubliczny Żłobek  ""Ence Pence""";Wojciecha Marii Bartla;19b;;30-389;Kraków;małopolskie;Polska;Wojciecha Marii Bartla 19B, Kraków;691999935;29
+63;"Żłobek ""Re-re Kum-kum""";Szablowskiego;3;III;30-127;Kraków;małopolskie;Polska;Jerzego Szablowskiego 3/III, Kraków;509301283;25
+64;Niepubliczny Żłobek nr 11;Franciszka Bujaka ;10;;30-611;Kraków;małopolskie;Polska;Franciszka Bujaka 10, Kraków;600466847;36
+65;"Niepubliczny Żłobek  ""Malinowe Skrzaty""";Irysowa;7;1;30-411;Kraków;małopolskie;Polska;Irysowa 7/1, Kraków;502471130;17
+66;"Żłobek ""Miś""";Murarska;19;5LU;31-311;Kraków;małopolskie;Polska;Murarska 19/5LU, Kraków;793614614;30
+67;Bamboo Montessori;Wacława Lipińskiego;13;D;30-349;Kraków;małopolskie;Polska;Wacława Lipińskiego 13/D, Kraków;696809642;38
+68;"Integracyjny Żłobek ""Terefere 2""";Zdunów;18c;1;30-428;Kraków;małopolskie;Polska;Zdunów 18c/1, Kraków;508478738;33
+69;"Żłobek ""Fabryczka"" ";Fabryczna;3;1;31-553;Kraków;małopolskie;Polska;Fabryczna 3/1, Kraków;607143286;19
+70;Niepubliczny Żłobek nr 4;Jana Kurczaba;6;;30-011;Kraków;małopolskie;Polska;Jana Kurczaba 6, Kraków;600466847;33
+71;"Niepubliczny Żłobek ""Fair Play JP Sports""";Dobrego Pasterza;52;L5;31-416;Kraków;małopolskie;Polska;Dobrego Pasterza 52/L5, Kraków;690999076;24
+72;"Żłobek Niepubliczny ""Misie-Pysie""";Komuny Paryskiej;54;;30-839;Kraków;małopolskie;Polska;Komuny Paryskiej 54, Kraków;505154700;44
+73;"Niepubliczny Żłobek  ""Frajda""";Miodowa;24;;31-055;Kraków;małopolskie;Polska;Miodowa 24, Kraków;600744663;8
+74;Pozytywny Żłobek nr 2;Aleja 29 Listopada;193;;31-241;Kraków;małopolskie;Polska;Aleja 29 Listopada 193, Kraków;538238010;60
+75;"Prywatny Żłobek ""Magiczny Domek""";Kobierzyńska;166a;;30-382;Kraków;małopolskie;Polska;Kobierzyńska 166a, Kraków;667393158;15
+76;"Niepubliczny Żłobek  ""Royal Baby""";Saska;5;31;30-706;Kraków;małopolskie;Polska;Saska 5/31, Kraków;501402553;12
+77;"Niepubliczny Żłobek  ""U cioci Jadzi""";Gliniana;15;19;30-732;Kraków;małopolskie;Polska;Gliniana 15/19 i 20, Kraków;882778805;29
+78;"""BeBaby"" Kameralny Żłobek";Ludwinowska;11;;30-331;Kraków;małopolskie;Polska;Ludwinowska 11, Kraków;699939535;33
+79;"Żłobek Niepubliczny ""Hutniczek""";Osiedle Stalowe;16;U1;31-922;Kraków;małopolskie;Polska;Osiedle Stalowe 16/U1, Kraków;574438450;48
+80;"Żłobek ""Klasa Bobasa""";Wolska;17;;30-663;Kraków;małopolskie;Polska;Wolska 17, Kraków;791651657;21
+81;Pozytywny Żłobek nr 3;Marii i Bolesława Wysłouchów;22a;2;30-611;Kraków;małopolskie;Polska;Marii i Bolesława Wysłouchów 22a/2, Kraków;538237213;84
+82;"Żłobek Niepubliczny ""Malinowy Domek""";Osiedle Niepodległości;3a;;31-865;Kraków;małopolskie;Polska;Osiedle Niepodległości 3a/4a-5a, Kraków;510631021;24
+83;"Niepubliczny Żłobek  ""Delfinki"" ";Łużycka;73a;;30-693;Kraków;małopolskie;Polska;Łużycka 73A, Kraków;606245427;45
+84;"Niepubliczny Żłobek  ""Gumisiowy Las""";Augusta Fieldorfa-Nila;17;JU11;31-209;Kraków;małopolskie;Polska;Augusta Fieldorfa-Nila 17/JU11 JU12, Kraków;538437437;40
+85;"Żłobek ""Kubuś i Przyjaciele""";Ludwika Rydygiera;18;LU2;30-695;Kraków;małopolskie;Polska;Ludwika Rydygiera 18/LU2 i LU3, Kraków;693641124;42
+86;"Żłobek ""HopKids"" Nr1";Na Zakolu Wisły;12d;LU2;30-729;Kraków;małopolskie;Polska;Na Zakolu Wisły 12D/LU2, Kraków;530751616;75
+87;"Żłobek ""Mini Mini"" ";Stefana Rogozińskiego;3;;31-559;Kraków;małopolskie;Polska;Stefana Rogozińskiego 3, Kraków;794394894;36
+88;"Żłobek ""Happy Kids""";Aleja Jana Pawła II;180;1;31-571;Kraków;małopolskie;Polska;Aleja Jana Pawła II 180/1, Kraków;500506100;78
+89;"Niepubliczny Żłobek ""Baby College""";Stanisława Działowskiego;67;;30-388;Kraków;małopolskie;Polska;Stanisława Działowskiego 67, Kraków;531151131;59
+90;"Żłobek ""Serduszko""";Osiedle Kombatantów;6;;31-630;Kraków;małopolskie;Polska;Osiedle Kombatantów 6, Kraków;725087086;19
+91;"Żłobek ""Malinowe Skrzaty""";Władysława Łokietka;238;;31-263;Kraków;małopolskie;Polska;Władysława Łokietka 238, Kraków;502471130;18
+92;"Niepubliczny Żłobek  ""Ozon"" ";Stefana Banacha;31;U1;31-235;Kraków;małopolskie;Polska;Stefana Banacha 31/U1, Kraków;538487598;47
+93;"Żłobek ""Mini Mini""";Osiedle Na Lotnisku;1;U2;31-801;Kraków;małopolskie;Polska;Osiedle Na Lotnisku 1/U2, Kraków;794394894;42
+94;"Niepubliczny Żłobek  ""Chatka Maluszka"" ";Sebastiana Klonowica;24;;30-654;Kraków;małopolskie;Polska;Sebastiana Klonowica 24, Kraków;881499141;14
+95;"Żłobek ""Ogródek Krasnoludków""";Jana Woronicza;25;;31-409;Kraków;małopolskie;Polska;Jana Woronicza 25, Kraków;603764132;21
+96;"Niepubliczny Żłobek  ""Fair Play Piast""";Osiedle Bohaterów Września;84A;1;31-621;Kraków;małopolskie;Polska;Osiedle Bohaterów Września 84A/1, Kraków;732838409;40
+97;"Dwujęzyczny Żłobek ""KiDS&Co.""";Powstańców Wielkopolskich;13h;;30-707;Kraków;małopolskie;Polska;Powstańców Wielkopolskich 13H, Kraków;575000839;52
+98;"Niepubliczny Żłobek  ""Kraina Smerfów""";Osiedle Bohaterów Września;1J;U5;31-620;Kraków;małopolskie;Polska;Osiedle Bohaterów Września 1J/U5, Kraków;576360006;35
+99;"Niepubliczny Żłobek ""Happy Feet""";Mała Góra;49;;30-864;Kraków;małopolskie;Polska;Mała Góra 49, Kraków;505369035;18
+100;"Niepubliczny Żłobek  ""Kolorowy Obłoczek""";Kantorowicka;189;;31-763;Kraków;małopolskie;Polska;Kantorowicka 189, Kraków;507112687;36
+101;"Żłobek ""Dobry Start""";Polonijna;15;3;30-668;Kraków;małopolskie;Polska;Polonijna 15/3, Kraków;665263700;17
+102;"Żłobek ""Świat Maluszka""";Bagrowa;80;49;30-731;Kraków;małopolskie;Polska;Bagrowa 80/49, Kraków;665700773;40
+103;"Żłobek ""Krasnoludki""";Chmieleniec;2a;LU7;30-348;Kraków;małopolskie;Polska;Chmieleniec 2A/LU7, Kraków;785125412;20
+104;"Żłobek ""Zabawa""";Pod Fortem;2d;;31-302;Kraków;małopolskie;Polska;Pod Fortem 2d, Kraków;605728708;48
+105;"Żłobek ""Trzy Języki"" ";św. Agnieszki;1;;31-071;Kraków;małopolskie;Polska;św. Agnieszki 1, Kraków;503072119;14
+106;"Żłobek ""Przystań Maluszka"" ";Dożynkowa;99;;31-242;Kraków;małopolskie;Polska;Dożynkowa 99, Kraków;510542911;30
+107;"Niepubliczny Dwujęzyczny Żłobek ""Małe Cuda""";Drukarska;1;LU4;30-348;Kraków;małopolskie;Polska;Drukarska 1/LU4, LU5, Kraków;797551425;23
+108;"Żłobek ""Mali Giganci""";Tytusa Czyżewskiego;3;LU4;30-085;Kraków;małopolskie;Polska;Tytusa Czyżewskiego 3/LU4,LU5, Kraków;733300030;29
+109;"Niepubliczny Żłobek Sportowo-Taneczny AN ""Fair Play""";Mariana Domagały ;45;;30-798;Kraków;małopolskie;Polska;Mariana Domagały 45, Kraków;510061284;45
+110;"Niepubliczny Żłobek ""Pierwsze Kroczki""";Osiedle Na Lotnisku;10;;31-802;Kraków;małopolskie;Polska;Osiedle Na Lotnisku 10, Kraków;515504107;29
+111;"Niepubliczny Żłobek ""Kids Space""";Jana Kilińskiego;2;;30-308;Kraków;małopolskie;Polska;Jana Kilińskiego 2, Kraków;503304004;41
+112;"Żłobek ""Kącik Maluszka II""";Kaczorówka;1;3;31-264;Kraków;małopolskie;Polska;Kaczorówka 1/3, Kraków;535836957;15
+113;"Niepubliczny Żłobek Sportowo-Językowy ""Fair Play Kilkulatek""";Karola Bunscha;20;76;30-392;Kraków;małopolskie;Polska;Karola Bunscha 20/76, Kraków;605061125;21
+114;"Niepubliczny Żłobek ""Akademia Muminków"" nr 2";Łapanowska;5;;30-610;Kraków;małopolskie;Polska;Łapanowska 5, Kraków;531500185;24
+115;"Niepubliczny Żłobek  ""Tulii Lulii""";Młyńska;9;2;31-469;Kraków;małopolskie;Polska;Młyńska 9/2, Kraków;737840977;22
+116;"Integracyjny Żłobek ""Terefere 3""";Reduta;28;;31-421;Kraków;małopolskie;Polska;Reduta 28, Kraków;508672724;34
+117;"Żłobek ""ABC Montessori""";Grzegórzecka;73b;;31-559;Kraków;małopolskie;Polska;Grzegórzecka 73B, Kraków;600326175;23
+118;"Niepubliczny Żłobek  ""Międzynarodowa Akademia Malucha Daisy""";Grzegórzecka;102;9;31-559;Kraków;małopolskie;Polska;Grzegórzecka 102/9, Kraków;518730818;14
+119;"Niepubliczny Żłobek  ""Kolorowe kredki""";Mała Góra;14c;LU3;30-864;Kraków;małopolskie;Polska;Mała Góra 14C/LU3, Kraków;601431399;21
+120;"Żłobek przy Centrum Zdrowego Rozwoju ""Czyżyk""";Siewna;10;;31-231;Kraków;małopolskie;Polska;Siewna 10, Kraków;531387521;44
+121;Żłobek Montessori Dreams;Sadowa;11;;31-408;Kraków;małopolskie;Polska;Sadowa 11, Kraków;535351929;40
+122;"Żłobek ''Małe Gwiazdeczki""";Osiedle Dywizjonu 303;62G;LU2;31-875;Kraków;małopolskie;Polska;Osiedle Dywizjonu 303 62G/LU2, Kraków;505497435;20
+123;"Żłobek Niepubliczny ""Serduszko""";Osiedle 2 Pułku Lotniczego;1;;31-870;Kraków;małopolskie;Polska;Osiedle 2 Pułku Lotniczego 1, Kraków;781676688;49
+124;"Żłobek ""BeBaby""";Galicyjska;1;;31-586;Kraków;małopolskie;Polska;Galicyjska 1, Kraków;699939535;57
+125;"Niepubliczny Żłobek ""Healthy Kids""";Władysława Łokietka;136a;;31-262;Kraków;małopolskie;Polska;Władysława Łokietka 136a, Kraków;535500149;17
+126;"Niepubliczny Żłobek ""Mały Łobuz""";Cystersów;20;LU2;31-553;Kraków;małopolskie;Polska;Cystersów 20/LU2, Kraków;882018484;53
+127;"Nowohucki Żłobek ""Bajkowa Dolinka""";Wacława Sieroszewskiego;3;;31-914;Kraków;małopolskie;Polska;Wacława Sieroszewskiego 3, Kraków;739003909;49
+128;"Niepubliczny Żłobek""Tygryski""";Stanisława Kostki Potockiego;19;;31-234;Kraków;małopolskie;Polska;Stanisława Kostki Potockiego 19, Kraków;668447999;34
+129;"Żłobek Niepubliczny ""Mali Przyrodnicy""";Aleja Pokoju;83;9;31-564;Kraków;małopolskie;Polska;Aleja Pokoju 83/9,10, Kraków;602117101;40
+130;"Żłobek ""Fair Play"" Magdalena Jałocha";Anny Szwed-Śniadowskiej;41;;30-389;Kraków;małopolskie;Polska;Anny Szwed-Śniadowskiej 41, Kraków;660311619;36
+131;"Żłobek ""BeBaby""";Ludwika Rydygiera;8;;30-695;Kraków;małopolskie;Polska;Ludwika Rydygiera 8/01, Kraków;664918283;52
+132;"Żłobek ""Akademia Małych Artystów""";Adama Bochenka;12b;LU1;30-693;Kraków;małopolskie;Polska;Adama Bochenka 12B/LU1, Kraków;788131940;30
+133;"Prywatny Żłobek ""Małe Tygryski 2""";Osiedle Złotego Wieku;14;3;31-616;Kraków;małopolskie;Polska;Osiedle Złotego Wieku 14/3, Kraków;798271602;21
+134;"Żłobek ""Mini Mini""";Sołtysowska;37c;;31-589;Kraków;małopolskie;Polska;Sołtysowska 37C, Kraków;794394894;36
+135;"Żłobek Niepubliczny ""Happy Feet"" ";Młodzieży ;2a;;30-829;Kraków;małopolskie;Polska;Młodzieży 2a, Kraków;505369035;40
+136;"Żłobek Niepubliczny ""Baby College Active""";Winnicka;40;;30-394;Kraków;małopolskie;Polska;Winnicka 40, Kraków;531151131;44
+137;"Żłobek Niepubliczny ""Pierwsze Kroczki""";Anny Szwed-Śniadowskiej;41;LU3;30-389;Kraków;małopolskie;Polska;Anny Szwed-Śniadowskiej 41/lu3, Kraków;668437820;35
+138;"Żłobek ""Radosne skrzaty""";Józefa Sawy-Calińskiego;13;;31-999;Kraków;małopolskie;Polska;Józefa Sawy-Calińskiego 13, Kraków;693616661;48
+139;"Żłobek Niepubliczny ""Hutniczek""";Żaglowa;13b;;31-979;Kraków;małopolskie;Polska;Żaglowa 13B, Kraków;509388298;48
+140;Niepubliczny Żłobek Nr 6;Żabiniec ;89;35;31-215;Kraków;małopolskie;Polska;Żabiniec 89/35, Kraków;600466847;40
+141;"Żłobek ""Dinusiowo""";Wrocławska;87;U2;30-017;Kraków;małopolskie;Polska;Wrocławska 87/lok. U2, Kraków;729858998;29
+142;Żłobek Montessori Dreams;Wizjonerów;4;177;31-356;Kraków;małopolskie;Polska;Wizjonerów 4/177, Kraków;535351929;53
+143;"Niepubliczny Żłobek ""Filemon""";Poznańska;3;LU1;30-012;Kraków;małopolskie;Polska;Poznańska 3/LU1, Kraków;500385267;47
+144;"Żłobek Niepubliczny ""Hutniczek""";Żaglowa;13b;;31-979;Kraków;małopolskie;Polska;Żaglowa 13B, Kraków;509388298;48
+145;"Niepubliczny Żłobek ""Duło"" ";Osiedle Avia;8;48;31-877;Kraków;małopolskie;Polska;Osiedle Avia 8/48, Kraków;884030186;8
+146;"Niepubliczny Żłobek ""Glukusie"" - Ujastek w Krakowie";Ujastek;5b;;31-752;Kraków;małopolskie;Polska;Ujastek 5b, Kraków;510431781;60
+147;"Niepubliczny Żłobek ""Wesołe Wygibasy""";Zygmunta Glogera;53;LU2;31-222;Kraków;małopolskie;Polska;Zygmunta Glogera 53/LU2, Kraków;697560022;35
+148;"Niepubliczny Żłobek Sportowo-Językowy ""Fair Play""";Wielicka;28b;;30-552;Kraków;małopolskie;Polska;Wielicka 28B/budynek C, Kraków;507513071;21
+149;"Żłobek ""HopKids"" Nr 2";Kordiana;50;LU1;30-653;Kraków;małopolskie;Polska;Kordiana 50/LU 1-3, Kraków;530751616;15
+150;"Prywatny Żłobek ""Kacperkowo 3""";Dobrego Pasterza;118g;LU3;31-416;Kraków;małopolskie;Polska;Dobrego Pasterza 118G/LU3LU4LU5, Kraków;537461355;64
+151;"Niepubliczny Żłobek Sportowo-Językowy ""Fair Play""";Bronowicka;138;;30-121;Kraków;małopolskie;Polska;Bronowicka 138, Kraków;797125739;30
+152;"Niepubliczny Żłobek ""BabyArt Kraina Twórczości"" ";Zdunów;5;;30-428;Kraków;małopolskie;Polska;Zdunów 5, Kraków;731573701;25
+153;"Żłobek Niepubliczny ""Iskierki""";Kanarkowa;1;;30-693;Kraków;małopolskie;Polska;Kanarkowa 1, Kraków;502925125;32
+154;"Niepubliczny Żłobek Montessori ""Wesoły Jeżyk"" Ewelina Szczęch";Wyżynna;2a;;30-617;Kraków;małopolskie;Polska;Wyżynna 2a, Kraków;791501115;28
+155;"Niepubliczny Żłobek ""Ozonki""";Stefana Banacha;47;U1;31-235;Kraków;małopolskie;Polska;Stefana Banacha 47/U1, Kraków;696779069;40
+156;"Niepubliczny Żłobek ""Lokomotywa""";Zygmunta Glogera;5;;31-222;Kraków;małopolskie;Polska;Zygmunta Glogera 5, Kraków;514910055;25
+157;"Niepubliczny Żłobek ""Fajny Żłobek""";Sołtysowska;12i;46;31-589;Kraków;małopolskie;Polska;Sołtysowska 12i/46, Kraków;508702903;15
+158;"Niepubliczny Żłobek""Serduszko"" Nr 3";Hetmana Żółkiewskiego;17;;31-539;Kraków;małopolskie;Polska;Hetmana Żółkiewskiego 17/LU, Kraków;725087086;44
+159;"Niepubliczny Żłobek ""Jarzębinka""";Starowiejska;30;;30-698;Kraków;małopolskie;Polska;Starowiejska 30, Kraków;501156504;53
+160;"Niepubliczny Żłobek ""Krakowiaczek"" ";Prądnicka;74;;31-202;Kraków;małopolskie;Polska;Prądnicka 74, Kraków;600266903;21
+161;"Żłobek ""Otulamy""";Rzemieślnicza;16;L2;30-363;Kraków;małopolskie;Polska;Rzemieślnicza 16/L2, Kraków;603705882;23
+162;"Żłobek ""Czyżyk"" ";Moczydło;7a;;30-698;Kraków;małopolskie;Polska;Moczydło 7a, Kraków;515474310;18
+163;"Niepubliczny Dwujęzyczny Żłobek ""KIDS&Co.""";Zabłocie;43b;;30-701;Kraków;małopolskie;Polska;Zabłocie 43B, Kraków;533334370;23
+164;"Żłobek Niepubliczny ""Children's English Centre""";Siarczana ;15;;30-432;Kraków;małopolskie;Polska;Siarczana 15, Kraków;579165071;20
+165;"Niepubliczny Żłobek ""Tulii Lulii""";Dobrego Pasterza;118g;U1;31-416;Kraków;małopolskie;Polska;Dobrego Pasterza 118G/U1, Kraków;737840977;16
+166;"Dwujęzyczny Żłobek Niepubliczny ""Sunny Buddies""";Władysława Konopczyńskiego;15;LU2;30-383;Kraków;małopolskie;Polska;Władysława Konopczyńskiego 15/lu2 i lu3, Kraków;733201901;42
+167;"Niepubliczny Dwujęzyczny Żłobek ""KIDS&Co.""";Aleja gen. Tadeusza Bora-Komorowskiego;25;;31-476;Kraków;małopolskie;Polska;Aleja gen. Tadeusza Bora-Komorowskiego 25, Kraków;575000149;43
+168;"Niepubliczny Żłobek Sportowo Językowy ""Fair Play""";Henryka Pachońskiego;7a;;31-223;Kraków;małopolskie;Polska;Henryka Pachońskiego 7a, Kraków;511309977;50
+169;"Żłobek ""Pszczółki""";Dożynkowa;101;;31-234;Kraków;małopolskie;Polska;Dożynkowa 101, Kraków;604349851;20
+170;"Żłobek Niepubliczny ""Fair Play""";Filipa Pokutyńskiego;10;;30-376;Kraków;małopolskie;Polska;Filipa Pokutyńskiego 10, Kraków;690999076;25
+171;"Żłobek Niepubliczny ""Niebieska Żabka""";Mariana Domagały;27e;;30-741;Kraków;małopolskie;Polska;Mariana Domagały 27E, Kraków;600055055;41
+172;"Dwujęzyczny Niepubliczny Żłobek ""Małe Cuda""";Zygmunta Miłkowskiego;7;LU4;30-349;Kraków;małopolskie;Polska;Zygmunta Miłkowskiego 7/LU4/LU5, Kraków;797551425;30
+173;"Niepubliczny Żłobek Sportowo-Językowy ""Fair Play""";Wrocławska;53ab;U4;30-011;Kraków;małopolskie;Polska;Wrocławska 53AB/U4, Kraków;507513071;16
+174;"Żłobek ""Radosne Brzdące""";Przewóz;40;;30-716;Kraków;małopolskie;Polska;Przewóz 40, Kraków;530393605;28
+175;"Żłobek Niepubliczny ""Słodziaki """;Zdrowa;2a;;31-216;Kraków;małopolskie;Polska;Zdrowa 2a, Kraków;696776844;25
+176;"Żłobek ""Troskliwe Misie"" Aneta Kmera";Osiedle Dywizjonu 303;14;1;31-872;Kraków;małopolskie;Polska;Osiedle Dywizjonu 303 14/1, Kraków;608451952;15
+177;"Żłobek ""Dzieciaki i My""";Strycharska;10;LU2;30-712;Kraków;małopolskie;Polska;Strycharska 10/LU2, Kraków;791919091;40
+178;Żłobek Montessori Karuzela;Osiedle Tysiąclecia;85;;31-609;Kraków;małopolskie;Polska;Osiedle Tysiąclecia 85, Kraków;798780209;37
+179;"Żłobek ""Klasa Bobasa""";Józefa Meiera;20b;4a;31-236;Kraków;małopolskie;Polska;Józefa Meiera 20B/4A, Kraków;791651657;69
+180;"Niepubliczny Żłobek ""Butterfly"" w Krakowie";Koszykarska;31;;30-717;Kraków;małopolskie;Polska;Koszykarska 31, Kraków;662048713;24
+181;"Żłobek Prywatny ""Magiczny Domek 2""";Drukarska;3;;30-348;Kraków;małopolskie;Polska;Drukarska 3, Kraków;667393158;24
+182;"Niepubliczny Żłobek ""Tygryski""";Walerego Sławka;27;;30-658;Kraków;małopolskie;Polska;Walerego Sławka 27, Kraków;665030360;34
+183;"Niepubliczny Żłobek Sportowo-Językowy ""Kraina Piotrusia Pana"" ";Dębskiego;125;;30-499;Kraków;małopolskie;Polska;Dębskiego 125, Kraków;793505654;84
+184;"Niepubliczny Żłobek ""Petit Ami""";Sołtysowska;3;LU2;31-586;Kraków;małopolskie;Polska;Sołtysowska 3/LU2, Kraków;517125694;39
+185;"Niepubliczny Żłobek""Wesołe Wygibasy""";Stańczyka;8;LU3;30-126;Kraków;małopolskie;Polska;Stańczyka 8/LU3, Kraków;697560022;29
+186;"Niepubliczny Żłobek ""Baby Boom"" nr 4 w Krakowie";Stańczyka;8c;LU4;30-126;Kraków;małopolskie;Polska;Stańczyka 8C/LU4, Kraków;516329006;24
+187;"Niepubliczny Żłobek ""Baby Boom"" nr 1 w Krakowie";Wielicka;107;1;30-552;Kraków;małopolskie;Polska;Wielicka 107/1, Kraków;664157803;36
+188;"Niepubliczny Dwujęzyczny Żłobek ""Małe Cuda - Little Miracles""";Piotra Tomickiego;22;221;31-982;Kraków;małopolskie;Polska;Piotra Tomickiego 22/221, Kraków;797551425;25
+189;"Niepubliczny Żłobek ""Baby Boom"" nr 3 w Krakowie";Rydlówka;21;LU7;30-363;Kraków;małopolskie;Polska;Rydlówka 21/LU7, Kraków;664157803;32
+190;"Żłobek Ekologiczny ""Green Place""";Powstańców;86;U7;31-670;Kraków;małopolskie;Polska;Powstańców 86/U7, Kraków;506907910;14
+191;"Żłobek ""Dinusiowo""";Stanisława Lema;19;LU3;31-571;Kraków;małopolskie;Polska;Stanisława Lema 19/LU3LU4, Kraków;729858998;52
+192;"Niepubliczny Żłobek ""Baby Boom"" nr 5 w Krakowie";Bolesława Orlińskiego;7a;1;30-552;Kraków;małopolskie;Polska;Bolesława Orlińskiego 7A/1-7, Kraków;664157803;37
+193;"Niepubliczny Żłobek ""Kolory""";Hamernia;42;;30-145;Kraków;małopolskie;Polska;Hamernia 42, Kraków;512288043;30
+194;"Niepubliczny Żłobek Sportowo-Językowy ""Kraina Piotrusia Pana"" ";Czerwone Maki;87a;;30-392;Kraków;małopolskie;Polska;Czerwone Maki 87A, Kraków;793505651;79
+195;Żłobek Prywatny Magiczny Domek ;Wandejska ;3;;30-383;Kraków;małopolskie;Polska;Wandejska 3, Kraków;667393158;44
+196;Niepubliczny Żłobek Niebieska Żabka - Złocień II;Mariana Domagały ;27D;;30-741;Kraków;małopolskie;Polska;Mariana Domagały 27D, Kraków;600055055;43
+197;"Żłobek ""Kolorowe Motylki""";Saska ;12C;U1;30-715;Kraków;małopolskie;Polska;Saska 12C/U1/U2/U3, Kraków;530140210;48
+198;Niepubliczny Żłobek Mini Smoki;Osiedle Kombatantów ;9;;31-612;Kraków;małopolskie;Polska;Osiedle Kombatantów 9, Kraków;530459551;57
+199;Niepubliczny Żłobek Chodźmy na pole;Odmętowa ;97;;31-979;Kraków;małopolskie;Polska;Odmętowa 97, Kraków;530457117;42
+200;"Żłobek ""Zaczarowany melonik"" ";Kapelanka 6A/LU 15;;;30-347;Kraków;małopolskie;Polska;Kapelanka 6A/LU15, Kraków;531463177;36
+201;"""Kącik Maluszka Krowodrza""";Kluczborska ;48;1;31-271;Kraków;małopolskie;Polska;Kluczborska 48/1, Kraków;535836957;19
+202;"Niepubliczny Żłobek ""Zielona Wieża""";Kobierzyńska ;205A;;30-382;Kraków;małopolskie;Polska;Kobierzyńska 205A, Kraków;531296646;23
+203;"Niepubliczny Żłobek ""Duło""";Mogilska ;120D;3;31-445;Kraków;małopolskie;Polska;Mogilska 120D/3, Kraków;884030186;25
+204;Niepubliczny Żłobek KIDS SPACE;Barska 69/U6;69;U6;30-307;Kraków;małopolskie;Polska;Barska 69/U6, Kraków;503304004;33
+205;"Niepubliczny Żłobek ""Petit Ami""";Osiedle Teatralne;29;;31-947;Kraków;małopolskie;Polska;Osiedle Teatralne 29, Kraków;797398846;30
+206;Niepubliczny Żłobek FAIR PLAY;Klementyny Hoffmanowej 6b/LU2;6b;LU2;30-419;Kraków;małopolskie;Polska;Klementyny Hoffmanowej 6b/LU2;535014003;25
+207;Niepubliczny Żłobek FAIR PLAY;Seweryna Goszczyńskiego 1/LU4-LU6;1;LU4;30-724;Kraków;małopolskie;Polska;Seweryna Goszczyńskiego 1/LU4-LU6;535014003;50
+208;"""Świat Według Maluszka""";Wolska ;7E;;30-663;Kraków;małopolskie;Polska;Wolska 7E, Kraków;516930506;25
+209;"Żłobek ""Dzieciaki i My""";Strycharska ;10;LU1;30-712;Kraków;małopolskie;Polska;Strycharska 10/LU1, Kraków;791919091;40
+210;"Niepubliczny Żłobek ""KOALA""";Aktorów ;1;180;31-356;Kraków;małopolskie;Polska;Aktorów 1/180, Kraków;500760160;49
+211;"Niepubliczny Dwujęzyczny ""Żłobek KIDS&Co.""";Wadowicka ;3c;;30-347;Kraków;małopolskie;Polska;Wadowicka 3c, Kraków;576000321;48
+212;"Żłobek ""Małe Aniołki""";Kolejowa;19;;30-805;Kraków;małopolskie;Polska;Kolejowa 19, Kraków;533544859;18
+213;"Żłobek ""Dinusiowo""";Fredry ;6F;LU10;31-571;Kraków;małopolskie;Polska;Fredry 6F/LU10/11/12, Kraków;729858998;45
+214;"""Baby Yoda""";Jerozolimska ;2A;LU2;30-555;Kraków;małopolskie;Polska;Jerozolimska 2A/LU2, Kraków;453446690;40
+215;"Niepubliczny żłobek ""Wesołe Wygibasy""";Śliczna;36A;LU1;31-444;Kraków;małopolskie;Polska;Śliczna 36A/LU1, Kraków;697560022;39
+216;Niepubliczny Żłobek Adventure Kids;prof. Michała Życzkowskiego ;5;LU1B;31-864;Kraków;małopolskie;Polska;prof. Michała Życzkowskiego 5/LU1B, Kraków;692992398;42
+217;"Niepubliczny Żłobek ""Kiddie City""";Opolska ;112;1p;31-355;Kraków;małopolskie;Polska;Opolska 112/1p, Kraków;690361293;20
+218;"Niepubliczny Żłobek ""Wesołe Dzieciaki""";Leona Petrażyckiego ;42;;30-399;Kraków;małopolskie;Polska;Leona Petrażyckiego 42, Kraków;698539929;14
+219;"Niepubliczny Żłobek ""Tuptusie""";Ślusarska;5;LU2;32-043;Kraków;małopolskie;Polska;Ślusarska 5/LU2, Kraków;665838747;25
+220;"Żłobek ""Sunflower""";Józefa Wybickiego;5A;LU1;31-261;Kraków;małopolskie;Polska;Józefa Wybickiego 5A/LU1, Kraków;538207296;32
+221;Niepubliczny Dwujęzyczny Żłobek KIDS&Co.;Przy Rondzie ;4;;31-547;Kraków;małopolskie;Polska;Przy Rondzie 4, Kraków;576000157;41
+222;"Niepubliczny Żłobek ""SAFARI""";Łowienicka ;14;1;30-611;Kraków;małopolskie;Polska; Łowienicka 14/1;730521092;8
+223;"Niepubliczny żłobek ""Hello KIDS""";Grzegórzecka ;69;LU1;31-559;Kraków;małopolskie;Polska;Grzegórzecka 69C/LU1, Kraków;537496457;20
+224;"Dwujęzyczne Niepubliczne Przedszkole i Żłobek ""Sunny Buddies""";Walerego Sławka ;9;U1;30-633;Kraków;małopolskie;Polska;Walerego Sławka 9/U1, Kraków;721341666;49
+225;"Niepubliczny Żłobek Montessori ""Wesoły Jeżyk"" Ewelina Szczęch";Kijanki ;2;;30-693;Kraków;małopolskie;Polska;Kijanki 2, Kraków;791501115;25
+226;"Niepubliczny Żłobek ""Klasa Bobasa""";Górników;68;LU1;30-816;Kraków;małopolskie;Polska;Górników 68/LU1-LU3;791651657;25
+227;"""Baby Yoda""";Józefa Wybickiego;5A;2;31-261;Kraków;małopolskie;Polska;Józefa Wybickiego 5A/2, Kraków;453446690;40
+228;"""o.bobo""";Erazma Jerzmanowskiego;37;U5;30-836;Kraków;małopolskie;Polska;Erazma Jerzmanowskiego 37/U5, Kraków;785527723;37
+229;"Dwujęzyczny Niepubliczny Żłobek ""Małe Cuda - Little Miracles""";Przemiarki ;23A;1;30-384;Kraków;małopolskie;Polska;Przemiarki 23A/LU 1-2, Kraków;797551425;30
+230;"""Baby Yoda""";Kołowa ;8;;30-134;Kraków;małopolskie;Polska; Kołowa 8, Kraków;453446690;40
+231;"""Bajkowa Wyspa""";Klementyny Hoffmanowej ;6B;U3;30-419;Kraków;małopolskie;Polska;Klementyny Hoffmanowej 6B/U3, Kraków;730298428;30
+232;"Żłobek Niepubliczny ""Koala""";Osiedle Bohaterów Września ;90;LU1;31-621;Kraków;małopolskie;Polska;Osiedle Bohaterów Września 90/LU1, Kraków;500760160;107
+233;"Żłobek ""Mały Edisonek""";Raciborskiego;2;;31-463;Kraków;małopolskie;Polska;Mariana Raciborskiego 2, Kraków;501521920;19
+234;"Żłobek ""HELLO BABY""";Aleja 29 Listopada ;201;LU2;31-425;Kraków;małopolskie;Polska;Aleja 29 Listopada 201/LU2, Kraków;453573607;32
+235;"Niepubliczny Żłobek ""Muszelka""";Aleja gen. Jana Skrzyneckiego ;15;LU1;30-363;Kraków;małopolskie;Polska;Aleja gen. Jana Skrzyneckiego 15-17/LU1, Kraków;606920099;30
+236;"Niepubliczny Żłobek ""Magiczna Kraina""";Osiedle Urocze ;4;;31-952;Kraków;małopolskie;Polska;Osiedle Urocze 4, Kraków;796050283;25
+237;"Żłobek Niepubliczny ""Malinowy Domek""";Bolesława Orlińskiego ;3;10;31-878;Kraków;małopolskie;Polska;Bolesława Orlińskiego 3/10, Krakó;510631021;35
+238;Niepubliczny Żłobek SUNNY KIDS;Andrzeja Zauchy ;11;U8;31-235;Kraków;małopolskie;Polska;Andrzeja Zauchy 11/U8, Kraków;664383488;24
+239;"Żłobek Niepubliczny ""Kraina Niedźwiadka""";Franciszka Bohomolca ;13;U3;31-416;Kraków;małopolskie;Polska;Franciszka Bohomolca 13/U3, Kraków;574652845;24
+240;"Żłobek ""Elefante""";Biskupa Piotra Tomickiego;22;219;31-982;Kraków;małopolskie;Polska;Biskupa Piotra Tomickiego 22/219, Kraków;698019555;40
+241;"Żłobek ""Dinusiowo""";Centralna;51B;LU 38;31-586;Kraków;małopolskie;Polska;Centralna 51B/LU38, Kraków;729858998;52
+242;"Niepubliczny Żłobek Sportowo- Językowy ""Fair Play""";Mariana Domagały;39;;30-741;Kraków;małopolskie;Polska;Mariana Domagały 39, Kraków;510061284;61
+243;BeBaby Czyżyny;Romana Ciesielskiego;6;LU7;31-586;Kraków;małopolskie;Polska;Romana Ciesielskiego 6/LU7 , Kraków;699939535;50
+244;"Niepubliczny żłobek ""Be Happy""";Aleja 3 Maja ;9;;30-062;Kraków;małopolskie;Polska;Aleja 3 Maja 9, Kraków;720800263;13
+245;"Niepubliczny Żłobek ""Little Bunnies""";Centralna;51B;2;31-586;Kraków;małopolskie;Polska;Centralna 51B/2, Kraków;691245007;35
+246;BABY YODA - BIEŻANÓW;Mała Góra;14C;LU1;30-684;Kraków;małopolskie;Polska;Mała Góra 14C/LU1, Kraków;453446690;50
+247;"Żłobek Niepubliczny ""Bajkowo""";Prosta;35B;;30-814;Kraków;małopolskie;Polska;Prosta 35B, Kraków;503190145;25
+248;"Niepubliczny Żłobek ""Motylkowa Kraina""";Rakowicka;22D;LU2;31-510;Kraków;małopolskie;Polska;Rakowicka 22D/LU2, Kraków;721879475;20
+249;Zmysłoteka-Centrum Rozwoju Dziecka;ks. Ferdynanda Machaya;1;;30-135;Kraków;małopolskie;Polska;ks. Ferdynanda Machaya 1, Kraków;728487870;30
+250;"Niepubliczny żłobek ""Wesołe Wygibasy""";Władysława Łokietka ;23;LUA;30-010;Kraków;małopolskie;Polska;Władysława Łokietka 23/LUA, Kraków;697560022;25
+251;"Żłobek Niepubliczny ""Kraina Niedźwiadka 1""";Franciszka Bohomolca ;13;U3;31-416;Kraków;małopolskie;Polska;Franciszka Bohomolca 13/U3, Kraków;574652845;23
+252;"NIEPUBLICZNY ŻŁOBEK ""BABY BOOOM"" NR 7 W KRAKOWIE";Wrocławska ;69;U1;30-011;Kraków;małopolskie;Polska;Wrocławska 69/U1, Kraków;664157803;40
+253;"Niepubliczny Żłobek ""Ence Pence""";Osiedle Centrum ;E14;LU2;31-934;Kraków;małopolskie;Polska;Osiedle Centrum E14/LU2, Kraków;691999935;20
+254;"Złobek ""Małe kroczki""";Dworska;25;4;30-314;Kraków;małopolskie;Polska;Dworska 25/4, Kraków;535513248;15
+255;"Niepubliczny żłobek ""Dino Kids""";Wielicka ;57;LU5;30-522;Kraków;małopolskie;Polska;Wielicka 57/LU5, Kraków;532366988;40
+256;"Niepubliczny Żłobek ""Anioła Stróża""";Konstantego Ildefonsa Gałczyńskiego ;7;;31-581;Kraków;małopolskie;Polska;Konstantego Ildefonsa Gałczyńskiego 7, Kraków;126491722;25
+257;ŻŁOBEK KRASNOLUDKI;Władysława Taklińskiego ;69;;30-499;Kraków;małopolskie;Polska;Władysława Taklińskiego 69, Kraków;785125412;23
+258;Żłobek SUNNY KIDS Papierni Prądnickich;Papierni Prądnickich;74;LU5;31-234;Kraków;małopolskie;Polska;Papierni Prądnickich 74/LU5, Kraków;664383488;24
+259;"Niepubliczny Żłobek  ""Zielona Wyspa""";Doktora Judyma;16;;30-436;Kraków;małopolskie;Polska;Doktora Judyma 16, Kraków;505160113;15
+260;Dwujęzyczny Niepubliczny Żłobek Sunny Buddies Kids Centre;Osiedle 2 Pułku Lotniczego;47;D;31-870;Kraków;małopolskie;Polska;Osiedle 2 Pułku Lotniczego 47/D, Kraków;574406306;20
+261;Niepubliczny Żłobek Dzieciaki i My;Księcia Józefa 277/L1;277;L1;30-250;Kraków;małopolskie;Polska;Księcia Józefa 277/L1, Kraków;785919091;25
+262;Magiczna Kraina Słoneczne;Osiedle Słoneczne ;9;;31-957;Kraków;małopolskie;Polska;Osiedle Słoneczne 9, Kraków;570757009;22
+263;"Żłobek ""Ogródek Krasnoludków""";Dominikanów;32;21;31-409;Kraków;małopolskie;Polska;Dominikanów 32/21, Kraków;603764132;13
+264;"Żłobek ""Happy Kids""";por. Halszki;28;1;30-611;Kraków;małopolskie;Polska;por. Halszki 28/1, Kraków;500506100;46
+265;Niepubliczny Dwujęzyczny Żłobek KIDS&Co.;Czyżyńska;21;LU96;31-571;Kraków;małopolskie;Polska;Czyżyńska 21/LU96 LU97, Kraków;452113736;28
+266;"Niepubliczny Żłobek ""Bajeczka""";Osiedle Urocze ;6;;31-952;Kraków;małopolskie;Polska;Osiedle Urocze 6, Kraków;126442393;32

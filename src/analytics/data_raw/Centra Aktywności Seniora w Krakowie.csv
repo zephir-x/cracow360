@@ -1,0 +1,69 @@
+﻿Lp;Numer pozycji CAS;Dzielnica;Nazwa dzielnicy;Nazwa;Podmiot prowadzący;Ulica;Numer budynku;Numer lokalu;Kod pocztowy;Miasto;Województwo;Kraj;Kontakt 1;Kontakt 2;Adres;Uwagi
+1;1;I;Stare Miasto;CAS Senior w Centrum;Fundacja KDM;Berka Joselewicza ;28;;31-031 ;Kraków;małopolskie;Polska;122656553;;Berka Joselewicza 28;
+2;2;I;Stare Miasto;CAS Dobrej Nadziei;Stowarzyszenie Dobrej Nadziei;Batorego ;3;5;31-135 ;Kraków;małopolskie;Polska;662383382;;Batorego 3/5;
+3;3;I;Stare Miasto;CAS Spot Nestor Długa;Stowarzyszenie SIEMACHA;Długa ;42;;31-146 ;Kraków;małopolskie;Polska;882053561;;Długa 42;
+4;4;I;Stare Miasto;CAS Artystyczny WARSZTATOWA 5;Fundacja Zawsze Silni ;Dunajewskiego ;5;;31-146;Kraków;małopolskie;Polska;730685606;;Dunajewskiego 5 ;
+5;5;II;Grzegórzki;CAS przy parafii św.Kazimierza;"Stowarzyszenie ""Kultura i Edukacja""";Bobrowskiego;6;;31-552 ;Kraków;małopolskie;Polska;124173500;;Bobrowskiego 6;
+6;6;II;Grzegórzki;CAS Dojrzały smak życia!;Stowarzyszenie AKADEMIA PEŁNI ŻYCIA im. J. Boehnert;Rzeźnicza ;;;31-540 ;Kraków;małopolskie;Polska;532254436;;Rzeźnicza 2a;
+7;7;II;Grzegórzki;CAS Aktywni Razem;Stowarzyszenie PLINEU Centrum Dobrego Życia;Kasprowicza ;;1;31-523 ;Kraków;małopolskie;Polska;509084820;;Kasprowicza 9a/1;
+8;8;II;Grzegórzki;Cas Spot Nestor Mogilska;Stowarzyszenie SIEMACHA;Mogilska ;58;;31-546;Kraków;małopolskie;Polska;601619428;;Mogilska 58;
+9;9;III;Prądnik Czerwony;CAS Olsza;Fundacja im. Heleny i Tadeusza Augustyn;Miechowity ;6;;31-469 ;Kraków;małopolskie;Polska;505121239;;Miechowity 6;
+10;10;III;Prądnik Czerwony;CAS Renesans;Stowarzyszenie Grace;Młyńska Boczna ;;;31-470 ;Kraków;małopolskie;Polska;606717646;;Młyńska Boczna 7;
+11;11;III;Prądnik Czerwony;CAS Prądnik Czerwony;Fundacja im. Heleny i Tadeusza Augustyn;Strzelców ;;;31-422 ;Kraków;małopolskie;Polska;501387510;;Strzelców 5a;
+12;12;IV;Prądnik Biały;CAS Prądnik Biały;Fundacja Nowe Centrum;Pachońskiego ;8;;31-223 ;Kraków;małopolskie;Polska;578775119;;Pachońskiego 8;
+13;13;IV;Prądnik Biały;CAS Uskrzydleni Wiekiem;Fundacja Współpracujmy;Rusznikarska ;14;16;31-261 ;Kraków;małopolskie;Polska;511200011;;Rusznikarska 14/16;
+14;14;IV;Prądnik Biały;"CAS ""Nie Dzieli Nas Wiek”";"Stowarzyszenie ""Bądź gotów""";Weissa ;8;21;31-339 ;Kraków;małopolskie;Polska;;727430999;Weissa 8/21;
+15;15;V;Krowodrza;CAS Optymista;Polski Komitet Pomocy Społecznej Małopolski Zarząd Wojewódzki;Sienkiewicza;;;30-033 ;Kraków;małopolskie;Polska;126345157;126237867;Sienkiewicza 2a;
+16;16;V;Krowodrza;CAS Współpracujmy;Fundacja Współpracujmy;Litewska ;34;;30-014 ;Kraków;małopolskie;Polska;506497108;;Litewska 34;
+17;17;V;Krowodrza;CAS Seniorpedia.pl;Stowarzyszenie na rzecz promocji zdrowia Consensus;Kazimierza Wielkiego ;117;;30-074 ;Kraków;małopolskie;Polska;601457888;;Kazimierza Wielkiego  117;
+18;18;VI;Bronowice;CAS Źródło;"Stowarzyszenie ""LAJKONIK""";Gabrieli Zapolskiej ;42;;30-126 ;Kraków;małopolskie;Polska;;;Gabrieli Zapolskiej 42;
+19;19;VI;Bronowice;CAS Bronowice;Stowarzyszenie „Carpe Diem”;Na Błonie ;;;30-147 ;Kraków;małopolskie;Polska;605261515;;Na Błonie 15B;
+20;20;VII;Zwierzyniec;CAS w Willi Decjusza;Stowarzyszenie Willa Decjusza;28 lipca 1943 ;;;30-233 ;Kraków;małopolskie;Polska;;508688474;28 lipca 1943 17a;
+21;21;VII;Zwierzyniec;CAS Salwator;Fundacja Aktywności i Edukacji Społecznej FAES;Morawskiego ;5;;30-102 ;Kraków;małopolskie;Polska;797377808;;Morawskiego 5;
+22;22;VII;Zwierzyniec;CAS w Hali 100-lecia KS Cracovia;Fundacja Kuźnia Talentów;Aleja Marszałka Focha ;40;;30-119 ;Kraków;małopolskie;Polska;793777713;533327941;Aleja Marszałka Focha 40;
+23;23;VII;Zwierzyniec;CAS Przystań Aktywnego Seniora;Krakowskie Wodne Ochotnicze Pogotowie Ratunkowe ;Dojazdowa;4;;30-105;Kraków;małopolskie;Polska;690651389;;Dojazdowa 4;
+24;24;VIII;Dębniki;CAS Lemon;Stowarzyszenie „Carpe Diem”;Ludwinowska ;11;;30-331 ;Kraków;małopolskie;Polska;733999785;;Ludwinowska 11;
+25;25;VIII;Dębniki;CAS Radosny Senior;Stowarzyszenie RADOSNY SENIOR;Zamiejska ;6;;30-358 ;Kraków;małopolskie;Polska;518810724;;Zamiejska 6 ;
+26;26;VIII;Dębniki;CAS Tekla;"Stowarzyszenie ""LAJKONIK""";Działowskiego ;1;;30-399 ;Kraków;małopolskie;Polska;;;Działowskiego 1;
+27;27;VIII;Dębniki;CAS Dębniki;Fundacja Aktywności i Edukacji Społecznej FAES;Bałuckiego ;21;1;30-318 ;Kraków;małopolskie;Polska;;;Bałuckiego 21;
+28;28;VIII;Dębniki;CAS Popatrz Sercem;Fundacja Popatrz Sercem;Mieszczańska ;;;30-313;Kraków;małopolskie;Polska;570811577;;Mieszczańska 9b;
+29;29;IX;Łagiewniki-Borek Fałęcki;CAS Borsuczek;"Stowarzyszenie ""LAJKONIK""";Borsucza ;12;;30-408 ;Kraków;małopolskie;Polska;;;Borsucza 12;
+30;30;IX;Łagiewniki-Borek Fałęcki;CAS Pasja;"Stowarzyszenie ""LAJKONIK""";Zakopiańska ;62;;30-418 ;Kraków;małopolskie;Polska;;;Zakopiańska 62;
+31;31;X;Swoszowice;CAS Swoszowice corner;Fundacja Rodzina Plus;Myślenicka ;133;;30-698 ;Kraków;małopolskie;Polska;;;Myślenicka 133;
+32;32;X;Swoszowice;CAS Wróblowianka;"Klub Sportowy ""WRÓBLOWIANKA""";Wróblowicka;58;;30-698;Kraków;małopolskie;Polska;600051651;;Wróblowicka 58;
+33;33;XI;Podgórze Duchackie;CAS Kurdwanów;Stowarzyszenie Dobrej Nadziei;Witosa ;39;;30-647 ;Kraków;małopolskie;Polska;510789340;;Witosa 39;
+34;34;XI;Podgórze Duchackie;CAS Spot Nestor Bonarka;Stowarzyszenie SIEMACHA;Kamieńskiego ;11;;30-644 ;Kraków;małopolskie;Polska;;;Kamieńskiego 11;
+35;35;XI;Podgórze Duchackie;CAS Radosny Senior Plus;Stowarzyszenie RADOSNY SENIOR;Cechowa ;;;30-685 ;Kraków;małopolskie;Polska;;;Cechowa 144A;
+36;36;XII;Bieżanów-Prokocim;CAS Prokocim;Fundacja im. Heleny i Tadeusza Augustyn;Kurczaba ;25;;30-868 ;Kraków;małopolskie;Polska;518317989;;Kurczaba 25;
+37;37;XII;Bieżanów-Prokocim;CAS Spot Nestor Facimiech;Stowarzyszenie SIEMACHA;Facimiech;32;;30-667;Kraków;małopolskie;Polska;;;Facimiech 32;
+38;38;XII;Bieżanów-Prokocim;CAS Bieżanowianka;Klub Sportowy Bieżanowianka;Lipowskiego ;5;;30-898 ;Kraków;małopolskie;Polska;126302998;573979003;Lipowskiego 5;
+39;39;XII;Bieżanów-Prokocim;CAS Spot Nestor Kurczaba;Stowarzyszenie SIEMACHA;Kurczaba ;29;;30-868;Kraków;małopolskie;Polska;601619428;;Kurczaba 29;
+40;40;XIII;Podgórze;CAS Zabłocie – Grzegórzki;Fundacja Małopolska Izba Samorządowa;Aleja Daszyńskiego ;16;;31-534 ;Kraków;małopolskie;Polska;122002926;;Aleja Daszyńskiego 16;
+41;40;II;Grzegórzki;CAS Zabłocie – Grzegórzki;Fundacja Małopolska Izba Samorządowa;Aleja Daszyńskiego ;16;;31-535;Kraków;małopolskie;Polska;122002927;;Aleja Daszyńskiego 16;
+42;41;XIII;Podgórze;CAS Żeglarz;Klub Żeglarski Horn Kraków;Kozia ;22;;30-733;Kraków;małopolskie;Polska;;;Kozia 22;
+43;42;XIII;Podgórze;CAS Podgórze;Fundacja im. Heleny i Tadeusza Augustyn;Limanowskiego ;51;;30-551 ;Kraków;małopolskie;Polska;510276263;;Limanowskiego 51;
+44;43;XIII;Podgórze;CAS Pracownia Inicjatyw;Stowarzyszenie Fabryka Inicjatyw;Stróża Rybna;19;;30-714;Kraków;małopolskie;Polska;792847487;;Stróża Rybna 19;
+45;44;XIII;Podgórze;CAS Wena;Stowarzyszenie Primavera;Gromadzka ;;;30-719 ;Kraków;małopolskie;Polska;507740080;;Gromadzka 53a;
+46;45;XIII;Podgórze;CAS Korona;Fundacja Jarzębina ;Kalwaryjska ;9;;30-504;Kraków;małopolskie;Polska;884866402;;Kalwaryjska 9-15;
+47;46;XIV;Czyżyny;CAS Viktoria 303;Fundacja Inspiracja i Wsparcia Pasja;Osiedle Dywizjonu 303;66;;31-875;Kraków;małopolskie;Polska;533988822;;Osiedle Dywizjonu 303 66;
+48;47;XV;Mistrzejowice;CAS Super Senior;Fundacja Edukacji i Aktywności Seniorów LokoMotywa;OsiedleTysiąclecia ;42;;31-610 ;Kraków;małopolskie;Polska;722102173;664662276;OsiedleTysiąclecia 42;
+49;48;XV;Mistrzejowice;CAS Mistrzejowice;Fundacja Nowe Centrum;Osiedle Piastów;41;;31-625 ;Kraków;małopolskie;Polska;732994087;501528333;Osiedle Piastów 41;
+50;49;XV;Mistrzejowice;CAS Ruch to Zdrowie;Stowarzyszenie Pomocy Bezrobotnym i Osobom Pokrzywdzonym przez Los;Osiedle Mistrzejowice Nowe;;;31-640 ;Kraków;małopolskie;Polska;609397000;;Osiedle Mistrzejowice Nowe 6a;
+51;50;XVI;Bieńczyce;CAS Bieńczyce;Fundacja Nowe Centrum;Osiedle Kościuszkowskie ;;;31-858 ;Kraków;małopolskie;Polska;575361492;;Osiedle Kościuszkowskie 2A;
+52;51;XVI;Bieńczyce;CAS Złota Jesień Hutnika;Stowarzyszenie Byłych Pracowników Huty „Złota Jesień Hutnika”;Kaczeńcowa ;7;;31-831 ;Kraków;małopolskie;Polska;509690123;;Kaczeńcowa 7;
+53;52;XVI;Bieńczyce;CAS Cyfrowe Centrum Bieńczyce;Stowarzyszenie Fabryka Inicjatyw;Osiedle Jagiellońskie ;19;;31-834 ;Kraków;małopolskie;Polska;666580390;;Osiedle Jagiellońskie 19;
+54;53;XVII;Wzgórza Krzesławickie;CAS Uskrzydlone Wzgórza;Fundacja Uskrzydlamy;Osiedle Na Stoku ;1;;31-705 ;Kraków;małopolskie;Polska;519649567;;Osiedle Na Stoku 1;
+55;54;XVII;Wzgórza Krzesławickie;CAS Uśmiech;Fundacja UŚMIECH;Kantorowicka;122;;31-763;Kraków;małopolskie;Polska;796188221;;Kantorowicka 122;
+56;55;XVIII;Nowa Huta;CAS Zielone;Fundacja Nowe Centrum;Osiedle Zielone ;22;;31-971 ;Kraków;małopolskie;Polska;733956640;;Osiedle Zielone 22;
+57;56;XVIII;Nowa Huta;CAS Fruwająca Ryba;Fundacja Ukryte Skrzydła;Osiedle Na Skarpie ;35;;31-910 ;Kraków;małopolskie;Polska;794387527;660569100;Osiedle Na Skarpie 35;
+58;57;XVIII;Nowa Huta;CAS Seniorzy nauczycielami życia;"Stowarzyszenie Pomocy Socjalnej ""Gaudium et Spes""";Osiedle Górali ;23;;31-961;Kraków;małopolskie;Polska;608473767;;Osiedle Górali 23;
+59;58;XVIII;Nowa Huta;CAS Cyfrowe Centrum;Stowarzyszenie Fabryka Inicjatyw;Osiedle Centrum E ;18;;31-934 ;Kraków;małopolskie;Polska;506303304;;Osiedle Centrum E 18;
+60;59;XVIII;Nowa Huta;CAS Spot Nestor Ptaszyckiego;Stowarzyszenie SIEMACHA;Ptaszyckiego ;6;;31-979 ;Kraków;małopolskie;Polska;601619428;;Ptaszyckiego 6;
+61;60;XVIII;Nowa Huta;CAS Kolorowe;Fundacja ARISE;Osiedle Kolorowe;;;31-967;Kraków;małopolskie;Polska;666971585;;Osiedle Kolorowe 11a;
+62;61;XVIII;Nowa Huta;CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy;Fundacja Ukryte Skrzydła;Wróżenicka;49;;31-997;Kraków;małopolskie;Polska;660569100;602747012;Wróżenicka 49;W CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy zajęcia w poszczególne dni odbywają się w różnych miejscach
+63;61;XVIII;Nowa Huta;CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy;Fundacja Ukryte Skrzydła;Płoszczyny;1;;31-999;Kraków;małopolskie;Polska;660569100;602747012;Osiedle Kościelniki;W CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy zajęcia w poszczególne dni odbywają się w różnych miejscach
+64;61;XVIII;Nowa Huta;CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy;Fundacja Ukryte Skrzydła;Truskawkowa ;4;;31-985;Kraków;małopolskie;Polska;660569100;602747012;Osiedle Chałupki;W CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy zajęcia w poszczególne dni odbywają się w różnych miejscach
+65;61;XVIII;Nowa Huta;CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy;Fundacja Ukryte Skrzydła;Drożyska ;;;31-998;Kraków;małopolskie;Polska;660569100;602747012;Osiedle Wolica;W CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy zajęcia w poszczególne dni odbywają się w różnych miejscach
+66;61;XVIII;Nowa Huta;CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy;Fundacja Ukryte Skrzydła;gen. M. Karaszewicza- Tokarzewskiego;29;;31-985;Kraków;małopolskie;Polska;660569100;602747012;Osiedle Branice;W CAS dla rozproszonych seniorów, mieszkańców XVIII dzielnicy zajęcia w poszczególne dni odbywają się w różnych miejscach
+67;62;XVIII;Nowa Huta;CAS Kopaniec;Fundacja Ukryte Skrzydła;Syrachowska;1;;31-979;Kraków;małopolskie;Polska;789660514;;ul. Syrachowska 1;
+68;63;XVIII;Nowa Huta;CAS IB Polska w Hucie;Internationaler Bund Polska;Osiedle Górali ;24;;31-961;Kraków;małopolskie;Polska;452093540;;Osiedle Górali 24;

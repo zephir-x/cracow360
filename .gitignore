@@ -19,11 +19,6 @@ data/db/*.db
 data/db/*.db-shm
 data/db/*.db-wal
 
-# Temporary geocoding & pipeline caches
-data/contracts/*_cache.json
-*spatial_geocoding_cache.json
-data/contracts/krakow_tourism_seed.json
-
 # Python isolated environment & caches
 .venv/
 venv/
@@ -33,12 +28,6 @@ __pycache__/
 *$py.class
 .ipynb_checkpoints/
 .pytest_cache/
-src/analytics/data_raw/*
-!src/analytics/data_raw/README*.md
-!src/analytics/data_raw/.gitkeep
-src/analytics/data_processed/*
-!src/analytics/data_processed/README*.md
-!src/analytics/data_processed/.gitkeep
 
 # Environment variables
 .env

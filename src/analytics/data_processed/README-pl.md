@@ -1,50 +1,60 @@
 ﻿> 🌐 **Documentation in two languages / Dokumentacja w dwóch językach:** [<img src="https://flagcdn.com/20x15/gb.png" alt="English" width="20" height="15" /> English](README.md) | [<img src="https://flagcdn.com/20x15/pl.png" alt="Polski" width="20" height="15" /> Polski](README-pl.md)
 
-# Przetworzone Dane Pośrednie (Data Processed)
+# Przetworzone dane pośrednie (Data Processed)
 
 ## Do czego służy ten folder?
-Ten katalog pełni rolę **bufora roboczego** pomiędzy poszczególnymi etapami obliczeń w Pythonie. Przechowywane są w nim pliki tymczasowe, które powstały po oczyszczeniu i zintegrowaniu surowych danych, ale przed wygenerowaniem ostatecznych kontraktów systemowych.
+Ten katalog pełni funkcję **bufora roboczego** pomiędzy poszczególnymi etapami obliczeniowymi w Pythonie. Ściśle izoluje pliki pośrednie powstałe po oczyszczeniu i zintegrowaniu danych surowych, przed wygenerowaniem ostatecznych kontraktów systemowych.
 
-Dzięki temu każdy etap analizy można uruchamiać niezależnie, a w razie potrzeby łatwo podejrzeć i skontrolować wyniki pośrednie.
+Przechowuje również bezpiecznie stany operacyjne (takie jak trwała pamięć podręczna geokodowania) oraz ręcznie przygotowane dane zalążkowe (seed data), zapobiegając zanieczyszczeniu ostatecznego folderu integracyjnego `data/contracts/`. Pozwala to na niezależne uruchamianie każdego etapu analitycznego i ułatwia inspekcję wyników pośrednich.
 
 ---
 
-## Co i po wywołaniu czego się tu pojawia?
+## Co się tutaj znajduje i przez jaki skrypt jest generowane?
 
 ### 1. `districts_aggregated.json`
-- **Po czym powstaje?** Po uruchomieniu skryptu:
+- **Jak jest generowany?** Poprzez uruchomienie bazowego skryptu ETL:
   ```bash
   python scripts/01_etl_demographics_and_infrastructure.py
   ```
-- **Co zawiera?** Zagregowane, twarde liczby dla każdej z 18 dzielnic Krakowa:
-  - dokładną liczbę mieszkańców według grup wiekowych (0–3, 4–6, 7–14, 15–64, 65+),
-  - liczbę cudzoziemców i zameldowanych czasowo,
-  - liczbę miejsc w żłobkach i przedszkolach oraz średnią liczebność klas szkolnych,
-  - łączną powierzchnię parków i lasów w hektarach oraz wskaźniki m² zieleni na mieszkańca,
-  - infrastrukturę rowerową (długość DDR, liczba stojaków) i przystanki komunikacji miejskiej,
-  - statystyki bezpieczeństwa, środowiska i cen mieszkań.
+- **Co zawiera?** Zagregowane, twarde metryki dla każdej z 18 dzielnic Krakowa bez żadnych syntetycznych ocen:
+  - dokładne liczby ludności w podziale na grupy wiekowe, zameldowania czasowe i obcokrajowców,
+  - pojemności żłobków i przedszkoli oraz średnią liczebność klas szkolnych,
+  - precyzyjne wskaźniki transportu publicznego (w tym wstępnie obliczone wartości procentowe peronów typu Kassel i pasów naprowadzających),
+  - całkowitą powierzchnię parków/lasów oraz obiektywne statystyki środowiskowe, bezpieczeństwa i mieszkaniowe.
 
 ---
 
 ### 2. `districts_scored.json`
-- **Po czym powstaje?** Po uruchomieniu skryptu:
+- **Jak jest generowany?** Poprzez uruchomienie skryptu scoringowego:
   ```bash
-  python scripts/04_calculate_quality_scores.py
+  python scripts/02_calculate_quality_scores.py
   ```
-- **Co zawiera?** Wszystkie dane z poprzedniego pliku uzupełnione o **7 znormalizowanych wskaźników jakości życia (skala 0–100 pkt)**:
-  1. `mobilityScore` – Komunikacja i transport,
-  2. `educationScore` – Edukacja i opieka nad dziećmi,
-  3. `greeneryScore` – Tereny zielone i rekreacja,
-  4. `cultureAndSeniorScore` – Kultura i oferta dla seniorów,
-  5. `environmentScore` – Czystość powietrza i spokój akustyczny,
-  6. `safetyScore` – Bezpieczeństwo i spokój publiczny,
-  7. `housingAffordabilityScore` – Dostępność cenowa mieszkań.
+- **Co zawiera?** Wszystkie twarde dane z poprzedniego pliku uzupełnione o 8 znormalizowanych wskaźników jakości życia (skala 0–100):
+  - `mobilityScore` – Transport publiczny i infrastruktura rowerowa,
+  - `educationScore` – Edukacja i opieka nad dziećmi,
+  - `greeneryScore` – Tereny zielone i rekreacja,
+  - `cultureAndSeniorScore` – Biblioteki, Centra Aktywności Seniora (CAS) i kultura,
+  - `environmentScore` – Jakość powietrza i komfort akustyczny,
+  - `safetyScore` – Bezpieczeństwo publiczne i wskaźniki wypadków drogowych (skorygowane o populację dzienną),
+  - `housingAffordabilityScore` – Dostępność cenowa mieszkań,
+  - `demographicVitalityScore` – Rozwój demograficzny i retencja młodzieży.
+
+---
+
+### 3. `districts_accessibility.json`
+- **Jak jest generowany?** Poprzez uruchomienie skryptu ETL dostępności:
+  ```bash
+  python scripts/03_etl_accessibility_profiles.py
+  ```
+- **Co zawiera?** Przetworzone profile oceniające dostępność miejską dla osób na wózkach inwalidzkich, osób z dysfunkcją wzroku/słuchu, seniorów oraz rodziców z wózkami dziecięcymi na podstawie audytów infrastruktury publicznej.
+
+---
+
+### 4. Pliki systemowe i operacyjne
+- `spatial_geocoding_cache.json`: Trwały plik stanu prowadzony przez `01_etl_demographics_and_infrastructure.py`. Przechowuje historycznie rozwiązane współrzędne GPS z oficjalnego API GUGiK, radykalnie redukując opóźnienia sieciowe przy kolejnych uruchomieniach potoku analitycznego.
+- `krakow_tourism_seed.json`: Ręcznie przygotowany plik zalążkowy definiujący trasy tematyczne, spokojne alternatywy chroniące przed overtourismem oraz podstawowe metryki podsumowujące. Jest wykorzystywany przez `05_etl_tourism_explorer.py` do generowania finalnych paszportów turystycznych.
 
 ---
 
 ## Co dzieje się dalej z tymi plikami?
-Pliki z tego folderu są odczytywane przez kolejny skrypt:
-```bash
-python scripts/05_econometric_forecasts.py
-```
-który wylicza prognozy demograficzne na 2028 rok, generuje wykresy analityczne oraz zapisuje ostateczny plik główny w katalogu `data/contracts/`.
+Pliki z tego katalogu są przetwarzane przez kolejne skrypty ekonometryczne i syntetyzujące (takie jak `04_econometric_forecasts.py` oraz `05_etl_tourism_explorer.py`), które obliczają prognozy demograficzne metodą kohortowo-komponentową na 2028 rok, generują wykresy analityczne i zapisują ostateczne, produkcyjne pliki JSON w katalogu `data/contracts/`.

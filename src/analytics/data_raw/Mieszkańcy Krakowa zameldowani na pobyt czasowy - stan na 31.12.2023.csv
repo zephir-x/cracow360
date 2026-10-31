@@ -1,0 +1,2860 @@
+﻿Lp;Nr_Dzielnicy;Dzielnica;Płeć;Rok_Urodzenia;Liczba_osób
+1;1;Dzielnica I Stare Miasto;K;1924;1
+2;1;Dzielnica I Stare Miasto;M;1929;1
+3;1;Dzielnica I Stare Miasto;K;1930;1
+4;1;Dzielnica I Stare Miasto;K;1932;1
+5;1;Dzielnica I Stare Miasto;K;1933;1
+6;1;Dzielnica I Stare Miasto;K;1936;1
+7;1;Dzielnica I Stare Miasto;K;1938;1
+8;1;Dzielnica I Stare Miasto;M;1938;1
+9;1;Dzielnica I Stare Miasto;K;1939;3
+10;1;Dzielnica I Stare Miasto;M;1940;3
+11;1;Dzielnica I Stare Miasto;K;1941;4
+12;1;Dzielnica I Stare Miasto;M;1942;1
+13;1;Dzielnica I Stare Miasto;M;1943;3
+14;1;Dzielnica I Stare Miasto;K;1943;1
+15;1;Dzielnica I Stare Miasto;M;1944;8
+16;1;Dzielnica I Stare Miasto;M;1945;2
+17;1;Dzielnica I Stare Miasto;K;1945;3
+18;1;Dzielnica I Stare Miasto;M;1946;2
+19;1;Dzielnica I Stare Miasto;K;1946;4
+20;1;Dzielnica I Stare Miasto;K;1947;4
+21;1;Dzielnica I Stare Miasto;M;1947;5
+22;1;Dzielnica I Stare Miasto;M;1948;3
+23;1;Dzielnica I Stare Miasto;K;1948;4
+24;1;Dzielnica I Stare Miasto;M;1949;1
+25;1;Dzielnica I Stare Miasto;K;1949;4
+26;1;Dzielnica I Stare Miasto;K;1950;1
+27;1;Dzielnica I Stare Miasto;M;1950;6
+28;1;Dzielnica I Stare Miasto;M;1951;4
+29;1;Dzielnica I Stare Miasto;K;1951;6
+30;1;Dzielnica I Stare Miasto;M;1952;13
+31;1;Dzielnica I Stare Miasto;K;1952;5
+32;1;Dzielnica I Stare Miasto;M;1953;3
+33;1;Dzielnica I Stare Miasto;K;1953;8
+34;1;Dzielnica I Stare Miasto;K;1954;4
+35;1;Dzielnica I Stare Miasto;M;1954;6
+36;1;Dzielnica I Stare Miasto;M;1955;12
+37;1;Dzielnica I Stare Miasto;K;1955;3
+38;1;Dzielnica I Stare Miasto;K;1956;9
+39;1;Dzielnica I Stare Miasto;M;1956;7
+40;1;Dzielnica I Stare Miasto;K;1957;6
+41;1;Dzielnica I Stare Miasto;M;1957;10
+42;1;Dzielnica I Stare Miasto;K;1958;9
+43;1;Dzielnica I Stare Miasto;M;1958;8
+44;1;Dzielnica I Stare Miasto;M;1959;8
+45;1;Dzielnica I Stare Miasto;K;1959;5
+46;1;Dzielnica I Stare Miasto;M;1960;13
+47;1;Dzielnica I Stare Miasto;K;1960;16
+48;1;Dzielnica I Stare Miasto;K;1961;7
+49;1;Dzielnica I Stare Miasto;M;1961;10
+50;1;Dzielnica I Stare Miasto;M;1962;8
+51;1;Dzielnica I Stare Miasto;K;1962;10
+52;1;Dzielnica I Stare Miasto;M;1963;10
+53;1;Dzielnica I Stare Miasto;K;1963;11
+54;1;Dzielnica I Stare Miasto;M;1964;8
+55;1;Dzielnica I Stare Miasto;K;1964;12
+56;1;Dzielnica I Stare Miasto;M;1965;12
+57;1;Dzielnica I Stare Miasto;K;1965;9
+58;1;Dzielnica I Stare Miasto;K;1966;4
+59;1;Dzielnica I Stare Miasto;M;1966;18
+60;1;Dzielnica I Stare Miasto;K;1967;13
+61;1;Dzielnica I Stare Miasto;M;1967;13
+62;1;Dzielnica I Stare Miasto;M;1968;19
+63;1;Dzielnica I Stare Miasto;K;1968;13
+64;1;Dzielnica I Stare Miasto;K;1969;13
+65;1;Dzielnica I Stare Miasto;M;1969;14
+66;1;Dzielnica I Stare Miasto;K;1970;12
+67;1;Dzielnica I Stare Miasto;M;1970;19
+68;1;Dzielnica I Stare Miasto;M;1971;16
+69;1;Dzielnica I Stare Miasto;K;1971;14
+70;1;Dzielnica I Stare Miasto;M;1972;13
+71;1;Dzielnica I Stare Miasto;K;1972;15
+72;1;Dzielnica I Stare Miasto;M;1973;31
+73;1;Dzielnica I Stare Miasto;K;1973;18
+74;1;Dzielnica I Stare Miasto;M;1974;24
+75;1;Dzielnica I Stare Miasto;K;1974;20
+76;1;Dzielnica I Stare Miasto;M;1975;18
+77;1;Dzielnica I Stare Miasto;K;1975;20
+78;1;Dzielnica I Stare Miasto;M;1976;18
+79;1;Dzielnica I Stare Miasto;K;1976;26
+80;1;Dzielnica I Stare Miasto;K;1977;19
+81;1;Dzielnica I Stare Miasto;M;1977;19
+82;1;Dzielnica I Stare Miasto;M;1978;23
+83;1;Dzielnica I Stare Miasto;K;1978;34
+84;1;Dzielnica I Stare Miasto;M;1979;32
+85;1;Dzielnica I Stare Miasto;K;1979;20
+86;1;Dzielnica I Stare Miasto;K;1980;25
+87;1;Dzielnica I Stare Miasto;M;1980;32
+88;1;Dzielnica I Stare Miasto;K;1981;17
+89;1;Dzielnica I Stare Miasto;M;1981;22
+90;1;Dzielnica I Stare Miasto;M;1982;34
+91;1;Dzielnica I Stare Miasto;K;1982;22
+92;1;Dzielnica I Stare Miasto;K;1983;25
+93;1;Dzielnica I Stare Miasto;M;1983;41
+94;1;Dzielnica I Stare Miasto;K;1984;36
+95;1;Dzielnica I Stare Miasto;M;1984;41
+96;1;Dzielnica I Stare Miasto;M;1985;36
+97;1;Dzielnica I Stare Miasto;K;1985;26
+98;1;Dzielnica I Stare Miasto;K;1986;42
+99;1;Dzielnica I Stare Miasto;M;1986;51
+100;1;Dzielnica I Stare Miasto;K;1987;26
+101;1;Dzielnica I Stare Miasto;M;1987;51
+102;1;Dzielnica I Stare Miasto;K;1988;34
+103;1;Dzielnica I Stare Miasto;M;1988;61
+104;1;Dzielnica I Stare Miasto;K;1989;24
+105;1;Dzielnica I Stare Miasto;M;1989;60
+106;1;Dzielnica I Stare Miasto;M;1990;47
+107;1;Dzielnica I Stare Miasto;K;1990;43
+108;1;Dzielnica I Stare Miasto;M;1991;66
+109;1;Dzielnica I Stare Miasto;K;1991;36
+110;1;Dzielnica I Stare Miasto;K;1992;41
+111;1;Dzielnica I Stare Miasto;M;1992;48
+112;1;Dzielnica I Stare Miasto;K;1993;42
+113;1;Dzielnica I Stare Miasto;M;1993;52
+114;1;Dzielnica I Stare Miasto;M;1994;50
+115;1;Dzielnica I Stare Miasto;K;1994;36
+116;1;Dzielnica I Stare Miasto;K;1995;37
+117;1;Dzielnica I Stare Miasto;M;1995;48
+118;1;Dzielnica I Stare Miasto;M;1996;61
+119;1;Dzielnica I Stare Miasto;K;1996;29
+120;1;Dzielnica I Stare Miasto;K;1997;32
+121;1;Dzielnica I Stare Miasto;M;1997;46
+122;1;Dzielnica I Stare Miasto;K;1998;34
+123;1;Dzielnica I Stare Miasto;M;1998;47
+124;1;Dzielnica I Stare Miasto;K;1999;33
+125;1;Dzielnica I Stare Miasto;M;1999;36
+126;1;Dzielnica I Stare Miasto;M;2000;37
+127;1;Dzielnica I Stare Miasto;K;2000;26
+128;1;Dzielnica I Stare Miasto;M;2001;25
+129;1;Dzielnica I Stare Miasto;K;2001;30
+130;1;Dzielnica I Stare Miasto;M;2002;24
+131;1;Dzielnica I Stare Miasto;K;2002;22
+132;1;Dzielnica I Stare Miasto;K;2003;24
+133;1;Dzielnica I Stare Miasto;M;2003;19
+134;1;Dzielnica I Stare Miasto;K;2004;14
+135;1;Dzielnica I Stare Miasto;M;2004;17
+136;1;Dzielnica I Stare Miasto;K;2005;18
+137;1;Dzielnica I Stare Miasto;M;2005;26
+138;1;Dzielnica I Stare Miasto;M;2006;23
+139;1;Dzielnica I Stare Miasto;K;2006;29
+140;1;Dzielnica I Stare Miasto;M;2007;18
+141;1;Dzielnica I Stare Miasto;K;2007;19
+142;1;Dzielnica I Stare Miasto;K;2008;32
+143;1;Dzielnica I Stare Miasto;M;2008;28
+144;1;Dzielnica I Stare Miasto;M;2009;15
+145;1;Dzielnica I Stare Miasto;K;2009;14
+146;1;Dzielnica I Stare Miasto;M;2010;10
+147;1;Dzielnica I Stare Miasto;K;2010;10
+148;1;Dzielnica I Stare Miasto;M;2011;11
+149;1;Dzielnica I Stare Miasto;K;2011;7
+150;1;Dzielnica I Stare Miasto;M;2012;11
+151;1;Dzielnica I Stare Miasto;K;2012;6
+152;1;Dzielnica I Stare Miasto;K;2013;11
+153;1;Dzielnica I Stare Miasto;M;2013;9
+154;1;Dzielnica I Stare Miasto;K;2014;8
+155;1;Dzielnica I Stare Miasto;M;2014;9
+156;1;Dzielnica I Stare Miasto;M;2015;6
+157;1;Dzielnica I Stare Miasto;K;2015;11
+158;1;Dzielnica I Stare Miasto;M;2016;9
+159;1;Dzielnica I Stare Miasto;K;2016;6
+160;1;Dzielnica I Stare Miasto;K;2017;6
+161;1;Dzielnica I Stare Miasto;M;2017;7
+162;1;Dzielnica I Stare Miasto;K;2018;10
+163;1;Dzielnica I Stare Miasto;M;2018;8
+164;1;Dzielnica I Stare Miasto;M;2019;1
+165;1;Dzielnica I Stare Miasto;K;2019;11
+166;1;Dzielnica I Stare Miasto;M;2020;7
+167;1;Dzielnica I Stare Miasto;K;2020;1
+168;1;Dzielnica I Stare Miasto;M;2021;4
+169;1;Dzielnica I Stare Miasto;K;2021;8
+170;1;Dzielnica I Stare Miasto;K;2022;7
+171;1;Dzielnica I Stare Miasto;M;2022;10
+172;1;Dzielnica I Stare Miasto;K;2023;4
+173;1;Dzielnica I Stare Miasto;M;2023;8
+174;2;Dzielnica II Grzegórzki;K;1924;1
+175;2;Dzielnica II Grzegórzki;K;1927;1
+176;2;Dzielnica II Grzegórzki;K;1932;1
+177;2;Dzielnica II Grzegórzki;K;1933;3
+178;2;Dzielnica II Grzegórzki;K;1934;1
+179;2;Dzielnica II Grzegórzki;K;1935;2
+180;2;Dzielnica II Grzegórzki;K;1936;1
+181;2;Dzielnica II Grzegórzki;K;1937;2
+182;2;Dzielnica II Grzegórzki;M;1937;1
+183;2;Dzielnica II Grzegórzki;M;1938;1
+184;2;Dzielnica II Grzegórzki;K;1938;1
+185;2;Dzielnica II Grzegórzki;K;1939;3
+186;2;Dzielnica II Grzegórzki;K;1940;2
+187;2;Dzielnica II Grzegórzki;M;1940;1
+188;2;Dzielnica II Grzegórzki;M;1941;1
+189;2;Dzielnica II Grzegórzki;K;1941;2
+190;2;Dzielnica II Grzegórzki;K;1942;1
+191;2;Dzielnica II Grzegórzki;M;1943;1
+192;2;Dzielnica II Grzegórzki;K;1943;3
+193;2;Dzielnica II Grzegórzki;K;1944;2
+194;2;Dzielnica II Grzegórzki;M;1944;4
+195;2;Dzielnica II Grzegórzki;M;1945;1
+196;2;Dzielnica II Grzegórzki;K;1945;2
+197;2;Dzielnica II Grzegórzki;K;1946;2
+198;2;Dzielnica II Grzegórzki;M;1947;3
+199;2;Dzielnica II Grzegórzki;K;1947;1
+200;2;Dzielnica II Grzegórzki;K;1948;3
+201;2;Dzielnica II Grzegórzki;M;1948;3
+202;2;Dzielnica II Grzegórzki;K;1949;3
+203;2;Dzielnica II Grzegórzki;M;1949;1
+204;2;Dzielnica II Grzegórzki;M;1950;2
+205;2;Dzielnica II Grzegórzki;K;1950;1
+206;2;Dzielnica II Grzegórzki;M;1951;2
+207;2;Dzielnica II Grzegórzki;K;1951;4
+208;2;Dzielnica II Grzegórzki;M;1952;1
+209;2;Dzielnica II Grzegórzki;K;1952;4
+210;2;Dzielnica II Grzegórzki;K;1953;3
+211;2;Dzielnica II Grzegórzki;M;1953;3
+212;2;Dzielnica II Grzegórzki;M;1954;6
+213;2;Dzielnica II Grzegórzki;K;1954;4
+214;2;Dzielnica II Grzegórzki;K;1955;4
+215;2;Dzielnica II Grzegórzki;M;1955;5
+216;2;Dzielnica II Grzegórzki;M;1956;5
+217;2;Dzielnica II Grzegórzki;K;1956;5
+218;2;Dzielnica II Grzegórzki;M;1957;1
+219;2;Dzielnica II Grzegórzki;K;1957;7
+220;2;Dzielnica II Grzegórzki;M;1958;4
+221;2;Dzielnica II Grzegórzki;K;1958;3
+222;2;Dzielnica II Grzegórzki;M;1959;4
+223;2;Dzielnica II Grzegórzki;K;1959;7
+224;2;Dzielnica II Grzegórzki;M;1960;5
+225;2;Dzielnica II Grzegórzki;K;1960;2
+226;2;Dzielnica II Grzegórzki;K;1961;4
+227;2;Dzielnica II Grzegórzki;M;1961;7
+228;2;Dzielnica II Grzegórzki;K;1962;4
+229;2;Dzielnica II Grzegórzki;M;1963;4
+230;2;Dzielnica II Grzegórzki;K;1963;4
+231;2;Dzielnica II Grzegórzki;K;1964;3
+232;2;Dzielnica II Grzegórzki;M;1964;7
+233;2;Dzielnica II Grzegórzki;K;1965;7
+234;2;Dzielnica II Grzegórzki;M;1965;6
+235;2;Dzielnica II Grzegórzki;K;1966;6
+236;2;Dzielnica II Grzegórzki;M;1966;9
+237;2;Dzielnica II Grzegórzki;M;1967;5
+238;2;Dzielnica II Grzegórzki;K;1967;2
+239;2;Dzielnica II Grzegórzki;M;1968;8
+240;2;Dzielnica II Grzegórzki;K;1968;3
+241;2;Dzielnica II Grzegórzki;K;1969;6
+242;2;Dzielnica II Grzegórzki;M;1969;6
+243;2;Dzielnica II Grzegórzki;K;1970;3
+244;2;Dzielnica II Grzegórzki;M;1970;7
+245;2;Dzielnica II Grzegórzki;M;1971;7
+246;2;Dzielnica II Grzegórzki;K;1971;8
+247;2;Dzielnica II Grzegórzki;K;1972;5
+248;2;Dzielnica II Grzegórzki;M;1972;10
+249;2;Dzielnica II Grzegórzki;K;1973;6
+250;2;Dzielnica II Grzegórzki;M;1973;7
+251;2;Dzielnica II Grzegórzki;M;1974;9
+252;2;Dzielnica II Grzegórzki;K;1974;10
+253;2;Dzielnica II Grzegórzki;K;1975;14
+254;2;Dzielnica II Grzegórzki;M;1975;17
+255;2;Dzielnica II Grzegórzki;M;1976;15
+256;2;Dzielnica II Grzegórzki;K;1976;15
+257;2;Dzielnica II Grzegórzki;M;1977;14
+258;2;Dzielnica II Grzegórzki;K;1977;11
+259;2;Dzielnica II Grzegórzki;K;1978;15
+260;2;Dzielnica II Grzegórzki;M;1978;16
+261;2;Dzielnica II Grzegórzki;K;1979;10
+262;2;Dzielnica II Grzegórzki;M;1979;16
+263;2;Dzielnica II Grzegórzki;M;1980;26
+264;2;Dzielnica II Grzegórzki;K;1980;16
+265;2;Dzielnica II Grzegórzki;K;1981;15
+266;2;Dzielnica II Grzegórzki;M;1981;19
+267;2;Dzielnica II Grzegórzki;M;1982;21
+268;2;Dzielnica II Grzegórzki;K;1982;27
+269;2;Dzielnica II Grzegórzki;K;1983;23
+270;2;Dzielnica II Grzegórzki;M;1983;32
+271;2;Dzielnica II Grzegórzki;K;1984;20
+272;2;Dzielnica II Grzegórzki;M;1984;31
+273;2;Dzielnica II Grzegórzki;K;1985;37
+274;2;Dzielnica II Grzegórzki;M;1985;36
+275;2;Dzielnica II Grzegórzki;K;1986;34
+276;2;Dzielnica II Grzegórzki;M;1986;38
+277;2;Dzielnica II Grzegórzki;K;1987;30
+278;2;Dzielnica II Grzegórzki;M;1987;38
+279;2;Dzielnica II Grzegórzki;M;1988;33
+280;2;Dzielnica II Grzegórzki;K;1988;36
+281;2;Dzielnica II Grzegórzki;M;1989;40
+282;2;Dzielnica II Grzegórzki;K;1989;29
+283;2;Dzielnica II Grzegórzki;M;1990;41
+284;2;Dzielnica II Grzegórzki;K;1990;33
+285;2;Dzielnica II Grzegórzki;M;1991;44
+286;2;Dzielnica II Grzegórzki;K;1991;44
+287;2;Dzielnica II Grzegórzki;M;1992;56
+288;2;Dzielnica II Grzegórzki;K;1992;38
+289;2;Dzielnica II Grzegórzki;K;1993;43
+290;2;Dzielnica II Grzegórzki;M;1993;46
+291;2;Dzielnica II Grzegórzki;M;1994;52
+292;2;Dzielnica II Grzegórzki;K;1994;34
+293;2;Dzielnica II Grzegórzki;K;1995;43
+294;2;Dzielnica II Grzegórzki;M;1995;30
+295;2;Dzielnica II Grzegórzki;M;1996;42
+296;2;Dzielnica II Grzegórzki;K;1996;29
+297;2;Dzielnica II Grzegórzki;M;1997;38
+298;2;Dzielnica II Grzegórzki;K;1997;27
+299;2;Dzielnica II Grzegórzki;K;1998;24
+300;2;Dzielnica II Grzegórzki;M;1998;32
+301;2;Dzielnica II Grzegórzki;K;1999;19
+302;2;Dzielnica II Grzegórzki;M;1999;25
+303;2;Dzielnica II Grzegórzki;K;2000;20
+304;2;Dzielnica II Grzegórzki;M;2000;20
+305;2;Dzielnica II Grzegórzki;M;2001;20
+306;2;Dzielnica II Grzegórzki;K;2001;18
+307;2;Dzielnica II Grzegórzki;M;2002;12
+308;2;Dzielnica II Grzegórzki;K;2002;10
+309;2;Dzielnica II Grzegórzki;K;2003;16
+310;2;Dzielnica II Grzegórzki;M;2003;10
+311;2;Dzielnica II Grzegórzki;K;2004;13
+312;2;Dzielnica II Grzegórzki;M;2004;20
+313;2;Dzielnica II Grzegórzki;K;2005;28
+314;2;Dzielnica II Grzegórzki;M;2005;19
+315;2;Dzielnica II Grzegórzki;M;2006;16
+316;2;Dzielnica II Grzegórzki;K;2006;35
+317;2;Dzielnica II Grzegórzki;K;2007;19
+318;2;Dzielnica II Grzegórzki;M;2007;17
+319;2;Dzielnica II Grzegórzki;K;2008;21
+320;2;Dzielnica II Grzegórzki;M;2008;14
+321;2;Dzielnica II Grzegórzki;M;2009;12
+322;2;Dzielnica II Grzegórzki;K;2009;14
+323;2;Dzielnica II Grzegórzki;K;2010;10
+324;2;Dzielnica II Grzegórzki;M;2010;10
+325;2;Dzielnica II Grzegórzki;M;2011;8
+326;2;Dzielnica II Grzegórzki;K;2011;8
+327;2;Dzielnica II Grzegórzki;M;2012;9
+328;2;Dzielnica II Grzegórzki;K;2012;6
+329;2;Dzielnica II Grzegórzki;M;2013;12
+330;2;Dzielnica II Grzegórzki;K;2013;11
+331;2;Dzielnica II Grzegórzki;M;2014;9
+332;2;Dzielnica II Grzegórzki;K;2014;5
+333;2;Dzielnica II Grzegórzki;M;2015;5
+334;2;Dzielnica II Grzegórzki;K;2015;15
+335;2;Dzielnica II Grzegórzki;K;2016;13
+336;2;Dzielnica II Grzegórzki;M;2016;15
+337;2;Dzielnica II Grzegórzki;K;2017;20
+338;2;Dzielnica II Grzegórzki;M;2017;5
+339;2;Dzielnica II Grzegórzki;K;2018;12
+340;2;Dzielnica II Grzegórzki;M;2018;12
+341;2;Dzielnica II Grzegórzki;M;2019;12
+342;2;Dzielnica II Grzegórzki;K;2019;7
+343;2;Dzielnica II Grzegórzki;K;2020;11
+344;2;Dzielnica II Grzegórzki;M;2020;15
+345;2;Dzielnica II Grzegórzki;K;2021;14
+346;2;Dzielnica II Grzegórzki;M;2021;9
+347;2;Dzielnica II Grzegórzki;M;2022;9
+348;2;Dzielnica II Grzegórzki;K;2022;8
+349;2;Dzielnica II Grzegórzki;K;2023;7
+350;2;Dzielnica II Grzegórzki;M;2023;8
+351;3;Dzielnica III Prądnik Czerwony;M;1929;1
+352;3;Dzielnica III Prądnik Czerwony;K;1934;1
+353;3;Dzielnica III Prądnik Czerwony;K;1935;1
+354;3;Dzielnica III Prądnik Czerwony;K;1937;2
+355;3;Dzielnica III Prądnik Czerwony;K;1938;3
+356;3;Dzielnica III Prądnik Czerwony;M;1939;1
+357;3;Dzielnica III Prądnik Czerwony;K;1939;1
+358;3;Dzielnica III Prądnik Czerwony;K;1940;1
+359;3;Dzielnica III Prądnik Czerwony;M;1943;1
+360;3;Dzielnica III Prądnik Czerwony;K;1943;2
+361;3;Dzielnica III Prądnik Czerwony;K;1944;1
+362;3;Dzielnica III Prądnik Czerwony;K;1945;2
+363;3;Dzielnica III Prądnik Czerwony;K;1946;3
+364;3;Dzielnica III Prądnik Czerwony;K;1947;1
+365;3;Dzielnica III Prądnik Czerwony;M;1947;2
+366;3;Dzielnica III Prądnik Czerwony;K;1948;1
+367;3;Dzielnica III Prądnik Czerwony;M;1948;1
+368;3;Dzielnica III Prądnik Czerwony;M;1949;1
+369;3;Dzielnica III Prądnik Czerwony;K;1949;3
+370;3;Dzielnica III Prądnik Czerwony;M;1950;3
+371;3;Dzielnica III Prądnik Czerwony;K;1950;3
+372;3;Dzielnica III Prądnik Czerwony;M;1951;2
+373;3;Dzielnica III Prądnik Czerwony;K;1951;1
+374;3;Dzielnica III Prądnik Czerwony;K;1952;2
+375;3;Dzielnica III Prądnik Czerwony;M;1952;1
+376;3;Dzielnica III Prądnik Czerwony;K;1953;4
+377;3;Dzielnica III Prądnik Czerwony;M;1953;1
+378;3;Dzielnica III Prądnik Czerwony;K;1954;2
+379;3;Dzielnica III Prądnik Czerwony;M;1954;2
+380;3;Dzielnica III Prądnik Czerwony;M;1955;3
+381;3;Dzielnica III Prądnik Czerwony;K;1955;4
+382;3;Dzielnica III Prądnik Czerwony;M;1956;3
+383;3;Dzielnica III Prądnik Czerwony;K;1956;2
+384;3;Dzielnica III Prądnik Czerwony;K;1957;4
+385;3;Dzielnica III Prądnik Czerwony;M;1957;1
+386;3;Dzielnica III Prądnik Czerwony;K;1958;4
+387;3;Dzielnica III Prądnik Czerwony;M;1958;4
+388;3;Dzielnica III Prądnik Czerwony;K;1959;5
+389;3;Dzielnica III Prądnik Czerwony;M;1959;4
+390;3;Dzielnica III Prądnik Czerwony;M;1960;1
+391;3;Dzielnica III Prądnik Czerwony;K;1960;5
+392;3;Dzielnica III Prądnik Czerwony;K;1961;5
+393;3;Dzielnica III Prądnik Czerwony;M;1961;8
+394;3;Dzielnica III Prądnik Czerwony;M;1962;5
+395;3;Dzielnica III Prądnik Czerwony;K;1962;3
+396;3;Dzielnica III Prądnik Czerwony;M;1963;4
+397;3;Dzielnica III Prądnik Czerwony;K;1963;5
+398;3;Dzielnica III Prądnik Czerwony;M;1964;5
+399;3;Dzielnica III Prądnik Czerwony;K;1964;9
+400;3;Dzielnica III Prądnik Czerwony;K;1965;5
+401;3;Dzielnica III Prądnik Czerwony;M;1965;5
+402;3;Dzielnica III Prądnik Czerwony;K;1966;4
+403;3;Dzielnica III Prądnik Czerwony;M;1966;4
+404;3;Dzielnica III Prądnik Czerwony;K;1967;6
+405;3;Dzielnica III Prądnik Czerwony;M;1967;6
+406;3;Dzielnica III Prądnik Czerwony;K;1968;4
+407;3;Dzielnica III Prądnik Czerwony;M;1968;3
+408;3;Dzielnica III Prądnik Czerwony;M;1969;6
+409;3;Dzielnica III Prądnik Czerwony;K;1969;3
+410;3;Dzielnica III Prądnik Czerwony;M;1970;7
+411;3;Dzielnica III Prądnik Czerwony;K;1970;6
+412;3;Dzielnica III Prądnik Czerwony;M;1971;7
+413;3;Dzielnica III Prądnik Czerwony;K;1971;8
+414;3;Dzielnica III Prądnik Czerwony;K;1972;5
+415;3;Dzielnica III Prądnik Czerwony;M;1972;7
+416;3;Dzielnica III Prądnik Czerwony;M;1973;12
+417;3;Dzielnica III Prądnik Czerwony;K;1973;8
+418;3;Dzielnica III Prądnik Czerwony;M;1974;5
+419;3;Dzielnica III Prądnik Czerwony;K;1974;6
+420;3;Dzielnica III Prądnik Czerwony;K;1975;9
+421;3;Dzielnica III Prądnik Czerwony;M;1975;16
+422;3;Dzielnica III Prądnik Czerwony;M;1976;11
+423;3;Dzielnica III Prądnik Czerwony;K;1976;13
+424;3;Dzielnica III Prądnik Czerwony;K;1977;10
+425;3;Dzielnica III Prądnik Czerwony;M;1977;7
+426;3;Dzielnica III Prądnik Czerwony;K;1978;18
+427;3;Dzielnica III Prądnik Czerwony;M;1978;7
+428;3;Dzielnica III Prądnik Czerwony;M;1979;13
+429;3;Dzielnica III Prądnik Czerwony;K;1979;12
+430;3;Dzielnica III Prądnik Czerwony;K;1980;12
+431;3;Dzielnica III Prądnik Czerwony;M;1980;22
+432;3;Dzielnica III Prądnik Czerwony;K;1981;15
+433;3;Dzielnica III Prądnik Czerwony;M;1981;23
+434;3;Dzielnica III Prądnik Czerwony;M;1982;22
+435;3;Dzielnica III Prądnik Czerwony;K;1982;12
+436;3;Dzielnica III Prądnik Czerwony;M;1983;21
+437;3;Dzielnica III Prądnik Czerwony;K;1983;22
+438;3;Dzielnica III Prądnik Czerwony;K;1984;15
+439;3;Dzielnica III Prądnik Czerwony;M;1984;28
+440;3;Dzielnica III Prądnik Czerwony;M;1985;22
+441;3;Dzielnica III Prądnik Czerwony;K;1985;31
+442;3;Dzielnica III Prądnik Czerwony;M;1986;26
+443;3;Dzielnica III Prądnik Czerwony;K;1986;18
+444;3;Dzielnica III Prądnik Czerwony;M;1987;24
+445;3;Dzielnica III Prądnik Czerwony;K;1987;23
+446;3;Dzielnica III Prądnik Czerwony;M;1988;21
+447;3;Dzielnica III Prądnik Czerwony;K;1988;29
+448;3;Dzielnica III Prądnik Czerwony;M;1989;28
+449;3;Dzielnica III Prądnik Czerwony;K;1989;27
+450;3;Dzielnica III Prądnik Czerwony;K;1990;22
+451;3;Dzielnica III Prądnik Czerwony;M;1990;28
+452;3;Dzielnica III Prądnik Czerwony;K;1991;25
+453;3;Dzielnica III Prądnik Czerwony;M;1991;26
+454;3;Dzielnica III Prądnik Czerwony;M;1992;30
+455;3;Dzielnica III Prądnik Czerwony;K;1992;24
+456;3;Dzielnica III Prądnik Czerwony;M;1993;21
+457;3;Dzielnica III Prądnik Czerwony;K;1993;30
+458;3;Dzielnica III Prądnik Czerwony;K;1994;24
+459;3;Dzielnica III Prądnik Czerwony;M;1994;28
+460;3;Dzielnica III Prądnik Czerwony;M;1995;31
+461;3;Dzielnica III Prądnik Czerwony;K;1995;22
+462;3;Dzielnica III Prądnik Czerwony;M;1996;19
+463;3;Dzielnica III Prądnik Czerwony;K;1996;20
+464;3;Dzielnica III Prądnik Czerwony;K;1997;24
+465;3;Dzielnica III Prądnik Czerwony;M;1997;23
+466;3;Dzielnica III Prądnik Czerwony;K;1998;25
+467;3;Dzielnica III Prądnik Czerwony;M;1998;19
+468;3;Dzielnica III Prądnik Czerwony;M;1999;14
+469;3;Dzielnica III Prądnik Czerwony;K;1999;24
+470;3;Dzielnica III Prądnik Czerwony;M;2000;15
+471;3;Dzielnica III Prądnik Czerwony;K;2000;19
+472;3;Dzielnica III Prądnik Czerwony;M;2001;15
+473;3;Dzielnica III Prądnik Czerwony;K;2001;11
+474;3;Dzielnica III Prądnik Czerwony;M;2002;18
+475;3;Dzielnica III Prądnik Czerwony;K;2002;12
+476;3;Dzielnica III Prądnik Czerwony;M;2003;13
+477;3;Dzielnica III Prądnik Czerwony;K;2003;16
+478;3;Dzielnica III Prądnik Czerwony;K;2004;38
+479;3;Dzielnica III Prądnik Czerwony;M;2004;21
+480;3;Dzielnica III Prądnik Czerwony;M;2005;51
+481;3;Dzielnica III Prądnik Czerwony;K;2005;65
+482;3;Dzielnica III Prądnik Czerwony;M;2006;50
+483;3;Dzielnica III Prądnik Czerwony;K;2006;88
+484;3;Dzielnica III Prądnik Czerwony;M;2007;28
+485;3;Dzielnica III Prądnik Czerwony;K;2007;67
+486;3;Dzielnica III Prądnik Czerwony;M;2008;44
+487;3;Dzielnica III Prądnik Czerwony;K;2008;55
+488;3;Dzielnica III Prądnik Czerwony;M;2009;25
+489;3;Dzielnica III Prądnik Czerwony;K;2009;32
+490;3;Dzielnica III Prądnik Czerwony;K;2010;6
+491;3;Dzielnica III Prądnik Czerwony;M;2010;9
+492;3;Dzielnica III Prądnik Czerwony;K;2011;13
+493;3;Dzielnica III Prądnik Czerwony;M;2011;11
+494;3;Dzielnica III Prądnik Czerwony;K;2012;9
+495;3;Dzielnica III Prądnik Czerwony;M;2012;7
+496;3;Dzielnica III Prądnik Czerwony;M;2013;14
+497;3;Dzielnica III Prądnik Czerwony;K;2013;7
+498;3;Dzielnica III Prądnik Czerwony;M;2014;14
+499;3;Dzielnica III Prądnik Czerwony;K;2014;9
+500;3;Dzielnica III Prądnik Czerwony;K;2015;10
+501;3;Dzielnica III Prądnik Czerwony;M;2015;6
+502;3;Dzielnica III Prądnik Czerwony;M;2016;11
+503;3;Dzielnica III Prądnik Czerwony;K;2016;15
+504;3;Dzielnica III Prądnik Czerwony;M;2017;14
+505;3;Dzielnica III Prądnik Czerwony;K;2017;15
+506;3;Dzielnica III Prądnik Czerwony;K;2018;14
+507;3;Dzielnica III Prądnik Czerwony;M;2018;10
+508;3;Dzielnica III Prądnik Czerwony;M;2019;12
+509;3;Dzielnica III Prądnik Czerwony;K;2019;13
+510;3;Dzielnica III Prądnik Czerwony;M;2020;16
+511;3;Dzielnica III Prądnik Czerwony;K;2020;11
+512;3;Dzielnica III Prądnik Czerwony;K;2021;9
+513;3;Dzielnica III Prądnik Czerwony;M;2021;17
+514;3;Dzielnica III Prądnik Czerwony;M;2022;15
+515;3;Dzielnica III Prądnik Czerwony;K;2022;9
+516;3;Dzielnica III Prądnik Czerwony;K;2023;6
+517;3;Dzielnica III Prądnik Czerwony;M;2023;8
+518;4;Dzielnica IV Prądnik Biały;K;1926;1
+519;4;Dzielnica IV Prądnik Biały;K;1928;1
+520;4;Dzielnica IV Prądnik Biały;K;1933;1
+521;4;Dzielnica IV Prądnik Biały;K;1935;1
+522;4;Dzielnica IV Prądnik Biały;K;1940;2
+523;4;Dzielnica IV Prądnik Biały;M;1941;1
+524;4;Dzielnica IV Prądnik Biały;M;1942;1
+525;4;Dzielnica IV Prądnik Biały;M;1943;2
+526;4;Dzielnica IV Prądnik Biały;M;1944;1
+527;4;Dzielnica IV Prądnik Biały;K;1944;2
+528;4;Dzielnica IV Prądnik Biały;M;1946;1
+529;4;Dzielnica IV Prądnik Biały;K;1946;4
+530;4;Dzielnica IV Prądnik Biały;M;1947;2
+531;4;Dzielnica IV Prądnik Biały;K;1947;2
+532;4;Dzielnica IV Prądnik Biały;K;1948;3
+533;4;Dzielnica IV Prądnik Biały;K;1949;1
+534;4;Dzielnica IV Prądnik Biały;M;1949;2
+535;4;Dzielnica IV Prądnik Biały;K;1950;3
+536;4;Dzielnica IV Prądnik Biały;M;1951;2
+537;4;Dzielnica IV Prądnik Biały;K;1951;1
+538;4;Dzielnica IV Prądnik Biały;M;1952;2
+539;4;Dzielnica IV Prądnik Biały;K;1952;4
+540;4;Dzielnica IV Prądnik Biały;M;1953;5
+541;4;Dzielnica IV Prądnik Biały;K;1953;2
+542;4;Dzielnica IV Prądnik Biały;M;1954;3
+543;4;Dzielnica IV Prądnik Biały;K;1954;2
+544;4;Dzielnica IV Prądnik Biały;M;1955;4
+545;4;Dzielnica IV Prądnik Biały;K;1955;5
+546;4;Dzielnica IV Prądnik Biały;M;1956;6
+547;4;Dzielnica IV Prądnik Biały;K;1956;5
+548;4;Dzielnica IV Prądnik Biały;M;1957;5
+549;4;Dzielnica IV Prądnik Biały;K;1957;12
+550;4;Dzielnica IV Prądnik Biały;K;1958;2
+551;4;Dzielnica IV Prądnik Biały;M;1958;3
+552;4;Dzielnica IV Prądnik Biały;K;1959;4
+553;4;Dzielnica IV Prądnik Biały;M;1959;6
+554;4;Dzielnica IV Prądnik Biały;K;1960;7
+555;4;Dzielnica IV Prądnik Biały;M;1960;3
+556;4;Dzielnica IV Prądnik Biały;K;1961;3
+557;4;Dzielnica IV Prądnik Biały;M;1961;5
+558;4;Dzielnica IV Prądnik Biały;M;1962;7
+559;4;Dzielnica IV Prądnik Biały;K;1962;4
+560;4;Dzielnica IV Prądnik Biały;K;1963;11
+561;4;Dzielnica IV Prądnik Biały;M;1963;7
+562;4;Dzielnica IV Prądnik Biały;K;1964;8
+563;4;Dzielnica IV Prądnik Biały;M;1964;9
+564;4;Dzielnica IV Prądnik Biały;M;1965;4
+565;4;Dzielnica IV Prądnik Biały;K;1965;9
+566;4;Dzielnica IV Prądnik Biały;M;1966;3
+567;4;Dzielnica IV Prądnik Biały;K;1966;6
+568;4;Dzielnica IV Prądnik Biały;M;1967;5
+569;4;Dzielnica IV Prądnik Biały;K;1967;11
+570;4;Dzielnica IV Prądnik Biały;M;1968;11
+571;4;Dzielnica IV Prądnik Biały;K;1968;5
+572;4;Dzielnica IV Prądnik Biały;M;1969;4
+573;4;Dzielnica IV Prądnik Biały;K;1969;7
+574;4;Dzielnica IV Prądnik Biały;K;1970;11
+575;4;Dzielnica IV Prądnik Biały;M;1970;12
+576;4;Dzielnica IV Prądnik Biały;M;1971;13
+577;4;Dzielnica IV Prądnik Biały;K;1971;9
+578;4;Dzielnica IV Prądnik Biały;M;1972;14
+579;4;Dzielnica IV Prądnik Biały;K;1972;10
+580;4;Dzielnica IV Prądnik Biały;K;1973;11
+581;4;Dzielnica IV Prądnik Biały;M;1973;12
+582;4;Dzielnica IV Prądnik Biały;K;1974;14
+583;4;Dzielnica IV Prądnik Biały;M;1974;14
+584;4;Dzielnica IV Prądnik Biały;M;1975;18
+585;4;Dzielnica IV Prądnik Biały;K;1975;17
+586;4;Dzielnica IV Prądnik Biały;M;1976;11
+587;4;Dzielnica IV Prądnik Biały;K;1976;12
+588;4;Dzielnica IV Prądnik Biały;K;1977;18
+589;4;Dzielnica IV Prądnik Biały;M;1977;12
+590;4;Dzielnica IV Prądnik Biały;K;1978;25
+591;4;Dzielnica IV Prądnik Biały;M;1978;21
+592;4;Dzielnica IV Prądnik Biały;K;1979;18
+593;4;Dzielnica IV Prądnik Biały;M;1979;28
+594;4;Dzielnica IV Prądnik Biały;M;1980;24
+595;4;Dzielnica IV Prądnik Biały;K;1980;20
+596;4;Dzielnica IV Prądnik Biały;K;1981;28
+597;4;Dzielnica IV Prądnik Biały;M;1981;30
+598;4;Dzielnica IV Prądnik Biały;M;1982;31
+599;4;Dzielnica IV Prądnik Biały;K;1982;22
+600;4;Dzielnica IV Prądnik Biały;K;1983;21
+601;4;Dzielnica IV Prądnik Biały;M;1983;32
+602;4;Dzielnica IV Prądnik Biały;M;1984;34
+603;4;Dzielnica IV Prądnik Biały;K;1984;30
+604;4;Dzielnica IV Prądnik Biały;K;1985;37
+605;4;Dzielnica IV Prądnik Biały;M;1985;29
+606;4;Dzielnica IV Prądnik Biały;K;1986;30
+607;4;Dzielnica IV Prądnik Biały;M;1986;49
+608;4;Dzielnica IV Prądnik Biały;M;1987;35
+609;4;Dzielnica IV Prądnik Biały;K;1987;30
+610;4;Dzielnica IV Prądnik Biały;M;1988;31
+611;4;Dzielnica IV Prądnik Biały;K;1988;34
+612;4;Dzielnica IV Prądnik Biały;K;1989;36
+613;4;Dzielnica IV Prądnik Biały;M;1989;43
+614;4;Dzielnica IV Prądnik Biały;K;1990;36
+615;4;Dzielnica IV Prądnik Biały;M;1990;53
+616;4;Dzielnica IV Prądnik Biały;K;1991;52
+617;4;Dzielnica IV Prądnik Biały;M;1991;35
+618;4;Dzielnica IV Prądnik Biały;K;1992;38
+619;4;Dzielnica IV Prądnik Biały;M;1992;32
+620;4;Dzielnica IV Prądnik Biały;K;1993;40
+621;4;Dzielnica IV Prądnik Biały;M;1993;36
+622;4;Dzielnica IV Prądnik Biały;K;1994;30
+623;4;Dzielnica IV Prądnik Biały;M;1994;30
+624;4;Dzielnica IV Prądnik Biały;M;1995;28
+625;4;Dzielnica IV Prądnik Biały;K;1995;31
+626;4;Dzielnica IV Prądnik Biały;K;1996;32
+627;4;Dzielnica IV Prądnik Biały;M;1996;28
+628;4;Dzielnica IV Prądnik Biały;K;1997;30
+629;4;Dzielnica IV Prądnik Biały;M;1997;38
+630;4;Dzielnica IV Prądnik Biały;M;1998;34
+631;4;Dzielnica IV Prądnik Biały;K;1998;33
+632;4;Dzielnica IV Prądnik Biały;K;1999;30
+633;4;Dzielnica IV Prądnik Biały;M;1999;23
+634;4;Dzielnica IV Prądnik Biały;M;2000;18
+635;4;Dzielnica IV Prądnik Biały;K;2000;24
+636;4;Dzielnica IV Prądnik Biały;M;2001;18
+637;4;Dzielnica IV Prądnik Biały;K;2001;19
+638;4;Dzielnica IV Prądnik Biały;M;2002;14
+639;4;Dzielnica IV Prądnik Biały;K;2002;12
+640;4;Dzielnica IV Prądnik Biały;K;2003;10
+641;4;Dzielnica IV Prądnik Biały;M;2003;18
+642;4;Dzielnica IV Prądnik Biały;M;2004;11
+643;4;Dzielnica IV Prądnik Biały;K;2004;13
+644;4;Dzielnica IV Prądnik Biały;M;2005;17
+645;4;Dzielnica IV Prądnik Biały;K;2005;11
+646;4;Dzielnica IV Prądnik Biały;M;2006;32
+647;4;Dzielnica IV Prądnik Biały;K;2006;10
+648;4;Dzielnica IV Prądnik Biały;M;2007;8
+649;4;Dzielnica IV Prądnik Biały;K;2007;9
+650;4;Dzielnica IV Prądnik Biały;M;2008;10
+651;4;Dzielnica IV Prądnik Biały;K;2008;11
+652;4;Dzielnica IV Prądnik Biały;K;2009;7
+653;4;Dzielnica IV Prądnik Biały;M;2009;10
+654;4;Dzielnica IV Prądnik Biały;K;2010;15
+655;4;Dzielnica IV Prądnik Biały;M;2010;13
+656;4;Dzielnica IV Prądnik Biały;M;2011;12
+657;4;Dzielnica IV Prądnik Biały;K;2011;5
+658;4;Dzielnica IV Prądnik Biały;K;2012;15
+659;4;Dzielnica IV Prądnik Biały;M;2012;13
+660;4;Dzielnica IV Prądnik Biały;M;2013;15
+661;4;Dzielnica IV Prądnik Biały;K;2013;10
+662;4;Dzielnica IV Prądnik Biały;M;2014;13
+663;4;Dzielnica IV Prądnik Biały;K;2014;6
+664;4;Dzielnica IV Prądnik Biały;K;2015;12
+665;4;Dzielnica IV Prądnik Biały;M;2015;12
+666;4;Dzielnica IV Prądnik Biały;K;2016;10
+667;4;Dzielnica IV Prądnik Biały;M;2016;9
+668;4;Dzielnica IV Prądnik Biały;M;2017;10
+669;4;Dzielnica IV Prądnik Biały;K;2017;13
+670;4;Dzielnica IV Prądnik Biały;M;2018;13
+671;4;Dzielnica IV Prądnik Biały;K;2018;13
+672;4;Dzielnica IV Prądnik Biały;M;2019;17
+673;4;Dzielnica IV Prądnik Biały;K;2019;10
+674;4;Dzielnica IV Prądnik Biały;K;2020;16
+675;4;Dzielnica IV Prądnik Biały;M;2020;18
+676;4;Dzielnica IV Prądnik Biały;M;2021;14
+677;4;Dzielnica IV Prądnik Biały;K;2021;10
+678;4;Dzielnica IV Prądnik Biały;K;2022;7
+679;4;Dzielnica IV Prądnik Biały;M;2022;12
+680;4;Dzielnica IV Prądnik Biały;M;2023;8
+681;4;Dzielnica IV Prądnik Biały;K;2023;13
+682;5;Dzielnica V Krowodrza;M;1932;1
+683;5;Dzielnica V Krowodrza;K;1935;1
+684;5;Dzielnica V Krowodrza;K;1937;1
+685;5;Dzielnica V Krowodrza;M;1940;1
+686;5;Dzielnica V Krowodrza;K;1941;2
+687;5;Dzielnica V Krowodrza;M;1941;2
+688;5;Dzielnica V Krowodrza;K;1942;1
+689;5;Dzielnica V Krowodrza;M;1942;1
+690;5;Dzielnica V Krowodrza;K;1944;1
+691;5;Dzielnica V Krowodrza;M;1944;2
+692;5;Dzielnica V Krowodrza;K;1945;2
+693;5;Dzielnica V Krowodrza;M;1945;1
+694;5;Dzielnica V Krowodrza;K;1946;1
+695;5;Dzielnica V Krowodrza;K;1947;4
+696;5;Dzielnica V Krowodrza;M;1948;2
+697;5;Dzielnica V Krowodrza;K;1948;1
+698;5;Dzielnica V Krowodrza;K;1949;5
+699;5;Dzielnica V Krowodrza;M;1949;2
+700;5;Dzielnica V Krowodrza;K;1950;4
+701;5;Dzielnica V Krowodrza;M;1950;3
+702;5;Dzielnica V Krowodrza;K;1951;2
+703;5;Dzielnica V Krowodrza;M;1952;4
+704;5;Dzielnica V Krowodrza;K;1953;4
+705;5;Dzielnica V Krowodrza;M;1953;1
+706;5;Dzielnica V Krowodrza;K;1954;5
+707;5;Dzielnica V Krowodrza;M;1954;1
+708;5;Dzielnica V Krowodrza;K;1955;1
+709;5;Dzielnica V Krowodrza;M;1955;7
+710;5;Dzielnica V Krowodrza;K;1956;3
+711;5;Dzielnica V Krowodrza;M;1956;6
+712;5;Dzielnica V Krowodrza;K;1957;5
+713;5;Dzielnica V Krowodrza;M;1957;6
+714;5;Dzielnica V Krowodrza;M;1958;8
+715;5;Dzielnica V Krowodrza;K;1958;6
+716;5;Dzielnica V Krowodrza;K;1959;4
+717;5;Dzielnica V Krowodrza;M;1959;7
+718;5;Dzielnica V Krowodrza;K;1960;5
+719;5;Dzielnica V Krowodrza;M;1960;6
+720;5;Dzielnica V Krowodrza;K;1961;3
+721;5;Dzielnica V Krowodrza;M;1961;5
+722;5;Dzielnica V Krowodrza;M;1962;5
+723;5;Dzielnica V Krowodrza;K;1962;7
+724;5;Dzielnica V Krowodrza;M;1963;8
+725;5;Dzielnica V Krowodrza;K;1963;1
+726;5;Dzielnica V Krowodrza;K;1964;3
+727;5;Dzielnica V Krowodrza;M;1964;1
+728;5;Dzielnica V Krowodrza;K;1965;8
+729;5;Dzielnica V Krowodrza;M;1965;10
+730;5;Dzielnica V Krowodrza;K;1966;6
+731;5;Dzielnica V Krowodrza;M;1966;6
+732;5;Dzielnica V Krowodrza;K;1967;5
+733;5;Dzielnica V Krowodrza;M;1967;7
+734;5;Dzielnica V Krowodrza;M;1968;5
+735;5;Dzielnica V Krowodrza;K;1968;3
+736;5;Dzielnica V Krowodrza;K;1969;4
+737;5;Dzielnica V Krowodrza;M;1969;10
+738;5;Dzielnica V Krowodrza;M;1970;8
+739;5;Dzielnica V Krowodrza;K;1970;5
+740;5;Dzielnica V Krowodrza;K;1971;13
+741;5;Dzielnica V Krowodrza;M;1971;6
+742;5;Dzielnica V Krowodrza;M;1972;6
+743;5;Dzielnica V Krowodrza;K;1972;12
+744;5;Dzielnica V Krowodrza;K;1973;11
+745;5;Dzielnica V Krowodrza;M;1973;9
+746;5;Dzielnica V Krowodrza;M;1974;14
+747;5;Dzielnica V Krowodrza;K;1974;10
+748;5;Dzielnica V Krowodrza;M;1975;17
+749;5;Dzielnica V Krowodrza;K;1975;13
+750;5;Dzielnica V Krowodrza;K;1976;15
+751;5;Dzielnica V Krowodrza;M;1976;13
+752;5;Dzielnica V Krowodrza;M;1977;14
+753;5;Dzielnica V Krowodrza;K;1977;20
+754;5;Dzielnica V Krowodrza;M;1978;14
+755;5;Dzielnica V Krowodrza;K;1978;10
+756;5;Dzielnica V Krowodrza;K;1979;18
+757;5;Dzielnica V Krowodrza;M;1979;18
+758;5;Dzielnica V Krowodrza;M;1980;23
+759;5;Dzielnica V Krowodrza;K;1980;14
+760;5;Dzielnica V Krowodrza;M;1981;17
+761;5;Dzielnica V Krowodrza;K;1981;13
+762;5;Dzielnica V Krowodrza;M;1982;24
+763;5;Dzielnica V Krowodrza;K;1982;16
+764;5;Dzielnica V Krowodrza;K;1983;22
+765;5;Dzielnica V Krowodrza;M;1983;24
+766;5;Dzielnica V Krowodrza;M;1984;38
+767;5;Dzielnica V Krowodrza;K;1984;21
+768;5;Dzielnica V Krowodrza;K;1985;35
+769;5;Dzielnica V Krowodrza;M;1985;30
+770;5;Dzielnica V Krowodrza;M;1986;27
+771;5;Dzielnica V Krowodrza;K;1986;23
+772;5;Dzielnica V Krowodrza;K;1987;25
+773;5;Dzielnica V Krowodrza;M;1987;31
+774;5;Dzielnica V Krowodrza;M;1988;30
+775;5;Dzielnica V Krowodrza;K;1988;29
+776;5;Dzielnica V Krowodrza;K;1989;20
+777;5;Dzielnica V Krowodrza;M;1989;42
+778;5;Dzielnica V Krowodrza;M;1990;39
+779;5;Dzielnica V Krowodrza;K;1990;28
+780;5;Dzielnica V Krowodrza;M;1991;58
+781;5;Dzielnica V Krowodrza;K;1991;32
+782;5;Dzielnica V Krowodrza;M;1992;48
+783;5;Dzielnica V Krowodrza;K;1992;42
+784;5;Dzielnica V Krowodrza;M;1993;41
+785;5;Dzielnica V Krowodrza;K;1993;31
+786;5;Dzielnica V Krowodrza;K;1994;45
+787;5;Dzielnica V Krowodrza;M;1994;67
+788;5;Dzielnica V Krowodrza;M;1995;59
+789;5;Dzielnica V Krowodrza;K;1995;45
+790;5;Dzielnica V Krowodrza;K;1996;40
+791;5;Dzielnica V Krowodrza;M;1996;53
+792;5;Dzielnica V Krowodrza;K;1997;51
+793;5;Dzielnica V Krowodrza;M;1997;53
+794;5;Dzielnica V Krowodrza;K;1998;40
+795;5;Dzielnica V Krowodrza;M;1998;54
+796;5;Dzielnica V Krowodrza;K;1999;44
+797;5;Dzielnica V Krowodrza;M;1999;50
+798;5;Dzielnica V Krowodrza;K;2000;56
+799;5;Dzielnica V Krowodrza;M;2000;50
+800;5;Dzielnica V Krowodrza;M;2001;46
+801;5;Dzielnica V Krowodrza;K;2001;52
+802;5;Dzielnica V Krowodrza;M;2002;48
+803;5;Dzielnica V Krowodrza;K;2002;68
+804;5;Dzielnica V Krowodrza;M;2003;59
+805;5;Dzielnica V Krowodrza;K;2003;72
+806;5;Dzielnica V Krowodrza;K;2004;97
+807;5;Dzielnica V Krowodrza;M;2004;52
+808;5;Dzielnica V Krowodrza;K;2005;67
+809;5;Dzielnica V Krowodrza;M;2005;46
+810;5;Dzielnica V Krowodrza;M;2006;24
+811;5;Dzielnica V Krowodrza;K;2006;28
+812;5;Dzielnica V Krowodrza;K;2007;12
+813;5;Dzielnica V Krowodrza;M;2007;4
+814;5;Dzielnica V Krowodrza;K;2008;5
+815;5;Dzielnica V Krowodrza;M;2008;5
+816;5;Dzielnica V Krowodrza;K;2009;3
+817;5;Dzielnica V Krowodrza;M;2009;5
+818;5;Dzielnica V Krowodrza;M;2010;5
+819;5;Dzielnica V Krowodrza;K;2010;4
+820;5;Dzielnica V Krowodrza;K;2011;6
+821;5;Dzielnica V Krowodrza;M;2011;7
+822;5;Dzielnica V Krowodrza;K;2012;4
+823;5;Dzielnica V Krowodrza;M;2012;8
+824;5;Dzielnica V Krowodrza;K;2013;3
+825;5;Dzielnica V Krowodrza;M;2013;8
+826;5;Dzielnica V Krowodrza;K;2014;6
+827;5;Dzielnica V Krowodrza;M;2014;3
+828;5;Dzielnica V Krowodrza;M;2015;4
+829;5;Dzielnica V Krowodrza;K;2015;8
+830;5;Dzielnica V Krowodrza;M;2016;10
+831;5;Dzielnica V Krowodrza;K;2016;9
+832;5;Dzielnica V Krowodrza;K;2017;7
+833;5;Dzielnica V Krowodrza;M;2017;8
+834;5;Dzielnica V Krowodrza;K;2018;8
+835;5;Dzielnica V Krowodrza;M;2018;3
+836;5;Dzielnica V Krowodrza;K;2019;8
+837;5;Dzielnica V Krowodrza;M;2019;6
+838;5;Dzielnica V Krowodrza;M;2020;7
+839;5;Dzielnica V Krowodrza;K;2020;11
+840;5;Dzielnica V Krowodrza;M;2021;10
+841;5;Dzielnica V Krowodrza;K;2021;8
+842;5;Dzielnica V Krowodrza;M;2022;8
+843;5;Dzielnica V Krowodrza;K;2022;5
+844;5;Dzielnica V Krowodrza;M;2023;10
+845;5;Dzielnica V Krowodrza;K;2023;8
+846;6;Dzielnica VI Bronowice;K;1929;1
+847;6;Dzielnica VI Bronowice;M;1936;1
+848;6;Dzielnica VI Bronowice;K;1938;1
+849;6;Dzielnica VI Bronowice;K;1939;1
+850;6;Dzielnica VI Bronowice;M;1939;1
+851;6;Dzielnica VI Bronowice;K;1945;2
+852;6;Dzielnica VI Bronowice;M;1947;1
+853;6;Dzielnica VI Bronowice;M;1948;1
+854;6;Dzielnica VI Bronowice;M;1949;1
+855;6;Dzielnica VI Bronowice;K;1950;4
+856;6;Dzielnica VI Bronowice;M;1951;1
+857;6;Dzielnica VI Bronowice;M;1952;1
+858;6;Dzielnica VI Bronowice;K;1952;2
+859;6;Dzielnica VI Bronowice;K;1953;3
+860;6;Dzielnica VI Bronowice;K;1955;1
+861;6;Dzielnica VI Bronowice;M;1955;2
+862;6;Dzielnica VI Bronowice;K;1956;2
+863;6;Dzielnica VI Bronowice;M;1957;1
+864;6;Dzielnica VI Bronowice;K;1958;3
+865;6;Dzielnica VI Bronowice;M;1958;1
+866;6;Dzielnica VI Bronowice;M;1959;3
+867;6;Dzielnica VI Bronowice;K;1959;2
+868;6;Dzielnica VI Bronowice;M;1960;1
+869;6;Dzielnica VI Bronowice;K;1960;2
+870;6;Dzielnica VI Bronowice;M;1961;4
+871;6;Dzielnica VI Bronowice;K;1961;1
+872;6;Dzielnica VI Bronowice;M;1962;3
+873;6;Dzielnica VI Bronowice;K;1962;3
+874;6;Dzielnica VI Bronowice;K;1963;2
+875;6;Dzielnica VI Bronowice;M;1963;3
+876;6;Dzielnica VI Bronowice;M;1964;2
+877;6;Dzielnica VI Bronowice;K;1964;2
+878;6;Dzielnica VI Bronowice;M;1965;2
+879;6;Dzielnica VI Bronowice;K;1966;2
+880;6;Dzielnica VI Bronowice;M;1966;2
+881;6;Dzielnica VI Bronowice;M;1967;3
+882;6;Dzielnica VI Bronowice;K;1967;3
+883;6;Dzielnica VI Bronowice;K;1968;2
+884;6;Dzielnica VI Bronowice;K;1969;2
+885;6;Dzielnica VI Bronowice;M;1969;3
+886;6;Dzielnica VI Bronowice;M;1970;6
+887;6;Dzielnica VI Bronowice;K;1970;3
+888;6;Dzielnica VI Bronowice;M;1971;3
+889;6;Dzielnica VI Bronowice;K;1971;5
+890;6;Dzielnica VI Bronowice;M;1972;4
+891;6;Dzielnica VI Bronowice;K;1972;3
+892;6;Dzielnica VI Bronowice;K;1973;3
+893;6;Dzielnica VI Bronowice;M;1973;4
+894;6;Dzielnica VI Bronowice;K;1974;3
+895;6;Dzielnica VI Bronowice;M;1974;2
+896;6;Dzielnica VI Bronowice;K;1975;5
+897;6;Dzielnica VI Bronowice;M;1975;5
+898;6;Dzielnica VI Bronowice;M;1976;9
+899;6;Dzielnica VI Bronowice;K;1976;3
+900;6;Dzielnica VI Bronowice;K;1977;7
+901;6;Dzielnica VI Bronowice;M;1977;6
+902;6;Dzielnica VI Bronowice;K;1978;10
+903;6;Dzielnica VI Bronowice;M;1978;12
+904;6;Dzielnica VI Bronowice;M;1979;7
+905;6;Dzielnica VI Bronowice;K;1979;2
+906;6;Dzielnica VI Bronowice;K;1980;11
+907;6;Dzielnica VI Bronowice;M;1980;5
+908;6;Dzielnica VI Bronowice;K;1981;6
+909;6;Dzielnica VI Bronowice;M;1981;8
+910;6;Dzielnica VI Bronowice;M;1982;7
+911;6;Dzielnica VI Bronowice;K;1982;4
+912;6;Dzielnica VI Bronowice;K;1983;15
+913;6;Dzielnica VI Bronowice;M;1983;11
+914;6;Dzielnica VI Bronowice;M;1984;12
+915;6;Dzielnica VI Bronowice;K;1984;13
+916;6;Dzielnica VI Bronowice;K;1985;13
+917;6;Dzielnica VI Bronowice;M;1985;11
+918;6;Dzielnica VI Bronowice;K;1986;9
+919;6;Dzielnica VI Bronowice;M;1986;7
+920;6;Dzielnica VI Bronowice;M;1987;14
+921;6;Dzielnica VI Bronowice;K;1987;12
+922;6;Dzielnica VI Bronowice;M;1988;16
+923;6;Dzielnica VI Bronowice;K;1988;20
+924;6;Dzielnica VI Bronowice;M;1989;19
+925;6;Dzielnica VI Bronowice;K;1989;12
+926;6;Dzielnica VI Bronowice;M;1990;19
+927;6;Dzielnica VI Bronowice;K;1990;15
+928;6;Dzielnica VI Bronowice;K;1991;11
+929;6;Dzielnica VI Bronowice;M;1991;10
+930;6;Dzielnica VI Bronowice;K;1992;15
+931;6;Dzielnica VI Bronowice;M;1992;16
+932;6;Dzielnica VI Bronowice;K;1993;17
+933;6;Dzielnica VI Bronowice;M;1993;10
+934;6;Dzielnica VI Bronowice;K;1994;11
+935;6;Dzielnica VI Bronowice;M;1994;17
+936;6;Dzielnica VI Bronowice;M;1995;19
+937;6;Dzielnica VI Bronowice;K;1995;14
+938;6;Dzielnica VI Bronowice;K;1996;12
+939;6;Dzielnica VI Bronowice;M;1996;10
+940;6;Dzielnica VI Bronowice;M;1997;11
+941;6;Dzielnica VI Bronowice;K;1997;6
+942;6;Dzielnica VI Bronowice;M;1998;14
+943;6;Dzielnica VI Bronowice;K;1998;14
+944;6;Dzielnica VI Bronowice;K;1999;9
+945;6;Dzielnica VI Bronowice;M;1999;6
+946;6;Dzielnica VI Bronowice;K;2000;12
+947;6;Dzielnica VI Bronowice;M;2000;6
+948;6;Dzielnica VI Bronowice;M;2001;10
+949;6;Dzielnica VI Bronowice;K;2001;5
+950;6;Dzielnica VI Bronowice;K;2002;5
+951;6;Dzielnica VI Bronowice;M;2002;10
+952;6;Dzielnica VI Bronowice;M;2003;4
+953;6;Dzielnica VI Bronowice;K;2003;7
+954;6;Dzielnica VI Bronowice;M;2004;11
+955;6;Dzielnica VI Bronowice;K;2004;6
+956;6;Dzielnica VI Bronowice;M;2005;9
+957;6;Dzielnica VI Bronowice;K;2005;7
+958;6;Dzielnica VI Bronowice;K;2006;13
+959;6;Dzielnica VI Bronowice;M;2006;15
+960;6;Dzielnica VI Bronowice;K;2007;11
+961;6;Dzielnica VI Bronowice;M;2007;25
+962;6;Dzielnica VI Bronowice;K;2008;18
+963;6;Dzielnica VI Bronowice;M;2008;8
+964;6;Dzielnica VI Bronowice;M;2009;6
+965;6;Dzielnica VI Bronowice;K;2009;2
+966;6;Dzielnica VI Bronowice;M;2010;3
+967;6;Dzielnica VI Bronowice;K;2010;4
+968;6;Dzielnica VI Bronowice;M;2011;2
+969;6;Dzielnica VI Bronowice;K;2011;5
+970;6;Dzielnica VI Bronowice;K;2012;4
+971;6;Dzielnica VI Bronowice;M;2012;5
+972;6;Dzielnica VI Bronowice;K;2013;5
+973;6;Dzielnica VI Bronowice;M;2013;2
+974;6;Dzielnica VI Bronowice;M;2014;2
+975;6;Dzielnica VI Bronowice;K;2014;2
+976;6;Dzielnica VI Bronowice;M;2015;5
+977;6;Dzielnica VI Bronowice;K;2015;5
+978;6;Dzielnica VI Bronowice;M;2016;5
+979;6;Dzielnica VI Bronowice;K;2016;7
+980;6;Dzielnica VI Bronowice;M;2017;9
+981;6;Dzielnica VI Bronowice;K;2017;9
+982;6;Dzielnica VI Bronowice;M;2018;6
+983;6;Dzielnica VI Bronowice;K;2018;1
+984;6;Dzielnica VI Bronowice;K;2019;4
+985;6;Dzielnica VI Bronowice;M;2019;3
+986;6;Dzielnica VI Bronowice;M;2020;4
+987;6;Dzielnica VI Bronowice;K;2020;7
+988;6;Dzielnica VI Bronowice;K;2021;8
+989;6;Dzielnica VI Bronowice;M;2021;4
+990;6;Dzielnica VI Bronowice;K;2022;3
+991;6;Dzielnica VI Bronowice;M;2022;4
+992;6;Dzielnica VI Bronowice;M;2023;7
+993;6;Dzielnica VI Bronowice;K;2023;3
+994;7;Dzielnica VII Zwierzyniec;M;1930;1
+995;7;Dzielnica VII Zwierzyniec;K;1931;1
+996;7;Dzielnica VII Zwierzyniec;M;1932;1
+997;7;Dzielnica VII Zwierzyniec;M;1933;1
+998;7;Dzielnica VII Zwierzyniec;K;1933;1
+999;7;Dzielnica VII Zwierzyniec;K;1937;1
+1000;7;Dzielnica VII Zwierzyniec;K;1938;1
+1001;7;Dzielnica VII Zwierzyniec;M;1940;1
+1002;7;Dzielnica VII Zwierzyniec;M;1942;1
+1003;7;Dzielnica VII Zwierzyniec;K;1942;1
+1004;7;Dzielnica VII Zwierzyniec;K;1943;2
+1005;7;Dzielnica VII Zwierzyniec;M;1946;2
+1006;7;Dzielnica VII Zwierzyniec;K;1948;1
+1007;7;Dzielnica VII Zwierzyniec;M;1948;3
+1008;7;Dzielnica VII Zwierzyniec;M;1949;3
+1009;7;Dzielnica VII Zwierzyniec;M;1950;2
+1010;7;Dzielnica VII Zwierzyniec;K;1950;2
+1011;7;Dzielnica VII Zwierzyniec;K;1952;1
+1012;7;Dzielnica VII Zwierzyniec;K;1953;1
+1013;7;Dzielnica VII Zwierzyniec;M;1954;2
+1014;7;Dzielnica VII Zwierzyniec;M;1955;1
+1015;7;Dzielnica VII Zwierzyniec;K;1955;2
+1016;7;Dzielnica VII Zwierzyniec;K;1956;2
+1017;7;Dzielnica VII Zwierzyniec;M;1956;3
+1018;7;Dzielnica VII Zwierzyniec;M;1957;1
+1019;7;Dzielnica VII Zwierzyniec;K;1957;3
+1020;7;Dzielnica VII Zwierzyniec;K;1958;4
+1021;7;Dzielnica VII Zwierzyniec;M;1958;2
+1022;7;Dzielnica VII Zwierzyniec;M;1959;1
+1023;7;Dzielnica VII Zwierzyniec;M;1960;5
+1024;7;Dzielnica VII Zwierzyniec;K;1960;2
+1025;7;Dzielnica VII Zwierzyniec;K;1961;1
+1026;7;Dzielnica VII Zwierzyniec;M;1961;3
+1027;7;Dzielnica VII Zwierzyniec;K;1962;2
+1028;7;Dzielnica VII Zwierzyniec;K;1963;1
+1029;7;Dzielnica VII Zwierzyniec;M;1963;5
+1030;7;Dzielnica VII Zwierzyniec;K;1964;3
+1031;7;Dzielnica VII Zwierzyniec;M;1964;2
+1032;7;Dzielnica VII Zwierzyniec;M;1965;4
+1033;7;Dzielnica VII Zwierzyniec;K;1965;5
+1034;7;Dzielnica VII Zwierzyniec;K;1966;4
+1035;7;Dzielnica VII Zwierzyniec;M;1966;5
+1036;7;Dzielnica VII Zwierzyniec;K;1967;3
+1037;7;Dzielnica VII Zwierzyniec;M;1967;4
+1038;7;Dzielnica VII Zwierzyniec;M;1968;3
+1039;7;Dzielnica VII Zwierzyniec;K;1968;3
+1040;7;Dzielnica VII Zwierzyniec;K;1969;4
+1041;7;Dzielnica VII Zwierzyniec;M;1969;2
+1042;7;Dzielnica VII Zwierzyniec;M;1970;11
+1043;7;Dzielnica VII Zwierzyniec;K;1970;6
+1044;7;Dzielnica VII Zwierzyniec;M;1971;9
+1045;7;Dzielnica VII Zwierzyniec;K;1971;5
+1046;7;Dzielnica VII Zwierzyniec;K;1972;8
+1047;7;Dzielnica VII Zwierzyniec;M;1972;3
+1048;7;Dzielnica VII Zwierzyniec;K;1973;3
+1049;7;Dzielnica VII Zwierzyniec;M;1973;6
+1050;7;Dzielnica VII Zwierzyniec;M;1974;8
+1051;7;Dzielnica VII Zwierzyniec;K;1974;4
+1052;7;Dzielnica VII Zwierzyniec;K;1975;6
+1053;7;Dzielnica VII Zwierzyniec;M;1975;5
+1054;7;Dzielnica VII Zwierzyniec;M;1976;16
+1055;7;Dzielnica VII Zwierzyniec;K;1976;11
+1056;7;Dzielnica VII Zwierzyniec;K;1977;8
+1057;7;Dzielnica VII Zwierzyniec;M;1977;3
+1058;7;Dzielnica VII Zwierzyniec;K;1978;9
+1059;7;Dzielnica VII Zwierzyniec;M;1978;8
+1060;7;Dzielnica VII Zwierzyniec;K;1979;7
+1061;7;Dzielnica VII Zwierzyniec;M;1979;12
+1062;7;Dzielnica VII Zwierzyniec;K;1980;12
+1063;7;Dzielnica VII Zwierzyniec;M;1980;7
+1064;7;Dzielnica VII Zwierzyniec;K;1981;7
+1065;7;Dzielnica VII Zwierzyniec;M;1981;12
+1066;7;Dzielnica VII Zwierzyniec;K;1982;7
+1067;7;Dzielnica VII Zwierzyniec;M;1982;11
+1068;7;Dzielnica VII Zwierzyniec;M;1983;14
+1069;7;Dzielnica VII Zwierzyniec;K;1983;10
+1070;7;Dzielnica VII Zwierzyniec;K;1984;13
+1071;7;Dzielnica VII Zwierzyniec;M;1984;9
+1072;7;Dzielnica VII Zwierzyniec;M;1985;11
+1073;7;Dzielnica VII Zwierzyniec;K;1985;17
+1074;7;Dzielnica VII Zwierzyniec;K;1986;13
+1075;7;Dzielnica VII Zwierzyniec;M;1986;12
+1076;7;Dzielnica VII Zwierzyniec;K;1987;14
+1077;7;Dzielnica VII Zwierzyniec;M;1987;10
+1078;7;Dzielnica VII Zwierzyniec;M;1988;8
+1079;7;Dzielnica VII Zwierzyniec;K;1988;10
+1080;7;Dzielnica VII Zwierzyniec;M;1989;19
+1081;7;Dzielnica VII Zwierzyniec;K;1989;11
+1082;7;Dzielnica VII Zwierzyniec;K;1990;13
+1083;7;Dzielnica VII Zwierzyniec;M;1990;16
+1084;7;Dzielnica VII Zwierzyniec;M;1991;13
+1085;7;Dzielnica VII Zwierzyniec;K;1991;11
+1086;7;Dzielnica VII Zwierzyniec;K;1992;11
+1087;7;Dzielnica VII Zwierzyniec;M;1992;8
+1088;7;Dzielnica VII Zwierzyniec;M;1993;8
+1089;7;Dzielnica VII Zwierzyniec;K;1993;8
+1090;7;Dzielnica VII Zwierzyniec;K;1994;9
+1091;7;Dzielnica VII Zwierzyniec;M;1994;8
+1092;7;Dzielnica VII Zwierzyniec;K;1995;8
+1093;7;Dzielnica VII Zwierzyniec;M;1995;6
+1094;7;Dzielnica VII Zwierzyniec;K;1996;12
+1095;7;Dzielnica VII Zwierzyniec;M;1996;8
+1096;7;Dzielnica VII Zwierzyniec;M;1997;7
+1097;7;Dzielnica VII Zwierzyniec;K;1997;18
+1098;7;Dzielnica VII Zwierzyniec;M;1998;9
+1099;7;Dzielnica VII Zwierzyniec;K;1998;9
+1100;7;Dzielnica VII Zwierzyniec;M;1999;7
+1101;7;Dzielnica VII Zwierzyniec;K;1999;4
+1102;7;Dzielnica VII Zwierzyniec;M;2000;4
+1103;7;Dzielnica VII Zwierzyniec;K;2000;13
+1104;7;Dzielnica VII Zwierzyniec;M;2001;6
+1105;7;Dzielnica VII Zwierzyniec;K;2001;4
+1106;7;Dzielnica VII Zwierzyniec;M;2002;2
+1107;7;Dzielnica VII Zwierzyniec;K;2002;1
+1108;7;Dzielnica VII Zwierzyniec;K;2003;8
+1109;7;Dzielnica VII Zwierzyniec;M;2003;3
+1110;7;Dzielnica VII Zwierzyniec;M;2004;10
+1111;7;Dzielnica VII Zwierzyniec;K;2004;6
+1112;7;Dzielnica VII Zwierzyniec;K;2005;49
+1113;7;Dzielnica VII Zwierzyniec;M;2005;36
+1114;7;Dzielnica VII Zwierzyniec;K;2006;101
+1115;7;Dzielnica VII Zwierzyniec;M;2006;34
+1116;7;Dzielnica VII Zwierzyniec;K;2007;92
+1117;7;Dzielnica VII Zwierzyniec;M;2007;32
+1118;7;Dzielnica VII Zwierzyniec;M;2008;34
+1119;7;Dzielnica VII Zwierzyniec;K;2008;88
+1120;7;Dzielnica VII Zwierzyniec;K;2009;46
+1121;7;Dzielnica VII Zwierzyniec;M;2009;10
+1122;7;Dzielnica VII Zwierzyniec;K;2010;5
+1123;7;Dzielnica VII Zwierzyniec;M;2010;1
+1124;7;Dzielnica VII Zwierzyniec;M;2011;2
+1125;7;Dzielnica VII Zwierzyniec;K;2011;3
+1126;7;Dzielnica VII Zwierzyniec;M;2012;1
+1127;7;Dzielnica VII Zwierzyniec;K;2012;3
+1128;7;Dzielnica VII Zwierzyniec;M;2013;1
+1129;7;Dzielnica VII Zwierzyniec;K;2013;3
+1130;7;Dzielnica VII Zwierzyniec;K;2014;5
+1131;7;Dzielnica VII Zwierzyniec;M;2014;3
+1132;7;Dzielnica VII Zwierzyniec;M;2015;2
+1133;7;Dzielnica VII Zwierzyniec;K;2015;7
+1134;7;Dzielnica VII Zwierzyniec;K;2016;5
+1135;7;Dzielnica VII Zwierzyniec;M;2016;4
+1136;7;Dzielnica VII Zwierzyniec;M;2017;6
+1137;7;Dzielnica VII Zwierzyniec;K;2017;2
+1138;7;Dzielnica VII Zwierzyniec;M;2018;4
+1139;7;Dzielnica VII Zwierzyniec;K;2018;2
+1140;7;Dzielnica VII Zwierzyniec;K;2019;3
+1141;7;Dzielnica VII Zwierzyniec;M;2019;4
+1142;7;Dzielnica VII Zwierzyniec;M;2020;6
+1143;7;Dzielnica VII Zwierzyniec;M;2021;3
+1144;7;Dzielnica VII Zwierzyniec;K;2021;2
+1145;7;Dzielnica VII Zwierzyniec;K;2022;3
+1146;7;Dzielnica VII Zwierzyniec;M;2022;7
+1147;7;Dzielnica VII Zwierzyniec;K;2023;2
+1148;7;Dzielnica VII Zwierzyniec;M;2023;2
+1149;8;Dzielnica VIII Dębniki;K;1924;2
+1150;8;Dzielnica VIII Dębniki;K;1928;2
+1151;8;Dzielnica VIII Dębniki;K;1932;1
+1152;8;Dzielnica VIII Dębniki;K;1933;1
+1153;8;Dzielnica VIII Dębniki;M;1934;1
+1154;8;Dzielnica VIII Dębniki;K;1934;1
+1155;8;Dzielnica VIII Dębniki;K;1936;1
+1156;8;Dzielnica VIII Dębniki;K;1937;1
+1157;8;Dzielnica VIII Dębniki;K;1938;2
+1158;8;Dzielnica VIII Dębniki;M;1939;1
+1159;8;Dzielnica VIII Dębniki;M;1940;2
+1160;8;Dzielnica VIII Dębniki;K;1941;2
+1161;8;Dzielnica VIII Dębniki;M;1941;2
+1162;8;Dzielnica VIII Dębniki;M;1942;2
+1163;8;Dzielnica VIII Dębniki;K;1942;1
+1164;8;Dzielnica VIII Dębniki;K;1943;3
+1165;8;Dzielnica VIII Dębniki;M;1943;1
+1166;8;Dzielnica VIII Dębniki;K;1944;5
+1167;8;Dzielnica VIII Dębniki;K;1945;2
+1168;8;Dzielnica VIII Dębniki;K;1946;1
+1169;8;Dzielnica VIII Dębniki;M;1946;2
+1170;8;Dzielnica VIII Dębniki;K;1947;2
+1171;8;Dzielnica VIII Dębniki;M;1947;4
+1172;8;Dzielnica VIII Dębniki;M;1948;5
+1173;8;Dzielnica VIII Dębniki;K;1949;7
+1174;8;Dzielnica VIII Dębniki;M;1949;2
+1175;8;Dzielnica VIII Dębniki;M;1950;2
+1176;8;Dzielnica VIII Dębniki;K;1950;3
+1177;8;Dzielnica VIII Dębniki;K;1951;5
+1178;8;Dzielnica VIII Dębniki;M;1951;5
+1179;8;Dzielnica VIII Dębniki;K;1952;9
+1180;8;Dzielnica VIII Dębniki;M;1952;8
+1181;8;Dzielnica VIII Dębniki;K;1953;9
+1182;8;Dzielnica VIII Dębniki;M;1953;1
+1183;8;Dzielnica VIII Dębniki;M;1954;5
+1184;8;Dzielnica VIII Dębniki;K;1954;5
+1185;8;Dzielnica VIII Dębniki;K;1955;9
+1186;8;Dzielnica VIII Dębniki;M;1955;4
+1187;8;Dzielnica VIII Dębniki;M;1956;4
+1188;8;Dzielnica VIII Dębniki;K;1956;7
+1189;8;Dzielnica VIII Dębniki;M;1957;5
+1190;8;Dzielnica VIII Dębniki;K;1957;11
+1191;8;Dzielnica VIII Dębniki;K;1958;3
+1192;8;Dzielnica VIII Dębniki;M;1958;7
+1193;8;Dzielnica VIII Dębniki;K;1959;8
+1194;8;Dzielnica VIII Dębniki;M;1959;2
+1195;8;Dzielnica VIII Dębniki;M;1960;6
+1196;8;Dzielnica VIII Dębniki;K;1960;8
+1197;8;Dzielnica VIII Dębniki;K;1961;10
+1198;8;Dzielnica VIII Dębniki;M;1961;7
+1199;8;Dzielnica VIII Dębniki;M;1962;2
+1200;8;Dzielnica VIII Dębniki;K;1962;4
+1201;8;Dzielnica VIII Dębniki;M;1963;3
+1202;8;Dzielnica VIII Dębniki;K;1963;6
+1203;8;Dzielnica VIII Dębniki;M;1964;6
+1204;8;Dzielnica VIII Dębniki;K;1964;4
+1205;8;Dzielnica VIII Dębniki;K;1965;11
+1206;8;Dzielnica VIII Dębniki;M;1965;4
+1207;8;Dzielnica VIII Dębniki;M;1966;7
+1208;8;Dzielnica VIII Dębniki;K;1966;9
+1209;8;Dzielnica VIII Dębniki;M;1967;1
+1210;8;Dzielnica VIII Dębniki;K;1967;9
+1211;8;Dzielnica VIII Dębniki;K;1968;7
+1212;8;Dzielnica VIII Dębniki;M;1968;9
+1213;8;Dzielnica VIII Dębniki;K;1969;10
+1214;8;Dzielnica VIII Dębniki;M;1969;9
+1215;8;Dzielnica VIII Dębniki;M;1970;16
+1216;8;Dzielnica VIII Dębniki;K;1970;8
+1217;8;Dzielnica VIII Dębniki;M;1971;10
+1218;8;Dzielnica VIII Dębniki;K;1971;11
+1219;8;Dzielnica VIII Dębniki;K;1972;13
+1220;8;Dzielnica VIII Dębniki;M;1972;14
+1221;8;Dzielnica VIII Dębniki;M;1973;19
+1222;8;Dzielnica VIII Dębniki;K;1973;9
+1223;8;Dzielnica VIII Dębniki;M;1974;15
+1224;8;Dzielnica VIII Dębniki;K;1974;22
+1225;8;Dzielnica VIII Dębniki;M;1975;25
+1226;8;Dzielnica VIII Dębniki;K;1975;20
+1227;8;Dzielnica VIII Dębniki;M;1976;27
+1228;8;Dzielnica VIII Dębniki;K;1976;18
+1229;8;Dzielnica VIII Dębniki;K;1977;15
+1230;8;Dzielnica VIII Dębniki;M;1977;16
+1231;8;Dzielnica VIII Dębniki;M;1978;19
+1232;8;Dzielnica VIII Dębniki;K;1978;23
+1233;8;Dzielnica VIII Dębniki;M;1979;21
+1234;8;Dzielnica VIII Dębniki;K;1979;25
+1235;8;Dzielnica VIII Dębniki;M;1980;20
+1236;8;Dzielnica VIII Dębniki;K;1980;23
+1237;8;Dzielnica VIII Dębniki;M;1981;23
+1238;8;Dzielnica VIII Dębniki;K;1981;20
+1239;8;Dzielnica VIII Dębniki;M;1982;26
+1240;8;Dzielnica VIII Dębniki;K;1982;43
+1241;8;Dzielnica VIII Dębniki;K;1983;33
+1242;8;Dzielnica VIII Dębniki;M;1983;27
+1243;8;Dzielnica VIII Dębniki;M;1984;37
+1244;8;Dzielnica VIII Dębniki;K;1984;42
+1245;8;Dzielnica VIII Dębniki;M;1985;41
+1246;8;Dzielnica VIII Dębniki;K;1985;31
+1247;8;Dzielnica VIII Dębniki;K;1986;32
+1248;8;Dzielnica VIII Dębniki;M;1986;45
+1249;8;Dzielnica VIII Dębniki;M;1987;45
+1250;8;Dzielnica VIII Dębniki;K;1987;43
+1251;8;Dzielnica VIII Dębniki;M;1988;57
+1252;8;Dzielnica VIII Dębniki;K;1988;53
+1253;8;Dzielnica VIII Dębniki;M;1989;52
+1254;8;Dzielnica VIII Dębniki;K;1989;44
+1255;8;Dzielnica VIII Dębniki;K;1990;29
+1256;8;Dzielnica VIII Dębniki;M;1990;46
+1257;8;Dzielnica VIII Dębniki;M;1991;43
+1258;8;Dzielnica VIII Dębniki;K;1991;44
+1259;8;Dzielnica VIII Dębniki;K;1992;53
+1260;8;Dzielnica VIII Dębniki;M;1992;45
+1261;8;Dzielnica VIII Dębniki;K;1993;47
+1262;8;Dzielnica VIII Dębniki;M;1993;30
+1263;8;Dzielnica VIII Dębniki;K;1994;44
+1264;8;Dzielnica VIII Dębniki;M;1994;49
+1265;8;Dzielnica VIII Dębniki;M;1995;45
+1266;8;Dzielnica VIII Dębniki;K;1995;41
+1267;8;Dzielnica VIII Dębniki;M;1996;28
+1268;8;Dzielnica VIII Dębniki;K;1996;28
+1269;8;Dzielnica VIII Dębniki;M;1997;28
+1270;8;Dzielnica VIII Dębniki;K;1997;28
+1271;8;Dzielnica VIII Dębniki;K;1998;30
+1272;8;Dzielnica VIII Dębniki;M;1998;27
+1273;8;Dzielnica VIII Dębniki;M;1999;16
+1274;8;Dzielnica VIII Dębniki;K;1999;15
+1275;8;Dzielnica VIII Dębniki;M;2000;22
+1276;8;Dzielnica VIII Dębniki;K;2000;31
+1277;8;Dzielnica VIII Dębniki;M;2001;26
+1278;8;Dzielnica VIII Dębniki;K;2001;23
+1279;8;Dzielnica VIII Dębniki;K;2002;25
+1280;8;Dzielnica VIII Dębniki;M;2002;18
+1281;8;Dzielnica VIII Dębniki;M;2003;14
+1282;8;Dzielnica VIII Dębniki;K;2003;23
+1283;8;Dzielnica VIII Dębniki;M;2004;33
+1284;8;Dzielnica VIII Dębniki;K;2004;25
+1285;8;Dzielnica VIII Dębniki;M;2005;54
+1286;8;Dzielnica VIII Dębniki;K;2005;21
+1287;8;Dzielnica VIII Dębniki;K;2006;24
+1288;8;Dzielnica VIII Dębniki;M;2006;53
+1289;8;Dzielnica VIII Dębniki;M;2007;58
+1290;8;Dzielnica VIII Dębniki;K;2007;22
+1291;8;Dzielnica VIII Dębniki;K;2008;24
+1292;8;Dzielnica VIII Dębniki;M;2008;40
+1293;8;Dzielnica VIII Dębniki;K;2009;13
+1294;8;Dzielnica VIII Dębniki;M;2009;38
+1295;8;Dzielnica VIII Dębniki;M;2010;14
+1296;8;Dzielnica VIII Dębniki;K;2010;15
+1297;8;Dzielnica VIII Dębniki;K;2011;19
+1298;8;Dzielnica VIII Dębniki;M;2011;19
+1299;8;Dzielnica VIII Dębniki;K;2012;15
+1300;8;Dzielnica VIII Dębniki;M;2012;11
+1301;8;Dzielnica VIII Dębniki;M;2013;18
+1302;8;Dzielnica VIII Dębniki;K;2013;14
+1303;8;Dzielnica VIII Dębniki;M;2014;17
+1304;8;Dzielnica VIII Dębniki;K;2014;12
+1305;8;Dzielnica VIII Dębniki;M;2015;21
+1306;8;Dzielnica VIII Dębniki;K;2015;18
+1307;8;Dzielnica VIII Dębniki;M;2016;6
+1308;8;Dzielnica VIII Dębniki;K;2016;14
+1309;8;Dzielnica VIII Dębniki;M;2017;16
+1310;8;Dzielnica VIII Dębniki;K;2017;19
+1311;8;Dzielnica VIII Dębniki;K;2018;19
+1312;8;Dzielnica VIII Dębniki;M;2018;16
+1313;8;Dzielnica VIII Dębniki;M;2019;14
+1314;8;Dzielnica VIII Dębniki;K;2019;20
+1315;8;Dzielnica VIII Dębniki;M;2020;18
+1316;8;Dzielnica VIII Dębniki;K;2020;12
+1317;8;Dzielnica VIII Dębniki;M;2021;23
+1318;8;Dzielnica VIII Dębniki;K;2021;16
+1319;8;Dzielnica VIII Dębniki;K;2022;13
+1320;8;Dzielnica VIII Dębniki;M;2022;19
+1321;8;Dzielnica VIII Dębniki;M;2023;12
+1322;8;Dzielnica VIII Dębniki;K;2023;12
+1323;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1943;1
+1324;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1944;1
+1325;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1945;1
+1326;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1948;1
+1327;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1948;1
+1328;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1949;1
+1329;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1951;1
+1330;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1952;1
+1331;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1953;6
+1332;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1953;1
+1333;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1954;2
+1334;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1954;2
+1335;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1955;1
+1336;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1956;2
+1337;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1956;2
+1338;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1957;2
+1339;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1957;3
+1340;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1959;2
+1341;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1959;2
+1342;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1960;1
+1343;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1962;2
+1344;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1962;1
+1345;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1963;1
+1346;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1963;4
+1347;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1964;3
+1348;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1965;3
+1349;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1965;2
+1350;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1966;1
+1351;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1966;1
+1352;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1967;1
+1353;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1967;2
+1354;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1968;1
+1355;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1968;2
+1356;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1969;1
+1357;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1969;2
+1358;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1970;3
+1359;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1971;2
+1360;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1971;4
+1361;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1972;3
+1362;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1972;1
+1363;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1973;2
+1364;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1973;1
+1365;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1974;1
+1366;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1974;1
+1367;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1975;3
+1368;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1975;3
+1369;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1976;1
+1370;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1976;3
+1371;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1977;1
+1372;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1977;3
+1373;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1978;7
+1374;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1978;3
+1375;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1979;5
+1376;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1979;3
+1377;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1980;3
+1378;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1980;7
+1379;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1981;7
+1380;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1981;3
+1381;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1982;3
+1382;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1982;5
+1383;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1983;6
+1384;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1983;7
+1385;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1984;6
+1386;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1984;9
+1387;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1985;4
+1388;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1985;4
+1389;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1986;13
+1390;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1986;11
+1391;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1987;7
+1392;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1987;7
+1393;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1988;7
+1394;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1988;5
+1395;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1989;9
+1396;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1989;13
+1397;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1990;8
+1398;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1990;13
+1399;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1991;7
+1400;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1991;7
+1401;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1992;7
+1402;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1992;7
+1403;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1993;5
+1404;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1993;6
+1405;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1994;4
+1406;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1994;5
+1407;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1995;7
+1408;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1995;11
+1409;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1996;4
+1410;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1996;3
+1411;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1997;2
+1412;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1997;4
+1413;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1998;5
+1414;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1998;8
+1415;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;1999;3
+1416;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;1999;7
+1417;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2000;2
+1418;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2000;5
+1419;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2001;2
+1420;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2001;4
+1421;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2002;4
+1422;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2002;1
+1423;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2003;4
+1424;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2003;3
+1425;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2004;3
+1426;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2004;1
+1427;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2005;1
+1428;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2005;3
+1429;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2006;26
+1430;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2006;1
+1431;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2007;2
+1432;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2007;14
+1433;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2008;1
+1434;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2008;13
+1435;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2009;5
+1436;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2009;4
+1437;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2010;1
+1438;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2010;4
+1439;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2011;3
+1440;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2011;5
+1441;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2012;4
+1442;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2012;1
+1443;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2013;2
+1444;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2013;3
+1445;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2014;4
+1446;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2014;3
+1447;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2015;2
+1448;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2015;4
+1449;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2016;3
+1450;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2016;1
+1451;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2017;2
+1452;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2017;5
+1453;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2018;4
+1454;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2018;2
+1455;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2019;2
+1456;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2020;3
+1457;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2020;4
+1458;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2021;5
+1459;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2021;4
+1460;9;Dzielnica IX Łagiewniki-Borek Fałęcki;M;2022;3
+1461;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2022;1
+1462;9;Dzielnica IX Łagiewniki-Borek Fałęcki;K;2023;2
+1463;10;Dzielnica X Swoszowice;K;1924;1
+1464;10;Dzielnica X Swoszowice;K;1934;1
+1465;10;Dzielnica X Swoszowice;K;1935;2
+1466;10;Dzielnica X Swoszowice;K;1937;1
+1467;10;Dzielnica X Swoszowice;M;1940;1
+1468;10;Dzielnica X Swoszowice;M;1941;2
+1469;10;Dzielnica X Swoszowice;K;1943;1
+1470;10;Dzielnica X Swoszowice;K;1945;1
+1471;10;Dzielnica X Swoszowice;K;1946;1
+1472;10;Dzielnica X Swoszowice;K;1947;1
+1473;10;Dzielnica X Swoszowice;K;1948;1
+1474;10;Dzielnica X Swoszowice;K;1949;1
+1475;10;Dzielnica X Swoszowice;M;1949;1
+1476;10;Dzielnica X Swoszowice;M;1950;4
+1477;10;Dzielnica X Swoszowice;M;1951;3
+1478;10;Dzielnica X Swoszowice;K;1951;3
+1479;10;Dzielnica X Swoszowice;K;1952;2
+1480;10;Dzielnica X Swoszowice;M;1953;2
+1481;10;Dzielnica X Swoszowice;K;1953;2
+1482;10;Dzielnica X Swoszowice;M;1954;2
+1483;10;Dzielnica X Swoszowice;K;1954;2
+1484;10;Dzielnica X Swoszowice;K;1955;5
+1485;10;Dzielnica X Swoszowice;M;1955;1
+1486;10;Dzielnica X Swoszowice;K;1956;1
+1487;10;Dzielnica X Swoszowice;M;1956;3
+1488;10;Dzielnica X Swoszowice;K;1957;3
+1489;10;Dzielnica X Swoszowice;K;1958;1
+1490;10;Dzielnica X Swoszowice;M;1958;2
+1491;10;Dzielnica X Swoszowice;M;1959;1
+1492;10;Dzielnica X Swoszowice;K;1959;2
+1493;10;Dzielnica X Swoszowice;K;1960;5
+1494;10;Dzielnica X Swoszowice;K;1961;5
+1495;10;Dzielnica X Swoszowice;M;1961;2
+1496;10;Dzielnica X Swoszowice;M;1962;1
+1497;10;Dzielnica X Swoszowice;K;1962;1
+1498;10;Dzielnica X Swoszowice;M;1963;1
+1499;10;Dzielnica X Swoszowice;K;1963;2
+1500;10;Dzielnica X Swoszowice;M;1964;2
+1501;10;Dzielnica X Swoszowice;K;1965;1
+1502;10;Dzielnica X Swoszowice;M;1966;2
+1503;10;Dzielnica X Swoszowice;M;1967;4
+1504;10;Dzielnica X Swoszowice;M;1968;6
+1505;10;Dzielnica X Swoszowice;K;1968;4
+1506;10;Dzielnica X Swoszowice;M;1969;3
+1507;10;Dzielnica X Swoszowice;K;1969;4
+1508;10;Dzielnica X Swoszowice;M;1970;3
+1509;10;Dzielnica X Swoszowice;K;1970;1
+1510;10;Dzielnica X Swoszowice;M;1971;3
+1511;10;Dzielnica X Swoszowice;K;1971;3
+1512;10;Dzielnica X Swoszowice;M;1972;5
+1513;10;Dzielnica X Swoszowice;K;1972;4
+1514;10;Dzielnica X Swoszowice;K;1973;7
+1515;10;Dzielnica X Swoszowice;M;1973;4
+1516;10;Dzielnica X Swoszowice;K;1974;7
+1517;10;Dzielnica X Swoszowice;M;1974;8
+1518;10;Dzielnica X Swoszowice;K;1975;8
+1519;10;Dzielnica X Swoszowice;M;1975;7
+1520;10;Dzielnica X Swoszowice;K;1976;7
+1521;10;Dzielnica X Swoszowice;M;1976;8
+1522;10;Dzielnica X Swoszowice;M;1977;13
+1523;10;Dzielnica X Swoszowice;K;1977;10
+1524;10;Dzielnica X Swoszowice;M;1978;5
+1525;10;Dzielnica X Swoszowice;K;1978;6
+1526;10;Dzielnica X Swoszowice;M;1979;14
+1527;10;Dzielnica X Swoszowice;K;1979;12
+1528;10;Dzielnica X Swoszowice;K;1980;11
+1529;10;Dzielnica X Swoszowice;M;1980;10
+1530;10;Dzielnica X Swoszowice;M;1981;10
+1531;10;Dzielnica X Swoszowice;K;1981;9
+1532;10;Dzielnica X Swoszowice;M;1982;8
+1533;10;Dzielnica X Swoszowice;K;1982;9
+1534;10;Dzielnica X Swoszowice;M;1983;18
+1535;10;Dzielnica X Swoszowice;K;1983;13
+1536;10;Dzielnica X Swoszowice;M;1984;13
+1537;10;Dzielnica X Swoszowice;K;1984;14
+1538;10;Dzielnica X Swoszowice;K;1985;15
+1539;10;Dzielnica X Swoszowice;M;1985;14
+1540;10;Dzielnica X Swoszowice;K;1986;15
+1541;10;Dzielnica X Swoszowice;M;1986;10
+1542;10;Dzielnica X Swoszowice;K;1987;10
+1543;10;Dzielnica X Swoszowice;M;1987;9
+1544;10;Dzielnica X Swoszowice;K;1988;9
+1545;10;Dzielnica X Swoszowice;M;1988;11
+1546;10;Dzielnica X Swoszowice;K;1989;14
+1547;10;Dzielnica X Swoszowice;M;1989;9
+1548;10;Dzielnica X Swoszowice;M;1990;8
+1549;10;Dzielnica X Swoszowice;K;1990;4
+1550;10;Dzielnica X Swoszowice;K;1991;3
+1551;10;Dzielnica X Swoszowice;M;1991;7
+1552;10;Dzielnica X Swoszowice;K;1992;10
+1553;10;Dzielnica X Swoszowice;M;1992;11
+1554;10;Dzielnica X Swoszowice;K;1993;5
+1555;10;Dzielnica X Swoszowice;M;1993;7
+1556;10;Dzielnica X Swoszowice;M;1994;1
+1557;10;Dzielnica X Swoszowice;K;1994;8
+1558;10;Dzielnica X Swoszowice;M;1995;7
+1559;10;Dzielnica X Swoszowice;K;1995;8
+1560;10;Dzielnica X Swoszowice;K;1996;12
+1561;10;Dzielnica X Swoszowice;M;1996;8
+1562;10;Dzielnica X Swoszowice;K;1997;5
+1563;10;Dzielnica X Swoszowice;M;1997;6
+1564;10;Dzielnica X Swoszowice;K;1998;8
+1565;10;Dzielnica X Swoszowice;M;1998;3
+1566;10;Dzielnica X Swoszowice;M;1999;6
+1567;10;Dzielnica X Swoszowice;K;1999;7
+1568;10;Dzielnica X Swoszowice;M;2000;4
+1569;10;Dzielnica X Swoszowice;K;2000;5
+1570;10;Dzielnica X Swoszowice;K;2001;4
+1571;10;Dzielnica X Swoszowice;M;2001;2
+1572;10;Dzielnica X Swoszowice;M;2002;6
+1573;10;Dzielnica X Swoszowice;K;2002;2
+1574;10;Dzielnica X Swoszowice;K;2003;3
+1575;10;Dzielnica X Swoszowice;M;2003;6
+1576;10;Dzielnica X Swoszowice;M;2004;10
+1577;10;Dzielnica X Swoszowice;K;2004;1
+1578;10;Dzielnica X Swoszowice;M;2005;8
+1579;10;Dzielnica X Swoszowice;K;2005;4
+1580;10;Dzielnica X Swoszowice;K;2006;9
+1581;10;Dzielnica X Swoszowice;M;2006;9
+1582;10;Dzielnica X Swoszowice;M;2007;4
+1583;10;Dzielnica X Swoszowice;K;2007;12
+1584;10;Dzielnica X Swoszowice;K;2008;11
+1585;10;Dzielnica X Swoszowice;M;2008;7
+1586;10;Dzielnica X Swoszowice;M;2009;2
+1587;10;Dzielnica X Swoszowice;K;2009;8
+1588;10;Dzielnica X Swoszowice;K;2010;9
+1589;10;Dzielnica X Swoszowice;M;2010;9
+1590;10;Dzielnica X Swoszowice;M;2011;7
+1591;10;Dzielnica X Swoszowice;K;2011;7
+1592;10;Dzielnica X Swoszowice;M;2012;6
+1593;10;Dzielnica X Swoszowice;K;2012;8
+1594;10;Dzielnica X Swoszowice;K;2013;5
+1595;10;Dzielnica X Swoszowice;M;2013;6
+1596;10;Dzielnica X Swoszowice;K;2014;8
+1597;10;Dzielnica X Swoszowice;M;2014;8
+1598;10;Dzielnica X Swoszowice;K;2015;5
+1599;10;Dzielnica X Swoszowice;M;2015;4
+1600;10;Dzielnica X Swoszowice;M;2016;6
+1601;10;Dzielnica X Swoszowice;K;2016;7
+1602;10;Dzielnica X Swoszowice;M;2017;9
+1603;10;Dzielnica X Swoszowice;K;2017;4
+1604;10;Dzielnica X Swoszowice;K;2018;3
+1605;10;Dzielnica X Swoszowice;M;2018;12
+1606;10;Dzielnica X Swoszowice;M;2019;9
+1607;10;Dzielnica X Swoszowice;K;2019;7
+1608;10;Dzielnica X Swoszowice;K;2020;5
+1609;10;Dzielnica X Swoszowice;M;2020;7
+1610;10;Dzielnica X Swoszowice;K;2021;3
+1611;10;Dzielnica X Swoszowice;M;2021;6
+1612;10;Dzielnica X Swoszowice;M;2022;5
+1613;10;Dzielnica X Swoszowice;K;2022;5
+1614;10;Dzielnica X Swoszowice;K;2023;5
+1615;10;Dzielnica X Swoszowice;M;2023;4
+1616;11;Dzielnica XI Podgórze Duchackie;K;1936;1
+1617;11;Dzielnica XI Podgórze Duchackie;M;1936;1
+1618;11;Dzielnica XI Podgórze Duchackie;M;1937;1
+1619;11;Dzielnica XI Podgórze Duchackie;K;1938;1
+1620;11;Dzielnica XI Podgórze Duchackie;K;1939;1
+1621;11;Dzielnica XI Podgórze Duchackie;K;1940;1
+1622;11;Dzielnica XI Podgórze Duchackie;M;1943;1
+1623;11;Dzielnica XI Podgórze Duchackie;K;1943;2
+1624;11;Dzielnica XI Podgórze Duchackie;K;1944;2
+1625;11;Dzielnica XI Podgórze Duchackie;K;1946;1
+1626;11;Dzielnica XI Podgórze Duchackie;M;1947;4
+1627;11;Dzielnica XI Podgórze Duchackie;M;1948;4
+1628;11;Dzielnica XI Podgórze Duchackie;K;1948;3
+1629;11;Dzielnica XI Podgórze Duchackie;M;1949;1
+1630;11;Dzielnica XI Podgórze Duchackie;M;1950;1
+1631;11;Dzielnica XI Podgórze Duchackie;K;1950;4
+1632;11;Dzielnica XI Podgórze Duchackie;M;1951;3
+1633;11;Dzielnica XI Podgórze Duchackie;K;1951;2
+1634;11;Dzielnica XI Podgórze Duchackie;K;1952;4
+1635;11;Dzielnica XI Podgórze Duchackie;M;1952;1
+1636;11;Dzielnica XI Podgórze Duchackie;K;1953;2
+1637;11;Dzielnica XI Podgórze Duchackie;M;1954;2
+1638;11;Dzielnica XI Podgórze Duchackie;K;1954;1
+1639;11;Dzielnica XI Podgórze Duchackie;K;1955;5
+1640;11;Dzielnica XI Podgórze Duchackie;M;1955;2
+1641;11;Dzielnica XI Podgórze Duchackie;M;1956;3
+1642;11;Dzielnica XI Podgórze Duchackie;K;1956;4
+1643;11;Dzielnica XI Podgórze Duchackie;K;1957;4
+1644;11;Dzielnica XI Podgórze Duchackie;M;1957;1
+1645;11;Dzielnica XI Podgórze Duchackie;K;1959;3
+1646;11;Dzielnica XI Podgórze Duchackie;M;1959;5
+1647;11;Dzielnica XI Podgórze Duchackie;K;1960;3
+1648;11;Dzielnica XI Podgórze Duchackie;M;1960;2
+1649;11;Dzielnica XI Podgórze Duchackie;M;1961;2
+1650;11;Dzielnica XI Podgórze Duchackie;M;1962;1
+1651;11;Dzielnica XI Podgórze Duchackie;K;1962;4
+1652;11;Dzielnica XI Podgórze Duchackie;M;1963;4
+1653;11;Dzielnica XI Podgórze Duchackie;K;1963;3
+1654;11;Dzielnica XI Podgórze Duchackie;M;1964;3
+1655;11;Dzielnica XI Podgórze Duchackie;K;1964;1
+1656;11;Dzielnica XI Podgórze Duchackie;M;1965;3
+1657;11;Dzielnica XI Podgórze Duchackie;K;1965;8
+1658;11;Dzielnica XI Podgórze Duchackie;K;1966;2
+1659;11;Dzielnica XI Podgórze Duchackie;M;1966;2
+1660;11;Dzielnica XI Podgórze Duchackie;K;1967;5
+1661;11;Dzielnica XI Podgórze Duchackie;M;1967;5
+1662;11;Dzielnica XI Podgórze Duchackie;K;1968;2
+1663;11;Dzielnica XI Podgórze Duchackie;M;1968;3
+1664;11;Dzielnica XI Podgórze Duchackie;M;1969;2
+1665;11;Dzielnica XI Podgórze Duchackie;K;1969;2
+1666;11;Dzielnica XI Podgórze Duchackie;K;1970;3
+1667;11;Dzielnica XI Podgórze Duchackie;M;1970;4
+1668;11;Dzielnica XI Podgórze Duchackie;M;1971;5
+1669;11;Dzielnica XI Podgórze Duchackie;K;1971;2
+1670;11;Dzielnica XI Podgórze Duchackie;K;1972;5
+1671;11;Dzielnica XI Podgórze Duchackie;M;1972;6
+1672;11;Dzielnica XI Podgórze Duchackie;M;1973;6
+1673;11;Dzielnica XI Podgórze Duchackie;K;1973;4
+1674;11;Dzielnica XI Podgórze Duchackie;K;1974;5
+1675;11;Dzielnica XI Podgórze Duchackie;M;1974;6
+1676;11;Dzielnica XI Podgórze Duchackie;M;1975;10
+1677;11;Dzielnica XI Podgórze Duchackie;K;1975;8
+1678;11;Dzielnica XI Podgórze Duchackie;K;1976;4
+1679;11;Dzielnica XI Podgórze Duchackie;M;1976;10
+1680;11;Dzielnica XI Podgórze Duchackie;K;1977;11
+1681;11;Dzielnica XI Podgórze Duchackie;M;1977;11
+1682;11;Dzielnica XI Podgórze Duchackie;M;1978;5
+1683;11;Dzielnica XI Podgórze Duchackie;K;1978;8
+1684;11;Dzielnica XI Podgórze Duchackie;M;1979;8
+1685;11;Dzielnica XI Podgórze Duchackie;K;1979;10
+1686;11;Dzielnica XI Podgórze Duchackie;K;1980;12
+1687;11;Dzielnica XI Podgórze Duchackie;M;1980;13
+1688;11;Dzielnica XI Podgórze Duchackie;M;1981;17
+1689;11;Dzielnica XI Podgórze Duchackie;K;1981;11
+1690;11;Dzielnica XI Podgórze Duchackie;K;1982;9
+1691;11;Dzielnica XI Podgórze Duchackie;M;1982;11
+1692;11;Dzielnica XI Podgórze Duchackie;K;1983;25
+1693;11;Dzielnica XI Podgórze Duchackie;M;1983;16
+1694;11;Dzielnica XI Podgórze Duchackie;K;1984;18
+1695;11;Dzielnica XI Podgórze Duchackie;M;1984;14
+1696;11;Dzielnica XI Podgórze Duchackie;M;1985;13
+1697;11;Dzielnica XI Podgórze Duchackie;K;1985;12
+1698;11;Dzielnica XI Podgórze Duchackie;M;1986;20
+1699;11;Dzielnica XI Podgórze Duchackie;K;1986;14
+1700;11;Dzielnica XI Podgórze Duchackie;M;1987;18
+1701;11;Dzielnica XI Podgórze Duchackie;K;1987;18
+1702;11;Dzielnica XI Podgórze Duchackie;M;1988;19
+1703;11;Dzielnica XI Podgórze Duchackie;K;1988;13
+1704;11;Dzielnica XI Podgórze Duchackie;K;1989;15
+1705;11;Dzielnica XI Podgórze Duchackie;M;1989;19
+1706;11;Dzielnica XI Podgórze Duchackie;K;1990;26
+1707;11;Dzielnica XI Podgórze Duchackie;M;1990;21
+1708;11;Dzielnica XI Podgórze Duchackie;K;1991;14
+1709;11;Dzielnica XI Podgórze Duchackie;M;1991;14
+1710;11;Dzielnica XI Podgórze Duchackie;K;1992;18
+1711;11;Dzielnica XI Podgórze Duchackie;M;1992;14
+1712;11;Dzielnica XI Podgórze Duchackie;M;1993;21
+1713;11;Dzielnica XI Podgórze Duchackie;K;1993;18
+1714;11;Dzielnica XI Podgórze Duchackie;K;1994;22
+1715;11;Dzielnica XI Podgórze Duchackie;M;1994;25
+1716;11;Dzielnica XI Podgórze Duchackie;K;1995;14
+1717;11;Dzielnica XI Podgórze Duchackie;M;1995;12
+1718;11;Dzielnica XI Podgórze Duchackie;M;1996;11
+1719;11;Dzielnica XI Podgórze Duchackie;K;1996;16
+1720;11;Dzielnica XI Podgórze Duchackie;K;1997;16
+1721;11;Dzielnica XI Podgórze Duchackie;M;1997;20
+1722;11;Dzielnica XI Podgórze Duchackie;M;1998;9
+1723;11;Dzielnica XI Podgórze Duchackie;K;1998;11
+1724;11;Dzielnica XI Podgórze Duchackie;M;1999;7
+1725;11;Dzielnica XI Podgórze Duchackie;K;1999;8
+1726;11;Dzielnica XI Podgórze Duchackie;K;2000;9
+1727;11;Dzielnica XI Podgórze Duchackie;M;2000;9
+1728;11;Dzielnica XI Podgórze Duchackie;K;2001;6
+1729;11;Dzielnica XI Podgórze Duchackie;M;2001;10
+1730;11;Dzielnica XI Podgórze Duchackie;K;2002;6
+1731;11;Dzielnica XI Podgórze Duchackie;M;2002;6
+1732;11;Dzielnica XI Podgórze Duchackie;K;2003;2
+1733;11;Dzielnica XI Podgórze Duchackie;M;2003;2
+1734;11;Dzielnica XI Podgórze Duchackie;K;2004;6
+1735;11;Dzielnica XI Podgórze Duchackie;M;2004;5
+1736;11;Dzielnica XI Podgórze Duchackie;K;2005;14
+1737;11;Dzielnica XI Podgórze Duchackie;M;2005;11
+1738;11;Dzielnica XI Podgórze Duchackie;M;2006;8
+1739;11;Dzielnica XI Podgórze Duchackie;K;2006;15
+1740;11;Dzielnica XI Podgórze Duchackie;M;2007;15
+1741;11;Dzielnica XI Podgórze Duchackie;K;2007;13
+1742;11;Dzielnica XI Podgórze Duchackie;K;2008;9
+1743;11;Dzielnica XI Podgórze Duchackie;M;2008;6
+1744;11;Dzielnica XI Podgórze Duchackie;K;2009;7
+1745;11;Dzielnica XI Podgórze Duchackie;M;2009;7
+1746;11;Dzielnica XI Podgórze Duchackie;M;2010;5
+1747;11;Dzielnica XI Podgórze Duchackie;K;2010;6
+1748;11;Dzielnica XI Podgórze Duchackie;M;2011;5
+1749;11;Dzielnica XI Podgórze Duchackie;K;2011;4
+1750;11;Dzielnica XI Podgórze Duchackie;M;2012;4
+1751;11;Dzielnica XI Podgórze Duchackie;K;2012;7
+1752;11;Dzielnica XI Podgórze Duchackie;K;2013;9
+1753;11;Dzielnica XI Podgórze Duchackie;M;2013;9
+1754;11;Dzielnica XI Podgórze Duchackie;K;2014;11
+1755;11;Dzielnica XI Podgórze Duchackie;M;2014;5
+1756;11;Dzielnica XI Podgórze Duchackie;K;2015;9
+1757;11;Dzielnica XI Podgórze Duchackie;M;2015;4
+1758;11;Dzielnica XI Podgórze Duchackie;K;2016;7
+1759;11;Dzielnica XI Podgórze Duchackie;M;2016;11
+1760;11;Dzielnica XI Podgórze Duchackie;M;2017;9
+1761;11;Dzielnica XI Podgórze Duchackie;K;2017;9
+1762;11;Dzielnica XI Podgórze Duchackie;M;2018;4
+1763;11;Dzielnica XI Podgórze Duchackie;K;2018;7
+1764;11;Dzielnica XI Podgórze Duchackie;M;2019;8
+1765;11;Dzielnica XI Podgórze Duchackie;K;2019;3
+1766;11;Dzielnica XI Podgórze Duchackie;K;2020;5
+1767;11;Dzielnica XI Podgórze Duchackie;M;2020;9
+1768;11;Dzielnica XI Podgórze Duchackie;M;2021;4
+1769;11;Dzielnica XI Podgórze Duchackie;K;2021;4
+1770;11;Dzielnica XI Podgórze Duchackie;K;2022;8
+1771;11;Dzielnica XI Podgórze Duchackie;M;2022;6
+1772;11;Dzielnica XI Podgórze Duchackie;K;2023;8
+1773;11;Dzielnica XI Podgórze Duchackie;M;2023;3
+1774;12;Dzielnica XII Bieżanów-Prokocim;M;1929;1
+1775;12;Dzielnica XII Bieżanów-Prokocim;M;1932;1
+1776;12;Dzielnica XII Bieżanów-Prokocim;K;1934;1
+1777;12;Dzielnica XII Bieżanów-Prokocim;K;1935;2
+1778;12;Dzielnica XII Bieżanów-Prokocim;M;1935;2
+1779;12;Dzielnica XII Bieżanów-Prokocim;K;1936;1
+1780;12;Dzielnica XII Bieżanów-Prokocim;M;1937;1
+1781;12;Dzielnica XII Bieżanów-Prokocim;K;1938;2
+1782;12;Dzielnica XII Bieżanów-Prokocim;M;1938;1
+1783;12;Dzielnica XII Bieżanów-Prokocim;K;1939;1
+1784;12;Dzielnica XII Bieżanów-Prokocim;K;1940;1
+1785;12;Dzielnica XII Bieżanów-Prokocim;M;1940;1
+1786;12;Dzielnica XII Bieżanów-Prokocim;K;1942;1
+1787;12;Dzielnica XII Bieżanów-Prokocim;M;1943;1
+1788;12;Dzielnica XII Bieżanów-Prokocim;K;1944;2
+1789;12;Dzielnica XII Bieżanów-Prokocim;M;1945;3
+1790;12;Dzielnica XII Bieżanów-Prokocim;K;1947;3
+1791;12;Dzielnica XII Bieżanów-Prokocim;M;1948;1
+1792;12;Dzielnica XII Bieżanów-Prokocim;K;1949;2
+1793;12;Dzielnica XII Bieżanów-Prokocim;M;1949;2
+1794;12;Dzielnica XII Bieżanów-Prokocim;K;1950;3
+1795;12;Dzielnica XII Bieżanów-Prokocim;M;1950;3
+1796;12;Dzielnica XII Bieżanów-Prokocim;M;1951;1
+1797;12;Dzielnica XII Bieżanów-Prokocim;K;1952;1
+1798;12;Dzielnica XII Bieżanów-Prokocim;M;1952;1
+1799;12;Dzielnica XII Bieżanów-Prokocim;M;1953;6
+1800;12;Dzielnica XII Bieżanów-Prokocim;K;1953;1
+1801;12;Dzielnica XII Bieżanów-Prokocim;K;1954;2
+1802;12;Dzielnica XII Bieżanów-Prokocim;M;1954;2
+1803;12;Dzielnica XII Bieżanów-Prokocim;K;1955;1
+1804;12;Dzielnica XII Bieżanów-Prokocim;K;1956;2
+1805;12;Dzielnica XII Bieżanów-Prokocim;M;1956;3
+1806;12;Dzielnica XII Bieżanów-Prokocim;M;1957;1
+1807;12;Dzielnica XII Bieżanów-Prokocim;K;1957;3
+1808;12;Dzielnica XII Bieżanów-Prokocim;M;1958;4
+1809;12;Dzielnica XII Bieżanów-Prokocim;K;1958;4
+1810;12;Dzielnica XII Bieżanów-Prokocim;M;1959;4
+1811;12;Dzielnica XII Bieżanów-Prokocim;K;1959;5
+1812;12;Dzielnica XII Bieżanów-Prokocim;K;1960;3
+1813;12;Dzielnica XII Bieżanów-Prokocim;M;1960;7
+1814;12;Dzielnica XII Bieżanów-Prokocim;K;1961;2
+1815;12;Dzielnica XII Bieżanów-Prokocim;M;1961;8
+1816;12;Dzielnica XII Bieżanów-Prokocim;M;1962;6
+1817;12;Dzielnica XII Bieżanów-Prokocim;K;1962;2
+1818;12;Dzielnica XII Bieżanów-Prokocim;M;1963;2
+1819;12;Dzielnica XII Bieżanów-Prokocim;K;1963;2
+1820;12;Dzielnica XII Bieżanów-Prokocim;K;1964;5
+1821;12;Dzielnica XII Bieżanów-Prokocim;M;1964;5
+1822;12;Dzielnica XII Bieżanów-Prokocim;K;1965;4
+1823;12;Dzielnica XII Bieżanów-Prokocim;M;1965;7
+1824;12;Dzielnica XII Bieżanów-Prokocim;K;1966;5
+1825;12;Dzielnica XII Bieżanów-Prokocim;M;1966;7
+1826;12;Dzielnica XII Bieżanów-Prokocim;M;1967;5
+1827;12;Dzielnica XII Bieżanów-Prokocim;K;1967;6
+1828;12;Dzielnica XII Bieżanów-Prokocim;K;1968;3
+1829;12;Dzielnica XII Bieżanów-Prokocim;M;1968;7
+1830;12;Dzielnica XII Bieżanów-Prokocim;M;1969;9
+1831;12;Dzielnica XII Bieżanów-Prokocim;K;1969;1
+1832;12;Dzielnica XII Bieżanów-Prokocim;M;1970;5
+1833;12;Dzielnica XII Bieżanów-Prokocim;K;1970;7
+1834;12;Dzielnica XII Bieżanów-Prokocim;M;1971;6
+1835;12;Dzielnica XII Bieżanów-Prokocim;K;1971;6
+1836;12;Dzielnica XII Bieżanów-Prokocim;M;1972;3
+1837;12;Dzielnica XII Bieżanów-Prokocim;K;1972;9
+1838;12;Dzielnica XII Bieżanów-Prokocim;M;1973;9
+1839;12;Dzielnica XII Bieżanów-Prokocim;K;1973;10
+1840;12;Dzielnica XII Bieżanów-Prokocim;M;1974;4
+1841;12;Dzielnica XII Bieżanów-Prokocim;K;1974;6
+1842;12;Dzielnica XII Bieżanów-Prokocim;K;1975;9
+1843;12;Dzielnica XII Bieżanów-Prokocim;M;1975;9
+1844;12;Dzielnica XII Bieżanów-Prokocim;M;1976;8
+1845;12;Dzielnica XII Bieżanów-Prokocim;K;1976;9
+1846;12;Dzielnica XII Bieżanów-Prokocim;M;1977;11
+1847;12;Dzielnica XII Bieżanów-Prokocim;K;1977;11
+1848;12;Dzielnica XII Bieżanów-Prokocim;M;1978;9
+1849;12;Dzielnica XII Bieżanów-Prokocim;K;1978;17
+1850;12;Dzielnica XII Bieżanów-Prokocim;K;1979;8
+1851;12;Dzielnica XII Bieżanów-Prokocim;M;1979;12
+1852;12;Dzielnica XII Bieżanów-Prokocim;K;1980;13
+1853;12;Dzielnica XII Bieżanów-Prokocim;M;1980;13
+1854;12;Dzielnica XII Bieżanów-Prokocim;M;1981;15
+1855;12;Dzielnica XII Bieżanów-Prokocim;K;1981;13
+1856;12;Dzielnica XII Bieżanów-Prokocim;K;1982;14
+1857;12;Dzielnica XII Bieżanów-Prokocim;M;1982;7
+1858;12;Dzielnica XII Bieżanów-Prokocim;K;1983;22
+1859;12;Dzielnica XII Bieżanów-Prokocim;M;1983;17
+1860;12;Dzielnica XII Bieżanów-Prokocim;M;1984;17
+1861;12;Dzielnica XII Bieżanów-Prokocim;K;1984;13
+1862;12;Dzielnica XII Bieżanów-Prokocim;M;1985;15
+1863;12;Dzielnica XII Bieżanów-Prokocim;K;1985;16
+1864;12;Dzielnica XII Bieżanów-Prokocim;M;1986;10
+1865;12;Dzielnica XII Bieżanów-Prokocim;K;1986;20
+1866;12;Dzielnica XII Bieżanów-Prokocim;M;1987;14
+1867;12;Dzielnica XII Bieżanów-Prokocim;K;1987;10
+1868;12;Dzielnica XII Bieżanów-Prokocim;K;1988;12
+1869;12;Dzielnica XII Bieżanów-Prokocim;M;1988;18
+1870;12;Dzielnica XII Bieżanów-Prokocim;K;1989;13
+1871;12;Dzielnica XII Bieżanów-Prokocim;M;1989;24
+1872;12;Dzielnica XII Bieżanów-Prokocim;M;1990;18
+1873;12;Dzielnica XII Bieżanów-Prokocim;K;1990;12
+1874;12;Dzielnica XII Bieżanów-Prokocim;K;1991;20
+1875;12;Dzielnica XII Bieżanów-Prokocim;M;1991;19
+1876;12;Dzielnica XII Bieżanów-Prokocim;M;1992;18
+1877;12;Dzielnica XII Bieżanów-Prokocim;K;1992;19
+1878;12;Dzielnica XII Bieżanów-Prokocim;M;1993;25
+1879;12;Dzielnica XII Bieżanów-Prokocim;K;1993;22
+1880;12;Dzielnica XII Bieżanów-Prokocim;M;1994;26
+1881;12;Dzielnica XII Bieżanów-Prokocim;K;1994;21
+1882;12;Dzielnica XII Bieżanów-Prokocim;K;1995;22
+1883;12;Dzielnica XII Bieżanów-Prokocim;M;1995;18
+1884;12;Dzielnica XII Bieżanów-Prokocim;K;1996;12
+1885;12;Dzielnica XII Bieżanów-Prokocim;M;1996;15
+1886;12;Dzielnica XII Bieżanów-Prokocim;K;1997;28
+1887;12;Dzielnica XII Bieżanów-Prokocim;M;1997;20
+1888;12;Dzielnica XII Bieżanów-Prokocim;K;1998;32
+1889;12;Dzielnica XII Bieżanów-Prokocim;M;1998;18
+1890;12;Dzielnica XII Bieżanów-Prokocim;K;1999;36
+1891;12;Dzielnica XII Bieżanów-Prokocim;M;1999;21
+1892;12;Dzielnica XII Bieżanów-Prokocim;M;2000;32
+1893;12;Dzielnica XII Bieżanów-Prokocim;K;2000;53
+1894;12;Dzielnica XII Bieżanów-Prokocim;K;2001;47
+1895;12;Dzielnica XII Bieżanów-Prokocim;M;2001;22
+1896;12;Dzielnica XII Bieżanów-Prokocim;M;2002;26
+1897;12;Dzielnica XII Bieżanów-Prokocim;K;2002;66
+1898;12;Dzielnica XII Bieżanów-Prokocim;K;2003;83
+1899;12;Dzielnica XII Bieżanów-Prokocim;M;2003;22
+1900;12;Dzielnica XII Bieżanów-Prokocim;M;2004;20
+1901;12;Dzielnica XII Bieżanów-Prokocim;K;2004;83
+1902;12;Dzielnica XII Bieżanów-Prokocim;M;2005;10
+1903;12;Dzielnica XII Bieżanów-Prokocim;K;2005;35
+1904;12;Dzielnica XII Bieżanów-Prokocim;K;2006;9
+1905;12;Dzielnica XII Bieżanów-Prokocim;M;2006;12
+1906;12;Dzielnica XII Bieżanów-Prokocim;M;2007;10
+1907;12;Dzielnica XII Bieżanów-Prokocim;K;2007;8
+1908;12;Dzielnica XII Bieżanów-Prokocim;M;2008;5
+1909;12;Dzielnica XII Bieżanów-Prokocim;K;2008;7
+1910;12;Dzielnica XII Bieżanów-Prokocim;K;2009;4
+1911;12;Dzielnica XII Bieżanów-Prokocim;M;2009;3
+1912;12;Dzielnica XII Bieżanów-Prokocim;M;2010;6
+1913;12;Dzielnica XII Bieżanów-Prokocim;K;2010;5
+1914;12;Dzielnica XII Bieżanów-Prokocim;K;2011;3
+1915;12;Dzielnica XII Bieżanów-Prokocim;M;2011;4
+1916;12;Dzielnica XII Bieżanów-Prokocim;M;2012;9
+1917;12;Dzielnica XII Bieżanów-Prokocim;K;2012;11
+1918;12;Dzielnica XII Bieżanów-Prokocim;K;2013;3
+1919;12;Dzielnica XII Bieżanów-Prokocim;M;2013;3
+1920;12;Dzielnica XII Bieżanów-Prokocim;M;2014;5
+1921;12;Dzielnica XII Bieżanów-Prokocim;K;2014;8
+1922;12;Dzielnica XII Bieżanów-Prokocim;M;2015;7
+1923;12;Dzielnica XII Bieżanów-Prokocim;K;2015;6
+1924;12;Dzielnica XII Bieżanów-Prokocim;K;2016;11
+1925;12;Dzielnica XII Bieżanów-Prokocim;M;2016;8
+1926;12;Dzielnica XII Bieżanów-Prokocim;K;2017;7
+1927;12;Dzielnica XII Bieżanów-Prokocim;M;2017;4
+1928;12;Dzielnica XII Bieżanów-Prokocim;M;2018;4
+1929;12;Dzielnica XII Bieżanów-Prokocim;K;2018;10
+1930;12;Dzielnica XII Bieżanów-Prokocim;M;2019;6
+1931;12;Dzielnica XII Bieżanów-Prokocim;K;2019;6
+1932;12;Dzielnica XII Bieżanów-Prokocim;M;2020;10
+1933;12;Dzielnica XII Bieżanów-Prokocim;K;2020;10
+1934;12;Dzielnica XII Bieżanów-Prokocim;M;2021;6
+1935;12;Dzielnica XII Bieżanów-Prokocim;K;2021;9
+1936;12;Dzielnica XII Bieżanów-Prokocim;M;2022;9
+1937;12;Dzielnica XII Bieżanów-Prokocim;K;2022;8
+1938;12;Dzielnica XII Bieżanów-Prokocim;K;2023;1
+1939;12;Dzielnica XII Bieżanów-Prokocim;M;2023;7
+1940;13;Dzielnica XIII Podgórze;K;1930;1
+1941;13;Dzielnica XIII Podgórze;K;1932;1
+1942;13;Dzielnica XIII Podgórze;M;1932;1
+1943;13;Dzielnica XIII Podgórze;K;1933;1
+1944;13;Dzielnica XIII Podgórze;M;1939;1
+1945;13;Dzielnica XIII Podgórze;M;1940;1
+1946;13;Dzielnica XIII Podgórze;K;1940;1
+1947;13;Dzielnica XIII Podgórze;K;1942;2
+1948;13;Dzielnica XIII Podgórze;K;1943;2
+1949;13;Dzielnica XIII Podgórze;K;1945;1
+1950;13;Dzielnica XIII Podgórze;K;1946;3
+1951;13;Dzielnica XIII Podgórze;K;1947;3
+1952;13;Dzielnica XIII Podgórze;M;1947;1
+1953;13;Dzielnica XIII Podgórze;K;1949;3
+1954;13;Dzielnica XIII Podgórze;M;1949;1
+1955;13;Dzielnica XIII Podgórze;K;1950;5
+1956;13;Dzielnica XIII Podgórze;M;1950;2
+1957;13;Dzielnica XIII Podgórze;K;1951;3
+1958;13;Dzielnica XIII Podgórze;M;1951;6
+1959;13;Dzielnica XIII Podgórze;K;1952;1
+1960;13;Dzielnica XIII Podgórze;M;1952;1
+1961;13;Dzielnica XIII Podgórze;K;1953;1
+1962;13;Dzielnica XIII Podgórze;M;1953;1
+1963;13;Dzielnica XIII Podgórze;K;1954;5
+1964;13;Dzielnica XIII Podgórze;M;1954;7
+1965;13;Dzielnica XIII Podgórze;K;1955;8
+1966;13;Dzielnica XIII Podgórze;M;1955;3
+1967;13;Dzielnica XIII Podgórze;M;1956;6
+1968;13;Dzielnica XIII Podgórze;K;1956;1
+1969;13;Dzielnica XIII Podgórze;M;1957;2
+1970;13;Dzielnica XIII Podgórze;K;1957;6
+1971;13;Dzielnica XIII Podgórze;M;1958;1
+1972;13;Dzielnica XIII Podgórze;K;1958;4
+1973;13;Dzielnica XIII Podgórze;K;1959;6
+1974;13;Dzielnica XIII Podgórze;M;1959;3
+1975;13;Dzielnica XIII Podgórze;M;1960;6
+1976;13;Dzielnica XIII Podgórze;K;1960;2
+1977;13;Dzielnica XIII Podgórze;K;1961;2
+1978;13;Dzielnica XIII Podgórze;M;1961;2
+1979;13;Dzielnica XIII Podgórze;K;1962;8
+1980;13;Dzielnica XIII Podgórze;M;1962;5
+1981;13;Dzielnica XIII Podgórze;K;1963;5
+1982;13;Dzielnica XIII Podgórze;M;1963;4
+1983;13;Dzielnica XIII Podgórze;M;1964;3
+1984;13;Dzielnica XIII Podgórze;K;1964;2
+1985;13;Dzielnica XIII Podgórze;K;1965;6
+1986;13;Dzielnica XIII Podgórze;M;1965;5
+1987;13;Dzielnica XIII Podgórze;K;1966;6
+1988;13;Dzielnica XIII Podgórze;M;1966;4
+1989;13;Dzielnica XIII Podgórze;K;1967;6
+1990;13;Dzielnica XIII Podgórze;M;1967;7
+1991;13;Dzielnica XIII Podgórze;K;1968;4
+1992;13;Dzielnica XIII Podgórze;M;1968;9
+1993;13;Dzielnica XIII Podgórze;K;1969;8
+1994;13;Dzielnica XIII Podgórze;M;1969;6
+1995;13;Dzielnica XIII Podgórze;M;1970;8
+1996;13;Dzielnica XIII Podgórze;M;1971;8
+1997;13;Dzielnica XIII Podgórze;K;1971;7
+1998;13;Dzielnica XIII Podgórze;K;1972;5
+1999;13;Dzielnica XIII Podgórze;M;1972;10
+2000;13;Dzielnica XIII Podgórze;K;1973;11
+2001;13;Dzielnica XIII Podgórze;M;1973;8
+2002;13;Dzielnica XIII Podgórze;M;1974;16
+2003;13;Dzielnica XIII Podgórze;K;1974;11
+2004;13;Dzielnica XIII Podgórze;M;1975;13
+2005;13;Dzielnica XIII Podgórze;K;1975;9
+2006;13;Dzielnica XIII Podgórze;K;1976;12
+2007;13;Dzielnica XIII Podgórze;M;1976;9
+2008;13;Dzielnica XIII Podgórze;M;1977;20
+2009;13;Dzielnica XIII Podgórze;K;1977;13
+2010;13;Dzielnica XIII Podgórze;K;1978;17
+2011;13;Dzielnica XIII Podgórze;M;1978;17
+2012;13;Dzielnica XIII Podgórze;M;1979;21
+2013;13;Dzielnica XIII Podgórze;K;1979;17
+2014;13;Dzielnica XIII Podgórze;M;1980;25
+2015;13;Dzielnica XIII Podgórze;K;1980;18
+2016;13;Dzielnica XIII Podgórze;M;1981;27
+2017;13;Dzielnica XIII Podgórze;K;1981;30
+2018;13;Dzielnica XIII Podgórze;M;1982;33
+2019;13;Dzielnica XIII Podgórze;K;1982;40
+2020;13;Dzielnica XIII Podgórze;K;1983;24
+2021;13;Dzielnica XIII Podgórze;M;1983;32
+2022;13;Dzielnica XIII Podgórze;M;1984;41
+2023;13;Dzielnica XIII Podgórze;K;1984;30
+2024;13;Dzielnica XIII Podgórze;M;1985;41
+2025;13;Dzielnica XIII Podgórze;K;1985;31
+2026;13;Dzielnica XIII Podgórze;K;1986;31
+2027;13;Dzielnica XIII Podgórze;M;1986;44
+2028;13;Dzielnica XIII Podgórze;M;1987;40
+2029;13;Dzielnica XIII Podgórze;K;1987;46
+2030;13;Dzielnica XIII Podgórze;K;1988;39
+2031;13;Dzielnica XIII Podgórze;M;1988;61
+2032;13;Dzielnica XIII Podgórze;K;1989;41
+2033;13;Dzielnica XIII Podgórze;M;1989;67
+2034;13;Dzielnica XIII Podgórze;K;1990;53
+2035;13;Dzielnica XIII Podgórze;M;1990;55
+2036;13;Dzielnica XIII Podgórze;K;1991;62
+2037;13;Dzielnica XIII Podgórze;M;1991;67
+2038;13;Dzielnica XIII Podgórze;M;1992;57
+2039;13;Dzielnica XIII Podgórze;K;1992;64
+2040;13;Dzielnica XIII Podgórze;M;1993;50
+2041;13;Dzielnica XIII Podgórze;K;1993;42
+2042;13;Dzielnica XIII Podgórze;K;1994;59
+2043;13;Dzielnica XIII Podgórze;M;1994;67
+2044;13;Dzielnica XIII Podgórze;K;1995;53
+2045;13;Dzielnica XIII Podgórze;M;1995;40
+2046;13;Dzielnica XIII Podgórze;M;1996;47
+2047;13;Dzielnica XIII Podgórze;K;1996;50
+2048;13;Dzielnica XIII Podgórze;K;1997;44
+2049;13;Dzielnica XIII Podgórze;M;1997;39
+2050;13;Dzielnica XIII Podgórze;K;1998;33
+2051;13;Dzielnica XIII Podgórze;M;1998;43
+2052;13;Dzielnica XIII Podgórze;M;1999;35
+2053;13;Dzielnica XIII Podgórze;K;1999;31
+2054;13;Dzielnica XIII Podgórze;M;2000;42
+2055;13;Dzielnica XIII Podgórze;K;2000;32
+2056;13;Dzielnica XIII Podgórze;K;2001;25
+2057;13;Dzielnica XIII Podgórze;M;2001;25
+2058;13;Dzielnica XIII Podgórze;M;2002;25
+2059;13;Dzielnica XIII Podgórze;K;2002;30
+2060;13;Dzielnica XIII Podgórze;M;2003;24
+2061;13;Dzielnica XIII Podgórze;K;2003;29
+2062;13;Dzielnica XIII Podgórze;K;2004;41
+2063;13;Dzielnica XIII Podgórze;M;2004;36
+2064;13;Dzielnica XIII Podgórze;K;2005;36
+2065;13;Dzielnica XIII Podgórze;M;2005;43
+2066;13;Dzielnica XIII Podgórze;M;2006;34
+2067;13;Dzielnica XIII Podgórze;K;2006;35
+2068;13;Dzielnica XIII Podgórze;M;2007;12
+2069;13;Dzielnica XIII Podgórze;K;2007;10
+2070;13;Dzielnica XIII Podgórze;M;2008;14
+2071;13;Dzielnica XIII Podgórze;K;2008;19
+2072;13;Dzielnica XIII Podgórze;K;2009;22
+2073;13;Dzielnica XIII Podgórze;M;2009;4
+2074;13;Dzielnica XIII Podgórze;K;2010;13
+2075;13;Dzielnica XIII Podgórze;M;2010;11
+2076;13;Dzielnica XIII Podgórze;M;2011;8
+2077;13;Dzielnica XIII Podgórze;K;2011;4
+2078;13;Dzielnica XIII Podgórze;M;2012;8
+2079;13;Dzielnica XIII Podgórze;K;2012;8
+2080;13;Dzielnica XIII Podgórze;K;2013;9
+2081;13;Dzielnica XIII Podgórze;M;2013;11
+2082;13;Dzielnica XIII Podgórze;K;2014;9
+2083;13;Dzielnica XIII Podgórze;M;2014;10
+2084;13;Dzielnica XIII Podgórze;M;2015;10
+2085;13;Dzielnica XIII Podgórze;K;2015;9
+2086;13;Dzielnica XIII Podgórze;M;2016;11
+2087;13;Dzielnica XIII Podgórze;K;2016;19
+2088;13;Dzielnica XIII Podgórze;M;2017;10
+2089;13;Dzielnica XIII Podgórze;K;2017;16
+2090;13;Dzielnica XIII Podgórze;M;2018;10
+2091;13;Dzielnica XIII Podgórze;K;2018;14
+2092;13;Dzielnica XIII Podgórze;M;2019;7
+2093;13;Dzielnica XIII Podgórze;K;2019;18
+2094;13;Dzielnica XIII Podgórze;K;2020;11
+2095;13;Dzielnica XIII Podgórze;M;2020;13
+2096;13;Dzielnica XIII Podgórze;K;2021;9
+2097;13;Dzielnica XIII Podgórze;M;2021;14
+2098;13;Dzielnica XIII Podgórze;M;2022;26
+2099;13;Dzielnica XIII Podgórze;K;2022;12
+2100;13;Dzielnica XIII Podgórze;M;2023;10
+2101;13;Dzielnica XIII Podgórze;K;2023;16
+2102;14;Dzielnica XIV Czyżyny;K;1935;1
+2103;14;Dzielnica XIV Czyżyny;K;1936;1
+2104;14;Dzielnica XIV Czyżyny;K;1937;1
+2105;14;Dzielnica XIV Czyżyny;K;1940;1
+2106;14;Dzielnica XIV Czyżyny;K;1942;1
+2107;14;Dzielnica XIV Czyżyny;M;1943;1
+2108;14;Dzielnica XIV Czyżyny;K;1943;1
+2109;14;Dzielnica XIV Czyżyny;M;1944;1
+2110;14;Dzielnica XIV Czyżyny;K;1944;1
+2111;14;Dzielnica XIV Czyżyny;K;1945;3
+2112;14;Dzielnica XIV Czyżyny;K;1948;2
+2113;14;Dzielnica XIV Czyżyny;M;1948;1
+2114;14;Dzielnica XIV Czyżyny;K;1949;2
+2115;14;Dzielnica XIV Czyżyny;K;1951;1
+2116;14;Dzielnica XIV Czyżyny;M;1952;2
+2117;14;Dzielnica XIV Czyżyny;M;1953;2
+2118;14;Dzielnica XIV Czyżyny;K;1953;3
+2119;14;Dzielnica XIV Czyżyny;M;1954;2
+2120;14;Dzielnica XIV Czyżyny;K;1954;2
+2121;14;Dzielnica XIV Czyżyny;K;1955;1
+2122;14;Dzielnica XIV Czyżyny;M;1956;2
+2123;14;Dzielnica XIV Czyżyny;K;1956;1
+2124;14;Dzielnica XIV Czyżyny;M;1957;1
+2125;14;Dzielnica XIV Czyżyny;K;1957;6
+2126;14;Dzielnica XIV Czyżyny;K;1958;3
+2127;14;Dzielnica XIV Czyżyny;K;1959;2
+2128;14;Dzielnica XIV Czyżyny;M;1960;5
+2129;14;Dzielnica XIV Czyżyny;K;1960;2
+2130;14;Dzielnica XIV Czyżyny;K;1961;1
+2131;14;Dzielnica XIV Czyżyny;K;1962;4
+2132;14;Dzielnica XIV Czyżyny;K;1963;1
+2133;14;Dzielnica XIV Czyżyny;M;1963;2
+2134;14;Dzielnica XIV Czyżyny;M;1964;4
+2135;14;Dzielnica XIV Czyżyny;K;1964;5
+2136;14;Dzielnica XIV Czyżyny;M;1965;3
+2137;14;Dzielnica XIV Czyżyny;K;1965;1
+2138;14;Dzielnica XIV Czyżyny;K;1966;3
+2139;14;Dzielnica XIV Czyżyny;M;1966;4
+2140;14;Dzielnica XIV Czyżyny;K;1967;3
+2141;14;Dzielnica XIV Czyżyny;M;1967;4
+2142;14;Dzielnica XIV Czyżyny;M;1968;2
+2143;14;Dzielnica XIV Czyżyny;K;1968;6
+2144;14;Dzielnica XIV Czyżyny;K;1969;2
+2145;14;Dzielnica XIV Czyżyny;M;1969;4
+2146;14;Dzielnica XIV Czyżyny;K;1970;4
+2147;14;Dzielnica XIV Czyżyny;M;1970;2
+2148;14;Dzielnica XIV Czyżyny;M;1971;7
+2149;14;Dzielnica XIV Czyżyny;K;1971;3
+2150;14;Dzielnica XIV Czyżyny;K;1972;6
+2151;14;Dzielnica XIV Czyżyny;M;1972;9
+2152;14;Dzielnica XIV Czyżyny;K;1973;1
+2153;14;Dzielnica XIV Czyżyny;M;1973;3
+2154;14;Dzielnica XIV Czyżyny;M;1974;3
+2155;14;Dzielnica XIV Czyżyny;K;1974;10
+2156;14;Dzielnica XIV Czyżyny;M;1975;5
+2157;14;Dzielnica XIV Czyżyny;K;1975;4
+2158;14;Dzielnica XIV Czyżyny;K;1976;7
+2159;14;Dzielnica XIV Czyżyny;M;1976;6
+2160;14;Dzielnica XIV Czyżyny;K;1977;12
+2161;14;Dzielnica XIV Czyżyny;M;1977;3
+2162;14;Dzielnica XIV Czyżyny;K;1978;6
+2163;14;Dzielnica XIV Czyżyny;M;1978;9
+2164;14;Dzielnica XIV Czyżyny;K;1979;9
+2165;14;Dzielnica XIV Czyżyny;M;1979;4
+2166;14;Dzielnica XIV Czyżyny;M;1980;13
+2167;14;Dzielnica XIV Czyżyny;K;1980;7
+2168;14;Dzielnica XIV Czyżyny;K;1981;6
+2169;14;Dzielnica XIV Czyżyny;M;1981;7
+2170;14;Dzielnica XIV Czyżyny;K;1982;12
+2171;14;Dzielnica XIV Czyżyny;M;1982;11
+2172;14;Dzielnica XIV Czyżyny;K;1983;18
+2173;14;Dzielnica XIV Czyżyny;M;1983;18
+2174;14;Dzielnica XIV Czyżyny;K;1984;11
+2175;14;Dzielnica XIV Czyżyny;M;1984;10
+2176;14;Dzielnica XIV Czyżyny;K;1985;17
+2177;14;Dzielnica XIV Czyżyny;M;1985;16
+2178;14;Dzielnica XIV Czyżyny;K;1986;17
+2179;14;Dzielnica XIV Czyżyny;M;1986;16
+2180;14;Dzielnica XIV Czyżyny;K;1987;19
+2181;14;Dzielnica XIV Czyżyny;M;1987;18
+2182;14;Dzielnica XIV Czyżyny;M;1988;21
+2183;14;Dzielnica XIV Czyżyny;K;1988;20
+2184;14;Dzielnica XIV Czyżyny;M;1989;32
+2185;14;Dzielnica XIV Czyżyny;K;1989;22
+2186;14;Dzielnica XIV Czyżyny;M;1990;23
+2187;14;Dzielnica XIV Czyżyny;K;1990;17
+2188;14;Dzielnica XIV Czyżyny;K;1991;21
+2189;14;Dzielnica XIV Czyżyny;M;1991;23
+2190;14;Dzielnica XIV Czyżyny;M;1992;13
+2191;14;Dzielnica XIV Czyżyny;K;1992;16
+2192;14;Dzielnica XIV Czyżyny;M;1993;20
+2193;14;Dzielnica XIV Czyżyny;K;1993;26
+2194;14;Dzielnica XIV Czyżyny;M;1994;14
+2195;14;Dzielnica XIV Czyżyny;K;1994;16
+2196;14;Dzielnica XIV Czyżyny;M;1995;24
+2197;14;Dzielnica XIV Czyżyny;K;1995;17
+2198;14;Dzielnica XIV Czyżyny;K;1996;24
+2199;14;Dzielnica XIV Czyżyny;M;1996;17
+2200;14;Dzielnica XIV Czyżyny;K;1997;20
+2201;14;Dzielnica XIV Czyżyny;M;1997;25
+2202;14;Dzielnica XIV Czyżyny;K;1998;14
+2203;14;Dzielnica XIV Czyżyny;M;1998;20
+2204;14;Dzielnica XIV Czyżyny;K;1999;15
+2205;14;Dzielnica XIV Czyżyny;M;1999;23
+2206;14;Dzielnica XIV Czyżyny;M;2000;33
+2207;14;Dzielnica XIV Czyżyny;K;2000;28
+2208;14;Dzielnica XIV Czyżyny;K;2001;30
+2209;14;Dzielnica XIV Czyżyny;M;2001;57
+2210;14;Dzielnica XIV Czyżyny;M;2002;89
+2211;14;Dzielnica XIV Czyżyny;K;2002;37
+2212;14;Dzielnica XIV Czyżyny;M;2003;110
+2213;14;Dzielnica XIV Czyżyny;K;2003;53
+2214;14;Dzielnica XIV Czyżyny;K;2004;90
+2215;14;Dzielnica XIV Czyżyny;M;2004;92
+2216;14;Dzielnica XIV Czyżyny;M;2005;67
+2217;14;Dzielnica XIV Czyżyny;K;2005;58
+2218;14;Dzielnica XIV Czyżyny;K;2006;28
+2219;14;Dzielnica XIV Czyżyny;M;2006;30
+2220;14;Dzielnica XIV Czyżyny;K;2007;4
+2221;14;Dzielnica XIV Czyżyny;M;2007;3
+2222;14;Dzielnica XIV Czyżyny;M;2008;5
+2223;14;Dzielnica XIV Czyżyny;K;2008;3
+2224;14;Dzielnica XIV Czyżyny;M;2009;2
+2225;14;Dzielnica XIV Czyżyny;K;2009;4
+2226;14;Dzielnica XIV Czyżyny;K;2010;2
+2227;14;Dzielnica XIV Czyżyny;M;2010;5
+2228;14;Dzielnica XIV Czyżyny;K;2011;7
+2229;14;Dzielnica XIV Czyżyny;M;2011;1
+2230;14;Dzielnica XIV Czyżyny;M;2012;6
+2231;14;Dzielnica XIV Czyżyny;K;2012;6
+2232;14;Dzielnica XIV Czyżyny;K;2013;5
+2233;14;Dzielnica XIV Czyżyny;M;2013;8
+2234;14;Dzielnica XIV Czyżyny;K;2014;3
+2235;14;Dzielnica XIV Czyżyny;M;2014;6
+2236;14;Dzielnica XIV Czyżyny;M;2015;9
+2237;14;Dzielnica XIV Czyżyny;K;2015;11
+2238;14;Dzielnica XIV Czyżyny;M;2016;6
+2239;14;Dzielnica XIV Czyżyny;K;2016;4
+2240;14;Dzielnica XIV Czyżyny;K;2017;3
+2241;14;Dzielnica XIV Czyżyny;M;2017;9
+2242;14;Dzielnica XIV Czyżyny;K;2018;5
+2243;14;Dzielnica XIV Czyżyny;M;2018;5
+2244;14;Dzielnica XIV Czyżyny;K;2019;8
+2245;14;Dzielnica XIV Czyżyny;M;2019;5
+2246;14;Dzielnica XIV Czyżyny;M;2020;11
+2247;14;Dzielnica XIV Czyżyny;K;2020;7
+2248;14;Dzielnica XIV Czyżyny;K;2021;5
+2249;14;Dzielnica XIV Czyżyny;M;2021;14
+2250;14;Dzielnica XIV Czyżyny;K;2022;4
+2251;14;Dzielnica XIV Czyżyny;M;2022;9
+2252;14;Dzielnica XIV Czyżyny;M;2023;7
+2253;14;Dzielnica XIV Czyżyny;K;2023;3
+2254;15;Dzielnica XV Mistrzejowice;K;1927;1
+2255;15;Dzielnica XV Mistrzejowice;K;1933;2
+2256;15;Dzielnica XV Mistrzejowice;M;1934;1
+2257;15;Dzielnica XV Mistrzejowice;K;1939;1
+2258;15;Dzielnica XV Mistrzejowice;M;1940;1
+2259;15;Dzielnica XV Mistrzejowice;K;1946;1
+2260;15;Dzielnica XV Mistrzejowice;M;1948;2
+2261;15;Dzielnica XV Mistrzejowice;K;1948;2
+2262;15;Dzielnica XV Mistrzejowice;M;1950;2
+2263;15;Dzielnica XV Mistrzejowice;K;1950;2
+2264;15;Dzielnica XV Mistrzejowice;K;1951;1
+2265;15;Dzielnica XV Mistrzejowice;M;1952;1
+2266;15;Dzielnica XV Mistrzejowice;K;1953;2
+2267;15;Dzielnica XV Mistrzejowice;K;1954;1
+2268;15;Dzielnica XV Mistrzejowice;M;1954;1
+2269;15;Dzielnica XV Mistrzejowice;K;1955;2
+2270;15;Dzielnica XV Mistrzejowice;M;1957;1
+2271;15;Dzielnica XV Mistrzejowice;K;1957;1
+2272;15;Dzielnica XV Mistrzejowice;K;1958;1
+2273;15;Dzielnica XV Mistrzejowice;M;1958;3
+2274;15;Dzielnica XV Mistrzejowice;M;1959;1
+2275;15;Dzielnica XV Mistrzejowice;K;1960;1
+2276;15;Dzielnica XV Mistrzejowice;M;1960;1
+2277;15;Dzielnica XV Mistrzejowice;M;1961;2
+2278;15;Dzielnica XV Mistrzejowice;K;1962;1
+2279;15;Dzielnica XV Mistrzejowice;M;1962;4
+2280;15;Dzielnica XV Mistrzejowice;M;1963;1
+2281;15;Dzielnica XV Mistrzejowice;M;1965;1
+2282;15;Dzielnica XV Mistrzejowice;K;1965;2
+2283;15;Dzielnica XV Mistrzejowice;K;1966;2
+2284;15;Dzielnica XV Mistrzejowice;M;1967;3
+2285;15;Dzielnica XV Mistrzejowice;K;1967;1
+2286;15;Dzielnica XV Mistrzejowice;K;1968;4
+2287;15;Dzielnica XV Mistrzejowice;M;1968;4
+2288;15;Dzielnica XV Mistrzejowice;M;1969;4
+2289;15;Dzielnica XV Mistrzejowice;K;1969;1
+2290;15;Dzielnica XV Mistrzejowice;M;1970;9
+2291;15;Dzielnica XV Mistrzejowice;K;1970;3
+2292;15;Dzielnica XV Mistrzejowice;K;1971;1
+2293;15;Dzielnica XV Mistrzejowice;M;1971;3
+2294;15;Dzielnica XV Mistrzejowice;M;1972;7
+2295;15;Dzielnica XV Mistrzejowice;K;1972;5
+2296;15;Dzielnica XV Mistrzejowice;M;1973;3
+2297;15;Dzielnica XV Mistrzejowice;K;1973;4
+2298;15;Dzielnica XV Mistrzejowice;K;1974;6
+2299;15;Dzielnica XV Mistrzejowice;M;1974;9
+2300;15;Dzielnica XV Mistrzejowice;K;1975;7
+2301;15;Dzielnica XV Mistrzejowice;M;1975;6
+2302;15;Dzielnica XV Mistrzejowice;M;1976;9
+2303;15;Dzielnica XV Mistrzejowice;K;1976;11
+2304;15;Dzielnica XV Mistrzejowice;K;1977;10
+2305;15;Dzielnica XV Mistrzejowice;M;1977;5
+2306;15;Dzielnica XV Mistrzejowice;K;1978;5
+2307;15;Dzielnica XV Mistrzejowice;M;1978;4
+2308;15;Dzielnica XV Mistrzejowice;M;1979;7
+2309;15;Dzielnica XV Mistrzejowice;K;1979;7
+2310;15;Dzielnica XV Mistrzejowice;M;1980;10
+2311;15;Dzielnica XV Mistrzejowice;K;1980;12
+2312;15;Dzielnica XV Mistrzejowice;M;1981;12
+2313;15;Dzielnica XV Mistrzejowice;K;1981;8
+2314;15;Dzielnica XV Mistrzejowice;M;1982;8
+2315;15;Dzielnica XV Mistrzejowice;K;1982;9
+2316;15;Dzielnica XV Mistrzejowice;M;1983;6
+2317;15;Dzielnica XV Mistrzejowice;K;1983;3
+2318;15;Dzielnica XV Mistrzejowice;K;1984;6
+2319;15;Dzielnica XV Mistrzejowice;M;1984;10
+2320;15;Dzielnica XV Mistrzejowice;M;1985;15
+2321;15;Dzielnica XV Mistrzejowice;K;1985;8
+2322;15;Dzielnica XV Mistrzejowice;K;1986;15
+2323;15;Dzielnica XV Mistrzejowice;M;1986;11
+2324;15;Dzielnica XV Mistrzejowice;M;1987;12
+2325;15;Dzielnica XV Mistrzejowice;K;1987;17
+2326;15;Dzielnica XV Mistrzejowice;K;1988;8
+2327;15;Dzielnica XV Mistrzejowice;M;1988;13
+2328;15;Dzielnica XV Mistrzejowice;K;1989;12
+2329;15;Dzielnica XV Mistrzejowice;M;1989;9
+2330;15;Dzielnica XV Mistrzejowice;M;1990;8
+2331;15;Dzielnica XV Mistrzejowice;K;1990;13
+2332;15;Dzielnica XV Mistrzejowice;K;1991;12
+2333;15;Dzielnica XV Mistrzejowice;M;1991;16
+2334;15;Dzielnica XV Mistrzejowice;M;1992;5
+2335;15;Dzielnica XV Mistrzejowice;K;1992;12
+2336;15;Dzielnica XV Mistrzejowice;M;1993;12
+2337;15;Dzielnica XV Mistrzejowice;K;1993;9
+2338;15;Dzielnica XV Mistrzejowice;K;1994;14
+2339;15;Dzielnica XV Mistrzejowice;M;1994;4
+2340;15;Dzielnica XV Mistrzejowice;M;1995;12
+2341;15;Dzielnica XV Mistrzejowice;K;1995;13
+2342;15;Dzielnica XV Mistrzejowice;K;1996;11
+2343;15;Dzielnica XV Mistrzejowice;M;1996;5
+2344;15;Dzielnica XV Mistrzejowice;M;1997;9
+2345;15;Dzielnica XV Mistrzejowice;K;1997;10
+2346;15;Dzielnica XV Mistrzejowice;K;1998;4
+2347;15;Dzielnica XV Mistrzejowice;M;1998;6
+2348;15;Dzielnica XV Mistrzejowice;M;1999;3
+2349;15;Dzielnica XV Mistrzejowice;K;1999;9
+2350;15;Dzielnica XV Mistrzejowice;K;2000;8
+2351;15;Dzielnica XV Mistrzejowice;M;2000;10
+2352;15;Dzielnica XV Mistrzejowice;K;2001;7
+2353;15;Dzielnica XV Mistrzejowice;M;2001;4
+2354;15;Dzielnica XV Mistrzejowice;M;2002;5
+2355;15;Dzielnica XV Mistrzejowice;K;2002;7
+2356;15;Dzielnica XV Mistrzejowice;M;2003;3
+2357;15;Dzielnica XV Mistrzejowice;K;2003;2
+2358;15;Dzielnica XV Mistrzejowice;K;2004;4
+2359;15;Dzielnica XV Mistrzejowice;M;2005;8
+2360;15;Dzielnica XV Mistrzejowice;K;2005;2
+2361;15;Dzielnica XV Mistrzejowice;M;2006;7
+2362;15;Dzielnica XV Mistrzejowice;K;2006;6
+2363;15;Dzielnica XV Mistrzejowice;M;2007;5
+2364;15;Dzielnica XV Mistrzejowice;K;2007;7
+2365;15;Dzielnica XV Mistrzejowice;M;2008;5
+2366;15;Dzielnica XV Mistrzejowice;K;2008;5
+2367;15;Dzielnica XV Mistrzejowice;K;2009;4
+2368;15;Dzielnica XV Mistrzejowice;M;2009;3
+2369;15;Dzielnica XV Mistrzejowice;M;2010;2
+2370;15;Dzielnica XV Mistrzejowice;M;2011;4
+2371;15;Dzielnica XV Mistrzejowice;K;2011;6
+2372;15;Dzielnica XV Mistrzejowice;M;2012;5
+2373;15;Dzielnica XV Mistrzejowice;K;2012;7
+2374;15;Dzielnica XV Mistrzejowice;K;2013;3
+2375;15;Dzielnica XV Mistrzejowice;M;2013;2
+2376;15;Dzielnica XV Mistrzejowice;K;2014;3
+2377;15;Dzielnica XV Mistrzejowice;M;2014;6
+2378;15;Dzielnica XV Mistrzejowice;M;2015;11
+2379;15;Dzielnica XV Mistrzejowice;K;2015;6
+2380;15;Dzielnica XV Mistrzejowice;K;2016;6
+2381;15;Dzielnica XV Mistrzejowice;M;2016;4
+2382;15;Dzielnica XV Mistrzejowice;M;2017;8
+2383;15;Dzielnica XV Mistrzejowice;K;2017;3
+2384;15;Dzielnica XV Mistrzejowice;M;2018;4
+2385;15;Dzielnica XV Mistrzejowice;K;2018;6
+2386;15;Dzielnica XV Mistrzejowice;M;2019;5
+2387;15;Dzielnica XV Mistrzejowice;K;2019;5
+2388;15;Dzielnica XV Mistrzejowice;M;2020;5
+2389;15;Dzielnica XV Mistrzejowice;K;2020;6
+2390;15;Dzielnica XV Mistrzejowice;K;2021;5
+2391;15;Dzielnica XV Mistrzejowice;M;2021;6
+2392;15;Dzielnica XV Mistrzejowice;M;2022;7
+2393;15;Dzielnica XV Mistrzejowice;K;2022;6
+2394;15;Dzielnica XV Mistrzejowice;K;2023;3
+2395;15;Dzielnica XV Mistrzejowice;M;2023;6
+2396;16;Dzielnica XVI Bieńczyce;K;1942;1
+2397;16;Dzielnica XVI Bieńczyce;M;1942;1
+2398;16;Dzielnica XVI Bieńczyce;M;1943;1
+2399;16;Dzielnica XVI Bieńczyce;M;1944;1
+2400;16;Dzielnica XVI Bieńczyce;K;1944;2
+2401;16;Dzielnica XVI Bieńczyce;K;1945;2
+2402;16;Dzielnica XVI Bieńczyce;K;1946;1
+2403;16;Dzielnica XVI Bieńczyce;M;1947;1
+2404;16;Dzielnica XVI Bieńczyce;K;1947;3
+2405;16;Dzielnica XVI Bieńczyce;M;1948;1
+2406;16;Dzielnica XVI Bieńczyce;K;1948;1
+2407;16;Dzielnica XVI Bieńczyce;M;1950;1
+2408;16;Dzielnica XVI Bieńczyce;M;1951;1
+2409;16;Dzielnica XVI Bieńczyce;K;1951;1
+2410;16;Dzielnica XVI Bieńczyce;M;1952;2
+2411;16;Dzielnica XVI Bieńczyce;K;1952;4
+2412;16;Dzielnica XVI Bieńczyce;M;1953;1
+2413;16;Dzielnica XVI Bieńczyce;M;1954;1
+2414;16;Dzielnica XVI Bieńczyce;K;1955;3
+2415;16;Dzielnica XVI Bieńczyce;M;1955;1
+2416;16;Dzielnica XVI Bieńczyce;K;1956;2
+2417;16;Dzielnica XVI Bieńczyce;M;1956;2
+2418;16;Dzielnica XVI Bieńczyce;M;1957;1
+2419;16;Dzielnica XVI Bieńczyce;K;1957;1
+2420;16;Dzielnica XVI Bieńczyce;M;1958;5
+2421;16;Dzielnica XVI Bieńczyce;K;1958;6
+2422;16;Dzielnica XVI Bieńczyce;K;1959;6
+2423;16;Dzielnica XVI Bieńczyce;K;1960;2
+2424;16;Dzielnica XVI Bieńczyce;M;1960;2
+2425;16;Dzielnica XVI Bieńczyce;K;1961;1
+2426;16;Dzielnica XVI Bieńczyce;M;1961;1
+2427;16;Dzielnica XVI Bieńczyce;K;1962;1
+2428;16;Dzielnica XVI Bieńczyce;M;1962;2
+2429;16;Dzielnica XVI Bieńczyce;M;1963;2
+2430;16;Dzielnica XVI Bieńczyce;K;1963;6
+2431;16;Dzielnica XVI Bieńczyce;K;1964;1
+2432;16;Dzielnica XVI Bieńczyce;M;1964;3
+2433;16;Dzielnica XVI Bieńczyce;K;1965;2
+2434;16;Dzielnica XVI Bieńczyce;M;1965;5
+2435;16;Dzielnica XVI Bieńczyce;K;1966;5
+2436;16;Dzielnica XVI Bieńczyce;M;1966;4
+2437;16;Dzielnica XVI Bieńczyce;M;1967;1
+2438;16;Dzielnica XVI Bieńczyce;K;1967;2
+2439;16;Dzielnica XVI Bieńczyce;K;1968;3
+2440;16;Dzielnica XVI Bieńczyce;M;1968;7
+2441;16;Dzielnica XVI Bieńczyce;K;1969;6
+2442;16;Dzielnica XVI Bieńczyce;M;1969;3
+2443;16;Dzielnica XVI Bieńczyce;M;1970;3
+2444;16;Dzielnica XVI Bieńczyce;K;1970;3
+2445;16;Dzielnica XVI Bieńczyce;K;1971;3
+2446;16;Dzielnica XVI Bieńczyce;M;1971;4
+2447;16;Dzielnica XVI Bieńczyce;K;1972;7
+2448;16;Dzielnica XVI Bieńczyce;M;1972;4
+2449;16;Dzielnica XVI Bieńczyce;M;1973;4
+2450;16;Dzielnica XVI Bieńczyce;K;1973;6
+2451;16;Dzielnica XVI Bieńczyce;K;1974;6
+2452;16;Dzielnica XVI Bieńczyce;M;1974;2
+2453;16;Dzielnica XVI Bieńczyce;K;1975;4
+2454;16;Dzielnica XVI Bieńczyce;M;1975;4
+2455;16;Dzielnica XVI Bieńczyce;M;1976;4
+2456;16;Dzielnica XVI Bieńczyce;K;1976;12
+2457;16;Dzielnica XVI Bieńczyce;K;1977;4
+2458;16;Dzielnica XVI Bieńczyce;M;1977;8
+2459;16;Dzielnica XVI Bieńczyce;M;1978;1
+2460;16;Dzielnica XVI Bieńczyce;K;1978;6
+2461;16;Dzielnica XVI Bieńczyce;K;1979;10
+2462;16;Dzielnica XVI Bieńczyce;M;1979;9
+2463;16;Dzielnica XVI Bieńczyce;K;1980;5
+2464;16;Dzielnica XVI Bieńczyce;M;1980;3
+2465;16;Dzielnica XVI Bieńczyce;M;1981;6
+2466;16;Dzielnica XVI Bieńczyce;K;1981;8
+2467;16;Dzielnica XVI Bieńczyce;M;1982;8
+2468;16;Dzielnica XVI Bieńczyce;K;1982;4
+2469;16;Dzielnica XVI Bieńczyce;M;1983;1
+2470;16;Dzielnica XVI Bieńczyce;K;1983;9
+2471;16;Dzielnica XVI Bieńczyce;K;1984;9
+2472;16;Dzielnica XVI Bieńczyce;M;1984;7
+2473;16;Dzielnica XVI Bieńczyce;K;1985;7
+2474;16;Dzielnica XVI Bieńczyce;M;1985;12
+2475;16;Dzielnica XVI Bieńczyce;M;1986;5
+2476;16;Dzielnica XVI Bieńczyce;K;1986;11
+2477;16;Dzielnica XVI Bieńczyce;M;1987;6
+2478;16;Dzielnica XVI Bieńczyce;K;1987;6
+2479;16;Dzielnica XVI Bieńczyce;M;1988;10
+2480;16;Dzielnica XVI Bieńczyce;K;1988;7
+2481;16;Dzielnica XVI Bieńczyce;K;1989;7
+2482;16;Dzielnica XVI Bieńczyce;M;1989;3
+2483;16;Dzielnica XVI Bieńczyce;M;1990;9
+2484;16;Dzielnica XVI Bieńczyce;K;1990;8
+2485;16;Dzielnica XVI Bieńczyce;K;1991;9
+2486;16;Dzielnica XVI Bieńczyce;M;1991;12
+2487;16;Dzielnica XVI Bieńczyce;M;1992;6
+2488;16;Dzielnica XVI Bieńczyce;K;1992;1
+2489;16;Dzielnica XVI Bieńczyce;K;1993;8
+2490;16;Dzielnica XVI Bieńczyce;M;1993;4
+2491;16;Dzielnica XVI Bieńczyce;K;1994;4
+2492;16;Dzielnica XVI Bieńczyce;M;1994;3
+2493;16;Dzielnica XVI Bieńczyce;M;1995;1
+2494;16;Dzielnica XVI Bieńczyce;K;1995;6
+2495;16;Dzielnica XVI Bieńczyce;M;1996;2
+2496;16;Dzielnica XVI Bieńczyce;K;1996;3
+2497;16;Dzielnica XVI Bieńczyce;M;1997;3
+2498;16;Dzielnica XVI Bieńczyce;K;1997;8
+2499;16;Dzielnica XVI Bieńczyce;K;1998;7
+2500;16;Dzielnica XVI Bieńczyce;M;1998;4
+2501;16;Dzielnica XVI Bieńczyce;M;1999;4
+2502;16;Dzielnica XVI Bieńczyce;K;1999;8
+2503;16;Dzielnica XVI Bieńczyce;K;2000;1
+2504;16;Dzielnica XVI Bieńczyce;M;2000;3
+2505;16;Dzielnica XVI Bieńczyce;K;2001;4
+2506;16;Dzielnica XVI Bieńczyce;M;2001;5
+2507;16;Dzielnica XVI Bieńczyce;M;2002;11
+2508;16;Dzielnica XVI Bieńczyce;K;2002;4
+2509;16;Dzielnica XVI Bieńczyce;M;2003;4
+2510;16;Dzielnica XVI Bieńczyce;K;2003;5
+2511;16;Dzielnica XVI Bieńczyce;K;2004;6
+2512;16;Dzielnica XVI Bieńczyce;M;2004;5
+2513;16;Dzielnica XVI Bieńczyce;M;2005;1
+2514;16;Dzielnica XVI Bieńczyce;K;2005;2
+2515;16;Dzielnica XVI Bieńczyce;M;2006;2
+2516;16;Dzielnica XVI Bieńczyce;K;2006;3
+2517;16;Dzielnica XVI Bieńczyce;M;2007;1
+2518;16;Dzielnica XVI Bieńczyce;K;2007;5
+2519;16;Dzielnica XVI Bieńczyce;M;2008;1
+2520;16;Dzielnica XVI Bieńczyce;K;2008;6
+2521;16;Dzielnica XVI Bieńczyce;K;2009;2
+2522;16;Dzielnica XVI Bieńczyce;M;2009;7
+2523;16;Dzielnica XVI Bieńczyce;M;2010;1
+2524;16;Dzielnica XVI Bieńczyce;K;2010;3
+2525;16;Dzielnica XVI Bieńczyce;M;2011;6
+2526;16;Dzielnica XVI Bieńczyce;K;2011;2
+2527;16;Dzielnica XVI Bieńczyce;K;2012;4
+2528;16;Dzielnica XVI Bieńczyce;M;2012;2
+2529;16;Dzielnica XVI Bieńczyce;K;2013;2
+2530;16;Dzielnica XVI Bieńczyce;M;2013;3
+2531;16;Dzielnica XVI Bieńczyce;K;2014;6
+2532;16;Dzielnica XVI Bieńczyce;M;2014;5
+2533;16;Dzielnica XVI Bieńczyce;M;2015;8
+2534;16;Dzielnica XVI Bieńczyce;K;2015;1
+2535;16;Dzielnica XVI Bieńczyce;M;2016;6
+2536;16;Dzielnica XVI Bieńczyce;K;2016;1
+2537;16;Dzielnica XVI Bieńczyce;K;2017;3
+2538;16;Dzielnica XVI Bieńczyce;M;2017;2
+2539;16;Dzielnica XVI Bieńczyce;K;2018;3
+2540;16;Dzielnica XVI Bieńczyce;M;2018;7
+2541;16;Dzielnica XVI Bieńczyce;M;2019;7
+2542;16;Dzielnica XVI Bieńczyce;K;2019;1
+2543;16;Dzielnica XVI Bieńczyce;K;2020;2
+2544;16;Dzielnica XVI Bieńczyce;M;2020;3
+2545;16;Dzielnica XVI Bieńczyce;K;2021;7
+2546;16;Dzielnica XVI Bieńczyce;M;2021;1
+2547;16;Dzielnica XVI Bieńczyce;M;2022;3
+2548;16;Dzielnica XVI Bieńczyce;K;2022;4
+2549;16;Dzielnica XVI Bieńczyce;K;2023;3
+2550;16;Dzielnica XVI Bieńczyce;M;2023;4
+2551;17;Dzielnica XVII Wzgórza Krzesławickie;K;1930;1
+2552;17;Dzielnica XVII Wzgórza Krzesławickie;K;1935;1
+2553;17;Dzielnica XVII Wzgórza Krzesławickie;K;1939;1
+2554;17;Dzielnica XVII Wzgórza Krzesławickie;K;1940;1
+2555;17;Dzielnica XVII Wzgórza Krzesławickie;M;1942;2
+2556;17;Dzielnica XVII Wzgórza Krzesławickie;K;1943;1
+2557;17;Dzielnica XVII Wzgórza Krzesławickie;K;1947;1
+2558;17;Dzielnica XVII Wzgórza Krzesławickie;M;1947;2
+2559;17;Dzielnica XVII Wzgórza Krzesławickie;K;1948;1
+2560;17;Dzielnica XVII Wzgórza Krzesławickie;M;1949;1
+2561;17;Dzielnica XVII Wzgórza Krzesławickie;K;1949;1
+2562;17;Dzielnica XVII Wzgórza Krzesławickie;M;1950;2
+2563;17;Dzielnica XVII Wzgórza Krzesławickie;K;1951;2
+2564;17;Dzielnica XVII Wzgórza Krzesławickie;M;1952;2
+2565;17;Dzielnica XVII Wzgórza Krzesławickie;K;1952;1
+2566;17;Dzielnica XVII Wzgórza Krzesławickie;M;1953;2
+2567;17;Dzielnica XVII Wzgórza Krzesławickie;K;1953;4
+2568;17;Dzielnica XVII Wzgórza Krzesławickie;K;1954;2
+2569;17;Dzielnica XVII Wzgórza Krzesławickie;M;1954;3
+2570;17;Dzielnica XVII Wzgórza Krzesławickie;M;1955;2
+2571;17;Dzielnica XVII Wzgórza Krzesławickie;K;1955;4
+2572;17;Dzielnica XVII Wzgórza Krzesławickie;M;1956;2
+2573;17;Dzielnica XVII Wzgórza Krzesławickie;K;1956;1
+2574;17;Dzielnica XVII Wzgórza Krzesławickie;M;1957;1
+2575;17;Dzielnica XVII Wzgórza Krzesławickie;K;1957;4
+2576;17;Dzielnica XVII Wzgórza Krzesławickie;K;1958;4
+2577;17;Dzielnica XVII Wzgórza Krzesławickie;M;1958;1
+2578;17;Dzielnica XVII Wzgórza Krzesławickie;K;1959;3
+2579;17;Dzielnica XVII Wzgórza Krzesławickie;M;1959;7
+2580;17;Dzielnica XVII Wzgórza Krzesławickie;M;1960;3
+2581;17;Dzielnica XVII Wzgórza Krzesławickie;K;1961;3
+2582;17;Dzielnica XVII Wzgórza Krzesławickie;M;1961;2
+2583;17;Dzielnica XVII Wzgórza Krzesławickie;M;1962;3
+2584;17;Dzielnica XVII Wzgórza Krzesławickie;K;1962;5
+2585;17;Dzielnica XVII Wzgórza Krzesławickie;M;1963;3
+2586;17;Dzielnica XVII Wzgórza Krzesławickie;K;1964;2
+2587;17;Dzielnica XVII Wzgórza Krzesławickie;M;1964;3
+2588;17;Dzielnica XVII Wzgórza Krzesławickie;M;1965;3
+2589;17;Dzielnica XVII Wzgórza Krzesławickie;K;1965;1
+2590;17;Dzielnica XVII Wzgórza Krzesławickie;M;1966;3
+2591;17;Dzielnica XVII Wzgórza Krzesławickie;K;1966;2
+2592;17;Dzielnica XVII Wzgórza Krzesławickie;M;1967;1
+2593;17;Dzielnica XVII Wzgórza Krzesławickie;K;1967;1
+2594;17;Dzielnica XVII Wzgórza Krzesławickie;K;1968;4
+2595;17;Dzielnica XVII Wzgórza Krzesławickie;M;1968;3
+2596;17;Dzielnica XVII Wzgórza Krzesławickie;K;1969;2
+2597;17;Dzielnica XVII Wzgórza Krzesławickie;M;1970;5
+2598;17;Dzielnica XVII Wzgórza Krzesławickie;K;1970;1
+2599;17;Dzielnica XVII Wzgórza Krzesławickie;K;1971;2
+2600;17;Dzielnica XVII Wzgórza Krzesławickie;M;1972;2
+2601;17;Dzielnica XVII Wzgórza Krzesławickie;K;1972;3
+2602;17;Dzielnica XVII Wzgórza Krzesławickie;M;1973;1
+2603;17;Dzielnica XVII Wzgórza Krzesławickie;K;1973;2
+2604;17;Dzielnica XVII Wzgórza Krzesławickie;K;1974;3
+2605;17;Dzielnica XVII Wzgórza Krzesławickie;M;1974;1
+2606;17;Dzielnica XVII Wzgórza Krzesławickie;K;1975;1
+2607;17;Dzielnica XVII Wzgórza Krzesławickie;M;1975;1
+2608;17;Dzielnica XVII Wzgórza Krzesławickie;K;1976;1
+2609;17;Dzielnica XVII Wzgórza Krzesławickie;M;1976;1
+2610;17;Dzielnica XVII Wzgórza Krzesławickie;K;1977;3
+2611;17;Dzielnica XVII Wzgórza Krzesławickie;M;1977;3
+2612;17;Dzielnica XVII Wzgórza Krzesławickie;M;1978;1
+2613;17;Dzielnica XVII Wzgórza Krzesławickie;K;1978;3
+2614;17;Dzielnica XVII Wzgórza Krzesławickie;K;1979;3
+2615;17;Dzielnica XVII Wzgórza Krzesławickie;M;1979;2
+2616;17;Dzielnica XVII Wzgórza Krzesławickie;M;1980;3
+2617;17;Dzielnica XVII Wzgórza Krzesławickie;K;1980;3
+2618;17;Dzielnica XVII Wzgórza Krzesławickie;M;1981;3
+2619;17;Dzielnica XVII Wzgórza Krzesławickie;K;1981;2
+2620;17;Dzielnica XVII Wzgórza Krzesławickie;K;1982;1
+2621;17;Dzielnica XVII Wzgórza Krzesławickie;M;1982;3
+2622;17;Dzielnica XVII Wzgórza Krzesławickie;K;1983;4
+2623;17;Dzielnica XVII Wzgórza Krzesławickie;M;1983;1
+2624;17;Dzielnica XVII Wzgórza Krzesławickie;K;1984;4
+2625;17;Dzielnica XVII Wzgórza Krzesławickie;M;1984;1
+2626;17;Dzielnica XVII Wzgórza Krzesławickie;K;1985;1
+2627;17;Dzielnica XVII Wzgórza Krzesławickie;M;1985;5
+2628;17;Dzielnica XVII Wzgórza Krzesławickie;K;1986;6
+2629;17;Dzielnica XVII Wzgórza Krzesławickie;M;1986;3
+2630;17;Dzielnica XVII Wzgórza Krzesławickie;M;1987;5
+2631;17;Dzielnica XVII Wzgórza Krzesławickie;K;1987;4
+2632;17;Dzielnica XVII Wzgórza Krzesławickie;K;1988;1
+2633;17;Dzielnica XVII Wzgórza Krzesławickie;M;1988;3
+2634;17;Dzielnica XVII Wzgórza Krzesławickie;M;1989;5
+2635;17;Dzielnica XVII Wzgórza Krzesławickie;K;1989;5
+2636;17;Dzielnica XVII Wzgórza Krzesławickie;K;1990;4
+2637;17;Dzielnica XVII Wzgórza Krzesławickie;M;1990;1
+2638;17;Dzielnica XVII Wzgórza Krzesławickie;M;1991;3
+2639;17;Dzielnica XVII Wzgórza Krzesławickie;K;1991;3
+2640;17;Dzielnica XVII Wzgórza Krzesławickie;M;1992;1
+2641;17;Dzielnica XVII Wzgórza Krzesławickie;K;1992;3
+2642;17;Dzielnica XVII Wzgórza Krzesławickie;K;1993;3
+2643;17;Dzielnica XVII Wzgórza Krzesławickie;M;1993;1
+2644;17;Dzielnica XVII Wzgórza Krzesławickie;M;1994;1
+2645;17;Dzielnica XVII Wzgórza Krzesławickie;K;1994;1
+2646;17;Dzielnica XVII Wzgórza Krzesławickie;M;1995;1
+2647;17;Dzielnica XVII Wzgórza Krzesławickie;K;1995;3
+2648;17;Dzielnica XVII Wzgórza Krzesławickie;M;1996;5
+2649;17;Dzielnica XVII Wzgórza Krzesławickie;K;1996;2
+2650;17;Dzielnica XVII Wzgórza Krzesławickie;K;1997;3
+2651;17;Dzielnica XVII Wzgórza Krzesławickie;M;1997;4
+2652;17;Dzielnica XVII Wzgórza Krzesławickie;M;1998;1
+2653;17;Dzielnica XVII Wzgórza Krzesławickie;K;1998;3
+2654;17;Dzielnica XVII Wzgórza Krzesławickie;M;1999;3
+2655;17;Dzielnica XVII Wzgórza Krzesławickie;K;1999;3
+2656;17;Dzielnica XVII Wzgórza Krzesławickie;K;2000;4
+2657;17;Dzielnica XVII Wzgórza Krzesławickie;M;2000;2
+2658;17;Dzielnica XVII Wzgórza Krzesławickie;K;2001;3
+2659;17;Dzielnica XVII Wzgórza Krzesławickie;M;2001;3
+2660;17;Dzielnica XVII Wzgórza Krzesławickie;M;2002;2
+2661;17;Dzielnica XVII Wzgórza Krzesławickie;K;2003;2
+2662;17;Dzielnica XVII Wzgórza Krzesławickie;M;2003;1
+2663;17;Dzielnica XVII Wzgórza Krzesławickie;M;2004;1
+2664;17;Dzielnica XVII Wzgórza Krzesławickie;K;2004;2
+2665;17;Dzielnica XVII Wzgórza Krzesławickie;K;2005;1
+2666;17;Dzielnica XVII Wzgórza Krzesławickie;M;2005;5
+2667;17;Dzielnica XVII Wzgórza Krzesławickie;K;2006;1
+2668;17;Dzielnica XVII Wzgórza Krzesławickie;M;2006;2
+2669;17;Dzielnica XVII Wzgórza Krzesławickie;K;2007;3
+2670;17;Dzielnica XVII Wzgórza Krzesławickie;M;2007;2
+2671;17;Dzielnica XVII Wzgórza Krzesławickie;M;2008;1
+2672;17;Dzielnica XVII Wzgórza Krzesławickie;M;2009;2
+2673;17;Dzielnica XVII Wzgórza Krzesławickie;K;2009;1
+2674;17;Dzielnica XVII Wzgórza Krzesławickie;K;2010;1
+2675;17;Dzielnica XVII Wzgórza Krzesławickie;M;2010;2
+2676;17;Dzielnica XVII Wzgórza Krzesławickie;M;2011;1
+2677;17;Dzielnica XVII Wzgórza Krzesławickie;K;2011;6
+2678;17;Dzielnica XVII Wzgórza Krzesławickie;K;2012;1
+2679;17;Dzielnica XVII Wzgórza Krzesławickie;M;2012;3
+2680;17;Dzielnica XVII Wzgórza Krzesławickie;K;2013;4
+2681;17;Dzielnica XVII Wzgórza Krzesławickie;M;2013;4
+2682;17;Dzielnica XVII Wzgórza Krzesławickie;M;2014;1
+2683;17;Dzielnica XVII Wzgórza Krzesławickie;K;2014;1
+2684;17;Dzielnica XVII Wzgórza Krzesławickie;K;2015;3
+2685;17;Dzielnica XVII Wzgórza Krzesławickie;M;2015;4
+2686;17;Dzielnica XVII Wzgórza Krzesławickie;K;2016;3
+2687;17;Dzielnica XVII Wzgórza Krzesławickie;M;2017;5
+2688;17;Dzielnica XVII Wzgórza Krzesławickie;K;2017;3
+2689;17;Dzielnica XVII Wzgórza Krzesławickie;M;2018;2
+2690;17;Dzielnica XVII Wzgórza Krzesławickie;K;2018;3
+2691;17;Dzielnica XVII Wzgórza Krzesławickie;M;2019;3
+2692;17;Dzielnica XVII Wzgórza Krzesławickie;M;2020;1
+2693;17;Dzielnica XVII Wzgórza Krzesławickie;K;2020;1
+2694;17;Dzielnica XVII Wzgórza Krzesławickie;K;2021;2
+2695;17;Dzielnica XVII Wzgórza Krzesławickie;M;2021;2
+2696;17;Dzielnica XVII Wzgórza Krzesławickie;K;2022;2
+2697;17;Dzielnica XVII Wzgórza Krzesławickie;M;2022;2
+2698;17;Dzielnica XVII Wzgórza Krzesławickie;M;2023;2
+2699;18;Dzielnica XVIII Nowa Huta;K;1933;1
+2700;18;Dzielnica XVIII Nowa Huta;K;1935;2
+2701;18;Dzielnica XVIII Nowa Huta;M;1936;1
+2702;18;Dzielnica XVIII Nowa Huta;M;1937;1
+2703;18;Dzielnica XVIII Nowa Huta;K;1939;1
+2704;18;Dzielnica XVIII Nowa Huta;K;1941;1
+2705;18;Dzielnica XVIII Nowa Huta;K;1944;2
+2706;18;Dzielnica XVIII Nowa Huta;M;1944;1
+2707;18;Dzielnica XVIII Nowa Huta;M;1945;1
+2708;18;Dzielnica XVIII Nowa Huta;M;1946;1
+2709;18;Dzielnica XVIII Nowa Huta;K;1946;1
+2710;18;Dzielnica XVIII Nowa Huta;K;1947;1
+2711;18;Dzielnica XVIII Nowa Huta;M;1948;1
+2712;18;Dzielnica XVIII Nowa Huta;K;1948;5
+2713;18;Dzielnica XVIII Nowa Huta;M;1949;5
+2714;18;Dzielnica XVIII Nowa Huta;K;1950;2
+2715;18;Dzielnica XVIII Nowa Huta;M;1950;2
+2716;18;Dzielnica XVIII Nowa Huta;M;1951;5
+2717;18;Dzielnica XVIII Nowa Huta;K;1951;8
+2718;18;Dzielnica XVIII Nowa Huta;K;1952;2
+2719;18;Dzielnica XVIII Nowa Huta;M;1952;3
+2720;18;Dzielnica XVIII Nowa Huta;K;1953;3
+2721;18;Dzielnica XVIII Nowa Huta;K;1954;3
+2722;18;Dzielnica XVIII Nowa Huta;M;1954;10
+2723;18;Dzielnica XVIII Nowa Huta;K;1955;4
+2724;18;Dzielnica XVIII Nowa Huta;M;1955;8
+2725;18;Dzielnica XVIII Nowa Huta;K;1956;13
+2726;18;Dzielnica XVIII Nowa Huta;M;1956;4
+2727;18;Dzielnica XVIII Nowa Huta;M;1957;7
+2728;18;Dzielnica XVIII Nowa Huta;K;1957;13
+2729;18;Dzielnica XVIII Nowa Huta;M;1958;4
+2730;18;Dzielnica XVIII Nowa Huta;K;1958;4
+2731;18;Dzielnica XVIII Nowa Huta;K;1959;10
+2732;18;Dzielnica XVIII Nowa Huta;M;1959;8
+2733;18;Dzielnica XVIII Nowa Huta;K;1960;8
+2734;18;Dzielnica XVIII Nowa Huta;M;1960;4
+2735;18;Dzielnica XVIII Nowa Huta;M;1961;4
+2736;18;Dzielnica XVIII Nowa Huta;K;1961;4
+2737;18;Dzielnica XVIII Nowa Huta;K;1962;7
+2738;18;Dzielnica XVIII Nowa Huta;M;1962;3
+2739;18;Dzielnica XVIII Nowa Huta;M;1963;2
+2740;18;Dzielnica XVIII Nowa Huta;K;1963;7
+2741;18;Dzielnica XVIII Nowa Huta;M;1964;5
+2742;18;Dzielnica XVIII Nowa Huta;K;1964;6
+2743;18;Dzielnica XVIII Nowa Huta;M;1965;8
+2744;18;Dzielnica XVIII Nowa Huta;K;1965;5
+2745;18;Dzielnica XVIII Nowa Huta;M;1966;10
+2746;18;Dzielnica XVIII Nowa Huta;K;1966;4
+2747;18;Dzielnica XVIII Nowa Huta;M;1967;4
+2748;18;Dzielnica XVIII Nowa Huta;K;1967;7
+2749;18;Dzielnica XVIII Nowa Huta;K;1968;2
+2750;18;Dzielnica XVIII Nowa Huta;M;1968;4
+2751;18;Dzielnica XVIII Nowa Huta;K;1969;3
+2752;18;Dzielnica XVIII Nowa Huta;M;1969;6
+2753;18;Dzielnica XVIII Nowa Huta;M;1970;4
+2754;18;Dzielnica XVIII Nowa Huta;K;1970;10
+2755;18;Dzielnica XVIII Nowa Huta;K;1971;7
+2756;18;Dzielnica XVIII Nowa Huta;M;1971;6
+2757;18;Dzielnica XVIII Nowa Huta;M;1972;10
+2758;18;Dzielnica XVIII Nowa Huta;K;1972;7
+2759;18;Dzielnica XVIII Nowa Huta;M;1973;7
+2760;18;Dzielnica XVIII Nowa Huta;K;1973;7
+2761;18;Dzielnica XVIII Nowa Huta;M;1974;3
+2762;18;Dzielnica XVIII Nowa Huta;K;1974;6
+2763;18;Dzielnica XVIII Nowa Huta;K;1975;7
+2764;18;Dzielnica XVIII Nowa Huta;M;1975;14
+2765;18;Dzielnica XVIII Nowa Huta;K;1976;12
+2766;18;Dzielnica XVIII Nowa Huta;M;1976;8
+2767;18;Dzielnica XVIII Nowa Huta;K;1977;6
+2768;18;Dzielnica XVIII Nowa Huta;M;1977;6
+2769;18;Dzielnica XVIII Nowa Huta;K;1978;8
+2770;18;Dzielnica XVIII Nowa Huta;M;1978;6
+2771;18;Dzielnica XVIII Nowa Huta;K;1979;7
+2772;18;Dzielnica XVIII Nowa Huta;M;1979;2
+2773;18;Dzielnica XVIII Nowa Huta;K;1980;6
+2774;18;Dzielnica XVIII Nowa Huta;M;1980;13
+2775;18;Dzielnica XVIII Nowa Huta;M;1981;4
+2776;18;Dzielnica XVIII Nowa Huta;K;1981;15
+2777;18;Dzielnica XVIII Nowa Huta;K;1982;13
+2778;18;Dzielnica XVIII Nowa Huta;M;1982;4
+2779;18;Dzielnica XVIII Nowa Huta;K;1983;12
+2780;18;Dzielnica XVIII Nowa Huta;M;1983;10
+2781;18;Dzielnica XVIII Nowa Huta;M;1984;9
+2782;18;Dzielnica XVIII Nowa Huta;K;1984;7
+2783;18;Dzielnica XVIII Nowa Huta;K;1985;6
+2784;18;Dzielnica XVIII Nowa Huta;M;1985;12
+2785;18;Dzielnica XVIII Nowa Huta;K;1986;10
+2786;18;Dzielnica XVIII Nowa Huta;M;1986;11
+2787;18;Dzielnica XVIII Nowa Huta;M;1987;13
+2788;18;Dzielnica XVIII Nowa Huta;K;1987;14
+2789;18;Dzielnica XVIII Nowa Huta;M;1988;8
+2790;18;Dzielnica XVIII Nowa Huta;K;1988;6
+2791;18;Dzielnica XVIII Nowa Huta;M;1989;9
+2792;18;Dzielnica XVIII Nowa Huta;K;1989;6
+2793;18;Dzielnica XVIII Nowa Huta;K;1990;7
+2794;18;Dzielnica XVIII Nowa Huta;M;1990;9
+2795;18;Dzielnica XVIII Nowa Huta;M;1991;5
+2796;18;Dzielnica XVIII Nowa Huta;K;1991;9
+2797;18;Dzielnica XVIII Nowa Huta;K;1992;11
+2798;18;Dzielnica XVIII Nowa Huta;M;1992;10
+2799;18;Dzielnica XVIII Nowa Huta;M;1993;11
+2800;18;Dzielnica XVIII Nowa Huta;K;1993;12
+2801;18;Dzielnica XVIII Nowa Huta;M;1994;7
+2802;18;Dzielnica XVIII Nowa Huta;K;1994;9
+2803;18;Dzielnica XVIII Nowa Huta;M;1995;6
+2804;18;Dzielnica XVIII Nowa Huta;K;1995;11
+2805;18;Dzielnica XVIII Nowa Huta;M;1996;9
+2806;18;Dzielnica XVIII Nowa Huta;K;1996;8
+2807;18;Dzielnica XVIII Nowa Huta;K;1997;2
+2808;18;Dzielnica XVIII Nowa Huta;M;1997;8
+2809;18;Dzielnica XVIII Nowa Huta;M;1998;14
+2810;18;Dzielnica XVIII Nowa Huta;K;1998;8
+2811;18;Dzielnica XVIII Nowa Huta;M;1999;11
+2812;18;Dzielnica XVIII Nowa Huta;K;1999;7
+2813;18;Dzielnica XVIII Nowa Huta;K;2000;2
+2814;18;Dzielnica XVIII Nowa Huta;M;2000;20
+2815;18;Dzielnica XVIII Nowa Huta;M;2001;20
+2816;18;Dzielnica XVIII Nowa Huta;K;2001;8
+2817;18;Dzielnica XVIII Nowa Huta;K;2002;5
+2818;18;Dzielnica XVIII Nowa Huta;M;2002;31
+2819;18;Dzielnica XVIII Nowa Huta;K;2003;8
+2820;18;Dzielnica XVIII Nowa Huta;M;2003;31
+2821;18;Dzielnica XVIII Nowa Huta;K;2004;19
+2822;18;Dzielnica XVIII Nowa Huta;M;2004;30
+2823;18;Dzielnica XVIII Nowa Huta;M;2005;45
+2824;18;Dzielnica XVIII Nowa Huta;K;2005;28
+2825;18;Dzielnica XVIII Nowa Huta;M;2006;53
+2826;18;Dzielnica XVIII Nowa Huta;K;2006;60
+2827;18;Dzielnica XVIII Nowa Huta;M;2007;50
+2828;18;Dzielnica XVIII Nowa Huta;K;2007;88
+2829;18;Dzielnica XVIII Nowa Huta;K;2008;63
+2830;18;Dzielnica XVIII Nowa Huta;M;2008;60
+2831;18;Dzielnica XVIII Nowa Huta;M;2009;18
+2832;18;Dzielnica XVIII Nowa Huta;K;2009;29
+2833;18;Dzielnica XVIII Nowa Huta;M;2010;5
+2834;18;Dzielnica XVIII Nowa Huta;K;2010;8
+2835;18;Dzielnica XVIII Nowa Huta;K;2011;6
+2836;18;Dzielnica XVIII Nowa Huta;M;2011;7
+2837;18;Dzielnica XVIII Nowa Huta;M;2012;5
+2838;18;Dzielnica XVIII Nowa Huta;K;2012;5
+2839;18;Dzielnica XVIII Nowa Huta;K;2013;5
+2840;18;Dzielnica XVIII Nowa Huta;M;2013;3
+2841;18;Dzielnica XVIII Nowa Huta;M;2014;3
+2842;18;Dzielnica XVIII Nowa Huta;K;2014;6
+2843;18;Dzielnica XVIII Nowa Huta;K;2015;5
+2844;18;Dzielnica XVIII Nowa Huta;M;2015;3
+2845;18;Dzielnica XVIII Nowa Huta;M;2016;6
+2846;18;Dzielnica XVIII Nowa Huta;K;2016;1
+2847;18;Dzielnica XVIII Nowa Huta;M;2017;5
+2848;18;Dzielnica XVIII Nowa Huta;K;2017;6
+2849;18;Dzielnica XVIII Nowa Huta;M;2018;8
+2850;18;Dzielnica XVIII Nowa Huta;K;2018;4
+2851;18;Dzielnica XVIII Nowa Huta;M;2019;3
+2852;18;Dzielnica XVIII Nowa Huta;K;2019;5
+2853;18;Dzielnica XVIII Nowa Huta;M;2020;7
+2854;18;Dzielnica XVIII Nowa Huta;K;2020;4
+2855;18;Dzielnica XVIII Nowa Huta;K;2021;2
+2856;18;Dzielnica XVIII Nowa Huta;M;2021;5
+2857;18;Dzielnica XVIII Nowa Huta;K;2022;3
+2858;18;Dzielnica XVIII Nowa Huta;M;2023;1
+2859;18;Dzielnica XVIII Nowa Huta;K;2023;5

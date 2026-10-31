@@ -16,9 +16,9 @@ dotnet run --project src/backend/Cracow360.Api
 ### Automatic Seeding Mechanism:
 1. During application startup, the backend checks whether `data/db/cracow360.db` exists on disk.
 2. If the file does not exist:
-   - It creates a new table structure based on EF Core domain models (`Districts`, `Scores`, `Forecasts`, `PointsOfInterest`).
-   - The `DatabaseSeeder.cs` class automatically reads contract files from the `data/contracts/` folder (`krakow_districts_master.json` and `krakow_poi_locations.json`).
-   - It populates the database with all 18 districts and over 900 POI points.
+   - It creates a new schema structure based on EF Core domain models (`Districts`, `Scores`, `Forecasts`, `PointsOfInterest`, `Tourism`, `Accessibility`).
+   - The `DatabaseSeeder.cs` class automatically reads contract files from the `data/contracts/` folder (`krakow_districts_master.json`, `krakow_poi_locations.json`, etc.).
+   - It seamlessly populates the database with all 18 districts, accessibility profiles, and over 700 POI points (leveraging globally unique UUIDs to prevent IdentityMap tracking conflicts).
 3. Once the database exists, the backend connects to it directly and serves data to the API immediately.
 
 ---

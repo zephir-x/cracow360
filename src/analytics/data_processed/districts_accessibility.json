@@ -1,0 +1,1383 @@
+{
+  "generatedAt": "2026-10-31T17:40:19.990936+00:00",
+  "meta": {
+    "title": "Profile Dostępności Architektonicznej i Społecznej Dzielnic Krakowa",
+    "description": "Zintegrowane wskaźniki dostępności dla osób z niepełnosprawnościami, seniorów i rodzin z dziećmi oparte w 100% na danych ZDMK, UMK, ZTP i BDK.",
+    "sources": [
+      {
+        "id": "trans-5",
+        "name": "Miejsca postojowe dla osób z niepełnosprawnościami w Krakowie (ZDMK – Niebieskie Koperty)",
+        "url": "https://www.bip.krakow.pl/zalaczniki/dokumenty/n/598657/karta"
+      },
+      {
+        "id": "cult-4",
+        "name": "Dostępność architektoniczna obiektów publicznych w Krakowie (UMK / MFiPR)",
+        "url": "https://www.bip.krakow.pl/?dok_id=139318"
+      },
+      {
+        "id": "trans-1",
+        "name": "Komunikacja Miejska w Krakowie (KMK) – Przystanki, perony bez stopni i pasy dotykowe",
+        "url": "https://otwartedane.um.krakow.pl"
+      },
+      {
+        "id": "cult-1",
+        "name": "Centra Aktywności Seniora (CAS) w Krakowie",
+        "url": "https://dlaseniora.krakow.pl"
+      }
+    ],
+    "profilesSupported": [
+      "mobility",
+      "visual",
+      "hearing",
+      "senior",
+      "familyStroller"
+    ]
+  },
+  "cityAverages": {
+    "totalPrmParkingSpots": 1709,
+    "totalPrmLocations": 862,
+    "totalAuditedFacilities": 25,
+    "totalSeniorCenters": 68,
+    "avgKasselKerbPct": 14.0,
+    "avgTactilePavingPct": 35.1,
+    "avgOverallScore": 70.4
+  },
+  "districts": [
+    {
+      "districtId": 1,
+      "districtRoman": "I",
+      "districtName": "Dzielnica I Stare Miasto",
+      "areaKm2": 5.57,
+      "totalPopulation": 29725,
+      "seniors65Plus": 7514,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 525,
+          "locationsCount": 196,
+          "spotsPer10kPop": 176.6,
+          "spotsPerKm2": 94.3
+        },
+        "transit": {
+          "totalStops": 95,
+          "kasselKerbStops": 18,
+          "kasselKerbPct": 18.9,
+          "tactilePavingStops": 29,
+          "tactilePavingPct": 30.5
+        },
+        "publicFacilities": {
+          "auditedTotal": 6,
+          "wheelchairFull": 0,
+          "wheelchairPartial": 0,
+          "elevators": 6,
+          "ramps": 1,
+          "accessibleToilets": 3,
+          "hearingLoops": 3,
+          "signLanguagePJM": 3,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 4,
+          "casPer10kSeniors": 5.3
+        },
+        "recreation": {
+          "cityParks": 4,
+          "pocketParks": 3
+        }
+      },
+      "facilities": [
+        {
+          "name": "Siedziba Główna Magistratu - Pałac Wielopolskich",
+          "departments": "Prezydent Miasta Krakowa, Rada Miasta Krakowa, Kancelaria Rady",
+          "address": "Plac Wszystkich Świętych 3-4",
+          "wheelchairAccessible": "CZEŚCIOWA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
+        },
+        {
+          "name": "Urząd Miasta Krakowa - Wydziały Kultury i Gospodarki",
+          "departments": "Wydział Kultury, Gospodarka Komunalna, Wydział ds. Dzielnic",
+          "address": "ul. Wielopole 17a",
+          "wheelchairAccessible": "CZEŚCIOWA",
+          "hasRamp": false,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": false,
+          "hearingLoop": false,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, tłumacza PJM. Brak: podjazdu/rampy, toalety PRM, pętli indukcyjnej, oznaczeń dotykowych."
+        },
+        {
+          "name": "Wydział Gospodarki Komunalnej i Klimatu",
+          "departments": "Wydział Gospodarki Komunalnej i Klimatu",
+          "address": "ul. Wielopole 1",
+          "wheelchairAccessible": "CZEŚCIOWA",
+          "hasRamp": false,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": false,
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę. Brak: podjazdu/rampy, toalety PRM, pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
+        },
+        {
+          "name": "Urząd Miasta Krakowa - Sarego",
+          "departments": "Wydział Kontroli Wewnętrznej, Wydział Organizacji i Nadzoru",
+          "address": "ul. Sarego 4",
+          "wheelchairAccessible": "CZEŚCIOWA",
+          "hasRamp": false,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, toaletę PRM. Brak: podjazdu/rampy, pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
+        },
+        {
+          "name": "Zarząd Transportu Publicznego w Krakowie (ZTP)",
+          "departments": "ZTP Kraków - Dział Obsługi Pasażerów i Biletów",
+          "address": "ul. Wielopole 1",
+          "wheelchairAccessible": "CZEŚCIOWA",
+          "hasRamp": false,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": false,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, pętlę indukcyjną, tłumacza PJM. Brak: podjazdu/rampy, toalety PRM, oznaczeń dotykowych."
+        },
+        {
+          "name": "Krakowskie Forum Kultury",
+          "departments": "Centrum Kultury i Integracji Społecznej",
+          "address": "ul. Mikołajska 2",
+          "wheelchairAccessible": "CZEŚCIOWA",
+          "hasRamp": false,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, toaletę PRM, pętlę indukcyjną. Brak: podjazdu/rampy, tłumacza PJM, oznaczeń dotykowych."
+        }
+      ],
+      "scores": {
+        "overallScore": 72.7,
+        "mobilityScore": 67.8,
+        "visualScore": 60.5,
+        "hearingScore": 96.0,
+        "seniorScore": 72.2,
+        "familyStrollerScore": 75.6
+      },
+      "keyStrengths": [
+        "Wysoka dostępność miejsc postojowych PRM (525 niebieskich kopert w 196 lokalizacjach)",
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
+        "Rozbudowana sieć wsparcia seniorów (4 aktywne Centra Aktywności Seniora)"
+      ]
+    },
+    {
+      "districtId": 2,
+      "districtRoman": "II",
+      "districtName": "Dzielnica II Grzegórzki",
+      "areaKm2": 5.85,
+      "totalPopulation": 32066,
+      "seniors65Plus": 7213,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 216,
+          "locationsCount": 87,
+          "spotsPer10kPop": 67.4,
+          "spotsPerKm2": 36.9
+        },
+        "transit": {
+          "totalStops": 67,
+          "kasselKerbStops": 4,
+          "kasselKerbPct": 6.0,
+          "tactilePavingStops": 12,
+          "tactilePavingPct": 17.9
+        },
+        "publicFacilities": {
+          "auditedTotal": 2,
+          "wheelchairFull": 2,
+          "wheelchairPartial": 0,
+          "elevators": 2,
+          "ramps": 2,
+          "accessibleToilets": 2,
+          "hearingLoops": 2,
+          "signLanguagePJM": 2,
+          "brailleTactile": 1
+        },
+        "seniorCare": {
+          "casCount": 5,
+          "casPer10kSeniors": 6.9
+        },
+        "recreation": {
+          "cityParks": 5,
+          "pocketParks": 3
+        }
+      },
+      "facilities": [
+        {
+          "name": "Urząd Miasta Krakowa - Zespół Obsługi Mieszkańców",
+          "departments": "Wydział Spraw Administracyjnych, Ewidencja Pojazdów i Kierowców, Podatki i Opłaty, Kancelaria Prezydenta",
+          "address": "al. Powstania Warszawskiego 10",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+        },
+        {
+          "name": "Urząd Miasta Krakowa - Wydział Architektury i Urbanistyki",
+          "departments": "Wydział Architektury i Urbanistyki, Wydział Planowania Przestrzennego",
+          "address": "ul. Mogilska 41",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
+        }
+      ],
+      "scores": {
+        "overallScore": 81.6,
+        "mobilityScore": 93.9,
+        "visualScore": 56.1,
+        "hearingScore": 96.0,
+        "seniorScore": 78.4,
+        "familyStrollerScore": 84.4
+      },
+      "keyStrengths": [
+        "Wysoka dostępność miejsc postojowych PRM (216 niebieskich kopert w 87 lokalizacjach)",
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
+        "Rozbudowana sieć wsparcia seniorów (5 aktywne Centra Aktywności Seniora)"
+      ]
+    },
+    {
+      "districtId": 3,
+      "districtRoman": "III",
+      "districtName": "Dzielnica III Prądnik Czerwony",
+      "areaKm2": 6.44,
+      "totalPopulation": 46880,
+      "seniors65Plus": 11551,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 81,
+          "locationsCount": 50,
+          "spotsPer10kPop": 17.3,
+          "spotsPerKm2": 12.6
+        },
+        "transit": {
+          "totalStops": 98,
+          "kasselKerbStops": 28,
+          "kasselKerbPct": 28.6,
+          "tactilePavingStops": 56,
+          "tactilePavingPct": 57.1
+        },
+        "publicFacilities": {
+          "auditedTotal": 1,
+          "wheelchairFull": 1,
+          "wheelchairPartial": 0,
+          "elevators": 1,
+          "ramps": 1,
+          "accessibleToilets": 1,
+          "hearingLoops": 1,
+          "signLanguagePJM": 1,
+          "brailleTactile": 1
+        },
+        "seniorCare": {
+          "casCount": 3,
+          "casPer10kSeniors": 2.6
+        },
+        "recreation": {
+          "cityParks": 4,
+          "pocketParks": 3
+        }
+      },
+      "facilities": [
+        {
+          "name": "Punkt Obsługi Mieszkańców Galeria Serenada",
+          "departments": "Wydział Spraw Administracyjnych, Ewidencja Pojazdów i Kierowców",
+          "address": "al. Bora-Komorowskiego 41",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+        }
+      ],
+      "scores": {
+        "overallScore": 86.2,
+        "mobilityScore": 95.0,
+        "visualScore": 94.0,
+        "hearingScore": 82.2,
+        "seniorScore": 58.9,
+        "familyStrollerScore": 95.0
+      },
+      "keyStrengths": [
+        "Wygodne perony bez stopni (28.6% przystanków) ułatwiające wsiadanie z poziomu chodnika",
+        "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 57.1% przystanków",
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)"
+      ]
+    },
+    {
+      "districtId": 4,
+      "districtRoman": "IV",
+      "districtName": "Dzielnica IV Prądnik Biały",
+      "areaKm2": 23.42,
+      "totalPopulation": 76804,
+      "seniors65Plus": 15269,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 58,
+          "locationsCount": 36,
+          "spotsPer10kPop": 7.6,
+          "spotsPerKm2": 2.5
+        },
+        "transit": {
+          "totalStops": 256,
+          "kasselKerbStops": 79,
+          "kasselKerbPct": 30.9,
+          "tactilePavingStops": 123,
+          "tactilePavingPct": 48.0
+        },
+        "publicFacilities": {
+          "auditedTotal": 0,
+          "wheelchairFull": 0,
+          "wheelchairPartial": 0,
+          "elevators": 0,
+          "ramps": 0,
+          "accessibleToilets": 0,
+          "hearingLoops": 0,
+          "signLanguagePJM": 0,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 3,
+          "casPer10kSeniors": 2.0
+        },
+        "recreation": {
+          "cityParks": 3,
+          "pocketParks": 2
+        }
+      },
+      "facilities": [],
+      "scores": {
+        "overallScore": 70.9,
+        "mobilityScore": 76.1,
+        "visualScore": 81.9,
+        "hearingScore": 50.0,
+        "seniorScore": 53.8,
+        "familyStrollerScore": 86.7
+      },
+      "keyStrengths": [
+        "Wygodne perony bez stopni (30.9% przystanków) ułatwiające wsiadanie z poziomu chodnika",
+        "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 48.0% przystanków",
+        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)"
+      ]
+    },
+    {
+      "districtId": 5,
+      "districtRoman": "V",
+      "districtName": "Dzielnica V Krowodrza",
+      "areaKm2": 5.62,
+      "totalPopulation": 31523,
+      "seniors65Plus": 8372,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 30,
+          "locationsCount": 13,
+          "spotsPer10kPop": 9.5,
+          "spotsPerKm2": 5.3
+        },
+        "transit": {
+          "totalStops": 80,
+          "kasselKerbStops": 19,
+          "kasselKerbPct": 23.8,
+          "tactilePavingStops": 35,
+          "tactilePavingPct": 43.8
+        },
+        "publicFacilities": {
+          "auditedTotal": 2,
+          "wheelchairFull": 1,
+          "wheelchairPartial": 0,
+          "elevators": 2,
+          "ramps": 1,
+          "accessibleToilets": 2,
+          "hearingLoops": 0,
+          "signLanguagePJM": 1,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 3,
+          "casPer10kSeniors": 3.6
+        },
+        "recreation": {
+          "cityParks": 6,
+          "pocketParks": 4
+        }
+      },
+      "facilities": [
+        {
+          "name": "Urząd Stanu Cywilnego - Krowodrza",
+          "departments": "Urząd Stanu Cywilnego - Referat Rejestracji Stanu Cywilnego",
+          "address": "ul. Lubelska 27 i 29",
+          "wheelchairAccessible": "CZEŚCIOWA",
+          "hasRamp": false,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": false,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, toaletę PRM, tłumacza PJM. Brak: podjazdu/rampy, pętli indukcyjnej, oznaczeń dotykowych."
+        },
+        {
+          "name": "Zarząd Zieleni Miejskiej w Krakowie (ZZM)",
+          "departments": "ZZM - Siedziba Główna",
+          "address": "ul. Reymonta 20",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM. Brak: pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
+        }
+      ],
+      "scores": {
+        "overallScore": 76.8,
+        "mobilityScore": 89.3,
+        "visualScore": 72.7,
+        "hearingScore": 59.2,
+        "seniorScore": 62.0,
+        "familyStrollerScore": 95.0
+      },
+      "keyStrengths": [
+        "Wygodne perony bez stopni (23.8% przystanków) ułatwiające wsiadanie z poziomu chodnika",
+        "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 43.8% przystanków",
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)"
+      ]
+    },
+    {
+      "districtId": 6,
+      "districtRoman": "VI",
+      "districtName": "Dzielnica VI Bronowice",
+      "areaKm2": 9.56,
+      "totalPopulation": 25627,
+      "seniors65Plus": 5917,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 27,
+          "locationsCount": 21,
+          "spotsPer10kPop": 10.5,
+          "spotsPerKm2": 2.8
+        },
+        "transit": {
+          "totalStops": 58,
+          "kasselKerbStops": 4,
+          "kasselKerbPct": 6.9,
+          "tactilePavingStops": 11,
+          "tactilePavingPct": 19.0
+        },
+        "publicFacilities": {
+          "auditedTotal": 0,
+          "wheelchairFull": 0,
+          "wheelchairPartial": 0,
+          "elevators": 0,
+          "ramps": 0,
+          "accessibleToilets": 0,
+          "hearingLoops": 0,
+          "signLanguagePJM": 0,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 2,
+          "casPer10kSeniors": 3.4
+        },
+        "recreation": {
+          "cityParks": 4,
+          "pocketParks": 2
+        }
+      },
+      "facilities": [],
+      "scores": {
+        "overallScore": 56.2,
+        "mobilityScore": 55.5,
+        "visualScore": 48.0,
+        "hearingScore": 50.0,
+        "seniorScore": 59.1,
+        "familyStrollerScore": 71.7
+      },
+      "keyStrengths": [
+        "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)",
+        "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
+      ]
+    },
+    {
+      "districtId": 7,
+      "districtRoman": "VII",
+      "districtName": "Dzielnica VII Zwierzyniec",
+      "areaKm2": 28.73,
+      "totalPopulation": 21661,
+      "seniors65Plus": 4989,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 62,
+          "locationsCount": 45,
+          "spotsPer10kPop": 28.6,
+          "spotsPerKm2": 2.2
+        },
+        "transit": {
+          "totalStops": 154,
+          "kasselKerbStops": 27,
+          "kasselKerbPct": 17.5,
+          "tactilePavingStops": 44,
+          "tactilePavingPct": 28.6
+        },
+        "publicFacilities": {
+          "auditedTotal": 1,
+          "wheelchairFull": 1,
+          "wheelchairPartial": 0,
+          "elevators": 1,
+          "ramps": 1,
+          "accessibleToilets": 1,
+          "hearingLoops": 0,
+          "signLanguagePJM": 1,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 4,
+          "casPer10kSeniors": 8.0
+        },
+        "recreation": {
+          "cityParks": 5,
+          "pocketParks": 3
+        }
+      },
+      "facilities": [
+        {
+          "name": "Krakowskie Centrum Świadczeń",
+          "departments": "Krakowskie Centrum Świadczeń, Wydział Edukacji i Projektów Edukacyjnych",
+          "address": "ul. Stachowicza 18",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": false,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, tłumacza PJM. Brak: pętli indukcyjnej, oznaczeń dotykowych."
+        }
+      ],
+      "scores": {
+        "overallScore": 71.8,
+        "mobilityScore": 81.7,
+        "visualScore": 48.5,
+        "hearingScore": 59.2,
+        "seniorScore": 83.2,
+        "familyStrollerScore": 86.0
+      },
+      "keyStrengths": [
+        "Wysoka dostępność miejsc postojowych PRM (62 niebieskich kopert w 45 lokalizacjach)",
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
+        "Rozbudowana sieć wsparcia seniorów (4 aktywne Centra Aktywności Seniora)"
+      ]
+    },
+    {
+      "districtId": 8,
+      "districtRoman": "VIII",
+      "districtName": "Dzielnica VIII Dębniki",
+      "areaKm2": 46.19,
+      "totalPopulation": 69431,
+      "seniors65Plus": 11853,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 106,
+          "locationsCount": 64,
+          "spotsPer10kPop": 15.3,
+          "spotsPerKm2": 2.3
+        },
+        "transit": {
+          "totalStops": 208,
+          "kasselKerbStops": 34,
+          "kasselKerbPct": 16.3,
+          "tactilePavingStops": 71,
+          "tactilePavingPct": 34.1
+        },
+        "publicFacilities": {
+          "auditedTotal": 1,
+          "wheelchairFull": 1,
+          "wheelchairPartial": 0,
+          "elevators": 1,
+          "ramps": 1,
+          "accessibleToilets": 1,
+          "hearingLoops": 1,
+          "signLanguagePJM": 0,
+          "brailleTactile": 1
+        },
+        "seniorCare": {
+          "casCount": 5,
+          "casPer10kSeniors": 4.2
+        },
+        "recreation": {
+          "cityParks": 5,
+          "pocketParks": 3
+        }
+      },
+      "facilities": [
+        {
+          "name": "Biblioteka Kraków - Biblioteka Główna",
+          "departments": "Biblioteka Główna, Wypożyczalnia i Czytelnia dla Osób ze Szczególnymi Potrzebami",
+          "address": "ul. Powroźnicza 2",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, oznaczenia dotykowe. Brak: tłumacza PJM."
+        }
+      ],
+      "scores": {
+        "overallScore": 70.2,
+        "mobilityScore": 76.2,
+        "visualScore": 61.6,
+        "hearingScore": 63.8,
+        "seniorScore": 64.1,
+        "familyStrollerScore": 85.1
+      },
+      "keyStrengths": [
+        "Wysoka dostępność miejsc postojowych PRM (106 niebieskich kopert w 64 lokalizacjach)",
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
+        "Rozbudowana sieć wsparcia seniorów (5 aktywne Centra Aktywności Seniora)"
+      ]
+    },
+    {
+      "districtId": 9,
+      "districtRoman": "IX",
+      "districtName": "Dzielnica IX Łagiewniki-Borek Fałęcki",
+      "areaKm2": 5.42,
+      "totalPopulation": 15797,
+      "seniors65Plus": 3314,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 21,
+          "locationsCount": 10,
+          "spotsPer10kPop": 13.3,
+          "spotsPerKm2": 3.9
+        },
+        "transit": {
+          "totalStops": 59,
+          "kasselKerbStops": 5,
+          "kasselKerbPct": 8.5,
+          "tactilePavingStops": 18,
+          "tactilePavingPct": 30.5
+        },
+        "publicFacilities": {
+          "auditedTotal": 0,
+          "wheelchairFull": 0,
+          "wheelchairPartial": 0,
+          "elevators": 0,
+          "ramps": 0,
+          "accessibleToilets": 0,
+          "hearingLoops": 0,
+          "signLanguagePJM": 0,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 2,
+          "casPer10kSeniors": 6.0
+        },
+        "recreation": {
+          "cityParks": 3,
+          "pocketParks": 1
+        }
+      },
+      "facilities": [],
+      "scores": {
+        "overallScore": 61.8,
+        "mobilityScore": 59.8,
+        "visualScore": 65.0,
+        "hearingScore": 50.0,
+        "seniorScore": 71.8,
+        "familyStrollerScore": 61.2
+      },
+      "keyStrengths": [
+        "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)",
+        "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
+      ]
+    },
+    {
+      "districtId": 10,
+      "districtRoman": "X",
+      "districtName": "Dzielnica X Swoszowice",
+      "areaKm2": 25.6,
+      "totalPopulation": 30146,
+      "seniors65Plus": 5103,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 9,
+          "locationsCount": 3,
+          "spotsPer10kPop": 3.0,
+          "spotsPerKm2": 0.4
+        },
+        "transit": {
+          "totalStops": 126,
+          "kasselKerbStops": 20,
+          "kasselKerbPct": 15.9,
+          "tactilePavingStops": 34,
+          "tactilePavingPct": 27.0
+        },
+        "publicFacilities": {
+          "auditedTotal": 0,
+          "wheelchairFull": 0,
+          "wheelchairPartial": 0,
+          "elevators": 0,
+          "ramps": 0,
+          "accessibleToilets": 0,
+          "hearingLoops": 0,
+          "signLanguagePJM": 0,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 2,
+          "casPer10kSeniors": 3.9
+        },
+        "recreation": {
+          "cityParks": 2,
+          "pocketParks": 1
+        }
+      },
+      "facilities": [],
+      "scores": {
+        "overallScore": 54.6,
+        "mobilityScore": 52.0,
+        "visualScore": 52.7,
+        "hearingScore": 50.0,
+        "seniorScore": 59.1,
+        "familyStrollerScore": 61.4
+      },
+      "keyStrengths": [
+        "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)"
+      ]
+    },
+    {
+      "districtId": 11,
+      "districtRoman": "XI",
+      "districtName": "Dzielnica XI Podgórze Duchackie",
+      "areaKm2": 9.54,
+      "totalPopulation": 55132,
+      "seniors65Plus": 12927,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 19,
+          "locationsCount": 10,
+          "spotsPer10kPop": 3.4,
+          "spotsPerKm2": 2.0
+        },
+        "transit": {
+          "totalStops": 89,
+          "kasselKerbStops": 11,
+          "kasselKerbPct": 12.4,
+          "tactilePavingStops": 19,
+          "tactilePavingPct": 21.3
+        },
+        "publicFacilities": {
+          "auditedTotal": 1,
+          "wheelchairFull": 1,
+          "wheelchairPartial": 0,
+          "elevators": 1,
+          "ramps": 1,
+          "accessibleToilets": 1,
+          "hearingLoops": 1,
+          "signLanguagePJM": 1,
+          "brailleTactile": 1
+        },
+        "seniorCare": {
+          "casCount": 3,
+          "casPer10kSeniors": 2.3
+        },
+        "recreation": {
+          "cityParks": 3,
+          "pocketParks": 1
+        }
+      },
+      "facilities": [
+        {
+          "name": "Punkt Obsługi Mieszkańców Galeria Bonarka",
+          "departments": "Wydział Spraw Administracyjnych, Ewidencja Pojazdów i Kierowców",
+          "address": "ul. Kamieńskiego 11",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+        }
+      ],
+      "scores": {
+        "overallScore": 63.8,
+        "mobilityScore": 62.2,
+        "visualScore": 57.4,
+        "hearingScore": 82.2,
+        "seniorScore": 52.0,
+        "familyStrollerScore": 70.2
+      },
+      "keyStrengths": [
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
+        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)",
+        "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
+      ]
+    },
+    {
+      "districtId": 12,
+      "districtRoman": "XII",
+      "districtName": "Dzielnica XII Bieżanów-Prokocim",
+      "areaKm2": 18.47,
+      "totalPopulation": 64458,
+      "seniors65Plus": 15125,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 34,
+          "locationsCount": 10,
+          "spotsPer10kPop": 5.3,
+          "spotsPerKm2": 1.8
+        },
+        "transit": {
+          "totalStops": 145,
+          "kasselKerbStops": 30,
+          "kasselKerbPct": 20.7,
+          "tactilePavingStops": 45,
+          "tactilePavingPct": 31.0
+        },
+        "publicFacilities": {
+          "auditedTotal": 0,
+          "wheelchairFull": 0,
+          "wheelchairPartial": 0,
+          "elevators": 0,
+          "ramps": 0,
+          "accessibleToilets": 0,
+          "hearingLoops": 0,
+          "signLanguagePJM": 0,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 4,
+          "casPer10kSeniors": 2.6
+        },
+        "recreation": {
+          "cityParks": 8,
+          "pocketParks": 2
+        }
+      },
+      "facilities": [],
+      "scores": {
+        "overallScore": 62.6,
+        "mobilityScore": 63.0,
+        "visualScore": 62.8,
+        "hearingScore": 50.0,
+        "seniorScore": 55.1,
+        "familyStrollerScore": 82.8
+      },
+      "keyStrengths": [
+        "Wygodne perony bez stopni (20.7% przystanków) ułatwiające wsiadanie z poziomu chodnika",
+        "Rozbudowana sieć wsparcia seniorów (4 aktywne Centra Aktywności Seniora)",
+        "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
+      ]
+    },
+    {
+      "districtId": 13,
+      "districtRoman": "XIII",
+      "districtName": "Dzielnica XIII Podgórze",
+      "areaKm2": 25.67,
+      "totalPopulation": 45518,
+      "seniors65Plus": 6446,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 140,
+          "locationsCount": 63,
+          "spotsPer10kPop": 30.8,
+          "spotsPerKm2": 5.5
+        },
+        "transit": {
+          "totalStops": 213,
+          "kasselKerbStops": 10,
+          "kasselKerbPct": 4.7,
+          "tactilePavingStops": 79,
+          "tactilePavingPct": 37.1
+        },
+        "publicFacilities": {
+          "auditedTotal": 6,
+          "wheelchairFull": 5,
+          "wheelchairPartial": 0,
+          "elevators": 5,
+          "ramps": 5,
+          "accessibleToilets": 5,
+          "hearingLoops": 5,
+          "signLanguagePJM": 5,
+          "brailleTactile": 3
+        },
+        "seniorCare": {
+          "casCount": 6,
+          "casPer10kSeniors": 9.3
+        },
+        "recreation": {
+          "cityParks": 7,
+          "pocketParks": 4
+        }
+      },
+      "facilities": [
+        {
+          "name": "Urząd Miasta Krakowa - Rynek Podgórski 1",
+          "departments": "Wydział Mieszkalnictwa, Wydział Środowiska, Klimatu i Powietrza",
+          "address": "Rynek Podgórski 1",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
+        },
+        {
+          "name": "Urząd Miasta Krakowa - Rynek Podgórski 2",
+          "departments": "Wydział Mieszkalnictwa (część referatów)",
+          "address": "Rynek Podgórski 2",
+          "wheelchairAccessible": "BRAK",
+          "hasRamp": false,
+          "hasElevatorOrPlatform": false,
+          "accessibleToilet": false,
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: BRAK. Obiekt nie posiada wymienionych w rejestrze udogodnień dla osób z niepełnosprawnościami."
+        },
+        {
+          "name": "Centrum Administracyjne Podgórze / Wielicka",
+          "departments": "Wydział Ewidencji Pojazdów i Kierowców, Wydział Spraw Administracyjnych, PINB, Podatki",
+          "address": "ul. Wielicka 28A",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+        },
+        {
+          "name": "Miejski Ośrodek Pomocy Społecznej w Krakowie (Centrala)",
+          "departments": "MOPS Kraków - Dyrekcja i Działy Pomocy Osobom z Niepełnosprawnościami",
+          "address": "ul. Józefińska 14",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+        },
+        {
+          "name": "Wydział Polityki Społecznej i Zdrowia",
+          "departments": "Wydział Polityki Społecznej, Równości i Zdrowia, Pełnomocnik ds. Osób z Niepełnosprawnościami",
+          "address": "ul. Dekerta 24",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+        },
+        {
+          "name": "Wydział Podatków i Opłat",
+          "departments": "Wydział Podatków i Opłat - Referaty Obsługi",
+          "address": "ul. Nowohucka 1",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
+        }
+      ],
+      "scores": {
+        "overallScore": 87.3,
+        "mobilityScore": 85.8,
+        "visualScore": 84.8,
+        "hearingScore": 96.0,
+        "seniorScore": 88.4,
+        "familyStrollerScore": 83.4
+      },
+      "keyStrengths": [
+        "Wysoka dostępność miejsc postojowych PRM (140 niebieskich kopert w 63 lokalizacjach)",
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
+        "Rozbudowana sieć wsparcia seniorów (6 aktywne Centra Aktywności Seniora)"
+      ]
+    },
+    {
+      "districtId": 14,
+      "districtRoman": "XIV",
+      "districtName": "Dzielnica XIV Czyżyny",
+      "areaKm2": 12.26,
+      "totalPopulation": 36669,
+      "seniors65Plus": 6361,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 54,
+          "locationsCount": 32,
+          "spotsPer10kPop": 14.7,
+          "spotsPerKm2": 4.4
+        },
+        "transit": {
+          "totalStops": 122,
+          "kasselKerbStops": 13,
+          "kasselKerbPct": 10.7,
+          "tactilePavingStops": 37,
+          "tactilePavingPct": 30.3
+        },
+        "publicFacilities": {
+          "auditedTotal": 1,
+          "wheelchairFull": 1,
+          "wheelchairPartial": 0,
+          "elevators": 1,
+          "ramps": 1,
+          "accessibleToilets": 1,
+          "hearingLoops": 1,
+          "signLanguagePJM": 1,
+          "brailleTactile": 1
+        },
+        "seniorCare": {
+          "casCount": 1,
+          "casPer10kSeniors": 1.6
+        },
+        "recreation": {
+          "cityParks": 4,
+          "pocketParks": 4
+        }
+      },
+      "facilities": [
+        {
+          "name": "Zarząd Dróg Miasta Krakowa (ZDMK Centrala)",
+          "departments": "ZDMK - Obsługa Mieszkańców, Zezwolenia i Strefa Płatnego Parkowania",
+          "address": "ul. Centralna 53",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+        }
+      ],
+      "scores": {
+        "overallScore": 70.4,
+        "mobilityScore": 72.6,
+        "visualScore": 66.6,
+        "hearingScore": 82.2,
+        "seniorScore": 52.1,
+        "familyStrollerScore": 80.5
+      },
+      "keyStrengths": [
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
+        "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
+      ]
+    },
+    {
+      "districtId": 15,
+      "districtRoman": "XV",
+      "districtName": "Dzielnica XV Mistrzejowice",
+      "areaKm2": 5.59,
+      "totalPopulation": 50819,
+      "seniors65Plus": 13089,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 89,
+          "locationsCount": 59,
+          "spotsPer10kPop": 17.5,
+          "spotsPerKm2": 15.9
+        },
+        "transit": {
+          "totalStops": 91,
+          "kasselKerbStops": 11,
+          "kasselKerbPct": 12.1,
+          "tactilePavingStops": 44,
+          "tactilePavingPct": 48.4
+        },
+        "publicFacilities": {
+          "auditedTotal": 0,
+          "wheelchairFull": 0,
+          "wheelchairPartial": 0,
+          "elevators": 0,
+          "ramps": 0,
+          "accessibleToilets": 0,
+          "hearingLoops": 0,
+          "signLanguagePJM": 0,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 3,
+          "casPer10kSeniors": 2.3
+        },
+        "recreation": {
+          "cityParks": 4,
+          "pocketParks": 2
+        }
+      },
+      "facilities": [],
+      "scores": {
+        "overallScore": 68.4,
+        "mobilityScore": 70.5,
+        "visualScore": 83.7,
+        "hearingScore": 50.0,
+        "seniorScore": 56.1,
+        "familyStrollerScore": 75.9
+      },
+      "keyStrengths": [
+        "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 48.4% przystanków",
+        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)",
+        "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
+      ]
+    },
+    {
+      "districtId": 16,
+      "districtRoman": "XVI",
+      "districtName": "Dzielnica XVI Bieńczyce",
+      "areaKm2": 3.7,
+      "totalPopulation": 36438,
+      "seniors65Plus": 9907,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 42,
+          "locationsCount": 28,
+          "spotsPer10kPop": 11.5,
+          "spotsPerKm2": 11.4
+        },
+        "transit": {
+          "totalStops": 56,
+          "kasselKerbStops": 1,
+          "kasselKerbPct": 1.8,
+          "tactilePavingStops": 19,
+          "tactilePavingPct": 33.9
+        },
+        "publicFacilities": {
+          "auditedTotal": 0,
+          "wheelchairFull": 0,
+          "wheelchairPartial": 0,
+          "elevators": 0,
+          "ramps": 0,
+          "accessibleToilets": 0,
+          "hearingLoops": 0,
+          "signLanguagePJM": 0,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 3,
+          "casPer10kSeniors": 3.0
+        },
+        "recreation": {
+          "cityParks": 2,
+          "pocketParks": 1
+        }
+      },
+      "facilities": [],
+      "scores": {
+        "overallScore": 57.4,
+        "mobilityScore": 56.3,
+        "visualScore": 69.8,
+        "hearingScore": 50.0,
+        "seniorScore": 57.2,
+        "familyStrollerScore": 50.0
+      },
+      "keyStrengths": [
+        "Rozbudowana sieć wsparcia seniorów (3 aktywne Centra Aktywności Seniora)"
+      ]
+    },
+    {
+      "districtId": 17,
+      "districtRoman": "XVII",
+      "districtName": "Dzielnica XVII Wzgórza Krzesławickie",
+      "areaKm2": 23.82,
+      "totalPopulation": 20465,
+      "seniors65Plus": 4402,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 52,
+          "locationsCount": 34,
+          "spotsPer10kPop": 25.4,
+          "spotsPerKm2": 2.2
+        },
+        "transit": {
+          "totalStops": 140,
+          "kasselKerbStops": 16,
+          "kasselKerbPct": 11.4,
+          "tactilePavingStops": 58,
+          "tactilePavingPct": 41.4
+        },
+        "publicFacilities": {
+          "auditedTotal": 0,
+          "wheelchairFull": 0,
+          "wheelchairPartial": 0,
+          "elevators": 0,
+          "ramps": 0,
+          "accessibleToilets": 0,
+          "hearingLoops": 0,
+          "signLanguagePJM": 0,
+          "brailleTactile": 0
+        },
+        "seniorCare": {
+          "casCount": 2,
+          "casPer10kSeniors": 4.5
+        },
+        "recreation": {
+          "cityParks": 5,
+          "pocketParks": 2
+        }
+      },
+      "facilities": [],
+      "scores": {
+        "overallScore": 65.2,
+        "mobilityScore": 65.3,
+        "visualScore": 68.0,
+        "hearingScore": 50.0,
+        "seniorScore": 66.4,
+        "familyStrollerScore": 75.3
+      },
+      "keyStrengths": [
+        "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 41.4% przystanków",
+        "Wysoka dostępność miejsc postojowych PRM (52 niebieskich kopert w 34 lokalizacjach)",
+        "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)"
+      ]
+    },
+    {
+      "districtId": 18,
+      "districtRoman": "XVIII",
+      "districtName": "Dzielnica XVIII Nowa Huta",
+      "areaKm2": 65.41,
+      "totalPopulation": 46796,
+      "seniors65Plus": 12032,
+      "metrics": {
+        "prmParking": {
+          "totalSpots": 144,
+          "locationsCount": 101,
+          "spotsPer10kPop": 30.8,
+          "spotsPerKm2": 2.2
+        },
+        "transit": {
+          "totalStops": 272,
+          "kasselKerbStops": 14,
+          "kasselKerbPct": 5.1,
+          "tactilePavingStops": 140,
+          "tactilePavingPct": 51.5
+        },
+        "publicFacilities": {
+          "auditedTotal": 4,
+          "wheelchairFull": 4,
+          "wheelchairPartial": 0,
+          "elevators": 4,
+          "ramps": 4,
+          "accessibleToilets": 4,
+          "hearingLoops": 3,
+          "signLanguagePJM": 2,
+          "brailleTactile": 3
+        },
+        "seniorCare": {
+          "casCount": 13,
+          "casPer10kSeniors": 10.8
+        },
+        "recreation": {
+          "cityParks": 8,
+          "pocketParks": 3
+        }
+      },
+      "facilities": [
+        {
+          "name": "Urząd Stanu Cywilnego i Wydziały UMK - Nowa Huta",
+          "departments": "Urząd Stanu Cywilnego, Ewidencja Ludności i Pojazdów, Środowisko, Bezpieczeństwo i Zarządzanie Kryzysowe",
+          "address": "os. Zgody 2",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+        },
+        {
+          "name": "Punkt Pomocy Prawnej i Obsługi Mieszkańców",
+          "departments": "Punkt Nieodpłatnej Pomocy Prawnej, Biuro Partycypacji",
+          "address": "os. Centrum C 10",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM. Brak: pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
+        },
+        {
+          "name": "Nowohuckie Centrum Kultury (NCK)",
+          "departments": "Dział Edukacji i Wystaw, Sale Warsztatowe",
+          "address": "al. Jana Pawła II 232",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, oznaczenia dotykowe. Brak: tłumacza PJM."
+        },
+        {
+          "name": "Centrum Obywatelskie Centrum C 10",
+          "departments": "Wsparcie Organizacji Pozarządowych i Inicjatyw Mieszkańców",
+          "address": "os. Centrum C 10",
+          "wheelchairAccessible": "PEŁNA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": true,
+          "brailleOrTactile": true,
+          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+        }
+      ],
+      "scores": {
+        "overallScore": 88.5,
+        "mobilityScore": 83.1,
+        "visualScore": 87.9,
+        "hearingScore": 96.0,
+        "seniorScore": 95.0,
+        "familyStrollerScore": 83.7
+      },
+      "keyStrengths": [
+        "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 51.5% przystanków",
+        "Wysoka dostępność miejsc postojowych PRM (144 niebieskich kopert w 101 lokalizacjach)",
+        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)"
+      ]
+    }
+  ]
+}

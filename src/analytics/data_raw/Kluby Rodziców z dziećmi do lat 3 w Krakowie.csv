@@ -1,0 +1,51 @@
+﻿Lp;Miejsce;Dzielnica;Numer Dzielnicy;Ulica;Numer budynku;Numer lokalu;Kod pocztowy;Miasto;Podmiot prowadzący
+1;Fundacja KDM;Stare Miasto;I ;Berka Joselewicza;;;31-031;Kraków;Organizacja pozarządowa
+2;Stowarzyszenie Kultura i Edukacja;Grzegórzki;II;Bobrowskiego;;;31-552;Kraków;Organizacja pozarządowa
+3;Fundacja Polekont - Istota Przywiązania;Grzegórzki;II;Dąbska;LU5;LU5;31-572;Kraków;Organizacja pozarządowa
+4;"Klub Kultury ""Wena""";Prądnik Czerwony;III;Aleja 29 Listopada;;;31-241;Kraków;Gmina Miejska Kraków
+5;Klub Malwa;Prądnik Czerwony;III;Dobrego Pasterza;;;31-416;Kraków;Gmina Miejska Kraków
+6;Klub Olsza;Prądnik Czerwony;III;Stanisława ze Skalbmierza;;;31-436;Kraków;Gmina Miejska Kraków
+7;Stowarzyszenie SIEMACHA;Prądnik Czerwony;III;Dobrego Pasterza;;;31-416;Kraków;Organizacja pozarządowa
+8;"Centrum Kultury ""Dworek Białoprądnicki""";Prądnik Biały;IV;Papiernicza;;;31-221 ;Kraków;Gmina Miejska Kraków
+9;"Klub Kultury ""Łokietek""";Prądnik Biały;IV;Władysława Łokietka;;;31-263;Kraków;Gmina Miejska Kraków
+10;"PAL ""Na Żabińcu""";Prądnik Biały;IV;Konecznego;2u;2u;31-216;Kraków;Gmina Miejska Kraków
+11;"Klub Kultury ""Paleta""";Krowodrza;V;Wrocławska;;;30-017;Kraków;Gmina Miejska Kraków
+12;"Klub Kultury ""Mydlniki""";Bronowice;VI;Balicka;;;30-198;Kraków;Gmina Miejska Kraków
+13;Stowarzyszenie Latarnia;Bronowice;VI;Jabłonkowska;;;30-139;Kraków;Organizacja pozarządowa
+14;Fundacja KDM;Bronowice;VI;Wizjonerów;;;31-356;Kraków;Organizacja pozarządowa
+15;"Klub Kultury ""Przegorzały""";Zwierzyniec;VII;Kamedulska;;;30-252;Kraków;Gmina Miejska Kraków
+16;"Klub Kultury ""Wola""";Zwierzyniec;VII;Królowej Jadwigi;;;30-218;Kraków;Gmina Miejska Kraków
+17;"Klub Kultury ""Chełm""";Zwierzyniec;VII;Chełmska;;;30-238;Kraków;Gmina Miejska Kraków
+18;Ośrodek Ruczaj;Dębniki;VIII;Przyzby;;;30-384;Kraków;Gmina Miejska Kraków
+19;Klub Skotniki;Dębniki;VIII;Batalionów Chłopskich;;;30-394;Kraków;Gmina Miejska Kraków
+20;Stowarzyszenie Rodzin Adopcyjnych i Zastępczych Pro Familia;Dębniki;VIII;Kapelanka;;;30-347;Kraków;Organizacja pozarządowa
+21;Klub Iskierka;Łagiewniki;IX;Żywiecka;;;30-427;Kraków;Gmina Miejska Kraków
+22;Klub Wróblowice;Swoszowice;X;Niewodniczańskiego;;;30-698;Kraków;Gmina Miejska Kraków
+23;Klub Swoszowice;Swoszowice;X;Kolejarzy;;;30-434;Kraków;Gmina Miejska Kraków
+24;Fort Borek;Swoszowice;X;Forteczna;;;30-437;Kraków;Gmina Miejska Kraków
+25;Klub Piaskownica;Podgórze Duchackie;XI;Łużycka;;;30-658;Kraków;Gmina Miejska Kraków
+26;Fundacja Rodzina Plus;Podgórze Duchackie;XI;Witosa;;;30-612;Kraków;Organizacja pozarządowa
+27;Stowarzyszenie SIEMACHA;Podgórze Duchackie;XI;Kamieńskiego;;;30-644;Kraków;Organizacja pozarządowa
+28;Dwór Czeczów;Bieżanów Prokocim;XII;Popiełuszki;;;30-898;Kraków;Gmina Miejska Kraków
+29;Klub Aleksandry;Bieżanów Prokocim;XII;Aleksandry;;;30-837;Kraków;Gmina Miejska Kraków
+30;Fundacja Polekont - Istota Przywiązania;Bieżanów Prokocim;XII;Kurczaba;;;30-868;Kraków;Organizacja pozarządowa
+31;Stowarzyszenie SIEMACHA;Bieżanów Prokocim;XII;Facimiech;;;30-667;Kraków;Organizacja pozarządowa
+32;Klub Rybitwy;Podgórze;XIII;Rybitwy;;;30-722;Kraków;Gmina Miejska Kraków
+33;Klub Przewóz;Podgórze;XIII;Łutnia;;;30-799;Kraków;Gmina Miejska Kraków
+34;Klub Płaszów;Podgórze;XIII;Gumniska;;;30-718;Kraków;Gmina Miejska Kraków
+35;Centrum Kultury Podgórza;Podgórze;XIII;Sokolska;;;30-510;Kraków;Gmina Miejska Kraków
+36;"PAL ""Stare Podgórze/Zabłocie""";Podgórze;XIII;Dąbrówki;3;3;30-550;Kraków;Gmina Miejska Kraków
+37;Klub 303;Czyżyny;XIV;Osiedle Dywizjonu 303;;;31-871;Kraków;Gmina Miejska Kraków
+38;Klub Kuźnia;Mistrzejowice;XV;Osiedle Złotego Wieku;;;31-616;Kraków;Gmina Miejska Kraków
+39;Fundacja Polekont - Istota Przywiązania;Mistrzejowice;XV;Osiedle Oświecenia;1A;1A;31-636;Kraków;Organizacja pozarządowa
+40;Fundacja KDM;Mistrzejowice;XV;Osiedle Piastów;;;31-624;Kraków;Organizacja pozarządowa
+41;Stowarzyszenie Rodzin Adopcyjnych i Zastępczych Pro Familia;Bieńczyce;XVI;Osiedle Niepodległości;;;31-861;Kraków;Organizacja pozarządowa
+42;Klub Dukat;Wzgórza Krzesławickie;XVII;Styczna;;;31-764;Kraków;Gmina Miejska Kraków
+43;Klub Zakole;Wzgórza Krzesławickie;XVII;Zakole;;;31-763;Kraków;Gmina Miejska Kraków
+44;ARTzona;Nowa Huta;XVIII;Osiedle Górali;;;31-959;Kraków;Gmina Miejska Kraków
+45;Nowohuckie Centrum Kultury;Nowa Huta;XVIII;Aleja Jana Pawła II;;;31-913;Kraków;Gmina Miejska Kraków
+46;Klub Jędruś;Nowa Huta;XVIII;Osiedle Centrum A;;;31-923;Kraków;Gmina Miejska Kraków
+47;"PAL ""Na Skarpie""";Nowa Huta;XVIII;Osiedle Na Skarpie;;;31-910;Kraków;Gmina Miejska Kraków
+48;Klub Karino;Nowa Huta;XVIII;Truskawkowa;;;31-985;Kraków;Gmina Miejska Kraków
+49;Stowarzyszenie Rodzin Adopcyjnych i Zastępczych Pro Familia;Nowa Huta;XVIII;Osiedle Górali;;;31-960;Kraków;Organizacja pozarządowa
+50;"PAL ""Wróżenice""";Nowa Huta;XVIII;Wróżenicka ;;;31-988;Kraków;Gmina Miejska Kraków
