@@ -477,8 +477,8 @@ export const uaTranslations: TranslationDictionary = {
     },
     statuses: {
       integrated: 'Інтегровано в ETL',
-      gisLayer: 'Векторний ГІС-шар',
-      registryNbp: 'Реєстр NBP / RCN',
+      own: 'Власна робота',
+      live: 'API прямих трансляцій',
     },
   },
   footer: {

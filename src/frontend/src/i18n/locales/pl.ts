@@ -477,8 +477,8 @@ export const plTranslations: TranslationDictionary = {
     },
     statuses: {
       integrated: 'Zintegrowane w ETL',
-      gisLayer: 'Warstwa GIS',
-      registryNbp: 'Rejestr NBP / RCN',
+      own: 'Opracowanie własne',
+      live: 'Transmisja Live API',
     },
   },
   footer: {

@@ -87,8 +87,8 @@ export function AboutDataMethodologyPage({
 
   const getStatusLabel = (status: string): string => {
     if (status === 'Zintegrowane w ETL') return t.methodology.statuses.integrated;
-    if (status === 'Warstwa GIS') return t.methodology.statuses.gisLayer;
-    if (status.includes('NBP') || status.includes('RCN')) return t.methodology.statuses.registryNbp;
+    if (status === 'Opracowanie własne') return t.methodology.statuses.own;
+    if (status === 'Transmisja Live API') return t.methodology.statuses.live;
     return status;
   };
 

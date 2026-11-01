@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-31T17:40:19.990936+00:00",
+  "generatedAt": "2026-11-01T22:43:24.536519+00:00",
   "meta": {
     "title": "Profile Dostępności Architektonicznej i Społecznej Dzielnic Krakowa",
     "description": "Zintegrowane wskaźniki dostępności dla osób z niepełnosprawnościami, seniorów i rodzin z dziećmi oparte w 100% na danych ZDMK, UMK, ZTP i BDK.",
@@ -40,7 +40,7 @@
     "totalSeniorCenters": 68,
     "avgKasselKerbPct": 14.0,
     "avgTactilePavingPct": 35.1,
-    "avgOverallScore": 70.4
+    "avgOverallScore": 69.2
   },
   "districts": [
     {
@@ -66,12 +66,15 @@
         },
         "publicFacilities": {
           "auditedTotal": 6,
-          "wheelchairFull": 0,
-          "wheelchairPartial": 0,
-          "elevators": 6,
-          "ramps": 1,
-          "accessibleToilets": 3,
-          "hearingLoops": 3,
+          "wheelchairGood": 1,
+          "wheelchairPartial": 3,
+          "wheelchairWeak": 2,
+          "wheelchairNone": 0,
+          "wheelchairFull": 1,
+          "elevators": 3,
+          "ramps": 4,
+          "accessibleToilets": 2,
+          "hearingLoops": 1,
           "signLanguagePJM": 3,
           "brailleTactile": 0
         },
@@ -89,88 +92,88 @@
           "name": "Siedziba Główna Magistratu - Pałac Wielopolskich",
           "departments": "Prezydent Miasta Krakowa, Rada Miasta Krakowa, Kancelaria Rady",
           "address": "Plac Wszystkich Świętych 3-4",
-          "wheelchairAccessible": "CZEŚCIOWA",
+          "wheelchairAccessible": "DOBRA",
           "hasRamp": true,
-          "hasElevatorOrPlatform": true,
+          "hasElevatorOrPlatform": false,
           "accessibleToilet": true,
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Dobra. Zapewniono: platforma przyschodowa w klatce „F”, WC przystosowane dla osób niepełnosprawnych, obsługa w języku migowym, możliwość zejścia urzędnika do osoby niepełnosprawnej,"
         },
         {
           "name": "Urząd Miasta Krakowa - Wydziały Kultury i Gospodarki",
           "departments": "Wydział Kultury, Gospodarka Komunalna, Wydział ds. Dzielnic",
           "address": "ul. Wielopole 17a",
-          "wheelchairAccessible": "CZEŚCIOWA",
-          "hasRamp": false,
+          "wheelchairAccessible": "CZĘŚCIOWA",
+          "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": false,
           "hearingLoop": false,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, tłumacza PJM. Brak: podjazdu/rampy, toalety PRM, pętli indukcyjnej, oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: dostępny schodołaz, obsługa w języku migowym, możliwość zejścia urzędnika do osoby niepełnosprawnej"
         },
         {
           "name": "Wydział Gospodarki Komunalnej i Klimatu",
           "departments": "Wydział Gospodarki Komunalnej i Klimatu",
           "address": "ul. Wielopole 1",
-          "wheelchairAccessible": "CZEŚCIOWA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": false,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": false,
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę. Brak: podjazdu/rampy, toalety PRM, pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: jest winda ale WC i wejście do budynku nieprzystosowane dla osób niepełnosprawnych"
         },
         {
           "name": "Urząd Miasta Krakowa - Sarego",
           "departments": "Wydział Kontroli Wewnętrznej, Wydział Organizacji i Nadzoru",
           "address": "ul. Sarego 4",
-          "wheelchairAccessible": "CZEŚCIOWA",
-          "hasRamp": false,
-          "hasElevatorOrPlatform": true,
+          "wheelchairAccessible": "CZĘŚCIOWA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": false,
           "accessibleToilet": true,
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, toaletę PRM. Brak: podjazdu/rampy, pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: schodołaz, WC przystosowane, możliwość zejścia urzędnika do osoby niepełnosprawnej."
         },
         {
           "name": "Zarząd Transportu Publicznego w Krakowie (ZTP)",
           "departments": "ZTP Kraków - Dział Obsługi Pasażerów i Biletów",
           "address": "ul. Wielopole 1",
-          "wheelchairAccessible": "CZEŚCIOWA",
+          "wheelchairAccessible": "SŁABA",
           "hasRamp": false,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": false,
-          "hearingLoop": true,
-          "signLanguageTranslator": true,
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, pętlę indukcyjną, tłumacza PJM. Brak: podjazdu/rampy, toalety PRM, oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Słaba. Zapewniono  Dostępność: jest winda ale WC i wejście do budynku nieprzystosowane dla osób niepełnosprawnych,"
         },
         {
           "name": "Krakowskie Forum Kultury",
           "departments": "Centrum Kultury i Integracji Społecznej",
           "address": "ul. Mikołajska 2",
-          "wheelchairAccessible": "CZEŚCIOWA",
-          "hasRamp": false,
-          "hasElevatorOrPlatform": true,
-          "accessibleToilet": true,
-          "hearingLoop": true,
-          "signLanguageTranslator": false,
+          "wheelchairAccessible": "SŁABA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": false,
+          "accessibleToilet": false,
+          "hearingLoop": false,
+          "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, toaletę PRM, pętlę indukcyjną. Brak: podjazdu/rampy, tłumacza PJM, oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Słaba. Zapewniono  Dostępność: niski próg, ciężkie do otworzenia drzwi, brak windy, Brak dźwigu lub podnośnika, dostępna usługa tłumaczenia migowego, brak toalety  PRM"
         }
       ],
       "scores": {
-        "overallScore": 72.7,
-        "mobilityScore": 67.8,
-        "visualScore": 60.5,
+        "overallScore": 72.4,
+        "mobilityScore": 67.5,
+        "visualScore": 60.8,
         "hearingScore": 96.0,
         "seniorScore": 72.2,
-        "familyStrollerScore": 75.6
+        "familyStrollerScore": 73.6
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (525 niebieskich kopert w 196 lokalizacjach)",
@@ -201,14 +204,17 @@
         },
         "publicFacilities": {
           "auditedTotal": 2,
-          "wheelchairFull": 2,
-          "wheelchairPartial": 0,
+          "wheelchairGood": 1,
+          "wheelchairPartial": 1,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 1,
           "elevators": 2,
           "ramps": 2,
           "accessibleToilets": 2,
           "hearingLoops": 2,
-          "signLanguagePJM": 2,
-          "brailleTactile": 1
+          "signLanguagePJM": 1,
+          "brailleTactile": 0
         },
         "seniorCare": {
           "casCount": 5,
@@ -224,36 +230,36 @@
           "name": "Urząd Miasta Krakowa - Zespół Obsługi Mieszkańców",
           "departments": "Wydział Spraw Administracyjnych, Ewidencja Pojazdów i Kierowców, Podatki i Opłaty, Kancelaria Prezydenta",
           "address": "al. Powstania Warszawskiego 10",
-          "wheelchairAccessible": "PEŁNA",
-          "hasRamp": true,
-          "hasElevatorOrPlatform": true,
-          "accessibleToilet": true,
-          "hearingLoop": true,
-          "signLanguageTranslator": true,
-          "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
-        },
-        {
-          "name": "Urząd Miasta Krakowa - Wydział Architektury i Urbanistyki",
-          "departments": "Wydział Architektury i Urbanistyki, Wydział Planowania Przestrzennego",
-          "address": "ul. Mogilska 41",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "DOBRA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Dobra. Zapewniono  Dostępność: dwa podjazdy, winda, WC przystosowane dla osób niepełnosprawnych, obsługa w języku migowym."
+        },
+        {
+          "name": "Urząd Miasta Krakowa - Wydział Architektury i Urbanistyki",
+          "departments": "Wydział Architektury i Urbanistyki, Wydział Planowania Przestrzennego",
+          "address": "ul. Mogilska 41",
+          "wheelchairAccessible": "CZĘŚCIOWA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": true,
+          "accessibleToilet": true,
+          "hearingLoop": true,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność: Częściowa. winda i WC przystosowane dla osób niepełnosprawnych, pętle indukcyjne"
         }
       ],
       "scores": {
-        "overallScore": 81.6,
-        "mobilityScore": 93.9,
-        "visualScore": 56.1,
+        "overallScore": 79.2,
+        "mobilityScore": 93.2,
+        "visualScore": 48.0,
         "hearingScore": 96.0,
         "seniorScore": 78.4,
-        "familyStrollerScore": 84.4
+        "familyStrollerScore": 81.7
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (216 niebieskich kopert w 87 lokalizacjach)",
@@ -284,8 +290,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 1,
-          "wheelchairFull": 1,
+          "wheelchairGood": 1,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 1,
           "elevators": 1,
           "ramps": 1,
           "accessibleToilets": 1,
@@ -307,23 +316,23 @@
           "name": "Punkt Obsługi Mieszkańców Galeria Serenada",
           "departments": "Wydział Spraw Administracyjnych, Ewidencja Pojazdów i Kierowców",
           "address": "al. Bora-Komorowskiego 41",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "DOBRA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+          "auditDescription": "Dostępność: Dobra. Zapewniono  Dostępność: dostępny"
         }
       ],
       "scores": {
-        "overallScore": 86.2,
-        "mobilityScore": 95.0,
+        "overallScore": 85.8,
+        "mobilityScore": 94.3,
         "visualScore": 94.0,
-        "hearingScore": 82.2,
+        "hearingScore": 84.5,
         "seniorScore": 58.9,
-        "familyStrollerScore": 95.0
+        "familyStrollerScore": 91.5
       },
       "keyStrengths": [
         "Wygodne perony bez stopni (28.6% przystanków) ułatwiające wsiadanie z poziomu chodnika",
@@ -354,8 +363,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 0,
-          "wheelchairFull": 0,
+          "wheelchairGood": 0,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 0,
           "ramps": 0,
           "accessibleToilets": 0,
@@ -374,12 +386,12 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 70.9,
-        "mobilityScore": 76.1,
-        "visualScore": 81.9,
-        "hearingScore": 50.0,
+        "overallScore": 71.6,
+        "mobilityScore": 75.7,
+        "visualScore": 82.1,
+        "hearingScore": 57.7,
         "seniorScore": 53.8,
-        "familyStrollerScore": 86.7
+        "familyStrollerScore": 83.8
       },
       "keyStrengths": [
         "Wygodne perony bez stopni (30.9% przystanków) ułatwiające wsiadanie z poziomu chodnika",
@@ -410,10 +422,13 @@
         },
         "publicFacilities": {
           "auditedTotal": 2,
-          "wheelchairFull": 1,
-          "wheelchairPartial": 0,
+          "wheelchairGood": 0,
+          "wheelchairPartial": 2,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 2,
-          "ramps": 1,
+          "ramps": 2,
           "accessibleToilets": 2,
           "hearingLoops": 0,
           "signLanguagePJM": 1,
@@ -433,34 +448,34 @@
           "name": "Urząd Stanu Cywilnego - Krowodrza",
           "departments": "Urząd Stanu Cywilnego - Referat Rejestracji Stanu Cywilnego",
           "address": "ul. Lubelska 27 i 29",
-          "wheelchairAccessible": "CZEŚCIOWA",
-          "hasRamp": false,
+          "wheelchairAccessible": "CZĘŚCIOWA",
+          "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
           "hearingLoop": false,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: CZĘŚCIOWA. Zapewniono: windę/platformę, toaletę PRM, tłumacza PJM. Brak: podjazdu/rampy, pętli indukcyjnej, oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Częściowa. dostępny schodołaz, WC przystosowane dla osób niepełnosprawnych, obsługa w języku migowym, możliwość zejścia urzędnika do osoby niepełnosprawnej,"
         },
         {
           "name": "Zarząd Zieleni Miejskiej w Krakowie (ZZM)",
           "departments": "ZZM - Siedziba Główna",
           "address": "ul. Reymonta 20",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM. Brak: pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: podjazd dla niepełnosprawnych, winde, toaletę PRM, miejsca parkingowe"
         }
       ],
       "scores": {
-        "overallScore": 76.8,
-        "mobilityScore": 89.3,
-        "visualScore": 72.7,
-        "hearingScore": 59.2,
+        "overallScore": 79.4,
+        "mobilityScore": 95.0,
+        "visualScore": 72.9,
+        "hearingScore": 65.3,
         "seniorScore": 62.0,
         "familyStrollerScore": 95.0
       },
@@ -493,8 +508,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 0,
-          "wheelchairFull": 0,
+          "wheelchairGood": 0,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 0,
           "ramps": 0,
           "accessibleToilets": 0,
@@ -513,12 +531,12 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 56.2,
-        "mobilityScore": 55.5,
-        "visualScore": 48.0,
-        "hearingScore": 50.0,
+        "overallScore": 57.3,
+        "mobilityScore": 55.4,
+        "visualScore": 48.5,
+        "hearingScore": 57.7,
         "seniorScore": 59.1,
-        "familyStrollerScore": 71.7
+        "familyStrollerScore": 70.0
       },
       "keyStrengths": [
         "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)",
@@ -548,8 +566,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 1,
-          "wheelchairFull": 1,
-          "wheelchairPartial": 0,
+          "wheelchairGood": 0,
+          "wheelchairPartial": 1,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 1,
           "ramps": 1,
           "accessibleToilets": 1,
@@ -571,23 +592,23 @@
           "name": "Krakowskie Centrum Świadczeń",
           "departments": "Krakowskie Centrum Świadczeń, Wydział Edukacji i Projektów Edukacyjnych",
           "address": "ul. Stachowicza 18",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
           "hearingLoop": false,
           "signLanguageTranslator": true,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, tłumacza PJM. Brak: pętli indukcyjnej, oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: podjazd dla niepełnosprawnych od dziedzińca wewnętrznego, winda i WC przystosowane dla osób niepełnosprawnych, obsługa w języku migowym,"
         }
       ],
       "scores": {
-        "overallScore": 71.8,
-        "mobilityScore": 81.7,
-        "visualScore": 48.5,
-        "hearingScore": 59.2,
+        "overallScore": 69.9,
+        "mobilityScore": 74.9,
+        "visualScore": 49.0,
+        "hearingScore": 65.3,
         "seniorScore": 83.2,
-        "familyStrollerScore": 86.0
+        "familyStrollerScore": 79.7
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (62 niebieskich kopert w 45 lokalizacjach)",
@@ -618,14 +639,17 @@
         },
         "publicFacilities": {
           "auditedTotal": 1,
-          "wheelchairFull": 1,
+          "wheelchairGood": 0,
           "wheelchairPartial": 0,
-          "elevators": 1,
+          "wheelchairWeak": 1,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
+          "elevators": 0,
           "ramps": 1,
-          "accessibleToilets": 1,
-          "hearingLoops": 1,
+          "accessibleToilets": 0,
+          "hearingLoops": 0,
           "signLanguagePJM": 0,
-          "brailleTactile": 1
+          "brailleTactile": 0
         },
         "seniorCare": {
           "casCount": 5,
@@ -641,28 +665,28 @@
           "name": "Biblioteka Kraków - Biblioteka Główna",
           "departments": "Biblioteka Główna, Wypożyczalnia i Czytelnia dla Osób ze Szczególnymi Potrzebami",
           "address": "ul. Powroźnicza 2",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "SŁABA",
           "hasRamp": true,
-          "hasElevatorOrPlatform": true,
-          "accessibleToilet": true,
-          "hearingLoop": true,
+          "hasElevatorOrPlatform": false,
+          "accessibleToilet": false,
+          "hearingLoop": false,
           "signLanguageTranslator": false,
-          "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, oznaczenia dotykowe. Brak: tłumacza PJM."
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność: Słaba. ZaDostępność: Dostępny jedynie parter budynku (przy wejściu bocznym - południowa strona budynku) znajduje się platforma podnośnikowa. Brak toalety."
         }
       ],
       "scores": {
-        "overallScore": 70.2,
-        "mobilityScore": 76.2,
-        "visualScore": 61.6,
-        "hearingScore": 63.8,
+        "overallScore": 59.9,
+        "mobilityScore": 60.0,
+        "visualScore": 53.5,
+        "hearingScore": 50.0,
         "seniorScore": 64.1,
-        "familyStrollerScore": 85.1
+        "familyStrollerScore": 73.4
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (106 niebieskich kopert w 64 lokalizacjach)",
-        "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
-        "Rozbudowana sieć wsparcia seniorów (5 aktywne Centra Aktywności Seniora)"
+        "Rozbudowana sieć wsparcia seniorów (5 aktywne Centra Aktywności Seniora)",
+        "Liczne parki i ogrody kieszonkowe z alejkami bez barier architektonicznych"
       ]
     },
     {
@@ -688,8 +712,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 0,
-          "wheelchairFull": 0,
+          "wheelchairGood": 0,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 0,
           "ramps": 0,
           "accessibleToilets": 0,
@@ -708,12 +735,12 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 61.8,
-        "mobilityScore": 59.8,
-        "visualScore": 65.0,
-        "hearingScore": 50.0,
+        "overallScore": 62.9,
+        "mobilityScore": 59.7,
+        "visualScore": 65.3,
+        "hearingScore": 57.7,
         "seniorScore": 71.8,
-        "familyStrollerScore": 61.2
+        "familyStrollerScore": 60.4
       },
       "keyStrengths": [
         "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)",
@@ -743,8 +770,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 0,
-          "wheelchairFull": 0,
+          "wheelchairGood": 0,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 0,
           "ramps": 0,
           "accessibleToilets": 0,
@@ -763,12 +793,12 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 54.6,
+        "overallScore": 55.8,
         "mobilityScore": 52.0,
-        "visualScore": 52.7,
-        "hearingScore": 50.0,
+        "visualScore": 53.2,
+        "hearingScore": 57.7,
         "seniorScore": 59.1,
-        "familyStrollerScore": 61.4
+        "familyStrollerScore": 60.5
       },
       "keyStrengths": [
         "Rozbudowana sieć wsparcia seniorów (2 aktywne Centra Aktywności Seniora)"
@@ -797,8 +827,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 1,
-          "wheelchairFull": 1,
+          "wheelchairGood": 1,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 1,
           "elevators": 1,
           "ramps": 1,
           "accessibleToilets": 1,
@@ -820,23 +853,23 @@
           "name": "Punkt Obsługi Mieszkańców Galeria Bonarka",
           "departments": "Wydział Spraw Administracyjnych, Ewidencja Pojazdów i Kierowców",
           "address": "ul. Kamieńskiego 11",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "DOBRA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+          "auditDescription": "Dostępność: Dobra. Zapewniono  Dostępność: dostępny"
         }
       ],
       "scores": {
-        "overallScore": 63.8,
-        "mobilityScore": 62.2,
-        "visualScore": 57.4,
-        "hearingScore": 82.2,
+        "overallScore": 64.0,
+        "mobilityScore": 62.1,
+        "visualScore": 57.8,
+        "hearingScore": 84.5,
         "seniorScore": 52.0,
-        "familyStrollerScore": 70.2
+        "familyStrollerScore": 68.6
       },
       "keyStrengths": [
         "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
@@ -867,8 +900,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 0,
-          "wheelchairFull": 0,
+          "wheelchairGood": 0,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 0,
           "ramps": 0,
           "accessibleToilets": 0,
@@ -887,12 +923,12 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 62.6,
-        "mobilityScore": 63.0,
-        "visualScore": 62.8,
-        "hearingScore": 50.0,
+        "overallScore": 63.5,
+        "mobilityScore": 62.8,
+        "visualScore": 63.1,
+        "hearingScore": 57.7,
         "seniorScore": 55.1,
-        "familyStrollerScore": 82.8
+        "familyStrollerScore": 80.3
       },
       "keyStrengths": [
         "Wygodne perony bez stopni (20.7% przystanków) ułatwiające wsiadanie z poziomu chodnika",
@@ -923,14 +959,17 @@
         },
         "publicFacilities": {
           "auditedTotal": 6,
-          "wheelchairFull": 5,
-          "wheelchairPartial": 0,
-          "elevators": 5,
+          "wheelchairGood": 0,
+          "wheelchairPartial": 5,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 1,
+          "wheelchairFull": 0,
+          "elevators": 4,
           "ramps": 5,
           "accessibleToilets": 5,
-          "hearingLoops": 5,
-          "signLanguagePJM": 5,
-          "brailleTactile": 3
+          "hearingLoops": 1,
+          "signLanguagePJM": 1,
+          "brailleTactile": 0
         },
         "seniorCare": {
           "casCount": 6,
@@ -946,14 +985,14 @@
           "name": "Urząd Miasta Krakowa - Rynek Podgórski 1",
           "departments": "Wydział Mieszkalnictwa, Wydział Środowiska, Klimatu i Powietrza",
           "address": "Rynek Podgórski 1",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
-          "hearingLoop": true,
-          "signLanguageTranslator": true,
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Częściowa. podjazd, wideodomofon, szeroka winda, WC przystosowane dla osób niepełnosprawnych na parterze."
         },
         {
           "name": "Urząd Miasta Krakowa - Rynek Podgórski 2",
@@ -966,68 +1005,68 @@
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: BRAK. Obiekt nie posiada wymienionych w rejestrze udogodnień dla osób z niepełnosprawnościami."
+          "auditDescription": "Dostępność: Brak. Zapewniono  Dostępność: budynek architektonicznie bardzo trudny, wiele ciągów schodowych"
         },
         {
           "name": "Centrum Administracyjne Podgórze / Wielicka",
           "departments": "Wydział Ewidencji Pojazdów i Kierowców, Wydział Spraw Administracyjnych, PINB, Podatki",
           "address": "ul. Wielicka 28A",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
-          "hearingLoop": true,
-          "signLanguageTranslator": true,
-          "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: podjazd, winda, WC przystosowane dla osób niepełnosprawnych"
         },
         {
           "name": "Miejski Ośrodek Pomocy Społecznej w Krakowie (Centrala)",
           "departments": "MOPS Kraków - Dyrekcja i Działy Pomocy Osobom z Niepełnosprawnościami",
           "address": "ul. Józefińska 14",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
-          "hearingLoop": true,
-          "signLanguageTranslator": true,
-          "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność: Częściowa. podjazd, winda, WC przystosowane dla osób niepełnosprawnych."
         },
         {
           "name": "Wydział Polityki Społecznej i Zdrowia",
           "departments": "Wydział Polityki Społecznej, Równości i Zdrowia, Pełnomocnik ds. Osób z Niepełnosprawnościami",
           "address": "ul. Dekerta 24",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
-          "hearingLoop": true,
+          "hearingLoop": false,
           "signLanguageTranslator": true,
-          "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: winda i WC przystosowane dla osób niepełnosprawnych, obsługa w języku migowym,"
         },
         {
           "name": "Wydział Podatków i Opłat",
           "departments": "Wydział Podatków i Opłat - Referaty Obsługi",
           "address": "ul. Nowohucka 1",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": true,
-          "hasElevatorOrPlatform": true,
+          "hasElevatorOrPlatform": false,
           "accessibleToilet": true,
           "hearingLoop": true,
-          "signLanguageTranslator": true,
+          "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, tłumacza PJM. Brak: oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: WC przystosowane dla osób niepełnosprawnych, pętle indukcyjne"
         }
       ],
       "scores": {
-        "overallScore": 87.3,
-        "mobilityScore": 85.8,
-        "visualScore": 84.8,
-        "hearingScore": 96.0,
+        "overallScore": 80.2,
+        "mobilityScore": 85.2,
+        "visualScore": 63.7,
+        "hearingScore": 84.5,
         "seniorScore": 88.4,
-        "familyStrollerScore": 83.4
+        "familyStrollerScore": 80.8
       },
       "keyStrengths": [
         "Wysoka dostępność miejsc postojowych PRM (140 niebieskich kopert w 63 lokalizacjach)",
@@ -1058,14 +1097,17 @@
         },
         "publicFacilities": {
           "auditedTotal": 1,
-          "wheelchairFull": 1,
-          "wheelchairPartial": 0,
-          "elevators": 1,
+          "wheelchairGood": 0,
+          "wheelchairPartial": 1,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
+          "elevators": 0,
           "ramps": 1,
           "accessibleToilets": 1,
           "hearingLoops": 1,
           "signLanguagePJM": 1,
-          "brailleTactile": 1
+          "brailleTactile": 0
         },
         "seniorCare": {
           "casCount": 1,
@@ -1081,23 +1123,23 @@
           "name": "Zarząd Dróg Miasta Krakowa (ZDMK Centrala)",
           "departments": "ZDMK - Obsługa Mieszkańców, Zezwolenia i Strefa Płatnego Parkowania",
           "address": "ul. Centralna 53",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": true,
-          "hasElevatorOrPlatform": true,
+          "hasElevatorOrPlatform": false,
           "accessibleToilet": true,
           "hearingLoop": true,
           "signLanguageTranslator": true,
-          "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: wejścia dla osób niepełnosprawnych, parking, toaletę PRM, w budynku A pętla indukcyjna a po zgłoszeniu możliwość skorzystania z tłumacza migowego. Brak windy, oznaczeń braille'a oraz obniżonych lad."
         }
       ],
       "scores": {
-        "overallScore": 70.4,
-        "mobilityScore": 72.6,
-        "visualScore": 66.6,
-        "hearingScore": 82.2,
+        "overallScore": 63.8,
+        "mobilityScore": 59.7,
+        "visualScore": 58.4,
+        "hearingScore": 84.5,
         "seniorScore": 52.1,
-        "familyStrollerScore": 80.5
+        "familyStrollerScore": 71.1
       },
       "keyStrengths": [
         "Wsparcie dla osób niesłyszących (pętle indukcyjne oraz certyfikowana obsługa tłumacza PJM w magistracie)",
@@ -1127,8 +1169,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 0,
-          "wheelchairFull": 0,
+          "wheelchairGood": 0,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 0,
           "ramps": 0,
           "accessibleToilets": 0,
@@ -1147,12 +1192,12 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 68.4,
-        "mobilityScore": 70.5,
-        "visualScore": 83.7,
-        "hearingScore": 50.0,
+        "overallScore": 69.2,
+        "mobilityScore": 70.1,
+        "visualScore": 83.8,
+        "hearingScore": 57.7,
         "seniorScore": 56.1,
-        "familyStrollerScore": 75.9
+        "familyStrollerScore": 73.8
       },
       "keyStrengths": [
         "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 48.4% przystanków",
@@ -1183,8 +1228,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 0,
-          "wheelchairFull": 0,
+          "wheelchairGood": 0,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 0,
           "ramps": 0,
           "accessibleToilets": 0,
@@ -1203,10 +1251,10 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 57.4,
-        "mobilityScore": 56.3,
-        "visualScore": 69.8,
-        "hearingScore": 50.0,
+        "overallScore": 58.7,
+        "mobilityScore": 56.2,
+        "visualScore": 70.1,
+        "hearingScore": 57.7,
         "seniorScore": 57.2,
         "familyStrollerScore": 50.0
       },
@@ -1237,8 +1285,11 @@
         },
         "publicFacilities": {
           "auditedTotal": 0,
-          "wheelchairFull": 0,
+          "wheelchairGood": 0,
           "wheelchairPartial": 0,
+          "wheelchairWeak": 0,
+          "wheelchairNone": 0,
+          "wheelchairFull": 0,
           "elevators": 0,
           "ramps": 0,
           "accessibleToilets": 0,
@@ -1257,12 +1308,12 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 65.2,
-        "mobilityScore": 65.3,
-        "visualScore": 68.0,
-        "hearingScore": 50.0,
+        "overallScore": 66.2,
+        "mobilityScore": 65.1,
+        "visualScore": 68.3,
+        "hearingScore": 57.7,
         "seniorScore": 66.4,
-        "familyStrollerScore": 75.3
+        "familyStrollerScore": 73.4
       },
       "keyStrengths": [
         "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 41.4% przystanków",
@@ -1293,14 +1344,17 @@
         },
         "publicFacilities": {
           "auditedTotal": 4,
-          "wheelchairFull": 4,
-          "wheelchairPartial": 0,
-          "elevators": 4,
+          "wheelchairGood": 1,
+          "wheelchairPartial": 1,
+          "wheelchairWeak": 2,
+          "wheelchairNone": 0,
+          "wheelchairFull": 1,
+          "elevators": 2,
           "ramps": 4,
-          "accessibleToilets": 4,
-          "hearingLoops": 3,
+          "accessibleToilets": 2,
+          "hearingLoops": 1,
           "signLanguagePJM": 2,
-          "brailleTactile": 3
+          "brailleTactile": 1
         },
         "seniorCare": {
           "casCount": 13,
@@ -1316,62 +1370,62 @@
           "name": "Urząd Stanu Cywilnego i Wydziały UMK - Nowa Huta",
           "departments": "Urząd Stanu Cywilnego, Ewidencja Ludności i Pojazdów, Środowisko, Bezpieczeństwo i Zarządzanie Kryzysowe",
           "address": "os. Zgody 2",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "CZĘŚCIOWA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
-          "hearingLoop": true,
+          "hearingLoop": false,
           "signLanguageTranslator": true,
-          "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność: Częściowa. Zapewniono  Dostępność: podjazd, winda i WC przystosowane dla osób niepełnosprawnych, obsługa w języku migowym,"
         },
         {
           "name": "Punkt Pomocy Prawnej i Obsługi Mieszkańców",
           "departments": "Punkt Nieodpłatnej Pomocy Prawnej, Biuro Partycypacji",
           "address": "os. Centrum C 10",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "SŁABA",
           "hasRamp": true,
-          "hasElevatorOrPlatform": true,
-          "accessibleToilet": true,
+          "hasElevatorOrPlatform": false,
+          "accessibleToilet": false,
           "hearingLoop": false,
           "signLanguageTranslator": false,
           "brailleOrTactile": false,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM. Brak: pętli indukcyjnej, tłumacza PJM, oznaczeń dotykowych."
+          "auditDescription": "Dostępność: Słaba. Zapewniono  Dostępność: platforma przychodowa dla niepełnosprawnych, podjazd od strony portierni,"
         },
         {
           "name": "Nowohuckie Centrum Kultury (NCK)",
           "departments": "Dział Edukacji i Wystaw, Sale Warsztatowe",
           "address": "al. Jana Pawła II 232",
-          "wheelchairAccessible": "PEŁNA",
-          "hasRamp": true,
-          "hasElevatorOrPlatform": true,
-          "accessibleToilet": true,
-          "hearingLoop": true,
-          "signLanguageTranslator": false,
-          "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Zapewniono: podjazd/rampę, windę/platformę, toaletę PRM, pętlę indukcyjną, oznaczenia dotykowe. Brak: tłumacza PJM."
-        },
-        {
-          "name": "Centrum Obywatelskie Centrum C 10",
-          "departments": "Wsparcie Organizacji Pozarządowych i Inicjatyw Mieszkańców",
-          "address": "os. Centrum C 10",
-          "wheelchairAccessible": "PEŁNA",
+          "wheelchairAccessible": "DOBRA",
           "hasRamp": true,
           "hasElevatorOrPlatform": true,
           "accessibleToilet": true,
           "hearingLoop": true,
           "signLanguageTranslator": true,
           "brailleOrTactile": true,
-          "auditDescription": "Dostępność dla wózków: PEŁNA. Obiekt w pełni dostosowany (posiada podjazd, windę, toaletę PRM, pętlę indukcyjną, tłumacza PJM oraz oznaczenia dotykowe)."
+          "auditDescription": "Dostępność: Dobra. Zapewniono  Dostępność: parking (8 miejsc), wejście jest wyposażone w klamki antypaniczne i samozamykacze, niskie krawęzniki wokół budynku. Dostępna winda, występują pochylnie, platformy, informacje głosowe, pętle indukcyjne"
+        },
+        {
+          "name": "Centrum Obywatelskie Centrum C 10",
+          "departments": "Wsparcie Organizacji Pozarządowych i Inicjatyw Mieszkańców",
+          "address": "os. Centrum C 10",
+          "wheelchairAccessible": "SŁABA",
+          "hasRamp": true,
+          "hasElevatorOrPlatform": false,
+          "accessibleToilet": false,
+          "hearingLoop": false,
+          "signLanguageTranslator": false,
+          "brailleOrTactile": false,
+          "auditDescription": "Dostępność: Słaba. Zapewniono  Dostępność: platforma przychodowa dla niepełnosprawnych, podjazd od strony portierni,"
         }
       ],
       "scores": {
-        "overallScore": 88.5,
-        "mobilityScore": 83.1,
-        "visualScore": 87.9,
+        "overallScore": 85.1,
+        "mobilityScore": 82.6,
+        "visualScore": 75.2,
         "hearingScore": 96.0,
         "seniorScore": 95.0,
-        "familyStrollerScore": 83.7
+        "familyStrollerScore": 81.0
       },
       "keyStrengths": [
         "Wysokie bezpieczeństwo osób niewidomych – pasy i płyty dotykowe na 51.5% przystanków",

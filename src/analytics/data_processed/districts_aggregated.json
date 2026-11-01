@@ -18,18 +18,18 @@
         "populationGrowthRate3YrPct": -3.35
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 6,
-        "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 361,
-        "childrenPerCarePlaceRatio": 1.43,
-        "parentClubsCount": 2,
-        "kindergartensCount": 129,
-        "kindergartenPlacesTotal": 6688,
-        "primarySchoolsCount": 33,
-        "primarySchoolStudentsTotal": 6206,
-        "avgStudentsPerClass": 15.7
+        "nurseriesPublicCount": 5,
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 92,
+        "kidsClubsCount": 8,
+        "totalCarePlaces0to3": 3426,
+        "childrenPerCarePlaceRatio": 0.15,
+        "parentClubsCount": 14,
+        "kindergartensCount": 140,
+        "kindergartenPlacesTotal": 7977,
+        "primarySchoolsCount": 38,
+        "primarySchoolStudentsTotal": 8453,
+        "avgStudentsPerClass": 16.4
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 95,
@@ -61,10 +61,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 44,
+        "culturalCentersCount": 14,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 5366,
-        "municipalSubsidyPerCapitaPln": 1161.88
+        "annualCulturalEventsCount": 2012,
+        "municipalSubsidyPerCapitaPln": 435.71
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1420,
@@ -74,13 +74,13 @@
         "publicDisturbanceInterventions": 4450
       },
       "housingMarket": {
-        "avgPricePerM2": 18615.0,
-        "priceSecondaryM2": 18200.0,
-        "pricePrimaryM2": 19800.0,
-        "priceMedianM2": 18100.0,
-        "avgRentalPriceM2": 68.5,
-        "priceGrowthYoYPct": 4.8,
-        "m2PerAverageSalary": 0.4
+        "avgPricePerM2": 20826.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 87.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.32
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 29.4,
@@ -198,7 +198,7 @@
           "2024": 117,
           "2025": 118
         },
-        "primarySchoolClasses": 395,
+        "primarySchoolClasses": 516,
         "pop2023": 30754,
         "pop2024": 30075,
         "pop2025": 29725,
@@ -280,13 +280,13 @@
         "publicDisturbanceInterventions": 1420
       },
       "housingMarket": {
-        "avgPricePerM2": 17175.0,
-        "priceSecondaryM2": 17900.0,
-        "pricePrimaryM2": 19200.0,
-        "priceMedianM2": 17800.0,
-        "avgRentalPriceM2": 65.0,
-        "priceGrowthYoYPct": 5.2,
-        "m2PerAverageSalary": 0.41
+        "avgPricePerM2": 18214.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 89.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.36
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 27.8,
@@ -484,13 +484,13 @@
         "publicDisturbanceInterventions": 1120
       },
       "housingMarket": {
-        "avgPricePerM2": 14085.0,
-        "priceSecondaryM2": 14400.0,
-        "pricePrimaryM2": 15100.0,
-        "priceMedianM2": 14500.0,
-        "avgRentalPriceM2": 51.5,
-        "priceGrowthYoYPct": 3.8,
-        "m2PerAverageSalary": 0.51
+        "avgPricePerM2": 14759.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 80.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.45
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 24.5,
@@ -676,10 +676,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 8,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 37.47
+        "annualCulturalEventsCount": 1341,
+        "municipalSubsidyPerCapitaPln": 112.42
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1340,
@@ -689,13 +689,13 @@
         "publicDisturbanceInterventions": 1610
       },
       "housingMarket": {
-        "avgPricePerM2": 14578.0,
-        "priceSecondaryM2": 15000.0,
-        "pricePrimaryM2": 15800.0,
-        "priceMedianM2": 15200.0,
-        "avgRentalPriceM2": 53.0,
-        "priceGrowthYoYPct": 4.5,
-        "m2PerAverageSalary": 0.48
+        "avgPricePerM2": 15538.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.43
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 25.2,
@@ -881,10 +881,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 1,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 68.48
+        "annualCulturalEventsCount": 447,
+        "municipalSubsidyPerCapitaPln": 91.3
       },
       "publicSafety": {
         "roadCollisionsAnnual": 920,
@@ -894,13 +894,13 @@
         "publicDisturbanceInterventions": 1250
       },
       "housingMarket": {
-        "avgPricePerM2": 16022.0,
-        "priceSecondaryM2": 16200.0,
-        "pricePrimaryM2": 17400.0,
-        "priceMedianM2": 16300.0,
-        "avgRentalPriceM2": 58.0,
-        "priceGrowthYoYPct": 4.1,
-        "m2PerAverageSalary": 0.45
+        "avgPricePerM2": 16916.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 83.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.39
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 26.1,
@@ -1099,13 +1099,13 @@
         "publicDisturbanceInterventions": 510
       },
       "housingMarket": {
-        "avgPricePerM2": 15345.0,
-        "priceSecondaryM2": 14900.0,
-        "pricePrimaryM2": 15900.0,
-        "priceMedianM2": 15100.0,
-        "avgRentalPriceM2": 52.5,
-        "priceGrowthYoYPct": 3.9,
-        "m2PerAverageSalary": 0.49
+        "avgPricePerM2": 16096.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 22.4,
@@ -1300,13 +1300,13 @@
         "publicDisturbanceInterventions": 405
       },
       "housingMarket": {
-        "avgPricePerM2": 18580.0,
-        "priceSecondaryM2": 16800.0,
-        "pricePrimaryM2": 18400.0,
-        "priceMedianM2": 17000.0,
-        "avgRentalPriceM2": 61.0,
-        "priceGrowthYoYPct": 4.0,
-        "m2PerAverageSalary": 0.43
+        "avgPricePerM2": 19965.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 78.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.33
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 19.8,
@@ -1504,13 +1504,13 @@
         "publicDisturbanceInterventions": 1100
       },
       "housingMarket": {
-        "avgPricePerM2": 14446.0,
-        "priceSecondaryM2": 14600.0,
-        "pricePrimaryM2": 15600.0,
-        "priceMedianM2": 14800.0,
-        "avgRentalPriceM2": 52.0,
-        "priceGrowthYoYPct": 5.6,
-        "m2PerAverageSalary": 0.5
+        "avgPricePerM2": 18063.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.37
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 21.6,
@@ -1710,13 +1710,13 @@
         "publicDisturbanceInterventions": 435
       },
       "housingMarket": {
-        "avgPricePerM2": 13810.0,
-        "priceSecondaryM2": 13500.0,
-        "pricePrimaryM2": 14400.0,
-        "priceMedianM2": 13700.0,
-        "avgRentalPriceM2": 48.0,
-        "priceGrowthYoYPct": 3.5,
-        "m2PerAverageSalary": 0.54
+        "avgPricePerM2": 16111.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 81.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 23.8,
@@ -1913,13 +1913,13 @@
         "publicDisturbanceInterventions": 310
       },
       "housingMarket": {
-        "avgPricePerM2": 13210.0,
-        "priceSecondaryM2": 12100.0,
-        "pricePrimaryM2": 13100.0,
-        "priceMedianM2": 12300.0,
-        "avgRentalPriceM2": 43.5,
-        "priceGrowthYoYPct": 3.2,
-        "m2PerAverageSalary": 0.6
+        "avgPricePerM2": 13560.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 69.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.49
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 20.5,
@@ -2115,13 +2115,13 @@
         "publicDisturbanceInterventions": 920
       },
       "housingMarket": {
-        "avgPricePerM2": 13214.0,
-        "priceSecondaryM2": 13800.0,
-        "pricePrimaryM2": 14600.0,
-        "priceMedianM2": 14000.0,
-        "avgRentalPriceM2": 49.0,
-        "priceGrowthYoYPct": 4.2,
-        "m2PerAverageSalary": 0.52
+        "avgPricePerM2": 15044.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 76.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.44
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 26.5,
@@ -2317,13 +2317,13 @@
         "publicDisturbanceInterventions": 980
       },
       "housingMarket": {
-        "avgPricePerM2": 12719.0,
-        "priceSecondaryM2": 14000.0,
-        "pricePrimaryM2": 14800.0,
-        "priceMedianM2": 14200.0,
-        "avgRentalPriceM2": 49.5,
-        "priceGrowthYoYPct": 4.6,
-        "m2PerAverageSalary": 0.52
+        "avgPricePerM2": 11300.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.59
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 24.9,
@@ -2508,10 +2508,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
-        "culturalCentersCount": 1,
+        "culturalCentersCount": 19,
         "seniorActivityCentersCount": 6,
-        "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 47.42
+        "annualCulturalEventsCount": 2347,
+        "municipalSubsidyPerCapitaPln": 331.95
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1260,
@@ -2521,13 +2521,13 @@
         "publicDisturbanceInterventions": 1480
       },
       "housingMarket": {
-        "avgPricePerM2": 16474.0,
-        "priceSecondaryM2": 15800.0,
-        "pricePrimaryM2": 17100.0,
-        "priceMedianM2": 16000.0,
-        "avgRentalPriceM2": 57.0,
-        "priceGrowthYoYPct": 5.0,
-        "m2PerAverageSalary": 0.46
+        "avgPricePerM2": 18857.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 89.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.35
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 26.8,
@@ -2711,10 +2711,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
-        "culturalCentersCount": 1,
+        "culturalCentersCount": 0,
         "seniorActivityCentersCount": 1,
-        "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 39.24
+        "annualCulturalEventsCount": 112,
+        "municipalSubsidyPerCapitaPln": 19.62
       },
       "publicSafety": {
         "roadCollisionsAnnual": 950,
@@ -2724,13 +2724,13 @@
         "publicDisturbanceInterventions": 830
       },
       "housingMarket": {
-        "avgPricePerM2": 14763.0,
-        "priceSecondaryM2": 14100.0,
-        "pricePrimaryM2": 15000.0,
-        "priceMedianM2": 14300.0,
-        "avgRentalPriceM2": 50.0,
-        "priceGrowthYoYPct": 4.7,
-        "m2PerAverageSalary": 0.51
+        "avgPricePerM2": 12208.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 82.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.54
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 25.7,
@@ -2924,13 +2924,13 @@
         "publicDisturbanceInterventions": 690
       },
       "housingMarket": {
-        "avgPricePerM2": 12734.0,
-        "priceSecondaryM2": 13000.0,
-        "pricePrimaryM2": 13900.0,
-        "priceMedianM2": 13200.0,
-        "avgRentalPriceM2": 46.5,
-        "priceGrowthYoYPct": 3.6,
-        "m2PerAverageSalary": 0.56
+        "avgPricePerM2": 13367.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 76.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.5
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 23.2,
@@ -3126,13 +3126,13 @@
         "publicDisturbanceInterventions": 740
       },
       "housingMarket": {
-        "avgPricePerM2": 12658.0,
-        "priceSecondaryM2": 12100.0,
-        "pricePrimaryM2": 12900.0,
-        "priceMedianM2": 12200.0,
-        "avgRentalPriceM2": 44.0,
-        "priceGrowthYoYPct": 2.8,
-        "m2PerAverageSalary": 0.6
+        "avgPricePerM2": 11657.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.57
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 24.1,
@@ -3316,10 +3316,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
-        "culturalCentersCount": 14,
+        "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 1677,
-        "municipalSubsidyPerCapitaPln": 527.38
+        "annualCulturalEventsCount": 112,
+        "municipalSubsidyPerCapitaPln": 35.16
       },
       "publicSafety": {
         "roadCollisionsAnnual": 380,
@@ -3329,13 +3329,13 @@
         "publicDisturbanceInterventions": 270
       },
       "housingMarket": {
-        "avgPricePerM2": 12188.0,
-        "priceSecondaryM2": 11600.0,
-        "pricePrimaryM2": 12400.0,
-        "priceMedianM2": 11700.0,
-        "avgRentalPriceM2": 41.5,
-        "priceGrowthYoYPct": 2.5,
-        "m2PerAverageSalary": 0.63
+        "avgPricePerM2": 9672.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 72.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.69
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 21.0,
@@ -3518,10 +3518,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 18,
         "seniorActivityCentersCount": 13,
-        "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 61.5
+        "annualCulturalEventsCount": 2459,
+        "municipalSubsidyPerCapitaPln": 338.26
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1080,
@@ -3531,13 +3531,13 @@
         "publicDisturbanceInterventions": 1290
       },
       "housingMarket": {
-        "avgPricePerM2": 12520.0,
-        "priceSecondaryM2": 12900.0,
-        "pricePrimaryM2": 14100.0,
-        "priceMedianM2": 13100.0,
-        "avgRentalPriceM2": 46.0,
-        "priceGrowthYoYPct": 4.9,
-        "m2PerAverageSalary": 0.56
+        "avgPricePerM2": 12623.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
+        "avgRentalPriceM2": 72.0,
+        "priceGrowthYoYPct": 0.0,
+        "m2PerAverageSalary": 0.53
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 27.5,

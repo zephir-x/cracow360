@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-10-31T17:40:23Z",
+    "generatedAt": "2026-11-01T21:41:21Z",
     "dataVersion": "2.1.0-expanded-8-pillars-2025-2026",
     "normalizationMethod": "MinMax_0_100_Calibrated"
   },
@@ -23,18 +23,18 @@
         "populationGrowthRate3YrPct": -3.35
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 6,
-        "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 361,
-        "childrenPerCarePlaceRatio": 1.43,
-        "parentClubsCount": 2,
-        "kindergartensCount": 129,
-        "kindergartenPlacesTotal": 6688,
-        "primarySchoolsCount": 33,
-        "primarySchoolStudentsTotal": 6206,
-        "avgStudentsPerClass": 15.7
+        "nurseriesPublicCount": 5,
+        "nurseriesContractedCount": 1,
+        "nurseriesPrivateCount": 92,
+        "kidsClubsCount": 8,
+        "totalCarePlaces0to3": 3426,
+        "childrenPerCarePlaceRatio": 0.15,
+        "parentClubsCount": 14,
+        "kindergartensCount": 140,
+        "kindergartenPlacesTotal": 7977,
+        "primarySchoolsCount": 38,
+        "primarySchoolStudentsTotal": 8453,
+        "avgStudentsPerClass": 16.4
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 95,
@@ -66,10 +66,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 44,
+        "culturalCentersCount": 14,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 5366,
-        "municipalSubsidyPerCapitaPln": 1161.88
+        "annualCulturalEventsCount": 2012,
+        "municipalSubsidyPerCapitaPln": 435.71
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1420,
@@ -79,13 +79,13 @@
         "publicDisturbanceInterventions": 4450
       },
       "housingMarket": {
-        "avgPricePerM2": 18615.0,
-        "priceSecondaryM2": 18200.0,
-        "pricePrimaryM2": 19800.0,
-        "priceMedianM2": 18100.0,
-        "avgRentalPriceM2": 68.5,
-        "priceGrowthYoYPct": 4.8,
-        "m2PerAverageSalary": 0.4
+        "avgPricePerM2": 20826.0,
+        "priceSecondaryM2": 19860.0,
+        "pricePrimaryM2": 27092.0,
+        "priceMedianM2": 23476.0,
+        "avgRentalPriceM2": 87.0,
+        "priceGrowthYoYPct": 5.2,
+        "m2PerAverageSalary": 0.32
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 29.4,
@@ -97,7 +97,7 @@
         "mobilityScore": 96.0,
         "educationScore": 92.0,
         "greeneryScore": 68.2,
-        "cultureAndSeniorScore": 96.0,
+        "cultureAndSeniorScore": 81.4,
         "environmentScore": 26.0,
         "safetyScore": 38.0,
         "housingAffordabilityScore": 22.0,
@@ -105,9 +105,9 @@
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 424,
-        "forecastedCarePlacesBalance_2028": 43,
+        "forecastedCarePlacesBalance_2028": 3108,
         "forecastedAge4to6_2028": 390,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "MEDIUM",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.3%)."
@@ -187,13 +187,13 @@
         "publicDisturbanceInterventions": 1420
       },
       "housingMarket": {
-        "avgPricePerM2": 17175.0,
-        "priceSecondaryM2": 17900.0,
-        "pricePrimaryM2": 19200.0,
-        "priceMedianM2": 17800.0,
-        "avgRentalPriceM2": 65.0,
-        "priceGrowthYoYPct": 5.2,
-        "m2PerAverageSalary": 0.41
+        "avgPricePerM2": 18214.0,
+        "priceSecondaryM2": 17337.0,
+        "pricePrimaryM2": 22779.0,
+        "priceMedianM2": 20058.0,
+        "avgRentalPriceM2": 89.0,
+        "priceGrowthYoYPct": -3.2,
+        "m2PerAverageSalary": 0.36
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 27.8,
@@ -203,12 +203,12 @@
       },
       "scores": {
         "mobilityScore": 76.8,
-        "educationScore": 75.5,
+        "educationScore": 73.1,
         "greeneryScore": 70.4,
-        "cultureAndSeniorScore": 56.7,
+        "cultureAndSeniorScore": 59.3,
         "environmentScore": 37.1,
         "safetyScore": 50.9,
-        "housingAffordabilityScore": 31.0,
+        "housingAffordabilityScore": 27.6,
         "demographicVitalityScore": 73.6
       },
       "forecastsAndB2B": {
@@ -295,13 +295,13 @@
         "publicDisturbanceInterventions": 1120
       },
       "housingMarket": {
-        "avgPricePerM2": 14085.0,
-        "priceSecondaryM2": 14400.0,
-        "pricePrimaryM2": 15100.0,
-        "priceMedianM2": 14500.0,
-        "avgRentalPriceM2": 51.5,
-        "priceGrowthYoYPct": 3.8,
-        "m2PerAverageSalary": 0.51
+        "avgPricePerM2": 14759.0,
+        "priceSecondaryM2": 14173.0,
+        "pricePrimaryM2": 16312.0,
+        "priceMedianM2": 15243.0,
+        "avgRentalPriceM2": 80.0,
+        "priceGrowthYoYPct": 0.01,
+        "m2PerAverageSalary": 0.45
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 24.5,
@@ -311,12 +311,12 @@
       },
       "scores": {
         "mobilityScore": 76.1,
-        "educationScore": 75.5,
+        "educationScore": 73.2,
         "greeneryScore": 58.4,
-        "cultureAndSeniorScore": 53.0,
+        "cultureAndSeniorScore": 56.7,
         "environmentScore": 55.2,
         "safetyScore": 70.1,
-        "housingAffordabilityScore": 63.9,
+        "housingAffordabilityScore": 53.4,
         "demographicVitalityScore": 60.4
       },
       "forecastsAndB2B": {
@@ -390,10 +390,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 8,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 37.47
+        "annualCulturalEventsCount": 1341,
+        "municipalSubsidyPerCapitaPln": 112.42
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1340,
@@ -403,13 +403,13 @@
         "publicDisturbanceInterventions": 1610
       },
       "housingMarket": {
-        "avgPricePerM2": 14578.0,
-        "priceSecondaryM2": 15000.0,
-        "pricePrimaryM2": 15800.0,
-        "priceMedianM2": 15200.0,
-        "avgRentalPriceM2": 53.0,
-        "priceGrowthYoYPct": 4.5,
-        "m2PerAverageSalary": 0.48
+        "avgPricePerM2": 15538.0,
+        "priceSecondaryM2": 13683.0,
+        "pricePrimaryM2": 16736.0,
+        "priceMedianM2": 15210.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": 0.02,
+        "m2PerAverageSalary": 0.43
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 25.2,
@@ -419,22 +419,22 @@
       },
       "scores": {
         "mobilityScore": 72.8,
-        "educationScore": 71.1,
+        "educationScore": 68.8,
         "greeneryScore": 52.0,
-        "cultureAndSeniorScore": 48.8,
+        "cultureAndSeniorScore": 65.9,
         "environmentScore": 50.3,
         "safetyScore": 69.6,
-        "housingAffordabilityScore": 57.8,
+        "housingAffordabilityScore": 51.6,
         "demographicVitalityScore": 72.7
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 2545,
-        "forecastedCarePlacesBalance_2028": -806,
+        "forecastedAge0to3_2028": 2450,
+        "forecastedCarePlacesBalance_2028": -734,
         "forecastedAge4to6_2028": 2159,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -806 miejsc) oraz tworzenie parków kieszonkowych (obecnie 2.33 m² zieleni/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -734 miejsc) oraz tworzenie parków kieszonkowych (obecnie 2.33 m² zieleni/os.)."
       }
     },
     {
@@ -498,10 +498,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 1,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 68.48
+        "annualCulturalEventsCount": 447,
+        "municipalSubsidyPerCapitaPln": 91.3
       },
       "publicSafety": {
         "roadCollisionsAnnual": 920,
@@ -511,13 +511,13 @@
         "publicDisturbanceInterventions": 1250
       },
       "housingMarket": {
-        "avgPricePerM2": 16022.0,
-        "priceSecondaryM2": 16200.0,
-        "pricePrimaryM2": 17400.0,
-        "priceMedianM2": 16300.0,
-        "avgRentalPriceM2": 58.0,
-        "priceGrowthYoYPct": 4.1,
-        "m2PerAverageSalary": 0.45
+        "avgPricePerM2": 16916.0,
+        "priceSecondaryM2": 15615.0,
+        "pricePrimaryM2": 19361.0,
+        "priceMedianM2": 17488.0,
+        "avgRentalPriceM2": 83.0,
+        "priceGrowthYoYPct": 0.25,
+        "m2PerAverageSalary": 0.39
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 26.1,
@@ -527,19 +527,19 @@
       },
       "scores": {
         "mobilityScore": 78.5,
-        "educationScore": 79.6,
+        "educationScore": 77.2,
         "greeneryScore": 73.7,
-        "cultureAndSeniorScore": 49.9,
+        "cultureAndSeniorScore": 55.5,
         "environmentScore": 47.6,
         "safetyScore": 57.3,
-        "housingAffordabilityScore": 45.3,
+        "housingAffordabilityScore": 40.5,
         "demographicVitalityScore": 67.4
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 619,
-        "forecastedCarePlacesBalance_2028": 11,
+        "forecastedAge0to3_2028": 617,
+        "forecastedCarePlacesBalance_2028": 12,
         "forecastedAge4to6_2028": 565,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "MEDIUM",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (26.6%)."
@@ -619,13 +619,13 @@
         "publicDisturbanceInterventions": 510
       },
       "housingMarket": {
-        "avgPricePerM2": 15345.0,
-        "priceSecondaryM2": 14900.0,
-        "pricePrimaryM2": 15900.0,
-        "priceMedianM2": 15100.0,
-        "avgRentalPriceM2": 52.5,
-        "priceGrowthYoYPct": 3.9,
-        "m2PerAverageSalary": 0.49
+        "avgPricePerM2": 16096.0,
+        "priceSecondaryM2": 15715.0,
+        "pricePrimaryM2": 16602.0,
+        "priceMedianM2": 16159.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": -0.02,
+        "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 22.4,
@@ -635,17 +635,17 @@
       },
       "scores": {
         "mobilityScore": 41.7,
-        "educationScore": 61.1,
+        "educationScore": 58.9,
         "greeneryScore": 65.7,
-        "cultureAndSeniorScore": 46.3,
+        "cultureAndSeniorScore": 49.8,
         "environmentScore": 73.0,
         "safetyScore": 69.5,
-        "housingAffordabilityScore": 56.8,
+        "housingAffordabilityScore": 49.0,
         "demographicVitalityScore": 65.2
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 653,
-        "forecastedCarePlacesBalance_2028": -206,
+        "forecastedAge0to3_2028": 645,
+        "forecastedCarePlacesBalance_2028": -200,
         "forecastedAge4to6_2028": 596,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -727,13 +727,13 @@
         "publicDisturbanceInterventions": 405
       },
       "housingMarket": {
-        "avgPricePerM2": 18580.0,
-        "priceSecondaryM2": 16800.0,
-        "pricePrimaryM2": 18400.0,
-        "priceMedianM2": 17000.0,
-        "avgRentalPriceM2": 61.0,
-        "priceGrowthYoYPct": 4.0,
-        "m2PerAverageSalary": 0.43
+        "avgPricePerM2": 19965.0,
+        "priceSecondaryM2": 20021.0,
+        "pricePrimaryM2": 22960.0,
+        "priceMedianM2": 21491.0,
+        "avgRentalPriceM2": 78.0,
+        "priceGrowthYoYPct": 0.09,
+        "m2PerAverageSalary": 0.33
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 19.8,
@@ -743,12 +743,12 @@
       },
       "scores": {
         "mobilityScore": 41.9,
-        "educationScore": 62.1,
+        "educationScore": 60.6,
         "greeneryScore": 96.0,
-        "cultureAndSeniorScore": 55.5,
+        "cultureAndSeniorScore": 58.9,
         "environmentScore": 94.0,
         "safetyScore": 76.8,
-        "housingAffordabilityScore": 32.1,
+        "housingAffordabilityScore": 36.6,
         "demographicVitalityScore": 67.2
       },
       "forecastsAndB2B": {
@@ -758,7 +758,7 @@
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: 69.6%)."
+        "recommendedMunicipalAction": "Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 300m: 69.6%)."
       }
     },
     {
@@ -835,13 +835,13 @@
         "publicDisturbanceInterventions": 1100
       },
       "housingMarket": {
-        "avgPricePerM2": 14446.0,
-        "priceSecondaryM2": 14600.0,
-        "pricePrimaryM2": 15600.0,
-        "priceMedianM2": 14800.0,
-        "avgRentalPriceM2": 52.0,
-        "priceGrowthYoYPct": 5.6,
-        "m2PerAverageSalary": 0.5
+        "avgPricePerM2": 18063.0,
+        "priceSecondaryM2": 16865.0,
+        "pricePrimaryM2": 18752.0,
+        "priceMedianM2": 17809.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": 0.08,
+        "m2PerAverageSalary": 0.37
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 21.6,
@@ -851,12 +851,12 @@
       },
       "scores": {
         "mobilityScore": 41.5,
-        "educationScore": 75.3,
+        "educationScore": 72.8,
         "greeneryScore": 80.8,
-        "cultureAndSeniorScore": 52.7,
+        "cultureAndSeniorScore": 55.3,
         "environmentScore": 76.4,
         "safetyScore": 76.6,
-        "housingAffordabilityScore": 61.3,
+        "housingAffordabilityScore": 42.1,
         "demographicVitalityScore": 77.1
       },
       "forecastsAndB2B": {
@@ -943,13 +943,13 @@
         "publicDisturbanceInterventions": 435
       },
       "housingMarket": {
-        "avgPricePerM2": 13810.0,
-        "priceSecondaryM2": 13500.0,
-        "pricePrimaryM2": 14400.0,
-        "priceMedianM2": 13700.0,
-        "avgRentalPriceM2": 48.0,
-        "priceGrowthYoYPct": 3.5,
-        "m2PerAverageSalary": 0.54
+        "avgPricePerM2": 16111.0,
+        "priceSecondaryM2": 14725.0,
+        "pricePrimaryM2": 17554.0,
+        "priceMedianM2": 16140.0,
+        "avgRentalPriceM2": 81.0,
+        "priceGrowthYoYPct": -0.05,
+        "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 23.8,
@@ -961,10 +961,10 @@
         "mobilityScore": 58.8,
         "educationScore": 40.0,
         "greeneryScore": 76.9,
-        "cultureAndSeniorScore": 47.6,
+        "cultureAndSeniorScore": 50.9,
         "environmentScore": 67.2,
         "safetyScore": 51.4,
-        "housingAffordabilityScore": 71.2,
+        "housingAffordabilityScore": 46.3,
         "demographicVitalityScore": 65.0
       },
       "forecastsAndB2B": {
@@ -1051,13 +1051,13 @@
         "publicDisturbanceInterventions": 310
       },
       "housingMarket": {
-        "avgPricePerM2": 13210.0,
-        "priceSecondaryM2": 12100.0,
-        "pricePrimaryM2": 13100.0,
-        "priceMedianM2": 12300.0,
-        "avgRentalPriceM2": 43.5,
-        "priceGrowthYoYPct": 3.2,
-        "m2PerAverageSalary": 0.6
+        "avgPricePerM2": 13560.0,
+        "priceSecondaryM2": 13988.0,
+        "pricePrimaryM2": 13300.0,
+        "priceMedianM2": 13644.0,
+        "avgRentalPriceM2": 69.0,
+        "priceGrowthYoYPct": 0.02,
+        "m2PerAverageSalary": 0.49
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 20.5,
@@ -1067,12 +1067,12 @@
       },
       "scores": {
         "mobilityScore": 28.0,
-        "educationScore": 65.0,
+        "educationScore": 63.0,
         "greeneryScore": 59.8,
-        "cultureAndSeniorScore": 48.4,
+        "cultureAndSeniorScore": 51.9,
         "environmentScore": 89.0,
         "safetyScore": 94.0,
-        "housingAffordabilityScore": 83.7,
+        "housingAffordabilityScore": 73.4,
         "demographicVitalityScore": 67.7
       },
       "forecastsAndB2B": {
@@ -1159,13 +1159,13 @@
         "publicDisturbanceInterventions": 920
       },
       "housingMarket": {
-        "avgPricePerM2": 13214.0,
-        "priceSecondaryM2": 13800.0,
-        "pricePrimaryM2": 14600.0,
-        "priceMedianM2": 14000.0,
-        "avgRentalPriceM2": 49.0,
-        "priceGrowthYoYPct": 4.2,
-        "m2PerAverageSalary": 0.52
+        "avgPricePerM2": 15044.0,
+        "priceSecondaryM2": 14122.0,
+        "pricePrimaryM2": 15828.0,
+        "priceMedianM2": 14975.0,
+        "avgRentalPriceM2": 76.0,
+        "priceGrowthYoYPct": 0.01,
+        "m2PerAverageSalary": 0.44
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 26.5,
@@ -1175,12 +1175,12 @@
       },
       "scores": {
         "mobilityScore": 56.6,
-        "educationScore": 64.2,
+        "educationScore": 61.7,
         "greeneryScore": 63.6,
-        "cultureAndSeniorScore": 48.1,
+        "cultureAndSeniorScore": 51.4,
         "environmentScore": 50.6,
         "safetyScore": 74.6,
-        "housingAffordabilityScore": 70.1,
+        "housingAffordabilityScore": 57.4,
         "demographicVitalityScore": 59.8
       },
       "forecastsAndB2B": {
@@ -1267,13 +1267,13 @@
         "publicDisturbanceInterventions": 980
       },
       "housingMarket": {
-        "avgPricePerM2": 12719.0,
-        "priceSecondaryM2": 14000.0,
-        "pricePrimaryM2": 14800.0,
-        "priceMedianM2": 14200.0,
-        "avgRentalPriceM2": 49.5,
-        "priceGrowthYoYPct": 4.6,
-        "m2PerAverageSalary": 0.52
+        "avgPricePerM2": 11300.0,
+        "priceSecondaryM2": 12913.0,
+        "pricePrimaryM2": 10607.0,
+        "priceMedianM2": 11760.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": 0.07,
+        "m2PerAverageSalary": 0.59
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 24.9,
@@ -1283,17 +1283,17 @@
       },
       "scores": {
         "mobilityScore": 58.7,
-        "educationScore": 75.4,
+        "educationScore": 73.0,
         "greeneryScore": 66.9,
-        "cultureAndSeniorScore": 49.3,
+        "cultureAndSeniorScore": 52.2,
         "environmentScore": 59.4,
         "safetyScore": 78.2,
-        "housingAffordabilityScore": 71.3,
+        "housingAffordabilityScore": 72.0,
         "demographicVitalityScore": 58.7
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1685,
-        "forecastedCarePlacesBalance_2028": -401,
+        "forecastedAge0to3_2028": 1618,
+        "forecastedCarePlacesBalance_2028": -350,
         "forecastedAge4to6_2028": 1483,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -1362,10 +1362,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
-        "culturalCentersCount": 1,
+        "culturalCentersCount": 19,
         "seniorActivityCentersCount": 6,
-        "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 47.42
+        "annualCulturalEventsCount": 2347,
+        "municipalSubsidyPerCapitaPln": 331.95
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1260,
@@ -1375,13 +1375,13 @@
         "publicDisturbanceInterventions": 1480
       },
       "housingMarket": {
-        "avgPricePerM2": 16474.0,
-        "priceSecondaryM2": 15800.0,
-        "pricePrimaryM2": 17100.0,
-        "priceMedianM2": 16000.0,
-        "avgRentalPriceM2": 57.0,
-        "priceGrowthYoYPct": 5.0,
-        "m2PerAverageSalary": 0.46
+        "avgPricePerM2": 18857.0,
+        "priceSecondaryM2": 18760.0,
+        "pricePrimaryM2": 20210.0,
+        "priceMedianM2": 19485.0,
+        "avgRentalPriceM2": 89.0,
+        "priceGrowthYoYPct": 0.07,
+        "m2PerAverageSalary": 0.35
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 26.8,
@@ -1391,22 +1391,22 @@
       },
       "scores": {
         "mobilityScore": 66.5,
-        "educationScore": 76.1,
+        "educationScore": 73.6,
         "greeneryScore": 75.0,
-        "cultureAndSeniorScore": 55.0,
+        "cultureAndSeniorScore": 87.4,
         "environmentScore": 45.1,
         "safetyScore": 56.5,
-        "housingAffordabilityScore": 45.8,
+        "housingAffordabilityScore": 25.6,
         "demographicVitalityScore": 95.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1850,
-        "forecastedCarePlacesBalance_2028": -440,
+        "forecastedAge0to3_2028": 1920,
+        "forecastedCarePlacesBalance_2028": -492,
         "forecastedAge4to6_2028": 1606,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +4.8%, bilans 2028: -440 miejsc)."
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +4.8%, bilans 2028: -492 miejsc)."
       }
     },
     {
@@ -1470,10 +1470,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
-        "culturalCentersCount": 1,
+        "culturalCentersCount": 0,
         "seniorActivityCentersCount": 1,
-        "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 39.24
+        "annualCulturalEventsCount": 112,
+        "municipalSubsidyPerCapitaPln": 19.62
       },
       "publicSafety": {
         "roadCollisionsAnnual": 950,
@@ -1483,13 +1483,13 @@
         "publicDisturbanceInterventions": 830
       },
       "housingMarket": {
-        "avgPricePerM2": 14763.0,
-        "priceSecondaryM2": 14100.0,
-        "pricePrimaryM2": 15000.0,
-        "priceMedianM2": 14300.0,
-        "avgRentalPriceM2": 50.0,
-        "priceGrowthYoYPct": 4.7,
-        "m2PerAverageSalary": 0.51
+        "avgPricePerM2": 12208.0,
+        "priceSecondaryM2": 12342.0,
+        "pricePrimaryM2": 14039.0,
+        "priceMedianM2": 13191.0,
+        "avgRentalPriceM2": 82.0,
+        "priceGrowthYoYPct": -0.05,
+        "m2PerAverageSalary": 0.54
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 25.7,
@@ -1499,22 +1499,22 @@
       },
       "scores": {
         "mobilityScore": 63.0,
-        "educationScore": 65.0,
+        "educationScore": 62.5,
         "greeneryScore": 70.4,
         "cultureAndSeniorScore": 44.0,
         "environmentScore": 53.9,
         "safetyScore": 58.9,
-        "housingAffordabilityScore": 63.1,
+        "housingAffordabilityScore": 62.5,
         "demographicVitalityScore": 77.8
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1617,
-        "forecastedCarePlacesBalance_2028": -329,
+        "forecastedAge0to3_2028": 1523,
+        "forecastedCarePlacesBalance_2028": -258,
         "forecastedAge4to6_2028": 1296,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +3.3%, bilans 2028: -329 miejsc)."
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +3.3%, bilans 2028: -258 miejsc)."
       }
     },
     {
@@ -1591,13 +1591,13 @@
         "publicDisturbanceInterventions": 690
       },
       "housingMarket": {
-        "avgPricePerM2": 12734.0,
-        "priceSecondaryM2": 13000.0,
-        "pricePrimaryM2": 13900.0,
-        "priceMedianM2": 13200.0,
-        "avgRentalPriceM2": 46.5,
-        "priceGrowthYoYPct": 3.6,
-        "m2PerAverageSalary": 0.56
+        "avgPricePerM2": 13367.0,
+        "priceSecondaryM2": 13422.0,
+        "pricePrimaryM2": 15372.0,
+        "priceMedianM2": 14397.0,
+        "avgRentalPriceM2": 76.0,
+        "priceGrowthYoYPct": 0.02,
+        "m2PerAverageSalary": 0.5
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 23.2,
@@ -1607,12 +1607,12 @@
       },
       "scores": {
         "mobilityScore": 71.8,
-        "educationScore": 71.1,
+        "educationScore": 68.7,
         "greeneryScore": 64.9,
-        "cultureAndSeniorScore": 46.1,
+        "cultureAndSeniorScore": 49.3,
         "environmentScore": 68.2,
         "safetyScore": 86.1,
-        "housingAffordabilityScore": 78.2,
+        "housingAffordabilityScore": 65.2,
         "demographicVitalityScore": 54.2
       },
       "forecastsAndB2B": {
@@ -1699,13 +1699,13 @@
         "publicDisturbanceInterventions": 740
       },
       "housingMarket": {
-        "avgPricePerM2": 12658.0,
-        "priceSecondaryM2": 12100.0,
-        "pricePrimaryM2": 12900.0,
-        "priceMedianM2": 12200.0,
-        "avgRentalPriceM2": 44.0,
-        "priceGrowthYoYPct": 2.8,
-        "m2PerAverageSalary": 0.6
+        "avgPricePerM2": 11657.0,
+        "priceSecondaryM2": 11603.0,
+        "pricePrimaryM2": 12182.0,
+        "priceMedianM2": 11893.0,
+        "avgRentalPriceM2": 79.0,
+        "priceGrowthYoYPct": -0.09,
+        "m2PerAverageSalary": 0.57
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 24.1,
@@ -1715,12 +1715,12 @@
       },
       "scores": {
         "mobilityScore": 68.8,
-        "educationScore": 71.4,
+        "educationScore": 69.1,
         "greeneryScore": 62.3,
-        "cultureAndSeniorScore": 47.1,
+        "cultureAndSeniorScore": 50.2,
         "environmentScore": 64.1,
         "safetyScore": 76.7,
-        "housingAffordabilityScore": 85.0,
+        "housingAffordabilityScore": 69.8,
         "demographicVitalityScore": 46.0
       },
       "forecastsAndB2B": {
@@ -1794,10 +1794,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
-        "culturalCentersCount": 14,
+        "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 1677,
-        "municipalSubsidyPerCapitaPln": 527.38
+        "annualCulturalEventsCount": 112,
+        "municipalSubsidyPerCapitaPln": 35.16
       },
       "publicSafety": {
         "roadCollisionsAnnual": 380,
@@ -1807,13 +1807,13 @@
         "publicDisturbanceInterventions": 270
       },
       "housingMarket": {
-        "avgPricePerM2": 12188.0,
-        "priceSecondaryM2": 11600.0,
-        "pricePrimaryM2": 12400.0,
-        "priceMedianM2": 11700.0,
-        "avgRentalPriceM2": 41.5,
-        "priceGrowthYoYPct": 2.5,
-        "m2PerAverageSalary": 0.63
+        "avgPricePerM2": 9672.0,
+        "priceSecondaryM2": 11661.0,
+        "pricePrimaryM2": 8054.0,
+        "priceMedianM2": 9858.0,
+        "avgRentalPriceM2": 72.0,
+        "priceGrowthYoYPct": 0.02,
+        "m2PerAverageSalary": 0.69
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 21.0,
@@ -1823,17 +1823,17 @@
       },
       "scores": {
         "mobilityScore": 39.6,
-        "educationScore": 61.4,
+        "educationScore": 59.2,
         "greeneryScore": 64.2,
-        "cultureAndSeniorScore": 66.8,
+        "cultureAndSeniorScore": 46.7,
         "environmentScore": 88.7,
         "safetyScore": 87.8,
         "housingAffordabilityScore": 92.0,
         "demographicVitalityScore": 61.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 519,
-        "forecastedCarePlacesBalance_2028": -155,
+        "forecastedAge0to3_2028": 507,
+        "forecastedCarePlacesBalance_2028": -146,
         "forecastedAge4to6_2028": 459,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
@@ -1902,10 +1902,10 @@
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 18,
         "seniorActivityCentersCount": 13,
-        "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 61.5
+        "annualCulturalEventsCount": 2459,
+        "municipalSubsidyPerCapitaPln": 338.26
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1080,
@@ -1915,13 +1915,13 @@
         "publicDisturbanceInterventions": 1290
       },
       "housingMarket": {
-        "avgPricePerM2": 12520.0,
-        "priceSecondaryM2": 12900.0,
-        "pricePrimaryM2": 14100.0,
-        "priceMedianM2": 13100.0,
-        "avgRentalPriceM2": 46.0,
-        "priceGrowthYoYPct": 4.9,
-        "m2PerAverageSalary": 0.56
+        "avgPricePerM2": 12623.0,
+        "priceSecondaryM2": 11897.0,
+        "pricePrimaryM2": 13348.0,
+        "priceMedianM2": 12623.0,
+        "avgRentalPriceM2": 72.0,
+        "priceGrowthYoYPct": 0.16,
+        "m2PerAverageSalary": 0.53
       },
       "environmentalQuality": {
         "pm10AnnualUgM3": 27.5,
@@ -1931,19 +1931,19 @@
       },
       "scores": {
         "mobilityScore": 39.0,
-        "educationScore": 83.6,
+        "educationScore": 81.1,
         "greeneryScore": 79.9,
-        "cultureAndSeniorScore": 67.5,
+        "cultureAndSeniorScore": 96.0,
         "environmentScore": 53.3,
         "safetyScore": 59.9,
-        "housingAffordabilityScore": 79.4,
+        "housingAffordabilityScore": 74.3,
         "demographicVitalityScore": 49.2
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 869,
         "forecastedCarePlacesBalance_2028": 50,
         "forecastedAge4to6_2028": 820,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
         "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.7%)."

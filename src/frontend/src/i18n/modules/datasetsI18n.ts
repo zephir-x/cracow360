@@ -6,9 +6,14 @@
 /// </summary>
 export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
   'house-1': {
-    pl: 'Kwartalna dynamika transakcyjna cen lokali mieszkalnych w Krakowie, średnie ceny ofertowe na rynku pierwotnym i wtórnym',
-    en: 'Quarterly transaction price dynamics of residential properties in Krakow, average asking prices on the primary and secondary market',
-    ua: 'Квартальна динаміка транзакційних цін на житлову нерухомість у Кракові, середні ціни пропозиції на первинному та вторинному ринку',
+    pl: 'Średnie ceny ofertowe za 1 m² w rozbiciu na krakowskie dzielnice',
+    en: 'Average asking prices per m² broken down by Krakow districts',
+    ua: 'Середні ціни пропозиції за квадратний метр, розподілені за районами Кракова',
+  },
+  'house-2': {
+    pl: 'Mediana pełnego kosztu miesięcznego w każdej dzielnicy - nie cena z ogłoszenia, tylko to, co faktycznie płacisz: najem plus czynsz plus media',
+    en: 'Median of the total monthly cost in each district – not the price from the listing, but what you actually pay: rent plus service charges plus utilities',
+    ua: 'Медіанна повна щомісячна вартість у кожному районі – не рекламована ціна, а те, що ви фактично платите: орендна плата плюс комунальні послуги',
   },
   'safe-1': {
     pl: 'Roczna liczba kolizji drogowych, wypadki z udziałem pieszych, wypadki z rannymi w podziale na dzielnice',
@@ -44,6 +49,11 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     pl: 'Europejski Indeks Jakości Powietrza (European AQI 0–100), pyły PM10 i PM2.5 (µg/m³), stężenie spalin NO₂ (µg/m³), indeks promieniowania UV, pyłki roślinne (trawy, brzoza, olcha, bylica, ambrozja)',
     en: 'European Air Quality Index (European AQI 0–100), PM10 and PM2.5 particulate matter (µg/m³), NO₂ vehicular exhaust (µg/m³), UV radiation index, botanical pollen allergens (grass, birch, alder, mugwort, ragweed)',
     ua: 'Європейський індекс якості повітря (European AQI 0–100), тверді частки PM10 та PM2.5 (мкг/м³), концентрація вихлопних газів NO₂ (мкг/м³), індекс УФ-випромінювання, пилок рослин (трави, береза, вільха, полин, амброзія)',
+  },
+  'gis-8': {
+    pl: 'Aktualne dzielnice samorządowe Krakowa wraz z powierzchnią',
+    en: 'Current municipal districts of Krakow, including their area',
+    ua: 'Поточні райони місцевого самоврядування Кракова з їхньою площею',
   },
   'trans-1': {
     pl: 'Przystanki komunikacji miejskiej (tramwaje i autobusy), gęstość sieci KMK na km²',
@@ -100,6 +110,11 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     en: 'Indoor school swimming pools and closed sports halls',
     ua: 'Криті пришкільні басейни та закриті спортивні зали',
   },
+  'green-7': {
+    pl: 'Wymienienie różnorodnych rezerwatów oraz parków Krakowa wraz z powierzchnią',
+    en: 'A list of various nature reserves and parks in Kraków, including their surface area',
+    ua: 'Перелік різних заповідників та парків у Кракові разом із зазначенням їхньої території',
+  },
   'gis-4': {
     pl: 'Wyodrębnienie dokładnych lokalizacji punktowych (centroidów) terenów zielonych z bazy OSM na podstawie tagów przyrodniczych',
     en: 'Extraction of precise point locations (centroids) of green areas from the OSM database based on natural tags',
@@ -126,9 +141,24 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Перелік органів місцевого самоврядування, структура будинків культури та надані субсидії',
   },
   'cult-4': {
-    pl: 'Audyt architektoniczny (windy, podjazdy, toalety PRM, pętle indukcyjne, tłumacz PJM) głównych instytucji publicznych i wydziałów',
-    en: 'Architectural audit (elevators, ramps, accessible toilets, hearing loops, sign language interpreters) of main public institutions and departments',
-    ua: 'Архітектурний аудит (ліфти, пандуси, туалети для осіб з інвалідністю, індукційні петлі, сурдоперекладачі) головних державних установ та відділів',
+    pl: 'Dostępność architektoniczna wielu budynków Urzędu Miasta Krakowa dla osób niepełnosprawnych',
+    en: 'Architectural accessibility of many Krakow City Hall buildings for persons with disabilities',
+    ua: 'Архітектурна доступність багатьох будівель Краківської ратуші для людей з інвалідністю',
+  },
+  'cult-5': {
+    pl: 'Deklaracja oraz dostępność architektoniczna dla osób niepełnosprawnych w różnorodnych budynkach Krakowa',
+    en: 'Declaration and architectural accessibility for people with disabilities in various buildings in Kraków',
+    ua: 'Декларація та архітектурна доступність для людей з інвалідністю в різних будівлях Кракова',
+  },
+  'cult-6': {
+    pl: 'Rozpiska dostępności architektonicznej dla różnorakich bibliotek oraz filii Krakowa',
+    en: 'Overview of architectural accessibility for various libraries and branches in Kraków',
+    ua: 'Графік архітектурної доступності для різних бібліотек та філій у Кракові',
+  },
+  'cult-7': {
+    pl: 'Dostępność architektoniczna budynków Krakowskiego Forum Kultury i podległych klubów dla osób z niepełnosprawnością',
+    en: 'Architectural accessibility for people with disabilities at the Krakow Culture Forum buildings and its affiliated clubs',
+    ua: 'Архітектурна доступність будівель Краківського культурного форуму та підпорядкованих йому клубів для людей з інвалідністю',
   },
   'tour-1': {
     pl: 'Całkowita liczba odwiedzających, stosunek turystów krajowych do zagranicznych, wpływ na gospodarkę, kluczowe rynki zbytu',

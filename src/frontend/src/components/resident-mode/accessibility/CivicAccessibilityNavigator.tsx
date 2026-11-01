@@ -669,12 +669,10 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
               <div className="space-y-3">
                 {inspectedDistrict.facilities.map((fac, fIdx) => {
                   const locFac = getLocalizedFacility(fac, language);
-                  const isFull =
-                    fac.wheelchairAccessible.includes('PE') &&
-                    fac.wheelchairAccessible.includes('NA');
-                  const isPartial =
-                    fac.wheelchairAccessible.includes('CZ') ||
-                    (!isFull && (fac.hasRamp || fac.hasElevatorOrPlatform));
+                  const status = (fac.wheelchairAccessible || '').toUpperCase();
+                  const isGood = status.includes('DOBR');
+                  const isPartial = status.includes('CZ');
+                  const isWeak = status.includes('SŁAB') || status.includes('SLAB');
 
                   return (
                     <div
@@ -693,15 +691,20 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
                         </div>
 
                         <div>
-                          {isFull ? (
+                          {isGood ? (
                             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-emerald-50 text-emerald-800 border border-emerald-200">
                               <CheckCircle2 className="w-3 h-3 text-emerald-600" />
-                              {t.wheelchairFull}
+                              {t.wheelchairGood}
                             </span>
                           ) : isPartial ? (
                             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-amber-50 text-amber-800 border border-amber-200">
                               <AlertCircle className="w-3 h-3 text-amber-600" />
                               {t.wheelchairPartial}
+                            </span>
+                          ) : isWeak ? (
+                            <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-rose-50 text-rose-800 border border-rose-200">
+                              <AlertCircle className="w-3 h-3 text-rose-600" />
+                              {t.wheelchairWeak}
                             </span>
                           ) : (
                             <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-bold bg-slate-100 text-slate-700 border border-slate-200">

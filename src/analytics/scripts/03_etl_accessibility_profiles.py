@@ -7,7 +7,7 @@ GOAL / PURPOSE:
 DATA SOURCES INTEGRATED (100% Real Municipal Open Data):
     1. `Miejsca postojowe dla osob z niepelnosprawnosciami w Krakowie.csv` (ZDMK - Niebieskie Koperty):
         - locations, designated PRM parking stalls across 18 districts.
-    2. `Dostepnosc architektoniczna obiektow publicznych w Krakowie.csv` (UMK / MFiPR Accessibility Audit):
+    2. `Dostepnosc architektoniczna obiektow publicznych w Krakowie.csv` (UMK / BIP Accessibility Audit):
         - municipal headquarters, branches, and cultural centres with audits of ramps, elevators,
           PRM accessible toilets, hearing loops (pętle indukcyjne), and Polish Sign Language (PJM) support.
     3. Aggregated Transit & Senior Data (`districts_aggregated.json` from Step 01):
@@ -55,6 +55,23 @@ def rescale_band(values: list[float], low: float = 45.0, high: float = 95.0, inv
     # Maps values to a calibrated urban index band [low, high].
     norm = min_max_normalize_0_100(values, invert=invert)
     return [round(low + (x / 100.0) * (high - low), 1) for x in norm]
+
+
+def normalize_wheelchair_status(val: str) -> str:
+    """
+    Normalizes raw municipal audit wheelchair status values:
+    "Brak", "Słaba" / "SLABA", "Częściowa" / "CZEŚCIOWA", "Dobra".
+    """
+    raw = (val or "").strip().upper()
+    if "DOBR" in raw:
+        return "DOBRA"
+    if "CZ" in raw:
+        return "CZĘŚCIOWA"
+    if "SŁAB" in raw or "SLAB" in raw:
+        return "SŁABA"
+    if "BRAK" in raw or "NIE" in raw:
+        return "BRAK"
+    return raw
 
 
 def generate_accessibility_profiles() -> None:
@@ -106,7 +123,7 @@ def generate_accessibility_profiles() -> None:
                         "name": row.get("Nazwa_Obiektu", "").strip(),
                         "departments": row.get("Wydzialy_Referaty", "").strip(),
                         "address": row.get("Adres", "").strip(),
-                        "wheelchairAccessible": row.get("Dostepnosc_Wozki", "").strip().upper(),
+                        "wheelchairAccessible": normalize_wheelchair_status(row.get("Dostepnosc_Wozki", "")),
                         "hasRamp": row.get("Rampa_Podjazd", "").strip().upper() == "TAK",
                         "hasElevatorOrPlatform": row.get("Winda_Platforma", "").strip().upper() == "TAK",
                         "accessibleToilet": row.get("Toaleta_Dostosowana_PRM", "").strip().upper() == "TAK",
@@ -149,11 +166,13 @@ def generate_accessibility_profiles() -> None:
         tactile_count = base.get("_internal", {}).get("tactilePavingStops", 0)
         tactile_pct = base["mobilityAndTransport"]["tactilePavingPct"]
 
-        # Public facilities metrics
+        # Public facilities metrics (Audits with Dobra, Częściowa, Słaba, Brak)
         facs = facilities_by_district[did]
         audited_count = len(facs)
-        wheelchair_full = sum(1 for f in facs if "PEŁNA" in f["wheelchairAccessible"] or "PELNA" in f["wheelchairAccessible"])
-        wheelchair_part = sum(1 for f in facs if "CZĘŚCIOWA" in f["wheelchairAccessible"] or "CZESCIOWA" in f["wheelchairAccessible"])
+        wheelchair_good = sum(1 for f in facs if f["wheelchairAccessible"] == "DOBRA")
+        wheelchair_part = sum(1 for f in facs if f["wheelchairAccessible"] == "CZĘŚCIOWA")
+        wheelchair_weak = sum(1 for f in facs if f["wheelchairAccessible"] == "SŁABA")
+        wheelchair_none = sum(1 for f in facs if f["wheelchairAccessible"] == "BRAK")
         elevators = sum(1 for f in facs if f["hasElevatorOrPlatform"])
         ramps = sum(1 for f in facs if f["hasRamp"])
         toilets = sum(1 for f in facs if f["accessibleToilet"])
@@ -170,7 +189,13 @@ def generate_accessibility_profiles() -> None:
         prm_dampened_10k = min(35.0, spots_per_10k)
         prm_dampened_km2 = min(25.0, spots_per_km2)
         prm_density_factor = math.log1p(prm_dampened_10k) * 14.0 + math.log1p(prm_dampened_km2) * 8.0
-        fac_mobility_factor = (wheelchair_full * 20.0 + wheelchair_part * 10.0 + elevators * 10.0 + ramps * 10.0)
+        fac_mobility_factor = (
+            wheelchair_good * 20.0 +
+            wheelchair_part * 10.0 +
+            wheelchair_weak * 5.0 +
+            elevators * 10.0 +
+            ramps * 10.0
+        )
         fac_mobility_effective = min(60.0, fac_mobility_factor) if audited_count > 0 else 25.0
 
         raw_mob = (kassel_pct * 0.45) + (prm_density_factor * 0.25) + (fac_mobility_effective * 0.30)
@@ -226,8 +251,11 @@ def generate_accessibility_profiles() -> None:
                 },
                 "publicFacilities": {
                     "auditedTotal": audited_count,
-                    "wheelchairFull": wheelchair_full,
+                    "wheelchairGood": wheelchair_good,
                     "wheelchairPartial": wheelchair_part,
+                    "wheelchairWeak": wheelchair_weak,
+                    "wheelchairNone": wheelchair_none,
+                    "wheelchairFull": wheelchair_good,
                     "elevators": elevators,
                     "ramps": ramps,
                     "accessibleToilets": toilets,
@@ -354,4 +382,3 @@ def generate_accessibility_profiles() -> None:
 
 if __name__ == "__main__":
     generate_accessibility_profiles()
-    

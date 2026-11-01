@@ -47,9 +47,9 @@ def forecast_cohorts_ols(birth_cohorts: dict[str, int], growth_3yr_pct: float, a
         - `forecastedAge4to6_2028`: Est. number of children born 2022-2024 progressing to ages 4-6 in 2028.
     """
     # 1. Prepare historical training data for the OLS model
-    years = np.array([y for y in range(2018, 2026)], dtype=float).reshape(-1, 1)
+    years = np.array([y for y in range(2018, 2025)], dtype=float).reshape(-1, 1)
     # Fallback to a quarter of current 0-3 population if specific historical data is missing
-    counts = np.array([float(birth_cohorts.get(str(y), age0to3_now / 4.0)) for y in range(2018, 2026)], dtype=float)
+    counts = np.array([float(birth_cohorts.get(str(y), age0to3_now / 4.0)) for y in range(2018, 2025)], dtype=float)
 
     # 2. Fit the Linear Regression model to identify the demographic trajectory (rising or falling births)
     model = LinearRegression()
@@ -94,7 +94,7 @@ def build_recommendation(district: dict, nursery_pot: str, senior_def: str, gree
     if green_def == "HIGH":
         return f"Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik {grn['greenAreaM2PerCapita']} m²/os. poniżej normy miejskiej 10 m²/os.)."
     if district["mobilityAndTransport"]["isochroneCoveragePct"] < 75.0:
-        return f"Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 500m: {district['mobilityAndTransport']['isochroneCoveragePct']}%)."
+        return f"Zwiększenie częstotliwości i zasięgu linii dowozowych KMK oraz rozbudowa ciągów pieszo-rowerowych (obecny zasięg izochrony 300m: {district['mobilityAndTransport']['isochroneCoveragePct']}%)."
 
     return f"Utrzymanie wysokiej dostępności usług publicznych w {name} przy wsparciu modernizacji przyszkolnej infrastruktury sportowej i oferty dla seniorów ({senior_pct}% populacji)."
 
@@ -169,7 +169,7 @@ def run_econometric_forecasts() -> None:
 
         if balance_2028 < -150 and dem["populationGrowthRate3YrPct"] > 1.2:
             nursery_pot = "HIGH"
-        elif balance_2028 < 0 or edu["childrenPerCarePlaceRatio"] > 1.35:
+        elif balance_2028 < 0:
             nursery_pot = "MEDIUM"
         else:
             nursery_pot = "LOW"
@@ -226,3 +226,4 @@ def run_econometric_forecasts() -> None:
 
 if __name__ == "__main__":
     run_econometric_forecasts()
+    

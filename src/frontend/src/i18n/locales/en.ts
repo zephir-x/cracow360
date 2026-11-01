@@ -476,9 +476,9 @@ export const enTranslations: TranslationDictionary = {
       tourism: 'Tourism & Exploration',
     },
     statuses: {
-      integrated: 'Integrated in ETL',
-      gisLayer: 'GIS Vector Layer',
-      registryNbp: 'NBP / RCN Registry',
+      integrated: 'Integrated into ETL',
+      own: 'Own work',
+      live: 'Live API Streaming',
     },
   },
   footer: {

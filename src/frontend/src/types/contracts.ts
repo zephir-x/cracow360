@@ -374,8 +374,11 @@ export interface TransitAccessibilityMetricsDto {
 
 export interface PublicFacilitiesMetricsDto {
   auditedTotal: number;
-  wheelchairFull: number;
+  wheelchairGood?: number;
   wheelchairPartial: number;
+  wheelchairWeak?: number;
+  wheelchairNone?: number;
+  wheelchairFull?: number;
   elevators: number;
   ramps: number;
   accessibleToilets: number;

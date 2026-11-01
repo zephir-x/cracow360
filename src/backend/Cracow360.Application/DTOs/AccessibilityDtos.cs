@@ -106,7 +106,10 @@ public record PublicFacilitiesMetricsDto(
     int AccessibleToilets,
     int HearingLoops,
     int SignLanguagePJM,
-    int BrailleTactile
+    int BrailleTactile,
+    int WheelchairGood = 0,
+    int WheelchairWeak = 0,
+    int WheelchairNone = 0
 );
 
 /// <summary>

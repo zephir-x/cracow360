@@ -116,8 +116,9 @@ export const ACCESSIBILITY_I18N = {
     facilitiesListTitle: 'Zaudytowane obiekty użyteczności publicznej w dzielnicy',
     noFacilitiesNotice:
       'W tej dzielnicy nie ma głównej siedziby jednostki UMK objętej audytem ministerialnym. Mieszkańcy korzystają z centralnych magistratów (np. Plac Wszystkich Świętych, Rynek Podgórski, ul. Wielicka, al. Powstania Warszawskiego) z pełnym zapleczem bez barier.',
-    wheelchairFull: 'Pełna dostępność',
+    wheelchairGood: 'Dobra dostępność',
     wheelchairPartial: 'Dostępność częściowa',
+    wheelchairWeak: 'Słaba dostępność',
     wheelchairNone: 'Brak dostępności',
     facilityDepartments: 'Wydziały / Referaty:',
     facilityAuditDesc: 'Zakres dostępności:',
@@ -249,8 +250,9 @@ export const ACCESSIBILITY_I18N = {
     facilitiesListTitle: 'Audited Public Facilities in Selected District',
     noFacilitiesNotice:
       'There is no primary city hall headquarter in this district included in the ministerial audit. Residents are served by central administrative hubs (e.g. Plac Wszystkich Świętych, Rynek Podgórski, ul. Wielicka) with full barrier-free support.',
-    wheelchairFull: 'Full Accessibility',
+    wheelchairGood: 'Good Accessibility',
     wheelchairPartial: 'Partial Accessibility',
+    wheelchairWeak: 'Weak Accessibility',
     wheelchairNone: 'No Accessibility',
     facilityDepartments: 'Departments / Offices:',
     facilityAuditDesc: 'Audit Scope:',
@@ -382,8 +384,9 @@ export const ACCESSIBILITY_I18N = {
     facilitiesListTitle: 'Перевірені об\'єкти громадського призначення в районі',
     noFacilitiesNotice:
       'У цьому районі немає головного офісу UMK, охопленого міністерським аудитом. Мешканці обслуговуються в центральних адміністративних центрах із повним безбар\'єрним облаштуванням.',
-    wheelchairFull: 'Повна доступність',
+    wheelchairGood: 'Добра доступність',
     wheelchairPartial: 'Часткова доступність',
+    wheelchairWeak: 'Слабка доступність',
     wheelchairNone: 'Доступність відсутня',
     facilityDepartments: 'Відділи / Департаменти:',
     facilityAuditDesc: 'Обсяг доступності:',

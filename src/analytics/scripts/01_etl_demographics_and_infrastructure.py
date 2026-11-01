@@ -1,7 +1,7 @@
 """
 GOAL / PURPOSE:
     Production-grade ETL pipeline for Krakow360.
-    Extracts, cleans, geocodes, and aggregates 33 official raw municipal datasets
+    Extracts, cleans, geocodes, and aggregates official raw municipal datasets
     from the City of Krakow Open Data Portal, MSIP, ZZM, ZTP, GIOŚ, SEWiK, and NBP.
 
 ENGINEERING PRINCIPLES:
@@ -170,7 +170,7 @@ class KrakowSpatialResolver:
                 self.geocoding_cache = json.load(c)
 
     def point_to_district(self, lat: float, lng: float) -> int:
-        """Determines which of the 18 districts a geographic point belongs to."""
+        # Determines which of the 18 districts a geographic point belongs to.
         pt = (lng, lat)
         for did, polys in self.district_polys.items():
             if any(p.contains_point(pt) for p in polys):
@@ -178,7 +178,7 @@ class KrakowSpatialResolver:
         return None
 
     def register_anchor(self, street: str, postal: str, did: int, lat: float, lng: float) -> None:
-        """Registers a known reliable coordinate (like a tram stop) to serve as a fallback anchor."""
+        # Registers a known reliable coordinate (like a tram stop) to serve as a fallback anchor.
         tk = norm_token(street)
         if tk:
             self.street_coords[tk].append((did, lat, lng))
@@ -187,7 +187,7 @@ class KrakowSpatialResolver:
             self.postal_coords[pc].append((did, lat, lng))
 
     def _fetch_gugik_api(self, query: str) -> tuple[float, float]:
-        """Queries the official Polish government addressing service and transforms EPSG:2180 to WGS84."""
+        # Queries the official Polish government addressing service and transforms EPSG:2180 to WGS84.
         q_str = query if "kraków" in query.lower() or "krakow" in query.lower() else f"Kraków, {query}"
         url = f"https://services.gugik.gov.pl/uug/?request=GetAddress&address={urllib.parse.quote(q_str)}"
         try:
@@ -484,10 +484,7 @@ def run_etl() -> None:
 
             did, lat, lng = resolver.resolve_address(full_street, postal, did_hint, seed=idx*17, name=raw_name)
 
-            if not lat or not did:
-                missing_coords += 1
-                if is_poi: continue
-
+            # Statistics Aggregation
             final_did = did_hint or did or 1
             districts_data[final_did]["educationAndCare"][counter_key] += 1
             places = clean_int(row.get("Liczba miejsc") or row.get("Liczba dzieci ogółem") or row.get("Liczba uczniów ogółem") or "0")
@@ -499,6 +496,11 @@ def run_etl() -> None:
             elif "primary" in counter_key.lower():
                 districts_data[final_did]["educationAndCare"]["primarySchoolStudentsTotal"] += places
                 districts_data[final_did]["_internal"]["primarySchoolClasses"] += clean_int(row.get("Liczba oddziałów ogółem") or "0")
+
+            # Creating a map – we only stop adding a marker to the map if coordinates are missing
+            if not lat or not did:
+                missing_coords += 1
+                if is_poi: continue
 
             if is_poi and lat and lng:
                 pois.append({
@@ -600,13 +602,18 @@ def run_etl() -> None:
     if kultura_file:
         for row in read_clean_csv(kultura_file):
             podmiot = row.get("Podmiot", "").strip()
-            kluby = clean_int(row.get("Kluby i filiewraz siedzibą główną", "1"), 1)
+            kluby = clean_int(row.get("Kluby i filie wraz siedzibą główną", "1"), 1)
             total_cultural_events += clean_int(row.get("Imprezy_wydarzenia - Liczba", "0") or row.get("Imprezy_wydarzenia - Liczba ", "0"))
             total_culture_subsidy += clean_float(row.get("Dotacje podmiotowe z budżetu Miasta Krakowa_w zł", "0"))
 
-            did, _, _ = resolver.resolve_address(f"{podmiot}", skip_api=False)
-            if not did:
-                did = 1
+            if any(k in podmiot for k in ["Nowohuckie", "Nowa Huta", "Norwid"]): did = 18
+            elif "Białoprądnicki" in podmiot: did = 4
+            elif "Podgórza" in podmiot: did = 13
+            elif any(k in podmiot for k in ["Krakowskie Forum", "Piosenki"]): did = 1
+            elif "Decjusza" in podmiot: did = 7
+            elif "Krakowiacy" in podmiot: did = 5
+            else: did = 1
+
             cultural_centers_by_district[did] += kluby
 
     library_branches_by_district: dict[int, int] = defaultdict(int)
@@ -695,11 +702,7 @@ def run_etl() -> None:
             if 1 <= did <= 18:
                 hm = districts_data[did]["housingMarket"]
                 hm["avgPricePerM2"] = clean_float(row.get("Cena_srednia_m2_PLN"))
-                hm["priceSecondaryM2"] = clean_float(row.get("Cena_m2_rynek_wtorny_PLN"))
-                hm["pricePrimaryM2"] = clean_float(row.get("Cena_m2_rynek_pierwotny_PLN"))
-                hm["priceMedianM2"] = clean_float(row.get("Mediana_ceny_m2_PLN"))
                 hm["avgRentalPriceM2"] = clean_float(row.get("Sredni_koszt_najmu_m2_PLN"))
-                hm["priceGrowthYoYPct"] = clean_float(row.get("Roczna_dynamika_cen_pct"))
                 hm["m2PerAverageSalary"] = clean_float(row.get("Dostepnosc_m2_za_srednia_pensje"))
 
     for did, d in districts_data.items():

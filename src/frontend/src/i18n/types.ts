@@ -363,8 +363,8 @@ export interface TranslationDictionary {
     };
     statuses: {
       integrated: string;
-      gisLayer: string;
-      registryNbp: string;
+      own: string;
+      live: string;
     };
   };
   footer: {

@@ -1,11 +1,11 @@
-锘縊BJECTID;Nazwa;Liczba miejsc og贸艂em;Liczba stanowisk do 艂adowania pojazd贸w elektrycznych;Liczba stanowisk dla os贸b z niepe艂nosprawno艣ciami;Stojaki na rowery;Wypo偶yczalnia Park-e-Bike;Monitoring;Infolinia 24/7;Doba parkingowa;x;y
-1;P+R Kurdwan贸w;167;4;7;tak;tak;tak;501 678 116;od godz. 4:30 do 2:30;7424676.8431;5542373.1458
-2;P+R Nowy Bie偶an贸w;108;2;5;tak;tak;tak;501 678 116;od godz. 4:30 do 2:30;7430069.887;5542584.7007
-3;P+R Ma艂y P艂asz贸w;164;2;7;nie;tak;tak;501 678 116;od godz. 4:30 do 2:30;7428416.1293;5545220.4877
-4;P+R Czerwone Maki;192;0;4;tak;tak;tak;501 678 116 ;od godz. 4:30 do 2:30;7420472.5323;5543082.8952
+OBJECTID;Nazwa;Liczba miejsc og蟪em;Liczba stanowisk do 砤dowania pojazd體 elektrycznych;Liczba stanowisk dla os骲 z niepe硁osprawno渃iami;Stojaki na rowery;Wypo縴czalnia Park-e-Bike;Monitoring;Infolinia 24/7;Doba parkingowa;x;y
+1;P+R Kurdwan體;167;4;7;tak;tak;tak;501 678 116;od godz. 4:30 do 2:30;7424676.8431;5542373.1458
+2;P+R Nowy Bie縜n體;108;2;5;tak;tak;tak;501 678 116;od godz. 4:30 do 2:30;7430069.887;5542584.7007
+3;P+R Ma硑 P砤sz體;164;2;7;nie;tak;tak;501 678 116;od godz. 4:30 do 2:30;7428416.1293;5545220.4877
+4;P+R Czerwone Maki;192;0;4;tak;tak;tak;501 678 116;od godz. 4:30 do 2:30;7420472.5323;5543082.8952
 5;P+R Mydlniki Wapiennik;83;2;6;tak;nie;tak;501 678 116;od godz. 4:00 do 0:00;7416994.6253;5551175.8862
 6;P+R Swoszowice;154;6;6;tak;nie;tak;501 678 116;od godz. 4:00 do 0:00;7423179.3322;5540984.0642
-7;P+R Krowodrza G贸rka;109;4;4;tak;tak;;501 678 116;od godz. 4:30 do 2:30;7423672.9806;5550869.3117
-8;P+R Pacho艅skiego;95;4;3;tak;tak;;501 678 116;od godz. 4:30 do 2:30;7423467.5602;5551443.9402
-9;P+R G贸rka Narodowa;465;10;18;tak;tak;tak;501 678 116;od godz. 4:00 do 0:00;7425800.6966;5552637.2879
-10;P+R Pr膮dnik Czerwony;83;0;2;;;;501 678 116;od godz. 4:00 do 0:00;7426678.3041;5551698.6265
+7;P+R Krowodrza G髍ka;109;4;4;tak;tak;nie;501 678 116;od godz. 4:30 do 2:30;7423672.9806;5550869.3117
+8;P+R Pacho駍kiego;95;4;3;tak;tak;nie;501 678 116;od godz. 4:30 do 2:30;7423467.5602;5551443.9402
+9;P+R G髍ka Narodowa;465;10;18;tak;tak;tak;501 678 116;od godz. 4:00 do 0:00;7425800.6966;5552637.2879
+10;P+R Pr筪nik Czerwony;83;0;2;nie;nie;nie;501 678 116;od godz. 4:00 do 0:00;7426678.3041;5551698.6265
