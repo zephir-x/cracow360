@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-01T21:41:21Z",
+    "generatedAt": "2026-11-01T23:33:54Z",
     "dataVersion": "2.1.0-expanded-8-pillars-2025-2026",
     "normalizationMethod": "MinMax_0_100_Calibrated"
   },
@@ -72,19 +72,19 @@
         "municipalSubsidyPerCapitaPln": 435.71
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1420,
-        "pedestrianAccidents": 48,
-        "injuryAccidents": 32,
-        "municipalPoliceInterventionsTotal": 28400,
+        "roadCollisionsAnnual": 955,
+        "pedestrianAccidents": 57,
+        "injuryAccidents": 57,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 4450
       },
       "housingMarket": {
         "avgPricePerM2": 20826.0,
-        "priceSecondaryM2": 19860.0,
-        "pricePrimaryM2": 27092.0,
-        "priceMedianM2": 23476.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 87.0,
-        "priceGrowthYoYPct": 5.2,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.32
       },
       "environmentalQuality": {
@@ -180,19 +180,19 @@
         "municipalSubsidyPerCapitaPln": 112.19
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1180,
-        "pedestrianAccidents": 34,
-        "injuryAccidents": 24,
-        "municipalPoliceInterventionsTotal": 12300,
+        "roadCollisionsAnnual": 617,
+        "pedestrianAccidents": 28,
+        "injuryAccidents": 28,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1420
       },
       "housingMarket": {
         "avgPricePerM2": 18214.0,
-        "priceSecondaryM2": 17337.0,
-        "pricePrimaryM2": 22779.0,
-        "priceMedianM2": 20058.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 89.0,
-        "priceGrowthYoYPct": -3.2,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.36
       },
       "environmentalQuality": {
@@ -207,7 +207,7 @@
         "greeneryScore": 70.4,
         "cultureAndSeniorScore": 59.3,
         "environmentScore": 37.1,
-        "safetyScore": 50.9,
+        "safetyScore": 59.6,
         "housingAffordabilityScore": 27.6,
         "demographicVitalityScore": 73.6
       },
@@ -288,19 +288,19 @@
         "municipalSubsidyPerCapitaPln": 92.09
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 890,
-        "pedestrianAccidents": 22,
-        "injuryAccidents": 16,
-        "municipalPoliceInterventionsTotal": 7600,
+        "roadCollisionsAnnual": 529,
+        "pedestrianAccidents": 28,
+        "injuryAccidents": 28,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1120
       },
       "housingMarket": {
         "avgPricePerM2": 14759.0,
-        "priceSecondaryM2": 14173.0,
-        "pricePrimaryM2": 16312.0,
-        "priceMedianM2": 15243.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 80.0,
-        "priceGrowthYoYPct": 0.01,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.45
       },
       "environmentalQuality": {
@@ -315,7 +315,7 @@
         "greeneryScore": 58.4,
         "cultureAndSeniorScore": 56.7,
         "environmentScore": 55.2,
-        "safetyScore": 70.1,
+        "safetyScore": 67.3,
         "housingAffordabilityScore": 53.4,
         "demographicVitalityScore": 60.4
       },
@@ -396,19 +396,19 @@
         "municipalSubsidyPerCapitaPln": 112.42
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1340,
-        "pedestrianAccidents": 38,
-        "injuryAccidents": 28,
-        "municipalPoliceInterventionsTotal": 11200,
+        "roadCollisionsAnnual": 776,
+        "pedestrianAccidents": 32,
+        "injuryAccidents": 32,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1610
       },
       "housingMarket": {
         "avgPricePerM2": 15538.0,
-        "priceSecondaryM2": 13683.0,
-        "pricePrimaryM2": 16736.0,
-        "priceMedianM2": 15210.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 79.0,
-        "priceGrowthYoYPct": 0.02,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.43
       },
       "environmentalQuality": {
@@ -423,7 +423,7 @@
         "greeneryScore": 52.0,
         "cultureAndSeniorScore": 65.9,
         "environmentScore": 50.3,
-        "safetyScore": 69.6,
+        "safetyScore": 72.3,
         "housingAffordabilityScore": 51.6,
         "demographicVitalityScore": 72.7
       },
@@ -504,19 +504,19 @@
         "municipalSubsidyPerCapitaPln": 91.3
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 920,
-        "pedestrianAccidents": 26,
-        "injuryAccidents": 18,
-        "municipalPoliceInterventionsTotal": 8900,
+        "roadCollisionsAnnual": 949,
+        "pedestrianAccidents": 42,
+        "injuryAccidents": 42,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1250
       },
       "housingMarket": {
         "avgPricePerM2": 16916.0,
-        "priceSecondaryM2": 15615.0,
-        "pricePrimaryM2": 19361.0,
-        "priceMedianM2": 17488.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 83.0,
-        "priceGrowthYoYPct": 0.25,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.39
       },
       "environmentalQuality": {
@@ -531,7 +531,7 @@
         "greeneryScore": 73.7,
         "cultureAndSeniorScore": 55.5,
         "environmentScore": 47.6,
-        "safetyScore": 57.3,
+        "safetyScore": 47.1,
         "housingAffordabilityScore": 40.5,
         "demographicVitalityScore": 67.4
       },
@@ -612,19 +612,19 @@
         "municipalSubsidyPerCapitaPln": 56.15
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 610,
-        "pedestrianAccidents": 14,
-        "injuryAccidents": 11,
-        "municipalPoliceInterventionsTotal": 4100,
+        "roadCollisionsAnnual": 327,
+        "pedestrianAccidents": 15,
+        "injuryAccidents": 15,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 510
       },
       "housingMarket": {
         "avgPricePerM2": 16096.0,
-        "priceSecondaryM2": 15715.0,
-        "pricePrimaryM2": 16602.0,
-        "priceMedianM2": 16159.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 79.0,
-        "priceGrowthYoYPct": -0.02,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
@@ -639,7 +639,7 @@
         "greeneryScore": 65.7,
         "cultureAndSeniorScore": 49.8,
         "environmentScore": 73.0,
-        "safetyScore": 69.5,
+        "safetyScore": 72.1,
         "housingAffordabilityScore": 49.0,
         "demographicVitalityScore": 65.2
       },
@@ -720,19 +720,19 @@
         "municipalSubsidyPerCapitaPln": 132.87
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 490,
-        "pedestrianAccidents": 9,
-        "injuryAccidents": 8,
-        "municipalPoliceInterventionsTotal": 3200,
+        "roadCollisionsAnnual": 218,
+        "pedestrianAccidents": 12,
+        "injuryAccidents": 12,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 405
       },
       "housingMarket": {
         "avgPricePerM2": 19965.0,
-        "priceSecondaryM2": 20021.0,
-        "pricePrimaryM2": 22960.0,
-        "priceMedianM2": 21491.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 78.0,
-        "priceGrowthYoYPct": 0.09,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.33
       },
       "environmentalQuality": {
@@ -747,7 +747,7 @@
         "greeneryScore": 96.0,
         "cultureAndSeniorScore": 58.9,
         "environmentScore": 94.0,
-        "safetyScore": 76.8,
+        "safetyScore": 77.7,
         "housingAffordabilityScore": 36.6,
         "demographicVitalityScore": 67.2
       },
@@ -828,19 +828,19 @@
         "municipalSubsidyPerCapitaPln": 41.45
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1150,
-        "pedestrianAccidents": 28,
-        "injuryAccidents": 22,
-        "municipalPoliceInterventionsTotal": 8400,
+        "roadCollisionsAnnual": 892,
+        "pedestrianAccidents": 31,
+        "injuryAccidents": 31,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1100
       },
       "housingMarket": {
         "avgPricePerM2": 18063.0,
-        "priceSecondaryM2": 16865.0,
-        "pricePrimaryM2": 18752.0,
-        "priceMedianM2": 17809.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 79.0,
-        "priceGrowthYoYPct": 0.08,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.37
       },
       "environmentalQuality": {
@@ -855,7 +855,7 @@
         "greeneryScore": 80.8,
         "cultureAndSeniorScore": 55.3,
         "environmentScore": 76.4,
-        "safetyScore": 76.6,
+        "safetyScore": 72.0,
         "housingAffordabilityScore": 42.1,
         "demographicVitalityScore": 77.1
       },
@@ -936,19 +936,19 @@
         "municipalSubsidyPerCapitaPln": 91.1
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 680,
-        "pedestrianAccidents": 15,
-        "injuryAccidents": 12,
-        "municipalPoliceInterventionsTotal": 3800,
+        "roadCollisionsAnnual": 213,
+        "pedestrianAccidents": 7,
+        "injuryAccidents": 7,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 435
       },
       "housingMarket": {
         "avgPricePerM2": 16111.0,
-        "priceSecondaryM2": 14725.0,
-        "pricePrimaryM2": 17554.0,
-        "priceMedianM2": 16140.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 81.0,
-        "priceGrowthYoYPct": -0.05,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
@@ -963,7 +963,7 @@
         "greeneryScore": 76.9,
         "cultureAndSeniorScore": 50.9,
         "environmentScore": 67.2,
-        "safetyScore": 51.4,
+        "safetyScore": 76.0,
         "housingAffordabilityScore": 46.3,
         "demographicVitalityScore": 65.0
       },
@@ -1044,19 +1044,19 @@
         "municipalSubsidyPerCapitaPln": 71.6
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 450,
-        "pedestrianAccidents": 8,
-        "injuryAccidents": 7,
-        "municipalPoliceInterventionsTotal": 2400,
+        "roadCollisionsAnnual": 573,
+        "pedestrianAccidents": 5,
+        "injuryAccidents": 5,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 310
       },
       "housingMarket": {
         "avgPricePerM2": 13560.0,
-        "priceSecondaryM2": 13988.0,
-        "pricePrimaryM2": 13300.0,
-        "priceMedianM2": 13644.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 69.0,
-        "priceGrowthYoYPct": 0.02,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.49
       },
       "environmentalQuality": {
@@ -1071,7 +1071,7 @@
         "greeneryScore": 59.8,
         "cultureAndSeniorScore": 51.9,
         "environmentScore": 89.0,
-        "safetyScore": 94.0,
+        "safetyScore": 87.2,
         "housingAffordabilityScore": 73.4,
         "demographicVitalityScore": 67.7
       },
@@ -1152,19 +1152,19 @@
         "municipalSubsidyPerCapitaPln": 39.15
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 980,
-        "pedestrianAccidents": 24,
-        "injuryAccidents": 19,
-        "municipalPoliceInterventionsTotal": 6800,
+        "roadCollisionsAnnual": 245,
+        "pedestrianAccidents": 16,
+        "injuryAccidents": 16,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 920
       },
       "housingMarket": {
         "avgPricePerM2": 15044.0,
-        "priceSecondaryM2": 14122.0,
-        "pricePrimaryM2": 15828.0,
-        "priceMedianM2": 14975.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 76.0,
-        "priceGrowthYoYPct": 0.01,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.44
       },
       "environmentalQuality": {
@@ -1179,7 +1179,7 @@
         "greeneryScore": 63.6,
         "cultureAndSeniorScore": 51.4,
         "environmentScore": 50.6,
-        "safetyScore": 74.6,
+        "safetyScore": 89.6,
         "housingAffordabilityScore": 57.4,
         "demographicVitalityScore": 59.8
       },
@@ -1260,19 +1260,19 @@
         "municipalSubsidyPerCapitaPln": 33.49
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1040,
-        "pedestrianAccidents": 25,
-        "injuryAccidents": 21,
-        "municipalPoliceInterventionsTotal": 7200,
+        "roadCollisionsAnnual": 612,
+        "pedestrianAccidents": 19,
+        "injuryAccidents": 19,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 980
       },
       "housingMarket": {
         "avgPricePerM2": 11300.0,
-        "priceSecondaryM2": 12913.0,
-        "pricePrimaryM2": 10607.0,
-        "priceMedianM2": 11760.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 79.0,
-        "priceGrowthYoYPct": 0.07,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.59
       },
       "environmentalQuality": {
@@ -1287,7 +1287,7 @@
         "greeneryScore": 66.9,
         "cultureAndSeniorScore": 52.2,
         "environmentScore": 59.4,
-        "safetyScore": 78.2,
+        "safetyScore": 81.2,
         "housingAffordabilityScore": 72.0,
         "demographicVitalityScore": 58.7
       },
@@ -1368,19 +1368,19 @@
         "municipalSubsidyPerCapitaPln": 331.95
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1260,
-        "pedestrianAccidents": 36,
-        "injuryAccidents": 26,
-        "municipalPoliceInterventionsTotal": 11800,
+        "roadCollisionsAnnual": 1390,
+        "pedestrianAccidents": 31,
+        "injuryAccidents": 31,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1480
       },
       "housingMarket": {
         "avgPricePerM2": 18857.0,
-        "priceSecondaryM2": 18760.0,
-        "pricePrimaryM2": 20210.0,
-        "priceMedianM2": 19485.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 89.0,
-        "priceGrowthYoYPct": 0.07,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.35
       },
       "environmentalQuality": {
@@ -1395,7 +1395,7 @@
         "greeneryScore": 75.0,
         "cultureAndSeniorScore": 87.4,
         "environmentScore": 45.1,
-        "safetyScore": 56.5,
+        "safetyScore": 54.1,
         "housingAffordabilityScore": 25.6,
         "demographicVitalityScore": 95.0
       },
@@ -1476,19 +1476,19 @@
         "municipalSubsidyPerCapitaPln": 19.62
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 950,
-        "pedestrianAccidents": 27,
-        "injuryAccidents": 19,
-        "municipalPoliceInterventionsTotal": 6400,
+        "roadCollisionsAnnual": 666,
+        "pedestrianAccidents": 26,
+        "injuryAccidents": 26,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 830
       },
       "housingMarket": {
         "avgPricePerM2": 12208.0,
-        "priceSecondaryM2": 12342.0,
-        "pricePrimaryM2": 14039.0,
-        "priceMedianM2": 13191.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 82.0,
-        "priceGrowthYoYPct": -0.05,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.54
       },
       "environmentalQuality": {
@@ -1503,7 +1503,7 @@
         "greeneryScore": 70.4,
         "cultureAndSeniorScore": 44.0,
         "environmentScore": 53.9,
-        "safetyScore": 58.9,
+        "safetyScore": 61.4,
         "housingAffordabilityScore": 62.5,
         "demographicVitalityScore": 77.8
       },
@@ -1584,19 +1584,19 @@
         "municipalSubsidyPerCapitaPln": 28.32
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 690,
-        "pedestrianAccidents": 18,
-        "injuryAccidents": 13,
-        "municipalPoliceInterventionsTotal": 4900,
+        "roadCollisionsAnnual": 198,
+        "pedestrianAccidents": 22,
+        "injuryAccidents": 22,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 690
       },
       "housingMarket": {
         "avgPricePerM2": 13367.0,
-        "priceSecondaryM2": 13422.0,
-        "pricePrimaryM2": 15372.0,
-        "priceMedianM2": 14397.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 76.0,
-        "priceGrowthYoYPct": 0.02,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.5
       },
       "environmentalQuality": {
@@ -1611,7 +1611,7 @@
         "greeneryScore": 64.9,
         "cultureAndSeniorScore": 49.3,
         "environmentScore": 68.2,
-        "safetyScore": 86.1,
+        "safetyScore": 88.8,
         "housingAffordabilityScore": 65.2,
         "demographicVitalityScore": 54.2
       },
@@ -1692,19 +1692,19 @@
         "municipalSubsidyPerCapitaPln": 39.49
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 620,
-        "pedestrianAccidents": 16,
-        "injuryAccidents": 12,
-        "municipalPoliceInterventionsTotal": 4700,
+        "roadCollisionsAnnual": 189,
+        "pedestrianAccidents": 6,
+        "injuryAccidents": 6,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 740
       },
       "housingMarket": {
         "avgPricePerM2": 11657.0,
-        "priceSecondaryM2": 11603.0,
-        "pricePrimaryM2": 12182.0,
-        "priceMedianM2": 11893.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 79.0,
-        "priceGrowthYoYPct": -0.09,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.57
       },
       "environmentalQuality": {
@@ -1719,7 +1719,7 @@
         "greeneryScore": 62.3,
         "cultureAndSeniorScore": 50.2,
         "environmentScore": 64.1,
-        "safetyScore": 76.7,
+        "safetyScore": 94.0,
         "housingAffordabilityScore": 69.8,
         "demographicVitalityScore": 46.0
       },
@@ -1800,19 +1800,19 @@
         "municipalSubsidyPerCapitaPln": 35.16
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 380,
-        "pedestrianAccidents": 7,
-        "injuryAccidents": 6,
-        "municipalPoliceInterventionsTotal": 1900,
+        "roadCollisionsAnnual": 211,
+        "pedestrianAccidents": 8,
+        "injuryAccidents": 8,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 270
       },
       "housingMarket": {
         "avgPricePerM2": 9672.0,
-        "priceSecondaryM2": 11661.0,
-        "pricePrimaryM2": 8054.0,
-        "priceMedianM2": 9858.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 72.0,
-        "priceGrowthYoYPct": 0.02,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.69
       },
       "environmentalQuality": {
@@ -1827,7 +1827,7 @@
         "greeneryScore": 64.2,
         "cultureAndSeniorScore": 46.7,
         "environmentScore": 88.7,
-        "safetyScore": 87.8,
+        "safetyScore": 85.8,
         "housingAffordabilityScore": 92.0,
         "demographicVitalityScore": 61.0
       },
@@ -1908,19 +1908,19 @@
         "municipalSubsidyPerCapitaPln": 338.26
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1080,
-        "pedestrianAccidents": 29,
-        "injuryAccidents": 23,
-        "municipalPoliceInterventionsTotal": 8200,
+        "roadCollisionsAnnual": 540,
+        "pedestrianAccidents": 27,
+        "injuryAccidents": 27,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1290
       },
       "housingMarket": {
         "avgPricePerM2": 12623.0,
-        "priceSecondaryM2": 11897.0,
-        "pricePrimaryM2": 13348.0,
-        "priceMedianM2": 12623.0,
+        "priceSecondaryM2": 0.0,
+        "pricePrimaryM2": 0.0,
+        "priceMedianM2": 0.0,
         "avgRentalPriceM2": 72.0,
-        "priceGrowthYoYPct": 0.16,
+        "priceGrowthYoYPct": 0.0,
         "m2PerAverageSalary": 0.53
       },
       "environmentalQuality": {
@@ -1935,7 +1935,7 @@
         "greeneryScore": 79.9,
         "cultureAndSeniorScore": 96.0,
         "environmentScore": 53.3,
-        "safetyScore": 59.9,
+        "safetyScore": 65.9,
         "housingAffordabilityScore": 74.3,
         "demographicVitalityScore": 49.2
       },

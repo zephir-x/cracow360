@@ -692,7 +692,6 @@ def run_etl() -> None:
                 sec["roadCollisionsAnnual"] = clean_int(row.get("Liczba_kolizji_drogowych_rocznie"))
                 sec["pedestrianAccidents"] = clean_int(row.get("Wypadki_z_udzialem_pieszych"))
                 sec["injuryAccidents"] = clean_int(row.get("Wypadki_z_rannymi"))
-                sec["municipalPoliceInterventionsTotal"] = clean_int(row.get("Interwencje_Strazy_Miejskiej_ogolem"))
                 sec["publicDisturbanceInterventions"] = clean_int(row.get("Interwencje_zaklocenia_porzadku_publicznego"))
 
     housing_file = find_csv(r"Ceny mieszkan")

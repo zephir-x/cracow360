@@ -16,14 +16,9 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Медіанна повна щомісячна вартість у кожному районі – не рекламована ціна, а те, що ви фактично платите: орендна плата плюс комунальні послуги',
   },
   'safe-1': {
-    pl: 'Roczna liczba kolizji drogowych, wypadki z udziałem pieszych, wypadki z rannymi w podziale na dzielnice',
-    en: 'Annual number of road collisions, pedestrian-involved accidents, and injury accidents across districts',
-    ua: 'Річна кількість ДТП, аварії за участю пішоходів та ДТП із постраждалими у розрізі районів',
-  },
-  'safe-2': {
-    pl: 'Łączna liczba interwencji porządkowych, zgłoszenia zakłócania ciszy nocnej i porządku publicznego',
-    en: 'Total number of public order interventions, nocturnal noise complaints, and public disturbance reports',
-    ua: 'Загальна кількість викликів щодо порушення порядку, скарги на порушення нічного спокою та громадського порядку',
+    pl: 'Wyszukiwarka zdarzeń drogowych w danych lokalizacjach Krakowa z podziałem na kategorie (z udziałem pieszych, z udziałem rannych)',
+    en: 'A search tool for traffic incidents at specific locations in Kraków, categorized by type (e.g., involving pedestrians, involving injuries)',
+    ua: 'Пошукова система дорожньо-транспортних пригод у певних місцях Кракова, розділена на категорії (за участю пішоходів, за участю постраждалих)',
   },
   'gis-1': {
     pl: 'Wektorowe granice Polygon/MultiPolygon dzielnic, powierzchnia administracyjna w km²',
@@ -31,26 +26,21 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     ua: 'Векторні межі Polygon/MultiPolygon районів, адміністративна площа в км²',
   },
   'gis-2': {
-    pl: 'Średnioroczne stężenia pyłów PM10 i PM2.5, szacunkowa liczba dni smogowych dla obszarów miejskich',
-    en: 'Annual mean PM10 and PM2.5 concentrations, estimated number of smog days for urban areas',
-    ua: 'Середньорічні концентрації пилу PM10 і PM2.5, розрахункова кількість днів зі смогом для міських територій',
-  },
-  'gis-3': {
     pl: 'Państwowy rejestr adresowy posesji w Krakowie, transformacja PUWG 1992 (EPSG:2180) do WGS84 dla placówek edukacyjnych i instytucji',
     en: 'National address register of properties in Krakow, PUWG 1992 (EPSG:2180) to WGS84 transformation for educational facilities and institutions',
     ua: 'Державний адресний реєстр нерухомості у Кракові, трансформація PUWG 1992 (EPSG:2180) у WGS84 для навчальних закладів та установ',
   },
-  'gis-6': {
+  'gis-5': {
     pl: 'Real-time temperatura (°C), temperatura odczuwalna, wilgotność względna (%), kody pogodowe WMO, szansa opadów (%), suma deszczu/śniegu (mm/cm), prędkość i kierunek wiatru, prognoza godzinowa 24h',
     en: 'Real-time temperature (°C), apparent temperature, relative humidity (%), WMO weather codes, precipitation probability (%), rain/snow volume (mm/cm), wind speed and direction, 24-hour hourly forecast',
     ua: 'Поточна температура (°C), температура за відчуттями, відносна вологість (%), погодні коди WMO, ймовірність опадів (%), обсяг дощу/снігу (мм/см), швидкість і напрямок вітру, 24-годинний погодинний прогноз',
   },
-  'gis-7': {
+  'gis-6': {
     pl: 'Europejski Indeks Jakości Powietrza (European AQI 0–100), pyły PM10 i PM2.5 (µg/m³), stężenie spalin NO₂ (µg/m³), indeks promieniowania UV, pyłki roślinne (trawy, brzoza, olcha, bylica, ambrozja)',
     en: 'European Air Quality Index (European AQI 0–100), PM10 and PM2.5 particulate matter (µg/m³), NO₂ vehicular exhaust (µg/m³), UV radiation index, botanical pollen allergens (grass, birch, alder, mugwort, ragweed)',
     ua: 'Європейський індекс якості повітря (European AQI 0–100), тверді частки PM10 та PM2.5 (мкг/м³), концентрація вихлопних газів NO₂ (мкг/м³), індекс УФ-випромінювання, пилок рослин (трави, береза, вільха, полин, амброзія)',
   },
-  'gis-8': {
+  'gis-7': {
     pl: 'Aktualne dzielnice samorządowe Krakowa wraz z powierzchnią',
     en: 'Current municipal districts of Krakow, including their area',
     ua: 'Поточні райони місцевого самоврядування Кракова з їхньою площею',
@@ -115,12 +105,12 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     en: 'A list of various nature reserves and parks in Kraków, including their surface area',
     ua: 'Перелік різних заповідників та парків у Кракові разом із зазначенням їхньої території',
   },
-  'gis-4': {
+  'gis-3': {
     pl: 'Wyodrębnienie dokładnych lokalizacji punktowych (centroidów) terenów zielonych z bazy OSM na podstawie tagów przyrodniczych',
     en: 'Extraction of precise point locations (centroids) of green areas from the OSM database based on natural tags',
     ua: 'Виділення точних точкових локацій (центроїдів) зелених зон з бази OSM на основі природних тегів',
   },
-  'gis-5': {
+  'gis-4': {
     pl: 'Miejscowe Plany Zagospodarowania Przestrzennego oraz weryfikacja kwartałów pod budowę parków kieszonkowych',
     en: 'Local Spatial Development Plans and verification of residential blocks for the construction of pocket parks',
     ua: 'Місцеві плани просторового розвитку та верифікація кварталів для будівництва кишенькових парків',

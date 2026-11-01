@@ -67,10 +67,10 @@
         "municipalSubsidyPerCapitaPln": 435.71
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1420,
-        "pedestrianAccidents": 48,
-        "injuryAccidents": 32,
-        "municipalPoliceInterventionsTotal": 28400,
+        "roadCollisionsAnnual": 955,
+        "pedestrianAccidents": 57,
+        "injuryAccidents": 57,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 4450
       },
       "housingMarket": {
@@ -283,10 +283,10 @@
         "municipalSubsidyPerCapitaPln": 112.19
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1180,
-        "pedestrianAccidents": 34,
-        "injuryAccidents": 24,
-        "municipalPoliceInterventionsTotal": 12300,
+        "roadCollisionsAnnual": 617,
+        "pedestrianAccidents": 28,
+        "injuryAccidents": 28,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1420
       },
       "housingMarket": {
@@ -425,7 +425,7 @@
         "greeneryScore": 70.4,
         "cultureAndSeniorScore": 59.3,
         "environmentScore": 37.1,
-        "safetyScore": 50.9,
+        "safetyScore": 59.6,
         "housingAffordabilityScore": 27.6,
         "demographicVitalityScore": 73.6
       }
@@ -497,10 +497,10 @@
         "municipalSubsidyPerCapitaPln": 92.09
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 890,
-        "pedestrianAccidents": 22,
-        "injuryAccidents": 16,
-        "municipalPoliceInterventionsTotal": 7600,
+        "roadCollisionsAnnual": 529,
+        "pedestrianAccidents": 28,
+        "injuryAccidents": 28,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1120
       },
       "housingMarket": {
@@ -640,7 +640,7 @@
         "greeneryScore": 58.4,
         "cultureAndSeniorScore": 56.7,
         "environmentScore": 55.2,
-        "safetyScore": 70.1,
+        "safetyScore": 67.3,
         "housingAffordabilityScore": 53.4,
         "demographicVitalityScore": 60.4
       }
@@ -712,10 +712,10 @@
         "municipalSubsidyPerCapitaPln": 112.42
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1340,
-        "pedestrianAccidents": 38,
-        "injuryAccidents": 28,
-        "municipalPoliceInterventionsTotal": 11200,
+        "roadCollisionsAnnual": 776,
+        "pedestrianAccidents": 32,
+        "injuryAccidents": 32,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1610
       },
       "housingMarket": {
@@ -855,7 +855,7 @@
         "greeneryScore": 52.0,
         "cultureAndSeniorScore": 65.9,
         "environmentScore": 50.3,
-        "safetyScore": 69.6,
+        "safetyScore": 72.3,
         "housingAffordabilityScore": 51.6,
         "demographicVitalityScore": 72.7
       }
@@ -927,10 +927,10 @@
         "municipalSubsidyPerCapitaPln": 91.3
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 920,
-        "pedestrianAccidents": 26,
-        "injuryAccidents": 18,
-        "municipalPoliceInterventionsTotal": 8900,
+        "roadCollisionsAnnual": 949,
+        "pedestrianAccidents": 42,
+        "injuryAccidents": 42,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1250
       },
       "housingMarket": {
@@ -1070,7 +1070,7 @@
         "greeneryScore": 73.7,
         "cultureAndSeniorScore": 55.5,
         "environmentScore": 47.6,
-        "safetyScore": 57.3,
+        "safetyScore": 47.1,
         "housingAffordabilityScore": 40.5,
         "demographicVitalityScore": 67.4
       }
@@ -1142,10 +1142,10 @@
         "municipalSubsidyPerCapitaPln": 56.15
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 610,
-        "pedestrianAccidents": 14,
-        "injuryAccidents": 11,
-        "municipalPoliceInterventionsTotal": 4100,
+        "roadCollisionsAnnual": 327,
+        "pedestrianAccidents": 15,
+        "injuryAccidents": 15,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 510
       },
       "housingMarket": {
@@ -1281,7 +1281,7 @@
         "greeneryScore": 65.7,
         "cultureAndSeniorScore": 49.8,
         "environmentScore": 73.0,
-        "safetyScore": 69.5,
+        "safetyScore": 72.1,
         "housingAffordabilityScore": 49.0,
         "demographicVitalityScore": 65.2
       }
@@ -1353,10 +1353,10 @@
         "municipalSubsidyPerCapitaPln": 132.87
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 490,
-        "pedestrianAccidents": 9,
-        "injuryAccidents": 8,
-        "municipalPoliceInterventionsTotal": 3200,
+        "roadCollisionsAnnual": 218,
+        "pedestrianAccidents": 12,
+        "injuryAccidents": 12,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 405
       },
       "housingMarket": {
@@ -1495,7 +1495,7 @@
         "greeneryScore": 96.0,
         "cultureAndSeniorScore": 58.9,
         "environmentScore": 94.0,
-        "safetyScore": 76.8,
+        "safetyScore": 77.7,
         "housingAffordabilityScore": 36.6,
         "demographicVitalityScore": 67.2
       }
@@ -1567,10 +1567,10 @@
         "municipalSubsidyPerCapitaPln": 41.45
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1150,
-        "pedestrianAccidents": 28,
-        "injuryAccidents": 22,
-        "municipalPoliceInterventionsTotal": 8400,
+        "roadCollisionsAnnual": 892,
+        "pedestrianAccidents": 31,
+        "injuryAccidents": 31,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1100
       },
       "housingMarket": {
@@ -1711,7 +1711,7 @@
         "greeneryScore": 80.8,
         "cultureAndSeniorScore": 55.3,
         "environmentScore": 76.4,
-        "safetyScore": 76.6,
+        "safetyScore": 72.0,
         "housingAffordabilityScore": 42.1,
         "demographicVitalityScore": 77.1
       }
@@ -1783,10 +1783,10 @@
         "municipalSubsidyPerCapitaPln": 91.1
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 680,
-        "pedestrianAccidents": 15,
-        "injuryAccidents": 12,
-        "municipalPoliceInterventionsTotal": 3800,
+        "roadCollisionsAnnual": 213,
+        "pedestrianAccidents": 7,
+        "injuryAccidents": 7,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 435
       },
       "housingMarket": {
@@ -1924,7 +1924,7 @@
         "greeneryScore": 76.9,
         "cultureAndSeniorScore": 50.9,
         "environmentScore": 67.2,
-        "safetyScore": 51.4,
+        "safetyScore": 76.0,
         "housingAffordabilityScore": 46.3,
         "demographicVitalityScore": 65.0
       }
@@ -1996,10 +1996,10 @@
         "municipalSubsidyPerCapitaPln": 71.6
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 450,
-        "pedestrianAccidents": 8,
-        "injuryAccidents": 7,
-        "municipalPoliceInterventionsTotal": 2400,
+        "roadCollisionsAnnual": 573,
+        "pedestrianAccidents": 5,
+        "injuryAccidents": 5,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 310
       },
       "housingMarket": {
@@ -2136,7 +2136,7 @@
         "greeneryScore": 59.8,
         "cultureAndSeniorScore": 51.9,
         "environmentScore": 89.0,
-        "safetyScore": 94.0,
+        "safetyScore": 87.2,
         "housingAffordabilityScore": 73.4,
         "demographicVitalityScore": 67.7
       }
@@ -2208,10 +2208,10 @@
         "municipalSubsidyPerCapitaPln": 39.15
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 980,
-        "pedestrianAccidents": 24,
-        "injuryAccidents": 19,
-        "municipalPoliceInterventionsTotal": 6800,
+        "roadCollisionsAnnual": 245,
+        "pedestrianAccidents": 16,
+        "injuryAccidents": 16,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 920
       },
       "housingMarket": {
@@ -2348,7 +2348,7 @@
         "greeneryScore": 63.6,
         "cultureAndSeniorScore": 51.4,
         "environmentScore": 50.6,
-        "safetyScore": 74.6,
+        "safetyScore": 89.6,
         "housingAffordabilityScore": 57.4,
         "demographicVitalityScore": 59.8
       }
@@ -2420,10 +2420,10 @@
         "municipalSubsidyPerCapitaPln": 33.49
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1040,
-        "pedestrianAccidents": 25,
-        "injuryAccidents": 21,
-        "municipalPoliceInterventionsTotal": 7200,
+        "roadCollisionsAnnual": 612,
+        "pedestrianAccidents": 19,
+        "injuryAccidents": 19,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 980
       },
       "housingMarket": {
@@ -2562,7 +2562,7 @@
         "greeneryScore": 66.9,
         "cultureAndSeniorScore": 52.2,
         "environmentScore": 59.4,
-        "safetyScore": 78.2,
+        "safetyScore": 81.2,
         "housingAffordabilityScore": 72.0,
         "demographicVitalityScore": 58.7
       }
@@ -2634,10 +2634,10 @@
         "municipalSubsidyPerCapitaPln": 331.95
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1260,
-        "pedestrianAccidents": 36,
-        "injuryAccidents": 26,
-        "municipalPoliceInterventionsTotal": 11800,
+        "roadCollisionsAnnual": 1390,
+        "pedestrianAccidents": 31,
+        "injuryAccidents": 31,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1480
       },
       "housingMarket": {
@@ -2775,7 +2775,7 @@
         "greeneryScore": 75.0,
         "cultureAndSeniorScore": 87.4,
         "environmentScore": 45.1,
-        "safetyScore": 56.5,
+        "safetyScore": 54.1,
         "housingAffordabilityScore": 25.6,
         "demographicVitalityScore": 95.0
       }
@@ -2847,10 +2847,10 @@
         "municipalSubsidyPerCapitaPln": 19.62
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 950,
-        "pedestrianAccidents": 27,
-        "injuryAccidents": 19,
-        "municipalPoliceInterventionsTotal": 6400,
+        "roadCollisionsAnnual": 666,
+        "pedestrianAccidents": 26,
+        "injuryAccidents": 26,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 830
       },
       "housingMarket": {
@@ -2985,7 +2985,7 @@
         "greeneryScore": 70.4,
         "cultureAndSeniorScore": 44.0,
         "environmentScore": 53.9,
-        "safetyScore": 58.9,
+        "safetyScore": 61.4,
         "housingAffordabilityScore": 62.5,
         "demographicVitalityScore": 77.8
       }
@@ -3057,10 +3057,10 @@
         "municipalSubsidyPerCapitaPln": 28.32
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 690,
-        "pedestrianAccidents": 18,
-        "injuryAccidents": 13,
-        "municipalPoliceInterventionsTotal": 4900,
+        "roadCollisionsAnnual": 198,
+        "pedestrianAccidents": 22,
+        "injuryAccidents": 22,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 690
       },
       "housingMarket": {
@@ -3197,7 +3197,7 @@
         "greeneryScore": 64.9,
         "cultureAndSeniorScore": 49.3,
         "environmentScore": 68.2,
-        "safetyScore": 86.1,
+        "safetyScore": 88.8,
         "housingAffordabilityScore": 65.2,
         "demographicVitalityScore": 54.2
       }
@@ -3269,10 +3269,10 @@
         "municipalSubsidyPerCapitaPln": 39.49
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 620,
-        "pedestrianAccidents": 16,
-        "injuryAccidents": 12,
-        "municipalPoliceInterventionsTotal": 4700,
+        "roadCollisionsAnnual": 189,
+        "pedestrianAccidents": 6,
+        "injuryAccidents": 6,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 740
       },
       "housingMarket": {
@@ -3410,7 +3410,7 @@
         "greeneryScore": 62.3,
         "cultureAndSeniorScore": 50.2,
         "environmentScore": 64.1,
-        "safetyScore": 76.7,
+        "safetyScore": 94.0,
         "housingAffordabilityScore": 69.8,
         "demographicVitalityScore": 46.0
       }
@@ -3482,10 +3482,10 @@
         "municipalSubsidyPerCapitaPln": 35.16
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 380,
-        "pedestrianAccidents": 7,
-        "injuryAccidents": 6,
-        "municipalPoliceInterventionsTotal": 1900,
+        "roadCollisionsAnnual": 211,
+        "pedestrianAccidents": 8,
+        "injuryAccidents": 8,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 270
       },
       "housingMarket": {
@@ -3622,7 +3622,7 @@
         "greeneryScore": 64.2,
         "cultureAndSeniorScore": 46.7,
         "environmentScore": 88.7,
-        "safetyScore": 87.8,
+        "safetyScore": 85.8,
         "housingAffordabilityScore": 92.0,
         "demographicVitalityScore": 61.0
       }
@@ -3694,10 +3694,10 @@
         "municipalSubsidyPerCapitaPln": 338.26
       },
       "publicSafety": {
-        "roadCollisionsAnnual": 1080,
-        "pedestrianAccidents": 29,
-        "injuryAccidents": 23,
-        "municipalPoliceInterventionsTotal": 8200,
+        "roadCollisionsAnnual": 540,
+        "pedestrianAccidents": 27,
+        "injuryAccidents": 27,
+        "municipalPoliceInterventionsTotal": 0,
         "publicDisturbanceInterventions": 1290
       },
       "housingMarket": {
@@ -3837,7 +3837,7 @@
         "greeneryScore": 79.9,
         "cultureAndSeniorScore": 96.0,
         "environmentScore": 53.3,
-        "safetyScore": 59.9,
+        "safetyScore": 65.9,
         "housingAffordabilityScore": 74.3,
         "demographicVitalityScore": 49.2
       }
