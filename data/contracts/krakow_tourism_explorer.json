@@ -1,43 +1,16 @@
 {
-  "generatedAt": "2026-11-01T23:33:57.699946+00:00",
+  "generatedAt": "2026-11-02T13:48:47.549342+00:00",
   "meta": {
     "title": "Krakow360 Smart Tourism & Hidden Gems Explorer",
-    "description": "Oficjalny rejestr i generator tras turystycznych w 18 dzielnicach Krakowa oparty na danych UMK i MOT.",
-    "version": "1.0.0-civic-tourism",
-    "sources": [
-      {
-        "id": "tour-1",
-        "name": "Badanie Ruchu Turystycznego w Krakowie (UMK / MOT)",
-        "url": "https://mot.krakow.pl/badania-ruchu-turystycznego/"
-      },
-      {
-        "id": "tour-2",
-        "name": "Działalność Miejskich Muzeów i Galerii w Krakowie (BIP UMK)",
-        "url": "https://otwartedane.um.krakow.pl"
-      },
-      {
-        "id": "tour-3",
-        "name": "Rejestr Zabytków Nieruchomych i Pomników Historii (NID / MSIP)",
-        "url": "https://msip.krakow.pl"
-      },
-      {
-        "id": "trans-1",
-        "name": "Zarząd Transportu Publicznego w Krakowie (ZTP / KMK)",
-        "url": "https://ztp.krakow.pl"
-      }
-    ]
+    "description": "Oficjalny rejestr i generator tras turystycznych w 18 dzielnicach Krakowa oparty na danych MOT.",
+    "version": "1.0.0-civic-tourism"
   },
   "cityTourismSummary": {
     "annualVisitorsTotal": 14720000,
-    "overnightTourists": 9850000,
-    "domesticVisitors": 10950000,
-    "internationalVisitors": 3770000,
-    "estimatedEconomicImpactPln": 11800000000,
-    "averageStayDays": 2.8,
+    "internationalVisitors": 2330000,
+    "estimatedEconomicImpactPln": 9050000000,
+    "averageStayDays": 2.9,
     "totalCuratedAttractions": 110,
-    "unescoSitesCount": 3,
-    "curatedItinerariesCount": 5,
-    "overtourismAlternativePairsCount": 5,
     "topInternationalMarkets": [
       {
         "country": "Wielka Brytania",
@@ -46,7 +19,7 @@
       },
       {
         "country": "Niemcy",
-        "sharePct": 9.1,
+        "sharePct": 9.7,
         "flag": "🇩🇪"
       },
       {
@@ -61,12 +34,12 @@
       },
       {
         "country": "Francja",
-        "sharePct": 5.8,
+        "sharePct": 4.8,
         "flag": "🇫🇷"
       },
       {
         "country": "Hiszpania",
-        "sharePct": 5.2,
+        "sharePct": 4.0,
         "flag": "🇪🇸"
       }
     ]

@@ -326,6 +326,15 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     portalUrl: 'https://zabytek.pl/pl/obiekty',
     status: 'Opracowanie własne',
   },
+  {
+    id: 'tour-4',
+    category: 'tourism',
+    categoryLabel: 'Turystyka & Odkrywanie',
+    officialDatasetName: 'Badanie zrealizowane przez MOT dla UMK',
+    metrics: 'Badanie ruchu turystycznego w Krakowie 2024 w postaci raportu pełnego zrealizowane przez MOT dla UMK',
+    portalUrl: 'https://www.mot.krakow.pl/media/badanie-ruchu-turystycznego/ruch-turystyczny-w-krakowie-w-roku-2024-wersja-pelna.pdf',
+    status: 'Opracowanie własne',
+  },
 
   // Demographics, Vitality & BDK Registries
   {

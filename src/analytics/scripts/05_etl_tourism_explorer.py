@@ -4,13 +4,6 @@ GOAL / PURPOSE:
     Synthesizes and exports the official municipal tourism and exploration contract
     (`data/contracts/krakow_tourism_explorer.json`) from verified seed datasets (`data/contracts/krakow_tourism_seed.json`).
 
-OFFICIAL OPEN DATA SOURCES INTEGRATED (100% Verified):
-    1. `tour-1`: Oficjalny Raport Ruchu Turystycznego w Krakowie (UMK / MOT)
-    2. `tour-2`: Miejskie Muzea i Instytucje Kultury w Krakowie (BIP UMK / Otwarte Dane UMK)
-    3. `tour-3`: Rejestr Zabytków Nieruchomych i Pomników Historii (NID / MSIP Kraków)
-    4. `trans-1`: Komunikacja Miejska w Krakowie (KMK / ZTP)
-    5. `green-1`, `green-2`, `green-3`: Parki miejskie, parki kieszonkowe oraz Lasy komunalne (ZZM)
-
 CALCULATED METRICS:
     - Haversine Distance (km) + walking duration (4.5 km/h) & cycling duration (15 km/h).
     - Transit transitTimeMinutes & directLines from Krakow Main Station.
@@ -124,8 +117,6 @@ def build_tourism_contract() -> dict[str, Any]:
     # Compiles the comprehensive, validated municipal tourism exploration contract.
     raw_seed = load_raw_tourism_seed()
     summary = dict(raw_seed["cityTourismSummary"])
-    if "averageStayDays" not in summary or summary["averageStayDays"] is None:
-        summary["averageStayDays"] = 2.8
     attractions = raw_seed["attractionsCatalog"]
     alternatives = raw_seed["overtourismAlternatives"]
     raw_itineraries = raw_seed["thematicItineraries"]
@@ -182,30 +173,8 @@ def build_tourism_contract() -> dict[str, Any]:
         "generatedAt": datetime.now(timezone.utc).isoformat(),
         "meta": {
             "title": "Krakow360 Smart Tourism & Hidden Gems Explorer",
-            "description": "Oficjalny rejestr i generator tras turystycznych w 18 dzielnicach Krakowa oparty na danych UMK i MOT.",
+            "description": "Oficjalny rejestr i generator tras turystycznych w 18 dzielnicach Krakowa oparty na danych MOT.",
             "version": "1.0.0-civic-tourism",
-            "sources": [
-                {
-                    "id": "tour-1",
-                    "name": "Badanie Ruchu Turystycznego w Krakowie (UMK / MOT)",
-                    "url": "https://mot.krakow.pl/badania-ruchu-turystycznego/",
-                },
-                {
-                    "id": "tour-2",
-                    "name": "Działalność Miejskich Muzeów i Galerii w Krakowie (BIP UMK)",
-                    "url": "https://otwartedane.um.krakow.pl",
-                },
-                {
-                    "id": "tour-3",
-                    "name": "Rejestr Zabytków Nieruchomych i Pomników Historii (NID / MSIP)",
-                    "url": "https://msip.krakow.pl",
-                },
-                {
-                    "id": "trans-1",
-                    "name": "Zarząd Transportu Publicznego w Krakowie (ZTP / KMK)",
-                    "url": "https://ztp.krakow.pl",
-                },
-            ],
         },
         "cityTourismSummary": summary,
         "attractions": attractions,

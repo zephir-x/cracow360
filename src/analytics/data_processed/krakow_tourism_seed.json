@@ -1,15 +1,10 @@
 {
   "cityTourismSummary": {
     "annualVisitorsTotal": 14720000,
-    "overnightTourists": 9850000,
-    "domesticVisitors": 10950000,
-    "internationalVisitors": 3770000,
-    "estimatedEconomicImpactPln": 11800000000,
-    "averageStayDays": 2.8,
+    "internationalVisitors": 2330000,
+    "estimatedEconomicImpactPln": 9050000000,
+    "averageStayDays": 2.9,
     "totalCuratedAttractions": 110,
-    "unescoSitesCount": 3,
-    "curatedItinerariesCount": 5,
-    "overtourismAlternativePairsCount": 5,
     "topInternationalMarkets": [
       {
         "country": "Wielka Brytania",
@@ -18,7 +13,7 @@
       },
       {
         "country": "Niemcy",
-        "sharePct": 9.1,
+        "sharePct": 9.7,
         "flag": "🇩🇪"
       },
       {
@@ -33,12 +28,12 @@
       },
       {
         "country": "Francja",
-        "sharePct": 5.8,
+        "sharePct": 4.8,
         "flag": "🇫🇷"
       },
       {
         "country": "Hiszpania",
-        "sharePct": 5.2,
+        "sharePct": 4.0,
         "flag": "🇪🇸"
       }
     ]

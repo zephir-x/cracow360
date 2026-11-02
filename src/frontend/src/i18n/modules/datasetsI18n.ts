@@ -165,6 +165,11 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     en: 'Immovable historical objects, UNESCO status, Fortress Krakow fortifications, and tourist burden assessment (overtourism)',
     ua: 'Нерухомі історичні об’єкти, статус ЮНЕСКО, фортифікації Краківської фортеці та оцінка туристичного навантаження (overtourism)',
   },
+  'tour-4': {
+    pl: 'Badanie ruchu turystycznego w Krakowie 2024 w postaci raportu pełnego zrealizowane przez MOT dla UMK',
+    en: 'Study of tourist traffic in Kraków in 2024 – a comprehensive report prepared by the Małopolska Tourism Organization (MOT) for the Municipality of Kraków (UMK)',
+    ua: 'Дослідження туристичного потоку в Кракові 2024 року у формі повного звіту, проведене MOT для Муніципалітету Кракова',
+  },
   'demo-1': {
     pl: 'Oficjalna baza meldunkowa mieszkańców z przypisaniem do poszczególnych dzielnic oraz roczników urodzenia',
     en: 'Official residential registration database with assignment to specific districts and birth years',

@@ -4,9 +4,16 @@ import { useTranslation } from '../../i18n/I18nContext';
 export function ParentCapabilitiesGrid() {
   const { t } = useTranslation();
 
+  const scrollTo = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section className="grid grid-cols-1 md:grid-cols-3 gap-5">
-      <div className="p-6 rounded-3xl bg-white border border-blue-100 shadow-lg shadow-blue-900/5 space-y-3">
+      <div
+        onClick={() => scrollTo('family-map-section')}
+        className="p-6 rounded-3xl bg-white border border-blue-100 shadow-lg shadow-blue-900/5 space-y-3 cursor-pointer hover:border-blue-300 hover:shadow-xl transition transform hover:-translate-y-0.5"
+      >
         <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600">
           <Clock className="w-5 h-5" />
         </div>
@@ -18,7 +25,10 @@ export function ParentCapabilitiesGrid() {
         </p>
       </div>
 
-      <div className="p-6 rounded-3xl bg-white border border-blue-100 shadow-lg shadow-blue-900/5 space-y-3">
+      <div
+        onClick={() => scrollTo('facility-explorer-section')}
+        className="p-6 rounded-3xl bg-white border border-blue-100 shadow-lg shadow-blue-900/5 space-y-3 cursor-pointer hover:border-indigo-300 hover:shadow-xl transition transform hover:-translate-y-0.5"
+      >
         <div className="w-11 h-11 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600">
           <GraduationCap className="w-5 h-5" />
         </div>
@@ -30,7 +40,10 @@ export function ParentCapabilitiesGrid() {
         </p>
       </div>
 
-      <div className="p-6 rounded-3xl bg-white border border-blue-100 shadow-lg shadow-blue-900/5 space-y-3">
+      <div
+        onClick={() => scrollTo('family-map-section')}
+        className="p-6 rounded-3xl bg-white border border-blue-100 shadow-lg shadow-blue-900/5 space-y-3 cursor-pointer hover:border-emerald-300 hover:shadow-xl transition transform hover:-translate-y-0.5"
+      >
         <div className="w-11 h-11 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600">
           <Trees className="w-5 h-5" />
         </div>
