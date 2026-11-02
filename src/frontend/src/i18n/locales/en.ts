@@ -448,6 +448,7 @@ export const enTranslations: TranslationDictionary = {
     registryTitle: 'City of Krakow 1:1 Open Data Sources Registry',
     registrySubtitle:
       'Raw municipal datasets integrated into the Kraków360 analytical pipeline with direct links to official data portals',
+    krakowOpenDataFilter: 'Krakow Open Data',
     datasetsPlural: ['Dataset', 'Datasets', 'Datasets'],
     searchPlaceholder: 'Filter registries...',
     tableIndex: '#',

@@ -13,6 +13,7 @@ import {
   Database,
   ExternalLink,
   FileSpreadsheet,
+  Landmark,
   Scale,
   Search,
 } from 'lucide-react';
@@ -22,6 +23,9 @@ export interface AboutDataMethodologyPageProps {
 }
 
 const ITEMS_PER_PAGE = 10;
+
+const isKrakowOpenDataUrl = (url: string): boolean =>
+  url.includes('otwartedane.um.krakow.pl/zbiory-danych');
 
 /// <summary>
 /// Methodology & Open Data Sources documentation page presenting the two-stage
@@ -35,6 +39,11 @@ export function AboutDataMethodologyPage({
   const [activeCategory, setActiveCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
   const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const krakowOpenDataCount = useMemo(
+    () => ALL_DATA_SOURCES.filter((s) => isKrakowOpenDataUrl(s.portalUrl)).length,
+    []
+  );
 
   const categoryTabs = useMemo(() => {
     const counts = ALL_DATA_SOURCES.reduce((acc, item) => {
@@ -57,8 +66,13 @@ export function AboutDataMethodologyPage({
   }, [t]);
 
   const filteredSources = ALL_DATA_SOURCES.filter((item) => {
+    const isPromoted = isKrakowOpenDataUrl(item.portalUrl);
     const matchesCategory =
-      activeCategory === 'all' || item.category === activeCategory;
+      activeCategory === 'all'
+        ? true
+        : activeCategory === 'krakow_open_data'
+        ? isPromoted
+        : item.category === activeCategory;
     const query = searchQuery.trim().toLowerCase();
     const localizedMetrics = getLocalizedDatasetMetrics(item.id, item.metrics, language).toLowerCase();
     const matchesQuery =
@@ -186,91 +200,126 @@ export function AboutDataMethodologyPage({
       {/* Complete Open Data Sources Registry Table with Filters */}
       <section className="rounded-3xl bg-white border border-blue-100 overflow-hidden shadow-xl shadow-blue-900/5">
         <div className="px-6 py-5 bg-linear-to-r from-blue-50/80 to-white border-b border-blue-100 space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center gap-3">
-              <div className="p-2.5 rounded-2xl bg-blue-600 text-white">
-                <Database className="w-5 h-5" />
-              </div>
-              <div>
-                <h2 className="text-base font-extrabold text-slate-900">
-                  {t.methodology.registryTitle}
-                </h2>
-                <p className="text-xs text-slate-500">
-                  {t.methodology.registrySubtitle}
-                </p>
-              </div>
-            </div>
-            <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
-              <FileSpreadsheet className="w-3.5 h-3.5" />
-              {formatWithPlural(ALL_DATA_SOURCES.length, t.methodology.datasetsPlural)}
-            </span>
-          </div>
-
-          {/* Search bar and Category Pills */}
-          <div className="flex flex-col lg:flex-row items-stretch lg:items-center justify-between gap-4 pt-1">
-            <div className="flex flex-col gap-2">
-              {/* Row 1: 5 Category Pills */}
-              <div className="flex flex-wrap items-center gap-1.5">
-                {categoryTabs.slice(0, 5).map((tab) => (
-                  <button
-                    key={tab.key}
-                    onClick={() => handleCategoryChange(tab.key)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
-                      activeCategory === tab.key
-                        ? 'bg-blue-600 text-white shadow-xs'
-                        : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-                    }`}
-                  >
-                    <span>{tab.label}</span>
-                    <span
-                      className={`text-[10px] px-1.5 py-0.2 rounded-full ${
-                        activeCategory === tab.key
-                          ? 'bg-blue-700 text-white'
-                          : 'bg-slate-100 text-slate-500'
-                      }`}
-                    >
-                      {tab.count}
-                    </span>
-                  </button>
-                ))}
+          <div className="flex flex-col lg:flex-row lg:items-center justify-between gap-4">
+            <div className="space-y-4">
+              <div className="flex items-center gap-3">
+                <div className="p-2.5 rounded-2xl bg-blue-600 text-white">
+                  <Database className="w-5 h-5" />
+                </div>
+                <div>
+                  <h2 className="text-base font-extrabold text-slate-900">
+                    {t.methodology.registryTitle}
+                  </h2>
+                  <p className="text-xs text-slate-500">
+                    {t.methodology.registrySubtitle}
+                  </p>
+                </div>
               </div>
 
-              {/* Row 2: 4 Category Pills */}
-              <div className="flex flex-wrap items-center gap-1.5">
-                {categoryTabs.slice(5, 10).map((tab) => (
-                  <button
-                    key={tab.key}
-                    onClick={() => handleCategoryChange(tab.key)}
-                    className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
-                      activeCategory === tab.key
-                        ? 'bg-blue-600 text-white shadow-xs'
-                        : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-                    }`}
-                  >
-                    <span>{tab.label}</span>
-                    <span
-                      className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+              {/* Category Pills */}
+              <div className="flex flex-col gap-2">
+                {/* Row 1: 5 Category Pills */}
+                <div className="flex flex-wrap items-center gap-1.5">
+                  {categoryTabs.slice(0, 5).map((tab) => (
+                    <button
+                      key={tab.key}
+                      onClick={() => handleCategoryChange(tab.key)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
                         activeCategory === tab.key
-                          ? 'bg-blue-700 text-white'
-                          : 'bg-slate-100 text-slate-500'
+                          ? 'bg-blue-600 text-white shadow-xs'
+                          : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
                       }`}
                     >
-                      {tab.count}
-                    </span>
-                  </button>
-                ))}
+                      <span>{tab.label}</span>
+                      <span
+                        className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                          activeCategory === tab.key
+                            ? 'bg-blue-700 text-white'
+                            : 'bg-slate-100 text-slate-500'
+                        }`}
+                      >
+                        {tab.count}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Row 2: 4 Category Pills */}
+                <div className="flex flex-wrap items-center gap-1.5">
+                  {categoryTabs.slice(5, 10).map((tab) => (
+                    <button
+                      key={tab.key}
+                      onClick={() => handleCategoryChange(tab.key)}
+                      className={`px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
+                        activeCategory === tab.key
+                          ? 'bg-blue-600 text-white shadow-xs'
+                          : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
+                      }`}
+                    >
+                      <span>{tab.label}</span>
+                      <span
+                        className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                          activeCategory === tab.key
+                            ? 'bg-blue-700 text-white'
+                            : 'bg-slate-100 text-slate-500'
+                        }`}
+                      >
+                        {tab.count}
+                      </span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 
-            <div className="relative min-w-60 shrink-0">
-              <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-              <input
-                type="text"
-                placeholder={t.methodology.searchPlaceholder}
-                value={searchQuery}
-                onChange={(e) => handleSearchChange(e.target.value)}
-                className="w-full text-xs pl-8 pr-3 py-1.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 text-slate-800"
-              />
+            {/* Right Column: 49 Zbiorów Danych Pill -> Promoted Button -> Search */}
+            <div className="flex flex-col sm:items-end justify-between gap-2.5 shrink-0 self-stretch sm:self-auto">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-3 py-1 rounded-full bg-blue-50 text-blue-700 border border-blue-200 self-start sm:self-end">
+                <FileSpreadsheet className="w-3.5 h-3.5" />
+                {formatWithPlural(ALL_DATA_SOURCES.length, t.methodology.datasetsPlural)}
+              </span>
+
+              {/* Promoted Krakow Open Data Button in purple gradient */}
+              <button
+                onClick={() =>
+                  handleCategoryChange(
+                    activeCategory === 'krakow_open_data' ? 'all' : 'krakow_open_data'
+                  )
+                }
+                title="otwartedane.um.krakow.pl"
+                className={`px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center gap-2 shadow-xs self-start sm:self-end ${
+                  activeCategory === 'krakow_open_data'
+                    ? 'bg-linear-to-r from-purple-600 via-fuchsia-600 to-indigo-600 text-white shadow-md shadow-purple-500/25 border border-purple-500 ring-2 ring-purple-300'
+                    : 'bg-linear-to-r from-purple-50 via-fuchsia-50 to-indigo-50 text-purple-900 border border-purple-200 hover:from-purple-100 hover:via-fuchsia-100 hover:to-indigo-100 hover:border-purple-300'
+                }`}
+              >
+                <Landmark
+                  className={`w-3.5 h-3.5 ${
+                    activeCategory === 'krakow_open_data' ? 'text-purple-200' : 'text-purple-600'
+                  }`}
+                />
+                <span>{t.methodology.krakowOpenDataFilter}</span>
+                <span
+                  className={`text-[10px] px-1.5 py-0.2 rounded-full font-semibold ${
+                    activeCategory === 'krakow_open_data'
+                      ? 'bg-white/25 text-white'
+                      : 'bg-purple-200/70 text-purple-900'
+                  }`}
+                >
+                  {krakowOpenDataCount}
+                </span>
+              </button>
+
+              <div className="relative min-w-60 w-full sm:w-auto">
+                <Search className="w-3.5 h-3.5 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
+                <input
+                  type="text"
+                  placeholder={t.methodology.searchPlaceholder}
+                  value={searchQuery}
+                  onChange={(e) => handleSearchChange(e.target.value)}
+                  className="w-full text-xs pl-8 pr-3 py-1.5 bg-white border border-slate-200 rounded-xl focus:outline-none focus:border-blue-500 text-slate-800"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -304,6 +353,7 @@ export function AboutDataMethodologyPage({
                   const localizedCategory = t.methodology.categories[source.category] || source.categoryLabel;
                   const localizedStatus = getStatusLabel(source.status);
                   const localizedMetrics = getLocalizedDatasetMetrics(source.id, source.metrics, language);
+                  const isPromoted = isKrakowOpenDataUrl(source.portalUrl);
 
                   return (
                     <tr key={source.id} className="hover:bg-slate-50/80 transition-colors">
@@ -332,7 +382,11 @@ export function AboutDataMethodologyPage({
                           href={source.portalUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="inline-flex items-center gap-1 text-xs font-semibold text-blue-600 hover:text-blue-800 hover:underline"
+                          className={`inline-flex items-center gap-1 text-xs font-semibold transition ${
+                            isPromoted
+                              ? 'px-2.5 py-1 rounded-lg bg-purple-50 text-purple-700 hover:bg-purple-100 border border-purple-200 shadow-2xs font-bold'
+                              : 'text-blue-600 hover:text-blue-800 hover:underline'
+                          }`}
                         >
                           {t.methodology.openLink} <ExternalLink className="w-3 h-3" />
                         </a>

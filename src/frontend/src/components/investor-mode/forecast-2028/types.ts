@@ -38,6 +38,7 @@ export interface InvestorDistrictForecastData {
 
   // 7-14 Primary Schools (Fully symmetrical with 0-3 and 4-6)
   primarySchoolsCount: number;
+  primarySchoolCapacity: number;
   primarySchoolStudentsTotal: number;
   age7To14_current: number;
   age7To14_2028: number;

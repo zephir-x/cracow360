@@ -11,6 +11,10 @@ import {
   formatSchoolsLabel,
   formatNurseriesLabel,
 } from '../../../i18n/modules';
+import {
+  calculatePrimarySchoolCapacity,
+  calculateTotalEduCareCapacity,
+} from '../../../utils/educationCapacity';
 
 // City-wide Macro Aggregations (Infants, Preschool, Primary, All) – Pure Current State
 export function getMacroIndicators(
@@ -68,7 +72,7 @@ export function getMacroIndicators(
     // 3. Primary Schools (7–14) – Pure Demographics
     const schCount = rawE?.primarySchoolsCount ?? 0;
     primarySchools += schCount;
-    const schCap = schCount * 350;
+    const schCap = calculatePrimarySchoolCapacity(schCount);
     const schBal = schCap - c714;
     const schCov = c714 > 0 ? (schCap / c714) * 100 : 0;
     if (schCov < 100 || schBal <= 0) {
@@ -76,7 +80,7 @@ export function getMacroIndicators(
     }
 
     // 4. All Cohorts (0–14) – Pure Demographics 0–3, 4–6, 7–14
-    const totCap = carePlaces + kPlaces + schCap;
+    const totCap = calculateTotalEduCareCapacity(carePlaces, kPlaces, schCount);
     const totKids = c03 + c46 + c714;
     const totBal = totCap - totKids;
     const covPct = totKids > 0 ? (totCap / totKids) * 100 : 0;
@@ -93,7 +97,7 @@ export function getMacroIndicators(
   const infantCoverage = current0To3 > 0 ? Math.round((nurseryPlaces / current0To3) * 100) : 0;
   const preschoolBalance = kgPlaces - current4To6;
   const preschoolCoverage = current4To6 > 0 ? Math.round((kgPlaces / current4To6) * 100) : 0;
-  const schoolCapacity = primarySchools * 350;
+  const schoolCapacity = calculatePrimarySchoolCapacity(primarySchools);
   const schoolBalance = schoolCapacity - current7To14;
   const schoolCoverage = current7To14 > 0 ? Math.round((schoolCapacity / current7To14) * 100) : 0;
 
@@ -201,7 +205,7 @@ export function getDistrictCohortData(
   // 2. SCHOOL (7–14) – Pure Demographics (BDK age 7–14)
   if (cohort === 'school') {
     const schools: number = rawE?.primarySchoolsCount ?? 0;
-    const schoolCap = schools * 350;
+    const schoolCap = calculatePrimarySchoolCapacity(schools);
     const c714: number = rawD?.age7To14 ?? rawD?.age7to14 ?? 0;
     const schoolBal = schoolCap - c714;
     const covPct = c714 > 0 ? Math.round((schoolCap / c714) * 100) : 0;
@@ -283,8 +287,7 @@ export function getDistrictCohortData(
   const carePlaces: number = rawE?.totalCarePlaces0To3 ?? rawE?.totalCarePlaces0to3 ?? 0;
   const kgPlaces: number = rawE?.kindergartenPlacesTotal ?? 0;
   const schools: number = rawE?.primarySchoolsCount ?? 0;
-  const schoolCap = schools * 350;
-  const totalCapacity = carePlaces + kgPlaces + schoolCap;
+  const totalCapacity = calculateTotalEduCareCapacity(carePlaces, kgPlaces, schools);
 
   const nurseriesCount: number =
     (rawE?.nurseriesPublicCount ?? 0) +

@@ -75,7 +75,7 @@ export function InvestorHeroHeader({ districts }: InvestorHeroHeaderProps) {
 
           sumCarePlaces += mappedForecast.carePlaces0to3;
           sumKinderPlaces += mappedForecast.kindergartenPlacesTotal;
-          sumSchoolCapacity += mappedForecast.primarySchoolStudentsTotal;
+          sumSchoolCapacity += mappedForecast.primarySchoolCapacity;
 
           const avgPrice = hst?.avgPricePerM2 ?? 0;
           if (avgPrice > 0) {

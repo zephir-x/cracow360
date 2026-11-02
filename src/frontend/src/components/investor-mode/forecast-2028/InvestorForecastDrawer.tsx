@@ -167,7 +167,10 @@ export function InvestorForecastDrawer({
                   </div>
                   <div className="pt-2.5 mt-2.5 border-t border-slate-200/70 space-y-0.5">
                     <div className="text-[11px] text-slate-600 font-medium">
-                      {labels.placesLabel} <strong className="text-slate-900">{data.primarySchoolStudentsTotal} {labels.placesUnit}</strong>
+                      {labels.placesLabel} <strong className="text-slate-900">{data.primarySchoolCapacity} {labels.placesUnit}</strong>
+                    </div>
+                    <div className="text-[10px] text-slate-500 font-medium">
+                      {labels.enrolledStudentsLabel} {data.primarySchoolStudentsTotal}
                     </div>
                     <div className={`text-[11px] font-black ${data.schoolPlacesBalance2028 < 0 ? 'text-rose-700' : 'text-emerald-700'}`}>
                       {labels.balance2028Label} {data.schoolPlacesBalance2028 >= 0 ? `+${data.schoolPlacesBalance2028}` : data.schoolPlacesBalance2028} {labels.placesUnit}

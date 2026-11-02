@@ -335,6 +335,7 @@ export interface TranslationDictionary {
     registryTitle: string;
     registrySubtitle: string;
     datasetsPlural: [string, string, string];
+    krakowOpenDataFilter: string;
     searchPlaceholder: string;
     tableIndex: string;
     tableCategory: string;

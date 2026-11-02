@@ -145,7 +145,7 @@ export function InvestorDistrictCard({
                 <span className="w-1.5 h-1.5 rounded-full bg-sky-500 shrink-0" />
                 <span>{labels.studentsLabel}</span>
                 <span className="text-[11px] font-normal text-slate-500">
-                  ({data.primarySchoolStudentsTotal} {labels.placesUnit})
+                  ({data.primarySchoolCapacity} {labels.placesUnit})
                 </span>
               </div>
               <div className="text-[11px] text-slate-600 flex items-center gap-1 font-medium mt-0.5 pl-3">
@@ -181,7 +181,7 @@ export function InvestorDistrictCard({
           </div>
         </div>
 
-        {/* 4. Slot 4: Modern Civic Blue Ribbon (Harmonized with site colors) */}
+        {/* 4. Slot 4: Civic Blue Ribbon */}
         <div className="flex items-center justify-between text-xs px-3 py-2 bg-linear-to-r from-blue-50 via-indigo-50/70 to-blue-50 rounded-2xl border border-blue-200/90 shadow-2xs">
           <div className="flex items-center gap-1.5 font-bold text-blue-950">
             <Scale className="w-3.5 h-3.5 text-blue-600 shrink-0" />

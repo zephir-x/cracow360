@@ -448,6 +448,7 @@ export const uaTranslations: TranslationDictionary = {
     registryTitle: 'Реєстр 1:1 Офіційних Відкритих Даних Міста Кракова',
     registrySubtitle:
       'Фактичні набори даних, інтегровані в аналітичний конвеєр Краків360, із прямими посиланнями на офіційні портали',
+    krakowOpenDataFilter: 'Відкриті Дані Кракова',
     datasetsPlural: ['Набір Даних', 'Набори Даних', 'Наборів Даних'],
     searchPlaceholder: 'Фільтрувати реєстри...',
     tableIndex: '#',

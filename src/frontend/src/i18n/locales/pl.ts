@@ -448,6 +448,7 @@ export const plTranslations: TranslationDictionary = {
     registryTitle: 'Rejestr Źródeł Otwartych Danych 1:1 Miasta Krakowa',
     registrySubtitle:
       'Zbiory surowe zintegrowane w potoku analitycznym Kraków360 z odnośnikami do oficjalnych portali',
+    krakowOpenDataFilter: 'Otwarte Dane Krakowa',
     datasetsPlural: ['Zbiór Danych', 'Zbiory Danych', 'Zbiorów Danych'],
     searchPlaceholder: 'Filtruj rejestry...',
     tableIndex: '#',

@@ -36,6 +36,12 @@ export interface InvestorForecastLabels {
   macroB2BTitle: string;
   macroB2BSub: string;
 
+  demographicNoticeTitle: string;
+  demographicNoticeDescription: string;
+  demographicDeclineBadge: string;
+  demographicStableBadge: string;
+  enrolledStudentsLabel: string;
+
   filterAll: string;
   filterHigh: string;
   filterMedium: string;
@@ -105,6 +111,13 @@ const PL_LABELS: InvestorForecastLabels = {
   macroB2BTitle: 'Dzielnice z największymi brakami',
   macroB2BSub: 'Pilna potrzeba budowy nowych placówek',
 
+  demographicNoticeTitle: 'Co oznaczają te liczby dla rodziców do 2028 roku?',
+  demographicNoticeDescription:
+    'W ostatnich latach rodzi się w Polsce mniej dzieci, dlatego w krakowskich żłobkach i przedszkolach będzie wyraźnie luźniej – z roku na rok przybędzie wolnych miejsc i łatwiej będzie zapisać malucha do wybranej placówki blisko domu. Z kolei w szkołach podstawowych liczba uczniów utrzyma się na stałym poziomie, bo uczą się w nich dzieci ze wcześniejszych, liczniejszych roczników.',
+  demographicDeclineBadge: 'Niż demograficzny',
+  demographicStableBadge: 'Stabilizacja wyżu',
+  enrolledStudentsLabel: 'Zapisani uczniowie:',
+
   filterAll: 'Wszystkie dzielnice',
   filterHigh: 'Pilna potrzeba rozbudowy',
   filterMedium: 'Umiarkowane zapotrzebowanie',
@@ -137,7 +150,7 @@ const PL_LABELS: InvestorForecastLabels = {
   toddlerCohortSubtitle: 'Zmiana liczby dzieci 0–3 lata do 2028 r.',
   preschoolCohortSubtitle: 'Zmiana liczby dzieci 4–6 lat do 2028 r.',
   schoolCohortSubtitle: 'Zmiana liczby uczniów 7–14 lat do 2028 r.',
-  placesLabel: 'Obecna liczba miejsc:',
+  placesLabel: 'Obecna pojemność fizyczna:',
   totalSummaryTitle: 'Razem dzieci (0–14 lat)',
   totalSummarySubtitle: 'Łączna zmiana liczby dzieci do 2028 r.',
   totalPlacesLabel: 'Wszystkie miejsca 0–14:',
@@ -174,6 +187,13 @@ const EN_LABELS: InvestorForecastLabels = {
   macroB2BTitle: 'Districts with highest shortages',
   macroB2BSub: 'Urgent need to build new facilities',
 
+  demographicNoticeTitle: 'What do these figures mean for parents by 2028?',
+  demographicNoticeDescription:
+    'With fewer births nationwide in recent years, local nurseries and kindergartens will become much less crowded — making it noticeably easier to secure an available spot close to home. In primary schools, pupil counts will remain steady as older, larger class years continue their education.',
+  demographicDeclineBadge: 'Demographic contraction',
+  demographicStableBadge: 'Peak cohort stability',
+  enrolledStudentsLabel: 'Enrolled students:',
+
   filterAll: 'All districts',
   filterHigh: 'Urgent expansion need',
   filterMedium: 'Moderate demand',
@@ -206,7 +226,7 @@ const EN_LABELS: InvestorForecastLabels = {
   toddlerCohortSubtitle: 'Change in children 0–3 yrs by 2028',
   preschoolCohortSubtitle: 'Change in children 4–6 yrs by 2028',
   schoolCohortSubtitle: 'Change in students 7–14 yrs by 2028',
-  placesLabel: 'Current places:',
+  placesLabel: 'Current physical capacity:',
   totalSummaryTitle: 'Total children (0–14 yrs)',
   totalSummarySubtitle: 'Combined change in children by 2028',
   totalPlacesLabel: 'Total places 0–14:',
@@ -243,10 +263,17 @@ const UA_LABELS: InvestorForecastLabels = {
   macroB2BTitle: 'Райони з найбільшим браком місць',
   macroB2BSub: 'Терміново потрібно будувати об єкти',
 
+  demographicNoticeTitle: 'Що означають ці цифри для батьків до 2028 року?',
+  demographicNoticeDescription:
+    'Останніми роками народжується менше діток, тому в краківських яслах та дитсадках стане відчутно вільніше — з кожним роком з’являтиметься більше вільних місць біля дому. Водночас у початкових школах кількість учнів залишатиметься стабільною, адже там навчаються діти з попередніх численніших років народження.',
+  demographicDeclineBadge: 'Демографічний спад',
+  demographicStableBadge: 'Стабільність піку',
+  enrolledStudentsLabel: 'Записані учні:',
+
   filterAll: 'Усі райони',
   filterHigh: 'Нагальна потреба розбудови',
   filterMedium: 'Помірна потреба',
-  filterLow: 'Добра доступність місць',
+  filterLow: 'Добра доступność місць',
 
   b2bBadge: {
     HIGH: 'Нагальна потреба розбудови',
@@ -275,18 +302,12 @@ const UA_LABELS: InvestorForecastLabels = {
   toddlerCohortSubtitle: 'Зміна кількості дітей 0–3 роки до 2028 р.',
   preschoolCohortSubtitle: 'Зміна кількості дітей 4–6 років до 2028 р.',
   schoolCohortSubtitle: 'Зміна кількості учнів 7–14 років до 2028 р.',
-  placesLabel: 'Наявна кількість місць:',
+  placesLabel: 'Наявна фізична місткість:',
   totalSummaryTitle: 'Разом дітей (0–14 років)',
   totalSummarySubtitle: 'Сукупна зміна кількості дітей до 2028 р.',
   totalPlacesLabel: 'Усі місця 0–14:',
   totalBalanceLabel: 'Загальний баланс 2028:',
   coverageLabel: 'покриття',
-};
-
-export const INVESTOR_FORECAST_I18N = {
-  pl: PL_LABELS,
-  en: EN_LABELS,
-  ua: UA_LABELS,
 };
 
 export function getInvestorForecastLabels(language: Language): InvestorForecastLabels {

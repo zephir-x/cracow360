@@ -1,6 +1,10 @@
 ﻿import type { DistrictDetailsDto } from '../../../types/contracts';
 import type { Language } from '../../../i18n/types';
 import { getEducationalRecommendation as getEduRec } from '../../../i18n/modules/investorForecastI18n';
+import {
+  calculatePrimarySchoolCapacity,
+  calculateTotalEduCareCapacity,
+} from '../../../utils/educationCapacity';
 import type { InvestorDistrictForecastData, InvestorMacro2028 } from './types';
 
 export function determineEducationExpansionPriority(
@@ -147,16 +151,21 @@ export function mapDistrictForecastData(
   const kindergartenBalance2028: number = kindergartenPlacesTotal - f46;
 
   const primarySchoolsCount: number = rawEdu?.primarySchoolsCount ?? 0;
+  const primarySchoolCapacity: number = calculatePrimarySchoolCapacity(primarySchoolsCount);
   const primarySchoolStudentsTotal: number = rawEdu?.primarySchoolStudentsTotal ?? 0;
   const avgStudentsPerClass: number = rawEdu?.avgStudentsPerClass ?? 0;
-  const schoolPlacesBalance: number = primarySchoolStudentsTotal - c714;
-  const schoolPlacesBalance2028: number = primarySchoolStudentsTotal - f714;
+  const schoolPlacesBalance: number = primarySchoolCapacity - c714;
+  const schoolPlacesBalance2028: number = primarySchoolCapacity - f714;
 
   // Comprehensive 0-14 Edu-Care calculations (Current and 2028)
   const totalChildren0To14 = c03 + c46 + c714;
   const totalChildren2028 = f03 + f46 + f714;
   const totalDelta0To14 = totalChildren2028 - totalChildren0To14;
-  const totalCapacity0To14 = carePlaces0to3 + kindergartenPlacesTotal + primarySchoolStudentsTotal;
+  const totalCapacity0To14 = calculateTotalEduCareCapacity(
+    carePlaces0to3,
+    kindergartenPlacesTotal,
+    primarySchoolsCount
+  );
   const totalBalance0To14 = totalCapacity0To14 - totalChildren0To14;
   const totalBalance2028 = totalCapacity0To14 - totalChildren2028;
   const totalCoveragePct0To14 =
@@ -200,6 +209,7 @@ export function mapDistrictForecastData(
     preschoolDelta: f46 - c46,
     kindergartenBalance2028,
     primarySchoolsCount,
+    primarySchoolCapacity,
     primarySchoolStudentsTotal,
     age7To14_current: c714,
     age7To14_2028: f714,
