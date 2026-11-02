@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { cracow360Api } from './api/client';
+import { WawelekAssistantWidget } from './components/ai-assistant/WawelekAssistantWidget';
 import { LiveAtmosphereBar } from './components/atmosphere/LiveAtmosphereBar';
 import { MainFooter } from './components/layout/MainFooter';
 import { MainNavbar, type AppTabId } from './components/layout/MainNavbar';
@@ -277,6 +278,12 @@ export function App() {
 
       {/* Civic Footer */}
       <MainFooter onSelectTab={handleSelectTab} />
+
+      {/* Global Floating AI Assistant "Wawelek" (persists across tab switches, resets on F5) */}
+      <WawelekAssistantWidget
+        activeTab={activeTab}
+        selectedDistrictId={selectedPrimaryId}
+      />
     </div>
   );
 }

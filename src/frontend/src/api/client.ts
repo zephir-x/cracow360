@@ -16,6 +16,9 @@ import type {
   ThematicItineraryDto,
   TourismAttractionDto,
   TourismDatasetDto,
+  WawelekAssistantMetadataDto,
+  WawelekChatRequestDto,
+  WawelekChatResponseDto,
 } from '../types/contracts';
 
 // Axios HTTP client configured for Vite dev proxy and production API paths
@@ -45,6 +48,8 @@ export interface Cracow360ApiClient {
   getOvertourismAlternatives: () => Promise<OvertourismAlternativeDto[]>;
   getThematicItineraries: (params?: { targetHours?: number; theme?: string }) => Promise<ThematicItineraryDto[]>;
   getDistrictTouristPassport: (id: number) => Promise<DistrictTouristPassportDto>;
+  getWawelekMetadata: () => Promise<WawelekAssistantMetadataDto>;
+  sendWawelekMessage: (payload: WawelekChatRequestDto) => Promise<WawelekChatResponseDto>;
 }
 
 // Centralized API client service methods matching backend Minimal API endpoints
@@ -179,6 +184,20 @@ export const cracow360Api: Cracow360ApiClient = {
   // Retrieves tourist passport for a specific district
   getDistrictTouristPassport: async (id: number): Promise<DistrictTouristPassportDto> => {
     const { data } = await apiClient.get<DistrictTouristPassportDto>(`/tourism/districts/${id}`);
+    return data;
+  },
+
+  // Retrieves Wawelek AI Assistant readiness and tab-aware starter prompts
+  getWawelekMetadata: async (): Promise<WawelekAssistantMetadataDto> => {
+    const { data } = await apiClient.get<WawelekAssistantMetadataDto>('/assistant/metadata');
+    return data;
+  },
+
+  // Sends a conversational prompt to the Wawelek AI Assistant (extended 35s timeout for LLM inference)
+  sendWawelekMessage: async (payload: WawelekChatRequestDto): Promise<WawelekChatResponseDto> => {
+    const { data } = await apiClient.post<WawelekChatResponseDto>('/assistant/chat', payload, {
+      timeout: 38000,
+    });
     return data;
   },
 };

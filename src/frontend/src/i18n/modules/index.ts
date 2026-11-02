@@ -5,3 +5,4 @@ export * from './datasetsI18n';
 export * from './investorForecastI18n';
 export * from './investorSimulatorI18n';
 export * from './tourismI18n';
+export * from './wawelekAssistantI18n';

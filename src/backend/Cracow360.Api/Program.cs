@@ -1,5 +1,7 @@
+using System.Threading.RateLimiting;
 using Cracow360.Api.Common;
 using Cracow360.Api.Endpoints;
+using Cracow360.Application.DTOs;
 using Cracow360.Infrastructure;
 using Cracow360.Infrastructure.Persistence.Seeding;
 
@@ -13,6 +15,44 @@ builder.Services.AddProblemDetails();
 
 // ASP.NET Core native health checks for container orchestrators and uptime monitoring
 builder.Services.AddHealthChecks();
+
+// Per-IP Rate Limiter protecting the public DeepSeek AI Assistant endpoint from bot spam & credit exhaustion
+builder.Services.AddRateLimiter(options =>
+{
+    options.RejectionStatusCode = StatusCodes.Status429TooManyRequests;
+    options.OnRejected = async (context, token) =>
+    {
+        context.HttpContext.Response.ContentType = "application/json";
+        var throttledResponse = new WawelekChatResponseDto(
+            Reply: "🐉 **Chwileczkę, złapmy oddech!** Wysyłasz pytania szybciej niż tramwaj linii 50 pędzi przez estakadę! Odczekaj proszę kilkanaście sekund przed kolejnym pytaniem, żebym nie przegrzał moich smoczych skrzydeł.",
+            MascotState: "idle",
+            SuggestedFollowUps: [],
+            IsAiPowered: false,
+            UsedLiveCityContext: false,
+            ModelUsed: "rate-limiter-guard",
+            TimestampUtc: DateTime.UtcNow
+        );
+        await context.HttpContext.Response.WriteAsJsonAsync(throttledResponse, cancellationToken: token);
+    };
+
+    options.AddPolicy(WawelekAssistantEndpoints.RateLimitPolicyName, httpContext =>
+    {
+        var forwardedFor = httpContext.Request.Headers["X-Forwarded-For"].FirstOrDefault();
+        var clientIp = !string.IsNullOrWhiteSpace(forwardedFor)
+            ? forwardedFor.Split(',')[0].Trim()
+            : httpContext.Connection.RemoteIpAddress?.ToString() ?? "anonymous-ip";
+
+        return RateLimitPartition.GetFixedWindowLimiter(
+            partitionKey: clientIp,
+            factory: _ => new FixedWindowRateLimiterOptions
+            {
+                PermitLimit = 10,
+                Window = TimeSpan.FromMinutes(1),
+                QueueLimit = 0,
+                AutoReplenishment = true
+            });
+    });
+});
 
 // OpenAPI & Swagger documentation configuration
 builder.Services.AddEndpointsApiExplorer();
@@ -68,6 +108,9 @@ if (app.Environment.IsDevelopment())
 // Apply CORS policy for frontend client communication
 app.UseCors("FrontendPolicy");
 
+// Apply native IP Rate Limiter middleware
+app.UseRateLimiter();
+
 // Map health checks endpoint for container probes
 app.MapHealthChecks("/health").WithTags("System");
 
@@ -78,6 +121,7 @@ app.MapPoiEndpoints();
 app.MapLiveAtmosphereEndpoints();
 app.MapAccessibilityEndpoints();
 app.MapTourismEndpoints();
+app.MapWawelekAssistantEndpoints();
 
 // Redirect root route directly to Swagger documentation
 app.MapGet("/", () => Results.Redirect("/swagger")).ExcludeFromDescription();

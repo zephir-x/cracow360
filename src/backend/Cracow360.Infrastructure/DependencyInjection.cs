@@ -65,6 +65,7 @@ public static class DependencyInjection
         services.AddScoped<ILiveAtmosphereService, LiveAtmosphereService>();
         services.AddScoped<IAccessibilityService, AccessibilityService>();
         services.AddScoped<ITourismService, TourismService>();
+        services.AddScoped<IWawelekAssistantService, WawelekAssistantService>();
 
         // 6. Register contract seeder and background workers
         services.AddScoped<DatabaseSeeder>();

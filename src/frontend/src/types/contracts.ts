@@ -610,3 +610,39 @@ export interface TourismDatasetDto {
   thematicItineraries: ThematicItineraryDto[];
   districtPassports: DistrictTouristPassportDto[];
 }
+
+// Wawelek AI Assistant Contracts (DeepSeek Platform + Live City Grounding)
+export type WawelekMascotAnimationState = 'idle' | 'listening' | 'thinking' | 'speaking';
+
+export interface WawelekChatMessageDto {
+  role: 'user' | 'assistant';
+  content: string;
+}
+
+export interface WawelekChatRequestDto {
+  message: string;
+  history?: WawelekChatMessageDto[];
+  activeTab?: string;
+  language?: string;
+  selectedDistrictId?: number | null;
+  enableLiveContext?: boolean;
+}
+
+export interface WawelekChatResponseDto {
+  reply: string;
+  mascotState: WawelekMascotAnimationState | string;
+  suggestedFollowUps: string[];
+  isAiPowered: boolean;
+  usedLiveCityContext: boolean;
+  modelUsed: string;
+  timestampUtc: string;
+}
+
+export interface WawelekAssistantMetadataDto {
+  assistantName: string;
+  assistantRole: string;
+  isConfigured: boolean;
+  configuredModel: string;
+  maxCompletionTokens: number;
+  suggestedPromptsByTab: Record<string, string[]>;
+}
