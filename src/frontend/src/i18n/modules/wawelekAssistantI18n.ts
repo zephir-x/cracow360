@@ -56,6 +56,12 @@ const PL_WAWELEK: WawelekAssistantTranslations = {
     speaking: 'Wawelek odpowiada!',
   },
   defaultPromptsByTab: {
+    home: [
+      'Czym jest platforma Kraków360 i jakie moduły oferuje?',
+      'Która dzielnica Krakowa ma najwyższy Indeks Jakości Życia?',
+      'Kto stworzył aplikację Kraków360 i co wykazała ankieta 243 mieszkańców?',
+      'Jaka jest teraz pogoda i jakość powietrza (PM2.5 / EAQI) w Krakowie?',
+    ],
     resident: [
       'Która dzielnica Krakowa ma najwyższy Indeks Jakości Życia i dlaczego?',
       'Jak dokładnie wyliczacie Indeks Jakości Życia w 8 filarach?',
@@ -77,7 +83,7 @@ const PL_WAWELEK: WawelekAssistantTranslations = {
     tourist: [
       'Zaproponuj mniej zatłoczone alternatywy dla Rynku Głównego i Wawelu!',
       'Jak działa Inteligentny Planer Tras i algorytm District-First Chaining?',
-      'Co warto zobaczyć w Nowej Hucie (Dzielnica XVIII) i jak tam dojechać?',
+      'Co warto zobaczyć w Nowa Huta (Dzielnica XVIII) i jak tam dojechać?',
       'Ilu turystów odwiedza Kraków według badań MOT i skąd przyjeżdżają?',
     ],
     methodology: [
@@ -117,6 +123,12 @@ const EN_WAWELEK: WawelekAssistantTranslations = {
     speaking: 'Wawelek is replying!',
   },
   defaultPromptsByTab: {
+    home: [
+      'What is Kraków360 and what analytical modules does it offer?',
+      'Which Krakow district has the highest Quality of Life Index?',
+      'Who created Kraków360 and what did the 243-resident survey reveal?',
+      'What is the live weather and air quality (PM2.5 / EAQI) in Krakow right now?',
+    ],
     resident: [
       'Which Krakow district has the highest Quality of Life Index and why?',
       'How is the Quality of Life Index calculated across the 8 pillars?',
@@ -178,6 +190,12 @@ const UA_WAWELEK: WawelekAssistantTranslations = {
     speaking: 'Вавелек відповідає!',
   },
   defaultPromptsByTab: {
+    home: [
+      'Що таке платформа Kraków360 і які модулі вона пропонує?',
+      'Який район Кракова має найвищий Індекс якості життя?',
+      'Хто створив Kraków360 і що показало опитування 243 мешканців?',
+      'Яка зараз погода та якість повітря (PM2.5 / EAQI) у Кракові?',
+    ],
     resident: [
       'Який район Кракова має найвищий Індекс якості життя і чому?',
       'Як саме розраховується Індекс якості життя за 8 категоріями?',

@@ -3,6 +3,7 @@ import { cracow360Api } from '../../api/client';
 import type { SystemHelloDto } from '../../types/contracts';
 import type { AppTabId } from './MainNavbar';
 import { useTranslation } from '../../i18n/I18nContext';
+import { getHomeShowcaseI18n } from '../../i18n/modules';
 
 export interface MainFooterProps {
   onSelectTab: (tab: AppTabId) => void;
@@ -14,6 +15,7 @@ export interface MainFooterProps {
 /// </summary>
 export function MainFooter({ onSelectTab }: MainFooterProps) {
   const { t, language, formatWithPlural } = useTranslation();
+  const homeCopy = getHomeShowcaseI18n(language);
 
   // Live system diagnostic metadata fetched from backend Minimal API
   const [systemInfo, setSystemInfo] = useState<SystemHelloDto | null>(null);
@@ -56,14 +58,27 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
         <div className="flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-500">
           {/* Brand & live database connection status */}
           <div className="flex items-center gap-4">
-            <img
-              src="/logo.png"
-              alt="Logo Kraków360"
-              className="h-8 w-8 object-contain"
-            />
+            <button
+              type="button"
+              onClick={() => handleTabClick('home')}
+              className="cursor-pointer shrink-0 hover:scale-105 transition-transform"
+              aria-label="Kraków360 Home"
+            >
+              <img
+                src="/logo.png"
+                alt="Logo Kraków360"
+                className="h-8 w-8 object-contain"
+              />
+            </button>
             <div>
               <div className="flex items-center gap-2">
-                <span className="font-extrabold text-slate-800">Kraków<span className="text-blue-600">360</span></span>
+                <button
+                  type="button"
+                  onClick={() => handleTabClick('home')}
+                  className="font-extrabold text-slate-800 hover:text-blue-600 transition cursor-pointer"
+                >
+                  Kraków<span className="text-blue-600">360</span>
+                </button>
                 <span className="text-slate-300">•</span>
                 <span>
                   {t.footer.dataSourceInfo}
@@ -86,6 +101,12 @@ export function MainFooter({ onSelectTab }: MainFooterProps) {
 
           {/* Quick navigation links */}
           <div className="flex flex-wrap items-center gap-5 font-medium">
+            <button
+              onClick={() => handleTabClick('home')}
+              className="hover:text-blue-600 transition cursor-pointer"
+            >
+              {homeCopy.navHomeLabel}
+            </button>
             <button
               onClick={() => handleTabClick('resident')}
               className="hover:text-blue-600 transition cursor-pointer"

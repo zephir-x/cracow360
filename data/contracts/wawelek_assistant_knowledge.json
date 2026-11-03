@@ -51,7 +51,7 @@
           "portfolio": "https://kacpergumulak.pl",
           "linkedIn": "https://www.linkedin.com/in/kacper-gumulak-dev/"
         },
-        "responsibilitiesInKrakow360": "100% architektury inżynieryjnej i programistycznej Kraków360: Backend C# / .NET 9 Minimal API (Clean Architecture, EF Core 9, Dapper, SQLite), Frontend React 19 + TypeScript + TailwindCSS v4 + React-Leaflet, potok analityczny ETL w Pythonie (Pandas, Scikit-Learn, GeoPandas, GUGiK EMUiA, OSM), integracja AI Asystenta Wawelka oraz konteneryzacja Docker Compose i wdrożenie produkcyjne na VPS.",
+        "responsibilitiesInKrakow360": "Architektura inżynieryjna i programistyczna Kraków360: Backend C# / .NET 9 Minimal API (Clean Architecture, EF Core 9, Dapper, SQLite), Frontend React 19 + TypeScript + TailwindCSS v4 + React-Leaflet, wdrożenie potoku analitycznego ETL w Pythonie (Pandas, Scikit-Learn, GeoPandas, GUGiK EMUiA, OSM), integracja AI Asystenta Wawelka oraz konteneryzacja Docker Compose i wdrożenie produkcyjne na VPS.",
         "professionalProfileAndBio": "Kacper łączy solidne backendy w C# / .NET 9, dynamiczne interfejsy w React 19 & TypeScript oraz nowoczesną architekturę Cloud-Native (Microsoft Azure, Terraform IaC, Docker, CI/CD GitHub Actions) w myśl filozofii 'You build it, you run it'. W połowie 2026 roku odbył komercyjny staż jako Web Developer w Allventures (TypeScript, React, Vite, integracja narzędzi AI). Wcześniejsze doświadczenie w profesjonalnej obsłudze klienta nauczyło go świetnej komunikacji i przekładania złożonego żargonu technicznego na rozwiązania przyjazne ludziom. Nie jest z Krakowa ale bardzo polubił to miejsce (tak samo jak Filip).",
         "techStack": [
           "C# & .NET 9, ASP.NET Core, Entity Framework Core, Dapper",
@@ -83,7 +83,7 @@
         "links": {
           "linkedIn": "https://www.linkedin.com/in/filip-gorczyca/"
         },
-        "responsibilitiesInKrakow360": "Metodologia badań społecznych i ekonomicznych, opracowanie i analiza badania ankietowego wśród 243 mieszkańców Krakowa, identyfikacja wizualna projektu (w tym stworzony z pomocą narzędzi AI projekt postaci niebieskiego smoka Wawelka oraz animacji promocyjnych), materiały wideo, raport syntetyczny PDF oraz prezentacja Pitch Deck na galę finałową."
+        "responsibilitiesInKrakow360": "Metodologia badań społecznych i ekonomicznych, opracowanie i analiza badania ankietowego wśród 243 mieszkańców Krakowa, identyfikacja wizualna projektu (w tym stworzony z pomocą narzędzi AI projekt postaci niebieskiego smoka Wawelka oraz animacji promocyjnych),wspomaganie procesu czyszczenia danych oraz  procesu tworzenia koncepcji modułu analitycznego, materiały wideo, raport syntetyczny PDF oraz prezentacja Pitch Deck na galę finałową."
       }
     ]
   },

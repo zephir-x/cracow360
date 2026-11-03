@@ -132,9 +132,8 @@ function renderFormattedMessage(text: string) {
  * Key UX & Engineering Features:
  * 1. Modernist, glossy animated Floating Action Pill in the bottom-right viewport corner (`fixed bottom-5 right-5 z-50`).
  * 2. Smooth fade-out right before the page footer enters the bottom area, disabling pointer events so footer links underneath are clickable.
- * 3. Smooth expansion into a full interactive Chatbox with backdrop dimming (`backdrop-blur`) and an optional "Peek Page" toggle.
- * 4. Ephemeral in-memory conversation state: survives switching between tabs (#/resident, #/parent, #/investor, #/tourist, #/methodology),
- *    and resets cleanly to zero on browser refresh (F5) or tab close.
+ * 3. Smoothly hides when the user navigates back to the Start ('home') tab, while keeping conversation history in memory.
+ * 4. Smooth expansion into a full interactive Chatbox with backdrop dimming (`backdrop-blur`) and an optional "Peek Page" toggle.
  * 5. Companion Mascot stage with 4 reactive states ('idle', 'listening', 'thinking', 'speaking').
  */
 export function WawelekAssistantWidget({
@@ -168,6 +167,13 @@ export function WawelekAssistantWidget({
   const inputRef = useRef<HTMLInputElement | null>(null);
   const speakingTimerRef = useRef<number | null>(null);
 
+  // Automatically close the expanded chatbox if the user returns to the Start ('home') tab
+  useEffect(() => {
+    if (activeTab === 'home' && isOpen) {
+      setIsOpen(false);
+    }
+  }, [activeTab, isOpen]);
+
   // Monitor scroll position relative to the page footer so the floating trigger smoothly
   // fades to 0 right before the footer arrives, letting clicks pass straight through to footer links
   useEffect(() => {
@@ -183,10 +189,6 @@ export function WawelekAssistantWidget({
       const rect = footerEl.getBoundingClientRect();
       const viewportHeight = window.innerHeight;
 
-      // Distance between the top of the footer and the bottom edge of the viewport:
-      // > 110px before footer: opacity = 1.0 (completely visible throughout normal page scrolling)
-      // 110px -> 0px before footer: smoothly interpolates 1.0 -> 0.0
-      // <= 0px (footer has reached the bottom of the screen): opacity = 0.0 & pointer-events: none
       const distanceToFooterTop = rect.top - viewportHeight;
       const fadeZonePx = 110;
 
@@ -358,14 +360,20 @@ export function WawelekAssistantWidget({
 
   const currentStateLabel = i18n.mascotStates[mascotState];
 
-  // When chatbox is closed and the user scrolls down to the footer, fade out and let clicks pass through to footer links
-  const effectiveFabOpacity = isOpen ? 1 : footerProximityOpacity;
-  const isFabInteractive = isOpen || footerProximityOpacity > 0.12;
+  // Smoothly hide on the Start ('home') tab; on analytical tabs respect footer proximity fade
+  const isHiddenOnHome = activeTab === 'home';
+  const effectiveFabOpacity = isHiddenOnHome
+    ? 0
+    : isOpen
+      ? 1
+      : footerProximityOpacity;
+  const isFabInteractive =
+    !isHiddenOnHome && (isOpen || footerProximityOpacity > 0.12);
 
   return (
     <>
       {/* Dimmed & Blurred Backdrop Overlay when Chatbox is expanded */}
-      {isOpen && dimBackdrop && (
+      {isOpen && dimBackdrop && !isHiddenOnHome && (
         <div
           onClick={() => setIsOpen(false)}
           aria-hidden="true"
@@ -376,7 +384,7 @@ export function WawelekAssistantWidget({
       {/* Floating Root Container anchored to viewport bottom-right */}
       <div className="fixed bottom-5 right-5 z-9990 flex flex-col items-end pointer-events-none">
         {/* EXPANDED CHATBOX PANEL */}
-        {isOpen && (
+        {isOpen && !isHiddenOnHome && (
           <section
             role="dialog"
             aria-label={i18n.headerTitle}
@@ -582,13 +590,14 @@ export function WawelekAssistantWidget({
           </section>
         )}
 
-        {/* MODERNIST FLOATING ACTION BUTTON (FAB) WITH BEHIND-PILL GLOW & FOOTER AUTO-FADE */}
+        {/* MODERNIST FLOATING ACTION BUTTON (FAB) WITH BEHIND-PILL GLOW, HOME FADE & FOOTER AUTO-FADE */}
         <div
           style={{
             opacity: effectiveFabOpacity,
+            transform: isHiddenOnHome ? 'translate3d(0, 14px, 0) scale(0.95)' : 'translate3d(0, 0, 0) scale(1)',
             pointerEvents: isFabInteractive ? 'auto' : 'none',
           }}
-          className="relative isolate group transition-opacity duration-200 ease-out"
+          className="relative isolate group transition-all duration-400 ease-out"
         >
           {/* Blue glow layer placed strictly BEHIND the pill (-z-10) so it never brightens the button surface */}
           <span

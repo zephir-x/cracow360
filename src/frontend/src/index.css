@@ -456,3 +456,37 @@ html {
 .wawelek-mascot-speaking {
   animation: wawelekMascotSpeakingBounce 0.75s ease-in-out infinite;
 }
+
+/* Choreographed Staggered Hero Reveal Animations */
+@keyframes showcaseHeroStaggerReveal {
+  0% {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translate3d(0, 26px, 0) scale(0.97);
+  }
+  100% {
+    opacity: 1;
+    filter: blur(0px);
+    transform: translate3d(0, 0, 0) scale(1);
+  }
+}
+
+.showcase-stagger-1 {
+  opacity: 0;
+  animation: showcaseHeroStaggerReveal 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s forwards;
+}
+
+.showcase-stagger-2 {
+  opacity: 0;
+  animation: showcaseHeroStaggerReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.28s forwards;
+}
+
+.showcase-stagger-3 {
+  opacity: 0;
+  animation: showcaseHeroStaggerReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.46s forwards;
+}
+
+.showcase-stagger-4 {
+  opacity: 0;
+  animation: showcaseHeroStaggerReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.64s forwards;
+}

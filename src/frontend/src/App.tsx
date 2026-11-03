@@ -6,6 +6,7 @@ import { MainFooter } from './components/layout/MainFooter';
 import { MainNavbar, type AppTabId } from './components/layout/MainNavbar';
 import { useTranslation } from './i18n/I18nContext';
 import { AboutDataMethodologyPage } from './pages/AboutDataMethodologyPage';
+import { HomeShowcasePage } from './pages/HomeShowcasePage';
 import { OfficialInvestorModePage } from './pages/OfficialInvestorModePage';
 import { ParentModePage } from './pages/ParentModePage';
 import { ResidentModePage } from './pages/ResidentModePage';
@@ -31,6 +32,7 @@ const DEFAULT_WEIGHTS: QualityWeights = {
 
 // Clean keyword routing config: enables bookmarkable URL hashes that survive page refreshes (F5)
 const TAB_ROUTING: Record<AppTabId, { hash: string; keywords: string[] }> = {
+  home: { hash: '/home', keywords: ['home', 'start', 'showcase', 'glowna', 'intro'] },
   resident: { hash: '/resident', keywords: ['mieszkaniec', 'resident'] },
   parent: { hash: '/parent', keywords: ['rodzic', 'parent', 'family', 'rodzina'] },
   investor: { hash: '/investor', keywords: ['inwestor', 'investor', 'urzednik'] },
@@ -39,7 +41,7 @@ const TAB_ROUTING: Record<AppTabId, { hash: string; keywords: string[] }> = {
 };
 
 function getTabFromUrl(): AppTabId {
-  if (typeof window === 'undefined') return 'resident';
+  if (typeof window === 'undefined') return 'home';
   const hash = window.location.hash.toLowerCase();
   const path = window.location.pathname.toLowerCase();
   const target = `${hash} ${path}`;
@@ -49,8 +51,9 @@ function getTabFromUrl(): AppTabId {
   if (TAB_ROUTING.tourist.keywords.some((kw) => target.includes(kw))) return 'tourist';
   if (TAB_ROUTING.methodology.keywords.some((kw) => target.includes(kw))) return 'methodology';
   if (TAB_ROUTING.resident.keywords.some((kw) => target.includes(kw))) return 'resident';
+  if (TAB_ROUTING.home.keywords.some((kw) => target.includes(kw))) return 'home';
 
-  return 'resident';
+  return 'home';
 }
 
 /// <summary>
@@ -62,6 +65,13 @@ export function App() {
 
   // Navigation active tab state with URL hash synchronization (survives F5)
   const [activeTab, setActiveTab] = useState<AppTabId>(getTabFromUrl);
+
+  // Lazy-mount flag for LiveAtmosphereBar and WawelekAssistantWidget:
+  // Not loaded on initial Start ('home') boot; once user enters any analytical tab,
+  // they mount and stay mounted in memory, smoothly hiding whenever returning to 'home'.
+  const [hasVisitedNonHomeTab, setHasVisitedNonHomeTab] = useState<boolean>(
+    () => getTabFromUrl() !== 'home'
+  );
 
   // Baseline district metrics and spatial GeoJSON boundaries
   const [rawDistricts, setRawDistricts] = useState<DistrictSummaryDto[]>([]);
@@ -80,6 +90,13 @@ export function App() {
 
   // Network and data loading error message
   const [error, setError] = useState<string | null>(null);
+
+  // Mark non-home tab visit so Weather Bar & Wawelek mount and persist from that point on
+  useEffect(() => {
+    if (activeTab !== 'home' && !hasVisitedNonHomeTab) {
+      setHasVisitedNonHomeTab(true);
+    }
+  }, [activeTab, hasVisitedNonHomeTab]);
 
   // Smoothly scroll to the top of the viewport whenever the active tab changes
   useEffect(() => {
@@ -211,23 +228,48 @@ export function App() {
     setActiveTargetSlot(1);
   };
 
+  const isHomeShowcase = activeTab === 'home';
+
   return (
     <div className="min-h-screen text-slate-900 flex flex-col bg-transparent">
       {/* Top Civic Navigation Bar */}
       <MainNavbar activeTab={activeTab} onSelectTab={handleSelectTab} />
 
-      {/* Live Atmospheric Conditions & Air Quality Ribbon */}
-      <LiveAtmosphereBar />
+      {/* Live Atmospheric Conditions & Air Quality Ribbon (lazy-mounted after leaving Start, smoothly collapses on Start) */}
+      {hasVisitedNonHomeTab && (
+        <div
+          className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            isHomeShowcase
+              ? 'grid-rows-[0fr] opacity-0 pointer-events-none'
+              : 'grid-rows-[1fr] opacity-100'
+          }`}
+        >
+          <div className="min-h-0 overflow-hidden">
+            <LiveAtmosphereBar />
+          </div>
+        </div>
+      )}
 
-      {/* Main Content Container with smooth tab & language transition */}
-      <main className="flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6">
-        {error && (
+      {/* Main Content Container */}
+      <main
+        className={
+          isHomeShowcase
+            ? 'flex-1 w-full'
+            : 'flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6'
+        }
+      >
+        {error && !isHomeShowcase && (
           <div className="p-4 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-medium shadow-xs">
             <strong>{t.common.notice}:</strong> {error}
           </div>
         )}
 
         <div key={`${activeTab}-${language}`} className="w-full animate-tab-enter">
+          {/* Cinematic Home Showcase Page (Default Landing View) */}
+          {activeTab === 'home' && (
+            <HomeShowcasePage onSelectTab={handleSelectTab} />
+          )}
+
           {/* Resident Mode (Quality of Life Map, Ranking & Comparison) */}
           {activeTab === 'resident' && (
             <ResidentModePage
@@ -269,9 +311,9 @@ export function App() {
             <TouristModePage onSelectDistrictOnMap={handleSelectDistrict} />
           )}
 
-          {/* Methodology & Open Data Sources Documentation */}
+          {/* Methodology & Open Data Sources Documentation (Back button routes to Home) */}
           {activeTab === 'methodology' && (
-            <AboutDataMethodologyPage onBackToResidentMode={() => handleSelectTab('resident')} />
+            <AboutDataMethodologyPage onBackToResidentMode={() => handleSelectTab('home')} />
           )}
         </div>
       </main>
@@ -279,11 +321,13 @@ export function App() {
       {/* Civic Footer */}
       <MainFooter onSelectTab={handleSelectTab} />
 
-      {/* Global Floating AI Assistant "Wawelek" (persists across tab switches, resets on F5) */}
-      <WawelekAssistantWidget
-        activeTab={activeTab}
-        selectedDistrictId={selectedPrimaryId}
-      />
+      {/* Global Floating AI Assistant "Wawelek" (lazy-mounted after leaving Start, smoothly hides on Start) */}
+      {hasVisitedNonHomeTab && (
+        <WawelekAssistantWidget
+          activeTab={activeTab}
+          selectedDistrictId={selectedPrimaryId}
+        />
+      )}
     </div>
   );
 }

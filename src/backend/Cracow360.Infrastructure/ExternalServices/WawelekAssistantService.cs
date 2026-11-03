@@ -572,7 +572,7 @@ public class WawelekAssistantService : IWawelekAssistantService
 
         var keyNotice = hadApiKeyError
             ? "\n\n*(Uwaga techniczna: Połączenie z chmurą DeepSeek chwilowo niedostępne – odpowiedziałem bezpośrednio z lokalnego silnika analitycznego Kraków360)*"
-            : "\n\n*(Wskazówka: Aby odblokować pełną generatywną narrację DeepSeek AI, autor musi podłączyć klucz API DeepSeek – obecnie odpowiadam z wbudowanego silnika danych Kraków360!)*";
+            : "\n\n(Wskazówka: Aby odblokować pełną generatywną narrację DeepSeek AI, autor musi podłączyć klucz API DeepSeek – obecnie odpowiadam z wbudowanego silnika danych Kraków360)";
 
         return lang switch
         {

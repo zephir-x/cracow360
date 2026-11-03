@@ -1,9 +1,10 @@
-import { Baby, BookOpen, Building2, Compass, Landmark } from 'lucide-react';
+import { Baby, BookOpen, Building2, Clapperboard, Compass, Landmark } from 'lucide-react';
 import React, { useLayoutEffect, useMemo, useRef, useState } from 'react';
 import { useTranslation } from '../../i18n/I18nContext';
+import { getHomeShowcaseI18n } from '../../i18n/modules';
 import { LanguageSwitcher } from './LanguageSwitcher';
 
-export type AppTabId = 'resident' | 'parent' | 'investor' | 'tourist' | 'methodology';
+export type AppTabId = 'home' | 'resident' | 'parent' | 'investor' | 'tourist' | 'methodology';
 
 export interface MainNavbarProps {
   activeTab: AppTabId;
@@ -18,6 +19,7 @@ interface NavItem {
 
 export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
   const { language, t } = useTranslation();
+  const homeCopy = getHomeShowcaseI18n(language);
   const navRef = useRef<HTMLElement | null>(null);
   const tabRefs = useRef<Record<string, HTMLButtonElement | null>>({});
 
@@ -34,6 +36,11 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
   }>({ left: 0, top: 0, width: 0, height: 0, opacity: 0 });
 
   const navItems = useMemo<NavItem[]>(() => [
+    {
+      id: 'home',
+      label: homeCopy.navHomeLabel,
+      icon: <Clapperboard className="w-4 h-4" />,
+    },
     {
       id: 'resident',
       label: t.nav.residentMode,
@@ -59,7 +66,7 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
       label: t.nav.methodology,
       icon: <BookOpen className="w-4 h-4" />,
     },
-  ], [t]);
+  ], [t, homeCopy.navHomeLabel]);
 
   useLayoutEffect(() => {
     const isLangChanged = prevLangRef.current !== language;
@@ -99,9 +106,9 @@ export function MainNavbar({ activeTab, onSelectTab }: MainNavbarProps) {
   return (
     <header className="sticky top-0 z-1200 bg-white/85 backdrop-blur-xl border-b border-blue-100/90 shadow-xs">
       <div className="max-w-360 mx-auto px-4 sm:px-6 py-2.5 flex flex-wrap items-center justify-between gap-4">
-        {/* Left: Kraków360 Brand Logo & Title (compact & vertically centered) */}
+        {/* Left: Kraków360 Brand Logo & Title (clicks back to Home Showcase) */}
         <button
-          onClick={() => onSelectTab('resident')}
+          onClick={() => onSelectTab('home')}
           className="flex items-center gap-2.5 text-left group cursor-pointer py-1"
         >
           <img
