@@ -15,9 +15,9 @@ export interface HomeShowcasePageProps {
  * Orchestrates the 3-act interactive experience:
  * - Act I & Act II (Unified Sticky Stage): Initial scroll lock + Staggered Hero Reveal +
  *   Dual-Vision Cursor X-Ray Mask dissolving directly in-place into the Velocity-Clamped
- *   150-frame WebP Canvas Scroll-Scrubbing + 6 3D Story Cards + Circular Iris Portal.
- * - Act III: Autoplay Promotional Spot with Custom Microphone Cursor +
- *   Visual Story Duo + 5 Interactive 3D-Tilt Module Portals.
+ *   250-frame WebP Canvas Scroll-Scrubbing + 8 3D Story Cards + Blur/White/Logo Finale.
+ * - Act III: Autoplay Promotional Spot with Custom Speaker Cursor +
+ *   5 Human Visual Stories + 5 Interactive 3D-Tilt Module Portals + Team Percepcja360 Showcase.
  */
 export function HomeShowcasePage({ onSelectTab }: HomeShowcasePageProps) {
   const { language } = useTranslation();
@@ -39,10 +39,10 @@ export function HomeShowcasePage({ onSelectTab }: HomeShowcasePageProps) {
         onSkipToFinale={handleSkipToFinale}
       />
 
-      {/* ACT III: Promotional Video Spot (Custom Mic Cursor) + Family Visual Story + 3D Portals */}
+      {/* ACT III: Overlaps by top background to eliminate any subpixel horizontal seam */}
       <div
         ref={actThreeRef}
-        className="relative bg-linear-to-b from-slate-50 via-white to-blue-50/40"
+        className="relative z-30 -mt-1 pt-1 bg-linear-to-b from-white via-slate-50/70 to-blue-50/40"
       >
         <PromoVideoSpotlightCard copy={copy.promoSpot} />
 

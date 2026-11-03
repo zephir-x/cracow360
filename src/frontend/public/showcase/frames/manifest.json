@@ -1,7 +1,7 @@
 {
-  "frameCount": 150,
-  "width": 1600,
-  "height": 900,
+  "frameCount": 250,
+  "width": 1920,
+  "height": 1080,
   "usableSourceFrames": 573,
   "sourceFps": 30.0,
   "pattern": "/showcase/frames/frame_{index}.webp"

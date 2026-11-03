@@ -490,3 +490,8 @@ html {
   opacity: 0;
   animation: showcaseHeroStaggerReveal 0.95s cubic-bezier(0.16, 1, 0.3, 1) 0.64s forwards;
 }
+
+/* Custom cursive / handwriting font class for playful civic branding */
+.font-handwriting {
+  font-family: 'Caveat', 'Dancing Script', cursive, sans-serif;
+}

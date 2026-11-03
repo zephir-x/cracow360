@@ -1,28 +1,40 @@
 ﻿import { useEffect, useRef, useState } from 'react';
-import { Film, Mic, MicOff, RotateCcw, Volume2 } from 'lucide-react';
+import { Film, RotateCcw, Volume2, VolumeX } from 'lucide-react';
 import type { HomeShowcaseTranslations } from '../../i18n/modules';
 
 export interface PromoVideoSpotlightCardProps {
   copy: HomeShowcaseTranslations['promoSpot'];
 }
 
+function formatTime(seconds: number): string {
+  if (!Number.isFinite(seconds) || seconds < 0) return '0:00';
+  const mins = Math.floor(seconds / 60);
+  const secs = Math.floor(seconds % 60);
+  return `${mins}:${String(secs).padStart(2, '0')}`;
+}
+
 /**
- * Cinema-grade autoplay promotional spot ("reklama.mp4", ~1m45s) with a custom
- * interactive Microphone cursor that replaces the native pointer on hover.
- * - Outer wrapper is overflow-visible so the custom cursor orb is never clipped at video edges.
- * - Smoothly scales/fades the custom cursor in & out on video enter/leave and when hovering over the Replay button.
+ * Cinema-grade autoplay promotional spot ("reklama.mp4", ~1m45s) with:
+ * - Custom interactive Speaker cursor (Volume2 / VolumeX) that replaces the native pointer on hover.
+ * - Outer wrapper with overflow-visible so the custom cursor orb is never clipped at video edges.
+ * - Interactive YouTube-style seekable progress bar at the bottom.
  */
 export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const videoRef = useRef<HTMLVideoElement | null>(null);
   const cursorOrbRef = useRef<HTMLDivElement | null>(null);
+  const seekBarRef = useRef<HTMLDivElement | null>(null);
 
   const [isMuted, setIsMuted] = useState<boolean>(true);
   const [isHoveringVideo, setIsHoveringVideo] = useState<boolean>(false);
   const [isHoveringReplayBtn, setIsHoveringReplayBtn] = useState<boolean>(false);
+  const [isHoveringSeekBar, setIsHoveringSeekBar] = useState<boolean>(false);
   const [progressPct, setProgressPct] = useState<number>(0);
+  const [hoverSeekPct, setHoverSeekPct] = useState<number | null>(null);
+  const [currentTimeSec, setCurrentTimeSec] = useState<number>(0);
+  const [durationSec, setDurationSec] = useState<number>(0);
 
-  // Smooth 60 FPS pointer follower for the custom Microphone cursor
+  // Smooth 60 FPS pointer follower for the custom Speaker cursor
   useEffect(() => {
     let rafId = 0;
     let targetX = 0;
@@ -83,15 +95,48 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
     vid.volume = 0.9;
     void vid.play().catch(() => {});
     setIsMuted(false);
+    setProgressPct(0);
+    setCurrentTimeSec(0);
   };
 
   const handleTimeUpdate = () => {
     const vid = videoRef.current;
     if (!vid || !vid.duration) return;
+    setCurrentTimeSec(vid.currentTime);
+    setDurationSec(vid.duration);
     setProgressPct((vid.currentTime / vid.duration) * 100);
   };
 
-  const showCustomMicCursor = isHoveringVideo && !isHoveringReplayBtn;
+  const handleLoadedMetadata = () => {
+    const vid = videoRef.current;
+    if (!vid || !vid.duration) return;
+    setDurationSec(vid.duration);
+  };
+
+  // Interactive YouTube-style seek handler
+  const handleSeekClick = (e: React.MouseEvent<HTMLDivElement>) => {
+    e.stopPropagation();
+    const bar = seekBarRef.current;
+    const vid = videoRef.current;
+    if (!bar || !vid || !vid.duration) return;
+
+    const rect = bar.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / Math.max(1, rect.width)));
+    vid.currentTime = ratio * vid.duration;
+    setCurrentTimeSec(vid.currentTime);
+    setProgressPct(ratio * 100);
+  };
+
+  const handleSeekPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
+    const bar = seekBarRef.current;
+    if (!bar) return;
+    const rect = bar.getBoundingClientRect();
+    const ratio = Math.max(0, Math.min(1, (e.clientX - rect.left) / Math.max(1, rect.width)));
+    setHoverSeekPct(ratio * 100);
+  };
+
+  const showCustomSpeakerCursor =
+    isHoveringVideo && !isHoveringReplayBtn && !isHoveringSeekBar;
 
   return (
     <div className="max-w-360 mx-auto px-4 sm:px-8 pt-16 pb-8">
@@ -112,7 +157,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
         </p>
       </div>
 
-      {/* Outer Container (overflow-visible so the custom Microphone cursor is never clipped at borders) */}
+      {/* Outer Container (overflow-visible so the custom Speaker cursor is never clipped at borders) */}
       <div
         ref={containerRef}
         onClick={handleToggleSound}
@@ -127,6 +172,8 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
         onPointerLeave={() => {
           setIsHoveringVideo(false);
           setIsHoveringReplayBtn(false);
+          setIsHoveringSeekBar(false);
+          setHoverSeekPct(null);
         }}
         role="button"
         tabIndex={0}
@@ -138,7 +185,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
         }}
         aria-label={isMuted ? copy.cursorUnmuteLabel : copy.cursorMuteLabel}
         className={`group relative w-full select-none aspect-video max-h-170 ${
-          showCustomMicCursor ? 'cursor-none' : 'cursor-pointer'
+          showCustomSpeakerCursor ? 'cursor-none' : 'cursor-pointer'
         }`}
       >
         {/* Inner Rounded Cinema Frame that clips the video & overlays */}
@@ -150,12 +197,13 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
             loop
             muted
             playsInline
+            onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
             className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]"
           />
 
           {/* Subtle Top & Bottom Cinema Vignette */}
-          <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/75 via-transparent to-slate-950/40" />
+          <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-slate-950/40" />
 
           {/* Top-Right Sound Status Pill */}
           <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-10 pointer-events-none">
@@ -168,7 +216,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
             >
               {isMuted ? (
                 <>
-                  <MicOff className="w-3.5 h-3.5 text-rose-400" />
+                  <VolumeX className="w-3.5 h-3.5 text-rose-400" />
                   <span>{copy.audioMutedBadge}</span>
                 </>
               ) : (
@@ -180,47 +228,98 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
             </div>
           </div>
 
-          {/* Bottom Controls Overlay: Replay from 0:00 Button & Progress Bar */}
-          <div className="absolute bottom-4 sm:bottom-6 inset-x-4 sm:inset-x-6 z-10 flex flex-col gap-3">
+          {/* Bottom Controls Overlay: Replay from 0:00 Button, Time Readout & Interactive Seekable Progress Bar */}
+          <div className="absolute bottom-4 sm:bottom-5 inset-x-4 sm:inset-x-6 z-10 flex flex-col gap-2">
             <div className="flex items-center justify-between gap-3">
-              <button
-                type="button"
-                onClick={handleRestartWithSound}
-                onPointerEnter={() => setIsHoveringReplayBtn(true)}
-                onPointerLeave={() => setIsHoveringReplayBtn(false)}
-                className="pointer-events-auto cursor-pointer px-3.5 py-1.5 rounded-xl bg-slate-950/80 hover:bg-blue-600/90 backdrop-blur-xl border border-white/20 hover:border-sky-300/60 text-xs font-bold text-white inline-flex items-center gap-2 transition-all duration-250 shadow-lg hover:scale-[1.03]"
-              >
-                <RotateCcw className="w-3.5 h-3.5 text-sky-300" />
-                <span>{copy.restartVideoLabel}</span>
-              </button>
+              <div className="flex items-center gap-3">
+                <button
+                  type="button"
+                  onClick={handleRestartWithSound}
+                  onPointerEnter={() => setIsHoveringReplayBtn(true)}
+                  onPointerLeave={() => setIsHoveringReplayBtn(false)}
+                  className="pointer-events-auto cursor-pointer px-3.5 py-1.5 rounded-xl bg-slate-950/80 hover:bg-blue-600/90 backdrop-blur-xl border border-white/20 hover:border-sky-300/60 text-xs font-bold text-white inline-flex items-center gap-2 transition-all duration-250 shadow-lg hover:scale-[1.03]"
+                >
+                  <RotateCcw className="w-3.5 h-3.5 text-sky-300" />
+                  <span>{copy.restartVideoLabel}</span>
+                </button>
+
+                {durationSec > 0 && (
+                  <span className="hidden sm:inline-block font-mono text-xs font-bold text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
+                    {formatTime(currentTimeSec)} / {formatTime(durationSec)}
+                  </span>
+                )}
+              </div>
 
               {/* Mobile / Touch fallback badge */}
               <div className="sm:hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-950/80 border border-white/20 text-xs font-bold text-white">
                 {isMuted ? (
                   <>
-                    <MicOff className="w-3.5 h-3.5 text-rose-400" />
+                    <VolumeX className="w-3.5 h-3.5 text-rose-400" />
                     <span>{copy.cursorUnmuteLabel}</span>
                   </>
                 ) : (
                   <>
-                    <Mic className="w-3.5 h-3.5 text-emerald-400" />
+                    <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
                     <span>{copy.cursorMuteLabel}</span>
                   </>
                 )}
               </div>
             </div>
 
-            {/* Playback Progress Line */}
-            <div className="pointer-events-none w-full h-1.5 rounded-full bg-white/20 overflow-hidden">
+            {/* Interactive YouTube-Style Seekable Progress Bar */}
+            <div
+              ref={seekBarRef}
+              onClick={handleSeekClick}
+              onPointerEnter={() => setIsHoveringSeekBar(true)}
+              onPointerLeave={() => {
+                setIsHoveringSeekBar(false);
+                setHoverSeekPct(null);
+              }}
+              onPointerMove={handleSeekPointerMove}
+              role="slider"
+              aria-label="Pasek postępu wideo"
+              aria-valuemin={0}
+              aria-valuemax={100}
+              aria-valuenow={Math.round(progressPct)}
+              className="pointer-events-auto cursor-pointer relative py-2 group/seek"
+            >
+              {/* Hover Preview Timestamp Tooltip */}
+              {hoverSeekPct !== null && durationSec > 0 && (
+                <div
+                  className="pointer-events-none absolute -top-7 -translate-x-1/2 px-2 py-0.5 rounded-md bg-slate-950/90 border border-white/20 font-mono text-[10px] font-bold text-sky-300 shadow-md"
+                  style={{ left: `${hoverSeekPct.toFixed(1)}%` }}
+                >
+                  {formatTime((hoverSeekPct / 100) * durationSec)}
+                </div>
+              )}
+
+              {/* Track Background */}
+              <div className="relative w-full h-1.5 group-hover/seek:h-2.5 rounded-full bg-white/25 overflow-hidden transition-all duration-150">
+                {/* Hover Ghost Fill */}
+                {hoverSeekPct !== null && (
+                  <div
+                    className="absolute inset-y-0 left-0 bg-white/25"
+                    style={{ width: `${hoverSeekPct.toFixed(1)}%` }}
+                  />
+                )}
+
+                {/* Active Playback Fill */}
+                <div
+                  className="relative h-full bg-linear-to-r from-blue-500 via-sky-400 to-emerald-400"
+                  style={{ width: `${progressPct.toFixed(1)}%` }}
+                />
+              </div>
+
+              {/* Scrubber Thumb Dot */}
               <div
-                className="h-full bg-linear-to-r from-blue-500 via-sky-400 to-emerald-400 transition-all duration-150"
-                style={{ width: `${progressPct.toFixed(1)}%` }}
+                className="pointer-events-none absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-3.5 h-3.5 rounded-full bg-white border-2 border-sky-400 shadow-[0_0_12px_rgba(56,189,248,0.9)] opacity-0 group-hover/seek:opacity-100 scale-75 group-hover/seek:scale-100 transition-all duration-150"
+                style={{ left: `${progressPct.toFixed(1)}%` }}
               />
             </div>
           </div>
         </div>
 
-        {/* CUSTOM FLOATING MICROPHONE CURSOR ORB (UNCLIPPED & SMOOTHLY ANIMATED) */}
+        {/* CUSTOM FLOATING SPEAKER CURSOR ORB (UNCLIPPED & SMOOTHLY ANIMATED) */}
         <div
           ref={cursorOrbRef}
           className="pointer-events-none absolute top-0 left-0 z-30"
@@ -228,7 +327,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
         >
           <div
             className={`relative flex items-center gap-2.5 px-4 py-3 rounded-full backdrop-blur-2xl border-2 shadow-[0_14px_40px_rgba(0,0,0,0.55)] transition-all duration-300 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              showCustomMicCursor
+              showCustomSpeakerCursor
                 ? 'opacity-100 scale-100'
                 : 'opacity-0 scale-75'
             } ${
@@ -237,7 +336,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
                 : 'bg-sky-600/92 border-white/90 text-white'
             }`}
           >
-            {/* Pulsing Aura Ring around Microphone Icon */}
+            {/* Pulsing Aura Ring around Speaker Icon */}
             <div className="relative w-9 h-9 rounded-full bg-white/15 flex items-center justify-center shrink-0">
               <span
                 className={`absolute inset-0 rounded-full animate-ping opacity-35 ${
@@ -245,9 +344,9 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
                 }`}
               />
               {isMuted ? (
-                <MicOff className="relative z-10 w-5 h-5 text-sky-300" />
+                <VolumeX className="relative z-10 w-5 h-5 text-sky-300" />
               ) : (
-                <Mic className="relative z-10 w-5 h-5 text-white" />
+                <Volume2 className="relative z-10 w-5 h-5 text-white" />
               )}
             </div>
 
