@@ -99,35 +99,214 @@ export function ResidentModePage({
           <div className="absolute top-1/3 right-1/4 w-72 h-72 rounded-full bg-blue-300/15 blur-2xl animate-float-slow" />
           <div className="absolute -bottom-28 left-1/3 w-96 h-96 rounded-full bg-indigo-400/20 blur-3xl" />
 
-          {/* Decorative Architectural & Topographic SVG Illustration on the Right */}
+          {/* Decorative Quality of Life (QoL) Computational Radar Ring, Vistula River Meander & Smart City Telemetry */}
           <svg
-            className="absolute right-0 bottom-0 h-full w-full lg:w-3/5 opacity-25 pointer-events-none"
-            viewBox="0 0 800 500"
+            className="absolute right-4 sm:right-8 lg:right-12 bottom-8 sm:bottom-12 lg:bottom-16 h-[82%] sm:h-[85%] lg:h-[88%] w-full lg:w-7/12 opacity-35 pointer-events-none select-none"
+            viewBox="0 0 720 400"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
-            <circle cx="620" cy="210" r="190" stroke="white" strokeWidth="1.5" strokeDasharray="6 6" />
-            <circle cx="620" cy="210" r="135" stroke="#bae6fd" strokeWidth="2" />
-            <circle cx="620" cy="210" r="80" fill="white" fillOpacity="0.08" stroke="white" strokeWidth="1.5" />
-            {/* Stylized Vistula River & District Grid Nodes */}
-            <path
-              d="M330 60 C 430 140, 480 260, 620 210 C 700 180, 740 240, 790 200"
-              stroke="#7dd3fc"
-              strokeWidth="4"
-              strokeLinecap="round"
-            />
-            <path
-              d="M200 120 C 340 180, 420 320, 560 300 C 640 290, 700 360, 790 340"
-              stroke="#38bdf8"
-              strokeWidth="2.5"
-              strokeDasharray="8 8"
-            />
-            <rect x="520" y="140" width="36" height="36" rx="8" stroke="white" strokeWidth="1.5" strokeDasharray="4 4" />
-            <rect x="680" y="240" width="48" height="48" rx="10" stroke="#bae6fd" strokeWidth="1.5" />
-            <circle cx="480" cy="270" r="6" fill="#38bdf8" />
-            <circle cx="590" cy="180" r="8" fill="#bae6fd" />
-            <circle cx="660" cy="310" r="5" fill="white" />
-            <circle cx="730" cy="160" r="7" fill="#7dd3fc" />
+            <defs>
+              <linearGradient id="residentRadarGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.45" />
+                <stop offset="50%" stopColor="#818cf8" stopOpacity="0.25" />
+                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.08" />
+              </linearGradient>
+              <linearGradient id="vistulaRiverGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.8" />
+                <stop offset="50%" stopColor="#7dd3fc" stopOpacity="0.95" />
+                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.8" />
+              </linearGradient>
+              <radialGradient id="residentCoreGlow" cx="50%" cy="50%" r="50%">
+                <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.35" />
+                <stop offset="60%" stopColor="#1d4ed8" stopOpacity="0.1" />
+                <stop offset="100%" stopColor="#0a2e65" stopOpacity="0" />
+              </radialGradient>
+            </defs>
+
+            {/* Ambient Topographic Wave Radials (Left Fading Horizon) */}
+            <path d="M 60 190 C 140 150, 220 230, 320 190 S 460 140, 620 170" stroke="#bae6fd" strokeWidth="1" strokeDasharray="6 4" strokeOpacity="0.25" fill="none" />
+            <path d="M 100 230 C 180 180, 280 260, 400 210 S 520 170, 650 200" stroke="#38bdf8" strokeWidth="1" strokeDasharray="4 4" strokeOpacity="0.18" fill="none" />
+
+            {/* Vistula River (Wisła) Dynamic S-Curve Waterway Weaving Gracefully Through The Landscape */}
+            <g id="resident-vistula-stream">
+              <path
+                d="M 120 340 C 200 325, 260 375, 360 335 C 450 295, 490 320, 580 275 C 630 250, 660 260, 710 245"
+                stroke="url(#vistulaRiverGrad)"
+                strokeWidth="4.5"
+                strokeLinecap="round"
+                fill="none"
+              />
+              <path
+                d="M 120 348 C 200 333, 260 383, 360 343 C 450 303, 490 328, 580 283 C 630 258, 660 268, 710 253"
+                stroke="#bae6fd"
+                strokeWidth="1.2"
+                strokeDasharray="8 4"
+                strokeOpacity="0.5"
+                fill="none"
+              />
+
+              {/* River Bridge Nodes */}
+              <line x1="290" y1="346" x2="302" y2="368" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+              <line x1="440" y1="305" x2="448" y2="327" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+              <line x1="540" y1="282" x2="547" y2="304" stroke="#fde047" strokeWidth="2.2" strokeLinecap="round" />
+            </g>
+
+            {/* Central Master Computational Circle / Quality of Life Polar HUD */}
+            <g id="resident-computational-circle">
+              {/* Outer Micro-Dashed Scale Orbit Ring */}
+              <circle cx="520" cy="200" r="192" stroke="#bae6fd" strokeWidth="1" strokeDasharray="3 6" strokeOpacity="0.4" fill="none" />
+
+              {/* Master Outer Precision Ring */}
+              <circle cx="520" cy="200" r="185" stroke="#ffffff" strokeWidth="1.6" strokeDasharray="8 6" strokeOpacity="0.7" fill="none" />
+
+              {/* Outer Angular Calibration Marks & Cardinal Labels */}
+              <g id="resident-circle-angular-ticks">
+                {/* 0° North */}
+                <line x1="520" y1="12" x2="520" y2="24" stroke="#ffffff" strokeWidth="1.8" />
+                <text x="520" y="32" fill="#bae6fd" fontSize="9" fontWeight="800" textAnchor="middle">000° N</text>
+
+                {/* 90° East */}
+                <line x1="708" y1="200" x2="696" y2="200" stroke="#ffffff" strokeWidth="1.8" />
+                <text x="688" y="203" fill="#bae6fd" fontSize="9" fontWeight="800" textAnchor="end">090° E</text>
+
+                {/* 180° South */}
+                <line x1="520" y1="388" x2="520" y2="376" stroke="#ffffff" strokeWidth="1.8" />
+                <text x="520" y="372" fill="#bae6fd" fontSize="9" fontWeight="800" textAnchor="middle">180° S</text>
+
+                {/* 270° West */}
+                <line x1="332" y1="200" x2="344" y2="200" stroke="#ffffff" strokeWidth="1.8" />
+                <text x="352" y="203" fill="#bae6fd" fontSize="9" fontWeight="800" textAnchor="start">270° W</text>
+
+                {/* Intermediate 30° / 45° Vernier Ticks */}
+                <line x1="612" y1="40" x2="606" y2="50" stroke="#bae6fd" strokeWidth="1.2" strokeOpacity="0.7" />
+                <line x1="680" y1="107" x2="671" y2="112" stroke="#bae6fd" strokeWidth="1.2" strokeOpacity="0.7" />
+                <line x1="680" y1="293" x2="671" y2="288" stroke="#bae6fd" strokeWidth="1.2" strokeOpacity="0.7" />
+                <line x1="612" y1="360" x2="606" y2="350" stroke="#bae6fd" strokeWidth="1.2" strokeOpacity="0.7" />
+                <line x1="428" y1="360" x2="434" y2="350" stroke="#bae6fd" strokeWidth="1.2" strokeOpacity="0.7" />
+                <line x1="360" y1="293" x2="369" y2="288" stroke="#bae6fd" strokeWidth="1.2" strokeOpacity="0.7" />
+                <line x1="360" y1="107" x2="369" y2="112" stroke="#bae6fd" strokeWidth="1.2" strokeOpacity="0.7" />
+                <line x1="428" y1="40" x2="434" y2="50" stroke="#bae6fd" strokeWidth="1.2" strokeOpacity="0.7" />
+              </g>
+
+              {/* Secondary Concentric Metric Segment Arc Ring */}
+              <circle cx="520" cy="200" r="145" stroke="#38bdf8" strokeWidth="2" strokeDasharray="45 15 25 15 60 20" strokeLinecap="round" fill="none" />
+              <circle cx="520" cy="200" r="130" stroke="#bae6fd" strokeWidth="1" strokeDasharray="4 4" strokeOpacity="0.4" fill="none" />
+
+              {/* Core Computational Orb & Glowing Center Hub */}
+              <circle cx="520" cy="200" r="85" fill="url(#residentCoreGlow)" stroke="#38bdf8" strokeWidth="1.4" strokeOpacity="0.6" />
+              <circle cx="520" cy="200" r="50" stroke="#ffffff" strokeWidth="1.2" strokeOpacity="0.3" strokeDasharray="4 3" fill="none" />
+
+              {/* Crosshair Cardinal Coordinate Guides */}
+              <line x1="520" y1="70" x2="520" y2="330" stroke="#bae6fd" strokeWidth="0.8" strokeDasharray="2 3" strokeOpacity="0.4" />
+              <line x1="390" y1="200" x2="650" y2="200" stroke="#bae6fd" strokeWidth="0.8" strokeDasharray="2 3" strokeOpacity="0.4" />
+
+              {/* 5-Axis Quality of Life Pentagonal Radar Web */}
+              <g id="resident-qol-radar-spider">
+                {/* Pentagon Level 3 (100% capacity) */}
+                <polygon points="520,115 601,174 570,269 470,269 439,174" stroke="#bae6fd" strokeWidth="1.2" strokeDasharray="4 3" strokeOpacity="0.5" fill="none" />
+                {/* Pentagon Level 2 (66% capacity) */}
+                <polygon points="520,145 572,183 552,244 488,244 468,183" stroke="#bae6fd" strokeWidth="1" strokeDasharray="3 3" strokeOpacity="0.4" fill="none" />
+                {/* Pentagon Level 1 (33% capacity) */}
+                <polygon points="520,170 549,191 538,224 502,224 491,191" stroke="#bae6fd" strokeWidth="0.8" strokeDasharray="2 2" strokeOpacity="0.3" fill="none" />
+
+                {/* 5 Radial Pillar Axes from Pivot */}
+                <line x1="520" y1="200" x2="520" y2="115" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.6" />
+                <line x1="520" y1="200" x2="601" y2="174" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.6" />
+                <line x1="520" y1="200" x2="570" y2="269" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.6" />
+                <line x1="520" y1="200" x2="470" y2="269" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.6" />
+                <line x1="520" y1="200" x2="439" y2="174" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.6" />
+
+                {/* High-Score Municipal Quality Polygon Overlay */}
+                <polygon
+                  points="520,122 594,176 568,264 480,256 444,176"
+                  stroke="#38bdf8"
+                  strokeWidth="2.2"
+                  fill="url(#residentRadarGrad)"
+                />
+
+                {/* 5 Distinct Quality Pillar Vertex Beacon Nodes with Specialized Color Coding */}
+                {/* 1. Bezpieczeństwo (Top) */}
+                <circle cx="520" cy="122" r="4.5" fill="#34d399" stroke="#ffffff" strokeWidth="1.4" />
+                {/* 2. Edukacja (Top-Right) */}
+                <circle cx="594" cy="176" r="4.5" fill="#fde047" stroke="#ffffff" strokeWidth="1.4" />
+                {/* 3. Zieleń i Środowisko (Bottom-Right) */}
+                <circle cx="568" cy="264" r="5" fill="#10b981" stroke="#ffffff" strokeWidth="1.4" />
+                {/* 4. Mobilność i Transport (Bottom-Left) */}
+                <circle cx="480" cy="256" r="4.5" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.4" />
+                {/* 5. Usługi Miejskie (Top-Left) */}
+                <circle cx="444" cy="176" r="4.5" fill="#f472b6" stroke="#ffffff" strokeWidth="1.4" />
+
+                {/* Central Pivot Target Node */}
+                <circle cx="520" cy="200" r="3.5" fill="#ffffff" />
+                <circle cx="520" cy="200" r="8" stroke="#38bdf8" strokeWidth="1" strokeDasharray="2 2" />
+              </g>
+
+              {/* Orbiting Satellite Telemetry Chip 1 (Top-Left) */}
+              <g transform="translate(355, 75)">
+                <rect x="0" y="0" width="86" height="22" rx="6" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
+                <circle cx="12" cy="11" r="3.5" fill="#34d399" />
+                <text x="22" y="15" fill="#bae6fd" fontSize="9" fontWeight="800">QoL: 88.4 / 100</text>
+              </g>
+
+              {/* Orbiting Satellite Telemetry Chip 2 (Bottom-Left) */}
+              <g transform="translate(325, 290)">
+                <rect x="0" y="0" width="94" height="22" rx="6" fill="#0a2e65" fillOpacity="0.8" stroke="#bae6fd" strokeWidth="1" />
+                <circle cx="12" cy="11" r="3.5" fill="#fde047" />
+                <text x="22" y="15" fill="#ffffff" fontSize="9" fontWeight="800">18 DIS • LIVE</text>
+              </g>
+
+              {/* Orbiting Satellite Telemetry Chip 3 (Top-Right) */}
+              <g transform="translate(595, 65)">
+                <rect x="0" y="0" width="92" height="22" rx="6" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
+                <circle cx="12" cy="11" r="3.5" fill="#38bdf8" />
+                <text x="22" y="15" fill="#bae6fd" fontSize="9" fontWeight="800">50.06°N 19.94°E</text>
+              </g>
+            </g>
+
+            {/* Krakowski Szybki Tramwaj (Modern Articulated Tram & Curved Transit Rail) */}
+            <g id="resident-tram-transit" transform="translate(140, 245)">
+              {/* Curved Tram Railway Track Lines */}
+              <path d="M 0 65 C 80 50, 160 80, 240 68 S 340 50, 420 58" stroke="#bae6fd" strokeWidth="1.8" strokeDasharray="6 4" strokeOpacity="0.6" fill="none" />
+              <path d="M 0 71 C 80 56, 160 86, 240 74 S 340 56, 420 64" stroke="#bae6fd" strokeWidth="1.8" strokeDasharray="6 4" strokeOpacity="0.6" fill="none" />
+
+              {/* Modern Articulated Krakow Tram */}
+              <g transform="translate(110, 26)">
+                {/* Pantograph (Odbierak prądu) */}
+                <path d="M 38 12 L 48 0 L 58 12" stroke="#bae6fd" strokeWidth="1.5" fill="none" />
+                <line x1="42" y1="0" x2="54" y2="0" stroke="#fde047" strokeWidth="2" />
+
+                {/* Front Car */}
+                <rect x="0" y="12" width="45" height="28" rx="4" stroke="#ffffff" strokeWidth="1.5" fill="#0284c7" fillOpacity="0.5" />
+                <rect x="6" y="16" width="10" height="12" rx="1.5" stroke="#bae6fd" strokeWidth="1" fill="#bae6fd" fillOpacity="0.3" />
+                <rect x="20" y="16" width="10" height="12" rx="1.5" stroke="#bae6fd" strokeWidth="1" fill="#bae6fd" fillOpacity="0.3" />
+                {/* Aerodynamic Windshield */}
+                <path d="M 34 16 L 42 20 L 42 28 L 34 28 Z" fill="#bae6fd" fillOpacity="0.4" stroke="#ffffff" strokeWidth="1" />
+                {/* Headlight */}
+                <circle cx="43" cy="34" r="2" fill="#fde047" />
+
+                {/* Bellows */}
+                <rect x="45" y="15" width="6" height="22" stroke="#bae6fd" strokeWidth="1" fill="#0a2e65" />
+
+                {/* Rear Car */}
+                <rect x="51" y="12" width="40" height="28" rx="4" stroke="#ffffff" strokeWidth="1.5" fill="#0284c7" fillOpacity="0.5" />
+                <rect x="56" y="16" width="10" height="12" rx="1.5" stroke="#bae6fd" strokeWidth="1" fill="#bae6fd" fillOpacity="0.3" />
+                <rect x="70" y="16" width="10" height="12" rx="1.5" stroke="#bae6fd" strokeWidth="1" fill="#bae6fd" fillOpacity="0.3" />
+
+                {/* Wheels */}
+                <circle cx="14" cy="42" r="3.5" fill="#ffffff" />
+                <circle cx="32" cy="42" r="3.5" fill="#ffffff" />
+                <circle cx="64" cy="42" r="3.5" fill="#ffffff" />
+                <circle cx="82" cy="42" r="3.5" fill="#ffffff" />
+              </g>
+            </g>
+
+            {/* Ambient Krakow Sparkles */}
+            <g id="resident-ambient-sparkles">
+              <path d="M 280 120 Q 280 130, 290 130 Q 280 130, 280 140 Q 280 130, 270 130 Q 280 130, 280 120 Z" fill="#bae6fd" fillOpacity="0.8" />
+              <path d="M 640 310 Q 640 320, 650 320 Q 640 320, 640 330 Q 640 320, 630 320 Q 640 320, 640 310 Z" fill="#fde047" fillOpacity="0.9" />
+              <path d="M 470 50 Q 470 58, 478 58 Q 470 58, 470 66 Q 470 58, 462 58 Q 470 58, 470 50 Z" fill="#38bdf8" fillOpacity="0.8" />
+            </g>
           </svg>
         </div>
 

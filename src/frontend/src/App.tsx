@@ -234,9 +234,17 @@ export function App() {
     <div className="min-h-screen text-slate-900 flex flex-col bg-transparent relative">
       {/* Ambient Kraków City Background (Smoothly hidden on Home Showcase) */}
       <div
-        className={`pointer-events-none absolute top-0 inset-x-0 h-250 sm:h-287.5 lg:h-325 overflow-hidden transition-opacity duration-700 ease-out z-0 ${
+        className={`pointer-events-none absolute top-0 inset-x-0 h-250 sm:h-287.5 lg:h-325 transition-opacity duration-700 ease-out z-0 ${
           isHomeShowcase ? 'opacity-0' : 'opacity-100'
         }`}
+        style={{
+          maskImage:
+            'linear-gradient(to bottom, #000 0%, #000 50%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 88%, rgba(0,0,0,0) 100%)',
+          WebkitMaskImage:
+            'linear-gradient(to bottom, #000 0%, #000 50%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0) 88%, rgba(0,0,0,0) 100%)',
+          transform: 'translate3d(0, 0, 0)',
+          WebkitTransform: 'translate3d(0, 0, 0)',
+        }}
         aria-hidden="true"
       >
         <img
@@ -245,9 +253,9 @@ export function App() {
           className="w-full h-full object-cover object-top select-none opacity-85"
           style={{
             maskImage:
-              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,0.6) 72%, rgba(0,0,0,0) 100%)',
+              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0) 85%, rgba(0,0,0,0) 100%)',
             WebkitMaskImage:
-              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,0.6) 72%, rgba(0,0,0,0) 100%)',
+              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 75%, rgba(0,0,0,0.5) 80%, rgba(0,0,0,0) 85%, rgba(0,0,0,0) 100%)',
           }}
         />
         {/* Soft, continuous gradient overlay that begins fading to pure white only from ~50% downwards */}
@@ -255,7 +263,7 @@ export function App() {
           className="absolute inset-0"
           style={{
             background:
-              'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 48%, rgba(255,255,255,0.7) 75%, #ffffff 100%)',
+              'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 45%, rgba(255,255,255,0.7) 65%, #ffffff 78%, rgba(255,255,255,0) 88%, rgba(255,255,255,0) 100%)',
           }}
         />
       </div>

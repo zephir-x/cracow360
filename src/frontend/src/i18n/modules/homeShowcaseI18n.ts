@@ -490,8 +490,8 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
           'Projekt i wdrożenie platformy Kraków360 – od wydajnego backendu po dynamiczny interfejs.',
         idleHighlights: [
           { value: 'Backend .NET 9', label: 'Clean Architecture, EF Core, Dapper & SQLite' },
-          { value: 'Frontend React 19', label: 'TypeScript, Tailwind CSS & płynny UI 60 FPS' },
-          { value: 'VPS & Wawelek AI', label: 'Wdrożenie na serwerze Mikrus, Docker & DeepSeek' },
+          { value: 'Frontend React 19', label: 'TypeScript, Tailwind CSS & płynny UI' },
+          { value: 'VPS & Wawelek AI', label: 'Wdrożenie na Mikrus, Docker & DeepSeek' },
         ],
         krakowStoryTitle: 'Sylwetka i pasja do Krakowa',
         krakowStoryBody:
@@ -518,7 +518,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         idleHighlights: [
           { value: 'Ankieta 243 osób', label: 'Autorskie badanie realnych potrzeb mieszkańców' },
           { value: 'Python GIS ETL', label: 'Potok analityczny, czyszczenie i wagi wskaźników' },
-          { value: 'Grafika & Wideo', label: 'Kreacja smoka Wawelka, oprawa graficzna i spot wideo' },
+          { value: 'Grafika & Wideo', label: 'Smok Wawelek, oprawa graficzna i spot wideo' },
         ],
         krakowStoryTitle: 'Sylwetka i pasja do Krakowa',
         krakowStoryBody:
@@ -886,10 +886,10 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         expandHint: 'Hover to expand full story',
         idleSummaryTitle: 'System Architecture, Backend, Frontend & AI',
         idleSummarySubtitle:
-          'Engineering the Kraków360 platform—from high-performance backend to 60 FPS UI.',
+          'Engineering the Kraków360 platform—from high-performance backend to UI.',
         idleHighlights: [
           { value: 'Backend .NET 9', label: 'Clean Architecture, EF Core, Dapper & SQLite' },
-          { value: 'Frontend React 19', label: 'TypeScript, Tailwind CSS & 60 FPS UI' },
+          { value: 'Frontend React 19', label: 'TypeScript, Tailwind CSS & UI' },
           { value: 'VPS & Wawelek AI', label: 'Mikrus VPS deployment, Docker & DeepSeek' },
         ],
         krakowStoryTitle: 'Profile & Passion for Krakow',
@@ -917,7 +917,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         idleHighlights: [
           { value: '243-Person Survey', label: 'Original research into Krakow residents\' needs' },
           { value: 'Python GIS ETL', label: 'Data processing pipeline, cleaning & indicators' },
-          { value: 'Graphics & Video', label: 'Wawelek dragon design, visual assets & promo video' },
+          { value: 'Graphics & Video', label: 'Wawel Dragon, graphic design and video spot' },
         ],
         krakowStoryTitle: 'Profile & Passion for Krakow',
         krakowStoryBody:
@@ -1285,11 +1285,11 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         expandHint: 'Наведіть, щоб розгорнути повну історію',
         idleSummaryTitle: 'Архітектура Системи, Backend, Frontend та AI',
         idleSummarySubtitle:
-          'Розробка платформи Kraków360 — від продуктивного бекенду до інтерфейсу 60 FPS.',
+          'Розробка платформи Kraków360 — від продуктивного бекенду до інтерфейсу.',
         idleHighlights: [
           { value: 'Бекенд .NET 9', label: 'Clean Architecture, EF Core, Dapper та SQLite' },
-          { value: 'Фронтенд React 19', label: 'TypeScript, Tailwind CSS та плавний UI 60 FPS' },
-          { value: 'VPS та Wawelek AI', label: 'Розгортання на сервері Mikrus, Docker та DeepSeek' },
+          { value: 'Фронтенд React 19', label: 'TypeScript, Tailwind CSS та плавний UI' },
+          { value: 'VPS та Wawelek AI', label: 'Розгортання на Mikrus, Docker та DeepSeek' },
         ],
         krakowStoryTitle: 'Профіль та захоплення Краковом',
         krakowStoryBody:
@@ -1316,7 +1316,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         idleHighlights: [
           { value: 'Опитування 243 осіб', label: 'Авторське дослідження реальних потреб мешканців' },
           { value: 'Python GIS ETL', label: 'Конвеєр обробки даних, очищення та вагові індекси' },
-          { value: 'Графіка та Відео', label: 'Створення дракончика Вавелека, графіка та промо-ролик' },
+          { value: 'Графіка та Відео', label: 'Дракон Вавелек, графічний дизайн та відеоролик' },
         ],
         krakowStoryTitle: 'Профіль та захоплення Краковом',
         krakowStoryBody:

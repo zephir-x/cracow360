@@ -132,10 +132,10 @@ export function ParentHeroHeader({
           <div className="absolute top-1/4 right-1/3 w-80 h-80 rounded-full bg-amber-300/15 blur-3xl" />
           <div className="absolute -bottom-28 left-1/3 w-96 h-96 rounded-full bg-indigo-400/20 blur-3xl" />
 
-          {/* Bespoke Family, Stroller & Walking Radius Vector Art (100% custom line-art, no resident copy) */}
+          {/* Bespoke Family, Stroller, Playground, Kindergarten & 15-Minute Walking Radius Vector Art (Spacious & uncluttered) */}
           <svg
-            className="absolute right-0 bottom-0 h-full w-full lg:w-7/12 opacity-30 pointer-events-none select-none"
-            viewBox="0 0 700 480"
+            className="absolute right-0 -top-3 lg:-top-5 h-full w-full lg:w-7/12 opacity-35 pointer-events-none select-none"
+            viewBox="0 0 700 400"
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
           >
@@ -145,72 +145,241 @@ export function ParentHeroHeader({
                 <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.55" />
                 <stop offset="100%" stopColor="#ffffff" stopOpacity="0.15" />
               </linearGradient>
+              <linearGradient id="kiteGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#fde047" stopOpacity="0.85" />
+                <stop offset="100%" stopColor="#f59e0b" stopOpacity="0.45" />
+              </linearGradient>
+              <linearGradient id="parkTerraceGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                <stop offset="0%" stopColor="#38bdf8" stopOpacity="0.05" />
+                <stop offset="50%" stopColor="#bae6fd" stopOpacity="0.2" />
+                <stop offset="100%" stopColor="#38bdf8" stopOpacity="0.08" />
+              </linearGradient>
             </defs>
 
-            {/* Playful Floating Kite with Ribbon Trail */}
-            <g transform="translate(380, 55)">
-              <path d="M40 0 L65 30 L40 60 L15 30 Z" stroke="#fde047" strokeWidth="2" fill="#fde047" fillOpacity="0.15" />
-              <line x1="40" y1="0" x2="40" y2="60" stroke="#fde047" strokeWidth="1.5" />
-              <line x1="15" y1="30" x2="65" y2="30" stroke="#fde047" strokeWidth="1.5" />
-              <path d="M40 60 Q 25 85, 45 105 T 30 135" stroke="#bae6fd" strokeWidth="1.5" strokeDasharray="3 3" fill="none" />
-              <polygon points="32,80 38,85 30,88" fill="#fde047" />
-              <polygon points="42,102 48,107 40,110" fill="#38bdf8" />
+            {/* Fading Isochrone Wave Radials (Left-to-Right ambient guide curves) */}
+            <path d="M 60 340 C 180 300, 280 330, 420 280 S 560 250, 680 220" stroke="#bae6fd" strokeWidth="1" strokeDasharray="6 6" strokeOpacity="0.25" fill="none" />
+            <path d="M 120 370 C 220 330, 320 360, 480 310 S 600 290, 690 260" stroke="#38bdf8" strokeWidth="1" strokeDasharray="4 4" strokeOpacity="0.2" fill="none" />
+
+            {/* Elevated Park Promenade & 15-Minute City Terrace (Sweeping smoothly across the scene) */}
+            <g id="parent-elevated-terrace">
+              <path
+                d="M 60 330 C 220 315, 420 295, 695 265"
+                stroke="#bae6fd"
+                strokeWidth="2"
+                strokeOpacity="0.75"
+              />
+              <path
+                d="M 75 345 C 235 330, 435 310, 695 280"
+                stroke="#38bdf8"
+                strokeWidth="1.2"
+                strokeDasharray="6 4"
+                strokeOpacity="0.4"
+              />
+
+              {/* Hopscotch Chalk Grid on Promenade Ground */}
+              <g id="parent-hopscotch" transform="translate(325, 290) rotate(-4)">
+                <rect x="0" y="0" width="16" height="16" stroke="#fde047" strokeWidth="1" fill="#fde047" fillOpacity="0.15" />
+                <rect x="16" y="0" width="16" height="16" stroke="#bae6fd" strokeWidth="1" fill="#38bdf8" fillOpacity="0.1" />
+                <rect x="32" y="-8" width="16" height="16" stroke="#34d399" strokeWidth="1" fill="#34d399" fillOpacity="0.15" />
+                <rect x="32" y="8" width="16" height="16" stroke="#34d399" strokeWidth="1" fill="#34d399" fillOpacity="0.15" />
+                <rect x="48" y="0" width="16" height="16" stroke="#fbbf24" strokeWidth="1" fill="#fbbf24" fillOpacity="0.15" />
+                <path d="M 64 0 C 72 0, 72 16, 64 16 Z" stroke="#f472b6" strokeWidth="1" fill="#f472b6" fillOpacity="0.15" />
+              </g>
             </g>
 
-            {/* Stylized Family with Modern Stroller Silhouette */}
-            <g transform="translate(470, 205)">
-              {/* Stroller wheels */}
-              <circle cx="20" cy="50" r="10" stroke="#ffffff" strokeWidth="2" />
-              <circle cx="20" cy="50" r="4" fill="#38bdf8" />
-              <circle cx="56" cy="50" r="7" stroke="#ffffff" strokeWidth="2" />
-              <circle cx="56" cy="50" r="3" fill="#38bdf8" />
-              {/* Stroller bassinet / carrycot frame */}
-              <path d="M12 36 Q 16 44, 46 44 L 58 36 L 58 26 Q 36 24, 18 28 Z" stroke="#bae6fd" strokeWidth="2" fill="#ffffff" fillOpacity="0.1" />
-              {/* Canopy hood */}
-              <path d="M18 28 Q 18 12, 36 12 L 36 26" stroke="#ffffff" strokeWidth="2" fill="none" />
-              {/* Handlebar */}
-              <path d="M14 36 L 0 10 L -8 10" stroke="#bae6fd" strokeWidth="2.5" strokeLinecap="round" fill="none" />
-              {/* Parent figure beside handle */}
-              <circle cx="-16" cy="-2" r="7" stroke="#ffffff" strokeWidth="2" />
-              <line x1="-16" y1="6" x2="-16" y2="28" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
-              <line x1="-16" y1="28" x2="-22" y2="48" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
-              <line x1="-16" y1="28" x2="-10" y2="48" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
-              <path d="M-16 16 L -6 10" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+            {/* High-Flying Diamond Kite Soaring High in the Sky (Above playground) */}
+            <g id="parent-kite" transform="translate(330, 20)">
+              {/* Diamond Segments */}
+              <polygon points="36,0 60,26 36,54 12,26" stroke="#fde047" strokeWidth="1.8" fill="url(#kiteGrad)" />
+              <polygon points="36,0 36,54 12,26" fill="#38bdf8" fillOpacity="0.25" />
+              <line x1="36" y1="0" x2="36" y2="54" stroke="#ffffff" strokeWidth="1.2" />
+              <line x1="12" y1="26" x2="60" y2="26" stroke="#ffffff" strokeWidth="1.2" />
+              {/* Fluttering Tail */}
+              <path d="M 36 54 C 20 78, 50 96, 26 125 S 45 150, 30 178" stroke="#bae6fd" strokeWidth="1.4" strokeDasharray="3 3" fill="none" />
+              {/* Kite Tail Bows */}
+              <polygon points="30,72 36,76 28,80" fill="#fde047" />
+              <polygon points="38,72 32,76 40,80" fill="#fde047" />
+              <polygon points="38,100 44,104 36,108" fill="#38bdf8" />
+              <polygon points="46,100 40,104 48,108" fill="#38bdf8" />
+              <polygon points="24,132 30,136 22,140" fill="#34d399" />
+              <polygon points="32,132 26,136 34,140" fill="#34d399" />
             </g>
 
-            {/* Playful Child holding floating balloon */}
-            <g transform="translate(390, 225)">
-              <circle cx="15" cy="18" r="5" stroke="#ffffff" strokeWidth="1.8" />
-              <line x1="15" y1="24" x2="15" y2="40" stroke="#ffffff" strokeWidth="1.8" />
-              <line x1="15" y1="40" x2="9" y2="52" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
-              <line x1="15" y1="40" x2="21" y2="52" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
-              <path d="M15 28 L 26 22 L 28 8" stroke="#bae6fd" strokeWidth="1.5" strokeLinecap="round" />
-              {/* Floating balloon */}
-              <ellipse cx="30" cy="-6" rx="9" ry="12" stroke="#fde047" strokeWidth="1.8" fill="#fde047" fillOpacity="0.25" />
+            {/* 15-Minute City Isochrone Walking Radius Curves & Distance Stamps */}
+            <g id="parent-isochrones">
+              {/* Isochrone Arc 1 */}
+              <path d="M 120 230 C 260 170, 420 210, 560 170 S 640 200, 695 160" stroke="#38bdf8" strokeWidth="1.8" strokeDasharray="5 4" fill="none" />
+
+              {/* Isochrone Arc 2 */}
+              <path d="M 150 180 C 290 120, 450 160, 580 125 S 650 150, 695 115" stroke="#bae6fd" strokeWidth="1.2" strokeDasharray="4 4" strokeOpacity="0.6" fill="none" />
+
+              {/* Distance Badges */}
+              <rect x="230" y="152" width="60" height="18" rx="5" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
+              <text x="238" y="165" fill="#bae6fd" fontSize="10" fontWeight="800">300m • 5&apos;</text>
+
+              <rect x="420" y="132" width="60" height="18" rx="5" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
+              <text x="428" y="145" fill="#fde047" fontSize="10" fontWeight="800">500m • 8&apos;</text>
+
+              <rect x="580" y="112" width="66" height="18" rx="5" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
+              <text x="587" y="125" fill="#34d399" fontSize="10" fontWeight="800">1000m • 15&apos;</text>
             </g>
 
-            {/* Isochrone Walking Paths & Distance Markers */}
-            <path d="M 220 280 C 280 230, 340 310, 420 260 S 520 280, 640 240" stroke="#38bdf8" strokeWidth="2" strokeDasharray="5 5" fill="none" />
-            <text x="240" y="250" fill="#bae6fd" fontSize="11" fontWeight="700" opacity="0.85">300m</text>
-            <text x="365" y="305" fill="#bae6fd" fontSize="11" fontWeight="700" opacity="0.85">500m</text>
-            <text x="560" y="270" fill="#bae6fd" fontSize="11" fontWeight="700" opacity="0.85">1000m</text>
+            {/* Kindergarten / Care Facility Building */}
+            <g id="parent-kindergarten" transform="translate(140, 175)">
+              {/* Main Building Frame */}
+              <rect x="15" y="48" width="85" height="75" rx="4" stroke="#bae6fd" strokeWidth="1.5" fill="#ffffff" fillOpacity="0.06" />
+              {/* Pitched Roof */}
+              <polygon points="8,48 57,15 107,48" stroke="#bae6fd" strokeWidth="1.5" fill="#38bdf8" fillOpacity="0.1" />
+              {/* Bell Gable / Clock Spire */}
+              <rect x="48" y="-5" width="18" height="20" rx="2" stroke="#fbbf24" strokeWidth="1.4" fill="#fbbf24" fillOpacity="0.2" />
+              <polygon points="45,-5 57,-18 69,-5" stroke="#fbbf24" strokeWidth="1.4" fill="#fde047" fillOpacity="0.3" />
+              <circle cx="57" cy="5" r="4.5" stroke="#ffffff" strokeWidth="1" fill="#ffffff" fillOpacity="0.2" />
+              <line x1="57" y1="3" x2="57" y2="5" stroke="#fde047" strokeWidth="1" />
+              <line x1="57" y1="5" x2="59" y2="5" stroke="#fde047" strokeWidth="1" />
 
-            {/* Stylized Modern Scandinavian Park Trees */}
-            <g transform="translate(260, 185)">
-              <line x1="16" y1="36" x2="16" y2="60" stroke="#bae6fd" strokeWidth="2" strokeLinecap="round" />
-              <circle cx="16" cy="24" r="18" stroke="#34d399" strokeWidth="1.8" strokeDasharray="4 3" fill="#34d399" fillOpacity="0.1" />
-              <circle cx="10" cy="20" r="9" stroke="#10b981" strokeWidth="1.4" />
-            </g>
-            <g transform="translate(605, 145)">
-              <line x1="14" y1="32" x2="14" y2="54" stroke="#bae6fd" strokeWidth="2" strokeLinecap="round" />
-              <circle cx="14" cy="20" r="15" stroke="#34d399" strokeWidth="1.6" strokeDasharray="3 3" fill="#34d399" fillOpacity="0.1" />
+              {/* Classroom Windows */}
+              <rect x="25" y="60" width="18" height="20" rx="2" stroke="#ffffff" strokeWidth="1.2" fill="#ffffff" fillOpacity="0.12" />
+              <line x1="34" y1="60" x2="34" y2="80" stroke="#bae6fd" strokeWidth="0.8" />
+              <line x1="25" y1="70" x2="43" y2="70" stroke="#bae6fd" strokeWidth="0.8" />
+
+              <rect x="70" y="60" width="18" height="20" rx="2" stroke="#ffffff" strokeWidth="1.2" fill="#ffffff" fillOpacity="0.12" />
+              <line x1="79" y1="60" x2="79" y2="80" stroke="#bae6fd" strokeWidth="0.8" />
+              <line x1="70" y1="70" x2="88" y2="70" stroke="#bae6fd" strokeWidth="0.8" />
+
+              {/* Arched Entrance Doorway */}
+              <path d="M 47 123 L 47 98 Q 57 90, 67 98 L 67 123" stroke="#fde047" strokeWidth="1.4" fill="#fde047" fillOpacity="0.15" />
             </g>
 
-            {/* Educational & Care POI constellation pins */}
-            <circle cx="340" cy="180" r="4" fill="#ffffff" />
-            <circle cx="480" cy="130" r="5" fill="#fde047" />
-            <circle cx="620" cy="230" r="4.5" fill="#38bdf8" />
-            <circle cx="560" cy="110" r="3.5" fill="#ffffff" />
+            {/* Adventure Play Swing Set */}
+            <g id="parent-playground-swing" transform="translate(265, 205)">
+              <line x1="12" y1="15" x2="0" y2="75" stroke="#bae6fd" strokeWidth="1.4" />
+              <line x1="12" y1="15" x2="24" y2="75" stroke="#bae6fd" strokeWidth="1.4" />
+              <line x1="3" y1="55" x2="21" y2="55" stroke="#bae6fd" strokeWidth="1" />
+              <line x1="36" y1="15" x2="24" y2="75" stroke="#bae6fd" strokeWidth="1.4" />
+              <line x1="36" y1="15" x2="48" y2="75" stroke="#bae6fd" strokeWidth="1.4" />
+              <line x1="27" y1="55" x2="45" y2="55" stroke="#bae6fd" strokeWidth="1" />
+              <line x1="8" y1="15" x2="40" y2="15" stroke="#bae6fd" strokeWidth="1.8" />
+              {/* Swing Seat */}
+              <line x1="20" y1="15" x2="18" y2="56" stroke="#38bdf8" strokeWidth="1" strokeDasharray="3 2" />
+              <line x1="28" y1="15" x2="26" y2="56" stroke="#38bdf8" strokeWidth="1" strokeDasharray="3 2" />
+              <rect x="15" y="56" width="14" height="4" rx="1" fill="#fde047" />
+            </g>
+
+            {/* Playful Toddler Holding Tethered Star-Balloon */}
+            <g id="parent-toddler-balloon" transform="translate(390, 210)">
+              {/* Toddler Figure */}
+              <circle cx="15" cy="20" r="6" stroke="#ffffff" strokeWidth="1.8" fill="#ffffff" fillOpacity="0.15" />
+              <line x1="15" y1="26" x2="15" y2="50" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+              <line x1="15" y1="50" x2="8" y2="74" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+              <line x1="15" y1="50" x2="22" y2="74" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+              <line x1="15" y1="32" x2="26" y2="26" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+              <line x1="26" y1="26" x2="30" y2="8" stroke="#bae6fd" strokeWidth="1.2" strokeLinecap="round" />
+
+              {/* Floating Star Balloon */}
+              <g transform="translate(30, -35)">
+                <ellipse cx="6" cy="10" rx="12" ry="15" stroke="#fde047" strokeWidth="1.8" fill="url(#kiteGrad)" />
+                <polygon points="6,25 3,29 9,29" fill="#fde047" />
+                <path d="M 6 29 C 4 38, 8 42, 0 45" stroke="#fde047" strokeWidth="1" fill="none" />
+              </g>
+            </g>
+
+            {/* Stylized Family Promenade (Parent with Ergonomic Stroller & Older Child on Kick-Scooter) */}
+            <g id="parent-family-group" transform="translate(470, 185)">
+              {/* Parent Figure Pushing Stroller (x: 454) */}
+              <g transform="translate(0, 10)">
+                <circle cx="-16" cy="18" r="8" stroke="#ffffff" strokeWidth="2" fill="#ffffff" fillOpacity="0.15" />
+                <line x1="-16" y1="26" x2="-16" y2="60" stroke="#ffffff" strokeWidth="2.2" strokeLinecap="round" />
+                {/* Legs in stride */}
+                <line x1="-16" y1="60" x2="-24" y2="108" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+                <line x1="-16" y1="60" x2="-8" y2="108" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" />
+                {/* Arm holding stroller handle */}
+                <path d="M -16 36 L 2 44 L 14 40" stroke="#ffffff" strokeWidth="2" strokeLinecap="round" fill="none" />
+              </g>
+
+              {/* Modern Sleek Stroller */}
+              <g transform="translate(20, 45)">
+                {/* Rear Big Wheel with Spokes */}
+                <circle cx="20" cy="62" r="12" stroke="#ffffff" strokeWidth="2" fill="#0a2e65" fillOpacity="0.4" />
+                <circle cx="20" cy="62" r="5" fill="#38bdf8" stroke="#ffffff" strokeWidth="1" />
+                <line x1="20" y1="50" x2="20" y2="74" stroke="#38bdf8" strokeWidth="0.8" />
+                <line x1="8" y1="62" x2="32" y2="62" stroke="#38bdf8" strokeWidth="0.8" />
+
+                {/* Front Swivel Wheel */}
+                <circle cx="64" cy="64" r="9" stroke="#ffffff" strokeWidth="1.8" fill="#0a2e65" fillOpacity="0.4" />
+                <circle cx="64" cy="64" r="3.5" fill="#38bdf8" />
+
+                {/* Chassis Frame & Suspension Bar */}
+                <path d="M 20 62 L 42 42 L 64 64" stroke="#bae6fd" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+                <path d="M 42 42 L 14 10 L 0 10" stroke="#bae6fd" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+
+                {/* Bassinet Cot / Stroller Seat Frame */}
+                <path d="M 16 38 Q 22 48, 54 48 L 68 38 L 68 26 Q 42 22, 22 28 Z" stroke="#ffffff" strokeWidth="1.8" fill="#38bdf8" fillOpacity="0.18" />
+
+                {/* Retractable Sun Canopy Hood */}
+                <path d="M 22 28 Q 22 8, 44 8 L 44 26" stroke="#fde047" strokeWidth="2" fill="#fde047" fillOpacity="0.25" />
+                <line x1="22" y1="28" x2="44" y2="8" stroke="#fde047" strokeWidth="1" strokeOpacity="0.6" />
+
+                {/* Sleeping Baby Silhouette inside */}
+                <circle cx="48" cy="34" r="4.5" fill="#fde047" />
+                <path d="M 42 40 Q 52 44, 62 38" stroke="#ffffff" strokeWidth="1.2" fill="none" />
+              </g>
+
+              {/* Older Sibling on Kick-Scooter */}
+              <g transform="translate(115, 42)">
+                {/* Child Figure */}
+                <circle cx="16" cy="18" r="6" stroke="#ffffff" strokeWidth="1.8" fill="#fde047" fillOpacity="0.3" />
+                {/* Helmet */}
+                <path d="M 10 18 C 10 10, 22 10, 22 18 Z" fill="#38bdf8" stroke="#38bdf8" strokeWidth="1" />
+                <line x1="16" y1="24" x2="16" y2="50" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+                {/* Legs on scooter deck */}
+                <line x1="16" y1="50" x2="18" y2="68" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+                <line x1="16" y1="50" x2="2" y2="70" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+                {/* Arms on handlebar */}
+                <line x1="16" y1="32" x2="28" y2="38" stroke="#ffffff" strokeWidth="1.8" strokeLinecap="round" />
+
+                {/* Scooter Frame & Wheels */}
+                <circle cx="2" cy="72" r="4.5" stroke="#38bdf8" strokeWidth="1.5" fill="#ffffff" />
+                <circle cx="38" cy="72" r="4.5" stroke="#38bdf8" strokeWidth="1.5" fill="#ffffff" />
+                <line x1="2" y1="72" x2="38" y2="72" stroke="#bae6fd" strokeWidth="2" />
+                <line x1="38" y1="72" x2="30" y2="38" stroke="#bae6fd" strokeWidth="2" />
+                <line x1="26" y1="38" x2="34" y2="38" stroke="#fde047" strokeWidth="2.5" strokeLinecap="round" />
+              </g>
+            </g>
+
+            {/* Lush Botanical City Trees (Framing Left & Right of the Park) */}
+            <g id="parent-park-trees">
+              {/* Tree on Left of Kindergarten */}
+              <g transform="translate(90, 160)">
+                <line x1="16" y1="35" x2="16" y2="75" stroke="#bae6fd" strokeWidth="2" strokeLinecap="round" />
+                <circle cx="16" cy="22" r="20" stroke="#34d399" strokeWidth="1.6" strokeDasharray="4 3" fill="#34d399" fillOpacity="0.12" />
+                <circle cx="10" cy="18" r="10" stroke="#10b981" strokeWidth="1.2" fill="#10b981" fillOpacity="0.2" />
+              </g>
+
+              {/* Tree on Far Right */}
+              <g transform="translate(645, 145)">
+                <line x1="16" y1="35" x2="16" y2="75" stroke="#bae6fd" strokeWidth="2" strokeLinecap="round" />
+                <circle cx="16" cy="22" r="22" stroke="#34d399" strokeWidth="1.6" strokeDasharray="4 3" fill="#34d399" fillOpacity="0.12" />
+                <circle cx="22" cy="18" r="10" stroke="#10b981" strokeWidth="1.2" />
+              </g>
+            </g>
+
+            {/* Sparkles & Municipal POI Pins (Elevated in Sky) */}
+            <g id="parent-poi-constellations">
+              {/* Education Pin (Above kindergarten) */}
+              <circle cx="195" cy="90" r="4.5" fill="#fde047" stroke="#ffffff" strokeWidth="1.2" />
+              <circle cx="195" cy="90" r="9" stroke="#fde047" strokeWidth="0.8" strokeDasharray="2 2" />
+
+              {/* Park Pin (Above playground) */}
+              <circle cx="350" cy="70" r="4" fill="#34d399" stroke="#ffffff" strokeWidth="1.2" />
+
+              {/* Healthcare / Pediatrician Pin (Above family) */}
+              <circle cx="530" cy="80" r="4.5" fill="#38bdf8" stroke="#ffffff" strokeWidth="1.2" />
+
+              {/* Ambient Golden & Azure Sparkles */}
+              <path d="M 380 75 Q 380 85, 390 85 Q 380 85, 380 95 Q 380 85, 370 85 Q 380 85, 380 75 Z" fill="#fde047" fillOpacity="0.9" />
+              <path d="M 620 55 Q 620 63, 628 63 Q 620 63, 620 71 Q 620 63, 612 63 Q 620 63, 620 55 Z" fill="#bae6fd" fillOpacity="0.8" />
+              <path d="M 120 120 Q 120 128, 128 128 Q 120 128, 120 136 Q 120 128, 112 128 Q 120 128, 120 120 Z" fill="#38bdf8" fillOpacity="0.8" />
+            </g>
           </svg>
         </div>
 

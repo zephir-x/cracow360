@@ -109,8 +109,206 @@ export function AboutDataMethodologyPage({
   return (
     <div className="space-y-8">
       {/* Header Banner */}
-      <section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white p-8 sm:p-10 shadow-xl border border-blue-400/30">
-        <div className="max-w-3xl space-y-4">
+      <section className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white p-8 sm:p-10 shadow-2xl shadow-blue-950/15 border border-blue-400/30">
+        {/* Animated Background Vector Shapes & Ambient Glow */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <div className="absolute -top-24 -right-20 w-96 h-96 rounded-full bg-sky-300/20 blur-3xl animate-pulse-glow" />
+          <div className="absolute top-1/4 right-1/4 w-96 h-96 rounded-full bg-indigo-400/20 blur-3xl" />
+          <div className="absolute -bottom-28 left-1/3 w-80 h-80 rounded-full bg-amber-300/10 blur-3xl" />
+
+          {/* Bespoke Methodology, Open Knowledge Book & Data Architecture Vector Art */}
+          <svg
+            className="absolute right-0 bottom-0 h-full w-full lg:w-7/12 opacity-35 pointer-events-none select-none"
+            viewBox="0 0 700 400"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <defs>
+              <linearGradient id="methodologyBookGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#bae6fd" stopOpacity="0.85" />
+                <stop offset="50%" stopColor="#38bdf8" stopOpacity="0.55" />
+                <stop offset="100%" stopColor="#ffffff" stopOpacity="0.15" />
+              </linearGradient>
+            </defs>
+
+            {/* Ground Baseline & Perspective Grid */}
+            <line x1="80" y1="340" x2="680" y2="340" stroke="#bae6fd" strokeWidth="1.5" strokeOpacity="0.5" />
+            <line x1="120" y1="315" x2="660" y2="315" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.25" strokeDasharray="6 6" />
+            <line x1="180" y1="285" x2="640" y2="285" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.15" strokeDasharray="4 4" />
+
+            {/* Stack of Municipal Methodology & Norms Volumes (Left side) */}
+            <g id="methodology-book-stack" transform="translate(130, 240)">
+              {/* Bottom Volume - Thick Comprehensive Folio */}
+              <rect x="0" y="62" width="125" height="34" rx="5" stroke="#bae6fd" strokeWidth="1.5" fill="#ffffff" fillOpacity="0.08" />
+              <line x1="16" y1="62" x2="16" y2="96" stroke="#38bdf8" strokeWidth="1.5" />
+              <line x1="22" y1="62" x2="22" y2="96" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.5" />
+              <line x1="38" y1="79" x2="108" y2="79" stroke="#bae6fd" strokeWidth="1.5" strokeDasharray="10 4" />
+
+              {/* Middle Volume - Mathematical Normalization Standards */}
+              <rect x="10" y="32" width="112" height="30" rx="5" stroke="#93c5fd" strokeWidth="1.5" fill="#38bdf8" fillOpacity="0.12" />
+              <line x1="24" y1="32" x2="24" y2="62" stroke="#ffffff" strokeWidth="1.2" strokeOpacity="0.8" />
+              <line x1="40" y1="47" x2="102" y2="47" stroke="#93c5fd" strokeWidth="1.2" strokeDasharray="6 3" />
+
+              {/* Top Volume - Open Data Registry Tome with Silk Bookmark */}
+              <rect x="18" y="6" width="98" height="26" rx="4" stroke="#bae6fd" strokeWidth="1.5" fill="#ffffff" fillOpacity="0.08" />
+              <line x1="30" y1="6" x2="30" y2="32" stroke="#38bdf8" strokeWidth="1.2" />
+              <line x1="44" y1="19" x2="94" y2="19" stroke="#bae6fd" strokeWidth="1.2" strokeDasharray="8 3" />
+              <path d="M 98 32 C 104 46, 110 52, 116 64 L 122 58 L 126 68 C 120 54, 112 46, 104 32 Z" fill="#fbbf24" fillOpacity="0.85" />
+            </g>
+
+            {/* Large Open Knowledge Tome / Methodology Codex (Centerpiece) */}
+            <g id="open-codex">
+              {/* Book Hardcover Base Plate */}
+              <path
+                d="M 270 326 C 320 316, 375 334, 420 330 C 465 334, 520 316, 570 326 L 566 333 C 516 323, 465 341, 420 337 C 375 341, 324 323, 274 333 Z"
+                stroke="#bae6fd"
+                strokeWidth="1.5"
+                fill="#ffffff"
+                fillOpacity="0.1"
+              />
+
+              {/* Left Open Page Block (Stacked Depth) */}
+              <path
+                d="M 420 318 C 375 323, 318 304, 276 313 L 276 218 C 318 209, 375 228, 420 223 Z"
+                stroke="#bae6fd"
+                strokeWidth="1.5"
+                fill="#ffffff"
+                fillOpacity="0.04"
+              />
+              <path
+                d="M 420 322 C 375 327, 318 308, 280 317 L 280 222 C 318 213, 375 232, 420 227 Z"
+                stroke="#bae6fd"
+                strokeWidth="1.2"
+                strokeOpacity="0.6"
+              />
+
+              {/* Right Open Page Block (Stacked Depth) */}
+              <path
+                d="M 420 318 C 465 323, 522 304, 564 313 L 564 218 C 522 209, 465 228, 420 223 Z"
+                stroke="#bae6fd"
+                strokeWidth="1.5"
+                fill="#ffffff"
+                fillOpacity="0.04"
+              />
+              <path
+                d="M 420 322 C 465 327, 522 308, 560 317 L 560 222 C 522 213, 465 232, 420 227 Z"
+                stroke="#bae6fd"
+                strokeWidth="1.2"
+                strokeOpacity="0.6"
+              />
+
+              {/* Center Binding Crease & Gilded Ribbon */}
+              <line x1="420" y1="223" x2="420" y2="330" stroke="#bae6fd" strokeWidth="1.8" strokeOpacity="0.8" />
+              <path
+                d="M 420 223 C 424 250, 412 280, 426 332 C 432 346, 422 354, 428 364 L 435 358 L 442 364 C 436 350, 440 342, 432 332 C 422 280, 428 250, 422 223 Z"
+                stroke="#fbbf24"
+                strokeWidth="1.2"
+                fill="#f59e0b"
+                fillOpacity="0.4"
+              />
+
+              {/* Left Page Contents: Stage 1 Normalization Mathematical Model */}
+              <rect x="296" y="234" width="46" height="4" rx="2" fill="#38bdf8" fillOpacity="0.8" />
+              <line x1="296" y1="245" x2="398" y2="245" stroke="#bae6fd" strokeWidth="1.2" strokeDasharray="14 3 8 3" />
+              <line x1="296" y1="253" x2="390" y2="253" stroke="#bae6fd" strokeWidth="1.2" strokeDasharray="10 3 16 3" />
+
+              {/* Min-Max Normalization Curves on Left Page */}
+              <path d="M 300 298 Q 345 285, 395 270" stroke="#34d399" strokeWidth="1.8" fill="none" />
+              <circle cx="395" cy="270" r="2.5" fill="#34d399" />
+              <path d="M 300 274 Q 345 288, 395 304" stroke="#fbbf24" strokeWidth="1.4" strokeDasharray="3 2" fill="none" />
+              <circle cx="300" cy="274" r="2.5" fill="#fbbf24" />
+              <line x1="298" y1="266" x2="298" y2="306" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.5" />
+              <line x1="298" y1="306" x2="400" y2="306" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.5" />
+
+              {/* Right Page Contents: 49 Datasets Registry Matrix & Indicator Bars */}
+              <rect x="442" y="234" width="102" height="34" rx="3" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.6" fill="#ffffff" fillOpacity="0.04" />
+              <line x1="442" y1="244" x2="544" y2="244" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.4" />
+              <line x1="472" y1="234" x2="472" y2="268" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.3" />
+              <line x1="508" y1="234" x2="508" y2="268" stroke="#bae6fd" strokeWidth="1" strokeOpacity="0.3" />
+              <line x1="442" y1="252" x2="544" y2="252" stroke="#bae6fd" strokeWidth="0.8" strokeOpacity="0.25" strokeDasharray="4 2" />
+              <line x1="442" y1="260" x2="544" y2="260" stroke="#bae6fd" strokeWidth="0.8" strokeOpacity="0.25" strokeDasharray="4 2" />
+
+              {/* 5 Indicator Pillar Mini-Bars on Bottom Right Page */}
+              <rect x="448" y="284" width="11" height="22" rx="2" fill="#38bdf8" fillOpacity="0.4" stroke="#38bdf8" strokeWidth="1" />
+              <rect x="466" y="278" width="11" height="28" rx="2" fill="#818cf8" fillOpacity="0.4" stroke="#818cf8" strokeWidth="1" />
+              <rect x="484" y="272" width="11" height="34" rx="2" fill="#34d399" fillOpacity="0.4" stroke="#34d399" strokeWidth="1" />
+              <rect x="502" y="280" width="11" height="26" rx="2" fill="#fbbf24" fillOpacity="0.4" stroke="#fbbf24" strokeWidth="1" />
+              <rect x="520" y="288" width="11" height="18" rx="2" fill="#f472b6" fillOpacity="0.4" stroke="#f472b6" strokeWidth="1" />
+            </g>
+
+            {/* Open Data Repository / Database Storage Tower (Right side) */}
+            <g id="database-storage-tower" transform="translate(590, 195)">
+              {/* Top Tier */}
+              <ellipse cx="36" cy="24" rx="34" ry="12" stroke="#bae6fd" strokeWidth="1.5" fill="#ffffff" fillOpacity="0.1" />
+              <path d="M 2 24 L 2 54 C 2 62, 70 62, 70 54 L 70 24" stroke="#bae6fd" strokeWidth="1.5" fill="#38bdf8" fillOpacity="0.08" />
+              <ellipse cx="36" cy="54" rx="34" ry="12" stroke="#bae6fd" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.6" />
+              <circle cx="16" cy="38" r="2.5" fill="#34d399" />
+              <circle cx="26" cy="38" r="2" fill="#bae6fd" />
+
+              {/* Middle Tier */}
+              <path d="M 2 54 L 2 84 C 2 92, 70 92, 70 84 L 70 54" stroke="#bae6fd" strokeWidth="1.5" fill="#38bdf8" fillOpacity="0.08" />
+              <ellipse cx="36" cy="84" rx="34" ry="12" stroke="#bae6fd" strokeWidth="1" strokeDasharray="4 3" strokeOpacity="0.6" />
+              <circle cx="16" cy="68" r="2.5" fill="#38bdf8" />
+              <circle cx="26" cy="68" r="2" fill="#bae6fd" />
+
+              {/* Bottom Tier */}
+              <path d="M 2 84 L 2 114 C 2 122, 70 122, 70 114 L 70 84" stroke="#bae6fd" strokeWidth="1.5" fill="#38bdf8" fillOpacity="0.08" />
+              <ellipse cx="36" cy="114" rx="34" ry="12" stroke="#bae6fd" strokeWidth="1.5" />
+              <circle cx="16" cy="98" r="2.5" fill="#fbbf24" />
+              <circle cx="26" cy="98" r="2" fill="#bae6fd" />
+            </g>
+
+            {/* Normal Distribution / Gaussian Envelope */}
+            <path
+              d="M 210 145 C 300 145, 355 42, 420 42 C 485 42, 540 145, 630 145"
+              stroke="#38bdf8"
+              strokeWidth="2"
+              strokeDasharray="6 4"
+              fill="none"
+            />
+            {/* Median & Dispersion Lines */}
+            <line x1="420" y1="30" x2="420" y2="145" stroke="#bae6fd" strokeWidth="1.2" strokeDasharray="3 3" strokeOpacity="0.7" />
+            <circle cx="420" cy="42" r="4.5" stroke="#fde047" strokeWidth="1.5" fill="#fde047" fillOpacity="0.3" />
+            <circle cx="365" cy="95" r="3.5" fill="#bae6fd" />
+            <circle cx="475" cy="95" r="3.5" fill="#bae6fd" />
+
+            {/* Mathematical Sigma Summation Symbol (Σ) */}
+            <path
+              d="M 272 78 L 302 78 L 286 94 L 302 110 L 272 110"
+              stroke="#bae6fd"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              fill="none"
+            />
+
+            {/* Mathematical Integral / Function Symbol */}
+            <path
+              d="M 536 68 C 530 60, 523 62, 523 72 L 523 100 C 523 110, 516 112, 510 104"
+              stroke="#bae6fd"
+              strokeWidth="2"
+              strokeLinecap="round"
+              fill="none"
+            />
+
+            {/* Data Flow / ETL Pipeline Interconnection Rays */}
+            <path d="M 302 94 C 342 108, 380 95, 420 42" stroke="#38bdf8" strokeWidth="1.2" strokeDasharray="4 3" strokeOpacity="0.6" fill="none" />
+            <path d="M 420 42 C 460 70, 492 82, 523 72" stroke="#38bdf8" strokeWidth="1.2" strokeDasharray="4 3" strokeOpacity="0.6" fill="none" />
+            <path d="M 523 100 C 560 125, 590 152, 626 195" stroke="#38bdf8" strokeWidth="1.2" strokeDasharray="4 3" strokeOpacity="0.6" fill="none" />
+
+            {/* Stylized Sparkle & Data Node Pins */}
+            <path d="M 224 180 Q 224 192, 236 192 Q 224 192, 224 204 Q 224 192, 212 192 Q 224 192, 224 180 Z" fill="#bae6fd" fillOpacity="0.85" />
+            <path d="M 574 102 Q 574 112, 584 112 Q 574 112, 574 122 Q 574 112, 564 112 Q 574 112, 574 102 Z" fill="#fde047" fillOpacity="0.9" />
+
+            <circle cx="168" cy="188" r="3" fill="#ffffff" />
+            <circle cx="168" cy="188" r="7" stroke="#38bdf8" strokeWidth="1" strokeOpacity="0.6" />
+            <circle cx="558" cy="168" r="3.5" fill="#fde047" />
+            <circle cx="558" cy="168" r="8" stroke="#fde047" strokeWidth="1" strokeDasharray="2 2" strokeOpacity="0.6" />
+          </svg>
+        </div>
+
+        {/* Foreground Content */}
+        <div className="relative z-10 max-w-3xl space-y-4">
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
             <BookOpen className="w-4 h-4 text-sky-300" />
             {t.methodology.badge}
