@@ -488,7 +488,7 @@ export function getMacroPillDescriptions(cohort: ChildAgeCohort, language: Langu
     }
     return {
       balanceSub: 'Current municipal supply balance',
-      criticalSub: 'Districts with deficit or tight reserve (≤150)',
+      criticalSub: 'Districts with deficit or urgent place shortage',
       coverageSub: 'Total municipal demand satisfaction rate',
       childrenSub: 'Current child population (0–14)',
     };
@@ -521,7 +521,7 @@ export function getMacroPillDescriptions(cohort: ChildAgeCohort, language: Langu
     }
     return {
       balanceSub: 'Поточний муніципальний баланс пропозиції',
-      criticalSub: 'Райони з дефіцитом або щільним резервом (≤150)',
+      criticalSub: 'Райони з дефіцитом або гострою нестачею місць',
       coverageSub: 'Загальний муніципальний рівень покриття попиту',
       childrenSub: 'Поточна популяція дітей (0–14)',
     };
@@ -554,7 +554,7 @@ export function getMacroPillDescriptions(cohort: ChildAgeCohort, language: Langu
   }
   return {
     balanceSub: 'Bieżąca równowaga podaży miejskiej',
-    criticalSub: 'Dzielnice z deficytem lub niską rezerwą (≤150)',
+    criticalSub: 'Dzielnice z deficytem lub pilnym brakiem miejsc',
     coverageSub: 'Ogólnomiejski stopień zaspokojenia potrzeb rodzin',
     childrenSub: 'Dzieci objęte opieką i edukacją (0–14 lat)',
   };

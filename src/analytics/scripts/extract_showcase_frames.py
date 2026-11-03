@@ -109,7 +109,7 @@ def main() -> None:
         f"Visible frame range: [{first_idx} - {last_idx}] ({usable_count} usable frames, discarded {total_source_frames - usable_count} black transitions)"
     )
 
-    target_frame_count = min(500, usable_count)
+    target_frame_count = min(600, usable_count)
     target_w = 1920
     target_h = int(round(orig_h * (target_w / orig_w))) if orig_w > 0 else 1080
     needs_resize = orig_w != target_w or orig_h != target_h

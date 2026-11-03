@@ -167,12 +167,28 @@ def run_econometric_forecasts() -> None:
 
         balance_2028 = int(round(edu["totalCarePlaces0to3"] - target_demand_2028))
 
-        if balance_2028 < -150 and dem["populationGrowthRate3YrPct"] > 1.2:
+        f_7to14 = int(round(dem.get("age7to14", 0) * (1 + dem.get("populationGrowthRate3YrPct", 0) / 100.0)))
+
+        # Harmonized with determineEducationExpansionPriority in frontend (10 HIGH / 4 MEDIUM / 4 LOW):
+        care_places = edu.get("totalCarePlaces0to3", 0)
+        kg_places = edu.get("kindergartenPlacesTotal", 0)
+        sch_count = edu.get("primarySchoolsCount", 0)
+        sch_cap = sch_count * 450
+
+        tot_cap_2028 = care_places + kg_places + sch_cap
+        tot_kids_2028 = f_0to3 + f_4to6 + f_7to14
+        tot_bal_2028 = tot_cap_2028 - tot_kids_2028
+        tot_cov_2028 = round((tot_cap_2028 / tot_kids_2028) * 100) if tot_kids_2028 > 0 else 0
+        nur_bal_2028 = care_places - f_0to3
+        kg_bal_2028 = kg_places - f_4to6
+        sch_bal_2028 = sch_cap - f_7to14
+
+        if tot_bal_2028 < 0 or nur_bal_2028 <= -700 or sch_bal_2028 <= -400:
             nursery_pot = "HIGH"
-        elif balance_2028 < 0:
-            nursery_pot = "MEDIUM"
-        else:
+        elif tot_cov_2028 >= 160 and sch_bal_2028 >= 0 and kg_bal_2028 >= 0 and nur_bal_2028 >= -350:
             nursery_pot = "LOW"
+        else:
+            nursery_pot = "MEDIUM"
 
         senior_share = dem["age65Plus"] / max(dem["totalPopulation"], 1)
         if senior_share > 0.24 and cult["seniorActivityCentersCount"] < 3:

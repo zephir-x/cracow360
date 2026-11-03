@@ -330,7 +330,7 @@ export const TOURISM_I18N = {
       HIGH: { label: 'Wysokie natężenie', color: 'text-orange-700 bg-orange-50 border-orange-200' },
       MODERATE: { label: 'Umiarkowany ruch', color: 'text-blue-700 bg-blue-50 border-blue-200' },
       LOW: { label: 'Spokojnie', color: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
-      PEACEFUL: { label: 'Oaza spokoju / Gem', color: 'text-teal-700 bg-teal-50 border-teal-200' },
+      PEACEFUL: { label: 'Oaza spokoju', color: 'text-teal-700 bg-teal-50 border-teal-200' },
     },
 
     // Categories
@@ -506,7 +506,7 @@ export const TOURISM_I18N = {
       HIGH: { label: 'High Traffic', color: 'text-orange-700 bg-orange-50 border-orange-200' },
       MODERATE: { label: 'Moderate Footfall', color: 'text-blue-700 bg-blue-50 border-blue-200' },
       LOW: { label: 'Peaceful', color: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
-      PEACEFUL: { label: 'Hidden Gem Oasis', color: 'text-teal-700 bg-teal-50 border-teal-200' },
+      PEACEFUL: { label: 'Hidden Oasis', color: 'text-teal-700 bg-teal-50 border-teal-200' },
     },
 
     categories: {
@@ -681,7 +681,7 @@ export const TOURISM_I18N = {
       HIGH: { label: 'Високий потік', color: 'text-orange-700 bg-orange-50 border-orange-200' },
       MODERATE: { label: 'Помірний рух', color: 'text-blue-700 bg-blue-50 border-blue-200' },
       LOW: { label: 'Спокійно', color: 'text-emerald-700 bg-emerald-50 border-emerald-200' },
-      PEACEFUL: { label: 'Оаза спокою / Gem', color: 'text-teal-700 bg-teal-50 border-teal-200' },
+      PEACEFUL: { label: 'Оаза спокою', color: 'text-teal-700 bg-teal-50 border-teal-200' },
     },
 
     categories: {

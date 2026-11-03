@@ -19,7 +19,7 @@ export interface VelocityScrollScrubSectionProps {
   onSkipToFinale: () => void;
 }
 
-const TOTAL_FRAMES = 500;
+const TOTAL_FRAMES = 600;
 // Fraction of the unified scroll track dedicated to dissolving Act I (Hero + X-Ray lens)
 // directly in-place over Act II (so there is zero vertical seam or duplicate static frame)
 const HERO_DISSOLVE_SHARE = 0.065;
@@ -38,7 +38,7 @@ function getFrameUrl(index1Based: number): string {
  * Unified Act I & Act II Sticky Stage:
  * - Pinned directly beneath MainNavbar inside a scroll track.
  * - First 6.5% of scroll dissolves Act I (HeroDualVisionMask) directly in-place to reveal the live Act II Canvas & HUD underneath.
- * - Remaining 93.5% of scroll drives the Velocity-Clamped 500-frame WebP drone flight, 8 3D Story Chapters,
+ * - Remaining 93.5% of scroll drives the Velocity-Clamped 600-frame WebP drone flight, 8 3D Story Chapters,
  *   Autopilot mode (using behavior: 'instant' per-frame scrolling so CSS smooth-scroll never blocks it),
  *   and a progressive Blur + Pure White Fade + Centered Logo Reveal on the final frames into Act III.
  */
@@ -183,7 +183,7 @@ export function VelocityScrollScrubSection({
     };
   }, []);
 
-  // 1. Two-phase progressive frame preloader (keyframes first, then full 500 WebP sequence)
+  // 1. Two-phase progressive frame preloader (keyframes first, then full 600 WebP sequence)
   useEffect(() => {
     let cancelled = false;
 
@@ -501,7 +501,7 @@ export function VelocityScrollScrubSection({
           }}
           className="relative z-20 max-w-360 mx-auto px-4 sm:px-8 pt-6 sm:pt-7 flex flex-wrap items-center justify-between gap-3"
         >
-          {/* Left: Minimalist "Strefa przelotu" + Interactive "Autopilot" Trigger */}
+          {/* Left: Minimalist "Flight path zone" + Interactive "Autopilot" Trigger */}
           <div className="flex items-center gap-4 sm:gap-5">
             <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold tracking-wide text-sky-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
               <Film className="w-4 h-4 text-sky-400" />

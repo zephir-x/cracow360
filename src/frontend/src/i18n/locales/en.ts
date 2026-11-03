@@ -44,6 +44,7 @@ export const enTranslations: TranslationDictionary = {
     loading: 'Loading...',
     populationLabel: 'Residents in BDK Registry',
     populationSub: 'Permanent, temporary & foreign residents',
+    populationTooltip: 'Official municipal registration registry UMK BDK (as of 31.12.2025: 703.7k permanent, 32.3k temporary, 20.8k foreign). According to CSO (GUS) balance Krakow has 804k, and actual water-consumption presence is ~950k. BDK registry is the only dataset with 18-district and birth-cohort breakdown.',
     thousands: 'k',
     pillarsLabel: 'Pillars',
     pillarsSub: 'Prices, safety, vitality, transit & smog',
@@ -252,7 +253,6 @@ export const enTranslations: TranslationDictionary = {
     titleAccent: 'and 15-Minute City Walking Buffers.',
     description:
       'This module answers the key question of a parent looking for housing at a specific address: how many municipal nurseries, kindergartens, primary schools, and pocket parks are within 5, 10, and 15 minutes of walking (300 m / 500 m / 1000 m).',
-    backButton: 'Return to 18 Districts Map & Comparison',
     rankingTitle: 'TOP 6 Ranking',
     rankingSubtitle: 'TOP 6 districts with highest accessibility to nurseries, kindergartens, and schools',
     population: 'Population:',
@@ -402,7 +402,6 @@ export const enTranslations: TranslationDictionary = {
     titleAccent: 'and District Infrastructure Simulator.',
     description:
       'Explore how district demographics are changing up to 2028 (children aged 0–3, 4–6, 7–14 and seniors 65+) and use the interactive simulator to test how adding new nurseries, schools, parks, transit stops, or senior clubs will improve district scores and place balances.',
-    backButton: 'Return to 18 Districts Map & Comparison',
     sectionTitle: 'Current District Ranking: Demographic Growth & Potential',
     sectionSubtitle: 'TOP 6 districts with the fastest population growth, registration trends, and development pace',
     population: 'Population:',
@@ -426,7 +425,7 @@ export const enTranslations: TranslationDictionary = {
     titleAccent: 'and Open Data Sources Registry.',
     description:
       'Data transparency and statistical rigor are the foundation of Kraków360. Below we present the exact mathematical formulation of the Quality of Life Index (0–100 pts) across 8 pillars, along with official municipal open data registries linked to origin portals.',
-    backButton: 'Return to 18 Districts Map & Comparison',
+    backButton: 'Return to the home page',
     step1Tag: 'Stage 1 • Indicator Standardization',
     step1Title: 'Min-Max Normalization of Raw Indicators to 0–100 pts Scale',
     step1Desc:

@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-03T16:41:03Z",
+    "generatedAt": "2026-11-03T23:10:29Z",
     "dataVersion": "2.1.0-expanded-8-pillars-2025-2026",
     "normalizationMethod": "MinMax_0_100_Calibrated"
   },
@@ -11,7 +11,7 @@
       "districtName": "Dzielnica I Stare Miasto",
       "areaKm2": 5.57,
       "demographics": {
-        "totalPopulation": 29725,
+        "totalPopulation": 31029,
         "permanentResidents": 26823,
         "temporaryResidents": 2902,
         "foreignersTotal": 1304,
@@ -20,7 +20,7 @@
         "age7to14": 1627,
         "age15to64": 16598,
         "age65Plus": 7514,
-        "populationGrowthRate3YrPct": -3.35
+        "populationGrowthRate3YrPct": 0.89
       },
       "educationAndCare": {
         "nurseriesPublicCount": 5,
@@ -59,8 +59,8 @@
         "totalParksAreaHa": 30.91,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 30.91,
-        "greenAreaM2PerCapita": 10.4,
-        "totalGreenM2PerCapita": 10.4,
+        "greenAreaM2PerCapita": 9.96,
+        "totalGreenM2PerCapita": 9.96,
         "schoolSportsFacilitiesCount": 242,
         "schoolSwimmingPoolsCount": 0
       },
@@ -69,7 +69,7 @@
         "culturalCentersCount": 14,
         "seniorActivityCentersCount": 4,
         "annualCulturalEventsCount": 2012,
-        "municipalSubsidyPerCapitaPln": 435.71
+        "municipalSubsidyPerCapitaPln": 417.4
       },
       "publicSafety": {
         "roadCollisionsAnnual": 955,
@@ -96,21 +96,21 @@
       "scores": {
         "mobilityScore": 96.0,
         "educationScore": 92.0,
-        "greeneryScore": 68.2,
-        "cultureAndSeniorScore": 81.4,
+        "greeneryScore": 68.1,
+        "cultureAndSeniorScore": 81.2,
         "environmentScore": 26.0,
         "safetyScore": 38.0,
         "housingAffordabilityScore": 22.0,
-        "demographicVitalityScore": 66.0
+        "demographicVitalityScore": 71.7
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 424,
         "forecastedCarePlacesBalance_2028": 3108,
-        "forecastedAge4to6_2028": 390,
+        "forecastedAge4to6_2028": 401,
         "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
-        "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.3%)."
+        "greenSpaceDeficit": "HIGH",
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (24.2%)."
       }
     },
     {
@@ -119,7 +119,7 @@
       "districtName": "Dzielnica II Grzegórzki",
       "areaKm2": 5.85,
       "demographics": {
-        "totalPopulation": 32066,
+        "totalPopulation": 33693,
         "permanentResidents": 29599,
         "temporaryResidents": 2467,
         "foreignersTotal": 1627,
@@ -128,7 +128,7 @@
         "age7to14": 2280,
         "age15to64": 18077,
         "age65Plus": 7213,
-        "populationGrowthRate3YrPct": 0.29
+        "populationGrowthRate3YrPct": 5.38
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -167,8 +167,8 @@
         "totalParksAreaHa": 24.14,
         "forestAreaHa": 5.4,
         "totalGreenAreaHa": 29.54,
-        "greenAreaM2PerCapita": 7.53,
-        "totalGreenM2PerCapita": 9.21,
+        "greenAreaM2PerCapita": 7.16,
+        "totalGreenM2PerCapita": 8.77,
         "schoolSportsFacilitiesCount": 70,
         "schoolSwimmingPoolsCount": 2
       },
@@ -177,7 +177,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 5,
         "annualCulturalEventsCount": 559,
-        "municipalSubsidyPerCapitaPln": 112.19
+        "municipalSubsidyPerCapitaPln": 106.78
       },
       "publicSafety": {
         "roadCollisionsAnnual": 617,
@@ -204,21 +204,21 @@
       "scores": {
         "mobilityScore": 76.8,
         "educationScore": 73.1,
-        "greeneryScore": 70.4,
-        "cultureAndSeniorScore": 59.3,
+        "greeneryScore": 70.3,
+        "cultureAndSeniorScore": 59.2,
         "environmentScore": 37.1,
-        "safetyScore": 59.6,
+        "safetyScore": 60.1,
         "housingAffordabilityScore": 27.6,
-        "demographicVitalityScore": 73.6
+        "demographicVitalityScore": 77.0
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 882,
         "forecastedCarePlacesBalance_2028": -30,
-        "forecastedAge4to6_2028": 821,
+        "forecastedAge4to6_2028": 848,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 7.53 m²/os. poniżej normy miejskiej 10 m²/os.)."
+        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 7.16 m²/os. poniżej normy miejskiej 10 m²/os.)."
       }
     },
     {
@@ -227,7 +227,7 @@
       "districtName": "Dzielnica III Prądnik Czerwony",
       "areaKm2": 6.44,
       "demographics": {
-        "totalPopulation": 46880,
+        "totalPopulation": 48363,
         "permanentResidents": 44524,
         "temporaryResidents": 2356,
         "foreignersTotal": 1483,
@@ -236,7 +236,7 @@
         "age7to14": 3458,
         "age15to64": 26930,
         "age65Plus": 11551,
-        "populationGrowthRate3YrPct": -1.06
+        "populationGrowthRate3YrPct": 2.07
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -275,8 +275,8 @@
         "totalParksAreaHa": 20.02,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 20.02,
-        "greenAreaM2PerCapita": 4.27,
-        "totalGreenM2PerCapita": 4.27,
+        "greenAreaM2PerCapita": 4.14,
+        "totalGreenM2PerCapita": 4.14,
         "schoolSportsFacilitiesCount": 76,
         "schoolSwimmingPoolsCount": 0
       },
@@ -285,7 +285,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 671,
-        "municipalSubsidyPerCapitaPln": 92.09
+        "municipalSubsidyPerCapitaPln": 89.26
       },
       "publicSafety": {
         "roadCollisionsAnnual": 529,
@@ -313,20 +313,20 @@
         "mobilityScore": 76.1,
         "educationScore": 73.2,
         "greeneryScore": 58.4,
-        "cultureAndSeniorScore": 56.7,
+        "cultureAndSeniorScore": 56.6,
         "environmentScore": 55.2,
-        "safetyScore": 67.3,
+        "safetyScore": 67.5,
         "housingAffordabilityScore": 53.4,
-        "demographicVitalityScore": 60.4
+        "demographicVitalityScore": 62.1
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1049,
-        "forecastedCarePlacesBalance_2028": -181,
-        "forecastedAge4to6_2028": 1005,
+        "forecastedAge0to3_2028": 1053,
+        "forecastedCarePlacesBalance_2028": -184,
+        "forecastedAge4to6_2028": 1026,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (24.6%)."
+        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 4.14 m²/os. poniżej normy miejskiej 10 m²/os.)."
       }
     },
     {
@@ -335,7 +335,7 @@
       "districtName": "Dzielnica IV Prądnik Biały",
       "areaKm2": 23.42,
       "demographics": {
-        "totalPopulation": 76804,
+        "totalPopulation": 79042,
         "permanentResidents": 74105,
         "temporaryResidents": 2699,
         "foreignersTotal": 2238,
@@ -344,7 +344,7 @@
         "age7to14": 6377,
         "age15to64": 47158,
         "age65Plus": 15269,
-        "populationGrowthRate3YrPct": 2.61
+        "populationGrowthRate3YrPct": 5.6
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -383,8 +383,8 @@
         "totalParksAreaHa": 17.88,
         "forestAreaHa": 15.3,
         "totalGreenAreaHa": 33.18,
-        "greenAreaM2PerCapita": 2.33,
-        "totalGreenM2PerCapita": 4.32,
+        "greenAreaM2PerCapita": 2.26,
+        "totalGreenM2PerCapita": 4.2,
         "schoolSportsFacilitiesCount": 109,
         "schoolSwimmingPoolsCount": 0
       },
@@ -393,7 +393,7 @@
         "culturalCentersCount": 8,
         "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 1341,
-        "municipalSubsidyPerCapitaPln": 112.42
+        "municipalSubsidyPerCapitaPln": 109.24
       },
       "publicSafety": {
         "roadCollisionsAnnual": 776,
@@ -418,23 +418,23 @@
         "trafficNoiseExceededPct": 21.4
       },
       "scores": {
-        "mobilityScore": 72.8,
+        "mobilityScore": 72.9,
         "educationScore": 68.8,
         "greeneryScore": 52.0,
         "cultureAndSeniorScore": 65.9,
-        "environmentScore": 50.3,
-        "safetyScore": 72.3,
+        "environmentScore": 50.4,
+        "safetyScore": 72.6,
         "housingAffordabilityScore": 51.6,
-        "demographicVitalityScore": 72.7
+        "demographicVitalityScore": 70.8
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 2450,
-        "forecastedCarePlacesBalance_2028": -734,
-        "forecastedAge4to6_2028": 2159,
+        "forecastedAge0to3_2028": 2511,
+        "forecastedCarePlacesBalance_2028": -780,
+        "forecastedAge4to6_2028": 2200,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -734 miejsc) oraz tworzenie parków kieszonkowych (obecnie 2.33 m² zieleni/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -780 miejsc) oraz tworzenie parków kieszonkowych (obecnie 2.26 m² zieleni/os.)."
       }
     },
     {
@@ -443,7 +443,7 @@
       "districtName": "Dzielnica V Krowodrza",
       "areaKm2": 5.62,
       "demographics": {
-        "totalPopulation": 31523,
+        "totalPopulation": 33088,
         "permanentResidents": 28725,
         "temporaryResidents": 2798,
         "foreignersTotal": 1565,
@@ -452,7 +452,7 @@
         "age7to14": 1921,
         "age15to64": 16970,
         "age65Plus": 8372,
-        "populationGrowthRate3YrPct": -1.23
+        "populationGrowthRate3YrPct": 3.68
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -491,8 +491,8 @@
         "totalParksAreaHa": 35.74,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 35.74,
-        "greenAreaM2PerCapita": 11.34,
-        "totalGreenM2PerCapita": 11.34,
+        "greenAreaM2PerCapita": 10.8,
+        "totalGreenM2PerCapita": 10.8,
         "schoolSportsFacilitiesCount": 67,
         "schoolSwimmingPoolsCount": 1
       },
@@ -501,7 +501,7 @@
         "culturalCentersCount": 1,
         "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 91.3
+        "municipalSubsidyPerCapitaPln": 86.98
       },
       "publicSafety": {
         "roadCollisionsAnnual": 949,
@@ -526,23 +526,23 @@
         "trafficNoiseExceededPct": 23.0
       },
       "scores": {
-        "mobilityScore": 78.5,
+        "mobilityScore": 78.4,
         "educationScore": 77.2,
-        "greeneryScore": 73.7,
+        "greeneryScore": 73.6,
         "cultureAndSeniorScore": 55.5,
-        "environmentScore": 47.6,
-        "safetyScore": 47.1,
+        "environmentScore": 47.5,
+        "safetyScore": 47.4,
         "housingAffordabilityScore": 40.5,
-        "demographicVitalityScore": 67.4
+        "demographicVitalityScore": 72.4
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 617,
         "forecastedCarePlacesBalance_2028": 12,
-        "forecastedAge4to6_2028": 565,
+        "forecastedAge4to6_2028": 584,
         "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (26.6%)."
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.3%)."
       }
     },
     {
@@ -551,7 +551,7 @@
       "districtName": "Dzielnica VI Bronowice",
       "areaKm2": 9.56,
       "demographics": {
-        "totalPopulation": 25627,
+        "totalPopulation": 26418,
         "permanentResidents": 24655,
         "temporaryResidents": 972,
         "foreignersTotal": 791,
@@ -560,7 +560,7 @@
         "age7to14": 2144,
         "age15to64": 15020,
         "age65Plus": 5917,
-        "populationGrowthRate3YrPct": 1.2
+        "populationGrowthRate3YrPct": 4.32
       },
       "educationAndCare": {
         "nurseriesPublicCount": 0,
@@ -599,8 +599,8 @@
         "totalParksAreaHa": 39.93,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 39.93,
-        "greenAreaM2PerCapita": 15.58,
-        "totalGreenM2PerCapita": 15.58,
+        "greenAreaM2PerCapita": 15.11,
+        "totalGreenM2PerCapita": 15.11,
         "schoolSportsFacilitiesCount": 44,
         "schoolSwimmingPoolsCount": 0
       },
@@ -609,7 +609,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
         "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 56.15
+        "municipalSubsidyPerCapitaPln": 54.47
       },
       "publicSafety": {
         "roadCollisionsAnnual": 327,
@@ -636,21 +636,21 @@
       "scores": {
         "mobilityScore": 41.7,
         "educationScore": 58.9,
-        "greeneryScore": 65.7,
+        "greeneryScore": 65.6,
         "cultureAndSeniorScore": 49.8,
         "environmentScore": 73.0,
-        "safetyScore": 72.1,
+        "safetyScore": 72.2,
         "housingAffordabilityScore": 49.0,
-        "demographicVitalityScore": 65.2
+        "demographicVitalityScore": 64.9
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 645,
         "forecastedCarePlacesBalance_2028": -200,
-        "forecastedAge4to6_2028": 596,
+        "forecastedAge4to6_2028": 608,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Utrzymanie wysokiej dostępności usług publicznych w Dzielnica VI Bronowice przy wsparciu modernizacji przyszkolnej infrastruktury sportowej i oferty dla seniorów (23.1% populacji)."
+        "recommendedMunicipalAction": "Utrzymanie wysokiej dostępności usług publicznych w Dzielnica VI Bronowice przy wsparciu modernizacji przyszkolnej infrastruktury sportowej i oferty dla seniorów (22.4% populacji)."
       }
     },
     {
@@ -659,7 +659,7 @@
       "districtName": "Dzielnica VII Zwierzyniec",
       "areaKm2": 28.73,
       "demographics": {
-        "totalPopulation": 21661,
+        "totalPopulation": 22272,
         "permanentResidents": 20296,
         "temporaryResidents": 1365,
         "foreignersTotal": 611,
@@ -668,7 +668,7 @@
         "age7to14": 1740,
         "age15to64": 12527,
         "age65Plus": 4989,
-        "populationGrowthRate3YrPct": 0.72
+        "populationGrowthRate3YrPct": 3.56
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -707,8 +707,8 @@
         "totalParksAreaHa": 118.87,
         "forestAreaHa": 419.0,
         "totalGreenAreaHa": 537.87,
-        "greenAreaM2PerCapita": 54.88,
-        "totalGreenM2PerCapita": 248.31,
+        "greenAreaM2PerCapita": 53.37,
+        "totalGreenM2PerCapita": 241.5,
         "schoolSportsFacilitiesCount": 41,
         "schoolSwimmingPoolsCount": 0
       },
@@ -717,7 +717,7 @@
         "culturalCentersCount": 2,
         "seniorActivityCentersCount": 4,
         "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 132.87
+        "municipalSubsidyPerCapitaPln": 129.22
       },
       "publicSafety": {
         "roadCollisionsAnnual": 218,
@@ -747,14 +747,14 @@
         "greeneryScore": 96.0,
         "cultureAndSeniorScore": 58.9,
         "environmentScore": 94.0,
-        "safetyScore": 77.7,
+        "safetyScore": 77.8,
         "housingAffordabilityScore": 36.6,
-        "demographicVitalityScore": 67.2
+        "demographicVitalityScore": 67.7
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 412,
         "forecastedCarePlacesBalance_2028": -213,
-        "forecastedAge4to6_2028": 381,
+        "forecastedAge4to6_2028": 388,
         "nurseryInvestmentPotentialB2B": "MEDIUM",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
@@ -767,7 +767,7 @@
       "districtName": "Dzielnica VIII Dębniki",
       "areaKm2": 46.19,
       "demographics": {
-        "totalPopulation": 69431,
+        "totalPopulation": 71800,
         "permanentResidents": 66203,
         "temporaryResidents": 3228,
         "foreignersTotal": 2369,
@@ -776,7 +776,7 @@
         "age7to14": 6398,
         "age15to64": 43393,
         "age65Plus": 11853,
-        "populationGrowthRate3YrPct": 1.95
+        "populationGrowthRate3YrPct": 5.43
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -815,8 +815,8 @@
         "totalParksAreaHa": 63.82,
         "forestAreaHa": 180.5,
         "totalGreenAreaHa": 244.32,
-        "greenAreaM2PerCapita": 9.19,
-        "totalGreenM2PerCapita": 35.19,
+        "greenAreaM2PerCapita": 8.89,
+        "totalGreenM2PerCapita": 34.03,
         "schoolSportsFacilitiesCount": 122,
         "schoolSwimmingPoolsCount": 2
       },
@@ -825,7 +825,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 5,
         "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 41.45
+        "municipalSubsidyPerCapitaPln": 40.08
       },
       "publicSafety": {
         "roadCollisionsAnnual": 892,
@@ -853,20 +853,20 @@
         "mobilityScore": 41.5,
         "educationScore": 72.8,
         "greeneryScore": 80.8,
-        "cultureAndSeniorScore": 55.3,
+        "cultureAndSeniorScore": 55.2,
         "environmentScore": 76.4,
-        "safetyScore": 72.0,
+        "safetyScore": 72.4,
         "housingAffordabilityScore": 42.1,
-        "demographicVitalityScore": 77.1
+        "demographicVitalityScore": 76.4
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1890,
         "forecastedCarePlacesBalance_2028": -394,
-        "forecastedAge4to6_2028": 1811,
+        "forecastedAge4to6_2028": 1851,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -394 miejsc) oraz tworzenie parków kieszonkowych (obecnie 9.19 m² zieleni/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -394 miejsc) oraz tworzenie parków kieszonkowych (obecnie 8.89 m² zieleni/os.)."
       }
     },
     {
@@ -875,7 +875,7 @@
       "districtName": "Dzielnica IX Łagiewniki-Borek Fałęcki",
       "areaKm2": 5.42,
       "demographics": {
-        "totalPopulation": 15797,
+        "totalPopulation": 16230,
         "permanentResidents": 15168,
         "temporaryResidents": 629,
         "foreignersTotal": 433,
@@ -884,7 +884,7 @@
         "age7to14": 1422,
         "age15to64": 9530,
         "age65Plus": 3314,
-        "populationGrowthRate3YrPct": 0.1
+        "populationGrowthRate3YrPct": 2.84
       },
       "educationAndCare": {
         "nurseriesPublicCount": 0,
@@ -923,8 +923,8 @@
         "totalParksAreaHa": 36.81,
         "forestAreaHa": 65.2,
         "totalGreenAreaHa": 102.01,
-        "greenAreaM2PerCapita": 23.3,
-        "totalGreenM2PerCapita": 64.58,
+        "greenAreaM2PerCapita": 22.68,
+        "totalGreenM2PerCapita": 62.85,
         "schoolSportsFacilitiesCount": 7,
         "schoolSwimmingPoolsCount": 0
       },
@@ -933,7 +933,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
         "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 91.1
+        "municipalSubsidyPerCapitaPln": 88.67
       },
       "publicSafety": {
         "roadCollisionsAnnual": 213,
@@ -962,19 +962,19 @@
         "educationScore": 40.0,
         "greeneryScore": 76.9,
         "cultureAndSeniorScore": 50.9,
-        "environmentScore": 67.2,
-        "safetyScore": 76.0,
+        "environmentScore": 67.3,
+        "safetyScore": 75.9,
         "housingAffordabilityScore": 46.3,
-        "demographicVitalityScore": 65.0
+        "demographicVitalityScore": 64.9
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 377,
-        "forecastedCarePlacesBalance_2028": -238,
-        "forecastedAge4to6_2028": 363,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge0to3_2028": 379,
+        "forecastedCarePlacesBalance_2028": -239,
+        "forecastedAge4to6_2028": 370,
+        "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Utrzymanie wysokiej dostępności usług publicznych w Dzielnica IX Łagiewniki-Borek Fałęcki przy wsparciu modernizacji przyszkolnej infrastruktury sportowej i oferty dla seniorów (21.0% populacji)."
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +2.8%, bilans 2028: -239 miejsc)."
       }
     },
     {
@@ -983,7 +983,7 @@
       "districtName": "Dzielnica X Swoszowice",
       "areaKm2": 25.6,
       "demographics": {
-        "totalPopulation": 30146,
+        "totalPopulation": 30720,
         "permanentResidents": 29234,
         "temporaryResidents": 912,
         "foreignersTotal": 574,
@@ -992,7 +992,7 @@
         "age7to14": 3093,
         "age15to64": 19112,
         "age65Plus": 5103,
-        "populationGrowthRate3YrPct": 0.81
+        "populationGrowthRate3YrPct": 2.73
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -1031,8 +1031,8 @@
         "totalParksAreaHa": 13.33,
         "forestAreaHa": 83.9,
         "totalGreenAreaHa": 97.23,
-        "greenAreaM2PerCapita": 4.42,
-        "totalGreenM2PerCapita": 32.25,
+        "greenAreaM2PerCapita": 4.34,
+        "totalGreenM2PerCapita": 31.65,
         "schoolSportsFacilitiesCount": 22,
         "schoolSwimmingPoolsCount": 0
       },
@@ -1041,7 +1041,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
         "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 71.6
+        "municipalSubsidyPerCapitaPln": 70.27
       },
       "publicSafety": {
         "roadCollisionsAnnual": 573,
@@ -1073,16 +1073,16 @@
         "environmentScore": 89.0,
         "safetyScore": 87.2,
         "housingAffordabilityScore": 73.4,
-        "demographicVitalityScore": 67.7
+        "demographicVitalityScore": 65.6
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 745,
         "forecastedCarePlacesBalance_2028": -294,
-        "forecastedAge4to6_2028": 719,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge4to6_2028": 728,
+        "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 4.42 m²/os. poniżej normy miejskiej 10 m²/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -294 miejsc) oraz tworzenie parków kieszonkowych (obecnie 4.34 m² zieleni/os.)."
       }
     },
     {
@@ -1091,7 +1091,7 @@
       "districtName": "Dzielnica XI Podgórze Duchackie",
       "areaKm2": 9.54,
       "demographics": {
-        "totalPopulation": 55132,
+        "totalPopulation": 56236,
         "permanentResidents": 53769,
         "temporaryResidents": 1363,
         "foreignersTotal": 1104,
@@ -1100,7 +1100,7 @@
         "age7to14": 4603,
         "age15to64": 33044,
         "age65Plus": 12927,
-        "populationGrowthRate3YrPct": 0.56
+        "populationGrowthRate3YrPct": 2.58
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -1139,8 +1139,8 @@
         "totalParksAreaHa": 47.13,
         "forestAreaHa": 7.8,
         "totalGreenAreaHa": 54.93,
-        "greenAreaM2PerCapita": 8.55,
-        "totalGreenM2PerCapita": 9.96,
+        "greenAreaM2PerCapita": 8.38,
+        "totalGreenM2PerCapita": 9.77,
         "schoolSportsFacilitiesCount": 67,
         "schoolSwimmingPoolsCount": 0
       },
@@ -1149,7 +1149,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 39.15
+        "municipalSubsidyPerCapitaPln": 38.38
       },
       "publicSafety": {
         "roadCollisionsAnnual": 245,
@@ -1178,19 +1178,19 @@
         "educationScore": 61.7,
         "greeneryScore": 63.6,
         "cultureAndSeniorScore": 51.4,
-        "environmentScore": 50.6,
-        "safetyScore": 89.6,
+        "environmentScore": 50.7,
+        "safetyScore": 89.9,
         "housingAffordabilityScore": 57.4,
-        "demographicVitalityScore": 59.8
+        "demographicVitalityScore": 58.2
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1302,
         "forecastedCarePlacesBalance_2028": -292,
-        "forecastedAge4to6_2028": 1254,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge4to6_2028": 1270,
+        "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 8.55 m²/os. poniżej normy miejskiej 10 m²/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -292 miejsc) oraz tworzenie parków kieszonkowych (obecnie 8.38 m² zieleni/os.)."
       }
     },
     {
@@ -1199,7 +1199,7 @@
       "districtName": "Dzielnica XII Bieżanów-Prokocim",
       "areaKm2": 18.47,
       "demographics": {
-        "totalPopulation": 64458,
+        "totalPopulation": 65580,
         "permanentResidents": 62507,
         "temporaryResidents": 1951,
         "foreignersTotal": 1122,
@@ -1208,7 +1208,7 @@
         "age7to14": 4918,
         "age15to64": 38642,
         "age65Plus": 15125,
-        "populationGrowthRate3YrPct": -0.01
+        "populationGrowthRate3YrPct": 1.73
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -1247,8 +1247,8 @@
         "totalParksAreaHa": 45.54,
         "forestAreaHa": 11.2,
         "totalGreenAreaHa": 56.74,
-        "greenAreaM2PerCapita": 7.07,
-        "totalGreenM2PerCapita": 8.8,
+        "greenAreaM2PerCapita": 6.94,
+        "totalGreenM2PerCapita": 8.65,
         "schoolSportsFacilitiesCount": 63,
         "schoolSwimmingPoolsCount": 0
       },
@@ -1257,7 +1257,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 4,
         "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 33.49
+        "municipalSubsidyPerCapitaPln": 32.91
       },
       "publicSafety": {
         "roadCollisionsAnnual": 612,
@@ -1286,19 +1286,19 @@
         "educationScore": 73.0,
         "greeneryScore": 66.9,
         "cultureAndSeniorScore": 52.2,
-        "environmentScore": 59.4,
+        "environmentScore": 59.5,
         "safetyScore": 81.2,
         "housingAffordabilityScore": 72.0,
-        "demographicVitalityScore": 58.7
+        "demographicVitalityScore": 57.4
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1618,
         "forecastedCarePlacesBalance_2028": -350,
-        "forecastedAge4to6_2028": 1483,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge4to6_2028": 1500,
+        "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 7.07 m²/os. poniżej normy miejskiej 10 m²/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -350 miejsc) oraz tworzenie parków kieszonkowych (obecnie 6.94 m² zieleni/os.)."
       }
     },
     {
@@ -1307,7 +1307,7 @@
       "districtName": "Dzielnica XIII Podgórze",
       "areaKm2": 25.67,
       "demographics": {
-        "totalPopulation": 45518,
+        "totalPopulation": 48003,
         "permanentResidents": 42298,
         "temporaryResidents": 3220,
         "foreignersTotal": 2485,
@@ -1316,7 +1316,7 @@
         "age7to14": 3800,
         "age15to64": 28229,
         "age65Plus": 6446,
-        "populationGrowthRate3YrPct": 4.8
+        "populationGrowthRate3YrPct": 10.52
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -1355,8 +1355,8 @@
         "totalParksAreaHa": 92.55,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 92.55,
-        "greenAreaM2PerCapita": 20.33,
-        "totalGreenM2PerCapita": 20.33,
+        "greenAreaM2PerCapita": 19.28,
+        "totalGreenM2PerCapita": 19.28,
         "schoolSportsFacilitiesCount": 103,
         "schoolSwimmingPoolsCount": 0
       },
@@ -1365,7 +1365,7 @@
         "culturalCentersCount": 19,
         "seniorActivityCentersCount": 6,
         "annualCulturalEventsCount": 2347,
-        "municipalSubsidyPerCapitaPln": 331.95
+        "municipalSubsidyPerCapitaPln": 314.77
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1390,
@@ -1392,21 +1392,21 @@
       "scores": {
         "mobilityScore": 66.5,
         "educationScore": 73.6,
-        "greeneryScore": 75.0,
-        "cultureAndSeniorScore": 87.4,
-        "environmentScore": 45.1,
-        "safetyScore": 54.1,
+        "greeneryScore": 74.8,
+        "cultureAndSeniorScore": 87.2,
+        "environmentScore": 45.0,
+        "safetyScore": 54.7,
         "housingAffordabilityScore": 25.6,
         "demographicVitalityScore": 95.0
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1920,
-        "forecastedCarePlacesBalance_2028": -492,
-        "forecastedAge4to6_2028": 1606,
+        "forecastedAge0to3_2028": 2010,
+        "forecastedCarePlacesBalance_2028": -560,
+        "forecastedAge4to6_2028": 1663,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +4.8%, bilans 2028: -492 miejsc)."
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +10.5%, bilans 2028: -560 miejsc)."
       }
     },
     {
@@ -1415,7 +1415,7 @@
       "districtName": "Dzielnica XIV Czyżyny",
       "areaKm2": 12.26,
       "demographics": {
-        "totalPopulation": 36669,
+        "totalPopulation": 37956,
         "permanentResidents": 34624,
         "temporaryResidents": 2045,
         "foreignersTotal": 1287,
@@ -1424,7 +1424,7 @@
         "age7to14": 3180,
         "age15to64": 21919,
         "age65Plus": 6361,
-        "populationGrowthRate3YrPct": 3.31
+        "populationGrowthRate3YrPct": 6.93
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -1463,8 +1463,8 @@
         "totalParksAreaHa": 54.88,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 54.88,
-        "greenAreaM2PerCapita": 14.97,
-        "totalGreenM2PerCapita": 14.97,
+        "greenAreaM2PerCapita": 14.46,
+        "totalGreenM2PerCapita": 14.46,
         "schoolSportsFacilitiesCount": 45,
         "schoolSwimmingPoolsCount": 1
       },
@@ -1473,7 +1473,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 1,
         "annualCulturalEventsCount": 112,
-        "municipalSubsidyPerCapitaPln": 19.62
+        "municipalSubsidyPerCapitaPln": 18.96
       },
       "publicSafety": {
         "roadCollisionsAnnual": 666,
@@ -1503,18 +1503,18 @@
         "greeneryScore": 70.4,
         "cultureAndSeniorScore": 44.0,
         "environmentScore": 53.9,
-        "safetyScore": 61.4,
+        "safetyScore": 61.5,
         "housingAffordabilityScore": 62.5,
-        "demographicVitalityScore": 77.8
+        "demographicVitalityScore": 76.8
       },
       "forecastsAndB2B": {
-        "forecastedAge0to3_2028": 1523,
-        "forecastedCarePlacesBalance_2028": -258,
-        "forecastedAge4to6_2028": 1296,
+        "forecastedAge0to3_2028": 1569,
+        "forecastedCarePlacesBalance_2028": -293,
+        "forecastedAge4to6_2028": 1326,
         "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "LOW",
         "greenSpaceDeficit": "MEDIUM",
-        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +3.3%, bilans 2028: -258 miejsc)."
+        "recommendedMunicipalAction": "Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika +6.9%, bilans 2028: -293 miejsc)."
       }
     },
     {
@@ -1523,7 +1523,7 @@
       "districtName": "Dzielnica XV Mistrzejowice",
       "areaKm2": 5.59,
       "demographics": {
-        "totalPopulation": 50819,
+        "totalPopulation": 51479,
         "permanentResidents": 49936,
         "temporaryResidents": 883,
         "foreignersTotal": 660,
@@ -1532,7 +1532,7 @@
         "age7to14": 3411,
         "age15to64": 30975,
         "age65Plus": 13089,
-        "populationGrowthRate3YrPct": -0.89
+        "populationGrowthRate3YrPct": 0.4
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -1571,8 +1571,8 @@
         "totalParksAreaHa": 38.41,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 38.41,
-        "greenAreaM2PerCapita": 7.56,
-        "totalGreenM2PerCapita": 7.56,
+        "greenAreaM2PerCapita": 7.46,
+        "totalGreenM2PerCapita": 7.46,
         "schoolSportsFacilitiesCount": 44,
         "schoolSwimmingPoolsCount": 0
       },
@@ -1581,7 +1581,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 28.32
+        "municipalSubsidyPerCapitaPln": 27.95
       },
       "publicSafety": {
         "roadCollisionsAnnual": 198,
@@ -1608,21 +1608,21 @@
       "scores": {
         "mobilityScore": 71.8,
         "educationScore": 68.7,
-        "greeneryScore": 64.9,
+        "greeneryScore": 65.0,
         "cultureAndSeniorScore": 49.3,
         "environmentScore": 68.2,
-        "safetyScore": 88.8,
+        "safetyScore": 88.9,
         "housingAffordabilityScore": 65.2,
-        "demographicVitalityScore": 54.2
+        "demographicVitalityScore": 52.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 1041,
         "forecastedCarePlacesBalance_2028": -58,
-        "forecastedAge4to6_2028": 978,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge4to6_2028": 987,
+        "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.8%)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -58 miejsc) oraz tworzenie parków kieszonkowych (obecnie 7.46 m² zieleni/os.)."
       }
     },
     {
@@ -1631,7 +1631,7 @@
       "districtName": "Dzielnica XVI Bieńczyce",
       "areaKm2": 3.7,
       "demographics": {
-        "totalPopulation": 36438,
+        "totalPopulation": 36813,
         "permanentResidents": 35743,
         "temporaryResidents": 695,
         "foreignersTotal": 375,
@@ -1640,7 +1640,7 @@
         "age7to14": 2211,
         "age15to64": 22072,
         "age65Plus": 9907,
-        "populationGrowthRate3YrPct": -3.75
+        "populationGrowthRate3YrPct": -2.76
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -1679,8 +1679,8 @@
         "totalParksAreaHa": 31.95,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 31.95,
-        "greenAreaM2PerCapita": 8.77,
-        "totalGreenM2PerCapita": 8.77,
+        "greenAreaM2PerCapita": 8.68,
+        "totalGreenM2PerCapita": 8.68,
         "schoolSportsFacilitiesCount": 65,
         "schoolSwimmingPoolsCount": 0
       },
@@ -1689,7 +1689,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
         "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 39.49
+        "municipalSubsidyPerCapitaPln": 39.09
       },
       "publicSafety": {
         "roadCollisionsAnnual": 189,
@@ -1716,7 +1716,7 @@
       "scores": {
         "mobilityScore": 68.8,
         "educationScore": 69.1,
-        "greeneryScore": 62.3,
+        "greeneryScore": 62.4,
         "cultureAndSeniorScore": 50.2,
         "environmentScore": 64.1,
         "safetyScore": 94.0,
@@ -1726,11 +1726,11 @@
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 618,
         "forecastedCarePlacesBalance_2028": -128,
-        "forecastedAge4to6_2028": 568,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge4to6_2028": 572,
+        "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (27.2%)."
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (26.9%)."
       }
     },
     {
@@ -1739,7 +1739,7 @@
       "districtName": "Dzielnica XVII Wzgórza Krzesławickie",
       "areaKm2": 23.82,
       "demographics": {
-        "totalPopulation": 20465,
+        "totalPopulation": 20671,
         "permanentResidents": 20123,
         "temporaryResidents": 342,
         "foreignersTotal": 206,
@@ -1748,7 +1748,7 @@
         "age7to14": 1655,
         "age15to64": 12810,
         "age65Plus": 4402,
-        "populationGrowthRate3YrPct": 1.08
+        "populationGrowthRate3YrPct": 2.09
       },
       "educationAndCare": {
         "nurseriesPublicCount": 3,
@@ -1787,8 +1787,8 @@
         "totalParksAreaHa": 19.99,
         "forestAreaHa": 35.6,
         "totalGreenAreaHa": 55.59,
-        "greenAreaM2PerCapita": 9.77,
-        "totalGreenM2PerCapita": 27.16,
+        "greenAreaM2PerCapita": 9.67,
+        "totalGreenM2PerCapita": 26.89,
         "schoolSportsFacilitiesCount": 20,
         "schoolSwimmingPoolsCount": 0
       },
@@ -1797,7 +1797,7 @@
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
         "annualCulturalEventsCount": 112,
-        "municipalSubsidyPerCapitaPln": 35.16
+        "municipalSubsidyPerCapitaPln": 34.81
       },
       "publicSafety": {
         "roadCollisionsAnnual": 211,
@@ -1824,21 +1824,21 @@
       "scores": {
         "mobilityScore": 39.6,
         "educationScore": 59.2,
-        "greeneryScore": 64.2,
+        "greeneryScore": 64.3,
         "cultureAndSeniorScore": 46.7,
-        "environmentScore": 88.7,
-        "safetyScore": 85.8,
+        "environmentScore": 88.8,
+        "safetyScore": 85.5,
         "housingAffordabilityScore": 92.0,
-        "demographicVitalityScore": 61.0
+        "demographicVitalityScore": 57.5
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 507,
         "forecastedCarePlacesBalance_2028": -146,
-        "forecastedAge4to6_2028": 459,
-        "nurseryInvestmentPotentialB2B": "MEDIUM",
+        "forecastedAge4to6_2028": 462,
+        "nurseryInvestmentPotentialB2B": "HIGH",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "HIGH",
-        "recommendedMunicipalAction": "Pilne zwiększenie powierzchni terenów zielonych i skwerów lokalnych (wskaźnik 9.77 m²/os. poniżej normy miejskiej 10 m²/os.)."
+        "recommendedMunicipalAction": "Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: -146 miejsc) oraz tworzenie parków kieszonkowych (obecnie 9.67 m² zieleni/os.)."
       }
     },
     {
@@ -1847,7 +1847,7 @@
       "districtName": "Dzielnica XVIII Nowa Huta",
       "areaKm2": 65.41,
       "demographics": {
-        "totalPopulation": 46796,
+        "totalPopulation": 47336,
         "permanentResidents": 45365,
         "temporaryResidents": 1431,
         "foreignersTotal": 540,
@@ -1856,7 +1856,7 @@
         "age7to14": 3322,
         "age15to64": 27809,
         "age65Plus": 12032,
-        "populationGrowthRate3YrPct": -2.75
+        "populationGrowthRate3YrPct": -1.63
       },
       "educationAndCare": {
         "nurseriesPublicCount": 4,
@@ -1895,8 +1895,8 @@
         "totalParksAreaHa": 146.15,
         "forestAreaHa": 36.3,
         "totalGreenAreaHa": 182.45,
-        "greenAreaM2PerCapita": 31.23,
-        "totalGreenM2PerCapita": 38.99,
+        "greenAreaM2PerCapita": 30.88,
+        "totalGreenM2PerCapita": 38.54,
         "schoolSportsFacilitiesCount": 95,
         "schoolSwimmingPoolsCount": 1
       },
@@ -1905,7 +1905,7 @@
         "culturalCentersCount": 18,
         "seniorActivityCentersCount": 13,
         "annualCulturalEventsCount": 2459,
-        "municipalSubsidyPerCapitaPln": 338.26
+        "municipalSubsidyPerCapitaPln": 334.41
       },
       "publicSafety": {
         "roadCollisionsAnnual": 540,
@@ -1932,21 +1932,21 @@
       "scores": {
         "mobilityScore": 39.0,
         "educationScore": 81.1,
-        "greeneryScore": 79.9,
+        "greeneryScore": 80.0,
         "cultureAndSeniorScore": 96.0,
         "environmentScore": 53.3,
-        "safetyScore": 65.9,
+        "safetyScore": 65.4,
         "housingAffordabilityScore": 74.3,
         "demographicVitalityScore": 49.2
       },
       "forecastsAndB2B": {
         "forecastedAge0to3_2028": 869,
         "forecastedCarePlacesBalance_2028": 50,
-        "forecastedAge4to6_2028": 820,
+        "forecastedAge4to6_2028": 826,
         "nurseryInvestmentPotentialB2B": "LOW",
         "seniorInfrastructureDeficit": "MEDIUM",
         "greenSpaceDeficit": "LOW",
-        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.7%)."
+        "recommendedMunicipalAction": "Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ (25.4%)."
       }
     }
   ]

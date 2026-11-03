@@ -244,21 +244,21 @@ export function ResidentModePage({
 
               {/* Orbiting Satellite Telemetry Chip 1 (Top-Left) */}
               <g transform="translate(355, 75)">
-                <rect x="0" y="0" width="86" height="22" rx="6" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
+                <rect x="0" y="0" width="96" height="22" rx="6" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
                 <circle cx="12" cy="11" r="3.5" fill="#34d399" />
                 <text x="22" y="15" fill="#bae6fd" fontSize="9" fontWeight="800">QoL: 88.4 / 100</text>
               </g>
 
               {/* Orbiting Satellite Telemetry Chip 2 (Bottom-Left) */}
               <g transform="translate(325, 290)">
-                <rect x="0" y="0" width="94" height="22" rx="6" fill="#0a2e65" fillOpacity="0.8" stroke="#bae6fd" strokeWidth="1" />
+                <rect x="0" y="0" width="90" height="22" rx="6" fill="#0a2e65" fillOpacity="0.8" stroke="#bae6fd" strokeWidth="1" />
                 <circle cx="12" cy="11" r="3.5" fill="#fde047" />
                 <text x="22" y="15" fill="#ffffff" fontSize="9" fontWeight="800">18 DIS • LIVE</text>
               </g>
 
               {/* Orbiting Satellite Telemetry Chip 3 (Top-Right) */}
               <g transform="translate(595, 65)">
-                <rect x="0" y="0" width="92" height="22" rx="6" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
+                <rect x="0" y="0" width="98" height="22" rx="6" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
                 <circle cx="12" cy="11" r="3.5" fill="#38bdf8" />
                 <text x="22" y="15" fill="#bae6fd" fontSize="9" fontWeight="800">50.06°N 19.94°E</text>
               </g>
@@ -314,7 +314,7 @@ export function ResidentModePage({
         <div className="relative z-10 p-6 sm:p-8 lg:p-10 space-y-6">
           {/* Header Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs font-bold text-sky-100 tracking-wide shadow-sm">
-            <Sparkles className="w-3.5 h-3.5 text-sky-300 animate-spin-slow" />
+            <Compass className="w-3.5 h-3.5 text-sky-300 animate-spin-slow" />
             <span>{t.hero.badge}</span>
           </div>
 
@@ -390,7 +390,10 @@ export function ResidentModePage({
               </div>
             </div>
 
-            <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
+            <div
+              title={t.stats.populationTooltip}
+              className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5"
+            >
               <div className="w-11 h-11 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600 shrink-0">
                 <Users className="w-5 h-5" />
               </div>

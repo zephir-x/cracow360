@@ -454,7 +454,7 @@ def run_etl() -> None:
 
     for did, d in districts_data.items():
         dem = d["demographics"]
-        dem["totalPopulation"] = dem["permanentResidents"] + dem["temporaryResidents"]
+        dem["totalPopulation"] = dem["permanentResidents"] + dem["temporaryResidents"] + dem["foreignersTotal"]
         d["_internal"]["pop2025"] = dem["totalPopulation"]
         pop23 = d["_internal"]["pop2023"]
         dem["populationGrowthRate3YrPct"] = round(((dem["totalPopulation"] - pop23) / pop23) * 100, 2) if pop23 > 0 else 0.0

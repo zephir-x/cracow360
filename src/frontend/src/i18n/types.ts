@@ -40,6 +40,7 @@ export interface TranslationDictionary {
     loading: string;
     populationLabel: string;
     populationSub: string;
+    populationTooltip?: string;
     thousands: string;
     pillarsLabel: string;
     pillarsSub: string;
@@ -171,7 +172,6 @@ export interface TranslationDictionary {
     titleLead: string;
     titleAccent: string;
     description: string;
-    backButton: string;
     rankingTitle: string;
     rankingSubtitle: string;
     population: string;
@@ -298,7 +298,6 @@ export interface TranslationDictionary {
     titleLead: string;
     titleAccent: string;
     description: string;
-    backButton: string;
     sectionTitle: string;
     sectionSubtitle: string;
     population: string;

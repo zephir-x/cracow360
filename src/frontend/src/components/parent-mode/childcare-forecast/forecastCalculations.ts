@@ -83,12 +83,12 @@ export function getMacroIndicators(
     const totCap = calculateTotalEduCareCapacity(carePlaces, kPlaces, schCount);
     const totKids = c03 + c46 + c714;
     const totBal = totCap - totKids;
-    const covPct = totKids > 0 ? (totCap / totKids) * 100 : 0;
 
     allTotalCapacity += totCap;
     allTotalChildren += totKids;
 
-    if (covPct < 100 || totBal <= 0) {
+    // Harmonized with Investor Mode: overall deficit OR severe nursery/school shortage
+    if (totBal <= 0 || nurBal <= -800 || schBal <= -400) {
       allTightDistricts++;
     }
   });
@@ -306,9 +306,13 @@ export function getDistrictCohortData(
   // Real Demand Coverage (Supply vs Demand):
   const totalCovPct = totalChildren > 0 ? Math.round((totalCapacity / totalChildren) * 100) : 0;
 
-  // Fair, percentage-based market classification (consistent across districts of all sizes):
-  const isWhiteSpot = totalCovPct < 100 || totalBal <= 0;
-  const isSurplus = totalCovPct >= 120 && totalBal >= 300;
+  const nurBal = carePlaces - c03;
+  const schCap = calculatePrimarySchoolCapacity(schools);
+  const schBal = schCap - c714;
+
+  // Harmonized market classification across all 18 districts (10 Deficit / 4 Balanced / 4 High Availability):
+  const isWhiteSpot = totalBal <= 0 || nurBal <= -800 || schBal <= -400;
+  const isSurplus = !isWhiteSpot && totalCovPct >= 160 && totalBal >= 1000;
   const isBalanced = !isWhiteSpot && !isSurplus;
 
   const statusBadge = isWhiteSpot
@@ -321,6 +325,8 @@ export function getDistrictCohortData(
 
   const balanceSubtitle = totalBal < 0
     ? (isEn ? 'capacity deficit' : isUa ? 'дефіцит бази' : 'deficyt bazy')
+    : nurBal <= -800
+    ? (isEn ? 'nursery care deficit' : isUa ? 'дефіцит ясельного догляду' : 'deficyt opieki żłobkowej')
     : totalBal <= 200
     ? (isEn ? 'minimal reserve' : isUa ? 'мінімальний резерв' : 'minimalna rezerwa')
     : (isEn ? 'educational reserve' : isUa ? 'освітній резерв' : 'rezerwa edukacyjna');

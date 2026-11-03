@@ -44,6 +44,7 @@ export const plTranslations: TranslationDictionary = {
     loading: 'Ładowanie...',
     populationLabel: 'Mieszkańców w bazie BDK',
     populationSub: 'Meldunki stałe, czasowe i cudzoziemcy',
+    populationTooltip: 'Oficjalny rejestr meldunkowy UMK BDK (stan na 31.12.2025 r.: 703,7 tys. pobyt stały, 32,3 tys. czasowy, 20,8 tys. cudzoziemcy). Wg szacunku bilansu GUS ludność Krakowa wynosi 804 tys., a wg zużycia wody ok. 950 tys. Ewidencja BDK stanowi jedyny rejestr z podziałem na 18 dzielnic i roczniki.',
     thousands: 'tys.',
     pillarsLabel: 'Filarów',
     pillarsSub: 'Ceny, bezpieczeństwo, witalność, KMK i smog',
@@ -252,7 +253,6 @@ export const plTranslations: TranslationDictionary = {
     titleAccent: 'i Bufory Spacerowe Miasta 15-Minutowego.',
     description:
       'Ten moduł odpowiada na pytanie rodzica szukającego mieszkania pod konkretnym adresem: ile żłobków samorządowych, przedszkoli, szkół podstawowych i parków kieszonkowych znajduje się w zasięgu 5, 10 i 15 minut spaceru (300 m / 500 m / 1000 m).',
-    backButton: 'Wróć do Mapy i Porównywarki 18 Dzielnic',
     rankingTitle: 'Ranking TOP 6',
     rankingSubtitle: 'TOP 6 dzielnic o najwyższym wskaźniku dostępności żłobków, przedszkoli i szkół',
     population: 'Populacja:',
@@ -402,7 +402,6 @@ export const plTranslations: TranslationDictionary = {
     titleAccent: 'i Symulator Rozbudowy Infrastruktury.',
     description:
       'Sprawdź, jak zmieni się liczba dzieci w dzielnicach Krakowa do 2028 roku i gdzie najbardziej brakuje miejsc w żłobkach, przedszkolach oraz szkołach. Skorzystaj z symulatora poniżej, aby dodać nowe placówki, parki lub przystanki i od razu zobaczyć, jak poprawią się wyniki wybranej dzielnicy.',
-    backButton: 'Wróć do Mapy i Porównywarki 18 Dzielnic',
     sectionTitle: 'Ranking Dzielnic: Dynamika Ludności i Rozwój (TOP 6)',
     sectionSubtitle: '6 najszybciej rozwijających się dzielnic pod względem przyrostu mieszkańców i nowych meldunków',
     population: 'Populacja:',
@@ -426,7 +425,7 @@ export const plTranslations: TranslationDictionary = {
     titleAccent: 'oraz Rejestr Źródeł Otwartych Danych.',
     description:
       'Transparentność danych i poprawność statystyczna to fundament platformy Kraków360. Poniżej przedstawiamy dokładny sposób wyliczania punktacji (0–100 pkt) w 8 filarach jakości życia oraz wykaz oficjalnych rejestrów miejskich powiązanych bezpośrednio z serwisami źródłowymi.',
-    backButton: 'Wróć do Mapy i Porównywarki Dzielnic',
+    backButton: 'Wróć do strony głównej',
     step1Tag: 'Etap 1 • Standaryzacja Wskaźników',
     step1Title: 'Normalizacja Min-Max Wskaźników Surowych do Skali 0–100 pkt',
     step1Desc:

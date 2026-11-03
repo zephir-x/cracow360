@@ -171,7 +171,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'genesis',
         chapterNumber: '01 / 08',
-        scrollRange: [0.02, 0.115],
+        scrollRange: [0.033, 0.117],
         align: 'left',
         badge: 'GENEZA PROJEKTU • BADANIE 243 MIESZKAŃCÓW',
         title: 'Porządek z informacyjnego chaosu',
@@ -191,7 +191,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'resident',
         chapterNumber: '02 / 08',
-        scrollRange: [0.135, 0.23],
+        scrollRange: [0.133, 0.203],
         align: 'right',
         badge: 'TRYB MIESZKAŃCA • 8 FILARÓW MIEJSKICH',
         title: 'Spersonalizowany Indeks Jakości Życia',
@@ -211,7 +211,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'accessibility',
         chapterNumber: '03 / 08',
-        scrollRange: [0.25, 0.345],
+        scrollRange: [0.217, 0.287],
         align: 'left',
         badge: 'KRAKÓW BEZ BARIER • WŁĄCZENIE SPOŁECZNE',
         title: 'Audyt Dostępności',
@@ -231,7 +231,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'parent',
         chapterNumber: '04 / 08',
-        scrollRange: [0.365, 0.46],
+        scrollRange: [0.300, 0.420],
         align: 'right',
         badge: 'TRYB RODZICA • MIASTO 15-MINUTOWE',
         title: 'Kompas Edukacyjno-Opiekuńczy',
@@ -251,7 +251,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'investor',
         chapterNumber: '05 / 08',
-        scrollRange: [0.48, 0.575],
+        scrollRange: [0.450, 0.533],
         align: 'left',
         badge: 'URZĘDNIK I INWESTOR • HORYZONT 2028',
         title: 'Predykcje Rozwoju i Symulator',
@@ -271,7 +271,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'tourist',
         chapterNumber: '06 / 08',
-        scrollRange: [0.595, 0.69],
+        scrollRange: [0.550, 0.647],
         align: 'right',
         badge: 'ODKRYWAJ KRAKÓW • SMART TOURISM',
         title: 'Zrównoważona Turystyka',
@@ -291,7 +291,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'atmosphere',
         chapterNumber: '07 / 08',
-        scrollRange: [0.71, 0.815],
+        scrollRange: [0.650, 0.743],
         align: 'left',
         badge: 'TELEMETRIA ŚRODOWISKOWA • PASEK POGODOWY NA ŻYWO',
         title: 'Puls Atmosferyczny w Każdym Zakątku Krakowa',
@@ -309,7 +309,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'wawelek',
         chapterNumber: '08 / 08',
-        scrollRange: [0.835, 0.94],
+        scrollRange: [0.767, 0.858],
         align: 'right',
         badge: 'ASYSTENT AI „WAWELEK” • TWÓJ MIEJSKI DORADCA',
         title: 'Sztuczna Inteligencja w Służbie Mieszkańców',
@@ -570,7 +570,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'genesis',
         chapterNumber: '01 / 08',
-        scrollRange: [0.02, 0.115],
+        scrollRange: [0.033, 0.117],
         align: 'left',
         badge: 'PROJECT ORIGIN • SURVEY OF 243 RESIDENTS',
         title: 'Bringing order to information chaos',
@@ -590,7 +590,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'resident',
         chapterNumber: '02 / 08',
-        scrollRange: [0.135, 0.23],
+        scrollRange: [0.133, 0.203],
         align: 'right',
         badge: 'RESIDENT MODE • 8 URBAN PILLARS',
         title: 'Personalized Quality of Life Index',
@@ -610,7 +610,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'accessibility',
         chapterNumber: '03 / 08',
-        scrollRange: [0.25, 0.345],
+        scrollRange: [0.217, 0.287],
         align: 'left',
         badge: 'KRAKÓW WITHOUT BARRIERS • SOCIAL INCLUSION',
         title: 'Accessibility Audit',
@@ -630,7 +630,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'parent',
         chapterNumber: '04 / 08',
-        scrollRange: [0.365, 0.46],
+        scrollRange: [0.300, 0.420],
         align: 'right',
         badge: 'PARENT MODE • 15-MINUTE CITY',
         title: 'Education & Care Compass',
@@ -650,7 +650,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'investor',
         chapterNumber: '05 / 08',
-        scrollRange: [0.48, 0.575],
+        scrollRange: [0.450, 0.533],
         align: 'left',
         badge: 'OFFICIAL & INVESTOR • HORIZON 2028',
         title: 'Development Predictions and Simulator',
@@ -670,7 +670,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'tourist',
         chapterNumber: '06 / 08',
-        scrollRange: [0.595, 0.69],
+        scrollRange: [0.550, 0.647],
         align: 'right',
         badge: 'DISCOVER KRAKÓW • SMART TOURISM',
         title: 'Sustainable Tourism',
@@ -690,7 +690,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'atmosphere',
         chapterNumber: '07 / 08',
-        scrollRange: [0.71, 0.815],
+        scrollRange: [0.650, 0.743],
         align: 'left',
         badge: 'ENVIRONMENTAL TELEMETRY • LIVE WEATHER BAR',
         title: 'Atmospheric Pulse in Every Corner of Kraków',
@@ -708,7 +708,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'wawelek',
         chapterNumber: '08 / 08',
-        scrollRange: [0.835, 0.94],
+        scrollRange: [0.767, 0.858],
         align: 'right',
         badge: 'AI ASSISTANT "WAWELEK" • YOUR CITY ADVISOR',
         title: 'Artificial Intelligence at the Service of Residents',
@@ -969,7 +969,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'genesis',
         chapterNumber: '01 / 08',
-        scrollRange: [0.02, 0.115],
+        scrollRange: [0.033, 0.117],
         align: 'left',
         badge: 'ПОЧАТОК ПРОЄКТУ • ОПИТУВАННЯ 243 МЕШКАНЦІВ',
         title: 'Порядок з інформаційного хаосу',
@@ -989,7 +989,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'resident',
         chapterNumber: '02 / 08',
-        scrollRange: [0.135, 0.23],
+        scrollRange: [0.133, 0.203],
         align: 'right',
         badge: 'РЕЖИМ МЕШКАНЦЯ • 8 МІСЬКИХ СТОВПІВ',
         title: 'Персоналізований Індекс Якості Життя',
@@ -1009,7 +1009,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'accessibility',
         chapterNumber: '03 / 08',
-        scrollRange: [0.25, 0.345],
+        scrollRange: [0.217, 0.287],
         align: 'left',
         badge: 'КРАКІВ БЕЗ БАР’ЄРІВ • СОЦІАЛЬНА ІНКЛЮЗІЯ',
         title: 'Аудит 5-зіркової доступності',
@@ -1029,7 +1029,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'parent',
         chapterNumber: '04 / 08',
-        scrollRange: [0.365, 0.46],
+        scrollRange: [0.300, 0.420],
         align: 'right',
         badge: 'РЕЖИМ БАТЬКІВ • 15-ХВИЛИННЕ МІСТО',
         title: 'Освітньо-опікунський компас',
@@ -1049,7 +1049,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'investor',
         chapterNumber: '05 / 08',
-        scrollRange: [0.48, 0.575],
+        scrollRange: [0.450, 0.533],
         align: 'left',
         badge: 'ПОСАДОВЕЦЬ ТА ІНВЕСТОР • ГОРИЗОНТ 2028',
         title: 'Прогнози розвитку та Симулятор',
@@ -1069,7 +1069,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'tourist',
         chapterNumber: '06 / 08',
-        scrollRange: [0.595, 0.69],
+        scrollRange: [0.550, 0.647],
         align: 'right',
         badge: 'ВІДКРИВАЙ КРАКІВ • SMART TOURISM',
         title: 'Сталий туризм',
@@ -1089,7 +1089,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'atmosphere',
         chapterNumber: '07 / 08',
-        scrollRange: [0.71, 0.815],
+        scrollRange: [0.650, 0.743],
         align: 'left',
         badge: 'ЕКОЛОГІЧНА ТЕЛЕМЕТРІЯ • ЖИВА СТРІЧКА ПОГОДИ',
         title: 'Атмосферний пульс у кожному куточку Кракова',
@@ -1107,7 +1107,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
       {
         id: 'wawelek',
         chapterNumber: '08 / 08',
-        scrollRange: [0.835, 0.94],
+        scrollRange: [0.767, 0.858],
         align: 'right',
         badge: 'АСИСТЕНТ AI «ВАВЕЛЕК» • ВАШ МІСЬКИЙ РАДНИК',
         title: 'Штучний інтелект на службі мешканців',

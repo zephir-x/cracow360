@@ -14,18 +14,18 @@ export function determineEducationExpansionPriority(
   totalBalance2028: number,
   totalCoveragePct2028: number
 ): 'HIGH' | 'MEDIUM' | 'LOW' {
-  // HIGH: negative total 0-14 balance OR severe deficit in nurseries (<= -800) or schools (<= -400)
+  // HIGH: negative total 0-14 balance OR severe deficit in nurseries (<= -700) or schools (<= -400)
   if (
     totalBalance2028 < 0 ||
-    nurseryBalance2028 <= -800 ||
+    nurseryBalance2028 <= -700 ||
     schoolPlacesBalance2028 <= -400
   ) {
     return 'HIGH';
   }
 
-  // LOW: high overall coverage (>= 135%), no school/kindergarten deficit, and mild/positive nursery balance (>= -350)
+  // LOW: high overall coverage (>= 160%), no school/kindergarten deficit, and mild/positive nursery balance (>= -350)
   if (
-    totalCoveragePct2028 >= 135 &&
+    totalCoveragePct2028 >= 160 &&
     schoolPlacesBalance2028 >= 0 &&
     kindergartenBalance2028 >= 0 &&
     nurseryBalance2028 >= -350

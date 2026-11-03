@@ -217,10 +217,10 @@ export function ParentHeroHeader({
               <rect x="230" y="152" width="60" height="18" rx="5" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
               <text x="238" y="165" fill="#bae6fd" fontSize="10" fontWeight="800">300m • 5&apos;</text>
 
-              <rect x="420" y="132" width="60" height="18" rx="5" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
-              <text x="428" y="145" fill="#fde047" fontSize="10" fontWeight="800">500m • 8&apos;</text>
+              <rect x="420" y="132" width="66" height="18" rx="5" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
+              <text x="428" y="145" fill="#fde047" fontSize="10" fontWeight="800">500m • 10&apos;</text>
 
-              <rect x="580" y="112" width="66" height="18" rx="5" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
+              <rect x="580" y="112" width="68" height="18" rx="5" fill="#0a2e65" fillOpacity="0.8" stroke="#38bdf8" strokeWidth="1" />
               <text x="587" y="125" fill="#34d399" fontSize="10" fontWeight="800">1000m • 15&apos;</text>
             </g>
 
