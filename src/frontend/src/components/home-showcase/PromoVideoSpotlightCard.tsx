@@ -14,7 +14,7 @@ function formatTime(seconds: number): string {
 }
 
 /**
- * Cinema-grade autoplay promotional spot ("reklama.mp4", ~1m45s) with:
+ * Cinema-grade autoplay promotional spot ("ad.mp4", ~1m45s) with:
  * - Custom interactive Speaker cursor (Volume2 / VolumeX) that replaces the native pointer on hover.
  * - Outer wrapper with overflow-visible so the custom cursor orb is never clipped at video edges.
  * - Interactive YouTube-style seekable progress bar at the bottom.
@@ -192,7 +192,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
         <div className="relative w-full h-full rounded-3xl overflow-hidden bg-slate-950 border-2 border-blue-200/80 shadow-[0_28px_80px_rgba(15,23,42,0.22)]">
           <video
             ref={videoRef}
-            src="/showcase/reklama.mp4"
+            src="/showcase/ad.mp4"
             autoPlay
             loop
             muted

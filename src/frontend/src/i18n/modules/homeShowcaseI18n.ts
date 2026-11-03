@@ -254,7 +254,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         scrollRange: [0.48, 0.575],
         align: 'left',
         badge: 'URZĘDNIK I INWESTOR • HORYZONT 2028',
-        title: 'Predykcje Rozwoju i Symulator „Co jeśli?”',
+        title: 'Predykcje Rozwoju i Symulator',
         highlightStat: '2026–2028',
         highlightLabel:
           'modele ekonometryczne (CAGR, ETS, regresja) oraz symulacja zwrotu społecznego z inwestycji',
@@ -274,7 +274,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         scrollRange: [0.595, 0.69],
         align: 'right',
         badge: 'ODKRYWAJ KRAKÓW • SMART TOURISM',
-        title: 'Zrównoważona Turystyka bez Tłumów',
+        title: 'Zrównoważona Turystyka',
         highlightStat: '50+ perełek',
         highlightLabel:
           'atrakcji, zielonych enklaw i punktów widokowych ocenionych pod kątem spokoju i dostępności',
@@ -349,7 +349,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-resident',
         tabId: 'resident',
         colorTheme: 'blue',
-        imageSrc: '/showcase/rodzina.jpg',
+        imageSrc: '/showcase/resident.jpg',
         badge: 'NOWY DOM POD WAWELEM',
         title: 'Pierwsze mieszkanie bez wróżenia z fusów',
         description:
@@ -359,7 +359,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-parent',
         tabId: 'parent',
         colorTheme: 'emerald',
-        imageSrc: '/showcase/rodzina-2.jpg',
+        imageSrc: '/showcase/parent.jpg',
         badge: 'RODZINNY PORANEK',
         title: 'Spokojny spacer z dzieckiem zamiast stania w korkach',
         description:
@@ -369,7 +369,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-investor',
         tabId: 'investor',
         colorTheme: 'violet',
-        imageSrc: '/showcase/rodzina.jpg',
+        imageSrc: '/showcase/investor.jpg',
         badge: 'GŁOS SĄSIEDZTWA',
         title: 'Zmiany w okolicy tam, gdzie naprawdę ich brakuje',
         description:
@@ -379,7 +379,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-tourist',
         tabId: 'tourist',
         colorTheme: 'amber',
-        imageSrc: '/showcase/rodzina-2.jpg',
+        imageSrc: '/showcase/tourist.jpg',
         badge: 'WEEKENDOWY ODDECH',
         title: 'Niedzielny spacer z dala od zgiełku Rynku',
         description:
@@ -389,7 +389,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-methodology',
         tabId: 'methodology',
         colorTheme: 'slate',
-        imageSrc: '/showcase/rodzina.jpg',
+        imageSrc: '/showcase/methodology.jpg',
         badge: 'KULTURA TRANSPARENTNOŚCI',
         title: 'Jedna wspólna prawda zamiast informacyjnego szumu',
         description:
@@ -653,7 +653,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         scrollRange: [0.48, 0.575],
         align: 'left',
         badge: 'OFFICIAL & INVESTOR • HORIZON 2028',
-        title: 'Development Predictions and "What If?" Simulator',
+        title: 'Development Predictions and Simulator',
         highlightStat: '2026–2028',
         highlightLabel:
             'econometric models (CAGR, ETS, regression) and social return on investment (SROI) simulation',
@@ -673,7 +673,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         scrollRange: [0.595, 0.69],
         align: 'right',
         badge: 'DISCOVER KRAKÓW • SMART TOURISM',
-        title: 'Sustainable Tourism Beyond the Crowds',
+        title: 'Sustainable Tourism',
         highlightStat: '50+ hidden gems',
         highlightLabel:
             'attractions, green spaces, and viewpoints evaluated for tranquility and accessibility',
@@ -748,7 +748,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-resident',
         tabId: 'resident',
         colorTheme: 'blue',
-        imageSrc: '/showcase/rodzina.jpg',
+        imageSrc: '/showcase/resident.jpg',
         badge: 'NEW HOME UNDER WAWEL',
         title: 'Your first home - no crystal ball required',
         description:
@@ -758,7 +758,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-parent',
         tabId: 'parent',
         colorTheme: 'emerald',
-        imageSrc: '/showcase/rodzina-2.jpg',
+        imageSrc: '/showcase/parent.jpg',
         badge: 'FAMILY MORNINGS',
         title: 'A calm morning walk instead of sitting in traffic',
         description:
@@ -768,7 +768,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-investor',
         tabId: 'investor',
         colorTheme: 'violet',
-        imageSrc: '/showcase/rodzina.jpg',
+        imageSrc: '/showcase/investor.jpg',
         badge: 'NEIGHBORHOOD VOICE',
         title: 'Urban improvements right where they are needed most',
         description:
@@ -778,7 +778,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-tourist',
         tabId: 'tourist',
         colorTheme: 'amber',
-        imageSrc: '/showcase/rodzina-2.jpg',
+        imageSrc: '/showcase/tourist.jpg',
         badge: 'WEEKEND BREATH',
         title: 'A Sunday stroll far from the Old Town crowds',
         description:
@@ -788,7 +788,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-methodology',
         tabId: 'methodology',
         colorTheme: 'slate',
-        imageSrc: '/showcase/rodzina.jpg',
+        imageSrc: '/showcase/methodology.jpg',
         badge: 'CULTURE OF TRANSPARENCY',
         title: 'One shared truth instead of informational noise',
         description:
@@ -1052,7 +1052,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         scrollRange: [0.48, 0.575],
         align: 'left',
         badge: 'ПОСАДОВЕЦЬ ТА ІНВЕСТОР • ГОРИЗОНТ 2028',
-        title: 'Прогнози розвитку та Симулятор «Що якщо?»',
+        title: 'Прогнози розвитку та Симулятор',
         highlightStat: '2026–2028',
         highlightLabel:
           'економетричні моделі (CAGR, ETS, регресія) та симуляція соціальної віддачі інвестицій',
@@ -1072,8 +1072,8 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         scrollRange: [0.595, 0.69],
         align: 'right',
         badge: 'ВІДКРИВАЙ КРАКІВ • SMART TOURISM',
-        title: 'Сталий туризм без натовпів',
-        highlightStat: '40+ перлин',
+        title: 'Сталий туризм',
+        highlightStat: '50+ перлин',
         highlightLabel:
           'локацій, зелених оаз та оглядових курганів, оцінених за рівнем спокою і доступності',
         description:
@@ -1147,7 +1147,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-resident',
         tabId: 'resident',
         colorTheme: 'blue',
-        imageSrc: '/showcase/rodzina.jpg',
+        imageSrc: '/showcase/resident.jpg',
         badge: 'НОВИЙ ДІМ ПІД ВАВЕЛЕМ',
         title: 'Ваша перша квартира без читання на кавовій гущі',
         description:
@@ -1157,7 +1157,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-parent',
         tabId: 'parent',
         colorTheme: 'emerald',
-        imageSrc: '/showcase/rodzina-2.jpg',
+        imageSrc: '/showcase/parent.jpg',
         badge: 'РОДИННИЙ РАНОК',
         title: 'Спокійна прогулянка з дитиною замість заторів',
         description:
@@ -1167,7 +1167,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-investor',
         tabId: 'investor',
         colorTheme: 'violet',
-        imageSrc: '/showcase/rodzina.jpg',
+        imageSrc: '/showcase/investor.jpg',
         badge: 'ГОЛОС СУСІДСТВА',
         title: 'Зміни в районі саме там, де їх справді бракує',
         description:
@@ -1177,7 +1177,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-tourist',
         tabId: 'tourist',
         colorTheme: 'amber',
-        imageSrc: '/showcase/rodzina-2.jpg',
+        imageSrc: '/showcase/tourist.jpg',
         badge: 'ВІДПОЧИНОК НА ВИХІДНИХ',
         title: 'Недільна прогулянка подалі від гамору Ринку',
         description:
@@ -1187,7 +1187,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         id: 'story-methodology',
         tabId: 'methodology',
         colorTheme: 'slate',
-        imageSrc: '/showcase/rodzina.jpg',
+        imageSrc: '/showcase/methodology.jpg',
         badge: 'КУЛЬТУРА ПРОЗОРОСТІ',
         title: 'Єдина спільна правда замість інформаційного шуму',
         description:

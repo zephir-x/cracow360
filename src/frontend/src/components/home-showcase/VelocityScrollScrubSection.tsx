@@ -19,7 +19,7 @@ export interface VelocityScrollScrubSectionProps {
   onSkipToFinale: () => void;
 }
 
-const TOTAL_FRAMES = 250;
+const TOTAL_FRAMES = 500;
 // Fraction of the unified scroll track dedicated to dissolving Act I (Hero + X-Ray lens)
 // directly in-place over Act II (so there is zero vertical seam or duplicate static frame)
 const HERO_DISSOLVE_SHARE = 0.065;
@@ -36,9 +36,9 @@ function getFrameUrl(index1Based: number): string {
 
 /**
  * Unified Act I & Act II Sticky Stage:
- * - Pinned directly beneath MainNavbar (top-14.5, h-[calc(100vh-3.625rem)]) inside a 1220vh scroll track.
+ * - Pinned directly beneath MainNavbar inside a scroll track.
  * - First 6.5% of scroll dissolves Act I (HeroDualVisionMask) directly in-place to reveal the live Act II Canvas & HUD underneath.
- * - Remaining 93.5% of scroll drives the Velocity-Clamped 250-frame WebP drone flight, 8 3D Story Chapters,
+ * - Remaining 93.5% of scroll drives the Velocity-Clamped 500-frame WebP drone flight, 8 3D Story Chapters,
  *   Autopilot mode (using behavior: 'instant' per-frame scrolling so CSS smooth-scroll never blocks it),
  *   and a progressive Blur + Pure White Fade + Centered Logo Reveal on the final frames into Act III.
  */
@@ -183,7 +183,7 @@ export function VelocityScrollScrubSection({
     };
   }, []);
 
-  // 1. Two-phase progressive frame preloader (keyframes first, then full 250 WebP sequence)
+  // 1. Two-phase progressive frame preloader (keyframes first, then full 500 WebP sequence)
   useEffect(() => {
     let cancelled = false;
 

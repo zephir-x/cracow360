@@ -1,11 +1,9 @@
 ﻿"""
-Utility script to prepare media assets for Cinematic Home Showcase.
-- Automatically trims any trailing/leading black frames and extracts evenly
-  spaced, WebP-optimized frames from Assets/Videos/panorama.mp4 into
-  src/frontend/public/showcase/frames/ for smooth scroll-scrubbing.
-- Generates a manifest.json with frame metadata.
-- Copies promotional media, cleans semi-transparent halo on logo_transparent.png,
-  and copies team photos to src/frontend/public/showcase/.
+Utility script to extract scroll-scrubbing frames from panorama.mp4 for Cinematic Home Showcase.
+- Trims leading/trailing black frames using fast binary search.
+- Sequentially extracts evenly spaced, WebP-optimized frames into src/frontend/public/showcase/frames/.
+- Operates in a low-memory streaming manner (zero full-video buffering in RAM).
+- Generates manifest.json with frame metadata.
 
 Usage:
   .\\src\\analytics\\.venv\\Scripts\\python.exe src/analytics/scripts/extract_showcase_frames.py
@@ -14,109 +12,155 @@ Usage:
 from __future__ import annotations
 
 import json
-import shutil
+import logging
 from pathlib import Path
+import time
 import cv2
 import numpy as np
 
+logging.basicConfig(
+    level=logging.INFO,
+    format="%(asctime)s [%(levelname)s] %(message)s",
+    datefmt="%H:%M:%S",
+)
 
-def clean_logo_transparent(src_path: Path, dst_path: Path) -> None:
-    """Removes semi-transparent off-white circular background residue around logo_transparent.png."""
-    img = cv2.imread(str(src_path), cv2.IMREAD_UNCHANGED)
-    if img is None or img.shape[2] < 4:
-        shutil.copy2(src_path, dst_path)
-        return
 
-    b = img[:, :, 0].astype(np.float32)
-    g = img[:, :, 1].astype(np.float32)
-    r = img[:, :, 2].astype(np.float32)
-    a = img[:, :, 3].astype(np.float32)
+def is_frame_visible(cap: cv2.VideoCapture, frame_idx: int) -> bool:
+    # Checks whether a frame at frame_idx is non-black (mean brightness > 15.0).
+    cap.set(cv2.CAP_PROP_POS_FRAMES, frame_idx)
+    ret, frame = cap.read()
+    if not ret or frame is None:
+        return False
+    return float(np.mean(frame)) > 15.0
 
-    # Identify neutral/whitish background residue (low color saturation, high brightness)
-    min_rgb = np.minimum(np.minimum(r, g), b)
-    max_rgb = np.maximum(np.maximum(r, g), b)
-    saturation = max_rgb - min_rgb
 
-    # Pixels that are whitish/grayish residue from incomplete background removal
-    is_whitish_halo = (min_rgb > 200) & (saturation < 28) & (a < 235)
-    a[is_whitish_halo] = 0.0
+def find_visible_frame_range(cap: cv2.VideoCapture, total_frames: int) -> tuple[int, int]:
+    # Finds the [first_idx, last_idx] range of visible (non-black) frames using binary search.
+    # Find start of visible range
+    first_idx = 0
+    if not is_frame_visible(cap, 0):
+        low, high = 0, total_frames - 1
+        while low < high:
+            mid = (low + high) // 2
+            if is_frame_visible(cap, mid):
+                high = mid
+            else:
+                low = mid + 1
+        first_idx = low
 
-    # Any remaining opaque white pixels inside/around the emblem become pure #FFFFFF so they match white bg 1:1
-    is_pure_white = (min_rgb > 225) & (saturation < 22) & (a >= 235)
-    b[is_pure_white] = 255.0
-    g[is_pure_white] = 255.0
-    r[is_pure_white] = 255.0
+    # Find end of visible range
+    last_idx = total_frames - 1
+    if not is_frame_visible(cap, total_frames - 1):
+        low, high = first_idx, total_frames - 1
+        while low < high:
+            mid = (low + high + 1) // 2
+            if is_frame_visible(cap, mid):
+                low = mid
+            else:
+                high = mid - 1
+        last_idx = low
 
-    cleaned = np.stack([b, g, r, a], axis=2).astype(np.uint8)
-    cv2.imwrite(str(dst_path), cleaned)
+    return first_idx, last_idx
 
 
 def main() -> None:
+    start_time = time.time()
+    logging.info("The process of extracting video frames for Kraków360 Showcase has begun...")
+
     repo_root = Path(__file__).resolve().parents[3]
     assets_videos = repo_root / "Assets" / "Videos"
-    assets_images = repo_root / "Assets" / "Images"
     public_showcase = repo_root / "src" / "frontend" / "public" / "showcase"
     frames_dir = public_showcase / "frames"
 
-    public_showcase.mkdir(parents=True, exist_ok=True)
     frames_dir.mkdir(parents=True, exist_ok=True)
 
-    # 1. Copy promotional video, illustrations, and team profile photos
-    files_to_copy = [
-        (assets_videos / "reklama.mp4", public_showcase / "reklama.mp4"),
-        (assets_videos / "panorama.mp4", public_showcase / "panorama.mp4"),
-        (assets_images / "rodzina.jpg", public_showcase / "rodzina.jpg"),
-        (assets_images / "rodzina-2.jpg", public_showcase / "rodzina-2.jpg"),
-        (assets_images / "kacper.jpg", public_showcase / "kacper.jpg"),
-        (assets_images / "filip.jpg", public_showcase / "filip.jpg"),
-    ]
-    for src, dst in files_to_copy:
-        if src.exists():
-            shutil.copy2(src, dst)
-            print(f"[OK] Copied {src.name} -> {dst.relative_to(repo_root)}")
-
-    logo_src = assets_images / "logo_transparent.png"
-    logo_dst = public_showcase / "logo_transparent.png"
-    if logo_src.exists():
-        clean_logo_transparent(logo_src, logo_dst)
-        print(f"[OK] Cleaned & copied {logo_src.name} -> {logo_dst.relative_to(repo_root)}")
-
-    # 2. Extract frames from panorama.mp4 for Canvas Scroll-Scrubbing
     panorama_path = assets_videos / "panorama.mp4"
     if not panorama_path.exists():
+        logging.error(f"Video file not found: {panorama_path}")
         raise FileNotFoundError(f"Missing video file: {panorama_path}")
 
     cap = cv2.VideoCapture(str(panorama_path))
-    fps = float(cap.get(cv2.CAP_PROP_FPS) or 30.0)
+    if not cap.isOpened():
+        logging.error(f"Failed to open the video file: {panorama_path}")
+        raise RuntimeError(f"Unable to open video: {panorama_path}")
+
+    fps = float(cap.get(cv2.CAP_PROP_FPS) or 60.0)
     orig_w = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
     orig_h = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    total_source_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
 
-    all_frames: list[np.ndarray] = []
-    while True:
-        ret, frame = cap.read()
-        if not ret:
-            break
-        # Keep only visible frames (automatically strip black fade-outs at start/end)
-        if float(np.mean(frame)) > 15.0:
-            all_frames.append(frame)
-    cap.release()
+    if total_source_frames <= 0:
+        cap.release()
+        logging.error("The video file contains no frames.")
+        raise ValueError("Video has no frames.")
 
-    usable_count = len(all_frames)
-    target_frame_count = min(250, usable_count)
-    target_w = 1600
-    target_h = int(round(orig_h * (target_w / orig_w))) if orig_w > 0 else 900
+    logging.info(
+        f"Video loaded '{panorama_path.name}': {orig_w}x{orig_h} @ {fps:.1f} FPS, total of {total_source_frames} source frames"
+    )
 
-    # Clean old frames first
+    first_idx, last_idx = find_visible_frame_range(cap, total_source_frames)
+    usable_count = max(0, last_idx - first_idx + 1)
+    if usable_count == 0:
+        cap.release()
+        logging.error("No usable non-black frames found in panorama.mp4")
+        raise ValueError("No usable non-black frames found in panorama.mp4")
+
+    logging.info(
+        f"Visible frame range: [{first_idx} - {last_idx}] ({usable_count} usable frames, discarded {total_source_frames - usable_count} black transitions)"
+    )
+
+    target_frame_count = min(500, usable_count)
+    target_w = 1920
+    target_h = int(round(orig_h * (target_w / orig_w))) if orig_w > 0 else 1080
+    needs_resize = orig_w != target_w or orig_h != target_h
+
+    # Map source frame indices to output 1-based frame numbers
+    target_map: dict[int, list[int]] = {}
+    for i in range(target_frame_count):
+        src_offset = min(usable_count - 1, int(round(i * (usable_count - 1) / max(1, target_frame_count - 1))))
+        actual_frame_idx = first_idx + src_offset
+        target_map.setdefault(actual_frame_idx, []).append(i + 1)
+
+    # Clean old WebP frames in destination directory
     for old_file in frames_dir.glob("frame_*.webp"):
         old_file.unlink()
 
+    logging.info(
+        f"Registration has begun {target_frame_count} WebP frames ({target_w}x{target_h}, quality 82) to directory {frames_dir.relative_to(repo_root)}..."
+    )
+
+    # Single sequential extraction pass from first_idx to last_idx
+    cap.set(cv2.CAP_PROP_POS_FRAMES, first_idx)
+    curr_frame_idx = first_idx
     saved_count = 0
-    for i in range(target_frame_count):
-        src_idx = min(usable_count - 1, int(round(i * (usable_count - 1) / max(1, target_frame_count - 1))))
-        resized = cv2.resize(all_frames[src_idx], (target_w, target_h), interpolation=cv2.INTER_AREA)
-        out_path = frames_dir / f"frame_{i + 1:04d}.webp"
-        cv2.imwrite(str(out_path), resized, [cv2.IMWRITE_WEBP_QUALITY, 82])
-        saved_count += 1
+    last_log_time = time.time()
+    log_interval_seconds = 15.0
+
+    while curr_frame_idx <= last_idx:
+        ret, frame = cap.read()
+        if not ret or frame is None:
+            break
+
+        if curr_frame_idx in target_map:
+            frame_to_save = cv2.resize(frame, (target_w, target_h), interpolation=cv2.INTER_AREA) if needs_resize else frame
+            for out_num in target_map[curr_frame_idx]:
+                out_path = frames_dir / f"frame_{out_num:04d}.webp"
+                cv2.imwrite(str(out_path), frame_to_save, [cv2.IMWRITE_WEBP_QUALITY, 82])
+                saved_count += 1
+
+                now = time.time()
+                if now - last_log_time >= log_interval_seconds:
+                    elapsed = now - start_time
+                    progress_pct = (saved_count / target_frame_count * 100.0) if target_frame_count > 0 else 0.0
+                    fps_speed = saved_count / elapsed if elapsed > 0 else 0.0
+                    logging.info(
+                        f"Extraction progress: created {saved_count}/{target_frame_count} frames ({progress_pct:.1f}%) "
+                        f"| Time: {elapsed:.1f}s | Average speed: {fps_speed:.1f} fps"
+                    )
+                    last_log_time = now
+
+        curr_frame_idx += 1
+    cap.release()
 
     manifest = {
         "frameCount": saved_count,
@@ -128,9 +172,12 @@ def main() -> None:
     }
     manifest_path = frames_dir / "manifest.json"
     manifest_path.write_text(json.dumps(manifest, indent=2), encoding="utf-8")
-    print(
-        f"[OK] Extracted {saved_count} non-black WebP frames ({target_w}x{target_h}) "
-        f"from {usable_count} usable frames -> {frames_dir.relative_to(repo_root)}"
+
+    total_duration = time.time() - start_time
+    logging.info(f"Created manifest file: {manifest_path.relative_to(repo_root)}")
+    logging.info(
+        f"Process completed successfully! Created {saved_count} WebP frames in {total_duration:.2f}s "
+        f"({saved_count / total_duration:.1f} fps) -> {frames_dir.relative_to(repo_root)}"
     )
 
 

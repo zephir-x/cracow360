@@ -231,14 +231,42 @@ export function App() {
   const isHomeShowcase = activeTab === 'home';
 
   return (
-    <div className="min-h-screen text-slate-900 flex flex-col bg-transparent">
+    <div className="min-h-screen text-slate-900 flex flex-col bg-transparent relative">
+      {/* Ambient Kraków City Background (Smoothly hidden on Home Showcase) */}
+      <div
+        className={`pointer-events-none absolute top-0 inset-x-0 h-250 sm:h-287.5 lg:h-325 overflow-hidden transition-opacity duration-700 ease-out z-0 ${
+          isHomeShowcase ? 'opacity-0' : 'opacity-100'
+        }`}
+        aria-hidden="true"
+      >
+        <img
+          src="/background.jpg"
+          alt=""
+          className="w-full h-full object-cover object-top select-none opacity-85"
+          style={{
+            maskImage:
+              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,0.6) 72%, rgba(0,0,0,0) 100%)',
+            WebkitMaskImage:
+              'linear-gradient(to bottom, rgba(0,0,0,1) 0%, rgba(0,0,0,1) 48%, rgba(0,0,0,0.6) 72%, rgba(0,0,0,0) 100%)',
+          }}
+        />
+        {/* Soft, continuous gradient overlay that begins fading to pure white only from ~50% downwards */}
+        <div
+          className="absolute inset-0"
+          style={{
+            background:
+              'linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 48%, rgba(255,255,255,0.7) 75%, #ffffff 100%)',
+          }}
+        />
+      </div>
+
       {/* Top Civic Navigation Bar */}
       <MainNavbar activeTab={activeTab} onSelectTab={handleSelectTab} />
 
       {/* Live Atmospheric Conditions & Air Quality Ribbon (lazy-mounted after leaving Start, smoothly collapses on Start) */}
       {hasVisitedNonHomeTab && (
         <div
-          className={`grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+          className={`relative z-10 grid transition-all duration-500 ease-[cubic-bezier(0.16,1,0.3,1)] ${
             isHomeShowcase
               ? 'grid-rows-[0fr] opacity-0 pointer-events-none'
               : 'grid-rows-[1fr] opacity-100'
@@ -254,8 +282,8 @@ export function App() {
       <main
         className={
           isHomeShowcase
-            ? 'flex-1 w-full'
-            : 'flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6'
+            ? 'relative z-10 flex-1 w-full'
+            : 'relative z-10 flex-1 max-w-360 w-full mx-auto px-4 sm:px-6 pt-6 space-y-6'
         }
       >
         {error && !isHomeShowcase && (
@@ -319,7 +347,9 @@ export function App() {
       </main>
 
       {/* Civic Footer */}
-      <MainFooter onSelectTab={handleSelectTab} />
+      <div className="relative z-10">
+        <MainFooter onSelectTab={handleSelectTab} />
+      </div>
 
       {/* Global Floating AI Assistant "Wawelek" (lazy-mounted after leaving Start, smoothly hides on Start) */}
       {hasVisitedNonHomeTab && (

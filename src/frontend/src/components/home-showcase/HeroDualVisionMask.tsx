@@ -171,7 +171,7 @@ export function HeroDualVisionMask({
         }`}
       >
         <img
-          src="/showcase/rodzina.jpg"
+          src="/showcase/home.jpg"
           alt="Panorama Wawelu i Bulwarów Wiślanych Kraków360"
           className="w-full h-full object-cover object-center"
         />
@@ -193,7 +193,7 @@ export function HeroDualVisionMask({
       >
         {/* High-contrast monochrome + night-vision blueprint under-image */}
         <img
-          src="/showcase/rodzina.jpg"
+          src="/showcase/home.jpg"
           alt=""
           aria-hidden="true"
           className="w-full h-full object-cover object-center grayscale contrast-150 brightness-50"
