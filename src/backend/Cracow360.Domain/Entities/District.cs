@@ -225,14 +225,13 @@ public class DistrictCultureAndSociety
     public decimal MunicipalSubsidyPerCapitaPln { get; set; }
 }
 
-// Traffic safety, road incidents, and municipal police interventions
+// Traffic safety, road incidents, and resident safety rating
 public class DistrictPublicSafety
 {
     public int RoadCollisionsAnnual { get; set; }
     public int PedestrianAccidents { get; set; }
     public int InjuryAccidents { get; set; }
-    public int MunicipalPoliceInterventionsTotal { get; set; }
-    public int PublicDisturbanceInterventions { get; set; }
+    public double SafetyRatingSurvey { get; set; }
 }
 
 // Housing transaction prices, rental rates, affordability index, and YoY dynamics

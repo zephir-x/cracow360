@@ -55,6 +55,15 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     portalUrl: 'https://sewik.pl/szukaj',
     status: 'Opracowanie własne',
   },
+  {
+    id: 'safe-2',
+    category: 'safety',
+    categoryLabel: 'Bezpieczeństwo & Ruch',
+    officialDatasetName: 'Ankiety Otodom',
+    metrics: 'Raport z ankiet Otodom na temat poczucia bezpieczeństwa mieszkańców przeprowadzony na grupie badawczej 120 tys. osób',
+    portalUrl: 'https://media.otodom.pl/ktore-dzielnice-krakowa-sa-bezpieczne',
+    status: 'Opracowanie własne',
+  },
 
   // GIS & Environment
   {

@@ -297,7 +297,7 @@ def run_etl() -> None:
             "mobilityAndTransport": {"kmkStopsCount": 0, "tramStopsCount": 0, "busStopsCount": 0, "onDemandStopsCount": 0, "scheduleBoardsCount": 0, "tramNetworkSharePct": 0.0, "isochroneCoveragePct": 0.0, "parkAndRideCount": 0, "bikeRacksCount": 0, "bikeLanesLengthKm": 0.0, "bikeLanesSeparatedKm": 0.0, "bikeLanesCombinedKm": 0.0, "bikeRepairStationsCount": 0, "kasselKerbPct": 0.0, "tactilePavingPct": 0.0},
             "greeneryAndSport": {"cityParksCount": 0, "pocketParksCount": 0, "totalParksAreaHa": 0.0, "forestAreaHa": 0.0, "totalGreenAreaHa": 0.0, "greenAreaM2PerCapita": 0.0, "totalGreenM2PerCapita": 0.0, "schoolSportsFacilitiesCount": 0, "schoolSwimmingPoolsCount": 0},
             "cultureAndSociety": {"libraryBranchesCount": 0, "culturalCentersCount": 0, "seniorActivityCentersCount": 0, "annualCulturalEventsCount": 0, "municipalSubsidyPerCapitaPln": 0.0},
-            "publicSafety": {"roadCollisionsAnnual": 0, "pedestrianAccidents": 0, "injuryAccidents": 0, "municipalPoliceInterventionsTotal": 0, "publicDisturbanceInterventions": 0},
+            "publicSafety": {"roadCollisionsAnnual": 0, "pedestrianAccidents": 0, "injuryAccidents": 0, "safetyRatingSurvey": 0.0},
             "housingMarket": {"avgPricePerM2": 0.0, "priceSecondaryM2": 0.0, "pricePrimaryM2": 0.0, "priceMedianM2": 0.0, "avgRentalPriceM2": 0.0, "priceGrowthYoYPct": 0.0, "m2PerAverageSalary": 0.0},
             "environmentalQuality": {"pm10AnnualUgM3": 0.0, "pm25AnnualUgM3": 0.0, "smogDaysCount": 0, "trafficNoiseExceededPct": 0.0},
             "_internal": {"birthCohorts": defaultdict(int), "primarySchoolClasses": 0, "pop2023": 0, "pop2024": 0, "pop2025": 0, "kasselKerbStops": 0, "tactilePavingStops": 0},
@@ -692,7 +692,7 @@ def run_etl() -> None:
                 sec["roadCollisionsAnnual"] = clean_int(row.get("Liczba_kolizji_drogowych_rocznie"))
                 sec["pedestrianAccidents"] = clean_int(row.get("Wypadki_z_udzialem_pieszych"))
                 sec["injuryAccidents"] = clean_int(row.get("Wypadki_z_rannymi"))
-                sec["publicDisturbanceInterventions"] = clean_int(row.get("Interwencje_zaklocenia_porzadku_publicznego"))
+                sec["safetyRatingSurvey"] = clean_float(row.get("Ocena_bezpieczenstwa"))
 
     housing_file = find_csv(r"Ceny mieszkan")
     if housing_file:

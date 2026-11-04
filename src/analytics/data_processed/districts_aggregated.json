@@ -70,8 +70,7 @@
         "roadCollisionsAnnual": 955,
         "pedestrianAccidents": 57,
         "injuryAccidents": 57,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 4450
+        "safetyRatingSurvey": 3.61
       },
       "housingMarket": {
         "avgPricePerM2": 20826.0,
@@ -276,8 +275,7 @@
         "roadCollisionsAnnual": 617,
         "pedestrianAccidents": 28,
         "injuryAccidents": 28,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 1420
+        "safetyRatingSurvey": 3.91
       },
       "housingMarket": {
         "avgPricePerM2": 18214.0,
@@ -480,8 +478,7 @@
         "roadCollisionsAnnual": 529,
         "pedestrianAccidents": 28,
         "injuryAccidents": 28,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 1120
+        "safetyRatingSurvey": 3.68
       },
       "housingMarket": {
         "avgPricePerM2": 14759.0,
@@ -685,8 +682,7 @@
         "roadCollisionsAnnual": 776,
         "pedestrianAccidents": 32,
         "injuryAccidents": 32,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 1610
+        "safetyRatingSurvey": 3.7
       },
       "housingMarket": {
         "avgPricePerM2": 15538.0,
@@ -890,8 +886,7 @@
         "roadCollisionsAnnual": 949,
         "pedestrianAccidents": 42,
         "injuryAccidents": 42,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 1250
+        "safetyRatingSurvey": 3.78
       },
       "housingMarket": {
         "avgPricePerM2": 16916.0,
@@ -1095,8 +1090,7 @@
         "roadCollisionsAnnual": 327,
         "pedestrianAccidents": 15,
         "injuryAccidents": 15,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 510
+        "safetyRatingSurvey": 4.05
       },
       "housingMarket": {
         "avgPricePerM2": 16096.0,
@@ -1296,8 +1290,7 @@
         "roadCollisionsAnnual": 218,
         "pedestrianAccidents": 12,
         "injuryAccidents": 12,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 405
+        "safetyRatingSurvey": 4.0
       },
       "housingMarket": {
         "avgPricePerM2": 19965.0,
@@ -1500,8 +1493,7 @@
         "roadCollisionsAnnual": 892,
         "pedestrianAccidents": 31,
         "injuryAccidents": 31,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 1100
+        "safetyRatingSurvey": 3.88
       },
       "housingMarket": {
         "avgPricePerM2": 18063.0,
@@ -1706,8 +1698,7 @@
         "roadCollisionsAnnual": 213,
         "pedestrianAccidents": 7,
         "injuryAccidents": 7,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 435
+        "safetyRatingSurvey": 3.83
       },
       "housingMarket": {
         "avgPricePerM2": 16111.0,
@@ -1909,8 +1900,7 @@
         "roadCollisionsAnnual": 573,
         "pedestrianAccidents": 5,
         "injuryAccidents": 5,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 310
+        "safetyRatingSurvey": 3.82
       },
       "housingMarket": {
         "avgPricePerM2": 13560.0,
@@ -2111,8 +2101,7 @@
         "roadCollisionsAnnual": 245,
         "pedestrianAccidents": 16,
         "injuryAccidents": 16,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 920
+        "safetyRatingSurvey": 3.66
       },
       "housingMarket": {
         "avgPricePerM2": 15044.0,
@@ -2313,8 +2302,7 @@
         "roadCollisionsAnnual": 612,
         "pedestrianAccidents": 19,
         "injuryAccidents": 19,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 980
+        "safetyRatingSurvey": 3.48
       },
       "housingMarket": {
         "avgPricePerM2": 11300.0,
@@ -2517,8 +2505,7 @@
         "roadCollisionsAnnual": 1390,
         "pedestrianAccidents": 31,
         "injuryAccidents": 31,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 1480
+        "safetyRatingSurvey": 3.64
       },
       "housingMarket": {
         "avgPricePerM2": 18857.0,
@@ -2720,8 +2707,7 @@
         "roadCollisionsAnnual": 666,
         "pedestrianAccidents": 26,
         "injuryAccidents": 26,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 830
+        "safetyRatingSurvey": 3.73
       },
       "housingMarket": {
         "avgPricePerM2": 12208.0,
@@ -2920,8 +2906,7 @@
         "roadCollisionsAnnual": 198,
         "pedestrianAccidents": 22,
         "injuryAccidents": 22,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 690
+        "safetyRatingSurvey": 3.7
       },
       "housingMarket": {
         "avgPricePerM2": 13367.0,
@@ -3122,8 +3107,7 @@
         "roadCollisionsAnnual": 189,
         "pedestrianAccidents": 6,
         "injuryAccidents": 6,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 740
+        "safetyRatingSurvey": 3.32
       },
       "housingMarket": {
         "avgPricePerM2": 11657.0,
@@ -3325,8 +3309,7 @@
         "roadCollisionsAnnual": 211,
         "pedestrianAccidents": 8,
         "injuryAccidents": 8,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 270
+        "safetyRatingSurvey": 3.06
       },
       "housingMarket": {
         "avgPricePerM2": 9672.0,
@@ -3527,8 +3510,7 @@
         "roadCollisionsAnnual": 540,
         "pedestrianAccidents": 27,
         "injuryAccidents": 27,
-        "municipalPoliceInterventionsTotal": 0,
-        "publicDisturbanceInterventions": 1290
+        "safetyRatingSurvey": 3.64
       },
       "housingMarket": {
         "avgPricePerM2": 12623.0,

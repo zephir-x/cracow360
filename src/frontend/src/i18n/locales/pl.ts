@@ -127,7 +127,7 @@ export const plTranslations: TranslationDictionary = {
       },
       safety: {
         name: 'Bezpieczeństwo i Porządek',
-        desc: 'Bezpieczny ruch, ochrona pieszych',
+        desc: 'Ocena bezpieczeństwa oraz ruchu',
       },
       housingAffordability: {
         name: 'Dostępność Mieszkaniowa',
@@ -223,7 +223,7 @@ export const plTranslations: TranslationDictionary = {
       m2PerAverageSalary: 'Dostępność m² za średnie wynagrodzenie netto',
       roadCollisionsAnnual: 'Roczna liczba kolizji drogowych',
       pedestrianAccidents: 'Wypadki drogowe z udziałem pieszych',
-      publicDisturbanceInterventions: 'Zgłoszenia zakłócania porządku (Straż Miejska)',
+      safetyRatingSurvey: 'Ocena bezpieczeństwa mieszkańców',
       tramStopsCount: 'Przystanki tramwajowe (szkielet szynowy)',
       tramNetworkSharePct: 'Udział tramwajów w sieci przystankowej',
       scheduleBoardsCount: 'Gabloty i ramki rozkładowe (oferta linii)',

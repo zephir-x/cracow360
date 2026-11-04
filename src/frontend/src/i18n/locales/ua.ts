@@ -127,7 +127,7 @@ export const uaTranslations: TranslationDictionary = {
       },
       safety: {
         name: 'Безпека та Громадський Порядок',
-        desc: 'Безпечний рух та захист пішоходів',
+        desc: 'Оцінка безпеки та руху',
       },
       housingAffordability: {
         name: 'Доступність Житла',
@@ -223,7 +223,7 @@ export const uaTranslations: TranslationDictionary = {
       m2PerAverageSalary: 'Доступність м² за середню чисту зарплату',
       roadCollisionsAnnual: 'Річна кількість дорожніх зіткнень',
       pedestrianAccidents: 'ДТП за участю пішоходів',
-      publicDisturbanceInterventions: 'Виклики щодо порушення порядку (Муніципальна Варта)',
+      safetyRatingSurvey: 'Оцінка безпеки мешканців',
       tramStopsCount: 'Трамвайні зупинки (рейковий каркас)',
       tramNetworkSharePct: 'Частка трамваїв у мережі зупинок',
       scheduleBoardsCount: 'Інформаційні стенди з розкладом руху',

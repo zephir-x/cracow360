@@ -127,7 +127,7 @@ export const enTranslations: TranslationDictionary = {
       },
       safety: {
         name: 'Safety & Public Order',
-        desc: 'Safe traffic & pedestrian safety',
+        desc: 'Safety and traffic rating',
       },
       housingAffordability: {
         name: 'Housing Affordability',
@@ -223,7 +223,7 @@ export const enTranslations: TranslationDictionary = {
       m2PerAverageSalary: 'Affordable m² per net average salary',
       roadCollisionsAnnual: 'Annual road traffic collisions',
       pedestrianAccidents: 'Pedestrian-involved traffic accidents',
-      publicDisturbanceInterventions: 'Public order complaints (City Guard)',
+      safetyRatingSurvey: 'Resident safety rating',
       tramStopsCount: 'Tram stops (rail backbone)',
       tramNetworkSharePct: 'Tram share in stop network',
       scheduleBoardsCount: 'Schedule display boards & frames',

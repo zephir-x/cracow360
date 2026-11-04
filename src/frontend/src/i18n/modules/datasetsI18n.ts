@@ -20,6 +20,11 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     en: 'A search tool for traffic incidents at specific locations in Kraków, categorized by type (e.g., involving pedestrians, involving injuries)',
     ua: 'Пошукова система дорожньо-транспортних пригод у певних місцях Кракова, розділена на категорії (за участю пішоходів, за участю постраждалих)',
   },
+  'safe-2': {
+    pl: 'Raport z ankiet Otodom na temat poczucia bezpieczeństwa mieszkańców przeprowadzony na grupie badawczej 120 tys. osób',
+    en: 'A report based on Otodom surveys regarding residents sense of safety, conducted with a study group of 120,000 people',
+    ua: 'Звіт про опитування Otodom щодо відчуття безпеки мешканців, проведений на дослідницькій групі зі 120 000 осіб',
+  },
   'gis-1': {
     pl: 'Wektorowe granice Polygon/MultiPolygon dzielnic, powierzchnia administracyjna w km²',
     en: 'Polygon/MultiPolygon vector boundaries of districts, administrative area in km²',

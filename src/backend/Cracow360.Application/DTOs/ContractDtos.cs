@@ -145,13 +145,12 @@ public record DistrictCultureAndSocietyDto(
     decimal MunicipalSubsidyPerCapitaPln
 );
 
-// Traffic safety, road incidents, and municipal police interventions
+// Traffic safety, road incidents, and resident safety rating
 public record DistrictPublicSafetyDto(
     int RoadCollisionsAnnual,
     int PedestrianAccidents,
     int InjuryAccidents,
-    int MunicipalPoliceInterventionsTotal,
-    int PublicDisturbanceInterventions
+    double SafetyRatingSurvey
 );
 
 // Housing transaction prices, rental rates, affordability index, and YoY dynamics

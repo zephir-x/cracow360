@@ -10,7 +10,7 @@ PILLARS EVALUATED:
     3. greeneryScore – City parks, pocket parks, municipal forests, and sports facilities
     4. cultureAndSeniorScore – Libraries, cultural centers, and Senior Activity Centers (CAS)
     5. environmentScore – Clean air (PM10 levels via GIOŚ), absence of transit noise, and green buffers
-    6. safetyScore – Road safety, absence of pedestrian accidents, and public order (data from SEWiK / Municipal Police)
+    6. safetyScore – Road safety, absence of pedestrian accidents, and resident safety rating (data from SEWiK / Otodom Surveys)
     7. housingAffordabilityScore – Affordability of purchasing or renting residential property (data from NBP / Otodom / RCN)
     8. demographicVitalityScore – Demographic vitality, 3-year population trends, and migration attractiveness (data from BDK UMK)
 """
@@ -215,17 +215,17 @@ def calculate_quality_scores() -> None:
         )
         for d in districts
     ]
-    disturbance_per_1k = [
-        math.log1p(d["publicSafety"]["publicDisturbanceInterventions"] * 1000.0 / effective_population(d))
+    safety_ratings = [
+        d["publicSafety"]["safetyRatingSurvey"]
         for d in districts
     ]
 
     s_collisions = min_max_normalize_0_100(collisions_per_1k, invert=True)
     s_pedestrians = min_max_normalize_0_100(pedestrians_per_10k, invert=True)
-    s_disturbance = min_max_normalize_0_100(disturbance_per_1k, invert=True)
+    s_otodom = min_max_normalize_0_100(safety_ratings, invert=False)
 
     raw_safety = [
-        0.32 * s_collisions[i] + 0.33 * s_pedestrians[i] + 0.35 * s_disturbance[i]
+        0.32 * s_collisions[i] + 0.33 * s_pedestrians[i] + 0.35 * s_otodom[i]
         for i in range(n_districts)
     ]
     safety_scores = rescale_to_practical_band(raw_safety, low=38.0, high=94.0)

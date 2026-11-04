@@ -569,7 +569,12 @@ export function DistrictComparisonView({
 
                         const absDiff = Math.abs(diff);
                         const isInteger = Math.abs(diff - Math.round(diff)) < 0.0001;
-                        const diffNum = isInteger ? Math.round(diff) : diff.toFixed(1);
+                        const hasTwoDecimals = row.metricKey === 'safetyRatingSurvey' || row.metricKey === 'm2PerAverageSalary' || row.metricKey === 'childrenPerCarePlaceRatio';
+                        const diffNum = isInteger
+                          ? Math.round(diff)
+                          : hasTwoDecimals
+                          ? diff.toFixed(2)
+                          : diff.toFixed(1);
                         const formattedDiffNum = diff > 0 ? `+${diffNum}` : `${diffNum}`;
                         const formattedDiffUnit = activePluralForms
                           ? plural(absDiff, activePluralForms)

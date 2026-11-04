@@ -105,13 +105,12 @@ export interface DistrictCultureAndSocietyDto {
   municipalSubsidyPerCapitaPln: number;
 }
 
-// Traffic safety, road incidents, and municipal police interventions
+// Traffic safety, road incidents, and resident safety rating
 export interface DistrictPublicSafetyDto {
   roadCollisionsAnnual: number;
   pedestrianAccidents: number;
   injuryAccidents: number;
-  municipalPoliceInterventionsTotal: number;
-  publicDisturbanceInterventions: number;
+  safetyRatingSurvey: number;
 }
 
 // Housing transaction prices, rental rates, affordability index, and YoY dynamics

@@ -169,8 +169,7 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
                 d.PublicSafety.RoadCollisionsAnnual,
                 d.PublicSafety.PedestrianAccidents,
                 d.PublicSafety.InjuryAccidents,
-                d.PublicSafety.MunicipalPoliceInterventionsTotal,
-                d.PublicSafety.PublicDisturbanceInterventions),
+                d.PublicSafety.SafetyRatingSurvey),
             new DistrictHousingMarketDto(
                 d.HousingMarket.AvgPricePerM2,
                 d.HousingMarket.PriceSecondaryM2,
