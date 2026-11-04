@@ -246,13 +246,13 @@ public class DistrictHousingMarket
     public double M2PerAverageSalary { get; set; }
 }
 
-// Environmental monitoring: PM10/PM2.5 concentrations, smog days, and noise exposure
+// Environmental monitoring: PM10/PM2.5 concentrations, smog days, and NO2 exhaust levels (Open-Meteo 90d telemetry)
 public class DistrictEnvironmentalQuality
 {
-    public double Pm10AnnualUgM3 { get; set; }
-    public double Pm25AnnualUgM3 { get; set; }
-    public int SmogDaysCount { get; set; }
-    public double TrafficNoiseExceededPct { get; set; }
+    public double Pm10Avg90dUgM3 { get; set; }
+    public double Pm25Avg90dUgM3 { get; set; }
+    public int SmogDays90dCount { get; set; }
+    public double No2Avg90dUgM3 { get; set; }
 }
 
 // 2028 Econometric forecasts, childcare balance, and municipal/B2B recommendations

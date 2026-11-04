@@ -106,7 +106,7 @@
         "2. Edukacja i Opieka (Education): dostępność miejsc w żłobkach i klubach dziecięcych (0–3 lata), przedszkolach (4–6 lat), szkołach podstawowych (7–14 lat), wielkość klas i Kluby Rodzica.",
         "3. Zieleń i Rekreacja (Greenery): powierzchnia parków miejskich, parków kieszonkowych (Ogrody Krakowian) i lasów na mieszkańca (m²/os.) oraz boiska i pływalnie przyszkolne.",
         "4. Kultura i Wsparcie Seniora (Culture & Senior): filie Biblioteki Kraków, domy kultury, Centra Aktywności Seniora (CAS) oraz wydarzenia kulturalne.",
-        "5. Środowisko i Powietrze (Environment): średnie roczne stężenia pyłów PM10 i PM2.5, liczba dni smogowych oraz procent terenów z przekroczeniem hałasu drogowego.",
+        "5. Środowisko i Powietrze (Environment): stężenia pyłów zawieszonych PM10 i PM2.5, liczba dni smogowych oraz stężenie spalin NO₂ z dynamicznej telemetrii Open-Meteo wraz z buforem zieleni miejskiej.",
         "6. Bezpieczeństwo Publiczne (Safety): wypadki i kolizje drogowe (SEWiK) oraz subiektywna ocena bezpieczeństwa w dzielnicy na podstawie ogólnopolskich ankiet mieszkańców Otodom (skala 1–5).",
         "7. Dostępność Cenowa Mieszkań (Housing Affordability): średnie ceny za m² (rynek pierwotny i wtórny z raportów NBP/BDK), stawki najmu oraz ile m² można kupić za średnią pensję.",
         "8. Witalność Demograficzna (Demographic Vitality): saldo migracji, 3-letnia dynamika przyrostu ludności oraz udział młodych rodzin i dzieci."

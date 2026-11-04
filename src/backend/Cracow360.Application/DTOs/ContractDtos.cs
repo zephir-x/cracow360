@@ -164,12 +164,12 @@ public record DistrictHousingMarketDto(
     double M2PerAverageSalary
 );
 
-// Environmental monitoring: PM10/PM2.5 concentrations, smog days, and noise exposure
+// Environmental monitoring: PM10/PM2.5 concentrations, smog days, and NO2 exhaust levels (Open-Meteo 90d telemetry)
 public record DistrictEnvironmentalQualityDto(
-    double Pm10AnnualUgM3,
-    double Pm25AnnualUgM3,
-    int SmogDaysCount,
-    double TrafficNoiseExceededPct
+    double Pm10Avg90dUgM3,
+    double Pm25Avg90dUgM3,
+    int SmogDays90dCount,
+    double No2Avg90dUgM3
 );
 
 // 2028 Econometric forecasts, childcare balance, and municipal/B2B recommendations

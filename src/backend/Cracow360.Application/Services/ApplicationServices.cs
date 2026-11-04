@@ -179,10 +179,10 @@ public class DistrictService(IDistrictRepository districtRepository) : IDistrict
                 d.HousingMarket.PriceGrowthYoYPct,
                 d.HousingMarket.M2PerAverageSalary),
             new DistrictEnvironmentalQualityDto(
-                d.EnvironmentalQuality.Pm10AnnualUgM3,
-                d.EnvironmentalQuality.Pm25AnnualUgM3,
-                d.EnvironmentalQuality.SmogDaysCount,
-                d.EnvironmentalQuality.TrafficNoiseExceededPct),
+                d.EnvironmentalQuality.Pm10Avg90dUgM3,
+                d.EnvironmentalQuality.Pm25Avg90dUgM3,
+                d.EnvironmentalQuality.SmogDays90dCount,
+                d.EnvironmentalQuality.No2Avg90dUgM3),
             new DistrictForecastsAndB2BDto(
                 d.ForecastsAndB2B.ForecastedAge0To3_2028,
                 d.ForecastsAndB2B.ForecastedCarePlacesBalance_2028,

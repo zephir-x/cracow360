@@ -124,12 +124,12 @@ export interface DistrictHousingMarketDto {
   m2PerAverageSalary: number;
 }
 
-// Environmental monitoring: PM10/PM2.5 concentrations, smog days, and noise exposure
+// Environmental monitoring: PM10/PM2.5 concentrations, smog days, and NO2 exhaust levels (Open-Meteo 90d telemetry)
 export interface DistrictEnvironmentalQualityDto {
-  pm10AnnualUgM3: number;
-  pm25AnnualUgM3: number;
-  smogDaysCount: number;
-  trafficNoiseExceededPct: number;
+  pm10Avg90dUgM3: number;
+  pm25Avg90dUgM3: number;
+  smogDays90dCount: number;
+  no2Avg90dUgM3: number;
 }
 
 // 2028 Econometric forecasts, childcare balance, and municipal/B2B recommendations

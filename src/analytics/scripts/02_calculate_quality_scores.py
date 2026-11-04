@@ -9,7 +9,7 @@ PILLARS EVALUATED:
     2. educationScore – Nurseries, kindergartens, primary schools, and childcare infrastructure
     3. greeneryScore – City parks, pocket parks, municipal forests, and sports facilities
     4. cultureAndSeniorScore – Libraries, cultural centers, and Senior Activity Centers (CAS)
-    5. environmentScore – Clean air (PM10 levels via GIOŚ), absence of transit noise, and green buffers
+    5. environmentScore – Clean air (PM10, PM2.5, NO₂ and smog days via Open-Meteo), and green buffers
     6. safetyScore – Road safety, absence of pedestrian accidents, and resident safety rating (data from SEWiK / Otodom Surveys)
     7. housingAffordabilityScore – Affordability of purchasing or renting residential property (data from NBP / Otodom / RCN)
     8. demographicVitalityScore – Demographic vitality, 3-year population trends, and migration attractiveness (data from BDK UMK)
@@ -180,19 +180,22 @@ def calculate_quality_scores() -> None:
     ]
     culture_scores = rescale_to_practical_band(raw_culture, low=44.0, high=96.0)
 
-    # 5. ENVIRONMENT, AIR & ACOUSTIC QUIETNESS SCORE
-    pm10_vals = [d["environmentalQuality"]["pm10AnnualUgM3"] for d in districts]
-    smog_days = [d["environmentalQuality"]["smogDaysCount"] for d in districts]
-    noise_share = [d["environmentalQuality"]["trafficNoiseExceededPct"] for d in districts]
+    # 5. ENVIRONMENT & AIR SCORE
+    pm10_vals = [d["environmentalQuality"]["pm10Avg90dUgM3"] for d in districts]
+    smog_days = [d["environmentalQuality"]["smogDays90dCount"] for d in districts]
+    no2_vals = [d["environmentalQuality"]["no2Avg90dUgM3"] for d in districts]
     green_buffer = [math.log1p(d["greeneryAndSport"]["totalGreenM2PerCapita"]) for d in districts]
 
     s_pm10 = min_max_normalize_0_100(pm10_vals, invert=True)
     s_smog = min_max_normalize_0_100(smog_days, invert=True)
-    s_noise = min_max_normalize_0_100(noise_share, invert=True)
+    s_no2 = min_max_normalize_0_100(no2_vals, invert=True)
     s_green_buf = min_max_normalize_0_100(green_buffer, invert=False)
 
     raw_env = [
-        0.25 * s_pm10[i] + 0.22 * s_smog[i] + 0.38 * s_noise[i] + 0.15 * s_green_buf[i]
+        0.25 * s_pm10[i] +
+        0.22 * s_smog[i] +
+        0.38 * s_no2[i] +
+        0.15 * s_green_buf[i]
         for i in range(n_districts)
     ]
     env_scores = rescale_to_practical_band(raw_env, low=26.0, high=94.0)

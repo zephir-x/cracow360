@@ -155,6 +155,11 @@ export const DATASET_METRICS_I18N: Record<string, Record<Language, string>> = {
     en: 'Architectural accessibility for people with disabilities at the Krakow Culture Forum buildings and its affiliated clubs',
     ua: 'Архітектурна доступність будівель Краківського культурного форуму та підпорядкованих йому клубів для людей з інвалідністю',
   },
+  'cult-8': {
+    pl: 'Pełna deklaracja dostępności architektonicznej dla siedziby ZZM w Krakowie',
+    en: 'Full declaration of architectural accessibility for the ZZM headquarters in Kraków',
+    ua: 'Повна декларація архітектурної доступності для штаб-квартири ZZM у Кракові',
+  },
   'tour-1': {
     pl: 'Całkowita liczba odwiedzających, stosunek turystów krajowych do zagranicznych, wpływ na gospodarkę, kluczowe rynki zbytu',
     en: 'Total number of visitors, ratio of domestic to foreign tourists, economic impact, key target markets',

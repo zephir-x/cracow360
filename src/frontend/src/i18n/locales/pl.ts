@@ -123,7 +123,7 @@ export const plTranslations: TranslationDictionary = {
       },
       environment: {
         name: 'Środowisko i Spokój',
-        desc: 'Pomiary PM10 GIOŚ, akustyka i hałas',
+        desc: 'Czystość powietrza, smog i zieleń',
       },
       safety: {
         name: 'Bezpieczeństwo i Porządek',
@@ -242,9 +242,10 @@ export const plTranslations: TranslationDictionary = {
       libraryBranchesCount: 'Filie Biblioteki Kraków w dzielnicy',
       culturalCentersCount: 'Miejskie Domy i Ośrodki Kultury',
       seniorActivityCentersCount: 'Centra Aktywności Seniora (CAS)',
-      pm10AnnualUgM3: 'Średnioroczne stężenie pyłu zawieszonego PM10',
-      smogDaysCount: 'Liczba dni z przekroczeniem normy PM10 w roku',
-      trafficNoiseExceededPct: 'Udział powierzchni dzielnicy z hałasem >65 dB',
+      pm10Avg90dUgM3: 'Średnie stężenie pyłu PM10 (ostatnie 90 dni)',
+      pm25Avg90dUgM3: 'Średnie stężenie drobnego pyłu PM2.5 (90 dni)',
+      no2Avg90dUgM3: 'Średnie stężenie spalin drogowych NO₂ (90 dni)',
+      smogDays90dCount: 'Dni smogowe z przekroczeniem normy PM10 (90 dni)',
     },
   },
   parent: {

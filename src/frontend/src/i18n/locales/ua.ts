@@ -123,7 +123,7 @@ export const uaTranslations: TranslationDictionary = {
       },
       environment: {
         name: 'Довкілля та Спокій',
-        desc: 'Показники PM10 GIOŚ, тиша та шум',
+        desc: 'Чистота повітря, смог та зелень',
       },
       safety: {
         name: 'Безпека та Громадський Порядок',
@@ -242,9 +242,10 @@ export const uaTranslations: TranslationDictionary = {
       libraryBranchesCount: 'Філії Бібліотеки Кракова в районі',
       culturalCentersCount: 'Міські будинки та центри культури',
       seniorActivityCentersCount: 'Центри активності сеньйорів (CAS)',
-      pm10AnnualUgM3: 'Середньорічна концентрація пилу PM10',
-      smogDaysCount: 'Кількість днів із перевищенням норми PM10 на рік',
-      trafficNoiseExceededPct: 'Частка території району з шумом транспорту >65 дБ',
+      pm10Avg90dUgM3: 'Середня концентрація пилу PM10 (останні 90 днів)',
+      pm25Avg90dUgM3: 'Середня концентрація дрібного пилу PM2.5 (90 днів)',
+      no2Avg90dUgM3: 'Середня концентрація вихлопів NO₂ (90 днів)',
+      smogDays90dCount: 'Смог-дні з перевищенням норми PM10 (90 днів)',
     },
   },
   parent: {

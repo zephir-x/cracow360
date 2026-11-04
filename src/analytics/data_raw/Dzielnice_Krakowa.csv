@@ -1,19 +1,19 @@
-﻿districtId;districtRoman;districtName;areaKm2
-1;I;Dzielnica I Stare Miasto;5,57
-2;II;Dzielnica II Grzegórzki;5,85
-3;III;Dzielnica III Prądnik Czerwony;6,44
-4;IV;Dzielnica IV Prądnik Biały;23,42
-5;V;Dzielnica V Krowodrza;5,62
-6;VI;Dzielnica VI Bronowice;9,56
-7;VII;Dzielnica VII Zwierzyniec;28,73
-8;VIII;Dzielnica VIII Dębniki;46,19
-9;IX;Dzielnica IX Łagiewniki-Borek Fałęcki;5,42
-10;X;Dzielnica X Swoszowice;25,60
-11;XI;Dzielnica XI Podgórze Duchackie;9,54
-12;XII;Dzielnica XII Bieżanów-Prokocim;18,47
-13;XIII;Dzielnica XIII Podgórze;25,67
-14;XIV;Dzielnica XIV Czyżyny;12,26
-15;XV;Dzielnica XV Mistrzejowice;5,59
-16;XVI;Dzielnica XVI Bieńczyce;3,70
-17;XVII;Dzielnica XVII Wzgórza Krzesławickie;23,82
-18;XVIII;Dzielnica XVIII Nowa Huta;65,41
+﻿districtId;districtRoman;districtName;areaKm2;lat;lon
+1;I;Dzielnica I Stare Miasto;5,57;50,0614;19,9366
+2;II;Dzielnica II Grzegórzki;5,85;50,0600;19,9650
+3;III;Dzielnica III Prądnik Czerwony;6,44;50,0833;19,9667
+4;IV;Dzielnica IV Prądnik Biały;23,42;50,0950;19,9150
+5;V;Dzielnica V Krowodrza;5,62;50,0710;19,9190
+6;VI;Dzielnica VI Bronowice;9,56;50,0800;19,8800
+7;VII;Dzielnica VII Zwierzyniec;28,73;50,0550;19,8850
+8;VIII;Dzielnica VIII Dębniki;46,19;50,0300;19,8900
+9;IX;Dzielnica IX Łagiewniki-Borek Fałęcki;5,42;50,0180;19,9300
+10;X;Dzielnica X Swoszowice;25,60;49,9900;19,9400
+11;XI;Dzielnica XI Podgórze Duchackie;9,54;50,0100;19,9600
+12;XII;Dzielnica XII Bieżanów-Prokocim;18,47;50,0150;20,0050
+13;XIII;Dzielnica XIII Podgórze;25,67;50,0400;19,9600
+14;XIV;Dzielnica XIV Czyżyny;12,26;50,0680;20,0000
+15;XV;Dzielnica XV Mistrzejowice;5,59;50,0900;20,0000
+16;XVI;Dzielnica XVI Bieńczyce;3,70;50,0850;20,0200
+17;XVII;Dzielnica XVII Wzgórza Krzesławickie;23,82;50,0950;20,0600
+18;XVIII;Dzielnica XVIII Nowa Huta;65,41;50,0700;20,0800

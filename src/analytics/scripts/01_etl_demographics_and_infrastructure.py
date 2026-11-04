@@ -275,6 +275,38 @@ class KrakowSpatialResolver:
             self.is_cache_dirty = False
 
 
+def fetch_openmeteo_air_quality_90d(lat: float, lon: float) -> dict:
+    # It retrieves historical data from the last 90 days and calculates averages as well as the number of smog days
+    url = f"https://air-quality-api.open-meteo.com/v1/air-quality?latitude={lat}&longitude={lon}&hourly=pm10,pm2_5,nitrogen_dioxide&past_days=90"
+    try:
+        resp = requests.get(url, timeout=15.0)
+        if resp.status_code == 200:
+            data = resp.json().get("hourly", {})
+
+            pm10 = [v for v in data.get("pm10", []) if v is not None]
+            pm25 = [v for v in data.get("pm2_5", []) if v is not None]
+            no2 = [v for v in data.get("nitrogen_dioxide", []) if v is not None]
+
+            # Calculating smog days (daily average PM10 > 50 µg/m³)
+            smog_days = 0
+            if pm10:
+                for i in range(0, len(pm10), 24):
+                    daily_chunk = pm10[i:i+24]
+                    if len(daily_chunk) > 0 and (sum(daily_chunk) / len(daily_chunk)) > 50.0:
+                        smog_days += 1
+
+            return {
+                "pm10Avg90dUgM3": round(sum(pm10) / len(pm10), 2) if pm10 else 20.0,
+                "pm25Avg90dUgM3": round(sum(pm25) / len(pm25), 2) if pm25 else 12.0,
+                "no2Avg90dUgM3": round(sum(no2) / len(no2), 2) if no2 else 15.0,
+                "smogDays90dCount": smog_days
+            }
+    except Exception as e:
+        logging.warning(f"Błąd API Open-Meteo dla {lat},{lon}: {e}")
+
+    return {"pm10Avg90dUgM3": 20.0, "pm25Avg90dUgM3": 12.0, "no2Avg90dUgM3": 15.0, "smogDays90dCount": 0}
+
+
 def run_etl() -> None:
     RAW_DATA_DIR.mkdir(parents=True, exist_ok=True)
     PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
@@ -285,6 +317,19 @@ def run_etl() -> None:
         raise FileNotFoundError(f"Missing {geojson_path}. Required official district boundaries.")
 
     resolver = KrakowSpatialResolver(geojson_path, CACHE_PATH)
+
+    # Reading coordinates
+    district_coords = {}
+    coords_file = find_csv(r"Dzielnice_Krakowa")
+    if coords_file:
+        for row in read_clean_csv(coords_file):
+            did = clean_int(row.get("districtId"))
+            if 1 <= did <= 18:
+                lat = clean_float(row.get("lat"))
+                lon = clean_float(row.get("lon"))
+                district_coords[did] = (lat, lon)
+    else:
+        print("[Warning] Dzielnice_Krakowa.csv not found - API will use default coordinates.")
 
     # Initialize in-memory aggregate dictionary matching the final DTO contract shape
     districts_data: dict[int, dict] = {}
@@ -299,7 +344,7 @@ def run_etl() -> None:
             "cultureAndSociety": {"libraryBranchesCount": 0, "culturalCentersCount": 0, "seniorActivityCentersCount": 0, "annualCulturalEventsCount": 0, "municipalSubsidyPerCapitaPln": 0.0},
             "publicSafety": {"roadCollisionsAnnual": 0, "pedestrianAccidents": 0, "injuryAccidents": 0, "safetyRatingSurvey": 0.0},
             "housingMarket": {"avgPricePerM2": 0.0, "priceSecondaryM2": 0.0, "pricePrimaryM2": 0.0, "priceMedianM2": 0.0, "avgRentalPriceM2": 0.0, "priceGrowthYoYPct": 0.0, "m2PerAverageSalary": 0.0},
-            "environmentalQuality": {"pm10AnnualUgM3": 0.0, "pm25AnnualUgM3": 0.0, "smogDaysCount": 0, "trafficNoiseExceededPct": 0.0},
+            "environmentalQuality": {"pm10Avg90dUgM3": 0.0, "pm25Avg90dUgM3": 0.0, "smogDays90dCount": 0, "no2Avg90dUgM3": 0.0},
             "_internal": {"birthCohorts": defaultdict(int), "primarySchoolClasses": 0, "pop2023": 0, "pop2024": 0, "pop2025": 0, "kasselKerbStops": 0, "tactilePavingStops": 0},
         }
 
@@ -672,16 +717,17 @@ def run_etl() -> None:
         pop = max(d["demographics"]["totalPopulation"], 1)
         cult["municipalSubsidyPerCapitaPln"] = round((total_culture_subsidy * share) / pop, 2)
 
-    env_file = find_csv(r"Jakosc powietrza")
-    if env_file:
-        for row in read_clean_csv(env_file):
-            did = clean_int(row.get("Nr_Dzielnicy"))
-            if 1 <= did <= 18:
-                env = districts_data[did]["environmentalQuality"]
-                env["pm10AnnualUgM3"] = clean_float(row.get("Srednioroczne_PM10_ug_m3"))
-                env["pm25AnnualUgM3"] = clean_float(row.get("Srednioroczne_PM25_ug_m3"))
-                env["smogDaysCount"] = clean_int(row.get("Dni_z_przekroczeniem_PM10_rocznie"))
-                env["trafficNoiseExceededPct"] = clean_float(row.get("Udzial_powierzchni_halas_powyzej_65dB_pct"))
+    # Retrieving geolocation from a dynamic dictionary; defaults to Old Town in case of an error
+    print("[API] Downloading historical environmental data (90 days) from Open-Meteo...")
+    for did in range(1, 19):
+        lat, lon = district_coords.get(did, (50.0614, 19.9366))
+        aqi_data = fetch_openmeteo_air_quality_90d(lat, lon)
+
+        env = districts_data[did]["environmentalQuality"]
+        env["pm10Avg90dUgM3"] = aqi_data["pm10Avg90dUgM3"]
+        env["pm25Avg90dUgM3"] = aqi_data["pm25Avg90dUgM3"]
+        env["smogDays90dCount"] = aqi_data["smogDays90dCount"]
+        env["no2Avg90dUgM3"] = aqi_data["no2Avg90dUgM3"]
 
     safety_file = find_csv(r"Bezpieczenstwo i zdarzenia drogowe")
     if safety_file:

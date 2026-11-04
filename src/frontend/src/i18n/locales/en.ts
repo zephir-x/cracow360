@@ -123,7 +123,7 @@ export const enTranslations: TranslationDictionary = {
       },
       environment: {
         name: 'Environment & Peace',
-        desc: 'GIOŚ PM10 air, acoustics & noise',
+        desc: 'Clean air, smog index & greenery',
       },
       safety: {
         name: 'Safety & Public Order',
@@ -242,9 +242,10 @@ export const enTranslations: TranslationDictionary = {
       libraryBranchesCount: 'Krakow Public Library branches in district',
       culturalCentersCount: 'Municipal Community & Cultural Centers',
       seniorActivityCentersCount: 'Senior Activity Centers (CAS)',
-      pm10AnnualUgM3: 'Annual mean PM10 particulate matter level',
-      smogDaysCount: 'Days exceeding PM10 limit per year',
-      trafficNoiseExceededPct: 'District surface with traffic noise >65 dB',
+      pm10Avg90dUgM3: 'Average PM10 particulate matter level (last 90 days)',
+      pm25Avg90dUgM3: 'Average fine PM2.5 particulate level (90 days)',
+      no2Avg90dUgM3: 'Average vehicular NO₂ exhaust level (90 days)',
+      smogDays90dCount: 'Smog days exceeding PM10 standard (90 days)',
     },
   },
   parent: {

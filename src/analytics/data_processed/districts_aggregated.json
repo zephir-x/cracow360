@@ -82,10 +82,10 @@
         "m2PerAverageSalary": 0.32
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 29.4,
-        "pm25AnnualUgM3": 19.8,
-        "smogDaysCount": 34,
-        "trafficNoiseExceededPct": 31.5
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "_internal": {
         "birthCohorts": {
@@ -287,10 +287,10 @@
         "m2PerAverageSalary": 0.36
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 27.8,
-        "pm25AnnualUgM3": 18.6,
-        "smogDaysCount": 30,
-        "trafficNoiseExceededPct": 27.2
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "_internal": {
         "birthCohorts": {
@@ -490,10 +490,10 @@
         "m2PerAverageSalary": 0.45
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 24.5,
-        "pm25AnnualUgM3": 16.4,
-        "smogDaysCount": 24,
-        "trafficNoiseExceededPct": 19.8
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "_internal": {
         "birthCohorts": {
@@ -694,10 +694,10 @@
         "m2PerAverageSalary": 0.43
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 25.2,
-        "pm25AnnualUgM3": 16.9,
-        "smogDaysCount": 26,
-        "trafficNoiseExceededPct": 21.4
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "_internal": {
         "birthCohorts": {
@@ -898,10 +898,10 @@
         "m2PerAverageSalary": 0.39
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 26.1,
-        "pm25AnnualUgM3": 17.5,
-        "smogDaysCount": 28,
-        "trafficNoiseExceededPct": 23.0
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "_internal": {
         "birthCohorts": {
@@ -1102,10 +1102,10 @@
         "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 22.4,
-        "pm25AnnualUgM3": 15.1,
-        "smogDaysCount": 19,
-        "trafficNoiseExceededPct": 14.5
+        "pm10Avg90dUgM3": 21.91,
+        "pm25Avg90dUgM3": 17.71,
+        "smogDays90dCount": 5,
+        "no2Avg90dUgM3": 14.46
       },
       "_internal": {
         "birthCohorts": {
@@ -1302,10 +1302,10 @@
         "m2PerAverageSalary": 0.33
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 19.8,
-        "pm25AnnualUgM3": 13.2,
-        "smogDaysCount": 14,
-        "trafficNoiseExceededPct": 11.2
+        "pm10Avg90dUgM3": 21.91,
+        "pm25Avg90dUgM3": 17.71,
+        "smogDays90dCount": 5,
+        "no2Avg90dUgM3": 14.46
       },
       "_internal": {
         "birthCohorts": {
@@ -1505,10 +1505,10 @@
         "m2PerAverageSalary": 0.37
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 21.6,
-        "pm25AnnualUgM3": 14.5,
-        "smogDaysCount": 18,
-        "trafficNoiseExceededPct": 15.6
+        "pm10Avg90dUgM3": 21.91,
+        "pm25Avg90dUgM3": 17.71,
+        "smogDays90dCount": 5,
+        "no2Avg90dUgM3": 14.46
       },
       "_internal": {
         "birthCohorts": {
@@ -1710,10 +1710,10 @@
         "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 23.8,
-        "pm25AnnualUgM3": 15.9,
-        "smogDaysCount": 22,
-        "trafficNoiseExceededPct": 18.4
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "_internal": {
         "birthCohorts": {
@@ -1912,10 +1912,10 @@
         "m2PerAverageSalary": 0.49
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 20.5,
-        "pm25AnnualUgM3": 13.8,
-        "smogDaysCount": 15,
-        "trafficNoiseExceededPct": 8.5
+        "pm10Avg90dUgM3": 19.19,
+        "pm25Avg90dUgM3": 15.79,
+        "smogDays90dCount": 2,
+        "no2Avg90dUgM3": 9.79
       },
       "_internal": {
         "birthCohorts": {
@@ -2113,10 +2113,10 @@
         "m2PerAverageSalary": 0.44
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 26.5,
-        "pm25AnnualUgM3": 17.8,
-        "smogDaysCount": 27,
-        "trafficNoiseExceededPct": 20.1
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "_internal": {
         "birthCohorts": {
@@ -2314,10 +2314,10 @@
         "m2PerAverageSalary": 0.59
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 24.9,
-        "pm25AnnualUgM3": 16.7,
-        "smogDaysCount": 23,
-        "trafficNoiseExceededPct": 17.8
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "_internal": {
         "birthCohorts": {
@@ -2517,10 +2517,10 @@
         "m2PerAverageSalary": 0.35
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 26.8,
-        "pm25AnnualUgM3": 18.0,
-        "smogDaysCount": 29,
-        "trafficNoiseExceededPct": 24.6
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "_internal": {
         "birthCohorts": {
@@ -2719,10 +2719,10 @@
         "m2PerAverageSalary": 0.54
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 25.7,
-        "pm25AnnualUgM3": 17.2,
-        "smogDaysCount": 25,
-        "trafficNoiseExceededPct": 21.0
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "_internal": {
         "birthCohorts": {
@@ -2918,10 +2918,10 @@
         "m2PerAverageSalary": 0.5
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 23.2,
-        "pm25AnnualUgM3": 15.6,
-        "smogDaysCount": 21,
-        "trafficNoiseExceededPct": 14.2
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "_internal": {
         "birthCohorts": {
@@ -3119,10 +3119,10 @@
         "m2PerAverageSalary": 0.57
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 24.1,
-        "pm25AnnualUgM3": 16.2,
-        "smogDaysCount": 22,
-        "trafficNoiseExceededPct": 15.8
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "_internal": {
         "birthCohorts": {
@@ -3321,10 +3321,10 @@
         "m2PerAverageSalary": 0.69
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 21.0,
-        "pm25AnnualUgM3": 14.1,
-        "smogDaysCount": 16,
-        "trafficNoiseExceededPct": 6.8
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "_internal": {
         "birthCohorts": {
@@ -3522,10 +3522,10 @@
         "m2PerAverageSalary": 0.53
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 27.5,
-        "pm25AnnualUgM3": 18.4,
-        "smogDaysCount": 31,
-        "trafficNoiseExceededPct": 16.5
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "_internal": {
         "birthCohorts": {

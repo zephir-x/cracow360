@@ -306,6 +306,15 @@ export const ALL_DATA_SOURCES: DataSourceItem[] = [
     portalUrl: 'https://bip.krakow.pl/?mmi=20433',
     status: 'Opracowanie własne',
   },
+  {
+    id: 'cult-7',
+    category: 'culture',
+    categoryLabel: 'Kultura & Społeczność',
+    officialDatasetName: 'Deklaracja dostępności ZZM Kraków',
+    metrics: 'Pełna deklaracja dostępności architektonicznej dla siedziby ZZM w Krakowie',
+    portalUrl: 'https://zzm.krakow.pl/pl/dostepnosc/deklaracja-dostepnosci',
+    status: 'Opracowanie własne',
+  },
 
   // Tourism, Heritage & City Exploration
   {

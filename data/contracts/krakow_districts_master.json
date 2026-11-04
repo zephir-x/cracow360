@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "generatedAt": "2026-11-04T12:32:21Z",
+    "generatedAt": "2026-11-04T13:22:35Z",
     "dataVersion": "2.1.0-expanded-8-pillars-2025-2026",
     "normalizationMethod": "MinMax_0_100_Calibrated"
   },
@@ -87,17 +87,17 @@
         "m2PerAverageSalary": 0.32
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 29.4,
-        "pm25AnnualUgM3": 19.8,
-        "smogDaysCount": 34,
-        "trafficNoiseExceededPct": 31.5
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "scores": {
         "mobilityScore": 96.0,
         "educationScore": 92.0,
         "greeneryScore": 68.1,
         "cultureAndSeniorScore": 81.2,
-        "environmentScore": 26.0,
+        "environmentScore": 28.2,
         "safetyScore": 38.0,
         "housingAffordabilityScore": 22.0,
         "demographicVitalityScore": 71.7
@@ -194,17 +194,17 @@
         "m2PerAverageSalary": 0.36
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 27.8,
-        "pm25AnnualUgM3": 18.6,
-        "smogDaysCount": 30,
-        "trafficNoiseExceededPct": 27.2
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "scores": {
         "mobilityScore": 76.8,
         "educationScore": 73.1,
         "greeneryScore": 70.3,
         "cultureAndSeniorScore": 59.2,
-        "environmentScore": 37.1,
+        "environmentScore": 27.8,
         "safetyScore": 67.6,
         "housingAffordabilityScore": 27.6,
         "demographicVitalityScore": 77.0
@@ -301,17 +301,17 @@
         "m2PerAverageSalary": 0.45
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 24.5,
-        "pm25AnnualUgM3": 16.4,
-        "smogDaysCount": 24,
-        "trafficNoiseExceededPct": 19.8
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "scores": {
         "mobilityScore": 76.1,
         "educationScore": 73.2,
         "greeneryScore": 58.4,
         "cultureAndSeniorScore": 56.6,
-        "environmentScore": 55.2,
+        "environmentScore": 26.0,
         "safetyScore": 64.4,
         "housingAffordabilityScore": 53.4,
         "demographicVitalityScore": 62.1
@@ -408,17 +408,17 @@
         "m2PerAverageSalary": 0.43
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 25.2,
-        "pm25AnnualUgM3": 16.9,
-        "smogDaysCount": 26,
-        "trafficNoiseExceededPct": 21.4
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "scores": {
         "mobilityScore": 72.9,
         "educationScore": 68.8,
         "greeneryScore": 52.0,
         "cultureAndSeniorScore": 65.9,
-        "environmentScore": 50.4,
+        "environmentScore": 26.0,
         "safetyScore": 72.2,
         "housingAffordabilityScore": 51.6,
         "demographicVitalityScore": 70.8
@@ -515,17 +515,17 @@
         "m2PerAverageSalary": 0.39
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 26.1,
-        "pm25AnnualUgM3": 17.5,
-        "smogDaysCount": 28,
-        "trafficNoiseExceededPct": 23.0
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "scores": {
         "mobilityScore": 78.4,
         "educationScore": 77.2,
         "greeneryScore": 73.6,
         "cultureAndSeniorScore": 55.5,
-        "environmentScore": 47.5,
+        "environmentScore": 28.4,
         "safetyScore": 41.1,
         "housingAffordabilityScore": 40.5,
         "demographicVitalityScore": 72.4
@@ -622,17 +622,17 @@
         "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 22.4,
-        "pm25AnnualUgM3": 15.1,
-        "smogDaysCount": 19,
-        "trafficNoiseExceededPct": 14.5
+        "pm10Avg90dUgM3": 21.91,
+        "pm25Avg90dUgM3": 17.71,
+        "smogDays90dCount": 5,
+        "no2Avg90dUgM3": 14.46
       },
       "scores": {
         "mobilityScore": 41.7,
         "educationScore": 58.9,
         "greeneryScore": 65.6,
         "cultureAndSeniorScore": 49.8,
-        "environmentScore": 73.0,
+        "environmentScore": 53.7,
         "safetyScore": 81.9,
         "housingAffordabilityScore": 49.0,
         "demographicVitalityScore": 64.9
@@ -729,17 +729,17 @@
         "m2PerAverageSalary": 0.33
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 19.8,
-        "pm25AnnualUgM3": 13.2,
-        "smogDaysCount": 14,
-        "trafficNoiseExceededPct": 11.2
+        "pm10Avg90dUgM3": 21.91,
+        "pm25Avg90dUgM3": 17.71,
+        "smogDays90dCount": 5,
+        "no2Avg90dUgM3": 14.46
       },
       "scores": {
         "mobilityScore": 41.9,
         "educationScore": 60.6,
         "greeneryScore": 96.0,
         "cultureAndSeniorScore": 58.9,
-        "environmentScore": 94.0,
+        "environmentScore": 61.5,
         "safetyScore": 87.2,
         "housingAffordabilityScore": 36.6,
         "demographicVitalityScore": 67.7
@@ -836,17 +836,17 @@
         "m2PerAverageSalary": 0.37
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 21.6,
-        "pm25AnnualUgM3": 14.5,
-        "smogDaysCount": 18,
-        "trafficNoiseExceededPct": 15.6
+        "pm10Avg90dUgM3": 21.91,
+        "pm25Avg90dUgM3": 17.71,
+        "smogDays90dCount": 5,
+        "no2Avg90dUgM3": 14.46
       },
       "scores": {
         "mobilityScore": 41.5,
         "educationScore": 72.8,
         "greeneryScore": 80.8,
         "cultureAndSeniorScore": 55.2,
-        "environmentScore": 76.4,
+        "environmentScore": 55.9,
         "safetyScore": 74.0,
         "housingAffordabilityScore": 42.1,
         "demographicVitalityScore": 76.4
@@ -943,17 +943,17 @@
         "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 23.8,
-        "pm25AnnualUgM3": 15.9,
-        "smogDaysCount": 22,
-        "trafficNoiseExceededPct": 18.4
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "scores": {
         "mobilityScore": 58.8,
         "educationScore": 40.0,
         "greeneryScore": 76.9,
         "cultureAndSeniorScore": 50.9,
-        "environmentScore": 67.3,
+        "environmentScore": 33.2,
         "safetyScore": 82.5,
         "housingAffordabilityScore": 46.3,
         "demographicVitalityScore": 64.9
@@ -1050,17 +1050,17 @@
         "m2PerAverageSalary": 0.49
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 20.5,
-        "pm25AnnualUgM3": 13.8,
-        "smogDaysCount": 15,
-        "trafficNoiseExceededPct": 8.5
+        "pm10Avg90dUgM3": 19.19,
+        "pm25Avg90dUgM3": 15.79,
+        "smogDays90dCount": 2,
+        "no2Avg90dUgM3": 9.79
       },
       "scores": {
         "mobilityScore": 28.0,
         "educationScore": 63.0,
         "greeneryScore": 59.8,
         "cultureAndSeniorScore": 51.9,
-        "environmentScore": 89.0,
+        "environmentScore": 94.0,
         "safetyScore": 86.0,
         "housingAffordabilityScore": 73.4,
         "demographicVitalityScore": 65.6
@@ -1157,17 +1157,17 @@
         "m2PerAverageSalary": 0.44
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 26.5,
-        "pm25AnnualUgM3": 17.8,
-        "smogDaysCount": 27,
-        "trafficNoiseExceededPct": 20.1
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "scores": {
         "mobilityScore": 56.6,
         "educationScore": 61.7,
         "greeneryScore": 63.6,
         "cultureAndSeniorScore": 51.4,
-        "environmentScore": 50.7,
+        "environmentScore": 28.1,
         "safetyScore": 94.0,
         "housingAffordabilityScore": 57.4,
         "demographicVitalityScore": 58.2
@@ -1264,17 +1264,17 @@
         "m2PerAverageSalary": 0.59
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 24.9,
-        "pm25AnnualUgM3": 16.7,
-        "smogDaysCount": 23,
-        "trafficNoiseExceededPct": 17.8
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "scores": {
         "mobilityScore": 58.7,
         "educationScore": 73.0,
         "greeneryScore": 66.9,
         "cultureAndSeniorScore": 52.2,
-        "environmentScore": 59.5,
+        "environmentScore": 36.7,
         "safetyScore": 71.4,
         "housingAffordabilityScore": 72.0,
         "demographicVitalityScore": 57.4
@@ -1371,17 +1371,17 @@
         "m2PerAverageSalary": 0.35
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 26.8,
-        "pm25AnnualUgM3": 18.0,
-        "smogDaysCount": 29,
-        "trafficNoiseExceededPct": 24.6
+        "pm10Avg90dUgM3": 23.78,
+        "pm25Avg90dUgM3": 19.0,
+        "smogDays90dCount": 9,
+        "no2Avg90dUgM3": 16.21
       },
       "scores": {
         "mobilityScore": 66.5,
         "educationScore": 73.6,
         "greeneryScore": 74.8,
         "cultureAndSeniorScore": 87.2,
-        "environmentScore": 45.0,
+        "environmentScore": 29.9,
         "safetyScore": 45.2,
         "housingAffordabilityScore": 25.6,
         "demographicVitalityScore": 95.0
@@ -1478,17 +1478,17 @@
         "m2PerAverageSalary": 0.54
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 25.7,
-        "pm25AnnualUgM3": 17.2,
-        "smogDaysCount": 25,
-        "trafficNoiseExceededPct": 21.0
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "scores": {
         "mobilityScore": 63.0,
         "educationScore": 62.5,
         "greeneryScore": 70.4,
         "cultureAndSeniorScore": 44.0,
-        "environmentScore": 53.9,
+        "environmentScore": 38.0,
         "safetyScore": 55.1,
         "housingAffordabilityScore": 62.5,
         "demographicVitalityScore": 76.8
@@ -1585,17 +1585,17 @@
         "m2PerAverageSalary": 0.5
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 23.2,
-        "pm25AnnualUgM3": 15.6,
-        "smogDaysCount": 21,
-        "trafficNoiseExceededPct": 14.2
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "scores": {
         "mobilityScore": 71.8,
         "educationScore": 68.7,
         "greeneryScore": 65.0,
         "cultureAndSeniorScore": 49.3,
-        "environmentScore": 68.2,
+        "environmentScore": 36.3,
         "safetyScore": 90.4,
         "housingAffordabilityScore": 65.2,
         "demographicVitalityScore": 52.5
@@ -1692,17 +1692,17 @@
         "m2PerAverageSalary": 0.57
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 24.1,
-        "pm25AnnualUgM3": 16.2,
-        "smogDaysCount": 22,
-        "trafficNoiseExceededPct": 15.8
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "scores": {
         "mobilityScore": 68.8,
         "educationScore": 69.1,
         "greeneryScore": 62.4,
         "cultureAndSeniorScore": 50.2,
-        "environmentScore": 64.1,
+        "environmentScore": 36.7,
         "safetyScore": 89.5,
         "housingAffordabilityScore": 69.8,
         "demographicVitalityScore": 46.0
@@ -1799,17 +1799,17 @@
         "m2PerAverageSalary": 0.69
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 21.0,
-        "pm25AnnualUgM3": 14.1,
-        "smogDaysCount": 16,
-        "trafficNoiseExceededPct": 6.8
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "scores": {
         "mobilityScore": 39.6,
         "educationScore": 59.2,
         "greeneryScore": 64.3,
         "cultureAndSeniorScore": 46.7,
-        "environmentScore": 88.8,
+        "environmentScore": 39.7,
         "safetyScore": 55.1,
         "housingAffordabilityScore": 92.0,
         "demographicVitalityScore": 57.5
@@ -1906,17 +1906,17 @@
         "m2PerAverageSalary": 0.53
       },
       "environmentalQuality": {
-        "pm10AnnualUgM3": 27.5,
-        "pm25AnnualUgM3": 18.4,
-        "smogDaysCount": 31,
-        "trafficNoiseExceededPct": 16.5
+        "pm10Avg90dUgM3": 23.45,
+        "pm25Avg90dUgM3": 18.46,
+        "smogDays90dCount": 7,
+        "no2Avg90dUgM3": 15.54
       },
       "scores": {
         "mobilityScore": 39.0,
         "educationScore": 81.1,
         "greeneryScore": 80.0,
         "cultureAndSeniorScore": 96.0,
-        "environmentScore": 53.3,
+        "environmentScore": 40.8,
         "safetyScore": 62.4,
         "housingAffordabilityScore": 74.3,
         "demographicVitalityScore": 49.2
