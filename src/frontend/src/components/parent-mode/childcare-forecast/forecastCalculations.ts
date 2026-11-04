@@ -51,44 +51,43 @@ export function getMacroIndicators(
     current7To14 += c714;
     primaryStudents += stud;
 
-    // 1. Infants (0–3)
+    // 1. Infants (0–3) - Nursery enrollment benchmark (<50% coverage indicates deficit)
     const carePlaces = rawE?.totalCarePlaces0To3 ?? rawE?.totalCarePlaces0to3 ?? 0;
     nurseryPlaces += carePlaces;
-    const nurBal = carePlaces - c03;
     const nurCov = c03 > 0 ? (carePlaces / c03) * 100 : 0;
-    if (nurCov < 50 || nurBal <= -600) {
+    if (nurCov < 50) {
       nurseryWhiteSpots++;
     }
 
-    // 2. Preschool (4–6)
+    // 2. Preschool (4–6) - Physical balance & statutory recruitment coverage (<100%)
     const kPlaces = rawE?.kindergartenPlacesTotal ?? 0;
     kgPlaces += kPlaces;
     const kCov = c46 > 0 ? (kPlaces / c46) * 100 : 0;
     const kBal = kPlaces - c46;
-    if (kCov < 125 || kBal < 150) {
+    if (kBal < 0 || kCov < 100) {
       kgDistrictsHighDemand++;
     }
 
-    // 3. Primary Schools (7–14) – Pure Demographics
+    // 3. Primary Schools (7–14) - Catchment capacity vs student population (<100%)
     const schCount = rawE?.primarySchoolsCount ?? 0;
     primarySchools += schCount;
     const schCap = calculatePrimarySchoolCapacity(schCount);
     const schBal = schCap - c714;
     const schCov = c714 > 0 ? (schCap / c714) * 100 : 0;
-    if (schCov < 100 || schBal <= 0) {
+    if (schBal < 0 || schCov < 100) {
       crowdedSchoolsDistricts++;
     }
 
-    // 4. All Cohorts (0–14) – Pure Demographics 0–3, 4–6, 7–14
+    // 4. All Cohorts (0–14) - Total physical capacity vs demographic population (<100%)
     const totCap = calculateTotalEduCareCapacity(carePlaces, kPlaces, schCount);
     const totKids = c03 + c46 + c714;
     const totBal = totCap - totKids;
+    const totCov = totKids > 0 ? (totCap / totKids) * 100 : 0;
 
     allTotalCapacity += totCap;
     allTotalChildren += totKids;
 
-    // Harmonized with Investor Mode: overall deficit OR severe nursery/school shortage
-    if (totBal <= 0 || nurBal <= -800 || schBal <= -400) {
+    if (totBal < 0 || totCov < 100) {
       allTightDistricts++;
     }
   });
@@ -154,7 +153,7 @@ export function getDistrictCohortData(
       coverageValue: '-',
       progressPercent: 0,
       status: { isWhiteSpot: false, isSurplus: false, isBalanced: true },
-      statusBadge: language === 'en' ? 'Balanced' : language === 'ua' ? 'Збалансований' : 'Zrównoważony',
+      statusBadge: language === 'en' ? 'Balanced Market' : language === 'ua' ? 'Збалансований Ринок' : 'Rynek Zrównoważony',
     };
   }
 
@@ -171,12 +170,12 @@ export function getDistrictCohortData(
     const c46: number = rawD?.age4To6 ?? rawD?.age4to6 ?? 0;
     const kgBal = kgPlaces - c46;
     const covPct = c46 > 0 ? Math.round((kgPlaces / c46) * 100) : 0;
-    const isWhiteSpot = covPct < 125 || kgBal < 150;
-    const isSurplus = covPct >= 140 && kgBal >= 400;
+    const isWhiteSpot = kgBal < 0 || covPct < 100;
+    const isSurplus = !isWhiteSpot && covPct >= 130;
     const isBalanced = !isWhiteSpot && !isSurplus;
 
     const statusBadge = isWhiteSpot
-      ? isEn ? 'High Demand' : isUa ? 'Підвищений Попит' : 'Zwiększone Zapotrzebowanie'
+      ? isEn ? 'Tight Balance / Deficit' : isUa ? 'Напружений Баланс / Дефіцит' : 'Napięty Bilans / Deficyt'
       : isSurplus
       ? isEn ? 'High Availability' : isUa ? 'Висока Доступність' : 'Wysoka Dostępność'
       : isEn ? 'Balanced Market' : isUa ? 'Збалансований Ринок' : 'Rynek Zrównoważony';
@@ -202,7 +201,7 @@ export function getDistrictCohortData(
     };
   }
 
-  // 2. SCHOOL (7–14) – Pure Demographics (BDK age 7–14)
+  // 2. SCHOOL (7–14) – Catchment Demographics vs SP Capacity
   if (cohort === 'school') {
     const schools: number = rawE?.primarySchoolsCount ?? 0;
     const schoolCap = calculatePrimarySchoolCapacity(schools);
@@ -210,12 +209,12 @@ export function getDistrictCohortData(
     const schoolBal = schoolCap - c714;
     const covPct = c714 > 0 ? Math.round((schoolCap / c714) * 100) : 0;
 
-    const isWhiteSpot = covPct < 100 || schoolBal <= 0;
-    const isSurplus = covPct >= 120 && schoolBal >= 300;
+    const isWhiteSpot = schoolBal < 0 || covPct < 100;
+    const isSurplus = !isWhiteSpot && covPct >= 120;
     const isBalanced = !isWhiteSpot && !isSurplus;
 
     const statusBadge = isWhiteSpot
-      ? isEn ? 'High Demand' : isUa ? 'Підвищений Попит' : 'Zwiększone Zapotrzebowanie'
+      ? isEn ? 'Tight Balance / Deficit' : isUa ? 'Напружений Баланс / Дефіцит' : 'Napięty Bilans / Deficyt'
       : isSurplus
       ? isEn ? 'High Availability' : isUa ? 'Висока Доступність' : 'Wysoka Dostępność'
       : isEn ? 'Balanced Market' : isUa ? 'Збалансований Ринок' : 'Rynek Zrównoważony';
@@ -241,7 +240,7 @@ export function getDistrictCohortData(
     };
   }
 
-  // 3. INFANT (0–3) – Pure current state arithmetic
+  // 3. INFANT (0–3) – Nursery Enrollment Benchmark
   if (cohort === 'infant') {
     const carePlaces: number = rawE?.totalCarePlaces0To3 ?? rawE?.totalCarePlaces0to3 ?? 0;
     const nurseriesCount: number =
@@ -252,12 +251,12 @@ export function getDistrictCohortData(
     const c03: number = rawD?.age0To3 ?? rawD?.age0to3 ?? 0;
     const balance: number = carePlaces - c03;
     const covPct = c03 > 0 ? Math.round((carePlaces / c03) * 100) : 0;
-    const isWhiteSpot = covPct < 50 || balance <= -600;
-    const isSurplus = covPct >= 75 && balance >= -200;
+    const isWhiteSpot = covPct < 50;
+    const isSurplus = !isWhiteSpot && covPct >= 70;
     const isBalanced = !isWhiteSpot && !isSurplus;
 
     const statusBadge = isWhiteSpot
-      ? isEn ? 'White Spot (High Deficit)' : isUa ? 'Біла Пляма (Високий Дефіцит)' : 'Biała Plama (Wysoki Deficyt)'
+      ? isEn ? 'Tight Balance / Deficit' : isUa ? 'Напружений Баланс / Дефіцит' : 'Napięty Bilans / Deficyt'
       : isSurplus
       ? isEn ? 'High Availability' : isUa ? 'Висока Доступність' : 'Wysoka Dostępność'
       : isEn ? 'Balanced Market' : isUa ? 'Збалансований Ринок' : 'Rynek Zrównoważony';
@@ -275,7 +274,7 @@ export function getDistrictCohortData(
       isNegativeBalance: balance < 0,
       forecastChildren: c03.toLocaleString(),
       forecastChildrenUnit: isEn ? 'toddlers (0–3)' : isUa ? 'малюків (0–3)' : 'maluchów (0–3)',
-      coverageLabel: isEn ? 'Nursery demand coverage' : isUa ? 'Покриття попиту в яслах' : 'Pokrycie popytu żłobkowego',
+      coverageLabel: isEn ? 'Nursery demand coverage' : isUa ? 'Покриття попиту w яслах' : 'Pokrycie popytu żłobkowego',
       coverageValue: `${covPct}%`,
       progressPercent: Math.min(100, covPct),
       status: { isWhiteSpot, isSurplus, isBalanced },
@@ -306,28 +305,20 @@ export function getDistrictCohortData(
   // Real Demand Coverage (Supply vs Demand):
   const totalCovPct = totalChildren > 0 ? Math.round((totalCapacity / totalChildren) * 100) : 0;
 
-  const nurBal = carePlaces - c03;
-  const schCap = calculatePrimarySchoolCapacity(schools);
-  const schBal = schCap - c714;
-
-  // Harmonized market classification across all 18 districts (10 Deficit / 4 Balanced / 4 High Availability):
-  const isWhiteSpot = totalBal <= 0 || nurBal <= -800 || schBal <= -400;
-  const isSurplus = !isWhiteSpot && totalCovPct >= 160 && totalBal >= 1000;
+  // Standard economic market classification based on physical balance & demand coverage:
+  const isWhiteSpot = totalBal < 0 || totalCovPct < 100;
+  const isSurplus = !isWhiteSpot && totalCovPct >= 120;
   const isBalanced = !isWhiteSpot && !isSurplus;
 
   const statusBadge = isWhiteSpot
-    ? totalBal < 0
-      ? isEn ? 'Edu-Care Base Deficit' : isUa ? 'Дефіцит Бази Edu-Care' : 'Deficyt Bazy Edu-Care'
-      : isEn ? 'Tight Base Balance' : isUa ? 'Напружений Баланс Бази' : 'Napięty Bilans Bazy'
+    ? isEn ? 'Tight Balance / Deficit' : isUa ? 'Напружений Баланс / Дефіцит' : 'Napięty Bilans / Deficyt'
     : isSurplus
     ? isEn ? 'High Availability' : isUa ? 'Висока Доступність' : 'Wysoka Dostępność'
     : isEn ? 'Balanced Market' : isUa ? 'Збалансований Ринок' : 'Rynek Zrównoważony';
 
   const balanceSubtitle = totalBal < 0
     ? (isEn ? 'capacity deficit' : isUa ? 'дефіцит бази' : 'deficyt bazy')
-    : nurBal <= -800
-    ? (isEn ? 'nursery care deficit' : isUa ? 'дефіцит ясельного догляду' : 'deficyt opieki żłobkowej')
-    : totalBal <= 200
+    : totalBal <= 500
     ? (isEn ? 'minimal reserve' : isUa ? 'мінімальний резерв' : 'minimalna rezerwa')
     : (isEn ? 'educational reserve' : isUa ? 'освітній резерв' : 'rezerwa edukacyjna');
 

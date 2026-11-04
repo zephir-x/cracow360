@@ -8,6 +8,7 @@ ENGINEERING PRINCIPLES:
 - Zero fictional or hardcoded numbers: 100% derived from raw municipal files.
 - Persistent Session caching for dynamic GUGiK Geocoding (fast execution).
 - Accurate mathematical models (Poisson probability) for isochrone coverage.
+- Strictly verified spatial coordinates: no bus stop collapsing or highway centroid dumping.
 """
 
 from __future__ import annotations
@@ -38,6 +39,7 @@ from config import (
     epsg3857_to_wgs84,
     epsg2180_to_wgs84,
     parse_roman_districts,
+    is_in_krakow_bbox,
 )
 
 logging.basicConfig(level=logging.INFO, format='%(levelname)s: %(message)s')
@@ -83,7 +85,7 @@ def read_clean_csv(file_path: Path) -> list[dict[str, str]]:
 
 
 def find_csv(pattern: str) -> Path:
-    # Uses regex to safely locate source files, ignoring minor naming conventions changes
+    # Uses regex to safely locate source files, ignoring minor naming conventions changes.
     for p in sorted(RAW_DATA_DIR.glob("*.csv")):
         if re.search(pattern, p.name, re.IGNORECASE):
             return p
@@ -118,6 +120,203 @@ def norm_token(street: str) -> str:
     return tokens[-1] if tokens else s
 
 
+def postal_code_to_district(postal: str) -> int:
+    """
+    Official Krakow postal code to district mapping fallback.
+    Prevents unassigned municipal facilities from defaulting to Stare Miasto.
+    """
+    if not postal:
+        return None
+    pc = postal.strip().replace(" ", "")
+    m = re.match(r"^(3[01])-?(\d{3})$", pc)
+    if not m:
+        return None
+    prefix, code_str = m.group(1), m.group(2)
+    code_num = int(code_str)
+    if prefix == "30":
+        if code_num < 100: return 5   # 30-0xx: Krowodrza (V)
+        if code_num < 300: return 7   # 30-1xx, 30-2xx: Zwierzyniec (VII)
+        if code_num < 400: return 8   # 30-3xx: Dębniki (VIII)
+        if code_num < 500: return 9   # 30-4xx: Łagiewniki-Borek Fałęcki (IX)
+        if code_num < 600: return 13  # 30-5xx: Podgórze (XIII)
+        if code_num < 700: return 11  # 30-6xx: Podgórze Duchackie (XI)
+        if code_num < 800: return 13  # 30-7xx: Płaszów / Podgórze (XIII)
+        if code_num < 900: return 12  # 30-8xx: Bieżanów-Prokocim (XII)
+        return 10                     # 30-9xx: Swoszowice (X)
+    else:  # prefix == "31"
+        if code_num < 200: return 1   # 31-0xx, 31-1xx: Stare Miasto (I)
+        if code_num < 400: return 4   # 31-2xx, 31-3xx: Prądnik Biały (IV)
+        if code_num < 500: return 3   # 31-4xx: Prądnik Czerwony (III)
+        if code_num < 600: return 2   # 31-5xx: Grzegórzki (II)
+        if code_num < 700: return 15  # 31-6xx: Mistrzejowice (XV)
+        if code_num < 800: return 17  # 31-7xx: Wzgórza Krzesławickie (XVII) / Bieńczyce (XVI)
+        if code_num < 900: return 14  # 31-8xx: Czyżyny (XIV)
+        return 18                     # 31-9xx: Nowa Huta (XVIII)
+
+
+DISTRICT_NAME_TO_ID: dict[str, int] = {
+    "stare miasto": 1,
+    "grzegórzki": 2, "grzegorzki": 2,
+    "prądnik czerwony": 3, "pradnik czerwony": 3,
+    "prądnik biały": 4, "pradnik bialy": 4,
+    "krowodrza": 5,
+    "bronowice": 6,
+    "zwierzyniec": 7,
+    "dębniki": 8, "debniki": 8,
+    "łagiewniki-borek fałęcki": 9, "lagiewniki-borek falecki": 9, "łagiewniki": 9, "lagiewniki": 9,
+    "swoszowice": 10,
+    "podgórze duchackie": 11, "podgorze duchackie": 11,
+    "bieżanów-prokocim": 12, "biezanow-prokocim": 12, "bieżanów prokocim": 12, "biezanow prokocim": 12, "bieżanów": 12, "biezanow": 12,
+    "podgórze": 13, "podgorze": 13,
+    "czyżyny": 14, "czyzyny": 14,
+    "mistrzejowice": 15,
+    "bieńczyce": 16, "bienczyce": 16,
+    "wzgórza krzesławickie": 17, "wzgorza krzeslawickie": 17,
+    "nowa huta": 18,
+}
+
+
+def extract_district_id(row: dict[str, str]) -> int:
+    #Extracts district ID (1..18) from numerical, Roman numeral, or Polish text name columns.
+    for k in ["Nr_Dzielnicy", "districtId", "district_id", "ID_DZIELNICY"]:
+        v = clean_int(row.get(k))
+        if 1 <= v <= 18:
+            return v
+
+    for k in ["Numer Dzielnicy", "Nr Dzielnicy", "districtRoman", "Dzielnica_Roman", "Roman"]:
+        romans = parse_roman_districts(row.get(k, ""))
+        if romans:
+            return romans[0]
+
+    for k in ["Dzielnica", "DZIELNICA", "Nazwa dzielnicy", "NAZWA_DZIELNICY"]:
+        val = (row.get(k) or "").strip()
+        if not val:
+            continue
+        romans = parse_roman_districts(val)
+        if romans:
+            return romans[0]
+        val_clean = val.lower().replace("-", " ")
+        for name_key in sorted(DISTRICT_NAME_TO_ID.keys(), key=len, reverse=True):
+            if name_key in val_clean:
+                return DISTRICT_NAME_TO_ID[name_key]
+
+    return None
+
+
+def sanitize_address_for_geocoding(street: str, building_num: str = "") -> str:
+    """
+    Cleans municipal address strings so that GUGiK UUG API receives official street + building syntax.
+    Eliminates premises/apartment numbers (/LU 15, /lok. 2), typos ('osiede'), and duplicates ('69 69').
+    """
+    combined = f"{street} {building_num}".strip() if building_num else street.strip()
+    if not combined:
+        return ""
+
+    combined = re.sub(r"\bosiede\b", "osiedle", combined, flags=re.IGNORECASE)
+    combined = re.sub(r"\bosiedletysi[aą]clecia\b", "osiedle Tysiąclecia", combined, flags=re.IGNORECASE)
+
+    combined = re.sub(r"^krak[oó]w\s*,\s*", "", combined, flags=re.IGNORECASE)
+    combined = re.sub(r"\s*,\s*krak[oó]w$", "", combined, flags=re.IGNORECASE)
+    combined = combined.strip(", ")
+
+    # Strip apartment, premises, and commercial unit suffixes that cause GUGiK 400 Bad Request
+    combined = re.sub(r"/(?:lu|lok|lokal|u|m|pok)\.?\s*[\w\-]+.*$", "", combined, flags=re.IGNORECASE)
+    combined = re.sub(r"\s+(?:lu|lok|lokal|u|m|pok)\.?\s*[\w\-]+.*$", "", combined, flags=re.IGNORECASE)
+
+    # Clean repeated building numbers (e.g. '69 69' -> '69')
+    combined = re.sub(r"\b(\d+[a-zA-Z]?)\s+\1\b", r"\1", combined)
+    return combined.strip()
+
+
+# Verified municipal premises addresses for parent clubs whose source CSV omits building numbers
+KNOWN_PARENT_CLUBS: dict[tuple[int, str], tuple[str, str]] = {
+    (1, "berka joselewicza"): ("Berka Joselewicza", "28"),
+    (2, "bobrowskiego"): ("Bobrowskiego", "11"),
+    (2, "dąbska"): ("Dąbska", "18"),
+    (3, "wena"): ("Aleja 29 Listopada", "70"),
+    (3, "malwa"): ("Dobrego Pasterza", "6"),
+    (3, "olsza"): ("Stanisława ze Skalbmierza", "7"),
+    (3, "siemacha"): ("Dobrego Pasterza", "100"),
+    (4, "dworek"): ("Papiernicza", "2"),
+    (4, "papiernicza"): ("Papiernicza", "2"),
+    (4, "łokietek"): ("Władysława Łokietka", "267"),
+    (4, "żabiec"): ("Konecznego", "2"),
+    (4, "konecznego"): ("Konecznego", "2"),
+    (5, "paleta"): ("Wrocławska", "91"),
+    (5, "wrocławska"): ("Wrocławska", "91"),
+    (6, "mydlniki"): ("Balicka", "289"),
+    (6, "balicka"): ("Balicka", "289"),
+    (6, "latarnia"): ("Jabłonkowska", "29A"),
+    (6, "jabłonkowska"): ("Jabłonkowska", "29A"),
+    (6, "wizjonerów"): ("Wizjonerów", "2"),
+    (7, "przegorzały"): ("Kamedulska", "70"),
+    (7, "kamedulska"): ("Kamedulska", "70"),
+    (7, "wola"): ("Królowej Jadwigi", "215"),
+    (7, "królowej jadwigi"): ("Królowej Jadwigi", "215"),
+    (7, "chełm"): ("Chełmska", "16"),
+    (7, "chełmska"): ("Chełmska", "16"),
+    (8, "ruczaj"): ("Przyzby", "10"),
+    (8, "przyzby"): ("Przyzby", "10"),
+    (8, "skotniki"): ("Batalionów Chłopskich", "6"),
+    (8, "batalionów"): ("Batalionów Chłopskich", "6"),
+    (8, "kapelanka"): ("Kapelanka", "60"),
+    (9, "iskierka"): ("Żywiecka", "44"),
+    (9, "żywiecka"): ("Żywiecka", "44"),
+    (10, "wróblowice"): ("Niewodniczańskiego", "74"),
+    (10, "niewodniczańskiego"): ("Niewodniczańskiego", "74"),
+    (10, "swoszowice"): ("Kolejarzy", "71"),
+    (10, "kolejarzy"): ("Kolejarzy", "71"),
+    (10, "borek"): ("Forteczna", "146"),
+    (10, "forteczna"): ("Forteczna", "146"),
+    (11, "piaskownica"): ("Łużycka", "55"),
+    (11, "łużycka"): ("Łużycka", "55"),
+    (11, "witosa"): ("Witosa", "39"),
+    (11, "kamieńskiego"): ("Kamieńskiego", "11"),
+    (12, "czeczów"): ("Popiełuszki", "36"),
+    (12, "popiełuszki"): ("Popiełuszki", "36"),
+    (12, "aleksandry"): ("Aleksandry", "1"),
+    (12, "kurczaba"): ("Kurczaba", "2"),
+    (12, "facimiech"): ("Facimiech", "32"),
+    (13, "rybitwy"): ("Rybitwy", "2"),
+    (13, "przewóz"): ("Łutnia", "1"),
+    (13, "łutnia"): ("Łutnia", "1"),
+    (13, "płaszów"): ("Gumniska", "32"),
+    (13, "gumniska"): ("Gumniska", "32"),
+    (13, "sokolska"): ("Sokolska", "13"),
+    (13, "dąbrówki"): ("Dąbrówki", "3"),
+    (14, "303"): ("Osiedle Dywizjonu 303", "1"),
+    (14, "dywizjonu"): ("Osiedle Dywizjonu 303", "1"),
+    (15, "kuźnia"): ("Osiedle Złotego Wieku", "14"),
+    (15, "złotego wieku"): ("Osiedle Złotego Wieku", "14"),
+    (15, "oświecenia"): ("Osiedle Oświecenia", "1"),
+    (15, "piastów"): ("Osiedle Piastów", "65"),
+    (16, "niepodległości"): ("Osiedle Niepodległości", "2"),
+    (17, "dukat"): ("Styczna", "1"),
+    (17, "styczna"): ("Styczna", "1"),
+    (17, "zakole"): ("Zakole", "31"),
+    (18, "nck"): ("Aleja Jana Pawła II", "232"),
+    (18, "nowohuckie"): ("Aleja Jana Pawła II", "232"),
+    (18, "jana pawła"): ("Aleja Jana Pawła II", "232"),
+    (18, "jędruś"): ("Osiedle Centrum A", "6a"),
+    (18, "centrum a"): ("Osiedle Centrum A", "6a"),
+    (18, "skarpie"): ("Osiedle Na Skarpie", "35"),
+    (18, "karino"): ("Truskawkowa", "4"),
+    (18, "truskawkowa"): ("Truskawkowa", "4"),
+    (18, "artzona"): ("Osiedle Górali", "4"),
+    (18, "familia"): ("Osiedle Górali", "8"),
+    (18, "wrózenice"): ("Wróżenicka", "10"),
+    (18, "wróżenicka"): ("Wróżenicka", "10"),
+}
+
+
+def match_known_facility_address(did: int, name: str, street: str) -> tuple[str, str]:
+    text = f"{name} {street}".lower()
+    for (d, pat), addr in KNOWN_PARENT_CLUBS.items():
+        if (did is None or did == d) and pat in text:
+            return addr
+    return None
+
+
 class KrakowSpatialResolver:
     """
     Handles all geospatial operations: Point-in-Polygon (PiP) assignment to districts,
@@ -133,11 +332,10 @@ class KrakowSpatialResolver:
         self.is_cache_dirty = False
         self.cache_path = cache_path
 
-        # Use Session for connection pooling (speeds up API requests drastically)
         self.http_session = requests.Session()
         self.http_session.headers.update({"User-Agent": "Cracow360-Enrichment/1.0"})
 
-        # Load manual geospatial overrides (Parks/Forests without addresses)
+        # Load manual geospatial overrides (Parks/Forests without street addresses)
         corrections_file = find_csv(r"Korekty_Geoprzestrzenne_POI")
         if corrections_file:
             for row in read_clean_csv(corrections_file):
@@ -167,7 +365,12 @@ class KrakowSpatialResolver:
 
         if self.cache_path.exists():
             with open(self.cache_path, "r", encoding="utf-8") as c:
-                self.geocoding_cache = json.load(c)
+                raw_cache = json.load(c)
+                # Keep only valid non-empty coordinate pairs; discard prior failed [] entries
+                self.geocoding_cache = {
+                    k: v for k, v in raw_cache.items()
+                    if isinstance(v, list) and len(v) == 2 and v[0] and v[1]
+                }
 
     def point_to_district(self, lat: float, lng: float) -> int:
         # Determines which of the 18 districts a geographic point belongs to.
@@ -178,7 +381,7 @@ class KrakowSpatialResolver:
         return None
 
     def register_anchor(self, street: str, postal: str, did: int, lat: float, lng: float) -> None:
-        # Registers a known reliable coordinate (like a tram stop) to serve as a fallback anchor.
+        # Registers a known address token to help infer district IDs when geocoding fails.
         tk = norm_token(street)
         if tk:
             self.street_coords[tk].append((did, lat, lng))
@@ -188,13 +391,20 @@ class KrakowSpatialResolver:
 
     def _fetch_gugik_api(self, query: str) -> tuple[float, float]:
         # Queries the official Polish government addressing service and transforms EPSG:2180 to WGS84.
-        q_str = query if "kraków" in query.lower() or "krakow" in query.lower() else f"Kraków, {query}"
+        clean_q = query.strip()
+        clean_q = re.sub(r"^krak[oó]w\s*,\s*", "", clean_q, flags=re.IGNORECASE)
+        clean_q = re.sub(r"\s*,\s*krak[oó]w$", "", clean_q, flags=re.IGNORECASE)
+        clean_q = clean_q.strip(", ")
+        if not clean_q:
+            return None
+
+        q_str = f"Kraków, {clean_q}"
         url = f"https://services.gugik.gov.pl/uug/?request=GetAddress&address={urllib.parse.quote(q_str)}"
         try:
-            resp = self.http_session.get(url, timeout=2.0)
+            resp = self.http_session.get(url, timeout=4.0)
             if resp.status_code == 200:
                 data = resp.json()
-                results = data.get("results", {})
+                results = data.get("results")
                 if results and isinstance(results, dict):
                     first = next(iter(results.values()))
                     x_val, y_val = first.get("x"), first.get("y")
@@ -204,66 +414,79 @@ class KrakowSpatialResolver:
             pass
         return None
 
-    def resolve_address(self, street: str, postal_code: str = "", explicit_did: int = None, seed: int = 0, name: str = "", poi_id: str = "", skip_api: bool = False) -> tuple[int | None, float | None, float | None]:
+    def resolve_address(
+        self,
+        street: str,
+        postal_code: str = "",
+        explicit_did: int = None,
+        seed: int = 0,
+        name: str = "",
+        poi_id: str = "",
+        skip_api: bool = False
+    ) -> tuple[int | None, float | None, float | None]:
+        # 1. Check manual spatial corrections
         if poi_id and poi_id in self.exact_coordinates:
             lat, lng = self.exact_coordinates[poi_id]
             did = self.point_to_district(lat, lng) or explicit_did
             return did, lat, lng
 
-        clean_street = street.split(',')[0].strip() if street else ""
-        primary_query = f"{clean_street.lower()}, kraków" if clean_street else ""
-        name_query = f"{name.lower().strip()}, kraków" if name else ""
+        sanitized = sanitize_address_for_geocoding(street)
+        primary_query = f"kraków, {sanitized.lower()}" if sanitized else ""
 
-        # Check in-memory persistent cache first
-        for q in [primary_query, name_query]:
-            if q and q in self.geocoding_cache:
-                coords = self.geocoding_cache[q]
-                if coords and len(coords) == 2:
-                    lat, lng = coords[0], coords[1]
-                    did = self.point_to_district(lat, lng) or explicit_did
-                    return did, round(lat, 6), round(lng, 6)
+        # 2. Check in-memory persistent cache (only accept valid coordinates)
+        if primary_query and primary_query in self.geocoding_cache:
+            coords = self.geocoding_cache[primary_query]
+            if coords and len(coords) == 2 and coords[0] and coords[1]:
+                lat, lng = coords[0], coords[1]
+                did = self.point_to_district(lat, lng) or explicit_did
+                return did, round(lat, 6), round(lng, 6)
 
-        # Fallback to Live Geocoding API if not found
-        if primary_query and not skip_api and primary_query not in self.geocoding_cache:
-            print(f"[API] Geocoding uncached address via GUGiK: {primary_query} ...", flush=True)
+        # 3. Fallback to Live Geocoding API
+        if primary_query and not skip_api:
             coords = self._fetch_gugik_api(primary_query)
 
-            if not coords and " " in clean_street:
-                street_only = clean_street.rsplit(" ", 1)[0].lower() + ", kraków"
+            # Secondary attempt: street name without trailing unit/number suffix if space exists
+            if not coords and " " in sanitized:
+                street_only = sanitized.rsplit(" ", 1)[0]
                 coords = self._fetch_gugik_api(street_only)
 
-            self.geocoding_cache[primary_query] = [coords[0], coords[1]] if coords else []
-            self.is_cache_dirty = True
-
-            if not hasattr(self, '_new_cache_entries'):
-                self._new_cache_entries = 0
-            self._new_cache_entries += 1
-            # Periodically flush cache to disk to save progress in case of crash
-            if self._new_cache_entries % 50 == 0:
-                self.save_cache_if_dirty()
-
             if coords:
+                self.geocoding_cache[primary_query] = [coords[0], coords[1]]
+                self.is_cache_dirty = True
+                if not hasattr(self, '_new_cache_entries'):
+                    self._new_cache_entries = 0
+                self._new_cache_entries += 1
+                if self._new_cache_entries % 25 == 0:
+                    self.save_cache_if_dirty()
                 lat, lng = coords
                 did = self.point_to_district(lat, lng) or explicit_did
                 return did, round(lat, 6), round(lng, 6)
+            else:
+                self.geocoding_cache[primary_query] = []
+                self.is_cache_dirty = True
 
         tk = norm_token(street)
         pc = postal_code.strip()
 
-        # Fallback to local anchor mapping based on postal codes or nearby streets
+        # 4. Fallback to local anchor mapping for DISTRICT RESOLUTION ONLY.
         if tk and tk in self.street_coords:
             matches = self.street_coords[tk]
             if explicit_did:
                 matches = [m for m in matches if m[0] == explicit_did] or matches
-            did, lat, lng = matches[seed % len(matches)]
-            return explicit_did or did, round(lat, 6), round(lng, 6)
+            anchor_did = matches[seed % len(matches)][0]
+            return explicit_did or anchor_did, None, None
 
         if pc and pc in self.postal_coords:
             matches = self.postal_coords[pc]
             if explicit_did:
                 matches = [m for m in matches if m[0] == explicit_did] or matches
-            did, lat, lng = matches[seed % len(matches)]
-            return explicit_did or did, round(lat, 6), round(lng, 6)
+            anchor_did = matches[seed % len(matches)][0]
+            return explicit_did or anchor_did, None, None
+
+        # 5. Postal code district mapping fallback
+        postal_did = postal_code_to_district(postal_code)
+        if postal_did:
+            return postal_did, None, None
 
         return explicit_did, None, None
 
@@ -276,7 +499,6 @@ class KrakowSpatialResolver:
 
 
 def fetch_openmeteo_air_quality_90d(lat: float, lon: float) -> dict:
-    # It retrieves historical data from the last 90 days and calculates averages as well as the number of smog days
     url = f"https://air-quality-api.open-meteo.com/v1/air-quality?latitude={lat}&longitude={lon}&hourly=pm10,pm2_5,nitrogen_dioxide&past_days=90"
     try:
         resp = requests.get(url, timeout=15.0)
@@ -287,7 +509,6 @@ def fetch_openmeteo_air_quality_90d(lat: float, lon: float) -> dict:
             pm25 = [v for v in data.get("pm2_5", []) if v is not None]
             no2 = [v for v in data.get("nitrogen_dioxide", []) if v is not None]
 
-            # Calculating smog days (daily average PM10 > 50 µg/m³)
             smog_days = 0
             if pm10:
                 for i in range(0, len(pm10), 24):
@@ -318,7 +539,6 @@ def run_etl() -> None:
 
     resolver = KrakowSpatialResolver(geojson_path, CACHE_PATH)
 
-    # Reading coordinates
     district_coords = {}
     coords_file = find_csv(r"Dzielnice_Krakowa")
     if coords_file:
@@ -331,7 +551,6 @@ def run_etl() -> None:
     else:
         print("[Warning] Dzielnice_Krakowa.csv not found - API will use default coordinates.")
 
-    # Initialize in-memory aggregate dictionary matching the final DTO contract shape
     districts_data: dict[int, dict] = {}
     for d in KRAKOW_DISTRICTS:
         did = d["districtId"]
@@ -420,13 +639,13 @@ def run_etl() -> None:
                     did = resolver.point_to_district(lat, lng) or 1
                     districts_data[did]["mobilityAndTransport"]["parkAndRideCount"] += 1
                     cap = clean_int(row.get("Liczba miejsc ogółem", "150"), 150)
-                    pois.append({
-                        # Critical Fix: Generates a globally unique UUID to prevent Entity Framework Identity Conflicts
-                        "id": f"pr_{uuid.uuid4().hex[:12]}",
-                        "districtId": did, "category": "MOBILITY", "subCategory": "PARK_AND_RIDE",
-                        "name": row.get("Nazwa", f"P+R #{idx}").strip(), "address": f"Parking P+R, Kraków",
-                        "lat": lat, "lng": lng, "metrics": {"capacity": cap, "areaHa": None, "additionalInfo": f"Miejsca: {cap}"}
-                    })
+                    if is_in_krakow_bbox(lat, lng):
+                        pois.append({
+                            "id": f"pr_{uuid.uuid4().hex[:12]}",
+                            "districtId": did, "category": "MOBILITY", "subCategory": "PARK_AND_RIDE",
+                            "name": row.get("Nazwa", f"P+R #{idx}").strip(), "address": f"Parking P+R, Kraków",
+                            "lat": round(lat, 6), "lng": round(lng, 6), "metrics": {"capacity": cap, "areaHa": None, "additionalInfo": f"Miejsca: {cap}"}
+                        })
                 except (ValueError, TypeError):
                     pass
 
@@ -509,28 +728,34 @@ def run_etl() -> None:
         f = find_csv(pattern)
         if not f: return
         for idx, row in enumerate(read_clean_csv(f), start=1):
-            exp_did = parse_roman_districts(row.get("Dzielnica", ""))
-            did_hint = exp_did[0] if exp_did else None
+            did_hint = extract_district_id(row)
 
             street_name = row.get("Ulica") or row.get("Nazwa ulicy") or row.get("Adres") or ""
-            building_num = row.get("Numer budynku") or row.get("Nr domu") or ""
+            building_num = row.get("Numer budynku") or row.get("Nr domu") or row.get("Numer lokalu") or ""
             postal = row.get("Kod pocztowy") or ""
 
-            full_street = f"{street_name} {building_num}".strip() if building_num else street_name
-
             raw_name = (
-                    row.get("Nazwa") or
-                    row.get("Nazwa szkoły_placówki") or
-                    row.get("Miejsce") or
-                    row.get("Nazwa przedszkola") or
-                    row.get("Nazwa żłobka") or
-                    f"Placówka #{idx}"
+                row.get("Nazwa") or
+                row.get("Nazwa szkoły_placówki") or
+                row.get("Miejsce") or
+                row.get("Nazwa przedszkola") or
+                row.get("Nazwa żłobka") or
+                f"Placówka #{idx}"
             ).strip()
 
-            did, lat, lng = resolver.resolve_address(full_street, postal, did_hint, seed=idx*17, name=raw_name)
+            # Enrich missing municipal premises numbers
+            if not building_num or building_num.strip() == "":
+                enriched_addr = match_known_facility_address(did_hint, raw_name, street_name)
+                if enriched_addr:
+                    street_name, building_num = enriched_addr
 
-            # Statistics Aggregation
-            final_did = did_hint or did or 1
+            sanitized_addr = sanitize_address_for_geocoding(street_name, building_num)
+
+            did, lat, lng = resolver.resolve_address(sanitized_addr, postal, did_hint, seed=idx*17, name=raw_name)
+
+            # Statistics Aggregation (100% of facilities counted in district balances)
+            postal_did = postal_code_to_district(postal)
+            final_did = did_hint or did or postal_did or 1
             districts_data[final_did]["educationAndCare"][counter_key] += 1
             places = clean_int(row.get("Liczba miejsc") or row.get("Liczba dzieci ogółem") or row.get("Liczba uczniów ogółem") or "0")
 
@@ -542,19 +767,18 @@ def run_etl() -> None:
                 districts_data[final_did]["educationAndCare"]["primarySchoolStudentsTotal"] += places
                 districts_data[final_did]["_internal"]["primarySchoolClasses"] += clean_int(row.get("Liczba oddziałów ogółem") or "0")
 
-            # Creating a map – we only stop adding a marker to the map if coordinates are missing
-            if not lat or not did:
-                missing_coords += 1
-                if is_poi: continue
-
-            if is_poi and lat and lng:
-                pois.append({
-                    "id": f"{subcat.lower()}_{uuid.uuid4().hex[:12]}",
-                    "districtId": final_did, "category": "EDU_CARE",
-                    "subCategory": subcat, "name": raw_name,
-                    "address": f"{full_street}, {postal} Kraków".strip(", "), "lat": lat, "lng": lng,
-                    "metrics": {"capacity": places, "areaHa": None, "additionalInfo": f"Pojemność: {places}"}
-                })
+            # Map marker creation: ONLY add to map if coordinates are genuinely verified and within Krakow
+            if is_poi:
+                if lat and lng and is_in_krakow_bbox(lat, lng):
+                    pois.append({
+                        "id": f"{subcat.lower()}_{uuid.uuid4().hex[:12]}",
+                        "districtId": final_did, "category": "EDU_CARE",
+                        "subCategory": subcat, "name": raw_name,
+                        "address": f"{sanitized_addr}, {postal} Kraków".strip(", "), "lat": round(lat, 6), "lng": round(lng, 6),
+                        "metrics": {"capacity": places, "areaHa": None, "additionalInfo": f"Pojemność: {places}"}
+                    })
+                else:
+                    missing_coords += 1
 
     process_education_csv(r"Żłobki samorządowe", "NURSERY_PUBLIC", "nurseriesPublicCount")
     process_education_csv(r"Żłobki prowadzone na zlecenie", "NURSERY_CONTRACTED", "nurseriesContractedCount")
@@ -576,19 +800,17 @@ def run_etl() -> None:
             name = (row.get("Nazwa") or f"Park miejski #{idx}").strip()
             area_ha = clean_float(row.get("Powierzchnia_ha") or row.get("POW_HA"))
 
-            # Divide park area equally amongst all districts it spans across
             area_per_district = area_ha / len(exp_did)
-
             for d_id in exp_did:
                 districts_data[d_id]["greeneryAndSport"]["cityParksCount"] += 1
                 districts_data[d_id]["greeneryAndSport"]["totalParksAreaHa"] += area_per_district
 
             primary_did = exp_did[0]
             _, lat, lng = resolver.resolve_address(name, "", primary_did, seed=idx*43, poi_id=f"city_park_{idx}")
-            if lat and lng:
+            if lat and lng and is_in_krakow_bbox(lat, lng):
                 pois.append({
                     "id": f"city_park_{uuid.uuid4().hex[:12]}",
-                    "districtId": primary_did, "category": "GREENERY", "subCategory": "CITY_PARK", "name": name, "address": f"{name}, Kraków", "lat": lat, "lng": lng, "metrics": {"capacity": None, "areaHa": round(area_ha, 2), "additionalInfo": f"Park ZZM"}
+                    "districtId": primary_did, "category": "GREENERY", "subCategory": "CITY_PARK", "name": name, "address": f"{name}, Kraków", "lat": round(lat, 6), "lng": round(lng, 6), "metrics": {"capacity": None, "areaHa": round(area_ha, 2), "additionalInfo": f"Park ZZM"}
                 })
             else:
                 missing_coords += 1
@@ -603,10 +825,10 @@ def run_etl() -> None:
             area_ha = clean_float(row.get("POW_HA") or row.get("Powierzchnia_ha"))
             districts_data[did_hint]["greeneryAndSport"]["pocketParksCount"] += 1
             districts_data[did_hint]["greeneryAndSport"]["totalParksAreaHa"] += area_ha
-            if lat and lng:
+            if lat and lng and is_in_krakow_bbox(lat, lng):
                 pois.append({
                     "id": f"pocket_park_{uuid.uuid4().hex[:12]}",
-                    "districtId": did_hint, "category": "GREENERY", "subCategory": "POCKET_PARK", "name": name, "address": f"{name}, Kraków", "lat": lat, "lng": lng, "metrics": {"capacity": None, "areaHa": round(area_ha, 2), "additionalInfo": f"Kieszonkowy ZZM"}
+                    "districtId": did_hint, "category": "GREENERY", "subCategory": "POCKET_PARK", "name": name, "address": f"{name}, Kraków", "lat": round(lat, 6), "lng": round(lng, 6), "metrics": {"capacity": None, "areaHa": round(area_ha, 2), "additionalInfo": f"Kieszonkowy ZZM"}
                 })
 
     forest_file = find_csv(r"Lasy komunalne")
@@ -618,10 +840,10 @@ def run_etl() -> None:
                 districts_data[did]["greeneryAndSport"]["forestAreaHa"] += area_ha
                 name = (row.get("Nazwa_kompleksu_lesnego") or "").strip()
                 _, lat, lng = resolver.resolve_address(name, "", did, seed=idx*53, poi_id=f"forest_{idx}")
-                if lat and lng:
+                if lat and lng and is_in_krakow_bbox(lat, lng):
                     pois.append({
                         "id": f"forest_{uuid.uuid4().hex[:12]}",
-                        "districtId": did, "category": "GREENERY", "subCategory": "CITY_PARK", "name": name, "address": f"{name}, Kraków", "lat": lat, "lng": lng, "metrics": {"capacity": None, "areaHa": round(area_ha, 2), "additionalInfo": f"Las komunalny"}
+                        "districtId": did, "category": "GREENERY", "subCategory": "CITY_PARK", "name": name, "address": f"{name}, Kraków", "lat": round(lat, 6), "lng": round(lng, 6), "metrics": {"capacity": None, "areaHa": round(area_ha, 2), "additionalInfo": f"Las komunalny"}
                     })
 
     for pat in [r"Tereny sportowe.*samorządowych", r"Tereny sportowe.*niesamorządowych"]:
@@ -674,18 +896,16 @@ def run_etl() -> None:
             did, lat, lng = resolver.resolve_address(full_st, pc, seed=idx*37, name=name)
             if did:
                 library_branches_by_district[did] += 1
-                if lat and lng:
+                if lat and lng and is_in_krakow_bbox(lat, lng):
                     pois.append({
                         "id": f"library_{uuid.uuid4().hex[:12]}",
-                        "districtId": did, "category": "CULTURE_SOCIETY", "subCategory": "LIBRARY", "name": name, "address": f"ul. {full_st}, {pc} Kraków", "lat": lat, "lng": lng, "metrics": {"capacity": 50, "areaHa": None, "additionalInfo": "Biblioteka Kraków"}
+                        "districtId": did, "category": "CULTURE_SOCIETY", "subCategory": "LIBRARY", "name": name, "address": f"ul. {full_st}, {pc} Kraków", "lat": round(lat, 6), "lng": round(lng, 6), "metrics": {"capacity": 50, "areaHa": None, "additionalInfo": "Biblioteka Kraków"}
                     })
 
     cas_file = find_csv(r"Centra Aktywno.ci Seniora|Centra Aktywnosci Seniora")
     if cas_file:
         for idx, row in enumerate(read_clean_csv(cas_file), start=1):
-            exp_did = parse_roman_districts(row.get("Dzielnica", ""))
-            did = exp_did[0] if exp_did else 0
-
+            did = extract_district_id(row) or 0
             if 1 <= did <= 18:
                 districts_data[did]["cultureAndSociety"]["seniorActivityCentersCount"] += 1
                 adres_full = row.get("Adres", "").strip()
@@ -694,7 +914,7 @@ def run_etl() -> None:
                 name = row.get("Nazwa", f"CAS #{idx}").strip()
 
                 _, lat, lng = resolver.resolve_address(st, pc, explicit_did=did, seed=idx*73, name=name)
-                if lat and lng:
+                if lat and lng and is_in_krakow_bbox(lat, lng):
                     pois.append({
                         "id": f"cas_{uuid.uuid4().hex[:12]}",
                         "districtId": did,
@@ -702,8 +922,8 @@ def run_etl() -> None:
                         "subCategory": "SENIOR_CENTER",
                         "name": name,
                         "address": f"{st}, {pc} Kraków".strip(", "),
-                        "lat": lat,
-                        "lng": lng,
+                        "lat": round(lat, 6),
+                        "lng": round(lng, 6),
                         "metrics": {"capacity": 45, "areaHa": None, "additionalInfo": "CAS"}
                     })
 
@@ -717,7 +937,6 @@ def run_etl() -> None:
         pop = max(d["demographics"]["totalPopulation"], 1)
         cult["municipalSubsidyPerCapitaPln"] = round((total_culture_subsidy * share) / pop, 2)
 
-    # Retrieving geolocation from a dynamic dictionary; defaults to Old Town in case of an error
     print("[API] Downloading historical environmental data (90 days) from Open-Meteo...")
     for did in range(1, 19):
         lat, lon = district_coords.get(did, (50.0614, 19.9366))

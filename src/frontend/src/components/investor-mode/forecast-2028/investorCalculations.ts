@@ -8,32 +8,23 @@ import {
 import type { InvestorDistrictForecastData, InvestorMacro2028 } from './types';
 
 export function determineEducationExpansionPriority(
-  nurseryBalance2028: number,
-  kindergartenBalance2028: number,
-  schoolPlacesBalance2028: number,
+  _nurseryBalance2028: number,
+  _kindergartenBalance2028: number,
+  _schoolPlacesBalance2028: number,
   totalBalance2028: number,
   totalCoveragePct2028: number
 ): 'HIGH' | 'MEDIUM' | 'LOW' {
-  // HIGH: negative total 0-14 balance OR severe deficit in nurseries (<= -700) or schools (<= -400)
-  if (
-    totalBalance2028 < 0 ||
-    nurseryBalance2028 <= -700 ||
-    schoolPlacesBalance2028 <= -400
-  ) {
+  // HIGH: physical deficit across 0-14 children in 2028 (balance < 0 or coverage < 100%)
+  if (totalBalance2028 < 0 || totalCoveragePct2028 < 100) {
     return 'HIGH';
   }
 
-  // LOW: high overall coverage (>= 160%), no school/kindergarten deficit, and mild/positive nursery balance (>= -350)
-  if (
-    totalCoveragePct2028 >= 160 &&
-    schoolPlacesBalance2028 >= 0 &&
-    kindergartenBalance2028 >= 0 &&
-    nurseryBalance2028 >= -350
-  ) {
+  // LOW: high overall coverage with safe capacity buffer (coverage >= 120%)
+  if (totalCoveragePct2028 >= 120) {
     return 'LOW';
   }
 
-  // MEDIUM: positive overall balance, but moderate gap in one of the age brackets
+  // MEDIUM: balanced market with tight buffer (100% <= coverage < 120%)
   return 'MEDIUM';
 }
 
@@ -43,7 +34,9 @@ export function getEducationalRecommendation(
   kinderBal2028: number,
   schoolBal2028: number,
   avgPerClass: number,
-  language: Language = 'pl'
+  language: Language = 'pl',
+  totalBal2028?: number,
+  totalCovPct?: number
 ): string {
   return getEduRec(
     {
@@ -51,6 +44,8 @@ export function getEducationalRecommendation(
       nurseryBalance2028: nurseryBal2028,
       kindergartenBalance2028: kinderBal2028,
       schoolPlacesBalance2028: schoolBal2028,
+      totalBalance2028: totalBal2028,
+      totalCoveragePct2028: totalCovPct,
       avgStudentsPerClass: avgPerClass,
     },
     language
@@ -191,7 +186,9 @@ export function mapDistrictForecastData(
     kindergartenBalance2028,
     schoolPlacesBalance2028,
     avgStudentsPerClass,
-    language
+    language,
+    totalBalance2028,
+    totalCoveragePct2028
   );
 
   return {
@@ -210,13 +207,13 @@ export function mapDistrictForecastData(
     kindergartenBalance2028,
     primarySchoolsCount,
     primarySchoolCapacity,
-    primarySchoolStudentsTotal,
     age7To14_current: c714,
     age7To14_2028: f714,
     studentDelta,
-    avgStudentsPerClass,
     schoolPlacesBalance,
     schoolPlacesBalance2028,
+    primarySchoolStudentsTotal,
+    avgStudentsPerClass,
     totalChildren0To14,
     totalChildren2028,
     totalDelta0To14,
@@ -230,7 +227,7 @@ export function mapDistrictForecastData(
     greenDeficit,
     recommendedAction,
     educationalAction,
-    demographicVitalityScore: d.scores.demographicVitalityScore,
+    demographicVitalityScore: d.scores?.demographicVitalityScore ?? 0,
     rawDetails: d,
   };
 }

@@ -18,18 +18,18 @@
         "populationGrowthRate3YrPct": 0.89
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 5,
-        "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 92,
-        "kidsClubsCount": 8,
-        "totalCarePlaces0to3": 3426,
-        "childrenPerCarePlaceRatio": 0.15,
-        "parentClubsCount": 14,
-        "kindergartensCount": 140,
-        "kindergartenPlacesTotal": 7977,
-        "primarySchoolsCount": 38,
-        "primarySchoolStudentsTotal": 8453,
-        "avgStudentsPerClass": 16.4
+        "nurseriesPublicCount": 2,
+        "nurseriesContractedCount": 0,
+        "nurseriesPrivateCount": 6,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 333,
+        "childrenPerCarePlaceRatio": 1.55,
+        "parentClubsCount": 1,
+        "kindergartensCount": 24,
+        "kindergartenPlacesTotal": 1494,
+        "primarySchoolsCount": 19,
+        "primarySchoolStudentsTotal": 4939,
+        "avgStudentsPerClass": 17.6
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 95,
@@ -56,15 +56,15 @@
         "totalGreenAreaHa": 30.91,
         "greenAreaM2PerCapita": 9.96,
         "totalGreenM2PerCapita": 9.96,
-        "schoolSportsFacilitiesCount": 242,
+        "schoolSportsFacilitiesCount": 275,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 14,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 2012,
-        "municipalSubsidyPerCapitaPln": 417.4
+        "annualCulturalEventsCount": 1866,
+        "municipalSubsidyPerCapitaPln": 387.1
       },
       "publicSafety": {
         "roadCollisionsAnnual": 955,
@@ -197,7 +197,7 @@
           "2024": 117,
           "2025": 118
         },
-        "primarySchoolClasses": 516,
+        "primarySchoolClasses": 281,
         "pop2023": 30754,
         "pop2024": 30075,
         "pop2025": 31029,
@@ -206,7 +206,7 @@
       },
       "scores": {
         "mobilityScore": 99.7,
-        "educationScore": 98.2,
+        "educationScore": 82.6,
         "greeneryScore": 38.7,
         "cultureAndSeniorScore": 91.6,
         "environmentScore": 47.7,
@@ -235,16 +235,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 13,
+        "nurseriesPrivateCount": 15,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 631,
-        "childrenPerCarePlaceRatio": 1.7,
-        "parentClubsCount": 1,
-        "kindergartensCount": 14,
-        "kindergartenPlacesTotal": 1241,
-        "primarySchoolsCount": 9,
-        "primarySchoolStudentsTotal": 2568,
-        "avgStudentsPerClass": 17.0
+        "totalCarePlaces0to3": 697,
+        "childrenPerCarePlaceRatio": 1.54,
+        "parentClubsCount": 2,
+        "kindergartensCount": 18,
+        "kindergartenPlacesTotal": 1559,
+        "primarySchoolsCount": 10,
+        "primarySchoolStudentsTotal": 2833,
+        "avgStudentsPerClass": 19.0
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 67,
@@ -271,15 +271,15 @@
         "totalGreenAreaHa": 29.54,
         "greenAreaM2PerCapita": 7.16,
         "totalGreenM2PerCapita": 8.77,
-        "schoolSportsFacilitiesCount": 70,
+        "schoolSportsFacilitiesCount": 88,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 5,
+        "libraryBranchesCount": 4,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 5,
-        "annualCulturalEventsCount": 559,
-        "municipalSubsidyPerCapitaPln": 106.78
+        "annualCulturalEventsCount": 415,
+        "municipalSubsidyPerCapitaPln": 79.22
       },
       "publicSafety": {
         "roadCollisionsAnnual": 617,
@@ -410,7 +410,7 @@
           "2024": 226,
           "2025": 256
         },
-        "primarySchoolClasses": 151,
+        "primarySchoolClasses": 149,
         "pop2023": 31972,
         "pop2024": 31874,
         "pop2025": 33693,
@@ -421,7 +421,7 @@
         "mobilityScore": 97.9,
         "educationScore": 81.0,
         "greeneryScore": 38.5,
-        "cultureAndSeniorScore": 65.9,
+        "cultureAndSeniorScore": 61.9,
         "environmentScore": 47.7,
         "safetyScore": 40.8,
         "housingAffordabilityScore": 27.5,
@@ -446,18 +446,18 @@
         "populationGrowthRate3YrPct": 2.07
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 1,
+        "nurseriesPublicCount": 0,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 11,
+        "nurseriesPrivateCount": 16,
         "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 606,
-        "childrenPerCarePlaceRatio": 2.11,
-        "parentClubsCount": 3,
-        "kindergartensCount": 22,
-        "kindergartenPlacesTotal": 1634,
+        "totalCarePlaces0to3": 609,
+        "childrenPerCarePlaceRatio": 2.1,
+        "parentClubsCount": 4,
+        "kindergartensCount": 26,
+        "kindergartenPlacesTotal": 1699,
         "primarySchoolsCount": 11,
-        "primarySchoolStudentsTotal": 3793,
-        "avgStudentsPerClass": 16.6
+        "primarySchoolStudentsTotal": 4022,
+        "avgStudentsPerClass": 16.9
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 98,
@@ -484,15 +484,15 @@
         "totalGreenAreaHa": 20.02,
         "greenAreaM2PerCapita": 4.14,
         "totalGreenM2PerCapita": 4.14,
-        "schoolSportsFacilitiesCount": 76,
+        "schoolSportsFacilitiesCount": 89,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 6,
+        "libraryBranchesCount": 7,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 671,
-        "municipalSubsidyPerCapitaPln": 89.26
+        "annualCulturalEventsCount": 726,
+        "municipalSubsidyPerCapitaPln": 96.58
       },
       "publicSafety": {
         "roadCollisionsAnnual": 529,
@@ -624,7 +624,7 @@
           "2024": 342,
           "2025": 267
         },
-        "primarySchoolClasses": 229,
+        "primarySchoolClasses": 238,
         "pop2023": 47383,
         "pop2024": 47067,
         "pop2025": 48363,
@@ -633,9 +633,9 @@
       },
       "scores": {
         "mobilityScore": 82.6,
-        "educationScore": 77.0,
+        "educationScore": 76.7,
         "greeneryScore": 28.5,
-        "cultureAndSeniorScore": 50.0,
+        "cultureAndSeniorScore": 51.0,
         "environmentScore": 47.7,
         "safetyScore": 46.9,
         "housingAffordabilityScore": 47.5,
@@ -660,18 +660,18 @@
         "populationGrowthRate3YrPct": 5.6
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 2,
+        "nurseriesPublicCount": 3,
         "nurseriesContractedCount": 2,
-        "nurseriesPrivateCount": 20,
+        "nurseriesPrivateCount": 35,
         "kidsClubsCount": 4,
-        "totalCarePlaces0to3": 1103,
-        "childrenPerCarePlaceRatio": 2.55,
-        "parentClubsCount": 1,
-        "kindergartensCount": 48,
-        "kindergartenPlacesTotal": 3152,
+        "totalCarePlaces0to3": 1660,
+        "childrenPerCarePlaceRatio": 1.69,
+        "parentClubsCount": 3,
+        "kindergartensCount": 58,
+        "kindergartenPlacesTotal": 3600,
         "primarySchoolsCount": 17,
-        "primarySchoolStudentsTotal": 5736,
-        "avgStudentsPerClass": 20.6
+        "primarySchoolStudentsTotal": 5112,
+        "avgStudentsPerClass": 20.3
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 256,
@@ -698,15 +698,15 @@
         "totalGreenAreaHa": 33.18,
         "greenAreaM2PerCapita": 2.26,
         "totalGreenM2PerCapita": 4.2,
-        "schoolSportsFacilitiesCount": 109,
+        "schoolSportsFacilitiesCount": 114,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 4,
+        "libraryBranchesCount": 5,
         "culturalCentersCount": 8,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 1341,
-        "municipalSubsidyPerCapitaPln": 109.24
+        "annualCulturalEventsCount": 1348,
+        "municipalSubsidyPerCapitaPln": 109.75
       },
       "publicSafety": {
         "roadCollisionsAnnual": 776,
@@ -838,7 +838,7 @@
           "2024": 657,
           "2025": 690
         },
-        "primarySchoolClasses": 279,
+        "primarySchoolClasses": 252,
         "pop2023": 74850,
         "pop2024": 75507,
         "pop2025": 79042,
@@ -847,9 +847,9 @@
       },
       "scores": {
         "mobilityScore": 63.7,
-        "educationScore": 68.7,
-        "greeneryScore": 21.4,
-        "cultureAndSeniorScore": 50.2,
+        "educationScore": 77.0,
+        "greeneryScore": 22.0,
+        "cultureAndSeniorScore": 53.5,
         "environmentScore": 47.7,
         "safetyScore": 56.9,
         "housingAffordabilityScore": 44.8,
@@ -874,18 +874,18 @@
         "populationGrowthRate3YrPct": 3.68
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 2,
+        "nurseriesPublicCount": 3,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 10,
-        "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 475,
-        "childrenPerCarePlaceRatio": 1.59,
+        "nurseriesPrivateCount": 7,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 525,
+        "childrenPerCarePlaceRatio": 1.43,
         "parentClubsCount": 1,
-        "kindergartensCount": 19,
-        "kindergartenPlacesTotal": 866,
-        "primarySchoolsCount": 11,
-        "primarySchoolStudentsTotal": 3261,
-        "avgStudentsPerClass": 14.0
+        "kindergartensCount": 20,
+        "kindergartenPlacesTotal": 984,
+        "primarySchoolsCount": 13,
+        "primarySchoolStudentsTotal": 3380,
+        "avgStudentsPerClass": 13.6
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 80,
@@ -912,15 +912,15 @@
         "totalGreenAreaHa": 35.74,
         "greenAreaM2PerCapita": 10.8,
         "totalGreenM2PerCapita": 10.8,
-        "schoolSportsFacilitiesCount": 67,
+        "schoolSportsFacilitiesCount": 73,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
+        "libraryBranchesCount": 2,
         "culturalCentersCount": 1,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 86.98
+        "annualCulturalEventsCount": 311,
+        "municipalSubsidyPerCapitaPln": 60.5
       },
       "publicSafety": {
         "roadCollisionsAnnual": 949,
@@ -1052,7 +1052,7 @@
           "2024": 167,
           "2025": 183
         },
-        "primarySchoolClasses": 233,
+        "primarySchoolClasses": 248,
         "pop2023": 31915,
         "pop2024": 31534,
         "pop2025": 33088,
@@ -1061,9 +1061,9 @@
       },
       "scores": {
         "mobilityScore": 89.2,
-        "educationScore": 85.2,
+        "educationScore": 88.0,
         "greeneryScore": 44.5,
-        "cultureAndSeniorScore": 50.5,
+        "cultureAndSeniorScore": 39.4,
         "environmentScore": 47.7,
         "safetyScore": 29.1,
         "housingAffordabilityScore": 36.3,
@@ -1088,18 +1088,18 @@
         "populationGrowthRate3YrPct": 4.32
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 0,
+        "nurseriesPublicCount": 1,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 6,
-        "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 284,
-        "childrenPerCarePlaceRatio": 2.77,
-        "parentClubsCount": 2,
-        "kindergartensCount": 9,
-        "kindergartenPlacesTotal": 578,
-        "primarySchoolsCount": 7,
-        "primarySchoolStudentsTotal": 2371,
-        "avgStudentsPerClass": 20.8
+        "nurseriesPrivateCount": 13,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 657,
+        "childrenPerCarePlaceRatio": 1.2,
+        "parentClubsCount": 3,
+        "kindergartensCount": 16,
+        "kindergartenPlacesTotal": 940,
+        "primarySchoolsCount": 6,
+        "primarySchoolStudentsTotal": 1930,
+        "avgStudentsPerClass": 21.9
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 58,
@@ -1126,15 +1126,15 @@
         "totalGreenAreaHa": 39.93,
         "greenAreaM2PerCapita": 15.11,
         "totalGreenM2PerCapita": 15.11,
-        "schoolSportsFacilitiesCount": 44,
+        "schoolSportsFacilitiesCount": 46,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 54.47
+        "annualCulturalEventsCount": 207,
+        "municipalSubsidyPerCapitaPln": 50.52
       },
       "publicSafety": {
         "roadCollisionsAnnual": 327,
@@ -1262,7 +1262,7 @@
           "2024": 184,
           "2025": 195
         },
-        "primarySchoolClasses": 114,
+        "primarySchoolClasses": 88,
         "pop2023": 25323,
         "pop2024": 25285,
         "pop2025": 26418,
@@ -1271,9 +1271,9 @@
       },
       "scores": {
         "mobilityScore": 57.9,
-        "educationScore": 57.9,
+        "educationScore": 84.7,
         "greeneryScore": 42.0,
-        "cultureAndSeniorScore": 36.8,
+        "cultureAndSeniorScore": 36.2,
         "environmentScore": 52.4,
         "safetyScore": 49.7,
         "housingAffordabilityScore": 42.1,
@@ -1302,14 +1302,14 @@
         "nurseriesContractedCount": 0,
         "nurseriesPrivateCount": 1,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 96,
-        "childrenPerCarePlaceRatio": 5.23,
+        "totalCarePlaces0to3": 179,
+        "childrenPerCarePlaceRatio": 2.8,
         "parentClubsCount": 3,
-        "kindergartensCount": 12,
-        "kindergartenPlacesTotal": 632,
-        "primarySchoolsCount": 7,
-        "primarySchoolStudentsTotal": 1863,
-        "avgStudentsPerClass": 19.2
+        "kindergartensCount": 19,
+        "kindergartenPlacesTotal": 960,
+        "primarySchoolsCount": 8,
+        "primarySchoolStudentsTotal": 1600,
+        "avgStudentsPerClass": 17.6
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 154,
@@ -1336,15 +1336,15 @@
         "totalGreenAreaHa": 537.87,
         "greenAreaM2PerCapita": 53.37,
         "totalGreenM2PerCapita": 241.5,
-        "schoolSportsFacilitiesCount": 41,
+        "schoolSportsFacilitiesCount": 56,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 2,
+        "libraryBranchesCount": 3,
         "culturalCentersCount": 2,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 129.22
+        "annualCulturalEventsCount": 518,
+        "municipalSubsidyPerCapitaPln": 149.81
       },
       "publicSafety": {
         "roadCollisionsAnnual": 218,
@@ -1475,7 +1475,7 @@
           "2024": 121,
           "2025": 123
         },
-        "primarySchoolClasses": 97,
+        "primarySchoolClasses": 91,
         "pop2023": 21507,
         "pop2024": 21452,
         "pop2025": 22272,
@@ -1484,9 +1484,9 @@
       },
       "scores": {
         "mobilityScore": 56.0,
-        "educationScore": 62.4,
+        "educationScore": 71.0,
         "greeneryScore": 75.6,
-        "cultureAndSeniorScore": 79.6,
+        "cultureAndSeniorScore": 89.9,
         "environmentScore": 52.4,
         "safetyScore": 53.3,
         "housingAffordabilityScore": 28.0,
@@ -1512,17 +1512,17 @@
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
-        "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 22,
-        "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 1023,
-        "childrenPerCarePlaceRatio": 2.25,
-        "parentClubsCount": 2,
-        "kindergartensCount": 40,
-        "kindergartenPlacesTotal": 2843,
-        "primarySchoolsCount": 21,
-        "primarySchoolStudentsTotal": 7585,
-        "avgStudentsPerClass": 18.0
+        "nurseriesContractedCount": 2,
+        "nurseriesPrivateCount": 31,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 1392,
+        "childrenPerCarePlaceRatio": 1.66,
+        "parentClubsCount": 3,
+        "kindergartensCount": 50,
+        "kindergartenPlacesTotal": 3301,
+        "primarySchoolsCount": 23,
+        "primarySchoolStudentsTotal": 7070,
+        "avgStudentsPerClass": 16.1
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 208,
@@ -1549,15 +1549,15 @@
         "totalGreenAreaHa": 244.32,
         "greenAreaM2PerCapita": 8.89,
         "totalGreenM2PerCapita": 34.03,
-        "schoolSportsFacilitiesCount": 122,
-        "schoolSwimmingPoolsCount": 2
+        "schoolSportsFacilitiesCount": 136,
+        "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 4,
+        "libraryBranchesCount": 6,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 5,
-        "annualCulturalEventsCount": 447,
-        "municipalSubsidyPerCapitaPln": 40.08
+        "annualCulturalEventsCount": 622,
+        "municipalSubsidyPerCapitaPln": 55.76
       },
       "publicSafety": {
         "roadCollisionsAnnual": 892,
@@ -1690,7 +1690,7 @@
           "2024": 557,
           "2025": 517
         },
-        "primarySchoolClasses": 421,
+        "primarySchoolClasses": 438,
         "pop2023": 68100,
         "pop2024": 68185,
         "pop2025": 71800,
@@ -1699,9 +1699,9 @@
       },
       "scores": {
         "mobilityScore": 50.7,
-        "educationScore": 74.0,
+        "educationScore": 82.7,
         "greeneryScore": 47.8,
-        "cultureAndSeniorScore": 32.5,
+        "cultureAndSeniorScore": 41.5,
         "environmentScore": 52.4,
         "safetyScore": 54.8,
         "housingAffordabilityScore": 34.6,
@@ -1728,16 +1728,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 0,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 1,
-        "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 45,
-        "childrenPerCarePlaceRatio": 10.22,
+        "nurseriesPrivateCount": 8,
+        "kidsClubsCount": 1,
+        "totalCarePlaces0to3": 226,
+        "childrenPerCarePlaceRatio": 2.04,
         "parentClubsCount": 1,
-        "kindergartensCount": 3,
-        "kindergartenPlacesTotal": 290,
-        "primarySchoolsCount": 3,
-        "primarySchoolStudentsTotal": 1036,
-        "avgStudentsPerClass": 19.9
+        "kindergartensCount": 13,
+        "kindergartenPlacesTotal": 909,
+        "primarySchoolsCount": 9,
+        "primarySchoolStudentsTotal": 2113,
+        "avgStudentsPerClass": 15.4
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 59,
@@ -1764,15 +1764,15 @@
         "totalGreenAreaHa": 102.01,
         "greenAreaM2PerCapita": 22.68,
         "totalGreenM2PerCapita": 62.85,
-        "schoolSportsFacilitiesCount": 7,
-        "schoolSwimmingPoolsCount": 0
+        "schoolSportsFacilitiesCount": 49,
+        "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 88.67
+        "annualCulturalEventsCount": 207,
+        "municipalSubsidyPerCapitaPln": 82.23
       },
       "publicSafety": {
         "roadCollisionsAnnual": 213,
@@ -1902,7 +1902,7 @@
           "2024": 105,
           "2025": 97
         },
-        "primarySchoolClasses": 52,
+        "primarySchoolClasses": 137,
         "pop2023": 15782,
         "pop2024": 15798,
         "pop2025": 16230,
@@ -1911,9 +1911,9 @@
       },
       "scores": {
         "mobilityScore": 78.4,
-        "educationScore": 45.8,
-        "greeneryScore": 61.4,
-        "cultureAndSeniorScore": 60.7,
+        "educationScore": 79.1,
+        "greeneryScore": 72.1,
+        "cultureAndSeniorScore": 59.8,
         "environmentScore": 47.7,
         "safetyScore": 53.6,
         "housingAffordabilityScore": 40.8,
@@ -1940,16 +1940,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 1,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 4,
+        "nurseriesPrivateCount": 14,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 265,
-        "childrenPerCarePlaceRatio": 3.43,
-        "parentClubsCount": 2,
-        "kindergartensCount": 12,
-        "kindergartenPlacesTotal": 822,
-        "primarySchoolsCount": 6,
-        "primarySchoolStudentsTotal": 1912,
-        "avgStudentsPerClass": 17.5
+        "totalCarePlaces0to3": 594,
+        "childrenPerCarePlaceRatio": 1.53,
+        "parentClubsCount": 3,
+        "kindergartensCount": 29,
+        "kindergartenPlacesTotal": 1875,
+        "primarySchoolsCount": 8,
+        "primarySchoolStudentsTotal": 3520,
+        "avgStudentsPerClass": 20.1
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 126,
@@ -1976,15 +1976,15 @@
         "totalGreenAreaHa": 97.23,
         "greenAreaM2PerCapita": 4.34,
         "totalGreenM2PerCapita": 31.65,
-        "schoolSportsFacilitiesCount": 22,
+        "schoolSportsFacilitiesCount": 41,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
+        "libraryBranchesCount": 5,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 70.27
+        "annualCulturalEventsCount": 518,
+        "municipalSubsidyPerCapitaPln": 108.61
       },
       "publicSafety": {
         "roadCollisionsAnnual": 573,
@@ -2113,7 +2113,7 @@
           "2024": 193,
           "2025": 193
         },
-        "primarySchoolClasses": 109,
+        "primarySchoolClasses": 175,
         "pop2023": 29904,
         "pop2024": 29752,
         "pop2025": 30720,
@@ -2122,9 +2122,9 @@
       },
       "scores": {
         "mobilityScore": 41.8,
-        "educationScore": 61.8,
-        "greeneryScore": 37.0,
-        "cultureAndSeniorScore": 46.0,
+        "educationScore": 79.8,
+        "greeneryScore": 43.2,
+        "cultureAndSeniorScore": 56.7,
         "environmentScore": 60.2,
         "safetyScore": 61.4,
         "housingAffordabilityScore": 59.9,
@@ -2151,16 +2151,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 10,
-        "kidsClubsCount": 1,
-        "totalCarePlaces0to3": 685,
-        "childrenPerCarePlaceRatio": 2.32,
+        "nurseriesPrivateCount": 19,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 862,
+        "childrenPerCarePlaceRatio": 1.84,
         "parentClubsCount": 3,
-        "kindergartensCount": 22,
-        "kindergartenPlacesTotal": 1452,
-        "primarySchoolsCount": 8,
-        "primarySchoolStudentsTotal": 4684,
-        "avgStudentsPerClass": 22.1
+        "kindergartensCount": 40,
+        "kindergartenPlacesTotal": 2510,
+        "primarySchoolsCount": 11,
+        "primarySchoolStudentsTotal": 5053,
+        "avgStudentsPerClass": 21.8
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 89,
@@ -2187,15 +2187,15 @@
         "totalGreenAreaHa": 54.93,
         "greenAreaM2PerCapita": 8.38,
         "totalGreenM2PerCapita": 9.77,
-        "schoolSportsFacilitiesCount": 67,
+        "schoolSportsFacilitiesCount": 119,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
+        "libraryBranchesCount": 4,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 38.38
+        "annualCulturalEventsCount": 415,
+        "municipalSubsidyPerCapitaPln": 47.46
       },
       "publicSafety": {
         "roadCollisionsAnnual": 245,
@@ -2324,7 +2324,7 @@
           "2024": 413,
           "2025": 339
         },
-        "primarySchoolClasses": 212,
+        "primarySchoolClasses": 232,
         "pop2023": 54824,
         "pop2024": 54854,
         "pop2025": 56236,
@@ -2333,9 +2333,9 @@
       },
       "scores": {
         "mobilityScore": 64.0,
-        "educationScore": 65.0,
-        "greeneryScore": 25.2,
-        "cultureAndSeniorScore": 25.7,
+        "educationScore": 73.2,
+        "greeneryScore": 28.3,
+        "cultureAndSeniorScore": 31.4,
         "environmentScore": 47.7,
         "safetyScore": 68.0,
         "housingAffordabilityScore": 48.5,
@@ -2362,16 +2362,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 13,
-        "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 863,
-        "childrenPerCarePlaceRatio": 2.29,
-        "parentClubsCount": 2,
-        "kindergartensCount": 27,
-        "kindergartenPlacesTotal": 2326,
-        "primarySchoolsCount": 15,
-        "primarySchoolStudentsTotal": 4649,
-        "avgStudentsPerClass": 17.0
+        "nurseriesPrivateCount": 22,
+        "kidsClubsCount": 2,
+        "totalCarePlaces0to3": 1169,
+        "childrenPerCarePlaceRatio": 1.69,
+        "parentClubsCount": 4,
+        "kindergartensCount": 34,
+        "kindergartenPlacesTotal": 2869,
+        "primarySchoolsCount": 17,
+        "primarySchoolStudentsTotal": 5279,
+        "avgStudentsPerClass": 16.4
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 145,
@@ -2398,15 +2398,15 @@
         "totalGreenAreaHa": 56.74,
         "greenAreaM2PerCapita": 6.94,
         "totalGreenM2PerCapita": 8.65,
-        "schoolSportsFacilitiesCount": 63,
+        "schoolSportsFacilitiesCount": 85,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 3,
+        "libraryBranchesCount": 6,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 335,
-        "municipalSubsidyPerCapitaPln": 32.91
+        "annualCulturalEventsCount": 622,
+        "municipalSubsidyPerCapitaPln": 61.05
       },
       "publicSafety": {
         "roadCollisionsAnnual": 612,
@@ -2537,7 +2537,7 @@
           "2024": 452,
           "2025": 490
         },
-        "primarySchoolClasses": 273,
+        "primarySchoolClasses": 322,
         "pop2023": 64463,
         "pop2024": 64189,
         "pop2025": 65580,
@@ -2546,9 +2546,9 @@
       },
       "scores": {
         "mobilityScore": 60.6,
-        "educationScore": 75.0,
-        "greeneryScore": 26.7,
-        "cultureAndSeniorScore": 24.1,
+        "educationScore": 81.9,
+        "greeneryScore": 30.1,
+        "cultureAndSeniorScore": 39.3,
         "environmentScore": 49.4,
         "safetyScore": 61.0,
         "housingAffordabilityScore": 66.7,
@@ -2575,16 +2575,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 18,
+        "nurseriesPrivateCount": 24,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 948,
-        "childrenPerCarePlaceRatio": 2.13,
-        "parentClubsCount": 3,
-        "kindergartensCount": 31,
-        "kindergartenPlacesTotal": 2245,
-        "primarySchoolsCount": 15,
-        "primarySchoolStudentsTotal": 4658,
-        "avgStudentsPerClass": 16.9
+        "totalCarePlaces0to3": 1211,
+        "childrenPerCarePlaceRatio": 1.66,
+        "parentClubsCount": 5,
+        "kindergartensCount": 28,
+        "kindergartenPlacesTotal": 2056,
+        "primarySchoolsCount": 12,
+        "primarySchoolStudentsTotal": 4157,
+        "avgStudentsPerClass": 17.7
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 213,
@@ -2611,15 +2611,15 @@
         "totalGreenAreaHa": 92.55,
         "greenAreaM2PerCapita": 19.28,
         "totalGreenM2PerCapita": 19.28,
-        "schoolSportsFacilitiesCount": 103,
+        "schoolSportsFacilitiesCount": 95,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 2,
+        "libraryBranchesCount": 1,
         "culturalCentersCount": 19,
         "seniorActivityCentersCount": 6,
-        "annualCulturalEventsCount": 2347,
-        "municipalSubsidyPerCapitaPln": 314.77
+        "annualCulturalEventsCount": 2073,
+        "municipalSubsidyPerCapitaPln": 278.02
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1390,
@@ -2749,7 +2749,7 @@
           "2024": 507,
           "2025": 459
         },
-        "primarySchoolClasses": 276,
+        "primarySchoolClasses": 235,
         "pop2023": 43434,
         "pop2024": 44098,
         "pop2025": 48003,
@@ -2758,9 +2758,9 @@
       },
       "scores": {
         "mobilityScore": 70.4,
-        "educationScore": 76.4,
+        "educationScore": 80.7,
         "greeneryScore": 44.9,
-        "cultureAndSeniorScore": 80.4,
+        "cultureAndSeniorScore": 75.2,
         "environmentScore": 47.7,
         "safetyScore": 27.4,
         "housingAffordabilityScore": 25.3,
@@ -2787,16 +2787,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 1,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 19,
+        "nurseriesPrivateCount": 24,
         "kidsClubsCount": 2,
-        "totalCarePlaces0to3": 884,
-        "childrenPerCarePlaceRatio": 1.93,
-        "parentClubsCount": 2,
-        "kindergartensCount": 21,
-        "kindergartenPlacesTotal": 1296,
-        "primarySchoolsCount": 5,
-        "primarySchoolStudentsTotal": 2286,
-        "avgStudentsPerClass": 21.6
+        "totalCarePlaces0to3": 1005,
+        "childrenPerCarePlaceRatio": 1.7,
+        "parentClubsCount": 1,
+        "kindergartensCount": 27,
+        "kindergartenPlacesTotal": 1629,
+        "primarySchoolsCount": 7,
+        "primarySchoolStudentsTotal": 2602,
+        "avgStudentsPerClass": 19.6
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 122,
@@ -2823,15 +2823,15 @@
         "totalGreenAreaHa": 54.88,
         "greenAreaM2PerCapita": 14.46,
         "totalGreenM2PerCapita": 14.46,
-        "schoolSportsFacilitiesCount": 45,
+        "schoolSportsFacilitiesCount": 80,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
-        "libraryBranchesCount": 1,
+        "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 1,
-        "annualCulturalEventsCount": 112,
-        "municipalSubsidyPerCapitaPln": 18.96
+        "annualCulturalEventsCount": 207,
+        "municipalSubsidyPerCapitaPln": 35.16
       },
       "publicSafety": {
         "roadCollisionsAnnual": 666,
@@ -2958,7 +2958,7 @@
           "2024": 383,
           "2025": 437
         },
-        "primarySchoolClasses": 106,
+        "primarySchoolClasses": 133,
         "pop2023": 35495,
         "pop2024": 35957,
         "pop2025": 37956,
@@ -2967,9 +2967,9 @@
       },
       "scores": {
         "mobilityScore": 67.7,
-        "educationScore": 68.6,
-        "greeneryScore": 37.4,
-        "cultureAndSeniorScore": 14.0,
+        "educationScore": 77.8,
+        "greeneryScore": 40.5,
+        "cultureAndSeniorScore": 22.8,
         "environmentScore": 49.4,
         "safetyScore": 39.8,
         "housingAffordabilityScore": 59.0,
@@ -2996,16 +2996,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 2,
         "nurseriesContractedCount": 1,
-        "nurseriesPrivateCount": 10,
+        "nurseriesPrivateCount": 13,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 723,
-        "childrenPerCarePlaceRatio": 1.76,
+        "totalCarePlaces0to3": 784,
+        "childrenPerCarePlaceRatio": 1.62,
         "parentClubsCount": 3,
-        "kindergartensCount": 18,
-        "kindergartenPlacesTotal": 1729,
-        "primarySchoolsCount": 6,
-        "primarySchoolStudentsTotal": 3203,
-        "avgStudentsPerClass": 21.4
+        "kindergartensCount": 23,
+        "kindergartenPlacesTotal": 1915,
+        "primarySchoolsCount": 7,
+        "primarySchoolStudentsTotal": 3731,
+        "avgStudentsPerClass": 21.6
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 91,
@@ -3039,8 +3039,8 @@
         "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 27.95
+        "annualCulturalEventsCount": 207,
+        "municipalSubsidyPerCapitaPln": 25.93
       },
       "publicSafety": {
         "roadCollisionsAnnual": 198,
@@ -3169,7 +3169,7 @@
           "2024": 297,
           "2025": 285
         },
-        "primarySchoolClasses": 150,
+        "primarySchoolClasses": 173,
         "pop2023": 51274,
         "pop2024": 50929,
         "pop2025": 51479,
@@ -3178,9 +3178,9 @@
       },
       "scores": {
         "mobilityScore": 85.7,
-        "educationScore": 74.7,
+        "educationScore": 76.4,
         "greeneryScore": 23.6,
-        "cultureAndSeniorScore": 20.6,
+        "cultureAndSeniorScore": 20.3,
         "environmentScore": 49.4,
         "safetyScore": 61.8,
         "housingAffordabilityScore": 56.9,
@@ -3207,16 +3207,16 @@
       "educationAndCare": {
         "nurseriesPublicCount": 1,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 6,
+        "nurseriesPrivateCount": 3,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 335,
-        "childrenPerCarePlaceRatio": 2.25,
+        "totalCarePlaces0to3": 211,
+        "childrenPerCarePlaceRatio": 3.57,
         "parentClubsCount": 1,
-        "kindergartensCount": 13,
-        "kindergartenPlacesTotal": 1291,
-        "primarySchoolsCount": 10,
-        "primarySchoolStudentsTotal": 3199,
-        "avgStudentsPerClass": 20.9
+        "kindergartensCount": 15,
+        "kindergartenPlacesTotal": 1427,
+        "primarySchoolsCount": 9,
+        "primarySchoolStudentsTotal": 3031,
+        "avgStudentsPerClass": 21.0
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 56,
@@ -3243,15 +3243,15 @@
         "totalGreenAreaHa": 31.95,
         "greenAreaM2PerCapita": 8.68,
         "totalGreenM2PerCapita": 8.68,
-        "schoolSportsFacilitiesCount": 65,
+        "schoolSportsFacilitiesCount": 74,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 224,
-        "municipalSubsidyPerCapitaPln": 39.09
+        "annualCulturalEventsCount": 207,
+        "municipalSubsidyPerCapitaPln": 36.25
       },
       "publicSafety": {
         "roadCollisionsAnnual": 189,
@@ -3381,7 +3381,7 @@
           "2024": 188,
           "2025": 172
         },
-        "primarySchoolClasses": 153,
+        "primarySchoolClasses": 144,
         "pop2023": 37857,
         "pop2024": 36979,
         "pop2025": 36813,
@@ -3390,9 +3390,9 @@
       },
       "scores": {
         "mobilityScore": 86.9,
-        "educationScore": 70.4,
+        "educationScore": 63.7,
         "greeneryScore": 29.1,
-        "cultureAndSeniorScore": 28.3,
+        "cultureAndSeniorScore": 27.9,
         "environmentScore": 49.4,
         "safetyScore": 69.9,
         "housingAffordabilityScore": 64.4,
@@ -3419,13 +3419,13 @@
       "educationAndCare": {
         "nurseriesPublicCount": 3,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 1,
+        "nurseriesPrivateCount": 2,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 234,
-        "childrenPerCarePlaceRatio": 2.64,
-        "parentClubsCount": 0,
-        "kindergartensCount": 6,
-        "kindergartenPlacesTotal": 435,
+        "totalCarePlaces0to3": 294,
+        "childrenPerCarePlaceRatio": 2.1,
+        "parentClubsCount": 2,
+        "kindergartensCount": 11,
+        "kindergartenPlacesTotal": 915,
         "primarySchoolsCount": 4,
         "primarySchoolStudentsTotal": 1599,
         "avgStudentsPerClass": 20.0
@@ -3455,15 +3455,15 @@
         "totalGreenAreaHa": 55.59,
         "greenAreaM2PerCapita": 9.67,
         "totalGreenM2PerCapita": 26.89,
-        "schoolSportsFacilitiesCount": 20,
+        "schoolSportsFacilitiesCount": 38,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
         "culturalCentersCount": 0,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 112,
-        "municipalSubsidyPerCapitaPln": 34.81
+        "annualCulturalEventsCount": 104,
+        "municipalSubsidyPerCapitaPln": 32.28
       },
       "publicSafety": {
         "roadCollisionsAnnual": 211,
@@ -3601,9 +3601,9 @@
       },
       "scores": {
         "mobilityScore": 49.1,
-        "educationScore": 57.8,
-        "greeneryScore": 49.2,
-        "cultureAndSeniorScore": 30.9,
+        "educationScore": 72.8,
+        "greeneryScore": 54.5,
+        "cultureAndSeniorScore": 30.6,
         "environmentScore": 49.4,
         "safetyScore": 51.0,
         "housingAffordabilityScore": 82.4,
@@ -3628,18 +3628,18 @@
         "populationGrowthRate3YrPct": -1.63
       },
       "educationAndCare": {
-        "nurseriesPublicCount": 4,
+        "nurseriesPublicCount": 5,
         "nurseriesContractedCount": 0,
-        "nurseriesPrivateCount": 9,
+        "nurseriesPrivateCount": 13,
         "kidsClubsCount": 0,
-        "totalCarePlaces0to3": 702,
-        "childrenPerCarePlaceRatio": 1.51,
-        "parentClubsCount": 6,
-        "kindergartensCount": 29,
-        "kindergartenPlacesTotal": 2079,
-        "primarySchoolsCount": 15,
-        "primarySchoolStudentsTotal": 4437,
-        "avgStudentsPerClass": 16.7
+        "totalCarePlaces0to3": 920,
+        "childrenPerCarePlaceRatio": 1.15,
+        "parentClubsCount": 7,
+        "kindergartensCount": 35,
+        "kindergartenPlacesTotal": 2246,
+        "primarySchoolsCount": 17,
+        "primarySchoolStudentsTotal": 5322,
+        "avgStudentsPerClass": 17.7
       },
       "mobilityAndTransport": {
         "kmkStopsCount": 272,
@@ -3666,15 +3666,15 @@
         "totalGreenAreaHa": 182.45,
         "greenAreaM2PerCapita": 30.88,
         "totalGreenM2PerCapita": 38.54,
-        "schoolSportsFacilitiesCount": 95,
+        "schoolSportsFacilitiesCount": 115,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
         "culturalCentersCount": 18,
         "seniorActivityCentersCount": 13,
-        "annualCulturalEventsCount": 2459,
-        "municipalSubsidyPerCapitaPln": 334.41
+        "annualCulturalEventsCount": 2281,
+        "municipalSubsidyPerCapitaPln": 310.13
       },
       "publicSafety": {
         "roadCollisionsAnnual": 540,
@@ -3806,7 +3806,7 @@
           "2024": 232,
           "2025": 225
         },
-        "primarySchoolClasses": 266,
+        "primarySchoolClasses": 301,
         "pop2023": 48121,
         "pop2024": 47293,
         "pop2025": 47336,
@@ -3815,7 +3815,7 @@
       },
       "scores": {
         "mobilityScore": 52.2,
-        "educationScore": 84.4,
+        "educationScore": 91.4,
         "greeneryScore": 58.3,
         "cultureAndSeniorScore": 91.1,
         "environmentScore": 49.4,

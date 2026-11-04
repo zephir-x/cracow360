@@ -5,6 +5,8 @@ export interface EduRecommendationInput {
   nurseryBalance2028: number;
   kindergartenBalance2028: number;
   schoolPlacesBalance2028: number;
+  totalBalance2028?: number;
+  totalCoveragePct2028?: number;
   avgStudentsPerClass: number;
 }
 
@@ -273,7 +275,7 @@ const UA_LABELS: InvestorForecastLabels = {
   filterAll: 'Усі райони',
   filterHigh: 'Нагальна потреба розбудови',
   filterMedium: 'Помірна потреба',
-  filterLow: 'Добра доступność місць',
+  filterLow: 'Добра доступність місць',
 
   b2bBadge: {
     HIGH: 'Нагальна потреба розбудови',
@@ -325,87 +327,134 @@ export function getEducationalRecommendation(
     nurseryBalance2028,
     kindergartenBalance2028,
     schoolPlacesBalance2028,
+    totalBalance2028,
+    totalCoveragePct2028,
     avgStudentsPerClass,
   } = data;
 
   const absNursery = Math.abs(nurseryBalance2028);
   const absKinder = Math.abs(kindergartenBalance2028);
   const absSchool = Math.abs(schoolPlacesBalance2028);
+  const absTotal = totalBalance2028 !== undefined ? Math.abs(totalBalance2028) : 0;
 
   if (language === 'en') {
     if (nurseryPotentialB2B === 'HIGH') {
+      const nurseryNote =
+        nurseryBalance2028 < 0
+          ? `nursery shortage: ${absNursery} places`
+          : `nursery reserve: +${nurseryBalance2028} places`;
+      const kinderNote =
+        kindergartenBalance2028 < 0
+          ? `kindergarten shortage: ${absKinder} places`
+          : `kindergarten reserve: +${kindergartenBalance2028} places`;
       const schoolNote =
         schoolPlacesBalance2028 < 0
-          ? `Primary schools also face a projected shortage of ${absSchool} places (avg. ${avgStudentsPerClass} pupils/class)`
-          : `Primary schools maintain a reserve of +${schoolPlacesBalance2028} places (avg. ${avgStudentsPerClass} pupils/class)`;
-      return `Urgent need for new educational facilities (projected 2028 nursery shortage: ${absNursery} places for ages 0–3; ${
-        kindergartenBalance2028 < 0
-          ? `kindergarten gap: ${absKinder} places`
-          : `kindergarten reserve: +${kindergartenBalance2028} places`
-      }). ${schoolNote}. Test adding new facilities in the live simulator below!`;
+          ? `primary school shortage: ${absSchool} places (avg. ${avgStudentsPerClass} pupils/class)`
+          : `primary schools maintain +${schoolPlacesBalance2028} places (avg. ${avgStudentsPerClass} pupils/class)`;
+      const totalNote =
+        totalBalance2028 !== undefined
+          ? `Total projected 0–14 deficit is ${absTotal} places (${totalCoveragePct2028}% demand coverage). `
+          : '';
+      return `Urgent need for new educational facilities. ${totalNote}Breakdown: ${nurseryNote}, ${kinderNote}, ${schoolNote}. Test adding new facilities in the live simulator below!`;
     }
     if (nurseryPotentialB2B === 'MEDIUM') {
-      return `Moderate need for new childcare places (2028 nursery balance: ${
-        nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028
-      } places). ${
+      const totalPart =
+        totalBalance2028 !== undefined
+          ? `Overall 0–14 balance is balanced (${totalBalance2028 >= 0 ? `+${totalBalance2028}` : totalBalance2028} places, ${totalCoveragePct2028}% coverage). `
+          : '';
+      const schoolNote =
         schoolPlacesBalance2028 < 0
-          ? `Primary schools will need approx. ${absSchool} additional places by 2028.`
-          : `Primary schools and kindergartens have stable capacity (+${schoolPlacesBalance2028} school places).`
-      }`;
+          ? `However, there is a local shortage in primary schools (${absSchool} places), balanced by a kindergarten surplus (+${kindergartenBalance2028}).`
+          : `Schools (+${schoolPlacesBalance2028}) and kindergartens (+${kindergartenBalance2028}) maintain a stable buffer.`;
+      const nurseryNote = `Nursery balance: ${nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028} places.`;
+      return `Moderate development need. ${totalPart}${schoolNote} ${nurseryNote}`;
     }
-    return `Good overall availability of educational places in the 2028 horizon (2028 nursery balance: ${
-      nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028
-    } places, kindergartens: +${kindergartenBalance2028}, schools: +${schoolPlacesBalance2028}, avg. ${avgStudentsPerClass} pupils per class). Worth focusing on green areas, senior centers (CAS), and public transit in the live simulator below.`;
+    // LOW
+    const totalPart =
+      totalBalance2028 !== undefined
+        ? `total balance: +${totalBalance2028} places, ${totalCoveragePct2028}% coverage`
+        : `stable total reserve`;
+    return `Good overall availability of educational places in the 2028 horizon (${totalPart}; kindergartens: +${kindergartenBalance2028}, schools: +${schoolPlacesBalance2028}, avg. ${avgStudentsPerClass} pupils per class, nurseries: ${nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028} places). Worth exploring green areas, senior centers (CAS), and public transit in the live simulator below.`;
   }
 
   if (language === 'ua') {
     if (nurseryPotentialB2B === 'HIGH') {
+      const nurseryNote =
+        nurseryBalance2028 < 0
+          ? `у яслах дефіцит ${absNursery} місць`
+          : `ясла мають запас +${nurseryBalance2028} місць`;
+      const kinderNote =
+        kindergartenBalance2028 < 0
+          ? `у дитсадках дефіцит ${absKinder} місць`
+          : `дитсадки зберігають резерв +${kindergartenBalance2028} місць`;
       const schoolNote =
         schoolPlacesBalance2028 < 0
-          ? `У початкових школах також прогнозується дефіцит ${absSchool} місць (сер. ${avgStudentsPerClass} учнів у класі)`
-          : `Початкові школи зберігають резерв +${schoolPlacesBalance2028} місць (сер. ${avgStudentsPerClass} учнів у класі)`;
-      return `Нагальна потреба у розбудові освітніх закладів (прогнозований дефіцит у яслах 2028 р.: ${absNursery} місць для віку 0–3 роки; ${
-        kindergartenBalance2028 < 0
-          ? `нестача в дитсадках: ${absKinder} місць`
-          : `резерв у дитсадках: +${kindergartenBalance2028} місць`
-      }). ${schoolNote}. Перевірте ефект додавання нових закладів у симуляторі нижче!`;
+          ? `у школах дефіцит ${absSchool} місць (сер. ${avgStudentsPerClass} учнів у класі)`
+          : `початкові школи мають резерв +${schoolPlacesBalance2028} місць (сер. ${avgStudentsPerClass} учнів у класі)`;
+      const totalNote =
+        totalBalance2028 !== undefined
+          ? `Загальний прогнозований дефіцит для 0–14 становить ${absTotal} місць (покриття ${totalCoveragePct2028}%). `
+          : '';
+      return `Нагальна потреба у розбудові освітніх закладів. ${totalNote}Детальний баланс: ${nurseryNote}, ${kinderNote}, ${schoolNote}. Перевірте ефект додавання нових закладів у симуляторі нижче!`;
     }
     if (nurseryPotentialB2B === 'MEDIUM') {
-      return `Помірна потреба у додаткових місцях догляду (баланс ясел 2028: ${
-        nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028
-      } місць). ${
+      const totalPart =
+        totalBalance2028 !== undefined
+          ? `Загальний баланс місць 0–14 є збалансованим (${totalBalance2028 >= 0 ? `+${totalBalance2028}` : totalBalance2028} місць, покриття ${totalCoveragePct2028}%). `
+          : '';
+      const schoolNote =
         schoolPlacesBalance2028 < 0
-          ? `Початковим школам до 2028 року знадобиться близько ${absSchool} додаткових місць.`
-          : `Початкові школи та дитсадки мають стабільний запас місць (+${schoolPlacesBalance2028} у школах).`
-      }`;
+          ? `Проте спостерігається локальний дефіцит у початкових школах (${absSchool} місць), що компенсується резервом у дитсадках (+${kindergartenBalance2028}).`
+          : `Школи (+${schoolPlacesBalance2028}) та дитсадки (+${kindergartenBalance2028}) мають стабільний резерв місць.`;
+      const nurseryNote = `Баланс ясел: ${nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028} місць.`;
+      return `Помірна потреба у розвитку інфраструктури. ${totalPart}${schoolNote} ${nurseryNote}`;
     }
-    return `Добра загальна доступність освітніх місць у горизонті 2028 року (баланс ясел 2028: ${
-      nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028
-    } місць, дитсадки: +${kindergartenBalance2028}, школи: +${schoolPlacesBalance2028}, у середньому ${avgStudentsPerClass} учнів у класі). Варто зосередитися на розвитку парків, клубів сеньйорів (CAS) та транспорту в симуляторі нижче.`;
+    // LOW
+    const totalPart =
+      totalBalance2028 !== undefined
+        ? `загальний баланс: +${totalBalance2028} місць, покриття ${totalCoveragePct2028}%`
+        : `стабільний загальний резерв`;
+    return `Добра загальна доступність освітніх місць у горизонті 2028 року (${totalPart}; дитсадки: +${kindergartenBalance2028}, школи: +${schoolPlacesBalance2028}, у середньому ${avgStudentsPerClass} учнів у класі, ясла: ${nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028} місць). Варто зосередитися на розвитку парків, клубів сеньйорів (CAS) та транспорту в симуляторі нижче.`;
   }
 
   // Default: Polish (natural, clear, zero corporate jargon)
   if (nurseryPotentialB2B === 'HIGH') {
+    const nurseryNote =
+      nurseryBalance2028 < 0
+        ? `w żłobkach brak ${absNursery} miejsc`
+        : `żłobki mają zapas +${nurseryBalance2028} miejsc`;
+    const kinderNote =
+      kindergartenBalance2028 < 0
+        ? `w przedszkolach brak ${absKinder} miejsc`
+        : `przedszkola utrzymują zapas +${kindergartenBalance2028} miejsc`;
     const schoolNote =
       schoolPlacesBalance2028 < 0
-        ? `W szkołach podstawowych również prognozowany jest niedobór ${absSchool} miejsc (śr. ${avgStudentsPerClass} uczniów w klasie)`
-        : `Szkoły podstawowe utrzymują zapas +${schoolPlacesBalance2028} miejsc (śr. ${avgStudentsPerClass} uczniów w klasie)`;
-    return `Pilna potrzeba budowy nowych placówek edukacyjnych (w 2028 r. prognozowany brak w żłobkach to ${absNursery} miejsc dla maluchów 0–3 lata; ${
-      kindergartenBalance2028 < 0
-        ? `w przedszkolach brak ok. ${absKinder} miejsc`
-        : `przedszkola utrzymują zapas +${kindergartenBalance2028} miejsc`
-    }). ${schoolNote}. Sprawdź w symulatorze poniżej, jak dodanie nowych placówek poprawi aktualne wyniki dzielnicy!`;
+        ? `w szkołach brak ${absSchool} miejsc (śr. ${avgStudentsPerClass} uczniów w klasie)`
+        : `szkoły podstawowe mają rezerwę +${schoolPlacesBalance2028} miejsc (śr. ${avgStudentsPerClass} uczniów w klasie)`;
+    const totalNote =
+      totalBalance2028 !== undefined
+        ? `Łączny prognozowany deficyt 0–14 wynosi ${absTotal} miejsc (pokrycie ${totalCoveragePct2028}%). `
+        : '';
+    return `Pilna potrzeba budowy nowych placówek edukacyjnych. ${totalNote}Szczegółowy bilans: ${nurseryNote}, ${kinderNote}, ${schoolNote}. Sprawdź w symulatorze poniżej, jak dodanie nowych placówek poprawi aktualne wyniki dzielnicy!`;
   }
+
   if (nurseryPotentialB2B === 'MEDIUM') {
-    return `Umiarkowane zapotrzebowanie na nowe miejsca opieki (bilans żłobków w 2028 r.: ${
-      nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028
-    } miejsc). ${
+    const totalPart =
+      totalBalance2028 !== undefined
+        ? `Łączny bilans miejsc 0–14 jest zrównoważony (${totalBalance2028 >= 0 ? `+${totalBalance2028}` : totalBalance2028} miejsc, pokrycie ${totalCoveragePct2028}%). `
+        : '';
+    const schoolNote =
       schoolPlacesBalance2028 < 0
-        ? `W szkołach podstawowych do 2028 r. przyda się ok. ${absSchool} dodatkowych miejsc.`
-        : `Szkoły podstawowe i przedszkola dysponują stabilną rezerwą miejsc (+${schoolPlacesBalance2028} miejsc w szkołach).`
-    }`;
+        ? `Występuje jednak lokalny niedobór w szkołach podstawowych (${absSchool} miejsc), rekompensowany rezerwą w przedszkolach (+${kindergartenBalance2028}).`
+        : `Szkoły (+${schoolPlacesBalance2028}) i przedszkola (+${kindergartenBalance2028}) dysponują stabilną rezerwą miejsc.`;
+    const nurseryNote = `Bilans opieki żłobkowej: ${nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028} miejsc.`;
+    return `Umiarkowane zapotrzebowanie inwestycyjne. ${totalPart}${schoolNote} ${nurseryNote}`;
   }
-  return `Dobra łączna dostępność miejsc edukacyjnych w perspektywie 2028 r. (bilans żłobków 2028: ${
-    nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028
-  } miejsc, przedszkola: +${kindergartenBalance2028}, szkoły: +${schoolPlacesBalance2028}, średnio ${avgStudentsPerClass} uczniów w klasie). W tej dzielnicy warto przetestować w symulatorze poniżej wpływ nowych parków, przystanków KMK lub Centrów Aktywności Seniora (CAS).`;
+
+  // LOW
+  const totalPart =
+    totalBalance2028 !== undefined
+      ? `łączny bilans: +${totalBalance2028} miejsc, pokrycie ${totalCoveragePct2028}%`
+      : `łączna rezerwa bazy miejsc`;
+  return `Dobra łączna dostępność miejsc edukacyjnych w perspektywie 2028 r. (${totalPart}; przedszkola: +${kindergartenBalance2028}, szkoły: +${schoolPlacesBalance2028}, średnio ${avgStudentsPerClass} uczniów w klasie, żłobki: ${nurseryBalance2028 >= 0 ? `+${nurseryBalance2028}` : nurseryBalance2028} miejsc). W tej dzielnicy warto przetestować w symulatorze poniżej wpływ nowych parków, przystanków KMK lub Centrów Aktywności Seniora (CAS).`;
 }

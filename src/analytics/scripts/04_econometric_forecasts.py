@@ -88,7 +88,7 @@ def build_recommendation(district: dict, nursery_pot: str, senior_def: str, gree
     if nursery_pot == "HIGH" and green_def == "HIGH":
         return f"Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: {balance} miejsc) oraz tworzenie parków kieszonkowych (obecnie {grn['greenAreaM2PerCapita']} m² zieleni/os.)."
     if nursery_pot == "HIGH":
-        return f"Wysoki potencjał inwestycyjny B2B/B2G dla żłobków i klubów dziecięcych z uwagi na napływ młodych rodzin (dynamika {dem['populationGrowthRate3YrPct']:+.1f}%, bilans 2028: {balance} miejsc)."
+        return f"Wysoki potencjał inwestycyjny B2B/B2G dla placówek edukacyjno-opiekuńczych z uwagi na deficyt bazy w horyzoncie 2028 (dynamika {dem['populationGrowthRate3YrPct']:+.1f}%, bilans opieki: {balance} miejsc)."
     if senior_def in ("HIGH", "MEDIUM") and senior_pct >= 24.0:
         return f"Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ ({senior_pct}%)."
     if green_def == "HIGH":
@@ -169,23 +169,21 @@ def run_econometric_forecasts() -> None:
 
         f_7to14 = int(round(dem.get("age7to14", 0) * (1 + dem.get("populationGrowthRate3YrPct", 0) / 100.0)))
 
-        # Harmonized with determineEducationExpansionPriority in frontend (10 HIGH / 4 MEDIUM / 4 LOW):
+        # SSoT synchronized:
         care_places = edu.get("totalCarePlaces0to3", 0)
         kg_places = edu.get("kindergartenPlacesTotal", 0)
         sch_count = edu.get("primarySchoolsCount", 0)
-        sch_cap = sch_count * 450
+        sch_cap = sch_count * 350
 
         tot_cap_2028 = care_places + kg_places + sch_cap
         tot_kids_2028 = f_0to3 + f_4to6 + f_7to14
         tot_bal_2028 = tot_cap_2028 - tot_kids_2028
         tot_cov_2028 = round((tot_cap_2028 / tot_kids_2028) * 100) if tot_kids_2028 > 0 else 0
-        nur_bal_2028 = care_places - f_0to3
-        kg_bal_2028 = kg_places - f_4to6
-        sch_bal_2028 = sch_cap - f_7to14
 
-        if tot_bal_2028 < 0 or nur_bal_2028 <= -700 or sch_bal_2028 <= -400:
+        # Objective, scientifically sound capacity coverage classification:
+        if tot_bal_2028 < 0 or tot_cov_2028 < 100:
             nursery_pot = "HIGH"
-        elif tot_cov_2028 >= 160 and sch_bal_2028 >= 0 and kg_bal_2028 >= 0 and nur_bal_2028 >= -350:
+        elif tot_cov_2028 >= 120:
             nursery_pot = "LOW"
         else:
             nursery_pot = "MEDIUM"
@@ -242,4 +240,3 @@ def run_econometric_forecasts() -> None:
 
 if __name__ == "__main__":
     run_econometric_forecasts()
-    

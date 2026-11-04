@@ -132,7 +132,7 @@ const PL_SIMULATOR: InvestorSimulatorLabels = {
   sectionBadge: 'Interaktywny Symulator „Co-Jeśli” • Przeliczanie na Żywo',
   sectionTitle: 'Symulator Rozbudowy Infrastruktury Dzielnicy',
   sectionSubtitle:
-    'Wybierz dzielnicę i dodaj za pomocą liczników nowe żłobki, przedszkola, szkoły, parki kieszonkowe, przystanki KMK lub kluby seniora CAS. Moduł przelicza wskaźniki w czasie rzeczywistym na stan aktualny — zobacz, jak natychmiast zmieni się Indeks Jakości Życia, pozycja w rankingu 18 dzielnic oraz bieżący bilans miejsc.',
+    'Wybierz dzielnicę i dodaj za pomocą liczników nowe żłobki, przedszkola, szkoły, parki kieszonkowe, przystanki KMK lub kluby seniora CAS. Moduł przelicza wskaźniki w czasie rzeczywistym na stan aktualny - zobacz, jak natychmiast zmieni się Indeks Jakości Życia, pozycja w rankingu 18 dzielnic oraz bieżący bilans miejsc.',
 
   selectDistrictLabel: 'Symulowana dzielnica:',
   presetsLabel: 'Szybkie pakiety testowe:',
@@ -732,12 +732,6 @@ const UA_SIMULATOR: InvestorSimulatorLabels = {
   librariesAndCultureLabel: 'Бібліотеки та будинки культури:',
 
   recommendationBannerTitle: 'Підсумок та практичні поради для обраного району',
-};
-
-export const INVESTOR_SIMULATOR_I18N = {
-  pl: PL_SIMULATOR,
-  en: EN_SIMULATOR,
-  ua: UA_SIMULATOR,
 };
 
 export function getInvestorSimulatorLabels(language: Language): InvestorSimulatorLabels {

@@ -464,66 +464,66 @@ export function getMacroPillDescriptions(cohort: ChildAgeCohort, language: Langu
   if (language === 'en') {
     if (cohort === 'infant') {
       return {
-        balanceSub: 'Supply gap in early nursery care',
-        criticalSub: 'White spots of 0–3 care deficit',
-        coverageSub: 'Care needs satisfaction rate',
-        childrenSub: 'Children aged 0–3 years (current count)',
+        balanceSub: 'Current supply gap in nursery care',
+        criticalSub: 'Blank spots deficits in care for children aged 0–3',
+        coverageSub: 'Needs satisfaction rate',
+        childrenSub: 'Children aged 0–3 (current status)',
       };
     }
     if (cohort === 'preschool') {
       return {
-        balanceSub: 'Recruitment surplus of kindergarten places',
-        criticalSub: 'Districts with tighter reserve buffer (<1.62x)',
-        coverageSub: 'Capacity ratio relative to 4–6 cohorts (1.53x)',
-        childrenSub: 'Children aged 4–6 years (current count)',
+        balanceSub: 'Surplus of available places',
+        criticalSub: 'Districts with a smaller reserve buffer',
+        coverageSub: 'Capacity relative to age cohorts 4–6',
+        childrenSub: 'Children aged 4–6 (current status)',
       };
     }
     if (cohort === 'school') {
       return {
-        balanceSub: 'Primary school network capacity reserve',
-        criticalSub: 'Districts with avg >20 students / class',
-        coverageSub: 'Primary school catchment satisfaction rate',
-        childrenSub: 'Krakow primary school students (7–14)',
+        balanceSub: 'Capacity reserve',
+        criticalSub: 'Districts with an average of >20 students per class',
+        coverageSub: 'Facility coverage ratio',
+        childrenSub: 'Children aged 7–14 (BDK registration data)',
       };
     }
     return {
-      balanceSub: 'Current municipal supply balance',
-      criticalSub: 'Districts with deficit or urgent place shortage',
-      coverageSub: 'Total municipal demand satisfaction rate',
-      childrenSub: 'Current child population (0–14)',
+      balanceSub: 'Current balance of urban provision',
+      criticalSub: 'With a deficit or urgent shortage of places',
+      coverageSub: 'City-wide level of needs satisfaction',
+      childrenSub: 'Children receiving care and education (aged 0–14)',
     };
   }
 
   if (language === 'ua') {
     if (cohort === 'infant') {
       return {
-        balanceSub: 'Дефіцит пропозиції ясельного догляду',
-        criticalSub: 'Білі плями дефіциту догляду 0–3',
-        coverageSub: 'Показник задоволення потреб догляду',
-        childrenSub: 'Діти віком 0–3 роки (поточний стан)',
+        balanceSub: 'Поточний дефіцит у сфері догляду за дітьми віком від 0 до 3 років',
+        criticalSub: 'Білі плями у дефіциті дітей віком від 0 до 3 років',
+        coverageSub: 'Рівень задоволення потреб',
+        childrenSub: 'Діти віком від 0 до 3 років (поточний стан)',
       };
     }
     if (cohort === 'preschool') {
       return {
-        balanceSub: 'Набірний надлишок місць у дитсадках',
-        criticalSub: 'Райони з меншим буфером резерву (<1.62x)',
-        coverageSub: 'Місткість місць відносно дітей 4–6 років (1.53x)',
+        balanceSub: 'Надмірна кількість місць',
+        criticalSub: 'Райони з нижчим резервним буфером',
+        coverageSub: 'База даних місць стосовно вікових груп 4–6',
         childrenSub: 'Діти віком 4–6 років (поточний стан)',
       };
     }
     if (cohort === 'school') {
       return {
-        balanceSub: 'Резерв місткості для районних класів',
-        criticalSub: 'Райони із середнім >20 учнів / клас',
-        coverageSub: 'Показник забезпеченості місцями для учнів',
-        childrenSub: 'Діти віком 7–14 років (зареєстровані мешканці)',
+        balanceSub: 'Резервна місткість',
+        criticalSub: 'Райони із середньою кількістю учнів/клас >20',
+        coverageSub: 'Базовий індекс безпеки',
+        childrenSub: 'Діти віком 7–14 років (звіти BDK)',
       };
     }
     return {
-      balanceSub: 'Поточний муніципальний баланс пропозиції',
-      criticalSub: 'Райони з дефіцитом або гострою нестачею місць',
-      coverageSub: 'Загальний муніципальний рівень покриття попиту',
-      childrenSub: 'Поточна популяція дітей (0–14)',
+      balanceSub: 'Поточний баланс міського постачання',
+      criticalSub: 'З дефіцитом або терміновою нестачею місць',
+      coverageSub: 'Ступінь задоволення потреб у всьому місті',
+      childrenSub: 'Діти під опікою та освітою (0-14 років)',
     };
   }
 
@@ -532,30 +532,30 @@ export function getMacroPillDescriptions(cohort: ChildAgeCohort, language: Langu
     return {
       balanceSub: 'Bieżąca luka podażowa opieki żłobkowej',
       criticalSub: 'Białe plamy deficytu opieki 0–3',
-      coverageSub: 'Wskaźnik zaspokojenia potrzeb opiekuńczych',
+      coverageSub: 'Wskaźnik zaspokojenia potrzeb',
       childrenSub: 'Dzieci w wieku 0–3 lat (stan bieżący)',
     };
   }
   if (cohort === 'preschool') {
     return {
-      balanceSub: 'Nadwyżka rekrutacyjna miejsc przedszkolnych',
-      criticalSub: 'Dzielnice o niższym buforze rezerwy (<1.62x)',
-      coverageSub: 'Baza miejsc w relacji do roczników 4–6 (1.53x)',
+      balanceSub: 'Nadwyżka rekrutacyjna miejsc',
+      criticalSub: 'Dzielnice o niższym buforze rezerwy',
+      coverageSub: 'Baza miejsc w relacji do roczników 4–6',
       childrenSub: 'Dzieci w wieku 4–6 lat (stan bieżący)',
     };
   }
   if (cohort === 'school') {
     return {
-      balanceSub: 'Rezerwa pojemności dla roczników rejonowych',
+      balanceSub: 'Rezerwa pojemności',
       criticalSub: 'Dzielnice ze średnią >20 uczniów / oddział',
-      coverageSub: 'Wskaźnik zabezpieczenia bazy dla roczników SP',
+      coverageSub: 'Wskaźnik zabezpieczenia bazy',
       childrenSub: 'Dzieci w wieku 7–14 lat (meldunki BDK)',
     };
   }
   return {
     balanceSub: 'Bieżąca równowaga podaży miejskiej',
-    criticalSub: 'Dzielnice z deficytem lub pilnym brakiem miejsc',
-    coverageSub: 'Ogólnomiejski stopień zaspokojenia potrzeb rodzin',
+    criticalSub: 'Z deficytem lub pilnym brakiem miejsc',
+    coverageSub: 'Ogólnomiejski stopień zaspokojenia potrzeb',
     childrenSub: 'Dzieci objęte opieką i edukacją (0–14 lat)',
   };
 }
@@ -896,8 +896,7 @@ export function getTableColumnHeaders(language: Language): TableColumnHeaders {
 }
 
 
-export const CHILDCARE_FORECAST_I18N = {
-  pl: {
+const pl = {
     title: 'Bilans Miejsc Edukacji i Opieki (Stan Bieżący)',
       subtitle: 'Zintegrowana analiza podaży placówek opiekuńczych i edukacyjnych w relacji do bieżącej demografii 18 dzielnic Krakowa',
       badge: 'Rejestr Edu-Care GMK & Demografia BDK',
@@ -936,8 +935,6 @@ export const CHILDCARE_FORECAST_I18N = {
       primaryStudentsLabel: 'Uczniowie Szkół Podstawowych',
       municipalBadge: 'samorządowe',
       subsidizedBadge: 'niepubliczne & GMK',
-      facilitiesInCount: (count: number) => `w ${count} placówkach`,
-      avgPerClass: (avg: number) => `śr. ${avg} w klasie`,
       recommendationActionBtn: 'Szczegóły',
       showingDistricts: (from: number, to: number, total: number) => `Wyświetlanie ${from}–${to} z ${total} dzielnic`,
       prevPage: 'Poprzednia',
@@ -1002,8 +999,11 @@ export const CHILDCARE_FORECAST_I18N = {
         status: 'Status rynku',
         action: 'Akcja',
       },
-  },
-  en: {
+};
+
+export type ChildcareForecastLabels = typeof pl;
+
+const en: ChildcareForecastLabels = {
     title: 'Education & Childcare Places Balance (Current)',
       subtitle: 'Comparison of available places in nurseries, kindergartens, and schools with the current child population across 18 Krakow districts',
       badge: 'Krakow Edu-Care Registry & Demographics',
@@ -1042,8 +1042,6 @@ export const CHILDCARE_FORECAST_I18N = {
       primaryStudentsLabel: 'Primary School Students',
       municipalBadge: 'municipal',
       subsidizedBadge: 'private & subsidized',
-      facilitiesInCount: (count: number) => `in ${count} facilities`,
-      avgPerClass: (avg: number) => `avg. ${avg} / class`,
       recommendationActionBtn: 'Details',
       showingDistricts: (from: number, to: number, total: number) => `Showing ${from}–${to} of ${total} districts`,
       prevPage: 'Previous',
@@ -1108,8 +1106,9 @@ export const CHILDCARE_FORECAST_I18N = {
         status: 'Availability',
         action: 'Action',
       },
-  },
-  ua: {
+};
+
+const ua: ChildcareForecastLabels = {
     title: 'Баланс Місць Освіти та Опіки (Поточний стан)',
       subtitle: 'Порівняння кількості місць у яслах, дитсадках і школах із поточною кількістю дітей у 18 районах Кракова',
       badge: 'Реєстр Закладів та Демографія Кракова',
@@ -1148,8 +1147,6 @@ export const CHILDCARE_FORECAST_I18N = {
       primaryStudentsLabel: 'Учні Початкових Шкіл',
       municipalBadge: 'комунальні',
       subsidizedBadge: 'дотовані та приватні',
-      facilitiesInCount: (count: number) => `у ${count} закладах`,
-      avgPerClass: (avg: number) => `сер. ${avg} у класі`,
       recommendationActionBtn: 'Деталі',
       showingDistricts: (from: number, to: number, total: number) => `Відображення ${from}–${to} з ${total} районів`,
       prevPage: 'Попередня',
@@ -1214,10 +1211,13 @@ export const CHILDCARE_FORECAST_I18N = {
         status: 'Доступність',
         action: 'Дія',
       },
-  },
 };
 
-export type ChildcareForecastLabels = typeof CHILDCARE_FORECAST_I18N.pl;
+export const CHILDCARE_FORECAST_I18N: Record<Language, ChildcareForecastLabels> = {
+  pl,
+  en,
+  ua,
+};
 
 export function getChildcareForecastLabels(language: Language): ChildcareForecastLabels {
   return CHILDCARE_FORECAST_I18N[language] ?? CHILDCARE_FORECAST_I18N.pl;

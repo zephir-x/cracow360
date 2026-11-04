@@ -34,9 +34,9 @@ export function ForecastGridView({
   onSelectDistrict,
   language,
   localizeDistrictName,
-  whiteSpotBadge,
-  balancedBadge,
-  surplusBadge,
+  whiteSpotBadge: _whiteSpotBadge,
+  balancedBadge: _balancedBadge,
+  surplusBadge: _surplusBadge,
   placesUnit: _placesUnit,
   closeCard,
   recommendationActionBtn,
@@ -80,13 +80,7 @@ export function ForecastGridView({
                       : 'bg-amber-100 text-amber-800'
                   }`}
                 >
-                  {status.isWhiteSpot && whiteSpotBadge
-                    ? whiteSpotBadge
-                    : status.isSurplus && surplusBadge
-                    ? surplusBadge
-                    : status.isBalanced && balancedBadge
-                    ? balancedBadge
-                    : cardData.statusBadge}
+                  {cardData.statusBadge}
                 </span>
               </div>
 

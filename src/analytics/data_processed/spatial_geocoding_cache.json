@@ -1,1056 +1,4252 @@
 {
-  "podzamcze 1, kraków": [],
-  "piastowska 47, kraków": [],
-  "osiedle willowe 2, kraków": [],
-  "osiedle piastów 42, kraków": [],
-  "osiedle zielone 28, kraków": [],
-  "osiedle 2 pułku lotniczego 23, kraków": [],
-  "osiedle centrum a 12, kraków": [],
-  "henryka sienkiewicza 24, kraków": [],
-  "mazowiecka 30a, kraków": [],
-  "świtezianki 7, kraków": [],
-  "okólna 6, kraków": [],
-  "lekarska 3, kraków": [],
-  "osiedle tysiąclecia 14, kraków": [],
-  "słomiana 7, kraków": [],
-  "opolska 11, kraków": [],
-  "gustawa ehrenberga 3, kraków": [],
-  "osiedle kazimierzowskie 28, kraków": [],
-  "jana kurczaba 21, kraków": [],
-  "jakuba majora 18, kraków": [],
-  "sanocka 2, kraków": [],
-  "marii i bolesława wysłouchów 47, kraków": [],
-  "hetmana żółkiewskiego 15, kraków": [],
-  "jabłonkowska 29a, kraków": [],
-  "działowskiego 50, kraków": [],
-  "niebyła 15, kraków": [],
-  "wróblowicka 58a, kraków": [],
-  "drożyska 11, kraków": [],
-  "karaszewicza tokarzewskiego 12a, kraków": [],
-  "krzemionki 35, kraków": [],
-  "rybitwy 69a, kraków": [],
-  "łuczanowicka 2b, kraków": [],
-  "wadowska 5, kraków": [],
-  "księcia józefa 50, kraków": [],
-  "dobrego pasterza 118c, kraków": [],
-  "cystersów 26, kraków": [],
-  "osiedle dywizjonu 303 20a, kraków": [],
-  "eliasza radzikowskiego 100j, kraków": [],
-  "eliasza radzikowskiego 100k, kraków": [],
-  "lipska 75, kraków": [],
-  "osiedle piastów 71, kraków": [],
-  "mariana domagały 63, kraków": [],
-  "bunscha 12, kraków": [],
-  "wizjonerów 4, kraków": [],
-  "jana kantego przyzby 10, kraków": [],
-  "raciborska 17, kraków": [],
-  "drzymały 15, kraków": [],
-  "wincentego kadłubka 3, kraków": [],
-  "grzegórzecka 67c, kraków": [],
-  "pod fortem 2a, kraków": [],
-  "siewna 30a, kraków": [],
-  "trybuny ludów 71, kraków": [],
-  "zmartwychwstania pańskiego 2a, kraków": [],
-  "marii i bolesława wysłouchów 13, kraków": [],
-  "plac gen. władysława sikorskiego 4, kraków": [],
-  "jurka bitschana 4, kraków": [],
-  "krawiecka 18, kraków": [],
-  "przemysłowa 4, kraków": [],
-  "józefa łepkowskiego 5, kraków": [],
-  "osiede oświecenia 51, kraków": [],
-  "myśliwska 5b, kraków": [],
-  "łupaszki 13, kraków": [],
-  "szuwarowa 4, kraków": [],
-  "grodzisko 30, kraków": [],
-  "feliksa konecznego 6, kraków": [],
-  "francesco nullo 42, kraków": [],
-  "samuela bogumiła lindego 13, kraków": [],
-  "marii dąbrowskiej 17i, kraków": [],
-  "na barciach 14, kraków": [],
-  "porucznika wąchały 7, kraków": [],
-  "skotnicka 101, kraków": [],
-  "gdańska 20, kraków": [],
-  "sportowa 2a, kraków": [],
-  "wincentego danka 8, kraków": [],
-  "kaczorówka 1, kraków": [],
-  "jana dekerta 24, kraków": [],
-  "ruczaj 43, kraków": [],
-  "ernesta solvaya 4, kraków": [],
-  "eliasza radzikowskiego 104, kraków": [],
-  "stanisława przybyszewskiego 20, kraków": [],
-  "gwieździsta 7, kraków": [],
-  "koszykarska 21c, kraków": [],
-  "juliana tokarskiego 6, kraków": [],
-  "bydgoska 19b, kraków": [],
-  "jana kurczaba 6, kraków": [],
-  "leona petrażyckiego 52, kraków": [],
-  "mariusza zaruskiego 4, kraków": [],
-  "żabiniec 70, kraków": [],
-  "myśliwska 57, kraków": [],
-  "komuny paryskiej 2, kraków": [],
-  "jana piltza 34, kraków": [],
-  "kobierzyńska 24, kraków": [],
-  "osiedle oświecenia 21, kraków": [],
-  "28 lipca 1943 4, kraków": [],
-  "bieńczycka 15a, kraków": [],
-  "piltza 20, kraków": [],
-  "osiedle 2 pułku lotniczego 44, kraków": [],
-  "dobrego pasterza 56, kraków": [],
-  "michała życzkowskiego 20, kraków": [],
-  "przemiarki 23, kraków": [],
-  "mistrzejowicka 2a, kraków": [],
-  "beskidzka 4c, kraków": [],
-  "dąbska 18d, kraków": [],
-  "wandejska 4, kraków": [],
-  "grzegórzecka 76b, kraków": [],
-  "pańska 20, kraków": [],
-  "wojciecha marii bartla 19b, kraków": [],
-  "szablowskiego 3, kraków": [],
-  "franciszka bujaka 10, kraków": [],
-  "irysowa 7, kraków": [],
-  "murarska 19, kraków": [],
-  "wacława lipińskiego 13, kraków": [],
-  "zdunów 18c, kraków": [],
-  "fabryczna 3, kraków": [],
-  "dobrego pasterza 52, kraków": [],
-  "komuny paryskiej 54, kraków": [],
-  "miodowa 24, kraków": [],
-  "aleja 29 listopada 193, kraków": [],
-  "kobierzyńska 166a, kraków": [],
-  "saska 5, kraków": [],
-  "gliniana 15, kraków": [],
-  "ludwinowska 11, kraków": [],
-  "osiedle stalowe 16, kraków": [],
-  "wolska 17, kraków": [],
-  "marii i bolesława wysłouchów 22a, kraków": [],
-  "osiedle niepodległości 3a, kraków": [],
-  "łużycka 73a, kraków": [],
-  "augusta fieldorfa-nila 17, kraków": [],
-  "ludwika rydygiera 18, kraków": [],
-  "na zakolu wisły 12d, kraków": [],
-  "stefana rogozińskiego 3, kraków": [],
-  "aleja jana pawła ii 180, kraków": [],
-  "stanisława działowskiego 67, kraków": [],
-  "osiedle kombatantów 6, kraków": [],
-  "władysława łokietka 238, kraków": [],
-  "stefana banacha 31, kraków": [],
-  "osiedle na lotnisku 1, kraków": [],
-  "sebastiana klonowica 24, kraków": [],
-  "jana woronicza 25, kraków": [],
-  "osiedle bohaterów września 84a, kraków": [],
-  "powstańców wielkopolskich 13h, kraków": [],
-  "osiedle bohaterów września 1j, kraków": [],
-  "mała góra 49, kraków": [],
-  "kantorowicka 189, kraków": [],
-  "polonijna 15, kraków": [],
-  "bagrowa 80, kraków": [],
-  "chmieleniec 2a, kraków": [],
-  "pod fortem 2d, kraków": [],
-  "św. agnieszki 1, kraków": [],
-  "dożynkowa 99, kraków": [],
-  "drukarska 1, kraków": [],
-  "tytusa czyżewskiego 3, kraków": [],
-  "mariana domagały 45, kraków": [],
-  "osiedle na lotnisku 10, kraków": [],
-  "jana kilińskiego 2, kraków": [],
-  "karola bunscha 20, kraków": [],
-  "łapanowska 5, kraków": [],
-  "młyńska 9, kraków": [],
-  "reduta 28, kraków": [],
-  "grzegórzecka 73b, kraków": [],
-  "grzegórzecka 102, kraków": [],
-  "mała góra 14c, kraków": [],
-  "siewna 10, kraków": [],
-  "sadowa 11, kraków": [],
-  "osiedle dywizjonu 303 62g, kraków": [],
-  "osiedle 2 pułku lotniczego 1, kraków": [],
-  "galicyjska 1, kraków": [],
-  "władysława łokietka 136a, kraków": [],
-  "cystersów 20, kraków": [],
-  "wacława sieroszewskiego 3, kraków": [],
-  "stanisława kostki potockiego 19, kraków": [],
-  "aleja pokoju 83, kraków": [],
-  "anny szwed-śniadowskiej 41, kraków": [],
-  "ludwika rydygiera 8, kraków": [],
-  "adama bochenka 12b, kraków": [],
-  "osiedle złotego wieku 14, kraków": [],
-  "sołtysowska 37c, kraków": [],
-  "młodzieży 2a, kraków": [],
-  "winnicka 40, kraków": [],
-  "józefa sawy-calińskiego 13, kraków": [],
-  "żaglowa 13b, kraków": [],
-  "żabiniec 89, kraków": [],
-  "wrocławska 87, kraków": [],
-  "poznańska 3, kraków": [],
-  "osiedle avia 8, kraków": [],
-  "ujastek 5b, kraków": [],
-  "zygmunta glogera 53, kraków": [],
-  "wielicka 28b, kraków": [],
-  "kordiana 50, kraków": [],
-  "dobrego pasterza 118g, kraków": [],
-  "bronowicka 138, kraków": [],
-  "zdunów 5, kraków": [],
-  "kanarkowa 1, kraków": [],
-  "wyżynna 2a, kraków": [],
-  "stefana banacha 47, kraków": [],
-  "zygmunta glogera 5, kraków": [],
-  "sołtysowska 12i, kraków": [],
-  "hetmana żółkiewskiego 17, kraków": [],
-  "starowiejska 30, kraków": [],
-  "prądnicka 74, kraków": [],
-  "rzemieślnicza 16, kraków": [],
-  "moczydło 7a, kraków": [],
-  "zabłocie 43b, kraków": [],
-  "siarczana 15, kraków": [],
-  "władysława konopczyńskiego 15, kraków": [],
-  "aleja gen. tadeusza bora-komorowskiego 25, kraków": [],
-  "henryka pachońskiego 7a, kraków": [],
-  "dożynkowa 101, kraków": [],
-  "filipa pokutyńskiego 10, kraków": [],
-  "mariana domagały 27e, kraków": [],
-  "zygmunta miłkowskiego 7, kraków": [],
-  "wrocławska 53ab, kraków": [],
-  "przewóz 40, kraków": [],
-  "zdrowa 2a, kraków": [],
-  "osiedle dywizjonu 303 14, kraków": [],
-  "strycharska 10, kraków": [],
-  "osiedle tysiąclecia 85, kraków": [],
-  "józefa meiera 20b, kraków": [],
-  "koszykarska 31, kraków": [],
-  "drukarska 3, kraków": [],
-  "walerego sławka 27, kraków": [],
-  "dębskiego 125, kraków": [],
-  "sołtysowska 3, kraków": [],
-  "stańczyka 8, kraków": [],
-  "stańczyka 8c, kraków": [],
-  "wielicka 107, kraków": [],
-  "piotra tomickiego 22, kraków": [],
-  "rydlówka 21, kraków": [],
-  "powstańców 86, kraków": [],
-  "stanisława lema 19, kraków": [],
-  "bolesława orlińskiego 7a, kraków": [],
-  "hamernia 42, kraków": [],
-  "czerwone maki 87a, kraków": [],
-  "wandejska 3, kraków": [],
-  "mariana domagały 27d, kraków": [],
-  "saska 12c, kraków": [],
-  "osiedle kombatantów 9, kraków": [],
-  "odmętowa 97, kraków": [],
-  "kapelanka 6a/lu 15, kraków": [],
-  "kluczborska 48, kraków": [],
-  "kobierzyńska 205a, kraków": [],
-  "mogilska 120d, kraków": [],
-  "barska 69/u6 69, kraków": [],
-  "osiedle teatralne 29, kraków": [],
-  "klementyny hoffmanowej 6b/lu2 6b, kraków": [],
-  "seweryna goszczyńskiego 1/lu4-lu6 1, kraków": [],
-  "wolska 7e, kraków": [],
-  "aktorów 1, kraków": [],
-  "wadowicka 3c, kraków": [],
-  "kolejowa 19, kraków": [],
-  "fredry 6f, kraków": [],
-  "jerozolimska 2a, kraków": [],
-  "śliczna 36a, kraków": [],
-  "prof. michała życzkowskiego 5, kraków": [],
-  "opolska 112, kraków": [],
-  "leona petrażyckiego 42, kraków": [],
-  "ślusarska 5, kraków": [],
-  "józefa wybickiego 5a, kraków": [],
-  "przy rondzie 4, kraków": [],
-  "łowienicka 14, kraków": [],
-  "grzegórzecka 69, kraków": [],
-  "walerego sławka 9, kraków": [],
-  "kijanki 2, kraków": [],
-  "górników 68, kraków": [],
-  "erazma jerzmanowskiego 37, kraków": [],
-  "przemiarki 23a, kraków": [],
-  "kołowa 8, kraków": [],
-  "klementyny hoffmanowej 6b, kraków": [],
-  "osiedle bohaterów września 90, kraków": [],
-  "raciborskiego 2, kraków": [],
-  "aleja 29 listopada 201, kraków": [],
-  "aleja gen. jana skrzyneckiego 15, kraków": [],
-  "osiedle urocze 4, kraków": [],
-  "bolesława orlińskiego 3, kraków": [],
-  "andrzeja zauchy 11, kraków": [],
-  "franciszka bohomolca 13, kraków": [],
-  "biskupa piotra tomickiego 22, kraków": [],
-  "centralna 51b, kraków": [],
-  "mariana domagały 39, kraków": [],
-  "romana ciesielskiego 6, kraków": [],
-  "aleja 3 maja 9, kraków": [],
-  "prosta 35b, kraków": [],
-  "rakowicka 22d, kraków": [],
-  "ks. ferdynanda machaya 1, kraków": [],
-  "władysława łokietka 23, kraków": [],
-  "wrocławska 69, kraków": [],
-  "osiedle centrum e14, kraków": [],
-  "dworska 25, kraków": [],
-  "wielicka 57, kraków": [],
-  "konstantego ildefonsa gałczyńskiego 7, kraków": [],
-  "władysława taklińskiego 69, kraków": [],
-  "papierni prądnickich 74, kraków": [],
-  "doktora judyma 16, kraków": [],
-  "osiedle 2 pułku lotniczego 47, kraków": [],
-  "księcia józefa 277/l1 277, kraków": [],
-  "osiedle słoneczne 9, kraków": [],
-  "dominikanów 32, kraków": [],
-  "por. halszki 28, kraków": [],
-  "czyżyńska 21, kraków": [],
-  "osiedle urocze 6, kraków": [],
-  "wiedeńska 108, kraków": [],
-  "tadeusza romanowicza 5, kraków": [],
-  "wolska 7, kraków": [],
-  "adama vetulaniego 8, kraków": [],
-  "tadeusza rejtana 8, kraków": [],
-  "józefa wybickiego 1, kraków": [],
-  "lenartowicza 11, kraków": [],
-  "ojcowska 143, kraków": [],
-  "edmunda wasilewskiego 12, kraków": [],
-  "podlesie 5, kraków": [],
-  "wolska 7d, kraków": [],
-  "grażyny 18, kraków": [],
-  "mariana słoneckiego 5a, kraków": [],
-  "jugowicka 8a, kraków": [],
-  "osiedle 2 pułku lotniczego 2, kraków": [],
-  "puszkarska 7i, kraków": [],
-  "aleja 29 listopada 32, kraków": [],
-  "balicka 17a, kraków": [],
-  "dekarzy 22, kraków": [],
-  "zbydniowicka 1, kraków": [],
-  "berka joselewicza, kraków": [],
-  "bobrowskiego, kraków": [],
-  "dąbska lu5, kraków": [],
-  "aleja 29 listopada, kraków": [],
-  "dobrego pasterza, kraków": [],
-  "stanisława ze skalbmierza, kraków": [],
-  "papiernicza, kraków": [],
-  "władysława łokietka, kraków": [],
-  "konecznego 2u, kraków": [],
-  "wrocławska, kraków": [],
-  "balicka, kraków": [],
-  "jabłonkowska, kraków": [],
-  "wizjonerów, kraków": [],
-  "kamedulska, kraków": [],
-  "królowej jadwigi, kraków": [],
-  "chełmska, kraków": [],
-  "przyzby, kraków": [],
-  "batalionów chłopskich, kraków": [],
-  "kapelanka, kraków": [],
-  "żywiecka, kraków": [],
-  "niewodniczańskiego, kraków": [],
-  "kolejarzy, kraków": [],
-  "forteczna, kraków": [],
-  "łużycka, kraków": [],
-  "witosa, kraków": [],
-  "kamieńskiego, kraków": [],
-  "popiełuszki, kraków": [],
-  "aleksandry, kraków": [],
-  "kurczaba, kraków": [],
-  "facimiech, kraków": [],
-  "rybitwy, kraków": [],
-  "łutnia, kraków": [],
-  "gumniska, kraków": [],
-  "sokolska, kraków": [],
-  "dąbrówki 3, kraków": [],
-  "osiedle dywizjonu 303, kraków": [],
-  "osiedle złotego wieku, kraków": [],
-  "osiedle oświecenia 1a, kraków": [],
-  "osiedle piastów, kraków": [],
-  "osiedle niepodległości, kraków": [],
-  "styczna, kraków": [],
-  "zakole, kraków": [],
-  "osiedle górali, kraków": [],
-  "aleja jana pawła ii, kraków": [],
-  "osiedle centrum a, kraków": [],
-  "osiedle na skarpie, kraków": [],
-  "truskawkowa, kraków": [],
-  "wróżenicka, kraków": [],
-  "młyńska boczna 4, kraków": [],
-  "franciszka bujaka 17, kraków": [],
-  "osiedle dywizjonu 303 12, kraków": [],
-  "stanisława pigonia, kraków": [],
-  "mazowiecka 45, kraków": [],
-  "poronińska 7, kraków": [],
-  "sanocka 4, kraków": [],
-  "osiedle złotego wieku 13, kraków": [],
-  "kotlarska, kraków": [],
-  "słomiana 8, kraków": [],
-  "merkuriusza polskiego 6, kraków": [],
-  "prądnicka, kraków": [],
-  "republiki korczakowskiej 3, kraków": [],
-  "ks. władysława gurgacza 1, kraków": [],
-  "generała tadeusza kutrzeby 6, kraków": [],
-  "macieja miechowity 11, kraków": [],
-  "osiedle słoneczne 10, kraków": [],
-  "piekarska 14, kraków": [],
-  "aleja kasztanowa 6, kraków": [],
-  "benedyktyńska 4, kraków": [],
-  "rżącka 1, kraków": [],
-  "lilli wenedy 7, kraków": [],
-  "aleja artura grottgera 28, kraków": [],
-  "strzelców 5, kraków": [],
-  "podedworze, kraków": [],
-  "osiedle na lotnisku 15, kraków": [],
-  "jana kurczaba 19, kraków": [],
-  "kazimierza odnowiciela 4, kraków": [],
-  "osiedle dywizjonu 303 49, kraków": [],
-  "aleksandry 15, kraków": [],
-  "osiedle józefa strusia 8, kraków": [],
-  "osiedle albertyńskie 23, kraków": [],
-  "macieja miechowity 4, kraków": [],
-  "gen. józefa bema 21, kraków": [],
-  "jabłonkowska 39, kraków": [],
-  "krowoderskich zuchów 28, kraków": [],
-  "wincentego danka 1, kraków": [],
-  "fiołkowa 13, kraków": [],
-  "osiedle jagiellońskie 8, kraków": [],
-  "sudolska 3, kraków": [],
-  "widok 23, kraków": [],
-  "osiedle przy arce 4, kraków": [],
-  "kościuszkowców 6, kraków": [],
-  "osiedle niepodległości 4, kraków": [],
-  "wielicka, kraków": [],
-  "estońska 2, kraków": [],
-  "jana dekerta 18, kraków": [],
-  "osiedle hutnicze 14, kraków": [],
-  "osiedle szkolne 31, kraków": [],
-  "osiedle centrum b 11, kraków": [],
-  "osiedle wandy 2, kraków": [],
-  "osiedle kolorowe 28, kraków": [],
-  "emaus 29, kraków": [],
-  "bartosza głowackiego 2, kraków": [],
-  "strąkowa 7, kraków": [],
-  "osiedle na stoku 21, kraków": [],
-  "skośna 2, kraków": [],
-  "saska 11, kraków": [],
-  "osiedle kombatantów 13, kraków": [],
-  "przykopy 10, kraków": [],
-  "skwerowa 3, kraków": [],
-  "skotnicka 86, kraków": [],
-  "jadwigi z łobzowa 30, kraków": [],
-  "na błonie, kraków": [],
-  "za targiem 4, kraków": [],
-  "witolda budryka 2, kraków": [],
-  "telimeny 7, kraków": [],
-  "heleny modrzejewskiej 21, kraków": [],
-  "piotra stachiewicza 21, kraków": [],
-  "krowoderskich zuchów, kraków": [],
-  "osiedle tysiąclecia 12, kraków": [],
-  "lekarska 5, kraków": [],
-  "komandosów 13, kraków": [],
-  "osiedle urocze 9, kraków": [],
-  "osiedle piastów 48, kraków": [],
-  "osiedle bohaterów września 15, kraków": [],
-  "osiedle ogrodowe 3, kraków": [],
-  "zachodnia, kraków": [],
-  "piekarska 12, kraków": [],
-  "miodowa 36, kraków": [],
-  "mieczysława wrony 115, kraków": [],
-  "osiedle oświecenia 30, kraków": [],
-  "osiedle kościuszkowskie 8, kraków": [],
-  "twardowskiego 90, kraków": [],
-  "mlaskotów, kraków": [],
-  "spółdzielców 7, kraków": [],
-  "osiedle jagiellońskie 16, kraków": [],
-  "mikołaja kopernika 16, kraków": [],
-  "zwycięstwa 22, kraków": [],
-  "józefa dietla 70, kraków": [],
-  "romana prawocheńskiego 7, kraków": [],
-  "bieżanowska 40, kraków": [],
-  "arcybiskupa zygmunta szczęsnego felińskiego 35, kraków": [],
-  "osiedle na skarpie 46, kraków": [],
-  "osiedle handlowe 3, kraków": [],
-  "okólna 18, kraków": [],
-  "parkowa 14, kraków": [],
-  "osiedle stalowe 10, kraków": [],
-  "leonida teligi 28, kraków": [],
-  "mirtowa 2, kraków": [],
-  "osiedle urocze 15, kraków": [],
-  "czarnogórska 14, kraków": [],
-  "urzędnicza 65, kraków": [],
-  "porzeczkowa 3, kraków": [],
-  "myśliwska 64, kraków": [],
-  "osiedle na wzgórzach 11, kraków": [],
-  "ludwinowska 6, kraków": [],
-  "osiedle piastów 10, kraków": [],
-  "osiedle kalinowe 11, kraków": [],
-  "siewna, kraków": [],
-  "wielicka 265, kraków": [],
-  "zakątek 2, kraków": [],
-  "dr. józefa babińskiego 29, kraków": [],
-  "osiedle spółdzielcze 5, kraków": [],
-  "osiedle zielone 27, kraków": [],
-  "jerzego żuławskiego 9, kraków": [],
-  "józefa stępnia 1, kraków": [],
-  "osiedle tysiąclecia 37, kraków": [],
-  "osiedle krakowiaków 18, kraków": [],
-  "rajska 14, kraków": [],
-  "ułanów 38, kraków": [],
-  "zagościniec 1, kraków": [],
-  "praska 64, kraków": [],
-  "stawowa 179, kraków": [],
-  "seweryna goszczyńskiego 44, kraków": [],
-  "szopkarzy 8, kraków": [],
-  "józefa mackiewicza 15, kraków": [],
-  "aleksandry 19, kraków": [],
-  "dr. józefa babińskiego 1, kraków": [],
-  "ludwika rydygiera 20, kraków": [],
-  "ks. józefa meiera, kraków": [],
-  "litewska 34, kraków": [],
-  "jana kurczaba 15, kraków": [],
-  "golikówka 52, kraków": [],
-  "feliksa wrobela 79, kraków": [],
-  "pod fortem 2, kraków": [],
-  "starowiejska 36, kraków": [],
-  "osiedle centrum a 14, kraków": [],
-  "fabryczna 11, kraków": [],
-  "krowoderskich zuchów 16, kraków": [],
-  "plac bohaterów getta 3, kraków": [],
-  "lasówka 2, kraków": [],
-  "szwedzka 68, kraków": [],
-  "osiedle dywizjonu 303 37, kraków": [],
-  "prosta, kraków": [],
-  "ciechocińska 12, kraków": [],
-  "kuźnicy kołłątajowskiej, kraków": [],
-  "łowiecka 5, kraków": [],
-  "gwarna, kraków": [],
-  "batalionu \"skała\" ak 2, kraków": [],
-  "grzegórzecka 40, kraków": [],
-  "aleja kasztanowa, kraków": [],
-  "ostatnia, kraków": [],
-  "prochowa 12, kraków": [],
-  "marii i bolesława wysłouchów, kraków": [],
-  "ojcowska 51, kraków": [],
-  "lotnicza, kraków": [],
-  "maksymiliana rutkowskiego 7, kraków": [],
-  "osiedle kolorowe 8, kraków": [],
-  "biskupia 16, kraków": [],
-  "smoleńsk 2, kraków": [],
-  "henryka wieniawskiego 66, kraków": [],
-  "mjr. łupaszki 13, kraków": [],
-  "mieszczańska 13, kraków": [],
-  "osiedle teatralne 30, kraków": [],
-  "kosocicka, kraków": [],
-  "dekarzy 17, kraków": [],
-  "władysława łokietka 135, kraków": [],
-  "prof. władysława szafera 2, kraków": [],
-  "franciszka bielaka 5, kraków": [],
-  "marii jaremy 12, kraków": [],
-  "aleja jana pawła ii 192, kraków": [],
-  "piekarska, kraków": [],
-  "osiedle szkolne 37, kraków": [],
-  "leopolda staffa 6, kraków": [],
-  "płk. pil. stefana łaszkiewicza 4, kraków": [],
-  "nazaretańska 1, kraków": [],
-  "dobczycka 76, kraków": [],
-  "królowej jadwigi 327, kraków": [],
-  "warszawska 6, kraków": [],
-  "plac gen. władysława sikorskiego 12, kraków": [],
-  "piaszczysta 8, kraków": [],
-  "starowiślna 3, kraków": [],
-  "sanocka 1, kraków": [],
-  "gabrieli zapolskiej, kraków": [],
-  "grzegorza korzeniaka 14, kraków": [],
-  "aliny 9, kraków": [],
-  "wenecja 6, kraków": [],
-  "pędzichów 16, kraków": [],
-  "żwirki i wigury 3, kraków": [],
-  "sosnowiecka 12, kraków": [],
-  "kazimierza kordylewskiego 14, kraków": [],
-  "zmartwychwstania pańskiego, kraków": [],
-  "franciszka bujaka 8, kraków": [],
-  "osiedle na wzgórzach, kraków": [],
-  "zygmuntowska, kraków": [],
-  "benedykta cesarza 9, kraków": [],
-  "wacława lipińskiego, kraków": [],
-  "lubostroń, kraków": [],
-  "rakuś 72, kraków": [],
-  "legnicka 26, kraków": [],
-  "jana kurczaba 5, kraków": [],
-  "mariana słoneckiego 5, kraków": [],
-  "zarzecze 23, kraków": [],
-  "krowoderska 8, kraków": [],
-  "eliasza radzikowskiego 1, kraków": [],
-  "vlastimila hofmana 9, kraków": [],
-  "osiedle kazimierzowskie 30, kraków": [],
-  "sołtysowska, kraków": [],
-  "myśliwska 76, kraków": [],
-  "żabiniec 45, kraków": [],
-  "feliksa konecznego 2, kraków": [],
-  "ułanów 41, kraków": [],
-  "przewóz 36, kraków": [],
-  "łużycka 28, kraków": [],
-  "bułgarska 15, kraków": [],
-  "profesora bolesława wiktora wicherkiewicza 19, kraków": [],
-  "harcmistrza stanisława millana 15, kraków": [],
-  "łobzowska 49, kraków": [],
-  "józefa chełmońskiego, kraków": [],
-  "wrocławska 55, kraków": [],
-  "krymska, kraków": [],
-  "księdza kardynała adama stefana sapiehy 65, kraków": [],
-  "wodna 4, kraków": [],
-  "vlastimila hofmana 22, kraków": [],
-  "stanisława lema 24, kraków": [],
-  "osiedle bohaterów września 3, kraków": [],
-  "profesora michała bobrzyńskiego, kraków": [],
-  "jana izydora sztaudyngera 5, kraków": [],
-  "orla 52, kraków": [],
-  "prądnicka 10, kraków": [],
-  "lubocka, kraków": [],
-  "chmieleniec 35, kraków": [],
-  "kobierzyńska, kraków": [],
-  "aleja 29 listopada 195, kraków": [],
-  "dr. józefa babińskiego 4, kraków": [],
-  "aleja kasztanowa 9, kraków": [],
-  "michała żaka 19, kraków": [],
-  "moczydło, kraków": [],
-  "królewska 55, kraków": [],
-  "śnieżna 15, kraków": [],
-  "turystyczna 8, kraków": [],
-  "liściasta 6, kraków": [],
-  "brzeska, kraków": [],
-  "ujastek, kraków": [],
-  "białoprądnicka 10, kraków": [],
-  "stanisława skarżyńskiego 3, kraków": [],
-  "eliasza radzikowskiego, kraków": [],
-  "osiedle 2 pułku lotniczego, kraków": [],
-  "koszykarska, kraków": [],
-  "stanisława działowskiego, kraków": [],
-  "wspólna 46, kraków": [],
-  "zaborze 1, kraków": [],
-  "fałęcka 39, kraków": [],
-  "katowicka 47, kraków": [],
-  "doktora zygmunta łuczyńskiego 10, kraków": [],
-  "obozowa, kraków": [],
-  "józefa łepkowskiego 7, kraków": [],
-  "wrocławska 75, kraków": [],
-  "lipska 55, kraków": [],
-  "dr. jana piltza, kraków": [],
-  "sebastiana klonowica, kraków": [],
-  "andrzeja frycza-modrzewskiego 3, kraków": [],
-  "kamieniecka 2, kraków": [],
-  "osiedle oświecenia 31, kraków": [],
-  "klemensa janickiego, kraków": [],
-  "katowicka 30, kraków": [],
-  "legnicka 18, kraków": [],
-  "wadowicka 6, kraków": [],
-  "pod fortem, kraków": [],
-  "czorsztyńska, kraków": [],
-  "aleja 29 listopada 191, kraków": [],
-  "łany, kraków": [],
-  "kazimierza wielkiego 117, kraków": [],
-  "beskidzka, kraków": [],
-  "zarzecze 14, kraków": [],
-  "mikołaja reja 13, kraków": [],
-  "tadeusza kościuszki 88, kraków": [],
-  "reduta 36, kraków": [],
-  "wrocławska 8, kraków": [],
-  "jerzego bajana 8, kraków": [],
-  "zamiejska 2, kraków": [],
-  "irysowa 5, kraków": [],
-  "ks. kazimierza siemaszki, kraków": [],
-  "komuny paryskiej, kraków": [],
-  "żabiniec 68, kraków": [],
-  "macieja dębskiego 125, kraków": [],
-  "cystersów, kraków": [],
-  "sodowa 42, kraków": [],
-  "wichrowa 7, kraków": [],
-  "turniejowa 40, kraków": [],
-  "borkowska 30, kraków": [],
-  "majora mieczysława słabego 18, kraków": [],
-  "armii krajowej 97, kraków": [],
-  "bolesława orlińskiego 5, kraków": [],
-  "borkowska 3, kraków": [],
-  "andrzeja sokołowskiego, kraków": [],
-  "powstańców wielkopolskich, kraków": [],
-  "piotra michałowskiego 11, kraków": [],
-  "kazimierza wielkiego 42, kraków": [],
-  "ćwikłowa, kraków": [],
-  "osiedle avia 1, kraków": [],
-  "lipska 8, kraków": [],
-  "fabryczna 5, kraków": [],
-  "fiszera 32, kraków": [],
-  "osiedle centrum e, kraków": [],
-  "murarska, kraków": [],
-  "osiedle mistrzejowice 9, kraków": [],
-  "kobierzyńska 165, kraków": [],
-  "osiedle bohaterów września 19, kraków": [],
-  "józefa chełmońskiego 148, kraków": [],
-  "marii i bolesława wysłouchów 55, kraków": [],
-  "bp. piotra tomickiego 22, kraków": [],
-  "wielicka 228, kraków": [],
-  "henryka rodakowskiego 1, kraków": [],
-  "mydlnicka 5, kraków": [],
-  "józefa chełmońskiego 35, kraków": [],
-  "wacława sieroszewskiego, kraków": [],
-  "osiedle kolorowe 10, kraków": [],
-  "grzegórzecka, kraków": [],
-  "marchołta 3, kraków": [],
-  "kazimierza wierzyńskiego 33, kraków": [],
-  "arcybiskupa zygmunta szczęsnego felińskiego 22, kraków": [],
-  "dr. jana piltza 42, kraków": [],
-  "adama bochenka 10, kraków": [],
-  "anny szwed-śniadowskiej 42, kraków": [],
-  "komuny paryskiej 60, kraków": [],
-  "wincentego weryhy-darowskiego 18, kraków": [],
-  "gen. leopolda okulickiego 57, kraków": [],
-  "ks. mikołaja kuczkowskiego 12, kraków": [],
-  "malwowa, kraków": [],
-  "czerwonego prądnika 8, kraków": [],
-  "wizjonerów 7, kraków": [],
-  "osiedle bohaterów września 82, kraków": [],
-  "alfreda dauna 113, kraków": [],
-  "domowa 3, kraków": [],
-  "żaglowa, kraków": [],
-  "osiedle szklane domy 7, kraków": [],
-  "osiedle avia 9, kraków": [],
-  "młodzieży, kraków": [],
-  "henryka pachońskiego, kraków": [],
-  "gliniana 14, kraków": [],
-  "wrocławska 48, kraków": [],
-  "ślusarska 9, kraków": [],
-  "klementyny hoffmanowej, kraków": [],
-  "grochowa, kraków": [],
-  "kordiana, kraków": [],
-  "józefa łepkowskiego 1, kraków": [],
-  "antoniego augustynka-wichury 14, kraków": [],
-  "płk. ryszarda kuklińskiego 7, kraków": [],
-  "rusznikarska, kraków": [],
-  "profesora wojciecha marii bartla, kraków": [],
-  "ks. józefa kurzei 2, kraków": [],
-  "gen. ignacego prądzyńskiego 16, kraków": [],
-  "jugowicka, kraków": [],
-  "dobrego pasterza 109, kraków": [],
-  "władysława jagiełły 26, kraków": [],
-  "sandora petöfiego 26, kraków": [],
-  "mała góra, kraków": [],
-  "prof. michała życzkowskiego 20, kraków": [],
-  "agatowa 27, kraków": [],
-  "agatowa 31, kraków": [],
-  "płaszowska 49, kraków": [],
-  "stańczyka, kraków": [],
-  "królowej jadwigi 227, kraków": [],
-  "dr. jana piltza 40, kraków": [],
-  "leona wyczółkowskiego 7, kraków": [],
-  "zabłocie, kraków": [],
-  "wyżynna, kraków": [],
-  "beskidzka 23, kraków": [],
-  "edmunda wasilewskiego 20, kraków": [],
-  "potrzask 65, kraków": [],
-  "mogilska, kraków": [],
-  "drukarska, kraków": [],
-  "zawiła, kraków": [],
-  "kozienicka 17, kraków": [],
-  "pszczelna 35, kraków": [],
-  "urocza 36, kraków": [],
-  "królowej jadwigi 248, kraków": [],
-  "henryka i karola czeczów 50, kraków": [],
-  "bociana, kraków": [],
-  "pawła z krosna 5, kraków": [],
-  "stanisława stojałowskiego 6, kraków": [],
-  "dr. jana piltza 41, kraków": [],
-  "dr. jana piltza 43, kraków": [],
-  "malborska 35, kraków": [],
-  "władysława łokietka 194, kraków": [],
-  "saska, kraków": [],
-  "krzysztofa kamila baczyńskiego 18, kraków": [],
-  "strumienna 26, kraków": [],
-  "kłuszyńska 14, kraków": [],
-  "józefa wybickiego, kraków": [],
-  "stanisława lema 17, kraków": [],
-  "łużycka 42, kraków": [],
-  "józefa chełmońskiego 16, kraków": [],
-  "księcia józefa 277, kraków": [],
-  "kazimierza wielkiego 68, kraków": [],
-  "smoleńsk, kraków": [],
-  "podedworze 16, kraków": [],
-  "osiedle stalowe 18, kraków": [],
-  "osiedle jagiellońskie 18, kraków": [],
-  "osiedle szklane domy 2, kraków": [],
-  "osiedle jagiellońskie 9, kraków": [],
-  "katowicka 28, kraków": [],
-  "józefa sawy-calińskiego 12, kraków": [],
-  "ignacego krasickiego 34, kraków": [],
-  "stanisława stojałowskiego 31, kraków": [],
-  "żabia 20, kraków": [],
-  "półkole 11, kraków": [],
-  "stanisława pigonia 2, kraków": [],
-  "sadzawki 1, kraków": [],
-  "aleja kijowska 3, kraków": [],
-  "dobczycka 20, kraków": [],
-  "kaczorówka 4, kraków": [],
-  "osiedle kalinowe 17, kraków": [],
-  "aleksandry 17, kraków": [],
-  "bieżanowska 204, kraków": [],
-  "księcia józefa 337, kraków": [],
-  "piotra stachiewicza 33, kraków": [],
-  "osiedle wysokie 7, kraków": [],
-  "strzelców, kraków": [],
-  "okólna 16, kraków": [],
-  "osiedle bohaterów września 13, kraków": [],
-  "św. marka 34, kraków": [],
-  "konfederacka 12, kraków": [],
-  "doktora judyma 10, kraków": [],
-  "batalionu \"skała\" ak 12, kraków": [],
-  "ks. franciszka blachnickiego 1, kraków": [],
-  "ferdynanda weigla 2, kraków": [],
-  "władysława spasowskiego 8, kraków": [],
-  "jaskrowa 5, kraków": [],
-  "aleja modrzewiowa 23, kraków": [],
-  "zdrowa 6, kraków": [],
-  "osiedle albertyńskie 36, kraków": [],
-  "bolesława prusa 18, kraków": [],
-  "osiedle tysiąclecia 57, kraków": [],
-  "osiedle 2 pułku lotniczego 21, kraków": [],
-  "bolesława czerwieńskiego 1, kraków": [],
-  "osiedle józefa strusia 19, kraków": [],
-  "adama chmielowskiego 1, kraków": [],
-  "topolowa 22, kraków": [],
-  "komandosów 29, kraków": [],
-  "branicka 26, kraków": [],
-  "łąkowa 31, kraków": [],
-  "drożyska 13, kraków": [],
-  "wacława popławskiego 17, kraków": [],
-  "kłuszyńska 46, kraków": [],
-  "feliksa szlachtowskiego 31, kraków": [],
-  "płk. francesco nullo 23, kraków": [],
-  "pszczelna 13, kraków": [],
-  "ćwikłowa 1, kraków": [],
-  "myślenicka 112, kraków": [],
-  "wacława lipińskiego 2, kraków": [],
-  "osiedle handlowe 4, kraków": [],
-  "osiedle słoneczne 12, kraków": [],
-  "kazimierza wierzyńskiego 3, kraków": [],
-  "skośna 8, kraków": [],
-  "grochowska 20, kraków": [],
-  "aleja kijowska 8, kraków": [],
-  "osiedle na stoku 52, kraków": [],
-  "strąkowa, kraków": [],
-  "aleja edwarda dembowskiego 12, kraków": [],
-  "królowej jadwigi 78, kraków": [],
-  "bolesława śmiałego 6, kraków": [],
-  "osiedle teatralne 35, kraków": [],
-  "aleksandra fredry 65, kraków": [],
-  "tyniecka 122, kraków": [],
-  "mazowiecka 70, kraków": [],
-  "osiedle złotego wieku 4, kraków": [],
-  "wileńska, kraków": [],
-  "erazma jerzmanowskiego 6, kraków": [],
-  "osiedle sportowe 28, kraków": [],
-  "tadeusza ptaszyckiego 9, kraków": [],
-  "aleja adolfa dygasińskiego 25, kraków": [],
-  "osiedle dywizjonu 303 66, kraków": [],
-  "osiedle na skarpie 8, kraków": [],
-  "centralna 39, kraków": [],
-  "aleksandra lubomirskiego 21, kraków": [],
-  "jana zamoyskiego 100, kraków": [],
-  "tyniecka 6, kraków": [],
-  "niecała 8, kraków": [],
-  "górka narodowa 116, kraków": [],
-  "hieronima wietora 7, kraków": [],
-  "spadochroniarzy 1, kraków": [],
-  "kluczborska 3, kraków": [],
-  "senatorska 35, kraków": [],
-  "stanisława konarskiego 2, kraków": [],
-  "złoty róg 30, kraków": [],
-  "stanisława jachowicza 5, kraków": [],
-  "józefa montwiłła-mireckiego 29, kraków": [],
-  "osiedle złotego wieku 36, kraków": [],
-  "osiedle kolorowe 29, kraków": [],
-  "seniorów lotnictwa 5, kraków": [],
-  "franciszka bujaka 15, kraków": [],
-  "kazimierza odnowiciela 2, kraków": [],
-  "profesora wojciecha marii bartla 29, kraków": [],
-  "agatowa 41, kraków": [],
-  "ks. stefana pawlickiego 1, kraków": [],
-  "eliasza radzikowskiego 52, kraków": [],
-  "oboźna, kraków": [],
-  "telimeny 9, kraków": [],
-  "stroma 5, kraków": [],
-  "grzegorza korzeniaka 18, kraków": [],
-  "janusza meissnera 20, kraków": [],
-  "jana i jędrzeja śniadeckich, kraków": [],
-  "piotra michałowskiego 10, kraków": [],
-  "skałeczna 10, kraków": [],
-  "malborska 98, kraków": [],
-  "senatorska 39, kraków": [],
-  "ułanów 25, kraków": [],
-  "osiedle krakowiaków 47, kraków": [],
-  "kazimierza wielkiego 33, kraków": [],
-  "osiedle kościuszkowskie 7, kraków": [],
-  "smoleńsk 25, kraków": [],
-  "tuchowska 113, kraków": [],
-  "forteczna 54, kraków": [],
-  "stanisława ze skalbmierza 7, kraków": [],
-  "aleja adolfa dygasińskiego, kraków": [],
-  "stradomska 10, kraków": [],
-  "karmelicka 45, kraków": [],
-  "osiedle dywizjonu 303 35, kraków": [],
-  "kobierzyńska 201, kraków": [],
-  "władysława łokietka 60, kraków": [],
-  "pędzichów 13, kraków": [],
-  "marii i bolesława wysłouchów 28, kraków": [],
-  "kwiecista 25, kraków": [],
-  "podgórki tynieckie 106, kraków": [],
-  "skośna 47, kraków": [],
-  "osiedle urocze 14, kraków": [],
-  "kamienna 21, kraków": [],
-  "zawiła 4, kraków": [],
-  "pilotów, kraków": [],
-  "edmunda biernackiego 10, kraków": [],
-  "osiedle na stoku 34, kraków": [],
-  "zygmunta miłkowskiego 9, kraków": [],
-  "stelmachów 137, kraków": [],
-  "wincentego pola 4, kraków": [],
-  "św. jana 7, kraków": [],
-  "sławkowska 20, kraków": [],
-  "grodzka 60, kraków": [],
-  "siostry faustyny 3, kraków": [],
-  "mirosława dzielskiego 1, kraków": [],
-  "osiedle niepodległości 19, kraków": [],
-  "osiedle kościuszkowskie, kraków": [],
-  "celna 9, kraków": [],
-  "armii krajowej 4, kraków": [],
-  "jerzego szablowskiego 1, kraków": [],
-  "bohdana zaleskiego 10, kraków": [],
-  "topografów 11, kraków": [],
-  "pana tadeusza 4, kraków": [],
-  "prof. michała życzkowskiego 19, kraków": [],
-  "kapelanka 17, kraków": [],
-  "jasnogórska 44, kraków": [],
-  "nowohuckie centrum kultury, kraków": [],
-  "centrum kultury „dworek białoprądnicki”, kraków": [],
-  "centrum kultury podgórza, kraków": [],
-  "krakowskie forum kultury(do 30 czerwca 2025), kraków": [],
-  "krakowskie forum kultury(od 1 lipca 2025 połączone z ośrodek kultury zespół pieśni i tańca „krakowiacy”), kraków": [],
-  "ośrodek kultury kraków-nowa huta, kraków": [],
-  "ośrodek kultury im. c.k. norwida, kraków": [],
-  "ośrodek kultury zespół pieśni i tańca „krakowiacy”(do 30 czerwca 2025), kraków": [],
-  "ośrodek kultury biblioteka polskiej piosenki, kraków": [],
-  "instytut kultury willa decjusza, kraków": [],
-  "instytut dialogu międzykulturowego im. jana pawła ii, kraków": [],
-  "powroźnicza 2, kraków": [],
-  "dietla 80, kraków": [],
-  "krakowska 29, kraków": [],
-  "szczepańska 1, kraków": [],
-  "plac jana nowaka-jeziorańskiego 3, kraków": [],
-  "bobrowskiego 11, kraków": [],
-  "lubomirskiego 7a, kraków": [],
-  "aleja daszyńskiego 22, kraków": [],
-  "aleja pokoju 33, kraków": [],
-  "brodowicza 1, kraków": [],
-  "dobrego pasterza 6, kraków": [],
-  "aleja 29 listopada 59, kraków": [],
-  "bosaków 11, kraków": [],
-  "łąkowa 27, kraków": [],
-  "dzielskiego 2, kraków": [],
-  "ugorek 14, kraków": [],
-  "dobrego pasterza 100, kraków": [],
-  "radzikowskiego 29, kraków": [],
-  "ojcowska 116, kraków": [],
-  "siemaszki 31, kraków": [],
-  "łokietka 267, kraków": [],
-  "opolska 37, kraków": [],
-  "królewska 59, kraków": [],
-  "sienkiewicza 2, kraków": [],
-  "balicka 297, kraków": [],
-  "na błonie 13d, kraków": [],
-  "fałata 2, kraków": [],
-  "komorowskiego 11, kraków": [],
-  "królowej jadwigi 37b, kraków": [],
-  "komandosów 1, kraków": [],
-  "praska 52, kraków": [],
-  "dziewiarzy 7, kraków": [],
-  "przyzby 10, kraków": [],
-  "zachodnia 7, kraków": [],
-  "żywiecka 32, kraków": [],
-  "zakopiańska 103, kraków": [],
-  "borsucza 12, kraków": [],
-  "chałubińskiego 47, kraków": [],
-  "niewodniczańskiego 123, kraków": [],
-  "sztaudyngera 5, kraków": [],
-  "walerego sławka 10, kraków": [],
-  "halszki 1, kraków": [],
-  "łużycka 55, kraków": [],
-  "gołaśka 13, kraków": [],
-  "agatowa 33, kraków": [],
-  "jasińskiego 32, kraków": [],
-  "spółdzielców 3, kraków": [],
-  "teligi 24, kraków": [],
-  "limanowskiego 4, kraków": [],
-  "osiedle dywizjonu 303 1, kraków": [],
-  "osiedle bohaterów września 26, kraków": [],
-  "osiedle tysiąclecia 42, kraków": [],
-  "osiedle kościuszkowskie 5, kraków": [],
-  "osiedle kalinowe 4, kraków": [],
-  "osiedle na stoku 1, kraków": [],
-  "osiedle stalowe 12, kraków": [],
-  "osiedle młodości 8, kraków": [],
-  "osiedle teatralne 25, kraków": [],
-  "osiedle zgody 7, kraków": [],
-  "ks. j. meiera 16c, kraków": [],
-  "borkowska 25, kraków": [],
-  "berka joselewicza 28, kraków": [],
-  "batorego 3/5, kraków": [],
-  "długa 42, kraków": [],
-  "dunajewskiego 5, kraków": [],
-  "bobrowskiego 6, kraków": [],
-  "rzeźnicza 2a, kraków": [],
-  "kasprowicza 9a/1, kraków": [],
-  "mogilska 58, kraków": [],
-  "miechowity 6, kraków": [],
-  "młyńska boczna 7, kraków": [],
-  "strzelców 5a, kraków": [],
-  "pachońskiego 8, kraków": [],
-  "rusznikarska 14/16, kraków": [],
-  "weissa 8/21, kraków": [],
-  "sienkiewicza 2a, kraków": [],
-  "kazimierza wielkiego  117, kraków": [],
-  "gabrieli zapolskiej 42, kraków": [],
-  "na błonie 15b, kraków": [],
-  "28 lipca 1943 17a, kraków": [],
-  "morawskiego 5, kraków": [],
-  "aleja marszałka focha 40, kraków": [],
-  "dojazdowa 4, kraków": [],
-  "zamiejska 6, kraków": [],
-  "działowskiego 1, kraków": [],
-  "bałuckiego 21, kraków": [],
-  "mieszczańska 9b, kraków": [],
-  "zakopiańska 62, kraków": [],
-  "myślenicka 133, kraków": [],
-  "wróblowicka 58, kraków": [],
-  "witosa 39, kraków": [],
-  "kamieńskiego 11, kraków": [],
-  "cechowa 144a, kraków": [],
-  "kurczaba 25, kraków": [],
-  "facimiech 32, kraków": [],
-  "lipowskiego 5, kraków": [],
-  "kurczaba 29, kraków": [],
-  "aleja daszyńskiego 16, kraków": [],
-  "kozia 22, kraków": [],
-  "limanowskiego 51, kraków": [],
-  "stróża rybna 19, kraków": [],
-  "gromadzka 53a, kraków": [],
-  "kalwaryjska 9-15, kraków": [],
-  "osiedletysiąclecia 42, kraków": [],
-  "osiedle piastów 41, kraków": [],
-  "osiedle mistrzejowice nowe 6a, kraków": [],
-  "osiedle kościuszkowskie 2a, kraków": [],
-  "kaczeńcowa 7, kraków": [],
-  "osiedle jagiellońskie 19, kraków": [],
-  "kantorowicka 122, kraków": [],
-  "osiedle zielone 22, kraków": [],
-  "osiedle na skarpie 35, kraków": [],
-  "osiedle górali 23, kraków": [],
-  "osiedle centrum e 18, kraków": [],
-  "ptaszyckiego 6, kraków": [],
-  "osiedle kolorowe 11a, kraków": [],
-  "wróżenicka 49, kraków": [],
-  "osiedle kościelniki, kraków": [],
-  "osiedle chałupki, kraków": [],
-  "osiedle wolica, kraków": [],
-  "osiedle branice, kraków": [],
-  "ul. syrachowska 1, kraków": [],
-  "osiedle górali 24, kraków": []
+  "kraków, podzamcze 1": [
+    50.055307,
+    19.934838
+  ],
+  "kraków, piastowska 47": [
+    50.066587,
+    19.903071
+  ],
+  "kraków, osiedle willowe 2": [
+    50.072733,
+    20.048639
+  ],
+  "kraków, osiedle piastów 42": [
+    50.097008,
+    20.016026
+  ],
+  "kraków, osiedle zielone 28": [
+    50.079558,
+    20.042011
+  ],
+  "kraków, osiedle centrum a 12": [
+    50.071872,
+    20.040761
+  ],
+  "kraków, henryka sienkiewicza 24": [
+    50.072241,
+    19.926893
+  ],
+  "kraków, mazowiecka 30a": [
+    50.075579,
+    19.924249
+  ],
+  "kraków, świtezianki 7": [
+    50.062572,
+    19.980068
+  ],
+  "kraków, okólna 6": [
+    50.016418,
+    19.983762
+  ],
+  "kraków, lekarska 3": [
+    50.086487,
+    19.940024
+  ],
+  "kraków, osiedle tysiąclecia 14": [
+    50.092394,
+    19.997743
+  ],
+  "kraków, słomiana 7": [
+    50.043924,
+    19.925539
+  ],
+  "kraków, opolska 11": [
+    50.091611,
+    19.933903
+  ],
+  "kraków, gustawa ehrenberga 3": [
+    50.084985,
+    19.912762
+  ],
+  "kraków, osiedle kazimierzowskie 28": [
+    50.086381,
+    20.021884
+  ],
+  "kraków, jana kurczaba 21": [
+    50.013552,
+    20.005
+  ],
+  "kraków, jakuba majora 18": [
+    50.090747,
+    19.965143
+  ],
+  "kraków, sanocka 2": [
+    50.017555,
+    19.952781
+  ],
+  "kraków, marii i bolesława wysłouchów 47": [
+    50.008045,
+    19.955791
+  ],
+  "kraków, hetmana żółkiewskiego 15": [
+    50.058799,
+    19.957873
+  ],
+  "kraków, jabłonkowska 29a": [
+    50.078229,
+    19.888737
+  ],
+  "kraków, działowskiego 50": [
+    49.99311,
+    19.875385
+  ],
+  "kraków, niebyła 15": [
+    50.100008,
+    20.060707
+  ],
+  "kraków, wróblowicka 58a": [
+    49.981068,
+    19.950948
+  ],
+  "kraków, drożyska 11": [
+    50.056715,
+    20.186128
+  ],
+  "kraków, krzemionki 35": [
+    50.039461,
+    19.94703
+  ],
+  "kraków, rybitwy 69a": [
+    50.041825,
+    20.031259
+  ],
+  "kraków, łuczanowicka 2b": [
+    50.102451,
+    20.099548
+  ],
+  "kraków, wadowska 5": [
+    50.097244,
+    20.124344
+  ],
+  "kraków, księcia józefa 50": [
+    50.046059,
+    19.861255
+  ],
+  "kraków, dobrego pasterza 118c": [
+    50.089587,
+    19.977856
+  ],
+  "kraków, cystersów 26": [
+    50.064176,
+    19.969946
+  ],
+  "kraków, eliasza radzikowskiego 100j": [
+    50.085237,
+    19.897495
+  ],
+  "kraków, eliasza radzikowskiego 100k": [
+    50.085237,
+    19.897495
+  ],
+  "kraków, lipska 75": [
+    50.040315,
+    19.994117
+  ],
+  "kraków, osiedle piastów 71": [
+    50.097008,
+    20.016026
+  ],
+  "kraków, mariana domagały 63": [
+    50.025691,
+    20.051401
+  ],
+  "kraków, bunscha 12": [
+    50.012735,
+    19.883794
+  ],
+  "kraków, wizjonerów 4": [
+    50.085675,
+    19.886403
+  ],
+  "kraków, jana kantego przyzby 10": [
+    50.021307,
+    19.912518
+  ],
+  "kraków, raciborska 17": [
+    50.020636,
+    19.90498
+  ],
+  "kraków, drzymały 15": [
+    50.073706,
+    19.892642
+  ],
+  "kraków, wincentego kadłubka 3": [
+    50.001394,
+    19.90611
+  ],
+  "kraków, grzegórzecka 67c": [
+    50.056971,
+    19.960347
+  ],
+  "kraków, pod fortem 2a": [
+    50.082601,
+    19.922905
+  ],
+  "kraków, siewna 30a": [
+    50.093443,
+    19.952718
+  ],
+  "kraków, trybuny ludów 71": [
+    50.01789,
+    19.963584
+  ],
+  "kraków, zmartwychwstania pańskiego 2a": [
+    50.023287,
+    19.96536
+  ],
+  "kraków, marii i bolesława wysłouchów 13": [
+    50.008045,
+    19.955791
+  ],
+  "kraków, plac gen. władysława sikorskiego 4": [
+    50.061209,
+    19.928481
+  ],
+  "kraków, jurka bitschana 4": [
+    50.088087,
+    19.969479
+  ],
+  "kraków, krawiecka 18": [
+    50.023911,
+    19.96603
+  ],
+  "kraków, przemysłowa 4": [
+    50.048559,
+    19.960282
+  ],
+  "kraków, józefa łepkowskiego 5": [
+    50.090478,
+    19.963184
+  ],
+  "kraków, myśliwska 5b": [
+    50.045331,
+    19.992315
+  ],
+  "kraków, łupaszki 13": [
+    50.088534,
+    19.855678
+  ],
+  "kraków, szuwarowa 4": [
+    50.01966,
+    19.903053
+  ],
+  "kraków, grodzisko 30": [
+    50.007733,
+    19.806347
+  ],
+  "kraków, feliksa konecznego 6": [
+    50.083847,
+    19.942615
+  ],
+  "kraków, francesco nullo 42": [
+    50.062742,
+    19.966221
+  ],
+  "kraków, samuela bogumiła lindego 13": [
+    50.07928,
+    19.873658
+  ],
+  "kraków, marii dąbrowskiej 17i": [
+    50.07962,
+    20.015351
+  ],
+  "kraków, na barciach 14": [
+    50.091754,
+    19.961487
+  ],
+  "kraków, porucznika wąchały 7": [
+    50.019201,
+    19.939997
+  ],
+  "kraków, skotnicka 101": [
+    50.010795,
+    19.875542
+  ],
+  "kraków, gdańska 20": [
+    50.082478,
+    19.958559
+  ],
+  "kraków, sportowa 2a": [
+    50.023146,
+    19.968837
+  ],
+  "kraków, wincentego danka 8": [
+    50.092238,
+    19.926315
+  ],
+  "kraków, kaczorówka 1": [
+    50.107268,
+    19.908997
+  ],
+  "kraków, jana dekerta 24": [
+    50.046754,
+    19.966804
+  ],
+  "kraków, ruczaj 43": [
+    50.025789,
+    19.920582
+  ],
+  "kraków, ernesta solvaya 4": [
+    50.014087,
+    19.911722
+  ],
+  "kraków, eliasza radzikowskiego 104": [
+    50.085237,
+    19.897495
+  ],
+  "kraków, stanisława przybyszewskiego 20": [
+    50.074138,
+    19.896377
+  ],
+  "kraków, gwieździsta 7": [
+    50.015877,
+    19.906996
+  ],
+  "kraków, koszykarska 21c": [
+    50.048303,
+    19.98572
+  ],
+  "kraków, juliana tokarskiego 6": [
+    50.06923,
+    19.902513
+  ],
+  "kraków, bydgoska 19b": [
+    50.070514,
+    19.910472
+  ],
+  "kraków, jana kurczaba 6": [
+    50.013552,
+    20.005
+  ],
+  "kraków, leona petrażyckiego 52": [
+    49.981777,
+    19.878822
+  ],
+  "kraków, mariusza zaruskiego 4": [
+    49.994522,
+    19.938024
+  ],
+  "kraków, żabiniec 70": [
+    50.082692,
+    19.946415
+  ],
+  "kraków, myśliwska 57": [
+    50.045331,
+    19.992315
+  ],
+  "kraków, komuny paryskiej 2": [
+    50.003424,
+    19.89579
+  ],
+  "kraków, jana piltza 34": [
+    50.010962,
+    19.890096
+  ],
+  "kraków, kobierzyńska 24": [
+    50.023334,
+    19.910493
+  ],
+  "kraków, osiedle oświecenia 21": [
+    50.089552,
+    19.989416
+  ],
+  "kraków, bieńczycka 15a": [
+    50.076658,
+    20.022324
+  ],
+  "kraków, piltza 20": [
+    50.010962,
+    19.890096
+  ],
+  "kraków, dobrego pasterza 56": [
+    50.089587,
+    19.977856
+  ],
+  "kraków, michała życzkowskiego 20": [
+    50.077228,
+    19.994746
+  ],
+  "kraków, przemiarki 23": [
+    50.021737,
+    19.905034
+  ],
+  "kraków, mistrzejowicka 2a": [
+    50.096955,
+    20.025925
+  ],
+  "kraków, beskidzka 4c": [
+    50.016793,
+    19.950653
+  ],
+  "kraków, dąbska 18d": [
+    50.066941,
+    19.98324
+  ],
+  "kraków, wandejska 4": [
+    50.011457,
+    19.905659
+  ],
+  "kraków, grzegórzecka 76b": [
+    50.056971,
+    19.960347
+  ],
+  "kraków, pańska 20": [
+    50.027703,
+    19.966886
+  ],
+  "kraków, wojciecha marii bartla 19b": [
+    49.999524,
+    19.898541
+  ],
+  "kraków, szablowskiego 3": [
+    50.076664,
+    19.893657
+  ],
+  "kraków, franciszka bujaka 10": [
+    50.009868,
+    19.951437
+  ],
+  "kraków, irysowa 7": [
+    50.024895,
+    19.923842
+  ],
+  "kraków, murarska 19": [
+    50.085347,
+    19.911618
+  ],
+  "kraków, wacława lipińskiego 13": [
+    50.028701,
+    19.923529
+  ],
+  "kraków, zdunów 18c": [
+    50.020114,
+    19.92021
+  ],
+  "kraków, fabryczna 3": [
+    50.061512,
+    19.970413
+  ],
+  "kraków, dobrego pasterza 52": [
+    50.089587,
+    19.977856
+  ],
+  "kraków, komuny paryskiej 54": [
+    50.003424,
+    19.89579
+  ],
+  "kraków, miodowa 24": [
+    50.053135,
+    19.946225
+  ],
+  "kraków, kobierzyńska 166a": [
+    50.023334,
+    19.910493
+  ],
+  "kraków, saska 5": [
+    50.043768,
+    19.983676
+  ],
+  "kraków, gliniana 15": [
+    50.035676,
+    19.995455
+  ],
+  "kraków, ludwinowska 11": [
+    50.044108,
+    19.937297
+  ],
+  "kraków, osiedle stalowe 16": [
+    50.07438,
+    20.049147
+  ],
+  "kraków, wolska 17": [
+    50.022143,
+    19.980042
+  ],
+  "kraków, marii i bolesława wysłouchów 22a": [
+    50.008045,
+    19.955791
+  ],
+  "kraków, osiedle niepodległości 3a": [
+    50.08113,
+    20.021222
+  ],
+  "kraków, łużycka 73a": [
+    50.012512,
+    19.968023
+  ],
+  "kraków, augusta fieldorfa-nila 17": [
+    50.088942,
+    19.93483
+  ],
+  "kraków, ludwika rydygiera 18": [
+    50.006917,
+    20.009808
+  ],
+  "kraków, na zakolu wisły 12d": [
+    50.052753,
+    19.984488
+  ],
+  "kraków, stefana rogozińskiego 3": [
+    50.058096,
+    19.963467
+  ],
+  "kraków, aleja jana pawła ii 180": [
+    50.07343,
+    20.017029
+  ],
+  "kraków, stanisława działowskiego 67": [
+    49.99311,
+    19.875385
+  ],
+  "kraków, osiedle kombatantów 6": [
+    50.091486,
+    20.007823
+  ],
+  "kraków, władysława łokietka 238": [
+    50.099545,
+    19.911207
+  ],
+  "kraków, stefana banacha 31": [
+    50.10217,
+    19.956874
+  ],
+  "kraków, osiedle na lotnisku 1": [
+    50.086713,
+    20.016429
+  ],
+  "kraków, sebastiana klonowica 24": [
+    50.020229,
+    19.95615
+  ],
+  "kraków, jana woronicza 25": [
+    50.086836,
+    19.958422
+  ],
+  "kraków, osiedle bohaterów września 84a": [
+    50.101882,
+    20.008748
+  ],
+  "kraków, powstańców wielkopolskich 13h": [
+    50.043243,
+    19.967569
+  ],
+  "kraków, osiedle bohaterów września 1j": [
+    50.101882,
+    20.008748
+  ],
+  "kraków, mała góra 49": [
+    50.011326,
+    20.024021
+  ],
+  "kraków, kantorowicka 189": [
+    50.103167,
+    20.061709
+  ],
+  "kraków, polonijna 15": [
+    50.017112,
+    19.986661
+  ],
+  "kraków, bagrowa 80": [
+    50.033175,
+    19.999708
+  ],
+  "kraków, chmieleniec 2a": [
+    50.019312,
+    19.897753
+  ],
+  "kraków, pod fortem 2d": [
+    50.082601,
+    19.922905
+  ],
+  "kraków, św. agnieszki 1": [
+    50.052193,
+    19.940314
+  ],
+  "kraków, dożynkowa 99": [
+    50.109756,
+    19.943261
+  ],
+  "kraków, drukarska 1": [
+    50.023904,
+    19.903729
+  ],
+  "kraków, tytusa czyżewskiego 3": [
+    50.081227,
+    19.912979
+  ],
+  "kraków, mariana domagały 45": [
+    50.025691,
+    20.051401
+  ],
+  "kraków, osiedle na lotnisku 10": [
+    50.086713,
+    20.016429
+  ],
+  "kraków, jana kilińskiego 2": [
+    50.049898,
+    19.930717
+  ],
+  "kraków, karola bunscha 20": [
+    50.012735,
+    19.883794
+  ],
+  "kraków, łapanowska 5": [
+    50.016549,
+    19.958252
+  ],
+  "kraków, młyńska 9": [
+    50.082805,
+    19.971252
+  ],
+  "kraków, reduta 28": [
+    50.094841,
+    19.978785
+  ],
+  "kraków, grzegórzecka 73b": [
+    50.056971,
+    19.960347
+  ],
+  "kraków, grzegórzecka 102": [
+    50.056971,
+    19.960347
+  ],
+  "kraków, mała góra 14c": [
+    50.011326,
+    20.024021
+  ],
+  "kraków, siewna 10": [
+    50.093443,
+    19.952718
+  ],
+  "kraków, sadowa 11": [
+    50.08494,
+    19.95498
+  ],
+  "kraków, galicyjska 1": [
+    50.060799,
+    20.007299
+  ],
+  "kraków, władysława łokietka 136a": [
+    50.099545,
+    19.911207
+  ],
+  "kraków, cystersów 20": [
+    50.064176,
+    19.969946
+  ],
+  "kraków, wacława sieroszewskiego 3": [
+    50.066205,
+    20.04818
+  ],
+  "kraków, stanisława kostki potockiego 19": [
+    50.100413,
+    19.961495
+  ],
+  "kraków, aleja pokoju 83": [
+    50.064301,
+    19.98951
+  ],
+  "kraków, anny szwed-śniadowskiej 41": [
+    49.999551,
+    19.901082
+  ],
+  "kraków, ludwika rydygiera 8": [
+    50.006917,
+    20.009808
+  ],
+  "kraków, adama bochenka 12b": [
+    50.0115,
+    19.975286
+  ],
+  "kraków, osiedle złotego wieku 14": [
+    50.09651,
+    20.002119
+  ],
+  "kraków, sołtysowska 37c": [
+    50.064343,
+    20.018214
+  ],
+  "kraków, młodzieży 2a": [
+    50.023337,
+    20.003645
+  ],
+  "kraków, winnicka 40": [
+    50.023478,
+    19.865275
+  ],
+  "kraków, józefa sawy-calińskiego 13": [
+    50.107945,
+    20.173798
+  ],
+  "kraków, żaglowa 13b": [
+    50.060527,
+    20.059312
+  ],
+  "kraków, żabiniec 89": [
+    50.082692,
+    19.946415
+  ],
+  "kraków, wrocławska 87": [
+    50.077809,
+    19.92484
+  ],
+  "kraków, poznańska 3": [
+    50.079182,
+    19.925335
+  ],
+  "kraków, osiedle avia 8": [
+    50.080109,
+    20.004581
+  ],
+  "kraków, ujastek 5b": [
+    50.083718,
+    20.06568
+  ],
+  "kraków, zygmunta glogera 53": [
+    50.104455,
+    19.926311
+  ],
+  "kraków, wielicka 28b": [
+    50.017776,
+    19.990315
+  ],
+  "kraków, kordiana 50": [
+    50.011915,
+    19.965041
+  ],
+  "kraków, dobrego pasterza 118g": [
+    50.089587,
+    19.977856
+  ],
+  "kraków, bronowicka 138": [
+    50.078874,
+    19.898035
+  ],
+  "kraków, zdunów 5": [
+    50.020114,
+    19.92021
+  ],
+  "kraków, kanarkowa 1": [
+    50.009427,
+    19.967904
+  ],
+  "kraków, wyżynna 2a": [
+    50.00021,
+    19.962581
+  ],
+  "kraków, stefana banacha 47": [
+    50.10217,
+    19.956874
+  ],
+  "kraków, zygmunta glogera 5": [
+    50.104455,
+    19.926311
+  ],
+  "kraków, sołtysowska 12i": [
+    50.064343,
+    20.018214
+  ],
+  "kraków, hetmana żółkiewskiego 17": [
+    50.058799,
+    19.957873
+  ],
+  "kraków, starowiejska 30": [
+    49.987835,
+    19.926713
+  ],
+  "kraków, prądnicka 74": [
+    50.082602,
+    19.937687
+  ],
+  "kraków, rzemieślnicza 16": [
+    50.03318,
+    19.934775
+  ],
+  "kraków, moczydło 7a": [
+    49.991883,
+    19.950506
+  ],
+  "kraków, zabłocie 43b": [
+    50.050329,
+    19.961367
+  ],
+  "kraków, siarczana 15": [
+    50.005838,
+    19.927825
+  ],
+  "kraków, władysława konopczyńskiego 15": [
+    50.017004,
+    19.895474
+  ],
+  "kraków, aleja gen. tadeusza bora-komorowskiego 25": [
+    50.086822,
+    19.98851
+  ],
+  "kraków, henryka pachońskiego 7a": [
+    50.0953,
+    19.932131
+  ],
+  "kraków, dożynkowa 101": [
+    50.109756,
+    19.943261
+  ],
+  "kraków, filipa pokutyńskiego 10": [
+    50.031869,
+    19.897229
+  ],
+  "kraków, mariana domagały 27e": [
+    50.025691,
+    20.051401
+  ],
+  "kraków, zygmunta miłkowskiego 7": [
+    50.027455,
+    19.920295
+  ],
+  "kraków, wrocławska 53ab": [
+    50.077809,
+    19.92484
+  ],
+  "kraków, przewóz 40": [
+    50.042384,
+    19.990838
+  ],
+  "kraków, zdrowa 2a": [
+    50.088292,
+    19.943296
+  ],
+  "kraków, strycharska 10": [
+    50.042814,
+    19.97506
+  ],
+  "kraków, osiedle tysiąclecia 85": [
+    50.092394,
+    19.997743
+  ],
+  "kraków, józefa meiera 20b": [
+    50.097464,
+    19.967343
+  ],
+  "kraków, koszykarska 31": [
+    50.048303,
+    19.98572
+  ],
+  "kraków, drukarska 3": [
+    50.023904,
+    19.903729
+  ],
+  "kraków, walerego sławka 27": [
+    50.024808,
+    19.960459
+  ],
+  "kraków, dębskiego 125": [
+    49.988862,
+    19.900085
+  ],
+  "kraków, sołtysowska 3": [
+    50.064343,
+    20.018214
+  ],
+  "kraków, stańczyka 8": [
+    50.078659,
+    19.894057
+  ],
+  "kraków, stańczyka 8c": [
+    50.078659,
+    19.894057
+  ],
+  "kraków, wielicka 107": [
+    50.017776,
+    19.990315
+  ],
+  "kraków, piotra tomickiego 22": [
+    50.068944,
+    20.027346
+  ],
+  "kraków, rydlówka 21": [
+    50.034959,
+    19.936217
+  ],
+  "kraków, powstańców 86": [
+    50.103565,
+    19.991116
+  ],
+  "kraków, stanisława lema 19": [
+    50.068406,
+    19.988365
+  ],
+  "kraków, bolesława orlińskiego 7a": [
+    50.081099,
+    20.001961
+  ],
+  "kraków, hamernia 42": [
+    50.07088,
+    19.883088
+  ],
+  "kraków, czerwone maki 87a": [
+    50.015642,
+    19.889278
+  ],
+  "kraków, wandejska 3": [
+    50.011457,
+    19.905659
+  ],
+  "kraków, mariana domagały 27d": [
+    50.025691,
+    20.051401
+  ],
+  "kraków, saska 12c": [
+    50.043768,
+    19.983676
+  ],
+  "kraków, osiedle kombatantów 9": [
+    50.091486,
+    20.007823
+  ],
+  "kraków, odmętowa 97": [
+    50.05987,
+    20.042263
+  ],
+  "kraków, kluczborska 48": [
+    50.087111,
+    19.935443
+  ],
+  "kraków, kobierzyńska 205a": [
+    50.023334,
+    19.910493
+  ],
+  "kraków, mogilska 120d": [
+    50.066523,
+    19.969734
+  ],
+  "kraków, osiedle teatralne 29": [
+    50.079228,
+    20.029257
+  ],
+  "kraków, wolska 7e": [
+    50.022143,
+    19.980042
+  ],
+  "kraków, aktorów 1": [
+    50.085127,
+    19.887916
+  ],
+  "kraków, wadowicka 3c": [
+    50.033253,
+    19.938695
+  ],
+  "kraków, kolejowa 19": [
+    50.025992,
+    19.987461
+  ],
+  "kraków, fredry 6f": [
+    50.023803,
+    19.942227
+  ],
+  "kraków, jerozolimska 2a": [
+    50.034972,
+    19.966248
+  ],
+  "kraków, śliczna 36a": [
+    50.072493,
+    19.978095
+  ],
+  "kraków, prof. michała życzkowskiego 5": [
+    50.077228,
+    19.994746
+  ],
+  "kraków, opolska 112": [
+    50.091611,
+    19.933903
+  ],
+  "kraków, leona petrażyckiego 42": [
+    49.981777,
+    19.878822
+  ],
+  "kraków, ślusarska 5": [
+    50.050056,
+    19.962396
+  ],
+  "kraków, józefa wybickiego 5a": [
+    50.083831,
+    19.92425
+  ],
+  "kraków, przy rondzie 4": [
+    50.064446,
+    19.961363
+  ],
+  "kraków, łowienicka 14": [
+    50.008311,
+    19.946937
+  ],
+  "kraków, grzegórzecka 69": [
+    50.056971,
+    19.960347
+  ],
+  "kraków, walerego sławka 9": [
+    50.024808,
+    19.960459
+  ],
+  "kraków, kijanki 2": [
+    50.007959,
+    19.969761
+  ],
+  "kraków, górników 68": [
+    50.021703,
+    19.995473
+  ],
+  "kraków, erazma jerzmanowskiego 37": [
+    50.01526,
+    20.012306
+  ],
+  "kraków, przemiarki 23a": [
+    50.021737,
+    19.905034
+  ],
+  "kraków, kołowa 8": [
+    50.072227,
+    19.89859
+  ],
+  "kraków, klementyny hoffmanowej 6b": [
+    50.024138,
+    19.931997
+  ],
+  "kraków, osiedle bohaterów września 90": [
+    50.101882,
+    20.008748
+  ],
+  "kraków, raciborskiego 2": [
+    50.075404,
+    19.970094
+  ],
+  "kraków, aleja gen. jana skrzyneckiego 15": [
+    50.034601,
+    19.934954
+  ],
+  "kraków, osiedle urocze 4": [
+    50.078155,
+    20.036978
+  ],
+  "kraków, bolesława orlińskiego 3": [
+    50.081099,
+    20.001961
+  ],
+  "kraków, andrzeja zauchy 11": [
+    50.101105,
+    19.954291
+  ],
+  "kraków, franciszka bohomolca 13": [
+    50.092452,
+    19.98785
+  ],
+  "kraków, centralna 51b": [
+    50.065309,
+    20.010291
+  ],
+  "kraków, mariana domagały 39": [
+    50.025691,
+    20.051401
+  ],
+  "kraków, romana ciesielskiego 6": [
+    50.061128,
+    20.014847
+  ],
+  "kraków, prosta 35b": [
+    50.021993,
+    19.989581
+  ],
+  "kraków, rakowicka 22d": [
+    50.072024,
+    19.955398
+  ],
+  "kraków, ks. ferdynanda machaya 1": [
+    50.074673,
+    19.882841
+  ],
+  "kraków, władysława łokietka 23": [
+    50.099545,
+    19.911207
+  ],
+  "kraków, wrocławska 69": [
+    50.077809,
+    19.92484
+  ],
+  "kraków, osiedle centrum e14": [
+    50.074174,
+    20.035673
+  ],
+  "kraków, dworska 25": [
+    50.044705,
+    19.926607
+  ],
+  "kraków, wielicka 57": [
+    50.017776,
+    19.990315
+  ],
+  "kraków, konstantego ildefonsa gałczyńskiego 7": [
+    50.071291,
+    20.011596
+  ],
+  "kraków, władysława taklińskiego 69": [
+    49.986029,
+    19.906351
+  ],
+  "kraków, papierni prądnickich 74": [
+    50.103094,
+    19.957624
+  ],
+  "kraków, doktora judyma 16": [
+    50.001037,
+    19.917196
+  ],
+  "kraków, osiedle słoneczne 9": [
+    50.077388,
+    20.042094
+  ],
+  "kraków, dominikanów 32": [
+    50.086314,
+    19.965428
+  ],
+  "kraków, por. halszki 28": [
+    50.00999,
+    19.948624
+  ],
+  "kraków, czyżyńska 21": [
+    50.070557,
+    19.983292
+  ],
+  "kraków, osiedle urocze 6": [
+    50.078155,
+    20.036978
+  ],
+  "kraków, wiedeńska 108": [
+    50.073583,
+    19.882005
+  ],
+  "kraków, tadeusza romanowicza 5": [
+    50.0472,
+    19.963656
+  ],
+  "kraków, wolska 7": [
+    50.022143,
+    19.980042
+  ],
+  "kraków, adama vetulaniego 8": [
+    50.095157,
+    19.924781
+  ],
+  "kraków, tadeusza rejtana 8": [
+    50.043376,
+    19.944873
+  ],
+  "kraków, józefa wybickiego 1": [
+    50.083831,
+    19.92425
+  ],
+  "kraków, lenartowicza 11": [
+    50.070209,
+    19.927631
+  ],
+  "kraków, ojcowska 143": [
+    50.099049,
+    19.883538
+  ],
+  "kraków, edmunda wasilewskiego 12": [
+    50.048733,
+    19.929265
+  ],
+  "kraków, podlesie 5": [
+    50.014455,
+    19.98436
+  ],
+  "kraków, wolska 7d": [
+    50.022143,
+    19.980042
+  ],
+  "kraków, grażyny 18": [
+    50.089538,
+    19.949089
+  ],
+  "kraków, mariana słoneckiego 5a": [
+    50.090333,
+    19.975769
+  ],
+  "kraków, jugowicka 8a": [
+    50.007515,
+    19.929913
+  ],
+  "kraków, puszkarska 7i": [
+    50.028216,
+    19.948154
+  ],
+  "kraków, balicka 17a": [
+    50.081009,
+    19.860123
+  ],
+  "kraków, dekarzy 22": [
+    50.02146,
+    19.921245
+  ],
+  "kraków, zbydniowicka 1": [
+    49.971652,
+    19.958954
+  ],
+  "kraków, berka joselewicza": [
+    50.054823,
+    19.94717
+  ],
+  "kraków, dąbska lu5": [
+    50.066941,
+    19.98324
+  ],
+  "kraków, dobrego pasterza": [
+    50.089587,
+    19.977856
+  ],
+  "kraków, stanisława ze skalbmierza": [
+    50.08128,
+    19.968746
+  ],
+  "kraków, władysława łokietka": [
+    50.093525,
+    20.048233
+  ],
+  "kraków, konecznego 2u": [
+    50.083847,
+    19.942615
+  ],
+  "kraków, królowej jadwigi": [
+    50.087639,
+    20.02451
+  ],
+  "kraków, batalionów chłopskich": [
+    50.014932,
+    19.865092
+  ],
+  "kraków, dąbrówki 3": [
+    50.045989,
+    19.956818
+  ],
+  "kraków, osiedle dywizjonu 303": [
+    50.082686,
+    20.005339
+  ],
+  "kraków, osiedle złotego wieku": [
+    50.09651,
+    20.002119
+  ],
+  "kraków, osiedle oświecenia 1a": [
+    50.089552,
+    19.989416
+  ],
+  "kraków, osiedle piastów": [
+    50.057539,
+    20.016616
+  ],
+  "kraków, osiedle niepodległości": [
+    50.057539,
+    20.016616
+  ],
+  "kraków, osiedle górali": [
+    50.057539,
+    20.016616
+  ],
+  "kraków, aleja jana pawła ii": [
+    50.07343,
+    20.017029
+  ],
+  "kraków, osiedle centrum a": [
+    50.074174,
+    20.035673
+  ],
+  "kraków, osiedle na skarpie": [
+    50.095462,
+    20.054818
+  ],
+  "kraków, młyńska boczna 4": [
+    50.083256,
+    19.972894
+  ],
+  "kraków, franciszka bujaka 17": [
+    50.009868,
+    19.951437
+  ],
+  "kraków, stanisława pigonia": [
+    50.049381,
+    19.936881
+  ],
+  "kraków, mazowiecka 45": [
+    50.075579,
+    19.924249
+  ],
+  "kraków, poronińska 7": [
+    49.987011,
+    19.916908
+  ],
+  "kraków, sanocka 4": [
+    50.017555,
+    19.952781
+  ],
+  "kraków, osiedle złotego wieku 13": [
+    50.09651,
+    20.002119
+  ],
+  "kraków, słomiana 8": [
+    50.043924,
+    19.925539
+  ],
+  "kraków, merkuriusza polskiego 6": [
+    49.994231,
+    19.942972
+  ],
+  "kraków, republiki korczakowskiej 3": [
+    50.016318,
+    20.000736
+  ],
+  "kraków, ks. władysława gurgacza 1": [
+    50.056565,
+    19.951157
+  ],
+  "kraków, generała tadeusza kutrzeby 6": [
+    50.040908,
+    19.94114
+  ],
+  "kraków, macieja miechowity 11": [
+    50.082912,
+    19.96714
+  ],
+  "kraków, osiedle słoneczne 10": [
+    50.077388,
+    20.042094
+  ],
+  "kraków, piekarska 14": [
+    50.048046,
+    19.939923
+  ],
+  "kraków, aleja kasztanowa 6": [
+    50.065992,
+    19.860525
+  ],
+  "kraków, benedyktyńska 4": [
+    50.018075,
+    19.805103
+  ],
+  "kraków, rżącka 1": [
+    50.004124,
+    19.987972
+  ],
+  "kraków, lilli wenedy 7": [
+    50.019813,
+    20.004601
+  ],
+  "kraków, aleja artura grottgera 28": [
+    50.073394,
+    19.926774
+  ],
+  "kraków, strzelców 5": [
+    50.092946,
+    19.975203
+  ],
+  "kraków, osiedle na lotnisku 15": [
+    50.086713,
+    20.016429
+  ],
+  "kraków, jana kurczaba 19": [
+    50.013552,
+    20.005
+  ],
+  "kraków, kazimierza odnowiciela 4": [
+    50.087825,
+    19.970106
+  ],
+  "kraków, aleksandry 15": [
+    50.011769,
+    20.01633
+  ],
+  "kraków, osiedle józefa strusia 8": [
+    50.087828,
+    20.012377
+  ],
+  "kraków, osiedle albertyńskie 23": [
+    50.082353,
+    20.018753
+  ],
+  "kraków, macieja miechowity 4": [
+    50.082912,
+    19.96714
+  ],
+  "kraków, gen. józefa bema 21": [
+    50.07107,
+    19.961982
+  ],
+  "kraków, jabłonkowska 39": [
+    50.078229,
+    19.888737
+  ],
+  "kraków, krowoderskich zuchów 28": [
+    50.088312,
+    19.930742
+  ],
+  "kraków, wincentego danka 1": [
+    50.092238,
+    19.926315
+  ],
+  "kraków, fiołkowa 13": [
+    50.078126,
+    19.980221
+  ],
+  "kraków, osiedle jagiellońskie 8": [
+    50.088998,
+    20.02195
+  ],
+  "kraków, sudolska 3": [
+    50.091327,
+    19.967362
+  ],
+  "kraków, widok 23": [
+    50.058736,
+    19.980826
+  ],
+  "kraków, osiedle przy arce 4": [
+    50.082582,
+    20.027159
+  ],
+  "kraków, kościuszkowców 6": [
+    50.016716,
+    19.92633
+  ],
+  "kraków, osiedle niepodległości 4": [
+    50.08113,
+    20.021222
+  ],
+  "kraków, estońska 2": [
+    50.019862,
+    19.965686
+  ],
+  "kraków, jana dekerta 18": [
+    50.046754,
+    19.966804
+  ],
+  "kraków, osiedle hutnicze 14": [
+    50.072704,
+    20.044973
+  ],
+  "kraków, osiedle szkolne 31": [
+    50.07897,
+    20.048686
+  ],
+  "kraków, osiedle centrum b 11": [
+    50.073678,
+    20.040014
+  ],
+  "kraków, osiedle wandy 2": [
+    50.069676,
+    20.05081
+  ],
+  "kraków, osiedle kolorowe 28": [
+    50.075561,
+    20.023607
+  ],
+  "kraków, emaus 29": [
+    50.056876,
+    19.906179
+  ],
+  "kraków, bartosza głowackiego 2": [
+    50.078884,
+    19.907682
+  ],
+  "kraków, strąkowa 7": [
+    50.026081,
+    19.923872
+  ],
+  "kraków, osiedle na stoku 21": [
+    50.095462,
+    20.054818
+  ],
+  "kraków, skośna 2": [
+    50.011116,
+    19.900771
+  ],
+  "kraków, saska 11": [
+    50.043768,
+    19.983676
+  ],
+  "kraków, osiedle kombatantów 13": [
+    50.091486,
+    20.007823
+  ],
+  "kraków, przykopy 10": [
+    50.015059,
+    19.947467
+  ],
+  "kraków, skwerowa 3": [
+    50.049477,
+    19.925376
+  ],
+  "kraków, skotnicka 86": [
+    50.010795,
+    19.875542
+  ],
+  "kraków, jadwigi z łobzowa 30": [
+    50.074883,
+    19.902451
+  ],
+  "kraków, na błonie": [
+    50.018118,
+    19.960224
+  ],
+  "kraków, za targiem 4": [
+    50.0698,
+    19.916039
+  ],
+  "kraków, witolda budryka 2": [
+    50.067897,
+    19.906846
+  ],
+  "kraków, telimeny 7": [
+    50.018632,
+    20.013468
+  ],
+  "kraków, heleny modrzejewskiej 21": [
+    50.087753,
+    19.915523
+  ],
+  "kraków, piotra stachiewicza 21": [
+    50.084451,
+    19.916739
+  ],
+  "kraków, krowoderskich zuchów": [
+    50.088312,
+    19.930742
+  ],
+  "kraków, osiedle tysiąclecia 12": [
+    50.092394,
+    19.997743
+  ],
+  "kraków, lekarska 5": [
+    50.086487,
+    19.940024
+  ],
+  "kraków, komandosów 13": [
+    50.044382,
+    19.930348
+  ],
+  "kraków, osiedle urocze 9": [
+    50.078155,
+    20.036978
+  ],
+  "kraków, osiedle piastów 48": [
+    50.097008,
+    20.016026
+  ],
+  "kraków, osiedle bohaterów września 15": [
+    50.101882,
+    20.008748
+  ],
+  "kraków, osiedle ogrodowe 3": [
+    50.071523,
+    20.043658
+  ],
+  "kraków, piekarska 12": [
+    50.048046,
+    19.939923
+  ],
+  "kraków, miodowa 36": [
+    50.053135,
+    19.946225
+  ],
+  "kraków, mieczysława wrony 115": [
+    49.990598,
+    19.86347
+  ],
+  "kraków, osiedle oświecenia 30": [
+    50.089552,
+    19.989416
+  ],
+  "kraków, osiedle kościuszkowskie 8": [
+    50.085234,
+    20.014241
+  ],
+  "kraków, twardowskiego 90": [
+    50.043642,
+    19.922565
+  ],
+  "kraków, spółdzielców 7": [
+    50.017445,
+    19.97959
+  ],
+  "kraków, osiedle jagiellońskie 16": [
+    50.088998,
+    20.02195
+  ],
+  "kraków, mikołaja kopernika 16": [
+    50.062847,
+    19.951193
+  ],
+  "kraków, zwycięstwa 22": [
+    50.061969,
+    19.97638
+  ],
+  "kraków, józefa dietla 70": [
+    50.054192,
+    19.943646
+  ],
+  "kraków, romana prawocheńskiego 7": [
+    50.068283,
+    20.155561
+  ],
+  "kraków, bieżanowska 40": [
+    50.02156,
+    20.008004
+  ],
+  "kraków, arcybiskupa zygmunta szczęsnego felińskiego 35": [
+    50.098827,
+    19.966914
+  ],
+  "kraków, osiedle na skarpie 46": [
+    50.068655,
+    20.046886
+  ],
+  "kraków, osiedle handlowe 3": [
+    50.074805,
+    20.031029
+  ],
+  "kraków, okólna 18": [
+    50.016418,
+    19.983762
+  ],
+  "kraków, parkowa 14": [
+    50.042041,
+    19.952035
+  ],
+  "kraków, osiedle stalowe 10": [
+    50.07438,
+    20.049147
+  ],
+  "kraków, leonida teligi 28": [
+    50.016668,
+    20.00593
+  ],
+  "kraków, mirtowa 2": [
+    49.983964,
+    19.947888
+  ],
+  "kraków, osiedle urocze 15": [
+    50.078155,
+    20.036978
+  ],
+  "kraków, czarnogórska 14": [
+    50.019951,
+    19.971727
+  ],
+  "kraków, urzędnicza 65": [
+    50.070539,
+    19.918735
+  ],
+  "kraków, porzeczkowa 3": [
+    50.102546,
+    19.944749
+  ],
+  "kraków, myśliwska 64": [
+    50.045331,
+    19.992315
+  ],
+  "kraków, osiedle na wzgórzach 11": [
+    50.097874,
+    20.061953
+  ],
+  "kraków, ludwinowska 6": [
+    50.044108,
+    19.937297
+  ],
+  "kraków, osiedle piastów 10": [
+    50.097008,
+    20.016026
+  ],
+  "kraków, osiedle kalinowe 11": [
+    50.090701,
+    20.012037
+  ],
+  "kraków, wielicka 265": [
+    50.017776,
+    19.990315
+  ],
+  "kraków, zakątek 2": [
+    50.075748,
+    19.914685
+  ],
+  "kraków, dr. józefa babińskiego 29": [
+    50.007008,
+    19.882773
+  ],
+  "kraków, osiedle spółdzielcze 5": [
+    50.077733,
+    20.026878
+  ],
+  "kraków, osiedle zielone 27": [
+    50.079558,
+    20.042011
+  ],
+  "kraków, jerzego żuławskiego 9": [
+    50.072604,
+    19.933864
+  ],
+  "kraków, józefa stępnia 1": [
+    50.015055,
+    20.04803
+  ],
+  "kraków, osiedle tysiąclecia 37": [
+    50.092394,
+    19.997743
+  ],
+  "kraków, rajska 14": [
+    50.064678,
+    19.928979
+  ],
+  "kraków, ułanów 38": [
+    50.077704,
+    19.983697
+  ],
+  "kraków, zagościniec 1": [
+    50.09831,
+    20.122334
+  ],
+  "kraków, praska 64": [
+    50.047597,
+    19.914122
+  ],
+  "kraków, stawowa 179": [
+    50.095564,
+    19.889587
+  ],
+  "kraków, seweryna goszczyńskiego 44": [
+    50.039279,
+    19.988169
+  ],
+  "kraków, szopkarzy 8": [
+    50.093241,
+    19.932035
+  ],
+  "kraków, józefa mackiewicza 15": [
+    50.092873,
+    19.944794
+  ],
+  "kraków, aleksandry 19": [
+    50.011769,
+    20.01633
+  ],
+  "kraków, dr. józefa babińskiego 1": [
+    50.007008,
+    19.882773
+  ],
+  "kraków, ludwika rydygiera 20": [
+    50.006917,
+    20.009808
+  ],
+  "kraków, ks. józefa meiera": [
+    50.096571,
+    19.989458
+  ],
+  "kraków, litewska 34": [
+    50.077008,
+    19.924205
+  ],
+  "kraków, jana kurczaba 15": [
+    50.013552,
+    20.005
+  ],
+  "kraków, golikówka 52": [
+    50.045157,
+    20.017797
+  ],
+  "kraków, feliksa wrobela 79": [
+    50.041869,
+    20.062981
+  ],
+  "kraków, pod fortem 2": [
+    50.082601,
+    19.922905
+  ],
+  "kraków, starowiejska 36": [
+    49.987835,
+    19.926713
+  ],
+  "kraków, osiedle centrum a 14": [
+    50.071872,
+    20.040761
+  ],
+  "kraków, fabryczna 11": [
+    50.061512,
+    19.970413
+  ],
+  "kraków, krowoderskich zuchów 16": [
+    50.088312,
+    19.930742
+  ],
+  "kraków, plac bohaterów getta 3": [
+    50.046688,
+    19.95443
+  ],
+  "kraków, lasówka 2": [
+    50.046714,
+    19.99447
+  ],
+  "kraków, szwedzka 68": [
+    50.046938,
+    19.924205
+  ],
+  "kraków, ciechocińska 12": [
+    50.002286,
+    19.926832
+  ],
+  "kraków, kuźnicy kołłątajowskiej": [
+    50.09811,
+    19.955594
+  ],
+  "kraków, łowiecka 5": [
+    50.056317,
+    19.921745
+  ],
+  "kraków, batalionu \"skała\" ak 2": [
+    50.089161,
+    19.922872
+  ],
+  "kraków, grzegórzecka 40": [
+    50.056971,
+    19.960347
+  ],
+  "kraków, aleja kasztanowa": [
+    50.078439,
+    20.039387
+  ],
+  "kraków, prochowa 12": [
+    50.05635,
+    19.955631
+  ],
+  "kraków, marii i bolesława wysłouchów": [
+    50.008045,
+    19.955791
+  ],
+  "kraków, ojcowska 51": [
+    50.099049,
+    19.883538
+  ],
+  "kraków, maksymiliana rutkowskiego 7": [
+    49.999646,
+    19.909753
+  ],
+  "kraków, osiedle kolorowe 8": [
+    50.075561,
+    20.023607
+  ],
+  "kraków, biskupia 16": [
+    50.06741,
+    19.935886
+  ],
+  "kraków, smoleńsk 2": [
+    50.058815,
+    19.929368
+  ],
+  "kraków, henryka wieniawskiego 66": [
+    50.08042,
+    19.967293
+  ],
+  "kraków, mjr. łupaszki 13": [
+    50.088534,
+    19.855678
+  ],
+  "kraków, mieszczańska 13": [
+    50.046349,
+    19.927409
+  ],
+  "kraków, osiedle teatralne 30": [
+    50.079228,
+    20.029257
+  ],
+  "kraków, dekarzy 17": [
+    50.02146,
+    19.921245
+  ],
+  "kraków, władysława łokietka 135": [
+    50.099545,
+    19.911207
+  ],
+  "kraków, prof. władysława szafera 2": [
+    50.061021,
+    19.96487
+  ],
+  "kraków, franciszka bielaka 5": [
+    50.066173,
+    19.877746
+  ],
+  "kraków, marii jaremy 12": [
+    50.086432,
+    19.908318
+  ],
+  "kraków, aleja jana pawła ii 192": [
+    50.07343,
+    20.017029
+  ],
+  "kraków, osiedle szkolne 37": [
+    50.07897,
+    20.048686
+  ],
+  "kraków, leopolda staffa 6": [
+    50.072593,
+    19.912517
+  ],
+  "kraków, płk. pil. stefana łaszkiewicza 4": [
+    50.068294,
+    19.976176
+  ],
+  "kraków, nazaretańska 1": [
+    50.005489,
+    19.972366
+  ],
+  "kraków, dobczycka 76": [
+    50.016523,
+    19.957025
+  ],
+  "kraków, królowej jadwigi 327": [
+    50.062915,
+    19.886009
+  ],
+  "kraków, warszawska 6": [
+    50.070273,
+    19.943754
+  ],
+  "kraków, plac gen. władysława sikorskiego 12": [
+    50.061209,
+    19.928481
+  ],
+  "kraków, piaszczysta 8": [
+    50.098688,
+    19.925657
+  ],
+  "kraków, starowiślna 3": [
+    50.054822,
+    19.947162
+  ],
+  "kraków, sanocka 1": [
+    50.017555,
+    19.952781
+  ],
+  "kraków, gabrieli zapolskiej": [
+    50.078455,
+    19.896025
+  ],
+  "kraków, grzegorza korzeniaka 14": [
+    50.071518,
+    19.833446
+  ],
+  "kraków, aliny 9": [
+    50.090709,
+    19.982894
+  ],
+  "kraków, wenecja 6": [
+    50.061366,
+    19.925868
+  ],
+  "kraków, pędzichów 16": [
+    50.07056,
+    19.938705
+  ],
+  "kraków, żwirki i wigury 3": [
+    50.078193,
+    19.974342
+  ],
+  "kraków, sosnowiecka 12": [
+    50.092592,
+    19.89291
+  ],
+  "kraków, kazimierza kordylewskiego 14": [
+    50.060953,
+    19.962235
+  ],
+  "kraków, zmartwychwstania pańskiego": [
+    50.023287,
+    19.96536
+  ],
+  "kraków, franciszka bujaka 8": [
+    50.009868,
+    19.951437
+  ],
+  "kraków, osiedle na wzgórzach": [
+    50.095462,
+    20.054818
+  ],
+  "kraków, benedykta cesarza 9": [
+    50.011789,
+    19.909755
+  ],
+  "kraków, wacława lipińskiego": [
+    50.088084,
+    20.015766
+  ],
+  "kraków, rakuś 72": [
+    50.01172,
+    20.034854
+  ],
+  "kraków, legnicka 26": [
+    50.089712,
+    19.951651
+  ],
+  "kraków, jana kurczaba 5": [
+    50.013552,
+    20.005
+  ],
+  "kraków, mariana słoneckiego 5": [
+    50.090333,
+    19.975769
+  ],
+  "kraków, zarzecze 23": [
+    50.075189,
+    19.89105
+  ],
+  "kraków, krowoderska 8": [
+    50.06904,
+    19.93674
+  ],
+  "kraków, eliasza radzikowskiego 1": [
+    50.085237,
+    19.897495
+  ],
+  "kraków, vlastimila hofmana 9": [
+    50.057214,
+    19.898185
+  ],
+  "kraków, osiedle kazimierzowskie 30": [
+    50.086381,
+    20.021884
+  ],
+  "kraków, myśliwska 76": [
+    50.045331,
+    19.992315
+  ],
+  "kraków, żabiniec 45": [
+    50.082692,
+    19.946415
+  ],
+  "kraków, feliksa konecznego 2": [
+    50.083847,
+    19.942615
+  ],
+  "kraków, ułanów 41": [
+    50.077704,
+    19.983697
+  ],
+  "kraków, przewóz 36": [
+    50.042384,
+    19.990838
+  ],
+  "kraków, łużycka 28": [
+    50.012512,
+    19.968023
+  ],
+  "kraków, bułgarska 15": [
+    50.024018,
+    19.917837
+  ],
+  "kraków, profesora bolesława wiktora wicherkiewicza 19": [
+    49.999644,
+    19.897115
+  ],
+  "kraków, harcmistrza stanisława millana 15": [
+    50.016294,
+    19.943925
+  ],
+  "kraków, łobzowska 49": [
+    50.069427,
+    19.932776
+  ],
+  "kraków, józefa chełmońskiego": [
+    50.050723,
+    19.944999
+  ],
+  "kraków, wrocławska 55": [
+    50.077809,
+    19.92484
+  ],
+  "kraków, księdza kardynała adama stefana sapiehy 65": [
+    50.095554,
+    20.02321
+  ],
+  "kraków, wodna 4": [
+    50.037232,
+    19.973294
+  ],
+  "kraków, vlastimila hofmana 22": [
+    50.057214,
+    19.898185
+  ],
+  "kraków, stanisława lema 24": [
+    50.068406,
+    19.988365
+  ],
+  "kraków, osiedle bohaterów września 3": [
+    50.101882,
+    20.008748
+  ],
+  "kraków, profesora michała bobrzyńskiego": [
+    50.021328,
+    19.899098
+  ],
+  "kraków, jana izydora sztaudyngera 5": [
+    49.994363,
+    19.986778
+  ],
+  "kraków, orla 52": [
+    50.046996,
+    19.826647
+  ],
+  "kraków, prądnicka 10": [
+    50.082602,
+    19.937687
+  ],
+  "kraków, chmieleniec 35": [
+    50.019312,
+    19.897753
+  ],
+  "kraków, dr. józefa babińskiego 4": [
+    50.007008,
+    19.882773
+  ],
+  "kraków, aleja kasztanowa 9": [
+    50.065992,
+    19.860525
+  ],
+  "kraków, michała żaka 19": [
+    50.011611,
+    19.945806
+  ],
+  "kraków, królewska 55": [
+    50.07244,
+    19.917609
+  ],
+  "kraków, śnieżna 15": [
+    50.021531,
+    19.991748
+  ],
+  "kraków, turystyczna 8": [
+    50.090383,
+    19.948117
+  ],
+  "kraków, liściasta 6": [
+    50.022975,
+    19.911084
+  ],
+  "kraków, białoprądnicka 10": [
+    50.094689,
+    19.936007
+  ],
+  "kraków, stanisława skarżyńskiego 3": [
+    50.085288,
+    19.997337
+  ],
+  "kraków, eliasza radzikowskiego": [
+    50.085237,
+    19.897495
+  ],
+  "kraków, stanisława działowskiego": [
+    50.049381,
+    19.936881
+  ],
+  "kraków, wspólna 46": [
+    50.019211,
+    19.955012
+  ],
+  "kraków, zaborze 1": [
+    50.019888,
+    19.92135
+  ],
+  "kraków, fałęcka 39": [
+    50.004624,
+    19.909425
+  ],
+  "kraków, katowicka 47": [
+    50.086613,
+    19.88141
+  ],
+  "kraków, doktora zygmunta łuczyńskiego 10": [
+    50.013678,
+    19.911254
+  ],
+  "kraków, józefa łepkowskiego 7": [
+    50.090478,
+    19.963184
+  ],
+  "kraków, wrocławska 75": [
+    50.077809,
+    19.92484
+  ],
+  "kraków, lipska 55": [
+    50.040315,
+    19.994117
+  ],
+  "kraków, dr. jana piltza": [
+    50.010962,
+    19.890096
+  ],
+  "kraków, sebastiana klonowica": [
+    50.05539,
+    19.944033
+  ],
+  "kraków, andrzeja frycza-modrzewskiego 3": [
+    50.086993,
+    19.94498
+  ],
+  "kraków, kamieniecka 2": [
+    50.001547,
+    19.898891
+  ],
+  "kraków, osiedle oświecenia 31": [
+    50.089552,
+    19.989416
+  ],
+  "kraków, klemensa janickiego": [
+    50.094044,
+    20.046203
+  ],
+  "kraków, katowicka 30": [
+    50.086613,
+    19.88141
+  ],
+  "kraków, legnicka 18": [
+    50.089712,
+    19.951651
+  ],
+  "kraków, wadowicka 6": [
+    50.033253,
+    19.938695
+  ],
+  "kraków, pod fortem": [
+    50.111738,
+    20.193971
+  ],
+  "kraków, kazimierza wielkiego 117": [
+    50.074058,
+    19.917257
+  ],
+  "kraków, zarzecze 14": [
+    50.075189,
+    19.89105
+  ],
+  "kraków, mikołaja reja 13": [
+    50.086871,
+    19.94355
+  ],
+  "kraków, tadeusza kościuszki 88": [
+    50.052998,
+    19.920441
+  ],
+  "kraków, reduta 36": [
+    50.094841,
+    19.978785
+  ],
+  "kraków, wrocławska 8": [
+    50.077809,
+    19.92484
+  ],
+  "kraków, jerzego bajana 8": [
+    50.078596,
+    19.974853
+  ],
+  "kraków, zamiejska 2": [
+    50.011684,
+    19.896283
+  ],
+  "kraków, irysowa 5": [
+    50.024895,
+    19.923842
+  ],
+  "kraków, ks. kazimierza siemaszki": [
+    50.095256,
+    19.997407
+  ],
+  "kraków, komuny paryskiej": [
+    50.003424,
+    19.89579
+  ],
+  "kraków, żabiniec 68": [
+    50.082692,
+    19.946415
+  ],
+  "kraków, macieja dębskiego 125": [
+    49.988862,
+    19.900085
+  ],
+  "kraków, sodowa 42": [
+    50.034631,
+    19.89963
+  ],
+  "kraków, wichrowa 7": [
+    50.002669,
+    19.913523
+  ],
+  "kraków, turniejowa 40": [
+    50.014641,
+    19.95932
+  ],
+  "kraków, borkowska 30": [
+    50.004104,
+    19.905817
+  ],
+  "kraków, majora mieczysława słabego 18": [
+    50.019797,
+    19.884129
+  ],
+  "kraków, armii krajowej 97": [
+    50.076913,
+    19.888982
+  ],
+  "kraków, bolesława orlińskiego 5": [
+    50.081099,
+    20.001961
+  ],
+  "kraków, borkowska 3": [
+    50.004104,
+    19.905817
+  ],
+  "kraków, andrzeja sokołowskiego": [
+    50.092027,
+    20.170903
+  ],
+  "kraków, powstańców wielkopolskich": [
+    50.103565,
+    19.991116
+  ],
+  "kraków, piotra michałowskiego 11": [
+    50.066059,
+    19.927987
+  ],
+  "kraków, kazimierza wielkiego 42": [
+    50.074058,
+    19.917257
+  ],
+  "kraków, osiedle avia 1": [
+    50.080109,
+    20.004581
+  ],
+  "kraków, lipska 8": [
+    50.040315,
+    19.994117
+  ],
+  "kraków, fabryczna 5": [
+    50.061512,
+    19.970413
+  ],
+  "kraków, fiszera 32": [
+    50.087317,
+    19.897934
+  ],
+  "kraków, osiedle centrum e": [
+    50.074174,
+    20.035673
+  ],
+  "kraków, osiedle mistrzejowice 9": [
+    50.096022,
+    20.019509
+  ],
+  "kraków, kobierzyńska 165": [
+    50.023334,
+    19.910493
+  ],
+  "kraków, osiedle bohaterów września 19": [
+    50.101882,
+    20.008748
+  ],
+  "kraków, józefa chełmońskiego 148": [
+    50.093407,
+    19.9002
+  ],
+  "kraków, marii i bolesława wysłouchów 55": [
+    50.008045,
+    19.955791
+  ],
+  "kraków, bp. piotra tomickiego 22": [
+    50.068944,
+    20.027346
+  ],
+  "kraków, wielicka 228": [
+    50.017776,
+    19.990315
+  ],
+  "kraków, henryka rodakowskiego 1": [
+    50.080024,
+    19.899197
+  ],
+  "kraków, mydlnicka 5": [
+    50.065609,
+    19.894539
+  ],
+  "kraków, józefa chełmońskiego 35": [
+    50.093407,
+    19.9002
+  ],
+  "kraków, wacława sieroszewskiego": [
+    50.088084,
+    20.015766
+  ],
+  "kraków, osiedle kolorowe 10": [
+    50.075561,
+    20.023607
+  ],
+  "kraków, marchołta 3": [
+    50.092325,
+    19.983765
+  ],
+  "kraków, kazimierza wierzyńskiego 33": [
+    50.08463,
+    19.848733
+  ],
+  "kraków, arcybiskupa zygmunta szczęsnego felińskiego 22": [
+    50.098827,
+    19.966914
+  ],
+  "kraków, dr. jana piltza 42": [
+    50.010962,
+    19.890096
+  ],
+  "kraków, adama bochenka 10": [
+    50.0115,
+    19.975286
+  ],
+  "kraków, anny szwed-śniadowskiej 42": [
+    49.999551,
+    19.901082
+  ],
+  "kraków, komuny paryskiej 60": [
+    50.003424,
+    19.89579
+  ],
+  "kraków, wincentego weryhy-darowskiego 18": [
+    50.086358,
+    19.846899
+  ],
+  "kraków, gen. leopolda okulickiego 57": [
+    50.094159,
+    20.014905
+  ],
+  "kraków, ks. mikołaja kuczkowskiego 12": [
+    50.096296,
+    19.987918
+  ],
+  "kraków, czerwonego prądnika 8": [
+    50.080063,
+    19.95854
+  ],
+  "kraków, wizjonerów 7": [
+    50.085675,
+    19.886403
+  ],
+  "kraków, osiedle bohaterów września 82": [
+    50.101882,
+    20.008748
+  ],
+  "kraków, alfreda dauna 113": [
+    50.023369,
+    19.974239
+  ],
+  "kraków, domowa 3": [
+    50.016598,
+    19.877507
+  ],
+  "kraków, osiedle szklane domy 7": [
+    50.07515,
+    20.041354
+  ],
+  "kraków, osiedle avia 9": [
+    50.080109,
+    20.004581
+  ],
+  "kraków, henryka pachońskiego": [
+    50.064189,
+    20.196101
+  ],
+  "kraków, gliniana 14": [
+    50.035676,
+    19.995455
+  ],
+  "kraków, wrocławska 48": [
+    50.077809,
+    19.92484
+  ],
+  "kraków, ślusarska 9": [
+    50.050056,
+    19.962396
+  ],
+  "kraków, klementyny hoffmanowej": [
+    50.024138,
+    19.931997
+  ],
+  "kraków, józefa łepkowskiego 1": [
+    50.090478,
+    19.963184
+  ],
+  "kraków, antoniego augustynka-wichury 14": [
+    50.07919,
+    19.931132
+  ],
+  "kraków, płk. ryszarda kuklińskiego 7": [
+    50.040769,
+    19.976367
+  ],
+  "kraków, profesora wojciecha marii bartla": [
+    49.999524,
+    19.898541
+  ],
+  "kraków, ks. józefa kurzei 2": [
+    50.096571,
+    19.989458
+  ],
+  "kraków, gen. ignacego prądzyńskiego 16": [
+    50.083502,
+    19.953456
+  ],
+  "kraków, dobrego pasterza 109": [
+    50.089587,
+    19.977856
+  ],
+  "kraków, władysława jagiełły 26": [
+    50.094946,
+    20.045118
+  ],
+  "kraków, sandora petöfiego 26": [
+    50.09828,
+    20.046877
+  ],
+  "kraków, mała góra": [
+    50.057816,
+    19.929579
+  ],
+  "kraków, prof. michała życzkowskiego 20": [
+    50.077228,
+    19.994746
+  ],
+  "kraków, agatowa 27": [
+    50.021367,
+    20.047073
+  ],
+  "kraków, agatowa 31": [
+    50.021367,
+    20.047073
+  ],
+  "kraków, płaszowska 49": [
+    50.044996,
+    19.978154
+  ],
+  "kraków, królowej jadwigi 227": [
+    50.062915,
+    19.886009
+  ],
+  "kraków, dr. jana piltza 40": [
+    50.010962,
+    19.890096
+  ],
+  "kraków, leona wyczółkowskiego 7": [
+    50.056988,
+    19.914759
+  ],
+  "kraków, beskidzka 23": [
+    50.016793,
+    19.950653
+  ],
+  "kraków, edmunda wasilewskiego 20": [
+    50.048733,
+    19.929265
+  ],
+  "kraków, potrzask 65": [
+    50.01038,
+    20.052501
+  ],
+  "kraków, kozienicka 17": [
+    50.006353,
+    19.858408
+  ],
+  "kraków, pszczelna 35": [
+    50.023867,
+    19.916244
+  ],
+  "kraków, urocza 36": [
+    50.025566,
+    19.939373
+  ],
+  "kraków, królowej jadwigi 248": [
+    50.062915,
+    19.886009
+  ],
+  "kraków, henryka i karola czeczów 50": [
+    50.021437,
+    20.054944
+  ],
+  "kraków, pawła z krosna 5": [
+    50.004925,
+    19.894181
+  ],
+  "kraków, stanisława stojałowskiego 6": [
+    50.005302,
+    19.953178
+  ],
+  "kraków, dr. jana piltza 41": [
+    50.010962,
+    19.890096
+  ],
+  "kraków, dr. jana piltza 43": [
+    50.010962,
+    19.890096
+  ],
+  "kraków, malborska 35": [
+    50.023594,
+    19.968834
+  ],
+  "kraków, władysława łokietka 194": [
+    50.099545,
+    19.911207
+  ],
+  "kraków, krzysztofa kamila baczyńskiego 18": [
+    50.004104,
+    19.872846
+  ],
+  "kraków, strumienna 26": [
+    50.020754,
+    19.945442
+  ],
+  "kraków, kłuszyńska 14": [
+    49.99036,
+    19.913194
+  ],
+  "kraków, józefa wybickiego": [
+    50.050723,
+    19.944999
+  ],
+  "kraków, stanisława lema 17": [
+    50.068406,
+    19.988365
+  ],
+  "kraków, łużycka 42": [
+    50.012512,
+    19.968023
+  ],
+  "kraków, józefa chełmońskiego 16": [
+    50.093407,
+    19.9002
+  ],
+  "kraków, księcia józefa 277": [
+    50.046059,
+    19.861255
+  ],
+  "kraków, kazimierza wielkiego 68": [
+    50.074058,
+    19.917257
+  ],
+  "kraków, podedworze 16": [
+    50.011014,
+    19.978059
+  ],
+  "kraków, osiedle stalowe 18": [
+    50.07438,
+    20.049147
+  ],
+  "kraków, osiedle jagiellońskie 18": [
+    50.088998,
+    20.02195
+  ],
+  "kraków, osiedle szklane domy 2": [
+    50.07515,
+    20.041354
+  ],
+  "kraków, osiedle jagiellońskie 9": [
+    50.088998,
+    20.02195
+  ],
+  "kraków, katowicka 28": [
+    50.086613,
+    19.88141
+  ],
+  "kraków, józefa sawy-calińskiego 12": [
+    50.107945,
+    20.173798
+  ],
+  "kraków, ignacego krasickiego 34": [
+    50.040936,
+    19.939941
+  ],
+  "kraków, stanisława stojałowskiego 31": [
+    50.005302,
+    19.953178
+  ],
+  "kraków, żabia 20": [
+    50.017521,
+    19.996038
+  ],
+  "kraków, półkole 11": [
+    50.060412,
+    19.981724
+  ],
+  "kraków, stanisława pigonia 2": [
+    50.09456,
+    19.935224
+  ],
+  "kraków, sadzawki 1": [
+    50.081669,
+    19.974074
+  ],
+  "kraków, aleja kijowska 3": [
+    50.074204,
+    19.916412
+  ],
+  "kraków, dobczycka 20": [
+    50.016523,
+    19.957025
+  ],
+  "kraków, kaczorówka 4": [
+    50.107268,
+    19.908997
+  ],
+  "kraków, osiedle kalinowe 17": [
+    50.090701,
+    20.012037
+  ],
+  "kraków, aleksandry 17": [
+    50.011769,
+    20.01633
+  ],
+  "kraków, bieżanowska 204": [
+    50.02156,
+    20.008004
+  ],
+  "kraków, księcia józefa 337": [
+    50.046059,
+    19.861255
+  ],
+  "kraków, piotra stachiewicza 33": [
+    50.084451,
+    19.916739
+  ],
+  "kraków, osiedle wysokie 7": [
+    50.089427,
+    20.018898
+  ],
+  "kraków, okólna 16": [
+    50.016418,
+    19.983762
+  ],
+  "kraków, osiedle bohaterów września 13": [
+    50.101882,
+    20.008748
+  ],
+  "kraków, św. marka 34": [
+    50.063652,
+    19.940361
+  ],
+  "kraków, konfederacka 12": [
+    50.049144,
+    19.927349
+  ],
+  "kraków, doktora judyma 10": [
+    50.001037,
+    19.917196
+  ],
+  "kraków, batalionu \"skała\" ak 12": [
+    50.089161,
+    19.922872
+  ],
+  "kraków, ks. franciszka blachnickiego 1": [
+    50.055536,
+    19.952461
+  ],
+  "kraków, ferdynanda weigla 2": [
+    50.012796,
+    20.04228
+  ],
+  "kraków, władysława spasowskiego 8": [
+    50.06935,
+    19.933897
+  ],
+  "kraków, jaskrowa 5": [
+    50.099589,
+    20.12396
+  ],
+  "kraków, aleja modrzewiowa 23": [
+    50.064301,
+    19.866076
+  ],
+  "kraków, zdrowa 6": [
+    50.088292,
+    19.943296
+  ],
+  "kraków, osiedle albertyńskie 36": [
+    50.082353,
+    20.018753
+  ],
+  "kraków, bolesława prusa 18": [
+    50.055877,
+    19.917435
+  ],
+  "kraków, osiedle tysiąclecia 57": [
+    50.092394,
+    19.997743
+  ],
+  "kraków, bolesława czerwieńskiego 1": [
+    50.088781,
+    19.905105
+  ],
+  "kraków, osiedle józefa strusia 19": [
+    50.087828,
+    20.012377
+  ],
+  "kraków, adama chmielowskiego 1": [
+    50.046405,
+    19.942828
+  ],
+  "kraków, topolowa 22": [
+    50.066675,
+    19.954102
+  ],
+  "kraków, komandosów 29": [
+    50.044382,
+    19.930348
+  ],
+  "kraków, branicka 26": [
+    50.057897,
+    20.127258
+  ],
+  "kraków, łąkowa 31": [
+    50.072927,
+    19.983775
+  ],
+  "kraków, drożyska 13": [
+    50.056715,
+    20.186128
+  ],
+  "kraków, wacława popławskiego 17": [
+    50.0245,
+    19.988139
+  ],
+  "kraków, kłuszyńska 46": [
+    49.99036,
+    19.913194
+  ],
+  "kraków, feliksa szlachtowskiego 31": [
+    50.073091,
+    19.90234
+  ],
+  "kraków, płk. francesco nullo 23": [
+    50.062742,
+    19.966221
+  ],
+  "kraków, pszczelna 13": [
+    50.023867,
+    19.916244
+  ],
+  "kraków, ćwikłowa 1": [
+    50.03518,
+    19.889227
+  ],
+  "kraków, myślenicka 112": [
+    49.992163,
+    19.946164
+  ],
+  "kraków, wacława lipińskiego 2": [
+    50.028701,
+    19.923529
+  ],
+  "kraków, osiedle handlowe 4": [
+    50.074805,
+    20.031029
+  ],
+  "kraków, osiedle słoneczne 12": [
+    50.077388,
+    20.042094
+  ],
+  "kraków, kazimierza wierzyńskiego 3": [
+    50.08463,
+    19.848733
+  ],
+  "kraków, skośna 8": [
+    50.011116,
+    19.900771
+  ],
+  "kraków, grochowska 20": [
+    50.073351,
+    19.961858
+  ],
+  "kraków, aleja kijowska 8": [
+    50.074204,
+    19.916412
+  ],
+  "kraków, osiedle na stoku 52": [
+    50.095462,
+    20.054818
+  ],
+  "kraków, aleja edwarda dembowskiego 12": [
+    50.041505,
+    19.95535
+  ],
+  "kraków, królowej jadwigi 78": [
+    50.062915,
+    19.886009
+  ],
+  "kraków, bolesława śmiałego 6": [
+    50.018319,
+    19.817511
+  ],
+  "kraków, osiedle teatralne 35": [
+    50.079228,
+    20.029257
+  ],
+  "kraków, aleksandra fredry 65": [
+    50.023803,
+    19.942227
+  ],
+  "kraków, tyniecka 122": [
+    50.034381,
+    19.879186
+  ],
+  "kraków, mazowiecka 70": [
+    50.075579,
+    19.924249
+  ],
+  "kraków, osiedle złotego wieku 4": [
+    50.09651,
+    20.002119
+  ],
+  "kraków, erazma jerzmanowskiego 6": [
+    50.01526,
+    20.012306
+  ],
+  "kraków, osiedle sportowe 28": [
+    50.082476,
+    20.042403
+  ],
+  "kraków, tadeusza ptaszyckiego 9": [
+    50.067512,
+    20.061169
+  ],
+  "kraków, aleja adolfa dygasińskiego 25": [
+    50.021211,
+    19.988774
+  ],
+  "kraków, osiedle na skarpie 8": [
+    50.068655,
+    20.046886
+  ],
+  "kraków, centralna 39": [
+    50.065309,
+    20.010291
+  ],
+  "kraków, aleksandra lubomirskiego 21": [
+    50.067445,
+    19.955216
+  ],
+  "kraków, jana zamoyskiego 100": [
+    50.040713,
+    19.943899
+  ],
+  "kraków, tyniecka 6": [
+    50.034381,
+    19.879186
+  ],
+  "kraków, niecała 8": [
+    50.016868,
+    19.923165
+  ],
+  "kraków, górka narodowa 116": [
+    50.104062,
+    19.952756
+  ],
+  "kraków, hieronima wietora 7": [
+    50.04652,
+    19.941114
+  ],
+  "kraków, spadochroniarzy 1": [
+    50.080761,
+    19.984649
+  ],
+  "kraków, kluczborska 3": [
+    50.087111,
+    19.935443
+  ],
+  "kraków, senatorska 35": [
+    50.054276,
+    19.918906
+  ],
+  "kraków, stanisława konarskiego 2": [
+    50.069675,
+    19.920758
+  ],
+  "kraków, złoty róg 30": [
+    50.081702,
+    19.895643
+  ],
+  "kraków, stanisława jachowicza 5": [
+    50.061793,
+    19.978215
+  ],
+  "kraków, józefa montwiłła-mireckiego 29": [
+    50.019414,
+    19.926379
+  ],
+  "kraków, osiedle złotego wieku 36": [
+    50.09651,
+    20.002119
+  ],
+  "kraków, osiedle kolorowe 29": [
+    50.075561,
+    20.023607
+  ],
+  "kraków, seniorów lotnictwa 5": [
+    50.078705,
+    19.984011
+  ],
+  "kraków, franciszka bujaka 15": [
+    50.009868,
+    19.951437
+  ],
+  "kraków, kazimierza odnowiciela 2": [
+    50.087825,
+    19.970106
+  ],
+  "kraków, profesora wojciecha marii bartla 29": [
+    49.999524,
+    19.898541
+  ],
+  "kraków, agatowa 41": [
+    50.021367,
+    20.047073
+  ],
+  "kraków, ks. stefana pawlickiego 1": [
+    50.043651,
+    19.919547
+  ],
+  "kraków, eliasza radzikowskiego 52": [
+    50.085237,
+    19.897495
+  ],
+  "kraków, telimeny 9": [
+    50.018632,
+    20.013468
+  ],
+  "kraków, stroma 5": [
+    50.041456,
+    19.944899
+  ],
+  "kraków, grzegorza korzeniaka 18": [
+    50.071518,
+    19.833446
+  ],
+  "kraków, janusza meissnera 20": [
+    50.076163,
+    19.979155
+  ],
+  "kraków, jana i jędrzeja śniadeckich": [
+    50.060855,
+    19.954137
+  ],
+  "kraków, piotra michałowskiego 10": [
+    50.066059,
+    19.927987
+  ],
+  "kraków, skałeczna 10": [
+    50.048988,
+    19.940733
+  ],
+  "kraków, malborska 98": [
+    50.023594,
+    19.968834
+  ],
+  "kraków, senatorska 39": [
+    50.054276,
+    19.918906
+  ],
+  "kraków, ułanów 25": [
+    50.077704,
+    19.983697
+  ],
+  "kraków, kazimierza wielkiego 33": [
+    50.074058,
+    19.917257
+  ],
+  "kraków, osiedle kościuszkowskie 7": [
+    50.085234,
+    20.014241
+  ],
+  "kraków, smoleńsk 25": [
+    50.058815,
+    19.929368
+  ],
+  "kraków, tuchowska 113": [
+    50.000683,
+    19.96932
+  ],
+  "kraków, forteczna 54": [
+    49.99962,
+    19.912354
+  ],
+  "kraków, stanisława ze skalbmierza 7": [
+    50.08128,
+    19.968746
+  ],
+  "kraków, aleja adolfa dygasińskiego": [
+    50.019599,
+    19.937673
+  ],
+  "kraków, stradomska 10": [
+    50.053029,
+    19.940225
+  ],
+  "kraków, karmelicka 45": [
+    50.066055,
+    19.930057
+  ],
+  "kraków, kobierzyńska 201": [
+    50.023334,
+    19.910493
+  ],
+  "kraków, władysława łokietka 60": [
+    50.099545,
+    19.911207
+  ],
+  "kraków, pędzichów 13": [
+    50.07056,
+    19.938705
+  ],
+  "kraków, marii i bolesława wysłouchów 28": [
+    50.008045,
+    19.955791
+  ],
+  "kraków, kwiecista 25": [
+    50.009156,
+    19.89276
+  ],
+  "kraków, podgórki tynieckie 106": [
+    50.005833,
+    19.843163
+  ],
+  "kraków, skośna 47": [
+    50.011116,
+    19.900771
+  ],
+  "kraków, osiedle urocze 14": [
+    50.078155,
+    20.036978
+  ],
+  "kraków, kamienna 21": [
+    50.076115,
+    19.941005
+  ],
+  "kraków, zawiła 4": [
+    50.00866,
+    19.907464
+  ],
+  "kraków, edmunda biernackiego 10": [
+    50.073306,
+    19.924359
+  ],
+  "kraków, osiedle na stoku 34": [
+    50.095462,
+    20.054818
+  ],
+  "kraków, zygmunta miłkowskiego 9": [
+    50.027455,
+    19.920295
+  ],
+  "kraków, stelmachów 137": [
+    50.097273,
+    19.899628
+  ],
+  "kraków, wincentego pola 4": [
+    50.057468,
+    19.953281
+  ],
+  "kraków, św. jana 7": [
+    50.063178,
+    19.93861
+  ],
+  "kraków, sławkowska 20": [
+    50.064312,
+    19.93802
+  ],
+  "kraków, grodzka 60": [
+    50.057595,
+    19.938088
+  ],
+  "kraków, siostry faustyny 3": [
+    50.020687,
+    19.938415
+  ],
+  "kraków, mirosława dzielskiego 1": [
+    50.083724,
+    19.976959
+  ],
+  "kraków, osiedle niepodległości 19": [
+    50.08113,
+    20.021222
+  ],
+  "kraków, osiedle kościuszkowskie": [
+    50.057539,
+    20.016616
+  ],
+  "kraków, celna 9": [
+    50.045092,
+    19.946608
+  ],
+  "kraków, armii krajowej 4": [
+    50.076913,
+    19.888982
+  ],
+  "kraków, jerzego szablowskiego 1": [
+    50.076664,
+    19.893657
+  ],
+  "kraków, bohdana zaleskiego 10": [
+    50.067589,
+    19.963629
+  ],
+  "kraków, topografów 11": [
+    49.983978,
+    19.879483
+  ],
+  "kraków, pana tadeusza 4": [
+    50.046509,
+    19.974818
+  ],
+  "kraków, prof. michała życzkowskiego 19": [
+    50.077228,
+    19.994746
+  ],
+  "kraków, kapelanka 17": [
+    50.038328,
+    19.925615
+  ],
+  "kraków, jasnogórska 44": [
+    50.102879,
+    19.887603
+  ],
+  "kraków, powroźnicza 2": [
+    50.052353,
+    19.929504
+  ],
+  "kraków, dietla 80": [
+    50.054192,
+    19.943646
+  ],
+  "kraków, szczepańska 1": [
+    50.063352,
+    19.935575
+  ],
+  "kraków, bobrowskiego 11": [
+    50.058824,
+    19.967505
+  ],
+  "kraków, lubomirskiego 7a": [
+    50.067445,
+    19.955216
+  ],
+  "kraków, aleja pokoju 33": [
+    50.064301,
+    19.98951
+  ],
+  "kraków, brodowicza 1": [
+    50.070126,
+    19.96262
+  ],
+  "kraków, dobrego pasterza 6": [
+    50.089587,
+    19.977856
+  ],
+  "kraków, bosaków 11": [
+    50.083958,
+    19.96182
+  ],
+  "kraków, łąkowa 27": [
+    50.072927,
+    19.983775
+  ],
+  "kraków, dzielskiego 2": [
+    50.083724,
+    19.976959
+  ],
+  "kraków, ugorek 14": [
+    50.076081,
+    19.981971
+  ],
+  "kraków, dobrego pasterza 100": [
+    50.089587,
+    19.977856
+  ],
+  "kraków, radzikowskiego 29": [
+    50.085237,
+    19.897495
+  ],
+  "kraków, ojcowska 116": [
+    50.099049,
+    19.883538
+  ],
+  "kraków, siemaszki 31": [
+    50.085215,
+    19.939967
+  ],
+  "kraków, łokietka 267": [
+    50.099545,
+    19.911207
+  ],
+  "kraków, opolska 37": [
+    50.091611,
+    19.933903
+  ],
+  "kraków, królewska 59": [
+    50.07244,
+    19.917609
+  ],
+  "kraków, sienkiewicza 2": [
+    50.072241,
+    19.926893
+  ],
+  "kraków, balicka 297": [
+    50.081009,
+    19.860123
+  ],
+  "kraków, na błonie 13d": [
+    50.076325,
+    19.879572
+  ],
+  "kraków, fałata 2": [
+    50.056761,
+    19.916698
+  ],
+  "kraków, komorowskiego 11": [
+    50.053375,
+    19.92107
+  ],
+  "kraków, królowej jadwigi 37b": [
+    50.062915,
+    19.886009
+  ],
+  "kraków, komandosów 1": [
+    50.044382,
+    19.930348
+  ],
+  "kraków, praska 52": [
+    50.047597,
+    19.914122
+  ],
+  "kraków, dziewiarzy 7": [
+    50.018326,
+    19.809189
+  ],
+  "kraków, przyzby 10": [
+    50.021307,
+    19.912518
+  ],
+  "kraków, zachodnia 7": [
+    50.024405,
+    19.907093
+  ],
+  "kraków, żywiecka 32": [
+    50.013519,
+    19.914245
+  ],
+  "kraków, zakopiańska 103": [
+    50.005129,
+    19.923923
+  ],
+  "kraków, borsucza 12": [
+    50.027573,
+    19.927983
+  ],
+  "kraków, chałubińskiego 47": [
+    49.983241,
+    19.937335
+  ],
+  "kraków, niewodniczańskiego 123": [
+    49.979739,
+    19.948603
+  ],
+  "kraków, sztaudyngera 5": [
+    49.994363,
+    19.986778
+  ],
+  "kraków, walerego sławka 10": [
+    50.024808,
+    19.960459
+  ],
+  "kraków, halszki 1": [
+    50.00999,
+    19.948624
+  ],
+  "kraków, łużycka 55": [
+    50.012512,
+    19.968023
+  ],
+  "kraków, gołaśka 13": [
+    50.014368,
+    19.956108
+  ],
+  "kraków, agatowa 33": [
+    50.021367,
+    20.047073
+  ],
+  "kraków, jasińskiego 32": [
+    50.023827,
+    19.993303
+  ],
+  "kraków, spółdzielców 3": [
+    50.017445,
+    19.97959
+  ],
+  "kraków, teligi 24": [
+    50.016668,
+    20.00593
+  ],
+  "kraków, limanowskiego 4": [
+    50.045151,
+    19.955026
+  ],
+  "kraków, osiedle bohaterów września 26": [
+    50.101882,
+    20.008748
+  ],
+  "kraków, osiedle tysiąclecia 42": [
+    50.092394,
+    19.997743
+  ],
+  "kraków, osiedle kościuszkowskie 5": [
+    50.085234,
+    20.014241
+  ],
+  "kraków, osiedle kalinowe 4": [
+    50.090701,
+    20.012037
+  ],
+  "kraków, osiedle na stoku 1": [
+    50.095462,
+    20.054818
+  ],
+  "kraków, osiedle stalowe 12": [
+    50.07438,
+    20.049147
+  ],
+  "kraków, osiedle młodości 8": [
+    50.067331,
+    20.050683
+  ],
+  "kraków, osiedle teatralne 25": [
+    50.079228,
+    20.029257
+  ],
+  "kraków, osiedle zgody 7": [
+    50.076614,
+    20.033923
+  ],
+  "kraków, borkowska 25": [
+    50.004104,
+    19.905817
+  ],
+  "kraków, berka joselewicza 28": [
+    50.054823,
+    19.94717
+  ],
+  "kraków, batorego 3/5": [
+    50.06723,
+    19.931626
+  ],
+  "kraków, długa 42": [
+    50.070432,
+    19.936732
+  ],
+  "kraków, dunajewskiego 5": [
+    50.064581,
+    19.934261
+  ],
+  "kraków, bobrowskiego 6": [
+    50.058824,
+    19.967505
+  ],
+  "kraków, rzeźnicza 2a": [
+    50.056202,
+    19.956491
+  ],
+  "kraków, kasprowicza 9a/1": [
+    50.068282,
+    19.965578
+  ],
+  "kraków, mogilska 58": [
+    50.066523,
+    19.969734
+  ],
+  "kraków, miechowity 6": [
+    50.082912,
+    19.96714
+  ],
+  "kraków, młyńska boczna 7": [
+    50.083256,
+    19.972894
+  ],
+  "kraków, strzelców 5a": [
+    50.092946,
+    19.975203
+  ],
+  "kraków, pachońskiego 8": [
+    50.0953,
+    19.932131
+  ],
+  "kraków, rusznikarska 14/16": [
+    50.084243,
+    19.927075
+  ],
+  "kraków, weissa 8/21": [
+    50.08645,
+    19.909282
+  ],
+  "kraków, sienkiewicza 2a": [
+    50.072241,
+    19.926893
+  ],
+  "kraków, kazimierza wielkiego  117": [
+    50.074058,
+    19.917257
+  ],
+  "kraków, gabrieli zapolskiej 42": [
+    50.078455,
+    19.896025
+  ],
+  "kraków, na błonie 15b": [
+    50.076325,
+    19.879572
+  ],
+  "kraków, morawskiego 5": [
+    50.055981,
+    19.926454
+  ],
+  "kraków, dojazdowa 4": [
+    50.053144,
+    19.921405
+  ],
+  "kraków, zamiejska 6": [
+    50.011684,
+    19.896283
+  ],
+  "kraków, działowskiego 1": [
+    49.99311,
+    19.875385
+  ],
+  "kraków, bałuckiego 21": [
+    50.049195,
+    19.925974
+  ],
+  "kraków, mieszczańska 9b": [
+    50.046349,
+    19.927409
+  ],
+  "kraków, zakopiańska 62": [
+    50.005129,
+    19.923923
+  ],
+  "kraków, myślenicka 133": [
+    49.992163,
+    19.946164
+  ],
+  "kraków, wróblowicka 58": [
+    49.981068,
+    19.950948
+  ],
+  "kraków, witosa 39": [
+    50.012772,
+    19.955255
+  ],
+  "kraków, kamieńskiego 11": [
+    50.028747,
+    19.95828
+  ],
+  "kraków, cechowa 144a": [
+    50.004701,
+    19.962592
+  ],
+  "kraków, kurczaba 25": [
+    50.013552,
+    20.005
+  ],
+  "kraków, facimiech 32": [
+    50.015238,
+    19.985364
+  ],
+  "kraków, lipowskiego 5": [
+    50.013985,
+    20.037285
+  ],
+  "kraków, kurczaba 29": [
+    50.013552,
+    20.005
+  ],
+  "kraków, kozia 22": [
+    50.033062,
+    19.996863
+  ],
+  "kraków, limanowskiego 51": [
+    50.045151,
+    19.955026
+  ],
+  "kraków, stróża rybna 19": [
+    50.043514,
+    19.98125
+  ],
+  "kraków, gromadzka 53a": [
+    50.040157,
+    19.977872
+  ],
+  "kraków, kalwaryjska 9-15": [
+    50.041159,
+    19.942957
+  ],
+  "kraków, osiedle piastów 41": [
+    50.097008,
+    20.016026
+  ],
+  "kraków, osiedle kościuszkowskie 2a": [
+    50.085234,
+    20.014241
+  ],
+  "kraków, kaczeńcowa 7": [
+    50.088288,
+    20.033013
+  ],
+  "kraków, osiedle jagiellońskie 19": [
+    50.088998,
+    20.02195
+  ],
+  "kraków, kantorowicka 122": [
+    50.103167,
+    20.061709
+  ],
+  "kraków, osiedle zielone 22": [
+    50.079558,
+    20.042011
+  ],
+  "kraków, osiedle na skarpie 35": [
+    50.068655,
+    20.046886
+  ],
+  "kraków, osiedle górali 23": [
+    50.080099,
+    20.036969
+  ],
+  "kraków, osiedle centrum e 18": [
+    50.070073,
+    20.038588
+  ],
+  "kraków, ptaszyckiego 6": [
+    50.067512,
+    20.061169
+  ],
+  "kraków, osiedle kolorowe 11a": [
+    50.075561,
+    20.023607
+  ],
+  "kraków, wróżenicka 49": [
+    50.11314,
+    20.184453
+  ],
+  "kraków, osiedle kościelniki": [
+    50.057539,
+    20.016616
+  ],
+  "kraków, osiedle chałupki": [
+    50.057539,
+    20.016616
+  ],
+  "kraków, osiedle wolica": [
+    50.057539,
+    20.016616
+  ],
+  "kraków, osiedle branice": [
+    50.057539,
+    20.016616
+  ],
+  "kraków, osiedle górali 24": [
+    50.080099,
+    20.036969
+  ],
+  "kraków, osiedle 2 pułku lotniczego 23": [
+    50.079344,
+    20.006271
+  ],
+  "kraków, jakuba": [
+    50.052171,
+    19.946686
+  ],
+  "kraków, karaszewicza tokarzewskiego 12a": [
+    50.065222,
+    20.140552
+  ],
+  "kraków, osiedle dywizjonu 303 20a": [
+    50.087284,
+    20.00329
+  ],
+  "kraków, trybuny": [
+    50.01789,
+    19.963584
+  ],
+  "kraków, osiedle oświecenia 51": [
+    50.093991,
+    19.991922
+  ],
+  "kraków, 28 lipca 1943 4": [
+    50.06482,
+    19.876343
+  ],
+  "kraków, osiedle 2 pułku lotniczego 44": [
+    50.075124,
+    20.00622
+  ],
+  "kraków, wojciecha": [
+    50.08645,
+    19.909282
+  ],
+  "kraków, aleja 29 listopada 193": [
+    50.101162,
+    19.963769
+  ],
+  "kraków, osiedle dywizjonu 303 62g": [
+    50.080015,
+    20.010627
+  ],
+  "kraków, osiedle 2 pułku lotniczego 1": [
+    50.079387,
+    20.010836
+  ],
+  "kraków, aleja": [
+    50.078439,
+    20.039387
+  ],
+  "kraków, filipa": [
+    50.068354,
+    19.940112
+  ],
+  "kraków, zygmunta": [
+    50.066171,
+    19.950632
+  ],
+  "kraków, osiedle dywizjonu 303 14": [
+    50.08488,
+    20.00401
+  ],
+  "kraków, józefa": [
+    50.050723,
+    19.944999
+  ],
+  "kraków, czerwone": [
+    50.015642,
+    19.889278
+  ],
+  "kraków, kapelanka 60": [
+    50.031213,
+    19.925133
+  ],
+  "kraków, barska 69": [
+    50.045517,
+    19.932898
+  ],
+  "kraków, seweryna goszczyńskiego 1": [
+    50.039807,
+    19.983828
+  ],
+  "kraków, prof.": [
+    49.984828,
+    19.948068
+  ],
+  "kraków, aleja 29 listopada 201": [
+    50.102925,
+    19.964527
+  ],
+  "kraków, osiedle": [
+    50.057539,
+    20.016616
+  ],
+  "kraków, biskupa piotra tomickiego 22": [
+    50.066326,
+    20.02328
+  ],
+  "kraków, aleja 3": [
+    50.078439,
+    20.039387
+  ],
+  "kraków, ks. ferdynanda": [
+    50.074673,
+    19.882841
+  ],
+  "kraków, osiedle 2 pułku lotniczego 47": [
+    50.074891,
+    20.009136
+  ],
+  "kraków, osiedle 2 pułku lotniczego 2": [
+    50.0776,
+    20.012219
+  ],
+  "kraków, aleja 29 listopada 32": [
+    50.079604,
+    19.946765
+  ],
+  "kraków, dąbska": [
+    50.066941,
+    19.98324
+  ],
+  "kraków, aleja 29 listopada 70": [
+    50.085726,
+    19.953942
+  ],
+  "kraków, papiernicza 2": [
+    50.092786,
+    19.940891
+  ],
+  "kraków, władysława łokietka 267": [
+    50.112152,
+    19.899351
+  ],
+  "kraków, wrocławska 91": [
+    50.081574,
+    19.916798
+  ],
+  "kraków, balicka 289": [
+    50.08412,
+    19.845972
+  ],
+  "kraków, wizjonerów 2": [
+    50.084549,
+    19.885622
+  ],
+  "kraków, kamedulska 70": [
+    50.048259,
+    19.873817
+  ],
+  "kraków, królowej jadwigi 215": [
+    50.065679,
+    19.876432
+  ],
+  "kraków, chełmska 16": [
+    50.067604,
+    19.846583
+  ],
+  "kraków, batalionów chłopskich 6": [
+    50.016071,
+    19.872166
+  ],
+  "kraków, żywiecka 44": [
+    50.014629,
+    19.917254
+  ],
+  "kraków, niewodniczańskiego 74": [
+    49.979401,
+    19.949739
+  ],
+  "kraków, kolejarzy 71": [
+    50.023596,
+    19.923939
+  ],
+  "kraków, forteczna 146": [
+    50.000631,
+    19.904098
+  ],
+  "kraków, popiełuszki 36": [
+    50.014846,
+    20.039428
+  ],
+  "kraków, aleksandry 1": [
+    50.015499,
+    20.017636
+  ],
+  "kraków, kurczaba 2": [
+    50.014264,
+    20.001028
+  ],
+  "kraków, rybitwy 2": [
+    50.037268,
+    20.021429
+  ],
+  "kraków, łutnia 1": [
+    50.041971,
+    20.064492
+  ],
+  "kraków, gumniska 32": [
+    50.049516,
+    19.991278
+  ],
+  "kraków, sokolska 13": [
+    50.044393,
+    19.94544
+  ],
+  "kraków, osiedle dywizjonu 303 1": [
+    50.081818,
+    20.004664
+  ],
+  "kraków, osiedle piastów 65": [
+    50.104393,
+    20.013503
+  ],
+  "kraków, osiedle niepodległości 2": [
+    50.08209,
+    20.021031
+  ],
+  "kraków, styczna 1": [
+    50.099577,
+    20.073493
+  ],
+  "kraków, zakole 31": [
+    50.112417,
+    20.057991
+  ],
+  "kraków, osiedle górali 4": [
+    50.080259,
+    20.036452
+  ],
+  "kraków, aleja jana pawła ii 232": [
+    50.070249,
+    20.034698
+  ],
+  "kraków, osiedle centrum a 6a": [
+    50.072605,
+    20.041803
+  ],
+  "kraków, truskawkowa 4": [
+    50.049858,
+    20.128073
+  ],
+  "kraków, osiedle górali 8": [
+    50.079336,
+    20.038242
+  ],
+  "kraków, wróżenicka 10": [
+    50.112136,
+    20.179855
+  ],
+  "kraków, osiedle dywizjonu 303 12": [
+    50.083762,
+    20.004257
+  ],
+  "kraków, kotlarska": [
+    50.055453,
+    19.959247
+  ],
+  "kraków, prądnicka": [
+    50.082602,
+    19.937687
+  ],
+  "kraków, macieja": [
+    50.0836,
+    20.032247
+  ],
+  "kraków, podedworze": [
+    50.011014,
+    19.978059
+  ],
+  "kraków, osiedle dywizjonu 303 49": [
+    50.082312,
+    20.008977
+  ],
+  "kraków, wielicka": [
+    50.017776,
+    19.990315
+  ],
+  "kraków, heleny": [
+    50.013136,
+    20.023667
+  ],
+  "kraków, zachodnia": [
+    50.024405,
+    19.907093
+  ],
+  "kraków, mlaskotów": [
+    50.054999,
+    19.916659
+  ],
+  "kraków, siewna": [
+    50.093443,
+    19.952718
+  ],
+  "kraków, osiedle krakowiaków 18": [
+    50.083202,
+    20.037467
+  ],
+  "kraków, ks. józefa": [
+    50.096571,
+    19.989458
+  ],
+  "kraków, osiedle dywizjonu 303 37": [
+    50.084314,
+    20.011099
+  ],
+  "kraków, prosta": [
+    50.021993,
+    19.989581
+  ],
+  "kraków, gwarna": [
+    50.009053,
+    19.969228
+  ],
+  "kraków, ostatnia": [
+    50.07043,
+    19.97794
+  ],
+  "kraków, lotnicza": [
+    50.073377,
+    19.969463
+  ],
+  "kraków, kosocicka": [
+    50.00399,
+    20.005669
+  ],
+  "kraków, piekarska": [
+    50.048046,
+    19.939923
+  ],
+  "kraków, zygmuntowska": [
+    50.086439,
+    19.907986
+  ],
+  "kraków, lubostroń": [
+    50.015073,
+    19.896385
+  ],
+  "kraków, sołtysowska": [
+    50.064343,
+    20.018214
+  ],
+  "kraków, harcmistrza stanisława": [
+    50.016294,
+    19.943925
+  ],
+  "kraków, krymska": [
+    50.001266,
+    19.895321
+  ],
+  "kraków, profesora": [
+    50.024052,
+    19.853657
+  ],
+  "kraków, lubocka": [
+    50.095411,
+    20.090896
+  ],
+  "kraków, kobierzyńska": [
+    50.023334,
+    19.910493
+  ],
+  "kraków, aleja 29 listopada 195": [
+    50.100563,
+    19.965874
+  ],
+  "kraków, moczydło": [
+    49.991883,
+    19.950506
+  ],
+  "kraków, brzeska": [
+    50.063037,
+    20.194232
+  ],
+  "kraków, ujastek": [
+    50.083718,
+    20.06568
+  ],
+  "kraków, koszykarska": [
+    50.048303,
+    19.98572
+  ],
+  "kraków, obozowa": [
+    50.013353,
+    19.905652
+  ],
+  "kraków, czorsztyńska": [
+    50.020647,
+    19.983816
+  ],
+  "kraków, aleja 29 listopada 191": [
+    50.100695,
+    19.963725
+  ],
+  "kraków, łany": [
+    50.024019,
+    19.913514
+  ],
+  "kraków, beskidzka": [
+    50.016793,
+    19.950653
+  ],
+  "kraków, cystersów": [
+    50.064176,
+    19.969946
+  ],
+  "kraków, majora": [
+    50.090747,
+    19.965143
+  ],
+  "kraków, piotra": [
+    50.036288,
+    19.895424
+  ],
+  "kraków, ćwikłowa": [
+    50.03518,
+    19.889227
+  ],
+  "kraków, murarska": [
+    50.085347,
+    19.911618
+  ],
+  "kraków, grzegórzecka": [
+    50.056971,
+    19.960347
+  ],
+  "kraków, ks.": [
+    50.017408,
+    20.042273
+  ],
+  "kraków, malwowa": [
+    50.016507,
+    19.948238
+  ],
+  "kraków, żaglowa": [
+    50.060527,
+    20.059312
+  ],
+  "kraków, młodzieży": [
+    50.023337,
+    20.003645
+  ],
+  "kraków, grochowa": [
+    50.035721,
+    19.997062
+  ],
+  "kraków, kordiana": [
+    50.011915,
+    19.965041
+  ],
+  "kraków, rusznikarska": [
+    50.084243,
+    19.927075
+  ],
+  "kraków, profesora wojciecha": [
+    49.999524,
+    19.898541
+  ],
+  "kraków, jugowicka": [
+    50.007515,
+    19.929913
+  ],
+  "kraków, stańczyka": [
+    50.078659,
+    19.894057
+  ],
+  "kraków, zabłocie": [
+    50.050329,
+    19.961367
+  ],
+  "kraków, wyżynna": [
+    50.00021,
+    19.962581
+  ],
+  "kraków, mogilska": [
+    50.066523,
+    19.969734
+  ],
+  "kraków, drukarska": [
+    50.023904,
+    19.903729
+  ],
+  "kraków, zawiła": [
+    50.00866,
+    19.907464
+  ],
+  "kraków, bociana": [
+    50.095004,
+    19.954954
+  ],
+  "kraków, saska": [
+    50.043768,
+    19.983676
+  ],
+  "kraków, smoleńsk": [
+    50.058815,
+    19.929368
+  ],
+  "kraków, strzelców": [
+    50.092946,
+    19.975203
+  ],
+  "kraków, św.": [
+    50.061771,
+    19.934284
+  ],
+  "kraków, osiedle 2 pułku lotniczego 21": [
+    50.078865,
+    20.008568
+  ],
+  "kraków, strąkowa": [
+    50.026081,
+    19.923872
+  ],
+  "kraków, wileńska": [
+    50.082118,
+    19.954093
+  ],
+  "kraków, osiedle dywizjonu 303 66": [
+    50.08347,
+    20.006246
+  ],
+  "kraków, aleksandra": [
+    50.011974,
+    19.909557
+  ],
+  "kraków, oboźna": [
+    50.078489,
+    19.927939
+  ],
+  "kraków, janusza": [
+    50.090212,
+    19.940037
+  ],
+  "kraków, osiedle krakowiaków 47": [
+    50.081658,
+    20.040028
+  ],
+  "kraków, osiedle dywizjonu 303 35": [
+    50.084749,
+    20.011654
+  ],
+  "kraków, pilotów": [
+    50.079855,
+    19.972534
+  ],
+  "kraków, krakowska 29": [
+    50.049174,
+    19.942953
+  ],
+  "kraków, plac jana nowaka-jeziorańskiego 3": [
+    50.065481,
+    19.94697
+  ],
+  "kraków, aleja daszyńskiego 22": [
+    50.056599,
+    19.953261
+  ],
+  "kraków, aleja 29 listopada 59": [
+    50.082536,
+    19.952403
+  ],
+  "kraków, ks. j.": [
+    50.017408,
+    20.042273
+  ],
+  "kraków, 28 lipca 1943 17a": [
+    50.06357,
+    19.871638
+  ],
+  "kraków, aleja daszyńskiego 16": [
+    50.05759,
+    19.952249
+  ],
+  "kraków, ul. syrachowska 1": [
+    50.057507,
+    20.050585
+  ],
+  "kraków, księcia józefa 277/l1 277": [],
+  "kraków, osiedle 2 pułku lotniczego": []
 }
