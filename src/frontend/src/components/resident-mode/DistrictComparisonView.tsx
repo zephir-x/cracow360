@@ -57,6 +57,17 @@ export function DistrictComparisonView({
 }: DistrictComparisonViewProps) {
   const { t, language, formatWithPlural, plural } = useTranslation();
   const [cacheVersion, setCacheVersion] = useState<number>(0);
+  const [isMobileScreen, setIsMobileScreen] = useState<boolean>(() =>
+    typeof window !== 'undefined' ? window.innerWidth < 640 : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobileScreen(window.innerWidth < 640);
+    };
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   // Background prefetch: loads all 18 district details once into module-level memory cache
   useEffect(() => {
@@ -128,6 +139,44 @@ export function DistrictComparisonView({
     return secondDetails ? localizeDistrictName(secondDetails.districtName, language) : '';
   }, [secondDetails, language]);
 
+  // Compact, mobile-tailored axis labels prevent SVG text from exceeding mobile screen edge
+  const getPillarLabel = (pillarKey: keyof typeof t.comparison.radarAxes, isMobile: boolean) => {
+    if (!isMobile) return t.comparison.radarAxes[pillarKey];
+    const mobileLabels: Record<string, Record<string, string>> = {
+      pl: {
+        mobility: 'Komunikacja',
+        education: 'Edukacja',
+        greenery: 'Zieleń',
+        culture: 'Kultura',
+        environment: 'Powietrze',
+        safety: 'Bezpieczeństwo',
+        housing: 'Mieszkania',
+        demographics: 'Witalność',
+      },
+      en: {
+        mobility: 'Mobility',
+        education: 'Education',
+        greenery: 'Greenery',
+        culture: 'Culture',
+        environment: 'Environment',
+        safety: 'Safety',
+        housing: 'Housing',
+        demographics: 'Vitality',
+      },
+      ua: {
+        mobility: 'Транспорт',
+        education: 'Освіта',
+        greenery: 'Зелень',
+        culture: 'Культура',
+        environment: 'Екологія',
+        safety: 'Безпека',
+        housing: 'Житло',
+        demographics: 'Вітальність',
+      },
+    };
+    return mobileLabels[language]?.[pillarKey] || mobileLabels.pl[pillarKey] || t.comparison.radarAxes[pillarKey];
+  };
+
   // Radar chart multi-dimensional overlay across 8 quality dimensions
   const radarData = useMemo(() => {
     if (!firstDetails || !secondDetails) return [];
@@ -136,55 +185,55 @@ export function DistrictComparisonView({
 
     return [
       {
-        pillar: t.comparison.radarAxes.mobility,
+        pillar: getPillarLabel('mobility', isMobileScreen),
         [name1]: Number(firstDetails.scores.mobilityScore.toFixed(1)),
         [name2]: Number(secondDetails.scores.mobilityScore.toFixed(1)),
         fullMark: 100,
       },
       {
-        pillar: t.comparison.radarAxes.education,
+        pillar: getPillarLabel('education', isMobileScreen),
         [name1]: Number(firstDetails.scores.educationScore.toFixed(1)),
         [name2]: Number(secondDetails.scores.educationScore.toFixed(1)),
         fullMark: 100,
       },
       {
-        pillar: t.comparison.radarAxes.greenery,
+        pillar: getPillarLabel('greenery', isMobileScreen),
         [name1]: Number(firstDetails.scores.greeneryScore.toFixed(1)),
         [name2]: Number(secondDetails.scores.greeneryScore.toFixed(1)),
         fullMark: 100,
       },
       {
-        pillar: t.comparison.radarAxes.culture,
+        pillar: getPillarLabel('culture', isMobileScreen),
         [name1]: Number(firstDetails.scores.cultureAndSeniorScore.toFixed(1)),
         [name2]: Number(secondDetails.scores.cultureAndSeniorScore.toFixed(1)),
         fullMark: 100,
       },
       {
-        pillar: t.comparison.radarAxes.environment,
+        pillar: getPillarLabel('environment', isMobileScreen),
         [name1]: Number(firstDetails.scores.environmentScore.toFixed(1)),
         [name2]: Number(secondDetails.scores.environmentScore.toFixed(1)),
         fullMark: 100,
       },
       {
-        pillar: t.comparison.radarAxes.safety,
+        pillar: getPillarLabel('safety', isMobileScreen),
         [name1]: Number(firstDetails.scores.safetyScore.toFixed(1)),
         [name2]: Number(secondDetails.scores.safetyScore.toFixed(1)),
         fullMark: 100,
       },
       {
-        pillar: t.comparison.radarAxes.housing,
+        pillar: getPillarLabel('housing', isMobileScreen),
         [name1]: Number(firstDetails.scores.housingAffordabilityScore.toFixed(1)),
         [name2]: Number(secondDetails.scores.housingAffordabilityScore.toFixed(1)),
         fullMark: 100,
       },
       {
-        pillar: t.comparison.radarAxes.demographics,
+        pillar: getPillarLabel('demographics', isMobileScreen),
         [name1]: Number(firstDetails.scores.demographicVitalityScore.toFixed(1)),
         [name2]: Number(secondDetails.scores.demographicVitalityScore.toFixed(1)),
         fullMark: 100,
       },
     ];
-  }, [firstDetails, secondDetails, localizedFirstDistrictName, localizedSecondDistrictName, t.comparison.radarAxes]);
+  }, [firstDetails, secondDetails, localizedFirstDistrictName, localizedSecondDistrictName, t.comparison.radarAxes, isMobileScreen, language]);
 
   // Hard infrastructure, housing, safety & demographic metrics table rows with linguistically accurate plurals
   const metricRows: MetricRowDef[] = useMemo(() => {
@@ -453,11 +502,11 @@ export function DistrictComparisonView({
 
       {/* Expandable Drawer: Radar Chart 8 Osi & Detailed Hard Data Table */}
       <div className={`drawer-expandable ${isComparisonOpen ? 'is-open' : ''}`}>
-        <div className="overflow-hidden space-y-6 pt-1">
+        <div className="overflow-hidden space-y-6 pt-1 min-w-0 max-w-full">
           {activeComparison && (
-            <div className="space-y-6 pt-4 border-t border-slate-100">
+            <div className="space-y-6 pt-4 border-t border-slate-100 min-w-0 max-w-full">
               {/* Comparative Radar Chart */}
-              <div className="p-5 sm:p-6 rounded-3xl bg-slate-50/70 border border-slate-200 space-y-4">
+              <div className="p-3 sm:p-6 rounded-3xl bg-slate-50/70 border border-slate-200 space-y-4 min-w-0 max-w-full overflow-hidden">
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-center sm:text-left">
                   <div>
                     <h3 className="text-sm font-extrabold text-slate-900 flex items-center justify-center sm:justify-start gap-2">
@@ -471,13 +520,13 @@ export function DistrictComparisonView({
                   <span className="text-[11px] text-slate-500">{t.comparison.scaleNote}</span>
                 </div>
 
-                <div className="w-full max-w-full overflow-hidden min-w-0 h-64 sm:h-80 md:h-96">
+                <div className="w-full max-w-full overflow-hidden min-w-0 h-72 sm:h-96 lg:h-[460px]">
                   <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart cx="50%" cy="50%" outerRadius="58%" data={activeComparison.radar}>
+                    <RadarChart cx="50%" cy="50%" outerRadius={isMobileScreen ? '48%' : '75%'} data={activeComparison.radar}>
                       <PolarGrid stroke="#e2e8f0" strokeDasharray="3 3" />
                       <PolarAngleAxis
                         dataKey="pillar"
-                        tick={{ fill: '#334155', fontSize: 10, fontWeight: 700 }}
+                        tick={{ fill: '#334155', fontSize: isMobileScreen ? 9.5 : 11, fontWeight: 700 }}
                       />
                       <PolarRadiusAxis
                         angle={30}
@@ -515,29 +564,39 @@ export function DistrictComparisonView({
               </div>
 
               {/* Comprehensive Hard Data Metrics Table */}
-              <div className="space-y-3">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-center sm:text-left">
+              <div className="space-y-3 min-w-0 max-w-full">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-center sm:text-left">
                   <h4 className="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center justify-center sm:justify-start gap-2">
                     <ArrowLeftRight className="w-4 h-4 text-blue-600" />
                     {t.comparison.tableTitle}
                   </h4>
-                  <span className="text-[11px] text-slate-500">
-                    {t.comparison.tableSubtitle}
-                  </span>
+                  <div className="flex items-center justify-center sm:justify-end gap-2">
+                    <span className="sm:hidden inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-[10px] font-bold bg-blue-50 text-blue-700 border border-blue-200 shadow-xs">
+                      <ArrowLeftRight className="w-3 h-3 text-blue-600" />
+                      {language === 'en'
+                        ? 'Swipe horizontally for difference'
+                        : language === 'ua'
+                        ? 'Проведіть убік, щоб побачити різницю'
+                        : 'Przesuń w bok, aby zobaczyć różnicę'}
+                    </span>
+                    <span className="hidden sm:inline text-[11px] text-slate-500">
+                      {t.comparison.tableSubtitle}
+                    </span>
+                  </div>
                 </div>
 
-                <div className="w-full max-w-full overflow-x-auto rounded-2xl border border-slate-200">
-                  <table className="w-full min-w-130 text-left text-xs">
+                <div className="w-full max-w-full overflow-x-auto rounded-2xl border border-slate-200 touch-pan-x overscroll-x-contain">
+                  <table className="w-full min-w-[560px] text-left text-xs">
                     <thead className="bg-slate-100/90 text-slate-700 font-bold border-b border-slate-200">
                       <tr>
-                        <th className="py-3 px-4 w-1/4">{t.comparison.categoryAndMetric}</th>
-                        <th className="py-3 px-4 text-center w-1/4 text-blue-700 font-extrabold">
+                        <th className="py-3 px-4 min-w-[170px]">{t.comparison.categoryAndMetric}</th>
+                        <th className="py-3 px-3 text-center min-w-[125px] text-blue-700 font-extrabold">
                           {activeComparison.firstLocalizedName}
                         </th>
-                        <th className="py-3 px-4 text-center w-1/4 text-indigo-700 font-extrabold">
+                        <th className="py-3 px-3 text-center min-w-[125px] text-indigo-700 font-extrabold">
                           {activeComparison.secondLocalizedName}
                         </th>
-                        <th className="py-3 px-6 text-center w-36 whitespace-nowrap">{t.comparison.difference}</th>
+                        <th className="py-3 px-4 text-center min-w-[140px] whitespace-nowrap">{t.comparison.difference}</th>
                       </tr>
                     </thead>
                     <tbody className="divide-y divide-slate-100 bg-white">
@@ -582,14 +641,14 @@ export function DistrictComparisonView({
 
                         return (
                           <tr key={idx} className="hover:bg-blue-50/30 transition-colors">
-                            <td className="py-2.5 px-4">
+                            <td className="py-2.5 px-4 min-w-[170px]">
                               <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400 block">
                                 {localizedCategory}
                               </span>
                               <span className="font-medium text-slate-800">{localizedLabel}</span>
                             </td>
                             <td
-                              className={`py-2.5 px-4 text-center font-bold ${
+                              className={`py-2.5 px-3 text-center min-w-[125px] font-bold ${
                                 firstIsBetter ? 'text-emerald-600 bg-emerald-50/40' : 'text-slate-700'
                               }`}
                             >
@@ -599,7 +658,7 @@ export function DistrictComparisonView({
                               </span>
                             </td>
                             <td
-                              className={`py-2.5 px-4 text-center font-bold ${
+                              className={`py-2.5 px-3 text-center min-w-[125px] font-bold ${
                                 secondIsBetter ? 'text-emerald-600 bg-emerald-50/40' : 'text-slate-700'
                               }`}
                             >
@@ -608,7 +667,7 @@ export function DistrictComparisonView({
                                 {secondIsBetter && <CheckCircle2 className="w-3 h-3 text-emerald-500 inline" />}
                               </span>
                             </td>
-                            <td className="py-2.5 px-6 text-center font-extrabold text-[11px] text-slate-600 whitespace-nowrap">
+                            <td className="py-2.5 px-4 text-center min-w-[140px] font-extrabold text-[11px] text-slate-600 whitespace-nowrap">
                               {diff === 0 ? (
                                 <span className="text-slate-400">{t.comparison.equal}</span>
                               ) : (

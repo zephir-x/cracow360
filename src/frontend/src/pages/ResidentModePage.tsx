@@ -423,10 +423,10 @@ export function ResidentModePage({
           </div>
 
           {/* Centered "How does it work?" button placed symmetrically at the bottom */}
-          <div className="flex justify-center pt-2">
+          <div className="w-full flex justify-center pt-3 pb-1">
             <button
               onClick={() => setShowHowItWorks((prev) => !prev)}
-              className="inline-flex items-center gap-2 px-5 py-2 rounded-full text-xs font-bold bg-white/10 hover:bg-white/20 text-white border border-white/20 backdrop-blur-md transition cursor-pointer"
+              className="inline-flex items-center gap-2.5 px-6 py-2.5 rounded-2xl text-xs sm:text-sm font-bold bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-md transition shadow-xs cursor-pointer active:scale-95"
             >
               <HelpCircle className="w-4 h-4 text-sky-300" />
               <span>{t.hero.howItWorksBtn}</span>

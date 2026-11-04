@@ -415,31 +415,61 @@ export function AboutDataMethodologyPage({
                 </div>
               </div>
 
-              {/* Category Pills with horizontal swipe on mobile and clean wrap on desktop */}
-              <div className="flex sm:flex-wrap items-center gap-1.5 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
-                {categoryTabs.map((tab) => (
-                  <button
-                    key={tab.key}
-                    type="button"
-                    onClick={() => handleCategoryChange(tab.key)}
-                    className={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
-                      activeCategory === tab.key
-                        ? 'bg-blue-600 text-white shadow-xs'
-                        : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-                    }`}
-                  >
-                    <span>{tab.label}</span>
-                    <span
-                      className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+              {/* Category Pills: Balanced 5-per-row layout (5 on row 1, 5 on row 2) with smooth mobile scroll */}
+              <div className="flex flex-col gap-1.5">
+                {/* Row 1: First 5 Category Pills */}
+                <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5 sm:pb-0">
+                  {categoryTabs.slice(0, 5).map((tab) => (
+                    <button
+                      key={tab.key}
+                      type="button"
+                      onClick={() => handleCategoryChange(tab.key)}
+                      className={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
                         activeCategory === tab.key
-                          ? 'bg-blue-700 text-white'
-                          : 'bg-slate-100 text-slate-500'
+                          ? 'bg-blue-600 text-white shadow-xs'
+                          : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
                       }`}
                     >
-                      {tab.count}
-                    </span>
-                  </button>
-                ))}
+                      <span>{tab.label}</span>
+                      <span
+                        className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                          activeCategory === tab.key
+                            ? 'bg-blue-700 text-white'
+                            : 'bg-slate-100 text-slate-500'
+                        }`}
+                      >
+                        {tab.count}
+                      </span>
+                    </button>
+                  ))}
+                </div>
+
+                {/* Row 2: Second 5 Category Pills */}
+                <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar pb-0.5 sm:pb-0">
+                  {categoryTabs.slice(5, 10).map((tab) => (
+                    <button
+                      key={tab.key}
+                      type="button"
+                      onClick={() => handleCategoryChange(tab.key)}
+                      className={`shrink-0 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer flex items-center gap-1.5 ${
+                        activeCategory === tab.key
+                          ? 'bg-blue-600 text-white shadow-xs'
+                          : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
+                      }`}
+                    >
+                      <span>{tab.label}</span>
+                      <span
+                        className={`text-[10px] px-1.5 py-0.2 rounded-full ${
+                          activeCategory === tab.key
+                            ? 'bg-blue-700 text-white'
+                            : 'bg-slate-100 text-slate-500'
+                        }`}
+                      >
+                        {tab.count}
+                      </span>
+                    </button>
+                  ))}
+                </div>
               </div>
             </div>
 

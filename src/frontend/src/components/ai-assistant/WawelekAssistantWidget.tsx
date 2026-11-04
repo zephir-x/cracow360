@@ -388,7 +388,7 @@ export function WawelekAssistantWidget({
           <section
             role="dialog"
             aria-label={i18n.headerTitle}
-            className="pointer-events-auto mb-2 sm:mb-3 w-[calc(100vw-1.5rem)] sm:w-115 md:w-130 max-h-[84vh] sm:max-h-[min(82vh,690px)] flex flex-col rounded-3xl bg-white/98 border border-sky-200/90 shadow-[0_25px_70px_-12px_rgba(10,46,101,0.48)] overflow-hidden wawelek-chatbox-enter"
+            className="pointer-events-auto mb-2 sm:mb-3 w-[calc(100vw-1.5rem)] sm:w-115 md:w-130 wawelek-chatbox-panel flex flex-col rounded-3xl bg-white/98 border border-sky-200/90 shadow-[0_25px_70px_-12px_rgba(10,46,101,0.48)] overflow-hidden wawelek-chatbox-enter"
           >
             {/* Top Royal Krakow Blue Header with Animated Mascot Companion Stage */}
             <header className="relative bg-linear-to-r from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white px-4 py-3.5 shrink-0 overflow-hidden">

@@ -603,7 +603,7 @@ export function VelocityScrollScrubSection({
             return (
               <div
                 key={activeChapter.id}
-                className={`w-full flex justify-center sm:justify-start ${
+                className={`w-full flex justify-center ${
                   activeChapter.align === 'right' ? 'sm:justify-end' : 'sm:justify-start'
                 }`}
               >

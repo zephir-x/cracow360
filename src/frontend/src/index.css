@@ -103,6 +103,9 @@ html, body {
 .drawer-expandable {
   display: grid;
   grid-template-rows: 0fr;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
   opacity: 0;
   filter: blur(8px);
   transform: scale(0.985);
@@ -127,11 +130,17 @@ html, body {
   padding: 0 !important;
   border: none !important;
   min-height: 0;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
   overflow: hidden !important;
 }
 
 .drawer-expandable > div {
   min-height: 0;
+  min-width: 0;
+  max-width: 100%;
+  width: 100%;
   overflow: hidden;
 }
 
@@ -142,13 +151,16 @@ html, body {
   transform: scale(1);
   pointer-events: auto;
   max-width: 100%;
+  width: 100%;
   overflow-x: clip;
 }
 
 /* Cushion buffer for child box-shadows to bloom naturally without horizontal blowout */
 .drawer-expandable.is-open > div {
   min-height: 0;
+  min-width: 0;
   max-width: 100%;
+  width: 100%;
   overflow-x: clip;
   padding: 8px 4px 28px 4px;
 }
@@ -321,6 +333,23 @@ html {
   animation: wawelekChatboxEnter 0.42s cubic-bezier(0.16, 1, 0.3, 1) forwards;
   transform-origin: bottom right;
   will-change: transform, opacity, filter;
+}
+
+/* Dedicated responsive height ensuring bottom-anchored chatbox top is never clipped by mobile address bars */
+.wawelek-chatbox-panel {
+  max-height: calc(100vh - 10.5rem);
+}
+
+@supports (max-height: 100dvh) {
+  .wawelek-chatbox-panel {
+    max-height: calc(100dvh - 7.5rem - env(safe-area-inset-top, 0px) - env(safe-area-inset-bottom, 0px));
+  }
+}
+
+@media (min-width: 640px) {
+  .wawelek-chatbox-panel {
+    max-height: min(calc(100dvh - 7.5rem), 590px);
+  }
 }
 
 /* Base FAB pill: zero shadow at rest, rich deep blue surface unaffected by outer glow */
@@ -508,4 +537,21 @@ html {
 /* Custom cursive / handwriting font class for playful civic branding */
 .font-handwriting {
   font-family: 'Caveat', 'Dancing Script', cursive, sans-serif;
+}
+
+/* Recharts responsive containment safety */
+.recharts-responsive-container {
+  max-width: 100% !important;
+  min-width: 0 !important;
+  width: 100% !important;
+}
+
+.recharts-surface {
+  max-width: 100% !important;
+}
+
+/* Touch action pan for horizontally scrollable tables */
+.touch-pan-x {
+  touch-action: pan-x pan-y !important;
+  -webkit-overflow-scrolling: touch !important;
 }
