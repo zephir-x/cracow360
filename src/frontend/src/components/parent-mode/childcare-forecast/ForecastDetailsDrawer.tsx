@@ -41,10 +41,10 @@ export function ForecastDetailsDrawer({
     <div className={`drawer-expandable ${isOpen ? 'is-open' : ''}`}>
       <div className="overflow-hidden" ref={recommendationRef}>
         {activeDistrictData && (
-          <div className="p-6 sm:p-7 rounded-3xl bg-linear-to-b from-indigo-50/40 via-white to-white border border-indigo-200/90 shadow-xl shadow-indigo-950/8 text-slate-900 space-y-5">
+          <div className="p-4 sm:p-7 rounded-3xl bg-linear-to-b from-indigo-50/40 via-white to-white border border-indigo-200/90 shadow-xl shadow-indigo-950/8 text-slate-900 space-y-5">
             {/* Header */}
-            <div className="flex items-start justify-between gap-4 border-b border-slate-100 pb-4">
-              <div className="space-y-1">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 border-b border-slate-100 pb-4 text-center sm:text-left">
+              <div className="space-y-1 flex flex-col items-center sm:items-start">
                 <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-indigo-50 border border-indigo-200 text-indigo-700 text-xs font-bold">
                   <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
                   {labels.recommendationBadge}
@@ -56,7 +56,7 @@ export function ForecastDetailsDrawer({
               <button
                 type="button"
                 onClick={onClose}
-                className="p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
+                className="self-end sm:self-auto p-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-500 hover:text-slate-800 transition-colors cursor-pointer"
                 aria-label={labels.close}
               >
                 <X className="w-5 h-5" />

@@ -30,7 +30,7 @@ export function HomeShowcasePage({ onSelectTab }: HomeShowcasePageProps) {
   };
 
   return (
-    <div className="w-full overflow-x-clip">
+    <div className="w-full">
       {/* UNIFIED ACT I & ACT II STAGE: In-Place Hero Dissolve + Controlled Drone Scroll-Scrubbing */}
       <VelocityScrollScrubSection
         heroCopy={copy.hero}

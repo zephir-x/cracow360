@@ -29,7 +29,7 @@ export function DistrictRankingList({
   const locale = language === 'ua' ? 'uk-UA' : language === 'en' ? 'en-US' : 'pl-PL';
 
   return (
-    <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-5 shadow-xl shadow-blue-900/5 flex flex-col h-162.5">
+    <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-4 sm:p-5 shadow-xl shadow-blue-900/5 flex flex-col h-auto xl:h-162.5">
       {/* Header */}
       <div className="flex items-center justify-between gap-2 border-b border-slate-100 pb-3.5 shrink-0">
         <div className="flex items-center gap-2.5 min-w-0">
@@ -37,8 +37,8 @@ export function DistrictRankingList({
             <Trophy className="w-4 h-4" />
           </div>
           <div className="min-w-0">
-            <h3 className="text-sm font-extrabold text-slate-900 whitespace-nowrap">{t.ranking.title}</h3>
-            <p className="text-[11px] text-slate-500 whitespace-nowrap">
+            <h3 className="text-sm font-extrabold text-slate-900 truncate">{t.ranking.title}</h3>
+            <p className="text-[11px] text-slate-500 truncate sm:whitespace-nowrap">
               {t.ranking.subtitle}
             </p>
           </div>
@@ -48,8 +48,8 @@ export function DistrictRankingList({
         </span>
       </div>
 
-      {/* Scrollable Live Ranking List */}
-      <div className="mt-3.5 flex-1 overflow-y-auto pr-1.5 space-y-2.5">
+      {/* Scrollable Live Ranking List: Horizontal carousel on mobile/tablet (< xl), vertical list on desktop (xl+) */}
+      <div className="mt-3.5 flex xl:flex-col overflow-x-auto xl:overflow-y-auto pr-1.5 gap-2.5 xl:space-y-2.5 no-scrollbar pb-2 xl:pb-0">
         {districts.map((district, index) => {
           const rank = index + 1;
           const isPrimary = district.districtId === selectedPrimaryId;
@@ -61,7 +61,7 @@ export function DistrictRankingList({
             <button
               key={district.districtId}
               onClick={() => onSelectDistrict(district.districtId)}
-              className={`w-full text-left p-3 rounded-2xl border cursor-pointer block transition-all duration-200 ${
+              className={`shrink-0 w-64 sm:w-72 xl:w-full text-left p-3 rounded-2xl border cursor-pointer block transition-all duration-200 ${
                 isPrimary
                   ? 'bg-blue-50/90 border-blue-500 shadow-md shadow-blue-600/10'
                   : isSecondary

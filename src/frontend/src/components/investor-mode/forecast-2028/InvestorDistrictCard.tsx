@@ -38,10 +38,10 @@ export function InvestorDistrictCard({
       }`}
     >
       <div className="space-y-3">
-        {/* Header: Clean District Name & Modern B2B Badge */}
-        <div className="flex items-start justify-between gap-2.5">
-          <h3 className="text-base font-extrabold text-slate-900 leading-snug tracking-tight truncate">
-            {localizedName}
+        {/* Header: Clean District Name & Modern B2B Badge (removed redundant 'Dzielnica' to avoid truncation) */}
+        <div className="flex items-start justify-between gap-2">
+          <h3 className="text-sm sm:text-base font-extrabold text-slate-900 leading-snug tracking-tight">
+            {localizedName.replace(/^(Dzielnica|District|Район)\s+/i, '')}
           </h3>
           <span
             className={`text-[11px] px-2.5 py-1 rounded-xl border shrink-0 text-center leading-tight transition-transform ${getBadgeStyle(

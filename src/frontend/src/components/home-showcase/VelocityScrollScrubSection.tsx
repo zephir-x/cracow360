@@ -459,8 +459,8 @@ export function VelocityScrollScrubSection({
       className="relative w-full h-[1220vh] select-none"
       aria-label="Kraków360 Hero & Controlled Drone Scroll-Scrubbing"
     >
-      {/* Unified Pinned Viewport sitting directly below MainNavbar (58px / 3.625rem) */}
-      <div className="sticky top-14.5 w-full h-[calc(100vh-3.625rem)] overflow-hidden bg-slate-950">
+      {/* Unified Pinned Viewport sitting directly below MainNavbar (54px mobile / 58px sm+) */}
+      <div className="sticky top-13.5 sm:top-14.5 w-full h-[calc(100vh-54px)] sm:h-[calc(100vh-58px)] overflow-hidden bg-slate-950">
         {/* ACT I OVERLAY (Z-30): Dissolves directly in-place over Act II */}
         <HeroDualVisionMask
           copy={heroCopy}
@@ -493,26 +493,32 @@ export function VelocityScrollScrubSection({
           className="pointer-events-none absolute inset-0 bg-radial from-transparent via-slate-950/15 to-slate-950/65"
         />
 
-        {/* TOP FLIGHT TELEMETRY HUD (Minimalist transparent labels + Autopilot + Pill Skip Button) */}
+        {/* TOP FLIGHT TELEMETRY HUD (Minimalist, spacious and breathable on mobile) */}
         <div
           style={{
             opacity: hudFadeOpacity,
             pointerEvents: hudFadeOpacity < 0.15 ? 'none' : 'auto',
           }}
-          className="relative z-20 max-w-360 mx-auto px-4 sm:px-8 pt-6 sm:pt-7 flex flex-wrap items-center justify-between gap-3"
+          className="relative z-20 max-w-360 mx-auto px-4 sm:px-8 pt-5 sm:pt-7 flex items-center justify-between gap-3"
         >
-          {/* Left: Minimalist "Flight path zone" + Interactive "Autopilot" Trigger */}
-          <div className="flex items-center gap-4 sm:gap-5">
-            <div className="inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold tracking-wide text-sky-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
-              <Film className="w-4 h-4 text-sky-400" />
-              <span>{copy.hudZoneBadge}</span>
+          {/* Left: Zone icon (or badge on desktop) + Interactive Autopilot button */}
+          <div className="flex items-center gap-2 sm:gap-5">
+            <div
+              className="inline-flex items-center gap-1.5 sm:gap-2 text-xs sm:text-sm font-extrabold tracking-wide text-sky-300 drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]"
+              title={copy.hudZoneBadge}
+            >
+              <Film className="w-4 h-4 text-sky-400 shrink-0" />
+              <span className="hidden sm:inline">{copy.hudZoneBadge}</span>
             </div>
 
-            <span className="text-white/30 font-light select-none">|</span>
+            <span className="hidden sm:inline text-white/30 font-light select-none">|</span>
 
+            {/* Autopilot Button: Sleek icon button on mobile, full label on desktop */}
             <button
               type="button"
               onClick={handleToggleAutopilot}
+              title={isAutopilot ? copy.autopilotActiveLabel : copy.autopilotIdleLabel}
+              aria-label={isAutopilot ? copy.autopilotActiveLabel : copy.autopilotIdleLabel}
               className={`group inline-flex items-center gap-2 text-xs sm:text-sm font-extrabold tracking-wide transition-all cursor-pointer drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)] ${
                 isAutopilot
                   ? 'text-emerald-300 hover:text-emerald-200'
@@ -520,7 +526,7 @@ export function VelocityScrollScrubSection({
               }`}
             >
               <span
-                className={`w-6 h-6 rounded-full flex items-center justify-center transition-colors ${
+                className={`w-7 h-7 sm:w-6 sm:h-6 rounded-full flex items-center justify-center transition-colors ${
                   isAutopilot
                     ? 'bg-emerald-500/30 border border-emerald-400/70 text-emerald-300 shadow-[0_0_16px_rgba(16,185,129,0.5)]'
                     : 'bg-white/15 group-hover:bg-sky-500/30 border border-white/25 text-sky-300'
@@ -532,15 +538,15 @@ export function VelocityScrollScrubSection({
                   <Play className="w-3 h-3 fill-current ml-0.5" />
                 )}
               </span>
-              <span>
+              <span className="hidden sm:inline">
                 {isAutopilot ? copy.autopilotActiveLabel : copy.autopilotIdleLabel}
               </span>
             </button>
           </div>
 
-          {/* Right: Minimalist Frame Counter + Pill-Styled Skip Button */}
-          <div className="flex items-center gap-4">
-            {/* Minimalist Frame Counter (no background box) */}
+          {/* Right: Minimalist Frame Counter (desktop) + Skip Button */}
+          <div className="flex items-center gap-2 sm:gap-4">
+            {/* Minimalist Frame Counter (desktop only) */}
             <div className="hidden sm:inline-flex items-center gap-2 text-xs font-mono text-white drop-shadow-[0_2px_10px_rgba(0,0,0,0.85)]">
               <span className="text-slate-300">{copy.hudFrameLabel}:</span>
               <span className="font-extrabold text-sky-300">
@@ -548,23 +554,25 @@ export function VelocityScrollScrubSection({
               </span>
             </div>
 
-            {/* Skip to Finale Button (keeps pill styling as requested) */}
+            {/* Skip to Finale Button: Compact icon button on mobile, pill label on desktop */}
             <button
               type="button"
               onClick={() => {
                 stopAutopilot();
                 onSkipToFinale();
               }}
-              className="px-3.5 py-1.5 rounded-full bg-white/12 hover:bg-white/22 backdrop-blur-xl border border-white/25 text-[11px] font-bold text-white flex items-center gap-1.5 transition cursor-pointer shadow-lg"
+              title={copy.skipToFinaleLabel}
+              aria-label={copy.skipToFinaleLabel}
+              className="w-7 h-7 sm:w-auto p-0 sm:px-3.5 sm:py-1.5 rounded-full bg-white/12 hover:bg-white/22 backdrop-blur-xl border border-white/25 text-[11px] font-bold text-white flex items-center justify-center sm:justify-start gap-1.5 transition cursor-pointer shadow-lg"
             >
-              <span>{copy.skipToFinaleLabel}</span>
+              <span className="hidden sm:inline">{copy.skipToFinaleLabel}</span>
               <FastForward className="w-3.5 h-3.5 text-sky-300" />
             </button>
           </div>
         </div>
 
         {/* CHOREOGRAPHED 3D NARRATIVE STORY CARD (SINGLE ACTIVE CARD STAGE) */}
-        <div className="relative z-20 max-w-360 mx-auto px-4 sm:px-8 h-[calc(100vh-180px)] flex items-center pointer-events-none">
+        <div className="relative z-20 max-w-360 mx-auto px-3 sm:px-8 h-[calc(100vh-140px)] sm:h-[calc(100vh-180px)] flex items-center pointer-events-none">
           {activeChapter && (() => {
             const [start, end] = activeChapter.scrollRange;
             const span = Math.max(0.01, end - start);
@@ -595,12 +603,12 @@ export function VelocityScrollScrubSection({
             return (
               <div
                 key={activeChapter.id}
-                className={`w-full flex ${
-                  activeChapter.align === 'right' ? 'justify-end' : 'justify-start'
+                className={`w-full flex justify-center sm:justify-start ${
+                  activeChapter.align === 'right' ? 'sm:justify-end' : 'sm:justify-start'
                 }`}
               >
                 <article
-                  className="w-full max-w-xl p-6 sm:p-7 rounded-3xl bg-slate-950/78 backdrop-blur-2xl border border-white/20 shadow-[0_25px_70px_rgba(0,0,0,0.65)] text-white pointer-events-auto"
+                  className="w-full max-w-xl p-4 sm:p-7 rounded-2xl sm:rounded-3xl bg-slate-950/85 sm:bg-slate-950/78 backdrop-blur-2xl border border-white/20 shadow-[0_25px_70px_rgba(0,0,0,0.65)] text-white pointer-events-auto max-h-[72vh] sm:max-h-none overflow-y-auto sm:overflow-visible"
                   style={{
                     opacity,
                     transform: `perspective(1100px) translate3d(0, ${translateY.toFixed(1)}px, 0) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) scale(${scale.toFixed(3)})`,
@@ -608,9 +616,9 @@ export function VelocityScrollScrubSection({
                   }}
                 >
                   {/* Chapter Number & Pillar Badge */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-300 text-[11px] font-extrabold tracking-wider uppercase">
-                      <Sparkles className="w-3.5 h-3.5 text-sky-400" />
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-2 sm:mb-3">
+                    <span className="inline-flex items-center gap-1.5 px-2.5 sm:px-3 py-0.5 sm:py-1 rounded-full bg-sky-500/20 border border-sky-400/40 text-sky-300 text-[10px] sm:text-[11px] font-extrabold tracking-wider uppercase">
+                      <Sparkles className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-sky-400" />
                       {activeChapter.badge}
                     </span>
                     <span className="font-mono text-xs font-extrabold text-slate-400">
@@ -619,13 +627,13 @@ export function VelocityScrollScrubSection({
                   </div>
 
                   {/* Chapter Title */}
-                  <h3 className="text-2xl sm:text-3xl font-black tracking-tight text-white leading-tight mb-3">
+                  <h3 className="text-xl sm:text-3xl font-black tracking-tight text-white leading-tight mb-2 sm:mb-3">
                     {activeChapter.title}
                   </h3>
 
                   {/* Highlight Stat Callout Box */}
-                  <div className="p-3.5 rounded-2xl bg-linear-to-r from-blue-600/25 via-sky-500/15 to-transparent border border-sky-400/30 flex items-center gap-3.5 mb-3.5">
-                    <span className="text-2xl sm:text-3xl font-black text-sky-300 shrink-0 font-mono">
+                  <div className="p-2.5 sm:p-3.5 rounded-xl sm:rounded-2xl bg-linear-to-r from-blue-600/25 via-sky-500/15 to-transparent border border-sky-400/30 flex items-center gap-2.5 sm:gap-3.5 mb-2.5 sm:mb-3.5">
+                    <span className="text-xl sm:text-3xl font-black text-sky-300 shrink-0 font-mono">
                       {activeChapter.highlightStat}
                     </span>
                     <span className="text-xs sm:text-sm text-slate-200 font-medium leading-snug">
@@ -634,18 +642,18 @@ export function VelocityScrollScrubSection({
                   </div>
 
                   {/* Narrative Description */}
-                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-3.5">
+                  <p className="text-xs sm:text-sm text-slate-300 leading-relaxed mb-2.5 sm:mb-3.5">
                     {activeChapter.description}
                   </p>
 
                   {/* Key Feature Bullets */}
-                  <ul className="space-y-1.5 mb-4">
+                  <ul className="space-y-1 sm:space-y-1.5 mb-3 sm:mb-4">
                     {activeChapter.bullets.map((bullet, idx) => (
                       <li
                         key={idx}
-                        className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200"
+                        className="flex items-start gap-2 sm:gap-2.5 text-xs sm:text-sm text-slate-200"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-sky-400 shrink-0 mt-0.5" />
+                        <CheckCircle2 className="w-3.5 sm:w-4 h-3.5 sm:h-4 text-sky-400 shrink-0 mt-0.5" />
                         <span>{bullet}</span>
                       </li>
                     ))}
@@ -659,7 +667,7 @@ export function VelocityScrollScrubSection({
                         stopAutopilot();
                         onSelectTab(activeChapter.targetTab!);
                       }}
-                      className="group px-5 py-2.5 rounded-xl bg-linear-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg shadow-blue-600/30 transition-all cursor-pointer"
+                      className="group px-4 sm:px-5 py-2 sm:py-2.5 rounded-xl bg-linear-to-r from-blue-600 to-sky-500 hover:from-blue-500 hover:to-sky-400 text-white font-bold text-xs sm:text-sm inline-flex items-center gap-2 shadow-lg shadow-blue-600/30 transition-all cursor-pointer"
                     >
                       <span>{activeChapter.ctaLabel}</span>
                       <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
@@ -677,10 +685,10 @@ export function VelocityScrollScrubSection({
             opacity: hudFadeOpacity,
             pointerEvents: hudFadeOpacity < 0.15 ? 'none' : 'auto',
           }}
-          className="absolute bottom-6 sm:bottom-7 inset-x-0 z-20 max-w-360 mx-auto px-4 sm:px-8"
+          className="absolute bottom-3 sm:bottom-7 inset-x-0 z-20 max-w-360 mx-auto px-3 sm:px-8"
         >
-          <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4">
-            <div className="flex items-center justify-between w-full sm:w-auto gap-2.5 text-[11px] font-mono text-slate-200 shrink-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
+          <div className="flex flex-col sm:flex-row sm:flex-nowrap items-center gap-2 sm:gap-4">
+            <div className="flex items-center justify-between w-full sm:w-auto gap-2 text-[10px] sm:text-[11px] font-mono text-slate-200 shrink-0 drop-shadow-[0_2px_8px_rgba(0,0,0,0.9)]">
               <span className="font-bold tracking-wider">{copy.hudProgressLabel}</span>
               <span className="font-extrabold text-sky-300">
                 {Math.round(displayProgress * 100)}%
@@ -688,7 +696,7 @@ export function VelocityScrollScrubSection({
             </div>
 
             {/* Minimalist Timeline Bar */}
-            <div className="relative flex-1 w-full h-1.5 rounded-full bg-white/25 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
+            <div className="relative w-full sm:w-auto sm:flex-1 h-1.5 rounded-full bg-white/25 overflow-hidden shadow-[0_2px_10px_rgba(0,0,0,0.6)]">
               <div
                 className="h-full rounded-full bg-linear-to-r from-blue-500 via-sky-400 to-emerald-400"
                 style={{ width: `${(displayProgress * 100).toFixed(1)}%` }}
@@ -696,7 +704,7 @@ export function VelocityScrollScrubSection({
             </div>
 
             {/* 8 Chapter Checkpoint Triggers (Minimalist numbers) */}
-            <div className="flex items-center gap-1 sm:gap-1.5 shrink-0">
+            <div className="flex items-center justify-center gap-0.5 sm:gap-1.5 shrink-0 no-scrollbar py-0.5">
               {copy.chapters.map((ch, idx) => {
                 const [s, e] = ch.scrollRange;
                 const isActive = displayProgress >= s && displayProgress <= e;
@@ -706,10 +714,10 @@ export function VelocityScrollScrubSection({
                     type="button"
                     onClick={() => scrollToFlightProgress((s + e) * 0.5)}
                     title={ch.title}
-                    className={`px-2 py-1 rounded-md font-mono text-[11px] font-extrabold transition cursor-pointer drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] ${
+                    className={`px-1.5 sm:px-2 py-0.5 sm:py-1 rounded-md font-mono text-[10px] sm:text-[11px] font-extrabold transition cursor-pointer drop-shadow-[0_2px_8px_rgba(0,0,0,0.85)] ${
                       isActive
-                        ? 'text-sky-300 underline decoration-sky-400 decoration-2 underline-offset-4 scale-110'
-                        : 'text-white/75 hover:text-white'
+                        ? 'text-sky-200 bg-sky-500/30 border border-sky-400/60 shadow-[0_0_10px_rgba(56,189,248,0.4)]'
+                        : 'text-white/75 hover:text-white border border-transparent'
                     }`}
                   >
                     0{idx + 1}

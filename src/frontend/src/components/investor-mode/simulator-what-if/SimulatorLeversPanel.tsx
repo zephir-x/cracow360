@@ -10,9 +10,7 @@
   HeartHandshake,
   Landmark,
   LayoutGrid,
-  Minus,
   ParkingSquare,
-  Plus,
   School,
   Sliders,
   TrainFront,
@@ -238,73 +236,63 @@ export function SimulatorLeversPanel({
     return (
       <div
         key={row.key}
-        className={`p-3.5 rounded-2xl border transition-all duration-300 ${
+        className={`p-3.5 rounded-2xl border transition-all duration-300 space-y-2.5 ${
           isChanged
             ? `${activeBorderTheme} shadow-2xs`
             : 'bg-slate-50/70 border-slate-200/80 hover:border-slate-300'
         }`}
       >
+        {/* Top Row: Icon + Title & Subtitle on Left, Current Value Badge on Right */}
         <div className="flex items-start justify-between gap-3">
-          {/* Left: Icon, Title, Subtitle, Baseline & Unit Effect */}
-          <div className="min-w-0 flex-1 space-y-1">
-            <div className="flex items-center gap-2">
-              <div className="w-7 h-7 rounded-xl bg-white border border-slate-200/90 flex items-center justify-center shrink-0 shadow-2xs">
-                {row.icon}
-              </div>
-              <span className="text-xs sm:text-sm font-extrabold text-slate-900 leading-snug">
+          <div className="min-w-0 flex items-start gap-2.5">
+            <div className="w-8 h-8 rounded-xl bg-white border border-slate-200/90 flex items-center justify-center shrink-0 shadow-2xs mt-0.5">
+              {row.icon}
+            </div>
+            <div className="min-w-0">
+              <span className="text-xs sm:text-sm font-extrabold text-slate-900 leading-tight block">
                 {row.itemLabels.title}
               </span>
-            </div>
-
-            <p className="text-[11px] text-slate-500 leading-snug pl-9">
-              {row.itemLabels.subtitle}
-            </p>
-
-            <div className="flex flex-wrap items-center gap-2 pl-9 pt-0.5 text-[11px]">
-              <span className={`px-2 py-0.5 rounded-md border font-bold ${badgeTheme}`}>
-                {row.itemLabels.unitEffect}
-              </span>
-              <span className="text-slate-500 font-medium tabular-nums">
-                {row.itemLabels.currentBaselinePrefix}{' '}
-                <strong className="text-slate-800">{row.baselineValue}</strong>
-              </span>
+              <p className="text-[11px] text-slate-500 leading-snug mt-0.5 line-clamp-2">
+                {row.itemLabels.subtitle}
+              </p>
             </div>
           </div>
 
-          {/* Right: Counter Stepper (- / value / +) */}
-          <div className="flex items-center gap-1.5 shrink-0 bg-white p-1 rounded-xl border border-slate-200/90 shadow-2xs">
-            <button
-              type="button"
-              onClick={() => onChangeLever(row.key, Math.max(0, roundedVal - 1), false)}
-              disabled={roundedVal <= 0}
-              aria-label={`Decrease ${row.itemLabels.title}`}
-              className="w-7 h-7 rounded-lg bg-slate-100 hover:bg-slate-200 text-slate-700 flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed transition cursor-pointer active:scale-95"
-            >
-              <Minus className="w-3.5 h-3.5" />
-            </button>
-
-            <span
-              className={`min-w-[2.2rem] text-center text-xs sm:text-sm font-black tabular-nums transition-colors duration-200 ${
-                isChanged ? 'text-blue-700' : 'text-slate-700'
-              }`}
-            >
-              {isChanged ? `+${roundedVal}` : '0'}
-            </span>
-
-            <button
-              type="button"
-              onClick={() => onChangeLever(row.key, Math.min(row.max, roundedVal + 1), false)}
-              disabled={roundedVal >= row.max}
-              aria-label={`Increase ${row.itemLabels.title}`}
-              className="w-7 h-7 rounded-lg bg-blue-600 hover:bg-blue-700 text-white flex items-center justify-center disabled:opacity-35 disabled:cursor-not-allowed transition cursor-pointer shadow-2xs active:scale-95"
-            >
-              <Plus className="w-3.5 h-3.5" />
-            </button>
+          {/* Current Lever Value Badge */}
+          <div className="shrink-0 pt-0.5">
+            {isChanged ? (
+              <button
+                type="button"
+                onClick={() => onChangeLever(row.key, 0, false)}
+                title="Kliknij, aby wyzerować"
+                className="inline-flex items-center px-2.5 py-1 rounded-xl bg-blue-600 hover:bg-blue-700 text-white text-xs font-black tabular-nums shadow-xs transition cursor-pointer active:scale-95"
+              >
+                +{roundedVal}
+              </button>
+            ) : (
+              <span className="inline-flex items-center px-2.5 py-1 rounded-xl bg-white border border-slate-200/90 text-slate-400 text-xs font-bold tabular-nums shadow-2xs">
+                0
+              </span>
+            )}
           </div>
         </div>
 
-        {/* Range Slider with smooth gliding step="0.05" (matching WeightsConfiguratorPanel) */}
-        <div className="mt-2.5 pl-9 flex items-center gap-3">
+        {/* Middle Row: Unit Effect & Current Baseline Badges */}
+        <div className="flex flex-wrap items-center gap-2 pl-0.5 text-[11px]">
+          <span className={`px-2 py-0.5 rounded-md border font-bold ${badgeTheme}`}>
+            {row.itemLabels.unitEffect}
+          </span>
+          <span className="text-slate-500 font-medium tabular-nums">
+            {row.itemLabels.currentBaselinePrefix}{' '}
+            <strong className="text-slate-700">{row.baselineValue}</strong>
+          </span>
+        </div>
+
+        {/* Range Slider with 0 and max bounds */}
+        <div className="pt-1 flex items-center gap-2.5">
+          <span className="text-[11px] font-bold text-slate-400 shrink-0 tabular-nums">
+            0
+          </span>
           <input
             type="range"
             min={0}
@@ -315,10 +303,10 @@ export function SimulatorLeversPanel({
             onChange={(e) =>
               onChangeLever(row.key, Math.round(Number(e.target.value)), true)
             }
-            className={`w-full h-1.5 bg-slate-200 rounded-lg appearance-none cursor-pointer ${sliderAccent}`}
+            className={`w-full h-2 bg-slate-200 rounded-lg appearance-none cursor-pointer ${sliderAccent}`}
           />
-          <span className="text-[10px] font-bold text-slate-400 shrink-0 w-10 text-right tabular-nums">
-            max +{row.max}
+          <span className="text-[11px] font-bold text-slate-500 shrink-0 tabular-nums">
+            +{row.max}
           </span>
         </div>
       </div>
@@ -338,12 +326,12 @@ export function SimulatorLeversPanel({
         </div>
 
         {/* Symmetrical 5-Column Category Filter Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-2">
+        <div className="flex sm:grid sm:grid-cols-2 lg:grid-cols-5 gap-2 overflow-x-auto no-scrollbar pb-1 sm:pb-0">
           {/* 0. All Categories */}
           <button
             type="button"
             onClick={() => setActiveCategory('all')}
-            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+            className={`shrink-0 px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
               activeCategory === 'all'
                 ? 'bg-blue-600 text-white border-blue-600 shadow-xs'
                 : 'bg-white text-slate-700 border-slate-200 hover:border-blue-300 hover:bg-blue-50/40'
@@ -357,7 +345,7 @@ export function SimulatorLeversPanel({
           <button
             type="button"
             onClick={() => setActiveCategory('education')}
-            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+            className={`shrink-0 px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
               activeCategory === 'education'
                 ? 'bg-indigo-600 text-white border-indigo-600 shadow-xs'
                 : 'bg-white text-indigo-700 border-indigo-200/80 hover:border-indigo-300 hover:bg-indigo-50/60'
@@ -376,7 +364,7 @@ export function SimulatorLeversPanel({
           <button
             type="button"
             onClick={() => setActiveCategory('mobility')}
-            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+            className={`shrink-0 px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
               activeCategory === 'mobility'
                 ? 'bg-sky-600 text-white border-sky-600 shadow-xs'
                 : 'bg-white text-sky-700 border-sky-200/80 hover:border-sky-300 hover:bg-sky-50/60'
@@ -395,7 +383,7 @@ export function SimulatorLeversPanel({
           <button
             type="button"
             onClick={() => setActiveCategory('greenery')}
-            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+            className={`shrink-0 px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
               activeCategory === 'greenery'
                 ? 'bg-emerald-600 text-white border-emerald-600 shadow-xs'
                 : 'bg-white text-emerald-700 border-emerald-200/80 hover:border-emerald-300 hover:bg-emerald-50/60'
@@ -414,7 +402,7 @@ export function SimulatorLeversPanel({
           <button
             type="button"
             onClick={() => setActiveCategory('culture')}
-            className={`px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
+            className={`shrink-0 px-3 py-2.5 rounded-xl text-xs font-bold transition cursor-pointer flex items-center justify-center gap-1.5 border ${
               activeCategory === 'culture'
                 ? 'bg-amber-600 text-white border-amber-600 shadow-xs'
                 : 'bg-white text-amber-700 border-amber-200/80 hover:border-amber-300 hover:bg-amber-50/60'

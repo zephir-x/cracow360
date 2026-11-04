@@ -311,7 +311,7 @@ export function ResidentModePage({
         </div>
 
         {/* Foreground Content Container */}
-        <div className="relative z-10 p-6 sm:p-8 lg:p-10 space-y-6">
+        <div className="relative z-10 p-6 sm:p-8 lg:p-10 space-y-6 flex flex-col items-center sm:items-start text-center sm:text-left">
           {/* Header Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs font-bold text-sky-100 tracking-wide shadow-sm">
             <Compass className="w-3.5 h-3.5 text-sky-300 animate-spin-slow" />
@@ -332,10 +332,10 @@ export function ResidentModePage({
           </div>
 
           {/* Action CTAs */}
-          <div className="flex flex-wrap items-center gap-3 pt-1">
+          <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 sm:gap-3 pt-1 w-full">
             <button
               onClick={scrollToWorkspace}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-blue-900 shadow-xl shadow-blue-950/20 hover:bg-sky-50 active:scale-98 transition transform cursor-pointer"
+              className="w-full sm:w-auto justify-center inline-flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold bg-white text-blue-900 shadow-xl shadow-blue-950/20 hover:bg-sky-50 active:scale-98 transition transform cursor-pointer"
             >
               <Compass className="w-4 h-4 text-blue-600" />
               <span>{t.hero.ctaExplore}</span>
@@ -343,7 +343,7 @@ export function ResidentModePage({
 
             <button
               onClick={scrollToComparison}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-white/10 hover:bg-white/20 active:scale-98 text-white border border-white/20 backdrop-blur-md transition transform cursor-pointer"
+              className="flex-1 sm:flex-none justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-white/10 hover:bg-white/20 active:scale-98 text-white border border-white/20 backdrop-blur-md transition transform cursor-pointer"
             >
               <Scale className="w-4 h-4 text-sky-200" />
               <span>{t.hero.ctaCompare}</span>
@@ -351,20 +351,20 @@ export function ResidentModePage({
 
             <button
               onClick={scrollToAccessibility}
-              className="inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-white/10 hover:bg-white/20 active:scale-98 text-white border border-white/20 backdrop-blur-md transition transform cursor-pointer"
+              className="flex-1 sm:flex-none justify-center inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-bold bg-white/10 hover:bg-white/20 active:scale-98 text-white border border-white/20 backdrop-blur-md transition transform cursor-pointer"
             >
               <Accessibility className="w-4 h-4 text-sky-200" />
               <span>{t.hero.ctaAccessibility}</span>
             </button>
           </div>
 
-          {/* Real-Data Live Telemetry Cards */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
+          {/* Real-Data Live Telemetry Cards: 1 column per level on mobile for generous readability */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 pt-2">
             <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
               <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0">
                 <MapPin className="w-5 h-5" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="text-2xl font-black text-blue-900 leading-none">
                   {rankedDistricts.length > 0 ? rankedDistricts.length : '18'}
                 </div>
@@ -383,7 +383,7 @@ export function ResidentModePage({
                 <div className="text-lg font-black text-slate-900 truncate leading-tight">
                   {topDistrict ? getShortDistrictName(topDistrict.districtName) : t.stats.loading}
                 </div>
-                <div className="text-xs font-bold text-blue-700 mt-0.5">
+                <div className="text-xs font-bold text-blue-700 mt-0.5 truncate">
                   {t.stats.leaderLabel} ({topDistrict ? `${topDistrict.weightedQualityOfLifeIndex.toFixed(1)} ${t.stats.leaderPoints}` : '—'})
                 </div>
                 <div className="text-[11px] text-slate-500">{t.stats.leaderSub}</div>
@@ -397,7 +397,7 @@ export function ResidentModePage({
               <div className="w-11 h-11 rounded-2xl bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-600 shrink-0">
                 <Users className="w-5 h-5" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="text-2xl font-black text-sky-700 leading-none">
                   {totalCityPopulation > 0
                     ? `${Math.round(totalCityPopulation / 1000)} ${t.stats.thousands}`
@@ -412,7 +412,7 @@ export function ResidentModePage({
               <div className="w-11 h-11 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 shrink-0">
                 <BarChart3 className="w-5 h-5" />
               </div>
-              <div>
+              <div className="min-w-0">
                 <div className="text-2xl font-black text-indigo-700 leading-none">
                   8 {plural(8, pillarPluralForms)}
                 </div>
@@ -459,7 +459,7 @@ export function ResidentModePage({
                 {t.hero.howItWorksClose}
               </button>
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed">
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-xs text-slate-600 leading-relaxed text-center md:text-left">
               <div className="p-4 rounded-2xl bg-blue-50/50 border border-blue-100">
                 <div className="font-extrabold text-blue-900 mb-1">
                   {t.hero.step1Title}
@@ -489,7 +489,7 @@ export function ResidentModePage({
         className="grid grid-cols-1 xl:grid-cols-[325px_1fr_345px] gap-5 items-start scroll-mt-20"
       >
         {/* Left Panel: 6 Presets + 8 Category Sliders */}
-        <div className="w-full">
+        <div className="w-full order-2 xl:order-1">
           <WeightsConfiguratorPanel
             weights={weights}
             activePresetId={activePresetId}
@@ -499,7 +499,7 @@ export function ResidentModePage({
         </div>
 
         {/* Center Panel: Interactive 18-District GeoJSON Choropleth Map */}
-        <div className="w-full min-w-0">
+        <div className="w-full min-w-0 order-1 xl:order-2">
           <KrakowChoroplethMap
             geoJsonData={geoJsonData}
             districts={rankedDistricts}
@@ -513,7 +513,7 @@ export function ResidentModePage({
         </div>
 
         {/* Right Panel: Live-Sorted 18-District Ranking (#1 to #18) */}
-        <div className="w-full">
+        <div className="w-full order-3 xl:order-3">
           <DistrictRankingList
             districts={rankedDistricts}
             selectedPrimaryId={selectedPrimaryId}

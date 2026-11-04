@@ -62,6 +62,7 @@ export function HeroDualVisionMask({
   }, []);
 
   // 2. 60 FPS Organic Dual-Blob Cursor Mask ("Smart City X-Ray") + Real Wawel GIS Coordinates
+  // Supports mouse pointer and touch events seamlessly.
   useEffect(() => {
     let rafId = 0;
     let isPointerInside = false;
@@ -84,6 +85,17 @@ export function HeroDualVisionMask({
       } else {
         isPointerInside = false;
       }
+    };
+
+    const handleTouch = (e: TouchEvent) => {
+      const touch = e.touches[0];
+      if (!touch) return;
+      const vp = viewportRef.current;
+      if (!vp) return;
+      const rect = vp.getBoundingClientRect();
+      isPointerInside = true;
+      targetX = touch.clientX - rect.left;
+      targetY = touch.clientY - rect.top;
     };
 
     const handlePointerLeave = () => {
@@ -111,7 +123,10 @@ export function HeroDualVisionMask({
 
         const xrayEl = xrayLayerRef.current;
         if (xrayEl) {
-          const maskValue = `radial-gradient(230px circle at ${currentX.toFixed(1)}px ${currentY.toFixed(1)}px, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 52%, rgba(0,0,0,0) 100%), radial-gradient(175px circle at ${trailX.toFixed(1)}px ${trailY.toFixed(1)}px, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0) 100%)`;
+          const isNarrow = w < 640;
+          const primaryRadius = isNarrow ? 150 : 230;
+          const trailRadius = isNarrow ? 100 : 175;
+          const maskValue = `radial-gradient(${primaryRadius}px circle at ${currentX.toFixed(1)}px ${currentY.toFixed(1)}px, rgba(0,0,0,1) 0%, rgba(0,0,0,0.92) 52%, rgba(0,0,0,0) 100%), radial-gradient(${trailRadius}px circle at ${trailX.toFixed(1)}px ${trailY.toFixed(1)}px, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0) 100%)`;
           xrayEl.style.webkitMaskImage = maskValue;
           xrayEl.style.maskImage = maskValue;
         }
@@ -135,12 +150,16 @@ export function HeroDualVisionMask({
 
     window.addEventListener('pointermove', handlePointerMove, { passive: true });
     window.addEventListener('pointerleave', handlePointerLeave, { passive: true });
+    window.addEventListener('touchstart', handleTouch, { passive: true });
+    window.addEventListener('touchmove', handleTouch, { passive: true });
     rafId = requestAnimationFrame(animateMask);
 
     return () => {
       cancelAnimationFrame(rafId);
       window.removeEventListener('pointermove', handlePointerMove);
       window.removeEventListener('pointerleave', handlePointerLeave);
+      window.removeEventListener('touchstart', handleTouch);
+      window.removeEventListener('touchmove', handleTouch);
     };
   }, []);
 
@@ -306,7 +325,7 @@ export function HeroDualVisionMask({
 
       {/* CHOREOGRAPHED FOREGROUND TYPOGRAPHY & CTAs */}
       <div
-        className="relative z-30 h-full max-w-360 mx-auto px-4 sm:px-8 flex flex-col justify-between pt-7 sm:pt-8 pb-7 sm:pb-8"
+        className="relative z-30 h-full max-w-360 mx-auto px-4 sm:px-8 flex flex-col justify-between pt-4 sm:pt-8 pb-4 sm:pb-8"
         style={{
           transform: `scale(${titleScale.toFixed(3)})`,
           opacity: titleOpacity,
@@ -314,26 +333,26 @@ export function HeroDualVisionMask({
           willChange: 'transform, opacity, filter',
         }}
       >
-        {/* Top Bar: Competition & Team Percepcja360 Badges */}
-        <div className="flex flex-wrap items-center justify-between gap-2.5 shrink-0">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-sky-400/35 text-sky-300 text-[11px] font-extrabold tracking-widest uppercase shadow-lg">
-            <Compass className="w-3.5 h-3.5 text-sky-400" />
+        {/* Top Bar: Competition & Team Percepcja360 Badges (Centered on mobile) */}
+        <div className="flex flex-wrap items-center justify-center sm:justify-between gap-2 shrink-0">
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-slate-900/80 backdrop-blur-md border border-sky-400/35 text-sky-300 text-[10px] sm:text-[11px] font-extrabold tracking-widest uppercase shadow-lg">
+            <Compass className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-sky-400" />
             {copy.competitionBadge}
           </div>
 
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 text-[11px] font-bold tracking-wider uppercase">
-            <Layers className="w-3.5 h-3.5 text-sky-400" />
+          <div className="inline-flex items-center gap-1.5 sm:gap-2 px-2.5 sm:px-3.5 py-1 sm:py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-white/90 text-[10px] sm:text-[11px] font-bold tracking-wider uppercase">
+            <Layers className="w-3 h-3 sm:w-3.5 sm:h-3.5 text-sky-400" />
             {copy.mottoBadge}
           </div>
         </div>
 
-        {/* Center-Left Monumental Hero Typography (Generous Y-Axis Spacing) */}
-        <div className="max-w-2xl my-auto py-2 space-y-4 sm:space-y-5">
-          <div className="space-y-1.5">
-            <p className="showcase-stagger-1 text-xs sm:text-base font-bold uppercase tracking-[0.25em] text-sky-300/90">
+        {/* Center Hero Typography (Centered on mobile, left-aligned on sm+) */}
+        <div className="max-w-2xl my-auto py-1 sm:py-2 space-y-3 sm:space-y-5 flex flex-col items-center sm:items-start text-center sm:text-left mx-auto sm:mx-0">
+          <div className="space-y-1 sm:space-y-1.5">
+            <p className="showcase-stagger-1 text-[10px] sm:text-base font-bold uppercase tracking-[0.2em] sm:tracking-[0.25em] text-sky-300/90 text-center sm:text-left">
               {copy.welcomeWord}
             </p>
-            <h1 className="showcase-stagger-2 text-5xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[0.94] drop-shadow-[0_10px_30px_rgba(0,0,0,0.6)]">
+            <h1 className="showcase-stagger-2 text-3xl min-[400px]:text-4xl sm:text-7xl lg:text-8xl font-black tracking-tight text-white leading-[0.96] drop-shadow-[0_10px_30px_rgba(0,0,0,0.6)] text-center sm:text-left">
               {copy.brandTitleLead}
               <span className="bg-linear-to-r from-sky-400 via-blue-400 to-indigo-400 bg-clip-text text-transparent">
                 {copy.brandTitleAccent}
@@ -342,29 +361,29 @@ export function HeroDualVisionMask({
           </div>
 
           {/* Two-line aesthetic subtitle headline */}
-          <h2 className="showcase-stagger-3 text-5xl sm:text-2xl font-extrabold text-slate-100 leading-snug">
+          <h2 className="showcase-stagger-3 text-lg min-[400px]:text-xl sm:text-2xl font-extrabold text-slate-100 leading-snug text-center sm:text-left">
             <span className="block">{copy.subtitleHeadlineLine1}</span>
             <span className="block text-sky-300">{copy.subtitleHeadlineLine2}</span>
           </h2>
 
-          <p className="showcase-stagger-3 text-sm sm:text-base text-slate-300 leading-relaxed max-w-xl">
+          <p className="showcase-stagger-3 text-xs sm:text-base text-slate-300 leading-relaxed max-w-xl line-clamp-3 sm:line-clamp-none text-center sm:text-left">
             {copy.subtitleBody}
           </p>
 
           {/* Interactive X-Ray Hint Box */}
-          <div className="showcase-stagger-4 p-3 sm:p-3.5 rounded-2xl bg-slate-900/75 backdrop-blur-xl border border-sky-400/25 max-w-lg flex items-center gap-3 text-xs text-slate-200 shadow-xl">
-            <div className="w-9 h-9 rounded-xl bg-sky-500/20 border border-sky-400/40 flex items-center justify-center shrink-0">
-              <ScanEye className="w-5 h-5 text-sky-300" />
+          <div className="showcase-stagger-4 p-2.5 sm:p-3.5 rounded-2xl bg-slate-900/75 backdrop-blur-xl border border-sky-400/25 max-w-lg flex items-center justify-center sm:justify-start gap-2.5 sm:gap-3 text-[11px] sm:text-xs text-slate-200 shadow-xl text-center sm:text-left mx-auto sm:mx-0">
+            <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-xl bg-sky-500/20 border border-sky-400/40 flex items-center justify-center shrink-0">
+              <ScanEye className="w-4 h-4 sm:w-5 sm:h-5 text-sky-300" />
             </div>
             <span>{copy.maskHintSub}</span>
           </div>
 
           {/* Action Buttons */}
-          <div className="showcase-stagger-4 pt-2 flex flex-wrap items-center gap-3.5">
+          <div className="showcase-stagger-4 pt-1 sm:pt-2 flex flex-col sm:flex-row items-stretch sm:items-center justify-center sm:justify-start gap-2.5 sm:gap-3.5 w-full sm:w-auto">
             <button
               type="button"
               onClick={onStartFlight}
-              className="group px-6 py-3 sm:py-3.5 rounded-2xl bg-linear-to-r from-blue-600 via-sky-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-sm shadow-[0_12px_32px_rgba(37,99,235,0.45)] flex items-center gap-2.5 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
+              className="group w-full sm:w-auto justify-center px-5 sm:px-6 py-2.5 sm:py-3.5 rounded-2xl bg-linear-to-r from-blue-600 via-sky-500 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-extrabold text-xs sm:text-sm shadow-[0_12px_32px_rgba(37,99,235,0.45)] flex items-center gap-2.5 transition-all duration-300 hover:scale-[1.02] cursor-pointer"
             >
               <span>{copy.ctaStartScroll}</span>
               <ArrowDown className="w-4 h-4 group-hover:translate-y-0.5 transition-transform" />
@@ -373,7 +392,7 @@ export function HeroDualVisionMask({
             <button
               type="button"
               onClick={onJumpToResidentMap}
-              className="px-5 py-3 sm:py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold text-sm flex items-center gap-2 transition-all duration-300 cursor-pointer"
+              className="w-full sm:w-auto justify-center px-4 sm:px-5 py-2.5 sm:py-3.5 rounded-2xl bg-white/10 hover:bg-white/20 backdrop-blur-md border border-white/20 text-white font-bold text-xs sm:text-sm flex items-center gap-2 transition-all duration-300 cursor-pointer"
             >
               <Compass className="w-4 h-4 text-sky-300" />
               <span>{copy.ctaJumpToMap}</span>
@@ -381,10 +400,10 @@ export function HeroDualVisionMask({
           </div>
         </div>
 
-        {/* Bottom Scroll Prompt */}
-        <div className="flex items-center justify-between gap-4 text-xs text-slate-300/90 shrink-0">
-          <div className="inline-flex items-center gap-2.5 font-semibold">
-            <span className="w-5 h-8 rounded-full border-2 border-sky-400/60 flex items-start justify-center p-1">
+        {/* Bottom Scroll Prompt (Centered on mobile, spaced on sm+) */}
+        <div className="flex items-center justify-center sm:justify-between gap-4 text-[11px] sm:text-xs text-slate-300/90 shrink-0 text-center sm:text-left">
+          <div className="inline-flex items-center gap-2 sm:gap-2.5 font-semibold">
+            <span className="w-4 h-7 sm:w-5 sm:h-8 rounded-full border-2 border-sky-400/60 flex items-start justify-center p-0.5 sm:p-1">
               <span className="w-1.5 h-2 rounded-full bg-sky-400 animate-bounce" />
             </span>
             <span>{copy.scrollDownPrompt}</span>

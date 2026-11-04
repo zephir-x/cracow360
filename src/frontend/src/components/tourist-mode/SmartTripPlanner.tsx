@@ -118,7 +118,7 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
       list.push({ id: i, label: DISTRICT_NAMES_BY_ID[i] ?? `Dzielnica ${i}` });
     }
     return list;
-  }, []);
+  }, [t.planner.allDistricts]);
 
   // DYNAMIC ITINERARY SYNTHESIS ALGORITHM
   // Responds dynamically in 0ms to any changes in Time, Theme, or District!
@@ -134,8 +134,8 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
         return (
           a.isUnesco ||
           a.category === 'HISTORIC_HERITAGE' ||
-          tags.some((t) =>
-            ['unesco', 'heritage', 'monument', 'history', 'castle', 'monastery', 'church', 'manor', 'palace', 'icon'].includes(t)
+          tags.some((tag) =>
+            ['unesco', 'heritage', 'monument', 'history', 'castle', 'monastery', 'church', 'manor', 'palace', 'icon'].includes(tag)
           )
         );
       }
@@ -143,16 +143,16 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
         return (
           a.category === 'GREEN_NATURE' ||
           a.category === 'ACTIVE_SPORT' ||
-          tags.some((t) =>
-            ['park', 'nature', 'forest', 'green', 'sport', 'active', 'walking', 'cycling', 'spa', 'river', 'water', 'botanic', 'relax'].includes(t)
+          tags.some((tag) =>
+            ['park', 'nature', 'forest', 'green', 'sport', 'active', 'walking', 'cycling', 'spa', 'river', 'water', 'botanic', 'relax'].includes(tag)
           )
         );
       }
       if (selectedTheme === 'ART_CULTURE') {
         return (
           a.category === 'CULTURE_ART' ||
-          tags.some((t) =>
-            ['art', 'museum', 'theatre', 'gallery', 'culture', 'boho', 'music', 'literature', 'photography', 'wyspianski', 'matejko', 'beksinski'].includes(t)
+          tags.some((tag) =>
+            ['art', 'museum', 'theatre', 'gallery', 'culture', 'boho', 'music', 'literature', 'photography', 'wyspianski', 'matejko', 'beksinski'].includes(tag)
           )
         );
       }
@@ -161,16 +161,16 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
           a.category === 'VIEWPOINT' ||
           a.crowdLevel === 'PEACEFUL' ||
           a.crowdLevel === 'LOW' ||
-          tags.some((t) =>
-            ['hidden_gem', 'viewpoint', 'panorama', 'fortress', 'cave', 'legend', 'prehistory', 'military'].includes(t)
+          tags.some((tag) =>
+            ['hidden_gem', 'viewpoint', 'panorama', 'fortress', 'cave', 'legend', 'prehistory', 'military'].includes(tag)
           )
         );
       }
       if (selectedTheme === 'REVOLUTION') {
         return (
           [14, 15, 16, 17, 18].includes(a.districtId) ||
-          tags.some((t) =>
-            ['socrealism', 'industrial', 'aviation', 'solidarnosc', 'cold_war', 'cistercians', 'military', 'urbanism'].includes(t)
+          tags.some((tag) =>
+            ['socrealism', 'industrial', 'aviation', 'solidarnosc', 'cold_war', 'cistercians', 'military', 'urbanism'].includes(tag)
           )
         );
       }
@@ -354,7 +354,7 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
       stopsCount: stops.length,
       stops,
     };
-  }, [attractions, selectedHours, selectedTheme, selectedDistrictId]);
+  }, [attractions, selectedHours, selectedTheme, selectedDistrictId, language, t.planner.allDistricts]);
 
   const stopsCount = generatedItinerary?.stopsCount ?? 0;
   const stopsPluralText = formatStopsCountLabel(stopsCount, language);
@@ -368,12 +368,12 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
   return (
     <section
       id="trip-planner-section"
-      className="scroll-mt-20 rounded-3xl bg-white border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-6"
+      className="scroll-mt-20 rounded-3xl bg-white border border-blue-100 p-4 sm:p-8 shadow-xl shadow-blue-900/5 space-y-5 sm:space-y-6"
     >
       {/* Section Header (Unified Official/Investor Style) */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
-        <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
+      <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-3 sm:gap-4 border-b border-slate-100 pb-4 sm:pb-5 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2.5 sm:gap-3">
+          <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200 shrink-0">
             <Sparkles className="w-5 h-5" />
           </div>
           <div>
@@ -388,7 +388,7 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
 
         {/* Live Calculation Pill */}
         {generatedItinerary && (
-          <div className="inline-flex items-center gap-2.5 px-4 py-2 rounded-2xl bg-slate-50 border border-slate-200 shadow-2xs self-start sm:self-auto">
+          <div className="inline-flex items-center gap-2.5 px-3.5 sm:px-4 py-2 rounded-2xl bg-slate-50 border border-slate-200 shadow-2xs self-center sm:self-auto">
             <Clock className="w-4 h-4 text-blue-600 shrink-0" />
             <div className="text-xs text-slate-700">
               <span>{t.planner.calculatedDuration} </span>
@@ -403,7 +403,7 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
       </div>
 
       {/* 3-Step Selection Control Hub */}
-      <div className="rounded-3xl bg-slate-50/70 border border-slate-200/80 p-5 sm:p-6 space-y-6">
+      <div className="rounded-3xl bg-slate-50/70 border border-slate-200/80 p-4 sm:p-6 space-y-5 sm:space-y-6">
         {/* Step 1: Time Budget Selection */}
         <div className="space-y-3">
           <div className="flex items-center gap-2">
@@ -418,14 +418,15 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
             </span>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 sm:gap-2.5">
             {timeOptions.map((opt) => {
               const isSelected = selectedHours === opt.hours;
               return (
                 <button
                   key={opt.hours}
+                  type="button"
                   onClick={() => setSelectedHours(opt.hours)}
-                  className={`p-3 rounded-2xl text-left transition-all duration-200 cursor-pointer flex flex-col justify-between ${
+                  className={`p-2.5 sm:p-3 rounded-2xl text-left transition-all duration-200 cursor-pointer flex flex-col justify-between ${
                     isSelected
                       ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20 scale-[1.02] border border-blue-600'
                       : 'bg-white border border-slate-200/90 text-slate-700 hover:border-blue-300 hover:bg-blue-50/30'
@@ -469,6 +470,7 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
               return (
                 <button
                   key={thm.key}
+                  type="button"
                   onClick={() => setSelectedTheme(thm.key)}
                   className={`p-2.5 rounded-2xl text-left transition-all duration-200 cursor-pointer flex flex-col justify-between gap-2 ${
                     isSelected
@@ -503,8 +505,8 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
             </span>
           </div>
 
-          <div className="flex flex-col sm:flex-row sm:items-center gap-3">
-            <div className="relative sm:w-72 shrink-0">
+          <div className="flex flex-col sm:flex-row sm:items-center gap-2.5 sm:gap-3">
+            <div className="relative w-full sm:w-72 shrink-0">
               <MapPin className="w-4 h-4 text-emerald-600 absolute left-3.5 top-1/2 -translate-y-1/2 pointer-events-none" />
               <select
                 value={selectedDistrictId}
@@ -519,9 +521,9 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
               </select>
             </div>
 
-            <div className="flex items-center gap-2 text-xs text-slate-600 bg-white px-3.5 py-2.5 rounded-2xl border border-slate-200/80 shadow-2xs">
+            <div className="w-full sm:w-auto flex items-center justify-center sm:justify-start gap-2 text-xs text-slate-600 bg-white px-3.5 py-2.5 rounded-2xl border border-slate-200/80 shadow-2xs">
               <Layers className="w-4 h-4 text-emerald-600 shrink-0" />
-              <span className="truncate">
+              <span className="leading-snug">
                 {selectedDistrictId > 0
                   ? `${t.planner.districtPriorityPrefix} ${DISTRICT_NAMES_BY_ID[selectedDistrictId]} ${t.planner.districtPrioritySuffix}`
                   : t.planner.allDistrictsDesc}
@@ -535,8 +537,8 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
       <div key={transitionKey} className="animate-content-enter space-y-5">
         {/* Generated Route Summary Banner */}
         {generatedItinerary && (
-          <div className="p-4 sm:p-5 rounded-2xl bg-linear-to-r from-blue-50 via-indigo-50/60 to-sky-50 border border-blue-200/80 flex flex-col md:flex-row md:items-center justify-between gap-4">
-            <div className="flex items-start gap-3">
+          <div className="p-4 sm:p-5 rounded-2xl bg-linear-to-r from-blue-50 via-indigo-50/60 to-sky-50 border border-blue-200/80 flex flex-col md:flex-row items-center md:items-center justify-between gap-4 text-center md:text-left">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-3">
               <div className="w-10 h-10 rounded-2xl bg-blue-600 text-white flex items-center justify-center shrink-0 shadow-xs">
                 <Sparkles className="w-5 h-5 text-white" />
               </div>
@@ -551,7 +553,7 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
             </div>
 
             {/* Clean Telemetry Chips with React Icons */}
-            <div className="flex flex-wrap items-center gap-2 self-start md:self-auto">
+            <div className="flex flex-wrap items-center justify-center md:justify-end gap-2 self-center md:self-auto">
               <div className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-white/90 border border-blue-200/70 text-xs font-bold text-blue-900 shadow-2xs">
                 <Landmark className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                 <span>{t.planner.summaryVisiting} <strong>{generatedItinerary.totalVisitMinutes} min</strong></span>
@@ -578,9 +580,9 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
               <span>{t.planner.timelineTitle}</span>
             </div>
 
-            <div className="relative pl-12 sm:pl-14 space-y-6">
+            <div className="relative pl-9 sm:pl-14 space-y-5 sm:space-y-6">
               {/* Perfectly Centered Timeline Vertical Axis */}
-              <div className="absolute left-6 sm:left-7 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-linear-to-b from-blue-600 via-indigo-400 to-emerald-500 pointer-events-none" />
+              <div className="absolute left-4.5 sm:left-7 top-4 bottom-4 w-0.5 -translate-x-1/2 bg-linear-to-b from-blue-600 via-indigo-400 to-emerald-500 pointer-events-none" />
 
               {generatedItinerary.stops.map((stop, idx) => {
                 const isLast = idx === generatedItinerary.stops.length - 1;
@@ -590,28 +592,28 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
                 return (
                   <div key={stop.attractionId} className="relative group space-y-3">
                     {/* Step Node Circle Badge – Exactly Centered on the Axis */}
-                    <div className="absolute -left-6 sm:-left-7 top-3.5 w-7 h-7 -translate-x-1/2 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center shadow-xs text-xs font-black text-blue-700 z-10">
+                    <div className="absolute -left-4.5 sm:-left-7 top-3.5 w-6 h-6 sm:w-7 sm:h-7 -translate-x-1/2 rounded-full bg-white border-2 border-blue-600 flex items-center justify-center shadow-xs text-[10px] sm:text-xs font-black text-blue-700 z-10">
                       {stop.stepNumber}
                     </div>
 
                     {/* Stop Card */}
-                    <div className="p-5 rounded-3xl bg-slate-50/70 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-blue-300 hover:bg-white transition-all space-y-3">
+                    <div className="p-3.5 sm:p-5 rounded-2xl sm:rounded-3xl bg-slate-50/70 border border-slate-200/80 shadow-2xs hover:shadow-md hover:border-blue-300 hover:bg-white transition-all space-y-3">
                       <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
-                        <div className="flex items-center gap-2.5">
-                          <span className="text-xs font-black px-2.5 py-1 rounded-xl bg-blue-100 text-blue-800 shrink-0">
+                        <div className="flex items-center gap-2 sm:gap-2.5">
+                          <span className="text-[11px] sm:text-xs font-black px-2 sm:px-2.5 py-0.5 sm:py-1 rounded-xl bg-blue-100 text-blue-800 shrink-0">
                             {t.planner.stepLabel} {stop.stepNumber}
                           </span>
-                          <h4 className="text-sm sm:text-base font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors">
+                          <h4 className="text-xs sm:text-base font-extrabold text-slate-900 group-hover:text-blue-600 transition-colors">
                             {stop.name}
                           </h4>
                         </div>
 
-                        <div className="flex items-center gap-2 self-start sm:self-auto">
-                          <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-lg bg-white text-slate-600 border border-slate-200">
+                        <div className="flex flex-wrap items-center gap-1.5 self-start sm:self-auto">
+                          <span className="text-[10px] sm:text-[11px] font-semibold px-2 sm:px-2.5 py-0.5 rounded-lg bg-white text-slate-600 border border-slate-200">
                             {categoryName}
                           </span>
                           <span
-                            className={`text-[11px] font-bold px-2.5 py-0.5 rounded-lg border whitespace-nowrap ${crowdBadge.color}`}
+                            className={`text-[10px] sm:text-[11px] font-bold px-2 sm:px-2.5 py-0.5 rounded-lg border whitespace-nowrap ${crowdBadge.color}`}
                             title={t.overtourism.crowdLevelLabel}
                           >
                             {crowdBadge.label}
@@ -620,16 +622,16 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
                       </div>
 
                       {/* Visit Time and District info */}
-                      <div className="flex flex-wrap items-center gap-4 text-xs text-slate-600 pt-3 border-t border-slate-200/70">
+                      <div className="flex flex-wrap items-center gap-3 sm:gap-4 text-xs text-slate-600 pt-2.5 sm:pt-3 border-t border-slate-200/70">
                         <div className="flex items-center gap-1.5">
-                          <Clock className="w-3.5 h-3.5 text-blue-600" />
+                          <Clock className="w-3.5 h-3.5 text-blue-600 shrink-0" />
                           <span>
                             {t.planner.visitDuration} <strong className="text-slate-900 font-bold">{stop.visitMinutes} {t.planner.minutesLabel}</strong>
                           </span>
                         </div>
 
                         <div className="flex items-center gap-1.5">
-                          <MapPin className="w-3.5 h-3.5 text-emerald-600" />
+                          <MapPin className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
                           <span className="font-medium text-slate-700">
                             {DISTRICT_NAMES_BY_ID[stop.districtId] ?? `Dzielnica ${stop.districtId}`}
                           </span>
@@ -640,7 +642,7 @@ export const SmartTripPlanner: React.FC<SmartTripPlannerProps> = ({
                     {/* Transition Connector between steps */}
                     {!isLast && (
                       <div className="pl-1 pt-1 pb-1">
-                        <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-indigo-50/90 border border-indigo-200/80 text-xs font-bold text-indigo-900 shadow-2xs">
+                        <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-indigo-50/90 border border-indigo-200/80 text-[11px] sm:text-xs font-bold text-indigo-900 shadow-2xs max-w-full wrap-break-word">
                           {stop.isTransit ? (
                             <>
                               <Train className="w-4 h-4 text-indigo-600 shrink-0" />

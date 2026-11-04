@@ -300,7 +300,7 @@ export function App() {
           </div>
         )}
 
-        <div key={`${activeTab}-${language}`} className="w-full animate-tab-enter">
+        <div key={`${activeTab}-${language}`} className={isHomeShowcase ? "w-full" : "w-full animate-tab-enter"}>
           {/* Cinematic Home Showcase Page (Default Landing View) */}
           {activeTab === 'home' && (
             <HomeShowcasePage onSelectTab={handleSelectTab} />

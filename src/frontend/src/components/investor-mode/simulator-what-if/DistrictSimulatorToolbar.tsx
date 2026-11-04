@@ -39,8 +39,8 @@ export function DistrictSimulatorToolbar({
   return (
     <div className="p-4 sm:p-5 rounded-2xl bg-slate-50/90 border border-slate-200/90 space-y-4 shadow-2xs">
       {/* Row 1: District Selector (Left) & Active Changes Status + Reset (Right) */}
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3.5 border-b border-slate-200/80">
-        <div className="flex flex-col sm:flex-row sm:items-center gap-2.5">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pb-3.5 border-b border-slate-200/80 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-2.5">
           <div className="flex items-center gap-2 text-xs font-extrabold text-slate-700 shrink-0">
             <MapPin className="w-4 h-4 text-blue-600 shrink-0" />
             <span>{labels.selectDistrictLabel}</span>
@@ -61,7 +61,7 @@ export function DistrictSimulatorToolbar({
         </div>
 
         {/* Status Badge & Reset Button */}
-        <div className="flex flex-wrap items-center gap-2 sm:justify-end">
+        <div className="flex flex-wrap items-center justify-center sm:justify-end gap-2">
           <span
             className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-xl text-xs font-extrabold border shrink-0 transition ${
               totalAddedItemsCount > 0
@@ -87,7 +87,7 @@ export function DistrictSimulatorToolbar({
 
       {/* Row 2: Symmetrical Quick Test Packages Grid */}
       <div className="space-y-2">
-        <div className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider">
+        <div className="text-[11px] font-extrabold text-slate-500 uppercase tracking-wider text-center sm:text-left">
           {labels.presetsLabel}
         </div>
 

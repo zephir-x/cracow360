@@ -51,10 +51,10 @@ export function InvestorForecastDrawer({
       {/* Dynamic overflow allows complete, unclipped 360-degree box shadow diffusion when expanded */}
       <div ref={drawerRef} className={isOpen ? 'overflow-visible' : 'overflow-hidden'}>
         {data && (
-          <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl shadow-blue-950/10 p-6 sm:p-8 space-y-6 text-slate-900 transition-all">
+          <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-slate-200/90 shadow-xl shadow-blue-950/10 p-4 sm:p-8 space-y-5 sm:space-y-6 text-slate-900 transition-all">
             {/* Top Header */}
-            <div className="flex items-start justify-between gap-4 border-b border-slate-100 pb-4">
-              <div className="space-y-1">
+            <div className="flex flex-col sm:flex-row items-center sm:items-start justify-between gap-4 border-b border-slate-100 pb-4 text-center sm:text-left">
+              <div className="space-y-1 flex flex-col items-center sm:items-start">
                 <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-900">
                   <Sparkles className="w-3.5 h-3.5 text-blue-600" />
                   {labels.drawerBadge}
@@ -67,7 +67,7 @@ export function InvestorForecastDrawer({
                 </p>
               </div>
 
-              <div className="flex items-center gap-2.5">
+              <div className="flex items-center justify-between sm:justify-end gap-2.5 w-full sm:w-auto">
                 <span
                   className={`text-xs px-3 py-1.5 rounded-xl border shrink-0 text-center leading-tight ${getBadgeStyle(
                     data.nurseryPotentialB2B

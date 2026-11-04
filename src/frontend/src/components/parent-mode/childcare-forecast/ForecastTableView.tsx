@@ -43,7 +43,7 @@ export function ForecastTableView({
       className="rounded-2xl border border-slate-200 bg-white overflow-hidden shadow-xs animate-fade-in"
     >
       <div className="overflow-x-auto">
-        <table className="w-full text-left text-xs table-fixed">
+        <table className="w-full text-left text-xs table-fixed min-w-[640px]">
           <thead className="bg-slate-50/90 text-slate-500 font-bold border-b border-slate-200">
             <tr>
               <th className="w-[24%] py-3 px-4">{colHeaders.district}</th>

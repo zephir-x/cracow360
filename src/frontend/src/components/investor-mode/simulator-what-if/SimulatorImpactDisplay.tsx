@@ -149,9 +149,9 @@ export function SimulatorImpactDisplay({
       className="space-y-6 pt-2 animate-fade-in"
     >
       {/* Section Header for Dynamic Impact - Unified Kraków Blue gradient */}
-      <div className="p-5 sm:p-6 rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white shadow-xl shadow-blue-950/15 border border-blue-400/30 space-y-5">
-        <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 border-b border-white/15 pb-4">
-          <div className="space-y-1">
+      <div className="p-4 sm:p-6 rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white shadow-xl shadow-blue-950/15 border border-blue-400/30 space-y-4 sm:space-y-5">
+        <div className="flex flex-col md:flex-row items-center md:items-center justify-between gap-3 border-b border-white/15 pb-4 text-center md:text-left">
+          <div className="space-y-1 flex flex-col items-center md:items-start">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/15 border border-white/25 text-xs font-bold text-sky-100">
               <BarChart3 className="w-3.5 h-3.5 text-sky-300" />
               <span>{labels.impactSectionBadge}</span>
@@ -174,8 +174,8 @@ export function SimulatorImpactDisplay({
         {/* Top 2 Hero Impact Cards: Overall Quality of Life Index + 18-District Ranking */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           {/* Card 1: Overall Quality of Life Index (0-100 pts) */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-between gap-4">
-            <div className="space-y-1">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-3 sm:gap-4">
+            <div className="space-y-1 flex flex-col items-center sm:items-start">
               <div className="flex items-center gap-2 text-xs font-bold text-sky-100 uppercase tracking-wider">
                 <TrendingUp className="w-4 h-4 text-sky-300" />
                 <span>{labels.overallIndexCardTitle}</span>
@@ -183,8 +183,8 @@ export function SimulatorImpactDisplay({
               <p className="text-[11px] text-blue-100/90">{labels.overallIndexCardSub}</p>
             </div>
 
-            <div className="text-right shrink-0 tabular-nums">
-              <div className="flex items-center justify-end gap-2">
+            <div className="flex flex-col items-center sm:items-end text-center sm:text-right shrink-0 tabular-nums">
+              <div className="flex items-center justify-center sm:justify-end gap-2">
                 {scores.deltas.weightedQualityOfLifeIndex > 0 && (
                   <>
                     <span className="text-sm font-bold text-blue-200/80 line-through">
@@ -194,21 +194,20 @@ export function SimulatorImpactDisplay({
                   </>
                 )}
                 <span className="text-2xl sm:text-3xl font-black text-white">
-                  {scores.after.weightedQualityOfLifeIndex.toFixed(1)}{' '}
-                  <span className="text-xs font-bold text-sky-200">{labels.pointsUnit}</span>
+                  {scores.after.weightedQualityOfLifeIndex.toFixed(1)}
                 </span>
               </div>
               {scores.deltas.weightedQualityOfLifeIndex > 0 && (
                 <span className="inline-block mt-1 px-2.5 py-0.5 rounded-full bg-emerald-500/25 border border-emerald-300/50 text-emerald-100 text-xs font-black">
-                  +{scores.deltas.weightedQualityOfLifeIndex.toFixed(1)} {labels.pointsUnit}
+                  +{scores.deltas.weightedQualityOfLifeIndex.toFixed(1)}
                 </span>
               )}
             </div>
           </div>
 
           {/* Card 2: Position in 18-District Ranking */}
-          <div className="p-4 sm:p-5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex items-center justify-between gap-4">
-            <div className="space-y-1">
+          <div className="p-4 sm:p-5 rounded-2xl bg-white/15 backdrop-blur-md border border-white/25 flex flex-col sm:flex-row items-center sm:justify-between text-center sm:text-left gap-3 sm:gap-4">
+            <div className="space-y-1 flex flex-col items-center sm:items-start">
               <div className="flex items-center gap-2 text-xs font-bold text-sky-100 uppercase tracking-wider">
                 <Award className="w-4 h-4 text-amber-300" />
                 <span>{labels.rankingCardTitle}</span>
@@ -216,8 +215,8 @@ export function SimulatorImpactDisplay({
               <p className="text-[11px] text-blue-100/90">{labels.rankingCardSub}</p>
             </div>
 
-            <div className="text-right shrink-0 tabular-nums">
-              <div className="flex items-center justify-end gap-2">
+            <div className="flex flex-col items-center sm:items-end text-center sm:text-right shrink-0 tabular-nums">
+              <div className="flex items-center justify-center sm:justify-end gap-2">
                 {scores.rankDelta > 0 && (
                   <>
                     <span className="text-sm font-bold text-blue-200/80 line-through">
@@ -248,7 +247,7 @@ export function SimulatorImpactDisplay({
 
         {/* 8 Pillars Breakdown */}
         <div className="p-4 sm:p-5 rounded-2xl bg-white/95 text-slate-900 space-y-3.5 shadow-md">
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 border-b border-slate-100 pb-2.5">
+          <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-1 border-b border-slate-100 pb-2.5 text-center sm:text-left">
             <h4 className="text-xs sm:text-sm font-black text-slate-900">
               {labels.pillarsSectionTitle}
             </h4>
@@ -272,7 +271,7 @@ export function SimulatorImpactDisplay({
                         </>
                       )}
                       <span className="font-black text-slate-900">
-                        {pillar.after.toFixed(1)} {labels.pointsUnit}
+                        {pillar.after.toFixed(1)}
                       </span>
                       {hasDelta && (
                         <span className="px-1.5 py-0.2 rounded-md bg-emerald-100 text-emerald-800 text-[10px] font-black">
@@ -295,7 +294,7 @@ export function SimulatorImpactDisplay({
       </div>
 
       {/* Childcare & School Places Balance (Current Real-Time State) */}
-      <div className="p-5 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-4">
+      <div className="p-4 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-4">
         <div className="space-y-0.5 border-b border-slate-100 pb-3">
           <h4 className="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
             <GraduationCap className="w-4 h-4 text-indigo-600 shrink-0" />
@@ -500,7 +499,7 @@ export function SimulatorImpactDisplay({
       </div>
 
       {/* Greenery, Mobility & Senior/Culture Concrete District Metrics */}
-      <div className="p-5 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-4">
+      <div className="p-4 sm:p-6 rounded-3xl bg-white border border-slate-200/90 shadow-xs space-y-4">
         <div className="space-y-0.5 border-b border-slate-100 pb-3">
           <h4 className="text-sm sm:text-base font-black text-slate-900 flex items-center gap-2">
             <Trees className="w-4 h-4 text-emerald-600 shrink-0" />
@@ -628,7 +627,7 @@ export function SimulatorImpactDisplay({
       </div>
 
       {/* Dynamic Summary & Practical Recommendation Banner */}
-      <div className="rounded-3xl bg-linear-to-r from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white p-5 sm:p-6 shadow-md border border-blue-400/40 space-y-2">
+      <div className="rounded-3xl bg-linear-to-r from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white p-4 sm:p-6 shadow-md border border-blue-400/40 space-y-2 text-center sm:text-left">
         <div className="flex items-center gap-2 text-xs font-extrabold text-sky-200 uppercase tracking-wider">
           <Sparkles className="w-4 h-4 text-sky-300 shrink-0" />
           <span>

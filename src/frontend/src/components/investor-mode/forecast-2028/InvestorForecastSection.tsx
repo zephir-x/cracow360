@@ -166,10 +166,10 @@ export function InvestorForecastSection({ districts }: InvestorForecastSectionPr
       {/* 1. Main 2028 Forecast & B2B/B2G Investment Section */}
       <section
         id="investor-forecast-section"
-        className="rounded-3xl border border-slate-200/90 bg-white/80 backdrop-blur-md shadow-xs p-6 sm:p-8 space-y-6 text-slate-900 transition-all scroll-mt-20"
+        className="rounded-3xl border border-slate-200/90 bg-white/80 backdrop-blur-md shadow-xs p-4 sm:p-8 space-y-5 sm:space-y-6 text-slate-900 transition-all scroll-mt-20"
       >
         {/* Section Header */}
-        <div className="space-y-1.5">
+        <div className="space-y-1.5 flex flex-col items-center sm:items-start text-center sm:text-left">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-900">
             <TrendingUp className="w-3.5 h-3.5 text-blue-600" />
             {labels.badgeSection}
@@ -186,7 +186,7 @@ export function InvestorForecastSection({ districts }: InvestorForecastSectionPr
         <InvestorForecastMacroCards macro={macro} labels={labels} />
 
         {/* Filter Toolbar */}
-        <div className="flex flex-wrap items-center gap-2 pt-2">
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2 pt-2">
           <button
             onClick={() => setActiveFilter('all')}
             className={`px-3.5 py-1.5 rounded-full text-xs font-bold transition flex items-center gap-2 cursor-pointer ${
@@ -279,7 +279,7 @@ export function InvestorForecastSection({ districts }: InvestorForecastSectionPr
 
         {/* Pagination Controls – Identical Layout & Styling to Parent Mode */}
         {totalPages > 1 && (
-          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-500">
+          <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-500 text-center sm:text-left">
             <div>
               {labels.showingDistricts(
                 filteredDistricts.length > 0 ? startIndex + 1 : 0,
@@ -292,10 +292,12 @@ export function InvestorForecastSection({ districts }: InvestorForecastSectionPr
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
-                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                title={labels.prevPage}
+                aria-label={labels.prevPage}
               >
                 <ChevronLeft className="w-3.5 h-3.5" />
-                <span>{labels.prevPage}</span>
+                <span className="hidden sm:inline">{labels.prevPage}</span>
               </button>
 
               <div className="flex items-center gap-1">
@@ -323,9 +325,11 @@ export function InvestorForecastSection({ districts }: InvestorForecastSectionPr
               <button
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={currentPage === totalPages}
-                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                title={labels.nextPage}
+                aria-label={labels.nextPage}
               >
-                <span>{labels.nextPage}</span>
+                <span className="hidden sm:inline">{labels.nextPage}</span>
                 <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>

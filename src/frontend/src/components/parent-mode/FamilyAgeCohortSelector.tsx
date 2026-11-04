@@ -30,10 +30,10 @@ export function FamilyAgeCohortSelector({
   };
 
   return (
-    <section className="rounded-3xl bg-white border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-6">
+    <section className="rounded-3xl bg-white border border-blue-100 p-4 sm:p-8 shadow-xl shadow-blue-900/5 space-y-5 sm:space-y-6">
       {/* Section Header */}
-      <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 border-b border-slate-100 pb-5 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-3">
           <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200 shrink-0">
             <SlidersHorizontal className="w-5 h-5" />
           </div>
@@ -50,7 +50,7 @@ export function FamilyAgeCohortSelector({
         {/* Quick Reset / All Cohorts Button */}
         <button
           onClick={() => onSelectCohort('all')}
-          className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer self-start sm:self-auto shrink-0 ${
+          className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl text-xs font-bold transition cursor-pointer self-center sm:self-auto shrink-0 ${
             selectedCohort === 'all'
               ? 'bg-blue-600 text-white shadow-md shadow-blue-600/20'
               : 'bg-slate-100 hover:bg-blue-50 text-slate-600 hover:text-blue-700 border border-slate-200 hover:border-blue-200'

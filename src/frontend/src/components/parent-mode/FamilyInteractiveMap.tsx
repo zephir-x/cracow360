@@ -343,8 +343,8 @@ export function FamilyInteractiveMap({
   return (
     <section className="rounded-3xl bg-white border border-slate-200/80 shadow-sm overflow-hidden">
       {/* Section Header */}
-      <div className="p-6 sm:p-7 flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100">
-        <div className="flex items-center gap-3">
+      <div className="p-4 sm:p-7 flex flex-col sm:flex-row items-center sm:items-center justify-between gap-3 border-b border-slate-100 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-3">
           <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200/80 flex items-center justify-center shrink-0">
             <Compass className="w-5 h-5" />
           </div>
@@ -360,7 +360,7 @@ export function FamilyInteractiveMap({
 
         {/* Active buffer indicator pill in section header */}
         {selectedCenter && (
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-900 animate-fade-in self-start sm:self-auto">
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200 text-xs font-semibold text-blue-900 animate-fade-in self-center sm:self-auto">
             <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
             <span>
               {t.parent.familyMap.bufferRadius}: {currentRadiusLabels.dist} ({currentRadiusLabels.time})
@@ -378,7 +378,7 @@ export function FamilyInteractiveMap({
 
       {/* Map Container */}
       <div
-        className={`relative w-full h-155 overflow-hidden family-interactive-map ${
+        className={`relative w-full h-96 sm:h-155 overflow-hidden family-interactive-map ${
           darkMapMode ? 'krakow-dark-tiles' : 'krakow-light-tiles'
         }`}
       >
@@ -392,16 +392,18 @@ export function FamilyInteractiveMap({
         {/* Floating Click Instruction Banner (displayed when no buffer is active) */}
         {!selectedCenter && <FamilyMapHintBanner />}
 
-        {/* Top-Right Floating Isochrone HUD Overlay */}
+        {/* Top-Right Floating Isochrone HUD Overlay (Desktop only: sm+) */}
         {selectedCenter && bufferStats && (
-          <FamilyMapHud
-            selectedPoi={selectedPoi}
-            bufferRadius={bufferRadius}
-            setBufferRadius={setBufferRadius}
-            bufferStats={bufferStats}
-            districtNameMap={districtNameMap}
-            onClose={handleResetBuffer}
-          />
+          <div className="hidden sm:block">
+            <FamilyMapHud
+              selectedPoi={selectedPoi}
+              bufferRadius={bufferRadius}
+              setBufferRadius={setBufferRadius}
+              bufferStats={bufferStats}
+              districtNameMap={districtNameMap}
+              onClose={handleResetBuffer}
+            />
+          </div>
         )}
 
         {/* Bottom-Left: Map Theme Switcher */}
@@ -500,6 +502,21 @@ export function FamilyInteractiveMap({
           })}
         </MapContainer>
       </div>
+
+      {/* Mobile Isochrone HUD Details Panel (Rendered directly beneath the map on mobile, hidden on sm+) */}
+      {selectedCenter && bufferStats && (
+        <div className="block sm:hidden p-4 pt-3 border-t border-slate-100 bg-slate-50/50 animate-fade-in">
+          <FamilyMapHud
+            selectedPoi={selectedPoi}
+            bufferRadius={bufferRadius}
+            setBufferRadius={setBufferRadius}
+            bufferStats={bufferStats}
+            districtNameMap={districtNameMap}
+            onClose={handleResetBuffer}
+            isMobileInline={true}
+          />
+        </div>
+      )}
     </section>
   );
 }

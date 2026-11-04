@@ -15,8 +15,8 @@ function formatTime(seconds: number): string {
 
 /**
  * Cinema-grade autoplay promotional spot ("ad.mp4", ~1m45s) with:
- * - Custom interactive Speaker cursor (Volume2 / VolumeX) that replaces the native pointer on hover.
- * - Outer wrapper with overflow-visible so the custom cursor orb is never clipped at video edges.
+ * - Custom interactive Speaker cursor (Volume2 / VolumeX) on desktop hover.
+ * - Mobile: Unobstructed view with sleek semi-transparent glass icon-only controls that auto-fade after 3s.
  * - Interactive YouTube-style seekable progress bar at the bottom.
  */
 export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) {
@@ -34,7 +34,25 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
   const [currentTimeSec, setCurrentTimeSec] = useState<number>(0);
   const [durationSec, setDurationSec] = useState<number>(0);
 
-  // Smooth 60 FPS pointer follower for the custom Speaker cursor
+  // Auto-hide controls timer on mobile (shows on tap, fades out cleanly after 3s)
+  const [isControlsVisible, setIsControlsVisible] = useState<boolean>(false);
+  const autoHideTimerRef = useRef<number | null>(null);
+
+  const triggerControlsVisibility = () => {
+    setIsControlsVisible(true);
+    if (autoHideTimerRef.current) clearTimeout(autoHideTimerRef.current);
+    autoHideTimerRef.current = window.setTimeout(() => {
+      setIsControlsVisible(false);
+    }, 3000);
+  };
+
+  useEffect(() => {
+    return () => {
+      if (autoHideTimerRef.current) clearTimeout(autoHideTimerRef.current);
+    };
+  }, []);
+
+  // Smooth 60 FPS pointer follower for the custom Speaker cursor (desktop)
   useEffect(() => {
     let rafId = 0;
     let targetX = 0;
@@ -75,6 +93,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
   }, []);
 
   const handleToggleSound = () => {
+    triggerControlsVisibility();
     const vid = videoRef.current;
     if (!vid) return;
     const nextMuted = !vid.muted;
@@ -88,6 +107,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
 
   const handleRestartWithSound = (e: React.MouseEvent) => {
     e.stopPropagation();
+    triggerControlsVisibility();
     const vid = videoRef.current;
     if (!vid) return;
     vid.currentTime = 0;
@@ -116,6 +136,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
   // Interactive YouTube-style seek handler
   const handleSeekClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.stopPropagation();
+    triggerControlsVisibility();
     const bar = seekBarRef.current;
     const vid = videoRef.current;
     if (!bar || !vid || !vid.duration) return;
@@ -139,20 +160,20 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
     isHoveringVideo && !isHoveringReplayBtn && !isHoveringSeekBar;
 
   return (
-    <div className="max-w-360 mx-auto px-4 sm:px-8 pt-16 pb-8">
-      {/* Section Header */}
-      <div className="max-w-3xl mb-8 space-y-3">
+    <div className="max-w-360 mx-auto px-3 sm:px-8 pt-10 sm:pt-16 pb-6 sm:pb-8">
+      {/* Section Header (Centered on mobile, left-aligned on sm+) */}
+      <div className="max-w-3xl mb-6 sm:mb-8 space-y-2.5 sm:space-y-3 flex flex-col items-center sm:items-start text-center sm:text-left mx-auto sm:mx-0">
         <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/80 text-blue-700 text-xs font-extrabold tracking-wider uppercase">
           <Film className="w-3.5 h-3.5 text-blue-600" />
           {copy.sectionBadge}
         </div>
-        <h2 className="text-3xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
+        <h2 className="text-2xl sm:text-5xl font-black tracking-tight text-slate-900 leading-tight">
           <span className="block">{copy.titleLead}</span>
           <span className="block bg-linear-to-r from-blue-600 via-sky-500 to-indigo-600 bg-clip-text text-transparent">
             {copy.titleAccent}
           </span>
         </h2>
-        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+        <p className="text-xs sm:text-base text-slate-600 leading-relaxed">
           {copy.description}
         </p>
       </div>
@@ -189,7 +210,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
         }`}
       >
         {/* Inner Rounded Cinema Frame that clips the video & overlays */}
-        <div className="relative w-full h-full rounded-3xl overflow-hidden bg-slate-950 border-2 border-blue-200/80 shadow-[0_28px_80px_rgba(15,23,42,0.22)]">
+        <div className="relative w-full h-full rounded-2xl sm:rounded-3xl overflow-hidden bg-slate-950 border-2 border-blue-200/80 shadow-[0_28px_80px_rgba(15,23,42,0.22)]">
           <video
             ref={videoRef}
             src="/showcase/ad.mp4"
@@ -205,63 +226,59 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
           {/* Subtle Top & Bottom Cinema Vignette */}
           <div className="pointer-events-none absolute inset-0 bg-linear-to-t from-slate-950/80 via-transparent to-slate-950/40" />
 
-          {/* Top-Right Sound Status Pill */}
-          <div className="absolute top-4 sm:top-6 right-4 sm:right-6 z-10 pointer-events-none">
+          {/* Top-Right Sound Status Indicator: Clean glass circle on mobile, pill on desktop */}
+          <div
+            className={`absolute top-3 sm:top-6 right-3 sm:right-6 z-10 transition-opacity duration-300 ${
+              isControlsVisible ? 'opacity-100' : 'opacity-0 sm:opacity-100'
+            }`}
+          >
             <div
-              className={`inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full backdrop-blur-xl border text-[11px] font-extrabold tracking-wider uppercase transition-all duration-300 ${
+              className={`inline-flex items-center gap-1.5 sm:gap-2 w-8 h-8 sm:w-auto p-0 sm:px-3.5 sm:py-1.5 justify-center rounded-full backdrop-blur-md border text-[11px] font-extrabold tracking-wider uppercase transition-all duration-300 ${
                 isMuted
-                  ? 'bg-slate-950/75 border-white/20 text-slate-200'
-                  : 'bg-sky-500/90 border-sky-300 text-white shadow-[0_0_25px_rgba(14,165,233,0.65)]'
+                  ? 'bg-black/35 sm:bg-slate-950/75 border-white/20 text-slate-200'
+                  : 'bg-sky-500/85 sm:bg-sky-500/90 border-sky-300 text-white shadow-[0_0_20px_rgba(14,165,233,0.5)]'
               }`}
             >
               {isMuted ? (
                 <>
-                  <VolumeX className="w-3.5 h-3.5 text-rose-400" />
-                  <span>{copy.audioMutedBadge}</span>
+                  <VolumeX className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-rose-400" />
+                  <span className="hidden sm:inline">{copy.audioMutedBadge}</span>
                 </>
               ) : (
                 <>
-                  <Volume2 className="w-3.5 h-3.5 text-white animate-pulse" />
-                  <span>{copy.audioActiveBadge}</span>
+                  <Volume2 className="w-4 h-4 sm:w-3.5 sm:h-3.5 text-white animate-pulse" />
+                  <span className="hidden sm:inline">{copy.audioActiveBadge}</span>
                 </>
               )}
             </div>
           </div>
 
-          {/* Bottom Controls Overlay: Replay from 0:00 Button, Time Readout & Interactive Seekable Progress Bar */}
-          <div className="absolute bottom-4 sm:bottom-5 inset-x-4 sm:inset-x-6 z-10 flex flex-col gap-2">
-            <div className="flex items-center justify-between gap-3">
-              <div className="flex items-center gap-3">
+          {/* Bottom Controls Overlay: Replay Button, Time Readout & Seekable Progress Bar */}
+          <div
+            className={`absolute bottom-2.5 sm:bottom-5 inset-x-3 sm:inset-x-6 z-10 flex flex-col gap-1.5 sm:gap-2 transition-opacity duration-300 ${
+              isControlsVisible ? 'opacity-100' : 'opacity-0 sm:opacity-100'
+            }`}
+          >
+            <div className="flex items-center justify-between gap-2 sm:gap-3">
+              <div className="flex items-center gap-2 sm:gap-3">
+                {/* Replay Button: Glass circle icon button on mobile, full pill on desktop */}
                 <button
                   type="button"
                   onClick={handleRestartWithSound}
                   onPointerEnter={() => setIsHoveringReplayBtn(true)}
                   onPointerLeave={() => setIsHoveringReplayBtn(false)}
-                  className="pointer-events-auto cursor-pointer px-3.5 py-1.5 rounded-xl bg-slate-950/80 hover:bg-blue-600/90 backdrop-blur-xl border border-white/20 hover:border-sky-300/60 text-xs font-bold text-white inline-flex items-center gap-2 transition-all duration-250 shadow-lg hover:scale-[1.03]"
+                  title={copy.restartVideoLabel}
+                  aria-label={copy.restartVideoLabel}
+                  className="pointer-events-auto cursor-pointer w-8 h-8 sm:w-auto p-0 sm:px-3.5 sm:py-1.5 rounded-full sm:rounded-xl bg-black/35 sm:bg-slate-950/80 hover:bg-blue-600/90 backdrop-blur-md border border-white/20 hover:border-sky-300/60 text-xs font-bold text-white flex items-center justify-center gap-2 transition-all duration-250 shadow-md hover:scale-[1.03]"
                 >
                   <RotateCcw className="w-3.5 h-3.5 text-sky-300" />
-                  <span>{copy.restartVideoLabel}</span>
+                  <span className="hidden sm:inline">{copy.restartVideoLabel}</span>
                 </button>
 
                 {durationSec > 0 && (
                   <span className="hidden sm:inline-block font-mono text-xs font-bold text-white/90 drop-shadow-[0_2px_6px_rgba(0,0,0,0.85)]">
                     {formatTime(currentTimeSec)} / {formatTime(durationSec)}
                   </span>
-                )}
-              </div>
-
-              {/* Mobile / Touch fallback badge */}
-              <div className="sm:hidden inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-slate-950/80 border border-white/20 text-xs font-bold text-white">
-                {isMuted ? (
-                  <>
-                    <VolumeX className="w-3.5 h-3.5 text-rose-400" />
-                    <span>{copy.cursorUnmuteLabel}</span>
-                  </>
-                ) : (
-                  <>
-                    <Volume2 className="w-3.5 h-3.5 text-emerald-400" />
-                    <span>{copy.cursorMuteLabel}</span>
-                  </>
                 )}
               </div>
             </div>
@@ -281,7 +298,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
               aria-valuemin={0}
               aria-valuemax={100}
               aria-valuenow={Math.round(progressPct)}
-              className="pointer-events-auto cursor-pointer relative py-2 group/seek"
+              className="pointer-events-auto cursor-pointer relative py-1.5 sm:py-2 group/seek"
             >
               {/* Hover Preview Timestamp Tooltip */}
               {hoverSeekPct !== null && durationSec > 0 && (
@@ -294,7 +311,7 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
               )}
 
               {/* Track Background */}
-              <div className="relative w-full h-1.5 group-hover/seek:h-2.5 rounded-full bg-white/25 overflow-hidden transition-all duration-150">
+              <div className="relative w-full h-1 group-hover/seek:h-2 rounded-full bg-white/25 overflow-hidden transition-all duration-150">
                 {/* Hover Ghost Fill */}
                 {hoverSeekPct !== null && (
                   <div
@@ -319,10 +336,10 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
           </div>
         </div>
 
-        {/* CUSTOM FLOATING SPEAKER CURSOR ORB (UNCLIPPED & SMOOTHLY ANIMATED) */}
+        {/* CUSTOM FLOATING SPEAKER CURSOR ORB (DESKTOP ONLY) */}
         <div
           ref={cursorOrbRef}
-          className="pointer-events-none absolute top-0 left-0 z-30"
+          className="pointer-events-none absolute top-0 left-0 z-30 hidden md:block"
           style={{ willChange: 'transform' }}
         >
           <div

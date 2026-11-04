@@ -75,8 +75,8 @@ export function EducationRankingSection({
   const scoreLabel = selectedCohort === 'all' ? t.parent.education : t.parent.matchScore;
 
   return (
-    <section className="rounded-3xl bg-white border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-4">
-      <div className="flex items-center gap-3 border-b border-slate-100 pb-4">
+    <section className="rounded-3xl bg-white border border-blue-100 p-4 sm:p-8 shadow-xl shadow-blue-900/5 space-y-4">
+      <div className="flex flex-col sm:flex-row items-center gap-3 border-b border-slate-100 pb-4 text-center sm:text-left">
         <div className="p-2.5 rounded-2xl bg-blue-50 text-blue-600 border border-blue-200">
           <GraduationCap className="w-5 h-5" />
         </div>

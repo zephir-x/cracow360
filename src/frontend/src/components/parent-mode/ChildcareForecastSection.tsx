@@ -198,7 +198,7 @@ export function ChildcareForecastSection({
       {/* 1. Main Forecast & Balance Card */}
       <section
         id="childcare-forecast-section"
-        className="scroll-mt-20 p-6 sm:p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-6"
+        className="scroll-mt-20 p-4 sm:p-8 rounded-3xl bg-white border border-slate-200/80 shadow-sm space-y-5 sm:space-y-6"
       >
         <ForecastToolbar
           activeCohort={activeCohort}
@@ -276,10 +276,12 @@ export function ChildcareForecastSection({
               <button
                 onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                 disabled={currentPage === 1}
-                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                title={fLabels.prevPage}
+                aria-label={fLabels.prevPage}
               >
                 <ChevronLeft className="w-3.5 h-3.5" />
-                <span>{fLabels.prevPage}</span>
+                <span className="hidden sm:inline">{fLabels.prevPage}</span>
               </button>
 
               <div className="flex items-center gap-1">
@@ -307,9 +309,11 @@ export function ChildcareForecastSection({
               <button
                 onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                 disabled={currentPage === totalPages}
-                className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                title={fLabels.nextPage}
+                aria-label={fLabels.nextPage}
               >
-                <span>{fLabels.nextPage}</span>
+                <span className="hidden sm:inline">{fLabels.nextPage}</span>
                 <ChevronRight className="w-3.5 h-3.5" />
               </button>
             </div>

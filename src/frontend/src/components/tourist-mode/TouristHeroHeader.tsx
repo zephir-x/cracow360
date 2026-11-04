@@ -278,8 +278,8 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
         </div>
 
         {/* Foreground Content stretching full container width */}
-        <div className="relative z-10 px-6 sm:px-10 pt-8 sm:pt-10 pb-8 space-y-8">
-          <div className="max-w-3xl space-y-4">
+        <div className="relative z-10 px-4 sm:px-10 pt-6 sm:pt-10 pb-6 sm:pb-8 space-y-6 sm:space-y-8">
+          <div className="max-w-3xl space-y-4 flex flex-col items-center sm:items-start text-center sm:text-left mx-auto sm:mx-0">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
               <Compass className="w-4 h-4 text-sky-300" />
               {t.badge}
@@ -287,117 +287,123 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
           </div>
 
           {/* Hero Content: Title, Description & Action Buttons */}
-          <div className="space-y-4 max-w-3xl">
-            <h1 className="text-3xl sm:text-4xl lg:text-[42px] font-black tracking-tight leading-[1.12] text-white">
+          <div className="space-y-4 max-w-3xl flex flex-col items-center sm:items-start text-center sm:text-left mx-auto sm:mx-0">
+            <h1 className="text-2xl sm:text-4xl lg:text-[42px] font-black tracking-tight leading-[1.12] text-white">
               {t.titleLead}
               <br />
               <span className="text-sky-200">{t.titleAccent}</span>
             </h1>
 
-            <p className="text-sm sm:text-base text-blue-100/95 leading-relaxed max-w-2xl">
+            <p className="text-xs sm:text-base text-blue-100/95 leading-relaxed max-w-2xl">
               {t.subtitle}
             </p>
 
             {/* In-page Anchor Navigation CTA Buttons */}
-            <div className="flex flex-wrap items-center gap-2.5 pt-1">
+            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2.5 pt-1 w-full sm:w-auto">
               <button
                 onClick={() => scrollToSection('trip-planner-section')}
-                className="inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold bg-white text-blue-900 hover:bg-sky-50 shadow-md transition transform hover:-translate-y-0.5 cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-between sm:justify-start gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold bg-white text-blue-900 hover:bg-sky-50 shadow-md transition transform hover:-translate-y-0.5 cursor-pointer active:scale-95"
               >
-                <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />
-                <span>{t.header.navPlanner}</span>
+                <div className="flex items-center gap-2">
+                  <Sparkles className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>{t.header.navPlanner}</span>
+                </div>
                 <ArrowDownRight className="w-3.5 h-3.5 text-blue-600 shrink-0" />
               </button>
 
               <button
                 onClick={() => scrollToSection('overtourism-section')}
-                className="inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white border border-white/25 backdrop-blur-md transition cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-between sm:justify-start gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white border border-white/25 backdrop-blur-md transition cursor-pointer active:scale-95"
               >
-                <Leaf className="w-4 h-4 text-emerald-300 shrink-0" />
-                <span>{t.header.navOvertourism}</span>
+                <div className="flex items-center gap-2">
+                  <Leaf className="w-4 h-4 text-emerald-300 shrink-0" />
+                  <span>{t.header.navOvertourism}</span>
+                </div>
                 <ArrowDownRight className="w-3.5 h-3.5 text-emerald-300 shrink-0" />
               </button>
 
               <button
                 onClick={() => scrollToSection('district-passports-section')}
-                className="inline-flex items-center justify-between gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white border border-white/25 backdrop-blur-md transition cursor-pointer"
+                className="w-full sm:w-auto inline-flex items-center justify-between sm:justify-start gap-2 px-4 py-2.5 rounded-2xl text-xs font-bold bg-white/20 hover:bg-white/30 text-white border border-white/25 backdrop-blur-md transition cursor-pointer active:scale-95"
               >
-                <Train className="w-4 h-4 text-sky-200 shrink-0" />
-                <span>{t.header.navPassports}</span>
+                <div className="flex items-center gap-2">
+                  <Train className="w-4 h-4 text-sky-200 shrink-0" />
+                  <span>{t.header.navPassports}</span>
+                </div>
                 <ArrowDownRight className="w-3.5 h-3.5 text-sky-200 shrink-0" />
               </button>
             </div>
           </div>
 
           {/* 4 Bottom Floating Stat Cards (Full Width Layout) */}
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3.5 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-3.5 pt-2">
             {/* Card 1: Annual Total Visitors */}
-            <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
-              <div className="w-11 h-11 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3 sm:gap-3.5">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-blue-50 border border-blue-200 flex items-center justify-center text-blue-600 shrink-0">
                 <Users className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <div className="text-2xl font-black text-blue-900 leading-none">
+                <div className="text-xl sm:text-2xl font-black text-blue-900 leading-none">
                   {formatAnnualVisitors(summary?.annualVisitorsTotal ?? 0, language)}
                 </div>
-                <div className="text-xs font-bold text-slate-800 mt-1 truncate">
+                <div className="text-xs font-bold text-slate-800 mt-1 leading-snug">
                   {t.telemetry.annualVisitorsLabel}
                 </div>
-                <div className="text-[11px] text-slate-500 truncate">
+                <div className="text-[11px] text-slate-500 leading-snug">
                   {t.telemetry.annualVisitorsSub}
                 </div>
               </div>
             </div>
 
             {/* Card 2: Average Length of Stay (Actionable City-Break Metric) */}
-            <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
-              <div className="w-11 h-11 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 shrink-0">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3 sm:gap-3.5">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 shrink-0">
                 <CalendarDays className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <div className="text-2xl font-black text-indigo-700 leading-none">
+                <div className="text-xl sm:text-2xl font-black text-indigo-700 leading-none">
                   {formatStayDuration(summary?.averageStayDays ?? 0, language)}
                 </div>
-                <div className="text-xs font-bold text-slate-800 mt-1 truncate">
+                <div className="text-xs font-bold text-slate-800 mt-1 leading-snug">
                   {t.telemetry.stayDurationLabel}
                 </div>
-                <div className="text-[11px] text-slate-500 truncate">
+                <div className="text-[11px] text-slate-500 leading-snug">
                   {t.telemetry.stayDurationSub}
                 </div>
               </div>
             </div>
 
             {/* Card 3: Economic Footprint */}
-            <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
-              <div className="w-11 h-11 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3 sm:gap-3.5">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
                 <Coins className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <div className="text-2xl font-black text-emerald-700 leading-none">
+                <div className="text-xl sm:text-2xl font-black text-emerald-700 leading-none">
                   {formatEconomicImpact(summary?.estimatedEconomicImpactPln ?? 0, language)}
                 </div>
-                <div className="text-xs font-bold text-slate-800 mt-1 truncate">
+                <div className="text-xs font-bold text-slate-800 mt-1 leading-snug">
                   {t.telemetry.economicImpactLabel}
                 </div>
-                <div className="text-[11px] text-slate-500 truncate">
+                <div className="text-[11px] text-slate-500 leading-snug">
                   {t.telemetry.economicImpactSub}
                 </div>
               </div>
             </div>
 
             {/* Card 4: Audited Sites */}
-            <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3.5">
-              <div className="w-11 h-11 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 shrink-0">
+            <div className="p-3.5 sm:p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg flex items-center gap-3 sm:gap-3.5">
+              <div className="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-purple-50 border border-purple-200 flex items-center justify-center text-purple-600 shrink-0">
                 <Landmark className="w-5 h-5" />
               </div>
               <div className="min-w-0">
-                <div className="text-2xl font-black text-purple-700 leading-none">
+                <div className="text-xl sm:text-2xl font-black text-purple-700 leading-none">
                   {formatCuratedSites(summary?.totalCuratedAttractions ?? 0, language)}
                 </div>
-                <div className="text-xs font-bold text-slate-800 mt-1 truncate">
+                <div className="text-xs font-bold text-slate-800 mt-1 leading-snug">
                   {t.telemetry.curatedSitesLabel}
                 </div>
-                <div className="text-[11px] text-slate-500 truncate">
+                <div className="text-[11px] text-slate-500 leading-snug">
                   {t.telemetry.curatedSitesSub}
                 </div>
               </div>
@@ -408,7 +414,7 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
           <div className="flex justify-center pt-1 pb-1">
             <button
               onClick={() => setShowHowItWorks(!showHowItWorks)}
-              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-md text-xs font-bold transition shadow-xs cursor-pointer"
+              className="inline-flex items-center gap-2 px-5 py-2.5 rounded-2xl bg-white/15 hover:bg-white/25 text-white border border-white/25 backdrop-blur-md text-xs font-bold transition shadow-xs cursor-pointer active:scale-95"
             >
               <HelpCircle className="w-4 h-4 text-sky-300" />
               <span>{t.howItWorksButton}</span>
@@ -430,9 +436,9 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
       </div>
 
       {/* Visual International Markets Ranking Card */}
-      <div className="p-6 rounded-3xl bg-white border border-blue-100 shadow-xl shadow-blue-900/5 space-y-5">
-        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-slate-100 pb-4">
-          <div className="flex items-center gap-2.5">
+      <div className="p-4 sm:p-6 rounded-3xl bg-white border border-blue-100 shadow-xl shadow-blue-900/5 space-y-4 sm:space-y-5">
+        <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-3 border-b border-slate-100 pb-4 text-center sm:text-left">
+          <div className="flex flex-col sm:flex-row items-center sm:items-start text-center sm:text-left gap-2.5">
             <div className="p-2 rounded-xl bg-blue-50 text-blue-600 border border-blue-200">
               <Globe2 className="w-4 h-4" />
             </div>
@@ -445,12 +451,12 @@ export const TouristHeroHeader: React.FC<TouristHeroHeaderProps> = ({ summary })
               </p>
             </div>
           </div>
-          <span className="text-[11px] font-semibold text-slate-400 self-start sm:self-auto">
+          <span className="text-xs font-semibold text-slate-500 self-center sm:self-auto bg-slate-50 px-3 py-1 rounded-full border border-slate-200/80">
             {formatForeignVisitorsTotal(summary?.internationalVisitors ?? 0, language)}
           </span>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3.5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-3.5">
           {topMarkets.map((market, idx) => {
             const pctBar = (market.sharePct / maxShare) * 100;
             const isLeader = idx === 0;

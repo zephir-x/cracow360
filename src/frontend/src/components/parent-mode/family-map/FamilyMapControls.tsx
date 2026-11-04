@@ -68,12 +68,12 @@ export function FamilyMapFilterBar({
   const { t } = useTranslation();
 
   return (
-    <div className="absolute top-3.5 left-14 sm:left-14 z-1000 max-w-[calc(100%-8rem)] pointer-events-none flex flex-wrap gap-2">
-      <div className="flex flex-wrap items-center gap-1.5 p-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-blue-100 shadow-lg shadow-blue-950/10 pointer-events-auto">
+    <div className="absolute top-3.5 left-14 right-3 sm:right-auto z-1000 max-w-[calc(100%-4.5rem)] pointer-events-none flex gap-2">
+      <div className="flex items-center gap-1.5 p-1.5 rounded-2xl bg-white/95 backdrop-blur-md border border-blue-100 shadow-lg shadow-blue-950/10 pointer-events-auto overflow-x-auto no-scrollbar max-w-full">
         {/* All */}
         <button
           onClick={() => setActiveFilter('all')}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer shrink-0 ${
             activeFilter === 'all'
               ? 'bg-blue-600 text-white shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
@@ -94,7 +94,7 @@ export function FamilyMapFilterBar({
         {/* Nurseries */}
         <button
           onClick={() => setActiveFilter('nurseries')}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer shrink-0 ${
             activeFilter === 'nurseries'
               ? 'bg-blue-600 text-white shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
@@ -116,7 +116,7 @@ export function FamilyMapFilterBar({
         {/* Kindergartens */}
         <button
           onClick={() => setActiveFilter('kindergartens')}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer shrink-0 ${
             activeFilter === 'kindergartens'
               ? 'bg-amber-600 text-white shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
@@ -138,7 +138,7 @@ export function FamilyMapFilterBar({
         {/* Primary Schools */}
         <button
           onClick={() => setActiveFilter('schools')}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer shrink-0 ${
             activeFilter === 'schools'
               ? 'bg-purple-600 text-white shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
@@ -160,7 +160,7 @@ export function FamilyMapFilterBar({
         {/* Parks & Greenery */}
         <button
           onClick={() => setActiveFilter('parks')}
-          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer ${
+          className={`inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-semibold transition cursor-pointer shrink-0 ${
             activeFilter === 'parks'
               ? 'bg-emerald-600 text-white shadow-xs'
               : 'text-slate-600 hover:bg-slate-100'
@@ -184,19 +184,27 @@ export function FamilyMapFilterBar({
 }
 
 export function FamilyMapHintBanner() {
-  const { t } = useTranslation();
+  const { language, t } = useTranslation();
+
+  const shortMobileHint =
+    language === 'en'
+      ? 'Click map to check 300m / 500m / 1km walking zone'
+      : language === 'ua'
+      ? 'Натисніть на карту для зони 300м / 500м / 1км'
+      : 'Kliknij mapę, by sprawdzić strefę dojścia 300m / 500m / 1km';
 
   return (
-    <div className="absolute top-20 sm:top-4 right-4 z-1000 max-w-sm pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-200/90 rounded-2xl p-3 shadow-xl shadow-blue-950/10 animate-fade-in">
-      <div className="flex items-start gap-2.5 text-xs text-slate-700">
-        <div className="p-1.5 rounded-xl bg-blue-50 text-blue-600 border border-blue-200 shrink-0 mt-0.5">
-          <MousePointerClick className="w-4 h-4" />
+    <div className="absolute top-16 sm:top-4 right-3 left-3 sm:left-auto sm:max-w-sm z-1000 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-200/90 rounded-2xl p-2 sm:p-3 shadow-xl shadow-blue-950/10 animate-fade-in text-left">
+      <div className="flex items-center sm:items-start gap-2 sm:gap-2.5 text-xs text-slate-700">
+        <div className="p-1 sm:p-1.5 rounded-lg sm:rounded-xl bg-blue-50 text-blue-600 border border-blue-200 shrink-0">
+          <MousePointerClick className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
         </div>
-        <div>
-          <span className="font-bold text-slate-900 block mb-0.5">
-            {t.parent.familyMap.bufferRadius}
+        <div className="min-w-0">
+          <span className="font-bold text-slate-900 text-[11px] sm:text-xs block sm:mb-0.5">
+            <span className="sm:hidden">{shortMobileHint}</span>
+            <span className="hidden sm:inline">{t.parent.familyMap.bufferRadius}</span>
           </span>
-          <span className="text-slate-600 text-[11px] leading-relaxed">
+          <span className="hidden sm:inline text-slate-600 text-[11px] leading-relaxed">
             {t.parent.familyMap.mapClickHintBanner}
           </span>
         </div>
@@ -240,7 +248,7 @@ export function FamilyMapStaticLegend({ bufferRadius }: FamilyMapStaticLegendPro
   const radiusLabel = getRadiusLabels(bufferRadius, language);
 
   return (
-    <div className="absolute bottom-4 right-4 z-1000 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-100 rounded-2xl p-3 shadow-lg shadow-blue-950/10">
+    <div className="absolute bottom-4 right-4 z-1000 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-100 rounded-2xl p-3 shadow-lg shadow-blue-950/10 hidden sm:block">
       <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-800 mb-2">
         <Layers className="w-3.5 h-3.5 text-blue-600" />
         <span>{t.parent.familyMap.legendTitle}</span>

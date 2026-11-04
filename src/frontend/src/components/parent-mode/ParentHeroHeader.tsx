@@ -384,8 +384,8 @@ export function ParentHeroHeader({
         </div>
 
         {/* Hero Foreground Content */}
-        <div className="relative z-10 px-6 sm:px-10 pt-8 sm:pt-10 pb-8 space-y-8">
-          <div className="max-w-3xl space-y-4">
+        <div className="relative z-10 p-5 sm:px-10 sm:pt-10 sm:pb-8 space-y-6 sm:space-y-8">
+          <div className="max-w-3xl space-y-4 flex flex-col items-center sm:items-start text-center sm:text-left mx-auto sm:mx-0">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 backdrop-blur-md border border-white/25 text-xs font-semibold text-sky-100">
               <Baby className="w-4 h-4 text-sky-300" />
               {t.parent.badge}
@@ -402,7 +402,7 @@ export function ParentHeroHeader({
             </p>
 
             {/* Direct Navigation CTA Action Buttons with short catchy copy matching page order */}
-            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2.5 pt-2 w-full">
               <button
                 onClick={scrollToProfile}
                 className="inline-flex items-center justify-between gap-1.5 px-3.5 py-2.5 rounded-2xl text-xs font-bold bg-white text-blue-900 hover:bg-sky-50 shadow-md transition transform hover:-translate-y-0.5 cursor-pointer"

@@ -12,6 +12,7 @@ export interface FamilyMapHudProps {
   bufferStats: BufferStats;
   districtNameMap: Map<number, string>;
   onClose: () => void;
+  isMobileInline?: boolean;
 }
 
 export function FamilyMapHud({
@@ -21,6 +22,7 @@ export function FamilyMapHud({
   bufferStats,
   districtNameMap,
   onClose,
+  isMobileInline = false,
 }: FamilyMapHudProps) {
   const { language, t, localizeDistrictName } = useTranslation();
 
@@ -55,7 +57,11 @@ export function FamilyMapHud({
   }, [bufferStats, t, currentRadiusLabels, language]);
 
   return (
-    <div className="absolute top-20 sm:top-4 right-4 z-1000 w-80 sm:w-88 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-200/80 rounded-2xl p-4 shadow-xl shadow-blue-950/15 space-y-3 animate-fade-in">
+    <div className={
+        isMobileInline
+          ? 'w-full bg-white/95 backdrop-blur-md border border-blue-200/90 rounded-2xl p-4 shadow-sm space-y-3 animate-fade-in text-left'
+          : 'absolute top-4 right-4 z-1000 w-88 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-200/80 rounded-2xl p-4 shadow-xl shadow-blue-950/15 space-y-3 animate-fade-in text-left'
+      }>
       {/* Header: Title, Tags & Enlarged X Button */}
       <div className="flex items-start justify-between gap-2 border-b border-slate-100 pb-2.5">
         <div className="min-w-0 flex-1">

@@ -158,10 +158,10 @@ export function FacilityExplorerSection({
   const paginatedPois = filteredPois.slice(startIndex, startIndex + ITEMS_PER_PAGE);
 
   return (
-    <section className="rounded-3xl bg-white border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-5">
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 pb-4">
-        <div className="flex items-center gap-3">
-          <div className="p-2.5 rounded-2xl bg-sky-50 text-sky-600 border border-sky-200">
+    <section className="rounded-3xl bg-white border border-blue-100 p-4 sm:p-8 shadow-xl shadow-blue-900/5 space-y-5">
+      <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 border-b border-slate-100 pb-4 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-3">
+          <div className="p-2.5 rounded-2xl bg-sky-50 text-sky-600 border border-sky-200 shrink-0">
             <School className="w-5 h-5" />
           </div>
           <div>
@@ -188,7 +188,7 @@ export function FacilityExplorerSection({
       </div>
 
       {/* Subcategory Filter Pills */}
-      <div className="flex flex-wrap items-center gap-2">
+      <div className="flex flex-wrap items-center justify-center sm:justify-start gap-2">
         {POI_FILTER_TAB_DEFS.map((tab) => {
           const isActive = activeFilterId === tab.id;
           const count = getTabCount(tab);
@@ -283,7 +283,7 @@ export function FacilityExplorerSection({
 
           {/* Pagination Controls */}
           {totalPages > 1 && (
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-500">
+            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 pt-3 border-t border-slate-100 text-xs text-slate-500 text-center sm:text-left">
               <div>
                 {t.parent.explorer.showing}{' '}
                 <span className="font-semibold text-slate-800">
@@ -298,10 +298,12 @@ export function FacilityExplorerSection({
                 <button
                   onClick={() => setCurrentPage((p) => Math.max(1, p - 1))}
                   disabled={currentPage === 1}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                  className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                  title={t.parent.explorer.prev}
+                  aria-label={t.parent.explorer.prev}
                 >
                   <ChevronLeft className="w-3.5 h-3.5" />
-                  {t.parent.explorer.prev}
+                  <span className="hidden sm:inline">{t.parent.explorer.prev}</span>
                 </button>
                 <div className="flex items-center gap-1">
                   {getPageNumbers(currentPage, totalPages).map((p, idx) =>
@@ -327,9 +329,11 @@ export function FacilityExplorerSection({
                 <button
                   onClick={() => setCurrentPage((p) => Math.min(totalPages, p + 1))}
                   disabled={currentPage === totalPages}
-                  className="inline-flex items-center gap-1 px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                  className="inline-flex items-center gap-1 px-2.5 sm:px-3 py-1.5 rounded-xl border border-slate-200 bg-white text-slate-700 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed transition font-medium cursor-pointer"
+                  title={t.parent.explorer.next}
+                  aria-label={t.parent.explorer.next}
                 >
-                  {t.parent.explorer.next}
+                  <span className="hidden sm:inline">{t.parent.explorer.next}</span>
                   <ChevronRight className="w-3.5 h-3.5" />
                 </button>
               </div>

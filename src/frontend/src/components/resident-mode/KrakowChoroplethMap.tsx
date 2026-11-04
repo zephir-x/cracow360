@@ -71,6 +71,7 @@ export function KrakowChoroplethMap({
   const { t, language } = useTranslation();
   const [hoveredDistrictId, setHoveredDistrictId] = useState<number | null>(null);
   const [darkMapMode, setDarkMapMode] = useState<boolean>(false);
+  const [isMobileLegendOpen, setIsMobileLegendOpen] = useState<boolean>(false);
   const geoJsonRef = useRef<L.GeoJSON | null>(null);
 
   // Fast lookup map: districtId -> { summary, rank (1..18) }
@@ -199,7 +200,7 @@ export function KrakowChoroplethMap({
 
   return (
     <div
-      className={`relative w-full h-162.5 rounded-3xl overflow-hidden border border-blue-100 bg-white shadow-xl shadow-blue-900/5 ${
+      className={`relative w-full h-107.5 sm:h-130 xl:h-162.5 rounded-3xl overflow-hidden border border-blue-100 bg-white shadow-xl shadow-blue-900/5 ${
         darkMapMode ? 'krakow-dark-tiles' : 'krakow-light-tiles'
       }`}
     >
@@ -297,32 +298,39 @@ export function KrakowChoroplethMap({
       </div>
 
       {/* Bottom-Left: Map Theme Switcher (Light Kraków Civic vs Dark Night Mode) */}
-      <div className="absolute bottom-4 left-4 z-1000 pointer-events-auto">
+      <div className="absolute bottom-3 left-3 sm:bottom-4 sm:left-4 z-1000 pointer-events-auto">
         <button
           onClick={() => setDarkMapMode((prev) => !prev)}
-          className="inline-flex items-center gap-1.5 px-3.5 py-2 rounded-2xl text-xs font-semibold bg-white/95 backdrop-blur-md border border-blue-100 text-slate-700 hover:text-blue-700 hover:border-blue-300 shadow-lg shadow-blue-950/10 transition cursor-pointer"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 sm:px-3.5 sm:py-2 rounded-2xl text-xs font-semibold bg-white/95 backdrop-blur-md border border-blue-100 text-slate-700 hover:text-blue-700 hover:border-blue-300 shadow-lg shadow-blue-950/10 transition cursor-pointer"
         >
           {darkMapMode ? (
             <>
               <Sun className="w-3.5 h-3.5 text-amber-500" />
-              {t.map.basemapDark}
+              <span className="hidden sm:inline">{t.map.basemapDark}</span>
+              <span className="sm:hidden">{t.map.basemapDark.split(' ')[0]}</span>
             </>
           ) : (
             <>
               <Moon className="w-3.5 h-3.5 text-blue-600" />
-              {t.map.basemapLight}
+              <span className="hidden sm:inline">{t.map.basemapLight}</span>
+              <span className="sm:hidden">{t.map.basemapLight.split(' ')[0]}</span>
             </>
           )}
         </button>
       </div>
 
-      {/* Bottom-Right Legend: Choropleth Color Scale */}
-      <div className="absolute bottom-4 right-4 z-1000 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-100 rounded-2xl p-3.5 shadow-lg shadow-blue-950/10">
-        <div className="flex items-center gap-1.5 text-[11px] font-bold text-slate-800 mb-2">
+      {/* Bottom-Right Legend: Choropleth Color Scale (Compact toggle on mobile, fully visible on desktop) */}
+      <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-1000 pointer-events-auto bg-white/95 backdrop-blur-md border border-blue-100 rounded-2xl p-2.5 sm:p-3.5 shadow-lg shadow-blue-950/10 max-w-[calc(100%-8rem)] sm:max-w-none">
+        <button
+          type="button"
+          onClick={() => setIsMobileLegendOpen((prev) => !prev)}
+          className="flex sm:pointer-events-none items-center gap-1.5 text-[11px] font-bold text-slate-800 cursor-pointer sm:cursor-default"
+          aria-expanded={isMobileLegendOpen}
+        >
           <Info className="w-3.5 h-3.5 text-blue-600" />
-          {t.map.legendTitle}
-        </div>
-        <div className="space-y-1.5 text-[11px] text-slate-600 font-medium">
+          <span>{t.map.legendTitle}</span>
+        </button>
+        <div className={`${isMobileLegendOpen ? 'block' : 'hidden'} sm:block space-y-1.5 text-[11px] text-slate-600 font-medium mt-2`}>
           <div className="flex items-center gap-2">
             <span className="w-3.5 h-3.5 rounded-sm bg-[#059669] inline-block shadow-2xs" />
             <span>{t.map.legendVeryHigh}</span>

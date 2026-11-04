@@ -238,18 +238,18 @@ export function DistrictComparisonView({
   const numLocale = language === 'ua' ? 'uk-UA' : language === 'en' ? 'en-US' : 'pl-PL';
 
   return (
-    <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-6 sm:p-8 shadow-xl shadow-blue-900/5 space-y-6">
+    <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-4 sm:p-8 shadow-xl shadow-blue-900/5 space-y-5 sm:space-y-6 w-full max-w-full overflow-hidden">
       {/* Header bar with dropdowns and clear button */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
-        <div className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-2xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-600/20">
+      <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-3 border-b border-slate-100 pb-4 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-3 min-w-0">
+          <div className="w-10 h-10 rounded-2xl bg-linear-to-br from-blue-600 to-indigo-600 flex items-center justify-center text-white shadow-md shadow-blue-600/20 shrink-0">
             <GitCompareArrows className="w-5 h-5" />
           </div>
-          <div>
-            <h2 className="text-lg font-black text-slate-900">
+          <div className="min-w-0">
+            <h2 className="text-base sm:text-lg font-black text-slate-900 leading-tight">
               {t.comparison.title}
             </h2>
-            <p className="text-xs text-slate-500">
+            <p className="text-xs text-slate-500 mt-0.5">
               {t.comparison.subtitle}
             </p>
           </div>
@@ -258,7 +258,7 @@ export function DistrictComparisonView({
         {hasAnySelection && (
           <button
             onClick={onClearSelection}
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-500 hover:text-rose-600 hover:bg-rose-50 border border-slate-200 transition cursor-pointer"
+            className="self-center sm:self-auto inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full text-xs font-semibold text-slate-500 hover:text-rose-600 hover:bg-rose-50 border border-slate-200 transition cursor-pointer"
           >
             <X className="w-3.5 h-3.5" />
             {t.comparison.clearButton}
@@ -458,26 +458,26 @@ export function DistrictComparisonView({
             <div className="space-y-6 pt-4 border-t border-slate-100">
               {/* Comparative Radar Chart */}
               <div className="p-5 sm:p-6 rounded-3xl bg-slate-50/70 border border-slate-200 space-y-4">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 text-center sm:text-left">
                   <div>
-                    <h3 className="text-sm font-extrabold text-slate-900 flex items-center gap-2">
+                    <h3 className="text-sm font-extrabold text-slate-900 flex items-center justify-center sm:justify-start gap-2">
                       <TrendingUp className="w-4 h-4 text-blue-600" />
                       {t.comparison.radarTitle}
                     </h3>
-                    <p className="text-xs text-slate-500">
+                    <p className="text-xs text-slate-500 mt-0.5">
                       {t.comparison.radarSubtitle}
                     </p>
                   </div>
                   <span className="text-[11px] text-slate-500">{t.comparison.scaleNote}</span>
                 </div>
 
-                <div className="w-full h-80 sm:h-96">
+                <div className="w-full max-w-full overflow-hidden min-w-0 h-64 sm:h-80 md:h-96">
                   <ResponsiveContainer width="100%" height="100%">
-                    <RadarChart cx="50%" cy="50%" outerRadius="75%" data={activeComparison.radar}>
+                    <RadarChart cx="50%" cy="50%" outerRadius="58%" data={activeComparison.radar}>
                       <PolarGrid stroke="#e2e8f0" strokeDasharray="3 3" />
                       <PolarAngleAxis
                         dataKey="pillar"
-                        tick={{ fill: '#334155', fontSize: 11, fontWeight: 700 }}
+                        tick={{ fill: '#334155', fontSize: 10, fontWeight: 700 }}
                       />
                       <PolarRadiusAxis
                         angle={30}
@@ -516,8 +516,8 @@ export function DistrictComparisonView({
 
               {/* Comprehensive Hard Data Metrics Table */}
               <div className="space-y-3">
-                <div className="flex items-center justify-between">
-                  <h4 className="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center gap-2">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-1 text-center sm:text-left">
+                  <h4 className="text-xs font-black uppercase tracking-wider text-slate-700 flex items-center justify-center sm:justify-start gap-2">
                     <ArrowLeftRight className="w-4 h-4 text-blue-600" />
                     {t.comparison.tableTitle}
                   </h4>
@@ -526,8 +526,8 @@ export function DistrictComparisonView({
                   </span>
                 </div>
 
-                <div className="overflow-x-auto rounded-2xl border border-slate-200">
-                  <table className="w-full text-left text-xs">
+                <div className="w-full max-w-full overflow-x-auto rounded-2xl border border-slate-200">
+                  <table className="w-full min-w-130 text-left text-xs">
                     <thead className="bg-slate-100/90 text-slate-700 font-bold border-b border-slate-200">
                       <tr>
                         <th className="py-3 px-4 w-1/4">{t.comparison.categoryAndMetric}</th>

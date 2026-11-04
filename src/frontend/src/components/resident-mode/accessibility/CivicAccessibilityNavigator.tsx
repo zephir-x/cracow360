@@ -163,14 +163,14 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
       className="space-y-6"
     >
       {/* 1. Header & Overview Hero Card – Unified Kraków Blue & White Aesthetic */}
-      <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white p-6 sm:p-8 lg:p-10 shadow-2xl shadow-blue-950/15 border border-blue-400/30">
+      <div className="relative overflow-hidden rounded-3xl bg-linear-to-br from-[#0a2e65] via-[#1d4ed8] to-[#0284c7] text-white p-4 sm:p-8 lg:p-10 shadow-2xl shadow-blue-950/15 border border-blue-400/30">
         <div className="absolute inset-0 pointer-events-none overflow-hidden">
           <div className="absolute -top-24 -right-20 w-80 h-80 rounded-full bg-sky-300/20 blur-3xl animate-pulse-glow" />
           <div className="absolute -bottom-24 left-1/3 w-96 h-96 rounded-full bg-indigo-400/20 blur-3xl" />
         </div>
 
         <div className="relative z-10 space-y-6">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center justify-center sm:justify-between gap-3">
             <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-white/15 border border-white/25 text-xs font-bold text-sky-100 uppercase tracking-wide shadow-xs">
               <ShieldCheck className="w-4 h-4 text-sky-300" />
               <span>{t.sectionBadge}</span>
@@ -181,7 +181,7 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
             </div>
           </div>
 
-          <div className="max-w-3xl space-y-2">
+          <div className="max-w-3xl space-y-2 text-center sm:text-left mx-auto sm:mx-0">
             <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black tracking-tight leading-tight">
               {t.sectionTitle}
             </h2>
@@ -191,7 +191,7 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
           </div>
 
           {/* City Aggregate Telemetry Grid */}
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 pt-2">
             {/* PRM Parking */}
             <div className="p-4 rounded-2xl bg-white/95 text-slate-900 backdrop-blur-md border border-white shadow-lg space-y-1">
               <div className="flex items-center gap-2 text-blue-700 font-extrabold text-xs">
@@ -264,24 +264,27 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
       </div>
 
       {/* 2. Mobility Profile Selector Tabs */}
-      <div className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-6 shadow-xs space-y-4">
-        <div>
+      <div className="rounded-3xl border border-slate-200 bg-white p-4 sm:p-6 shadow-xs space-y-4">
+        <div className="text-center sm:text-left">
           <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wider text-slate-500 mb-1">
             {t.profilesLabel}
           </h3>
         </div>
 
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-2.5">
-          {PROFILE_TABS.map((tab) => {
+          {PROFILE_TABS.map((tab, idx) => {
             const Icon = tab.icon;
             const isActive = activeProfile === tab.key;
             const profileMeta = t.profiles[tab.key];
+            const isLast = idx === PROFILE_TABS.length - 1;
 
             return (
               <button
                 key={tab.key}
                 onClick={() => setActiveProfile(tab.key)}
                 className={`p-3.5 rounded-2xl border text-left transition-all duration-200 cursor-pointer flex flex-col justify-between ${
+                  isLast ? 'col-span-2 sm:col-span-1 max-w-[calc(50%-0.3125rem)] sm:max-w-none mx-auto w-full' : ''
+                } ${
                   isActive
                     ? 'border-blue-600 bg-blue-50/70 shadow-xs ring-2 ring-blue-500/20'
                     : 'border-slate-200 bg-white hover:border-slate-300 hover:bg-slate-50/60'
@@ -329,8 +332,8 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
 
       {/* 3. Top 3 Recommended Districts Grid for Active Profile with Fade-In Animation */}
       <div className="space-y-3">
-        <div className="flex items-baseline justify-between">
-          <div>
+        <div className="flex items-baseline justify-between text-center sm:text-left">
+          <div className="w-full sm:w-auto">
             <h3 className="text-base sm:text-lg font-black text-slate-900">
               {t.topRecommendationsTitle}
             </h3>
@@ -361,7 +364,7 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
                 }`}
               >
                 <div>
-                  <div className="flex items-center justify-between gap-2 mb-3">
+                  <div className="flex items-center justify-center sm:justify-between gap-2 mb-3">
                     <span
                       className={`inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-[11px] font-black ${
                         isRank1
@@ -376,7 +379,7 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
                     </span>
                   </div>
 
-                  <h4 className="text-base font-extrabold text-slate-900 mb-1">
+                  <h4 className="text-base font-extrabold text-slate-900 mb-1 text-center sm:text-left">
                     {d.districtRoman}. {shortName}
                   </h4>
 
@@ -463,11 +466,11 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
       {inspectedDistrict && (
         <div
           id="accessibility-inspector"
-          className="rounded-3xl border border-slate-200 bg-white p-5 sm:p-7 shadow-xs space-y-6 scroll-mt-24"
+          className="rounded-3xl border border-slate-200 bg-white p-4 sm:p-7 shadow-xs space-y-6 scroll-mt-24"
         >
           {/* Inspector Header with District Dropdown & Selector */}
-          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100">
-            <div>
+          <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-4 border-b border-slate-100 text-center md:text-left">
+            <div className="flex flex-col items-center md:items-start">
               <div className="flex items-center gap-2 mb-1">
                 <span className="p-1.5 rounded-lg bg-blue-100 text-blue-700">
                   <Building2 className="w-4 h-4" />
@@ -482,7 +485,7 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
             </div>
 
             {/* District Selector Dropdown with Simplified Clean Names */}
-            <div className="flex items-center gap-2 self-start md:self-center">
+            <div className="flex items-center justify-center gap-2 self-center md:self-center">
               <label htmlFor="district-select" className="text-xs font-bold text-slate-600 shrink-0">
                 {t.districtLabel}
               </label>
@@ -504,7 +507,7 @@ export const CivicAccessibilityNavigator: React.FC<CivicAccessibilityNavigatorPr
           {/* District Highlights Banner with Smooth Fade Animation */}
           <div
             key={`banner-${selectedDistrictId}`}
-            className="p-4 rounded-2xl bg-linear-to-r from-blue-50 via-slate-50 to-indigo-50 border border-blue-100 flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-fade-in"
+            className="p-4 rounded-2xl bg-linear-to-r from-blue-50 via-slate-50 to-indigo-50 border border-blue-100 flex flex-col sm:flex-row items-center sm:items-center justify-between gap-3 text-center sm:text-left animate-fade-in"
           >
             <div>
               <div className="text-xs text-slate-500 font-semibold">

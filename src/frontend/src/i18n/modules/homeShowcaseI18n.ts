@@ -144,7 +144,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
     brandTitleAccent: '360',
     subtitleHeadlineLine1: 'Zintegrowana Platforma',
     subtitleHeadlineLine2: 'typu Smart City',
-    subtitleBody: `Przekształcamy ${DATASETS_COUNT} oficjalnych miejskich zbiorów danych w czytelne narzędzia codziennego wsparcia mieszkańców, rodziców, urzędników i turystów.`,
+    subtitleBody: `Przekształcamy ${DATASETS_COUNT} oficjalne miejskie zbiory danych w czytelne narzędzia codziennego wsparcia mieszkańców, rodziców, urzędników i turystów.`,
     mottoBadge: 'ORDO AB CHAO • ZESPÓŁ PERCEPCJA360',
     maskHintSub:
       'Poruszaj kursorem po panoramie Wawelu, aby prześwietlić siatkę GIS i architekturę danych pod obrazem miasta',
@@ -181,7 +181,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         description:
           'W naszym badaniu ankietowym (n = 243) aż 81,1% mieszkańców zgłaszało deficyt klarownych informacji, a 36,6% wskazało na rozproszenie źródeł. Kraków360 łączy je w jeden przejrzysty interfejs.',
         bullets: [
-          `${DATASETS_COUNT} zweryfikowanych zbiorów danych (UMK, GUS, GIOŚ, MPK, ZTP, MSWiA)`,
+          `${DATASETS_COUNT} zweryfikowane zbiory danych (UMK, GUS, GIOŚ, MPK, ZTP, MSWiA)`,
           'Dwuwarstwowy algorytm normalizacji Min-Max odporny na wartości skrajne',
           'Maksyma zespołu Percepcja360: Ordo ab chao (Porządek z chaosu)',
         ],
@@ -461,11 +461,11 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         colorTheme: 'slate',
         code: 'MODUŁ 05',
         badge: 'TRANSPARENTNOŚĆ NAUKOWA I OPEN DATA',
-        title: `Metodologia i ${DATASETS_COUNT} Zbiorów Danych`,
+        title: `Metodologia i ${DATASETS_COUNT} Zbiory Danych`,
         subtitle: 'Wzory Matematyczne Min-Max • Pełny Rejestr Źródeł 1:1',
         description:
           'Poznaj dwustopniowy model normalizacji danych z przycinaniem wartości skrajnych (5.–95. percentyl) oraz przeszukaj kompletny katalog oficjalnych źródeł.',
-        metricsLabel: `${DATASETS_COUNT} Zbiorów Danych • 10 Kategorii • Weryfikowalność 1:1`,
+        metricsLabel: `${DATASETS_COUNT} Zbiory Danych • 10 Kategorii • Weryfikowalność 1:1`,
         ctaLabel: 'Przejdź do Metodologii',
         accentGradient: 'from-slate-800 via-blue-900 to-slate-900',
       },

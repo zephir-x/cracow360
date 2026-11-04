@@ -151,8 +151,8 @@ export function ForecastToolbar({
   return (
     <>
       {/* Module Header with Cohort Icon Switcher aligned top-right */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
-        <div className="flex items-center gap-3">
+      <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-4 border-b border-slate-100 pb-5 text-center sm:text-left">
+        <div className="flex flex-col sm:flex-row items-center gap-3">
           <div className="w-10 h-10 rounded-2xl bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-600 shrink-0">
             {activeCohort === 'preschool' ? (
               <Smile className="w-5 h-5" />
@@ -174,7 +174,7 @@ export function ForecastToolbar({
 
         {/* Compact, Smooth Sliding Icon-Only Cohort Switcher */}
         <div
-          className="relative inline-flex items-center p-0.5 rounded-full bg-slate-100/90 border border-slate-200/90 shadow-2xs select-none self-start sm:self-auto shrink-0"
+          className="relative inline-flex items-center p-0.5 rounded-full bg-slate-100/90 border border-slate-200/90 shadow-2xs select-none self-center sm:self-auto shrink-0"
           title={switcherTitle || 'Przełącz profil wiekowy'}
         >
           <div
@@ -208,9 +208,9 @@ export function ForecastToolbar({
       </div>
 
       {/* Toolbar: Filter Pills (Left) + View Mode Switcher (Right) */}
-      <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 border-b border-slate-100 pb-3">
+      <div className="flex flex-col sm:flex-row items-center sm:items-center justify-between gap-3 border-b border-slate-100 pb-3 text-center sm:text-left">
         {/* Category Filter Pills (All / White Spots / Balanced / Surplus) */}
-        <div className="flex flex-wrap items-center gap-1.5">
+        <div className="flex flex-wrap items-center justify-center sm:justify-start gap-1.5">
           {FILTER_TABS.map((tab) => {
             const isActive = activeFilter === tab.id;
             const count = getFilterCount(tab.id);
@@ -239,7 +239,7 @@ export function ForecastToolbar({
         </div>
 
         {/* View Mode Toggle: Grid vs Table with sliding pill */}
-        <div className="relative inline-flex items-center p-0.5 rounded-xl bg-slate-100 border border-slate-200/80 self-end sm:self-auto shrink-0 select-none">
+        <div className="relative inline-flex items-center p-0.5 rounded-xl bg-slate-100 border border-slate-200/80 self-center sm:self-auto shrink-0 select-none">
           <div
             className="absolute top-0.5 bottom-0.5 left-0 rounded-lg bg-white shadow-xs border border-blue-200/70 transition-all duration-200 ease-out pointer-events-none"
             style={{

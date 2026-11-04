@@ -207,7 +207,7 @@ export function WeightsConfiguratorPanel({
   };
 
   return (
-    <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-5 shadow-xl shadow-blue-900/5 flex flex-col h-162.5">
+    <div className="rounded-3xl bg-white/95 backdrop-blur-md border border-blue-100 p-4 sm:p-5 shadow-xl shadow-blue-900/5 flex flex-col h-auto xl:h-162.5">
       {/* Panel Header */}
       <div className="flex items-center justify-between border-b border-slate-100 pb-3 shrink-0">
         <div className="flex items-center gap-2">
@@ -236,7 +236,7 @@ export function WeightsConfiguratorPanel({
           <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
             {t.configurator.presetsLabel}
           </label>
-          <div className="grid grid-cols-2 gap-1.5">
+          <div className="flex xl:grid xl:grid-cols-2 gap-2 overflow-x-auto no-scrollbar pb-1.5">
             {RESIDENT_PRESETS.map((preset) => {
               const isActive = activePresetId === preset.id;
               const presetKey = preset.id as keyof typeof t.configurator.presets;
@@ -248,7 +248,7 @@ export function WeightsConfiguratorPanel({
                 <button
                   key={preset.id}
                   onClick={() => handleApplyPreset(preset)}
-                  className={`flex items-center p-2 rounded-xl border transition cursor-pointer min-h-13 ${
+                  className={`flex shrink-0 w-40 sm:w-48 xl:w-auto items-center p-2 rounded-xl border transition cursor-pointer min-h-13 ${
                     isActive
                       ? 'bg-blue-50/90 border-blue-500 text-blue-900 shadow-xs ring-1 ring-blue-500/30'
                       : 'bg-slate-50/70 border-slate-200 text-slate-700 hover:bg-blue-50/40 hover:border-blue-300'
@@ -267,11 +267,12 @@ export function WeightsConfiguratorPanel({
           </div>
         </div>
 
-        {/* 8 Quality Dimension Sliders */}
-        <div className="space-y-3 pt-1">
+        {/* 8 Quality Dimension Sliders: Horizontal swipe on mobile/tablet (< xl), vertical on desktop (xl+) */}
+        <div className="space-y-2 pt-1">
           <label className="text-[11px] font-bold text-slate-700 uppercase tracking-wider block">
             {t.configurator.slidersSectionTitle}
           </label>
+          <div className="flex xl:flex-col gap-2.5 overflow-x-auto xl:overflow-y-auto no-scrollbar pb-2 xl:pb-0">
           {SLIDER_DEFS.map((slider) => {
             const currentValue = weights[slider.key];
             const pillarLocalized = t.configurator.pillars[slider.key];
@@ -281,7 +282,7 @@ export function WeightsConfiguratorPanel({
             return (
               <div
                 key={slider.key}
-                className="p-2.5 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:border-blue-200 transition space-y-1.5"
+                className="shrink-0 w-64 sm:w-72 xl:w-full p-2.5 rounded-2xl bg-slate-50/70 border border-slate-200/80 hover:border-blue-200 transition space-y-1.5"
               >
                 <div className="flex items-center justify-between gap-2">
                   <div className="flex items-center gap-2 min-w-0">
@@ -319,6 +320,7 @@ export function WeightsConfiguratorPanel({
               </div>
             );
           })}
+          </div>
         </div>
       </div>
     </div>

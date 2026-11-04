@@ -190,10 +190,10 @@ export function InvestorSimulatorSection({ districts }: InvestorSimulatorSection
   return (
     <section
       id="investor-simulator-section"
-      className="rounded-3xl border border-slate-200/90 bg-white/85 backdrop-blur-md shadow-xs p-6 sm:p-8 space-y-6 text-slate-900 transition-all scroll-mt-20"
+      className="rounded-3xl border border-slate-200/90 bg-white/85 backdrop-blur-md shadow-xs p-4 sm:p-8 space-y-5 sm:space-y-6 text-slate-900 transition-all scroll-mt-20"
     >
       {/* Section Header */}
-      <div className="space-y-1.5">
+      <div className="space-y-1.5 flex flex-col items-center sm:items-start text-center sm:text-left">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-900">
           <Sliders className="w-3.5 h-3.5 text-blue-600" />
           <span>{labels.sectionBadge}</span>

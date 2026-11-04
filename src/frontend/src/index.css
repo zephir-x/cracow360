@@ -141,14 +141,16 @@ html, body {
   filter: blur(0px);
   transform: scale(1);
   pointer-events: auto;
-  overflow: visible !important;
+  max-width: 100%;
+  overflow-x: clip;
 }
 
-/* Cushion buffer for child box-shadows to bloom naturally without edge clipping */
+/* Cushion buffer for child box-shadows to bloom naturally without horizontal blowout */
 .drawer-expandable.is-open > div {
   min-height: 0;
-  overflow: visible !important;
-  padding: 8px 12px 28px 12px;
+  max-width: 100%;
+  overflow-x: clip;
+  padding: 8px 4px 28px 4px;
 }
 
 /* Custom keyframe animations for the Kraków360 Hero & Interactive UI */
@@ -221,6 +223,18 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: #2563eb;
+}
+
+/* Utility to completely hide scrollbars while allowing touch/wheel scrolling */
+.no-scrollbar::-webkit-scrollbar {
+  display: none !important;
+  width: 0 !important;
+  height: 0 !important;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none !important;
+  scrollbar-width: none !important;
 }
 
 /* Remove default browser focus outline rectangle around clicked SVG district paths */
