@@ -38,13 +38,13 @@ public class District
     // Libraries, cultural community centers, and Senior Activity Centers (CAS)
     public DistrictCultureAndSociety CultureAndSociety { get; set; } = new();
 
-    // Road safety incidents, collisions, and municipal police interventions
+    // Road safety incidents, collisions, and resident safety rating
     public DistrictPublicSafety PublicSafety { get; set; } = new();
 
     // Real estate purchase prices, rental rates, and salary purchasing power
     public DistrictHousingMarket HousingMarket { get; set; } = new();
 
-    // Air quality monitoring (PM10/PM2.5), smog days, and acoustic noise
+    // Air quality monitoring (PM10/PM2.5), smog days, and NO2 exhaust levels
     public DistrictEnvironmentalQuality EnvironmentalQuality { get; set; } = new();
 
     // 2028 Demographic forecasts, childcare balance, and municipal recommendations
@@ -55,7 +55,7 @@ public class District
 
     /// <summary>
     /// Calculates the weighted composite Quality of Life Index (0.0 - 100.0) across all 8 urban pillars
-    /// using the calibrated CES / Bottleneck-Aware econometric formula.
+    /// using pure, transparent weighted arithmetic mean: sum(S_i * w_i) / sum(w_i).
     /// Default weight for each pillar is 5.0 on a 0.0 - 10.0 scale.
     /// </summary>
     public double CalculateWeightedQualityOfLifeIndex(
@@ -102,7 +102,7 @@ public class District
             totalWeight = 40.0;
         }
 
-        // 1. Linear weighted mean across all 8 calibrated urban pillars
+        // Pure weighted arithmetic mean across all 8 calibrated urban pillars
         var weightedSum = 0.0;
         for (var i = 0; i < 8; i++)
         {
@@ -110,31 +110,7 @@ public class District
         }
         var weightedMean = weightedSum / totalWeight;
 
-        // 2. Non-compensatory bottleneck penalty for critical deficits below 52.0 pts
-        const double bottleneckThreshold = 52.0;
-        var penaltyNumerator = 0.0;
-        var normalizedWeightSum = 0.0;
-
-        for (var i = 0; i < 8; i++)
-        {
-            var relWeight = weights[i] / 10.0;
-            normalizedWeightSum += relWeight;
-            if (scores[i] < bottleneckThreshold && relWeight > 0)
-            {
-                var deficit = bottleneckThreshold - scores[i];
-                penaltyNumerator += relWeight * relWeight * Math.Pow(deficit, 1.5);
-            }
-        }
-
-        var bottleneckPenalty = normalizedWeightSum > 0
-            ? (penaltyNumerator / normalizedWeightSum) * 0.25
-            : 0.0;
-
-        // 3. Contrast calibration around Krakow's healthy municipal standard (70.0 pts)
-        var rawNetScore = weightedMean - bottleneckPenalty;
-        var calibratedIndex = 70.0 + (rawNetScore - 62.8) * 1.35;
-
-        return Math.Round(Math.Clamp(calibratedIndex, 0.0, 100.0), 2);
+        return Math.Round(Math.Clamp(weightedMean, 0.0, 100.0), 2);
     }
 }
 

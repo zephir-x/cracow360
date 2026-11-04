@@ -37,4 +37,6 @@ appsettings.Development.json
 
 # Working documents
 Assets/Documents/
+!Assets/Documents/raport.pdf
+!Assets/Documents/report.pdf
 Assets/Instructions/

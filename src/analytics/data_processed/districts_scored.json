@@ -205,14 +205,14 @@
         "tactilePavingStops": 29
       },
       "scores": {
-        "mobilityScore": 96.0,
-        "educationScore": 92.0,
-        "greeneryScore": 68.1,
-        "cultureAndSeniorScore": 81.2,
-        "environmentScore": 28.2,
-        "safetyScore": 38.0,
-        "housingAffordabilityScore": 22.0,
-        "demographicVitalityScore": 71.7
+        "mobilityScore": 99.7,
+        "educationScore": 98.2,
+        "greeneryScore": 38.7,
+        "cultureAndSeniorScore": 91.6,
+        "environmentScore": 47.7,
+        "safetyScore": 26.1,
+        "housingAffordabilityScore": 19.9,
+        "demographicVitalityScore": 53.3
       }
     },
     {
@@ -418,14 +418,14 @@
         "tactilePavingStops": 12
       },
       "scores": {
-        "mobilityScore": 76.8,
-        "educationScore": 73.1,
-        "greeneryScore": 70.3,
-        "cultureAndSeniorScore": 59.2,
-        "environmentScore": 27.8,
-        "safetyScore": 67.6,
-        "housingAffordabilityScore": 27.6,
-        "demographicVitalityScore": 77.0
+        "mobilityScore": 97.9,
+        "educationScore": 81.0,
+        "greeneryScore": 38.5,
+        "cultureAndSeniorScore": 65.9,
+        "environmentScore": 47.7,
+        "safetyScore": 40.8,
+        "housingAffordabilityScore": 27.5,
+        "demographicVitalityScore": 65.4
       }
     },
     {
@@ -632,14 +632,14 @@
         "tactilePavingStops": 56
       },
       "scores": {
-        "mobilityScore": 76.1,
-        "educationScore": 73.2,
-        "greeneryScore": 58.4,
-        "cultureAndSeniorScore": 56.6,
-        "environmentScore": 26.0,
-        "safetyScore": 64.4,
-        "housingAffordabilityScore": 53.4,
-        "demographicVitalityScore": 62.1
+        "mobilityScore": 82.6,
+        "educationScore": 77.0,
+        "greeneryScore": 28.5,
+        "cultureAndSeniorScore": 50.0,
+        "environmentScore": 47.7,
+        "safetyScore": 46.9,
+        "housingAffordabilityScore": 47.5,
+        "demographicVitalityScore": 47.8
       }
     },
     {
@@ -846,14 +846,14 @@
         "tactilePavingStops": 123
       },
       "scores": {
-        "mobilityScore": 72.9,
-        "educationScore": 68.8,
-        "greeneryScore": 52.0,
-        "cultureAndSeniorScore": 65.9,
-        "environmentScore": 26.0,
-        "safetyScore": 72.2,
-        "housingAffordabilityScore": 51.6,
-        "demographicVitalityScore": 70.8
+        "mobilityScore": 63.7,
+        "educationScore": 68.7,
+        "greeneryScore": 21.4,
+        "cultureAndSeniorScore": 50.2,
+        "environmentScore": 47.7,
+        "safetyScore": 56.9,
+        "housingAffordabilityScore": 44.8,
+        "demographicVitalityScore": 58.6
       }
     },
     {
@@ -1060,14 +1060,14 @@
         "tactilePavingStops": 35
       },
       "scores": {
-        "mobilityScore": 78.4,
-        "educationScore": 77.2,
-        "greeneryScore": 73.6,
-        "cultureAndSeniorScore": 55.5,
-        "environmentScore": 28.4,
-        "safetyScore": 41.1,
-        "housingAffordabilityScore": 40.5,
-        "demographicVitalityScore": 72.4
+        "mobilityScore": 89.2,
+        "educationScore": 85.2,
+        "greeneryScore": 44.5,
+        "cultureAndSeniorScore": 50.5,
+        "environmentScore": 47.7,
+        "safetyScore": 29.1,
+        "housingAffordabilityScore": 36.3,
+        "demographicVitalityScore": 60.4
       }
     },
     {
@@ -1270,14 +1270,14 @@
         "tactilePavingStops": 11
       },
       "scores": {
-        "mobilityScore": 41.7,
-        "educationScore": 58.9,
-        "greeneryScore": 65.6,
-        "cultureAndSeniorScore": 49.8,
-        "environmentScore": 53.7,
-        "safetyScore": 81.9,
-        "housingAffordabilityScore": 49.0,
-        "demographicVitalityScore": 64.9
+        "mobilityScore": 57.9,
+        "educationScore": 57.9,
+        "greeneryScore": 42.0,
+        "cultureAndSeniorScore": 36.8,
+        "environmentScore": 52.4,
+        "safetyScore": 49.7,
+        "housingAffordabilityScore": 42.1,
+        "demographicVitalityScore": 54.3
       }
     },
     {
@@ -1483,14 +1483,14 @@
         "tactilePavingStops": 44
       },
       "scores": {
-        "mobilityScore": 41.9,
-        "educationScore": 60.6,
-        "greeneryScore": 96.0,
-        "cultureAndSeniorScore": 58.9,
-        "environmentScore": 61.5,
-        "safetyScore": 87.2,
-        "housingAffordabilityScore": 36.6,
-        "demographicVitalityScore": 67.7
+        "mobilityScore": 56.0,
+        "educationScore": 62.4,
+        "greeneryScore": 75.6,
+        "cultureAndSeniorScore": 79.6,
+        "environmentScore": 52.4,
+        "safetyScore": 53.3,
+        "housingAffordabilityScore": 28.0,
+        "demographicVitalityScore": 55.3
       }
     },
     {
@@ -1698,14 +1698,14 @@
         "tactilePavingStops": 71
       },
       "scores": {
-        "mobilityScore": 41.5,
-        "educationScore": 72.8,
-        "greeneryScore": 80.8,
-        "cultureAndSeniorScore": 55.2,
-        "environmentScore": 55.9,
-        "safetyScore": 74.0,
-        "housingAffordabilityScore": 42.1,
-        "demographicVitalityScore": 76.4
+        "mobilityScore": 50.7,
+        "educationScore": 74.0,
+        "greeneryScore": 47.8,
+        "cultureAndSeniorScore": 32.5,
+        "environmentScore": 52.4,
+        "safetyScore": 54.8,
+        "housingAffordabilityScore": 34.6,
+        "demographicVitalityScore": 62.7
       }
     },
     {
@@ -1910,14 +1910,14 @@
         "tactilePavingStops": 18
       },
       "scores": {
-        "mobilityScore": 58.8,
-        "educationScore": 40.0,
-        "greeneryScore": 76.9,
-        "cultureAndSeniorScore": 50.9,
-        "environmentScore": 33.2,
-        "safetyScore": 82.5,
-        "housingAffordabilityScore": 46.3,
-        "demographicVitalityScore": 64.9
+        "mobilityScore": 78.4,
+        "educationScore": 45.8,
+        "greeneryScore": 61.4,
+        "cultureAndSeniorScore": 60.7,
+        "environmentScore": 47.7,
+        "safetyScore": 53.6,
+        "housingAffordabilityScore": 40.8,
+        "demographicVitalityScore": 50.6
       }
     },
     {
@@ -2121,14 +2121,14 @@
         "tactilePavingStops": 34
       },
       "scores": {
-        "mobilityScore": 28.0,
-        "educationScore": 63.0,
-        "greeneryScore": 59.8,
-        "cultureAndSeniorScore": 51.9,
-        "environmentScore": 94.0,
-        "safetyScore": 86.0,
-        "housingAffordabilityScore": 73.4,
-        "demographicVitalityScore": 65.6
+        "mobilityScore": 41.8,
+        "educationScore": 61.8,
+        "greeneryScore": 37.0,
+        "cultureAndSeniorScore": 46.0,
+        "environmentScore": 60.2,
+        "safetyScore": 61.4,
+        "housingAffordabilityScore": 59.9,
+        "demographicVitalityScore": 49.9
       }
     },
     {
@@ -2332,14 +2332,14 @@
         "tactilePavingStops": 19
       },
       "scores": {
-        "mobilityScore": 56.6,
-        "educationScore": 61.7,
-        "greeneryScore": 63.6,
-        "cultureAndSeniorScore": 51.4,
-        "environmentScore": 28.1,
-        "safetyScore": 94.0,
-        "housingAffordabilityScore": 57.4,
-        "demographicVitalityScore": 58.2
+        "mobilityScore": 64.0,
+        "educationScore": 65.0,
+        "greeneryScore": 25.2,
+        "cultureAndSeniorScore": 25.7,
+        "environmentScore": 47.7,
+        "safetyScore": 68.0,
+        "housingAffordabilityScore": 48.5,
+        "demographicVitalityScore": 45.0
       }
     },
     {
@@ -2545,14 +2545,14 @@
         "tactilePavingStops": 45
       },
       "scores": {
-        "mobilityScore": 58.7,
-        "educationScore": 73.0,
-        "greeneryScore": 66.9,
-        "cultureAndSeniorScore": 52.2,
-        "environmentScore": 36.7,
-        "safetyScore": 71.4,
-        "housingAffordabilityScore": 72.0,
-        "demographicVitalityScore": 57.4
+        "mobilityScore": 60.6,
+        "educationScore": 75.0,
+        "greeneryScore": 26.7,
+        "cultureAndSeniorScore": 24.1,
+        "environmentScore": 49.4,
+        "safetyScore": 61.0,
+        "housingAffordabilityScore": 66.7,
+        "demographicVitalityScore": 42.7
       }
     },
     {
@@ -2757,14 +2757,14 @@
         "tactilePavingStops": 79
       },
       "scores": {
-        "mobilityScore": 66.5,
-        "educationScore": 73.6,
-        "greeneryScore": 74.8,
-        "cultureAndSeniorScore": 87.2,
-        "environmentScore": 29.9,
-        "safetyScore": 45.2,
-        "housingAffordabilityScore": 25.6,
-        "demographicVitalityScore": 95.0
+        "mobilityScore": 70.4,
+        "educationScore": 76.4,
+        "greeneryScore": 44.9,
+        "cultureAndSeniorScore": 80.4,
+        "environmentScore": 47.7,
+        "safetyScore": 27.4,
+        "housingAffordabilityScore": 25.3,
+        "demographicVitalityScore": 70.2
       }
     },
     {
@@ -2966,14 +2966,14 @@
         "tactilePavingStops": 37
       },
       "scores": {
-        "mobilityScore": 63.0,
-        "educationScore": 62.5,
-        "greeneryScore": 70.4,
-        "cultureAndSeniorScore": 44.0,
-        "environmentScore": 38.0,
-        "safetyScore": 55.1,
-        "housingAffordabilityScore": 62.5,
-        "demographicVitalityScore": 76.8
+        "mobilityScore": 67.7,
+        "educationScore": 68.6,
+        "greeneryScore": 37.4,
+        "cultureAndSeniorScore": 14.0,
+        "environmentScore": 49.4,
+        "safetyScore": 39.8,
+        "housingAffordabilityScore": 59.0,
+        "demographicVitalityScore": 62.0
       }
     },
     {
@@ -3177,14 +3177,14 @@
         "tactilePavingStops": 44
       },
       "scores": {
-        "mobilityScore": 71.8,
-        "educationScore": 68.7,
-        "greeneryScore": 65.0,
-        "cultureAndSeniorScore": 49.3,
-        "environmentScore": 36.3,
-        "safetyScore": 90.4,
-        "housingAffordabilityScore": 65.2,
-        "demographicVitalityScore": 52.5
+        "mobilityScore": 85.7,
+        "educationScore": 74.7,
+        "greeneryScore": 23.6,
+        "cultureAndSeniorScore": 20.6,
+        "environmentScore": 49.4,
+        "safetyScore": 61.8,
+        "housingAffordabilityScore": 56.9,
+        "demographicVitalityScore": 35.7
       }
     },
     {
@@ -3389,14 +3389,14 @@
         "tactilePavingStops": 19
       },
       "scores": {
-        "mobilityScore": 68.8,
-        "educationScore": 69.1,
-        "greeneryScore": 62.4,
-        "cultureAndSeniorScore": 50.2,
-        "environmentScore": 36.7,
-        "safetyScore": 89.5,
-        "housingAffordabilityScore": 69.8,
-        "demographicVitalityScore": 46.0
+        "mobilityScore": 86.9,
+        "educationScore": 70.4,
+        "greeneryScore": 29.1,
+        "cultureAndSeniorScore": 28.3,
+        "environmentScore": 49.4,
+        "safetyScore": 69.9,
+        "housingAffordabilityScore": 64.4,
+        "demographicVitalityScore": 24.1
       }
     },
     {
@@ -3600,14 +3600,14 @@
         "tactilePavingStops": 58
       },
       "scores": {
-        "mobilityScore": 39.6,
-        "educationScore": 59.2,
-        "greeneryScore": 64.3,
-        "cultureAndSeniorScore": 46.7,
-        "environmentScore": 39.7,
-        "safetyScore": 55.1,
-        "housingAffordabilityScore": 92.0,
-        "demographicVitalityScore": 57.5
+        "mobilityScore": 49.1,
+        "educationScore": 57.8,
+        "greeneryScore": 49.2,
+        "cultureAndSeniorScore": 30.9,
+        "environmentScore": 49.4,
+        "safetyScore": 51.0,
+        "housingAffordabilityScore": 82.4,
+        "demographicVitalityScore": 42.6
       }
     },
     {
@@ -3814,14 +3814,14 @@
         "tactilePavingStops": 140
       },
       "scores": {
-        "mobilityScore": 39.0,
-        "educationScore": 81.1,
-        "greeneryScore": 80.0,
-        "cultureAndSeniorScore": 96.0,
-        "environmentScore": 40.8,
-        "safetyScore": 62.4,
-        "housingAffordabilityScore": 74.3,
-        "demographicVitalityScore": 49.2
+        "mobilityScore": 52.2,
+        "educationScore": 84.4,
+        "greeneryScore": 58.3,
+        "cultureAndSeniorScore": 91.1,
+        "environmentScore": 49.4,
+        "safetyScore": 46.5,
+        "housingAffordabilityScore": 63.3,
+        "demographicVitalityScore": 29.4
       }
     }
   ]

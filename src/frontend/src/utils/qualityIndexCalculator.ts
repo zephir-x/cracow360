@@ -4,13 +4,10 @@ import type { DistrictScoresDto, QualityWeights, ResidentPreset } from '../types
  * Dynamically calculates the personalized Quality of Life Index on the client side
  * with zero network latency across all 8 urban pillars.
  *
- * Uses a Constant Elasticity of Substitution (CES) / Bottleneck-Aware weighted index:
- * 1. Linear weighted mean across all 8 pillars: mu_w = sum(S_i * w_i) / sum(w_i)
- * 2. Non-compensatory bottleneck penalty for severe urban deficits (S_i < 52.0 pts)
- *    weighted by the square of the user's relative priority (w_i / 10)^2:
- *    Penalty = [ sum((w_i / 10)^2 * max(0, 52 - S_i)^1.5) / sum(w_i / 10) ] * 0.25
- * 3. Urban contrast calibration around Krakow's reference standard (70.0 pts):
- *    Q = 70.0 + ((mu_w - Penalty) - 62.8) * 1.35
+ * Strictly follows pure, transparent weighted arithmetic mean:
+ * Q = sum(S_i * w_i) / sum(w_i)
+ *
+ * No artificial bottleneck penalties, no arbitrary contrast stretching, no magic numbers.
  */
 export function calculateClientSideQualityIndex(
   scores: DistrictScoresDto,
@@ -36,32 +33,11 @@ export function calculateClientSideQualityIndex(
       : pillars;
   const effectiveTotalWeight = totalWeight <= 0 ? 40.0 : totalWeight;
 
-  // 1. Linear weighted mean across all 8 calibrated urban pillars
+  // Pure weighted arithmetic mean across all 8 objective urban pillars
   const weightedMean =
     effectivePillars.reduce((acc, p) => acc + p.score * p.weight, 0) / effectiveTotalWeight;
 
-  // 2. Non-compensatory bottleneck penalty for critical deficits below the 52.0 pts threshold
-  const BOTTLENECK_THRESHOLD = 52.0;
-  let penaltyNumerator = 0;
-  let normalizedWeightSum = 0;
-
-  for (const p of effectivePillars) {
-    const relWeight = p.weight / 10.0;
-    normalizedWeightSum += relWeight;
-    if (p.score < BOTTLENECK_THRESHOLD && relWeight > 0) {
-      const deficit = BOTTLENECK_THRESHOLD - p.score;
-      penaltyNumerator += relWeight * relWeight * Math.pow(deficit, 1.5);
-    }
-  }
-
-  const bottleneckPenalty =
-    normalizedWeightSum > 0 ? (penaltyNumerator / normalizedWeightSum) * 0.25 : 0;
-
-  // 3. Contrast calibration around the healthy municipal standard (70.0 pts)
-  const rawNetScore = weightedMean - bottleneckPenalty;
-  const calibratedIndex = 70.0 + (rawNetScore - 62.8) * 1.35;
-
-  return Number(Math.min(100, Math.max(0, calibratedIndex)).toFixed(2));
+  return Number(Math.min(100, Math.max(0, weightedMean)).toFixed(2));
 }
 
 // 6 Curated Resident Persona Presets for 1-click preference configuration

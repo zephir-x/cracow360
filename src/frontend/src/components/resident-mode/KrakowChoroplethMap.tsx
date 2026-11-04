@@ -28,10 +28,10 @@ export interface KrakowChoroplethMapProps {
  * based on the district's weighted Quality of Life Index (0-100 scale).
  */
 export function getChoroplethColor(score: number): string {
-  if (score >= 80) return '#059669'; // Emerald 600 - Very high
-  if (score >= 74) return '#10b981'; // Emerald 500 - High
-  if (score >= 68) return '#0284c7'; // Sky 600 (Kraków Blue) - Good
-  if (score >= 62) return '#f59e0b'; // Amber 500 - Moderate
+  if (score >= 57.0) return '#059669'; // Emerald 600 - Very high
+  if (score >= 54.0) return '#10b981'; // Emerald 500 - High
+  if (score >= 51.5) return '#0284c7'; // Sky 600 (Kraków Blue) - Good
+  if (score >= 49.5) return '#f59e0b'; // Amber 500 - Moderate
   return '#f97316'; // Orange 500 - Requires investment
 }
 
@@ -40,10 +40,10 @@ export function getChoroplethColor(score: number): string {
  * (deep emerald, deep krakow blue, warm dark amber, burnt orange) instead of plain black.
  */
 export function getChoroplethHoverBorder(score: number): string {
-  if (score >= 80) return '#064e3b'; // Emerald 900
-  if (score >= 74) return '#065f46'; // Emerald 800
-  if (score >= 68) return '#0369a1'; // Sky 700 / Ocean Blue
-  if (score >= 62) return '#b45309'; // Amber 700
+  if (score >= 57.0) return '#064e3b'; // Emerald 900
+  if (score >= 54.0) return '#065f46'; // Emerald 800
+  if (score >= 51.5) return '#0369a1'; // Sky 700 / Ocean Blue
+  if (score >= 49.5) return '#b45309'; // Amber 700
   return '#c2410c'; // Orange 700
 }
 
