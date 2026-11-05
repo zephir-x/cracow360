@@ -1,40 +1,85 @@
-﻿> 🌐 **Documentation in two languages / Dokumentacja w dwóch językach:** [<img src="https://flagcdn.com/20x15/gb.png" alt="English" width="20" height="15" /> English](README.md) | [<img src="https://flagcdn.com/20x15/pl.png" alt="Polski" width="20" height="15" /> Polski](README-pl.md)
+﻿# 🗄️ Cracow360 — Operacyjna Baza Danych SQLite (`data/db/`)
 
-# Baza danych SQLite
+> 🌐 **Dokumentacja w dwóch językach / Documentation in two languages:**  
+> 🇬🇧 **[English (README.md)](./README.md)** | 🇵🇱 **Polski (Aktualny)**
 
-## Do czego służy ten folder?
-Ten katalog przechowuje lokalny plik bazy danych SQLite: `cracow360.db`. Jest to relacyjna baza danych wykorzystywana przez backend aplikacji (`Cracow360.Api` oparty na .NET 9 i Entity Framework Core).
+![SQLite](https://img.shields.io/badge/Baza_Danych-SQLite_3-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![EF Core 9](https://img.shields.io/badge/ORM-EF_Core_9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Status](https://img.shields.io/badge/Cykl_Życia-Auto--Seeding_%26_Self--Healing-10B981?style=for-the-badge)
 
 ---
 
-## Jak i kiedy tworzony jest plik bazy danych?
-Plik `cracow360.db` **nie jest tworzony przez skrypty analityczne Pythona**; zamiast tego jest generowany w pełni automatycznie przy pierwszym uruchomieniu aplikacji backendowej:
-```bash
-dotnet run --project src/backend/Cracow360.Api
+## 📌 Rola Architektoniczna
+
+Ten katalog przechowuje lokalny plik relacyjnej bazy danych **SQLite 3** (`cracow360.db`), wykorzystywany w czasie rzeczywistym przez warstwę backendową **.NET 9 Web API** (`Cracow360.Api` / `Cracow360.Infrastructure`).
+
+W architekturze **Cracow360** baza SQLite pełni rolę **szybkiego magazynu operacyjnego (Read/Query Store)** zasilanego z niemodyfikowalnych kontraktów analitycznych JSON z katalogu [`data/contracts/`](../contracts/README-pl.md) oraz z bieżącej telemetrii środowiskowej:
+
+```mermaid
+flowchart LR
+    subgraph Contracts["📄 data/contracts/ (SSoT)"]
+        M["krakow_districts_master.json<br/>(18 Dzielnic, 10 Domen)"]
+        P["krakow_poi_locations.json<br/>(927 Punktów POI)"]
+    end
+
+    subgraph Seeder["⚙️ DatabaseSeeder.cs (.NET 9)"]
+        S["Auto-Migracja na Starcie<br/>i Synchronizacja Kontraktów"]
+    end
+
+    subgraph SQLite["🗄️ data/db/cracow360.db"]
+        T1[("Districts<br/>(18 wierszy + 10 Owned Types)")]
+        T2[("PointsOfInterest<br/>(927 wierszy + Owned Metrics)")]
+        T3[("AirQualityReadings<br/>(Telemetria GIOŚ / Open-Meteo)")]
+    end
+
+    subgraph Runtime["🚀 Cracow360.Api"]
+        API["Kontrolery REST +<br/>IMemoryCache + RAG Wawelent"]
+    end
+
+    M --> S
+    P --> S
+    S --> T1
+    S --> T2
+    T1 --> API
+    T2 --> API
+    T3 <--> API
 ```
 
-### Mechanizm automatycznego zasilania (seeding):
-1. Podczas startu aplikacji backend sprawdza, czy plik `data/db/cracow360.db` istnieje na dysku.
-2. Jeśli plik nie istnieje:
-   - Tworzy nową strukturę schematu na podstawie modeli domenowych EF Core (`Districts`, `Scores`, `Forecasts`, `PointsOfInterest`, `Tourism`, `Accessibility`).
-   - Klasa `DatabaseSeeder.cs` automatycznie odczytuje pliki kontraktów z folderu `data/contracts/` (`krakow_districts_master.json`, `krakow_poi_locations.json` itd.).
-   - Bezproblemowo wypełnia bazę danych wszystkimi 18 dzielnicami, profilami dostępności oraz ponad 700 punktami POI (wykorzystując unikalne globalnie identyfikatory UUID, aby zapobiec konfliktom śledzenia IdentityMap).
-3. Gdy baza danych już istnieje, backend łączy się z nią bezpośrednio i natychmiast serwuje dane do API.
+> [!NOTE]
+> Specjalistyczne kontrakty `krakow_accessibility_profiles.json` oraz `krakow_tourism_explorer.json`, a także granice wektorowe `krakow_districts.geojson`, są serwowane bezpośrednio z katalogu [`data/contracts/`](../contracts/README-pl.md) przez dedykowane serwisy backendowe wspierane przez `IMemoryCache`, bez nadmiarowego duplikowania ich struktury w tabelach SQLite.
 
 ---
 
-## Dlaczego plik bazy danych nie jest śledzony w repozytorium Git?
-Plik `cracow360.db` oraz powiązane pliki pomocnicze (`*.db-shm`, `*.db-wal`) są celowo umieszczone w `.gitignore`.
+## 🧱 Schemat Relacyjny (`Cracow360DbContext`)
 
-Dzięki temu:
-- repozytorium kodu pozostaje lekkie i czyste,
-- unikamy konfliktów scalania (merge conflicts) binarnych plików bazy danych między programistami,
-- każdy użytkownik ma gwarancję, że jego lokalna baza danych zostanie wiernie odtworzona z najnowszych kontraktów JSON.
+Schemat bazy danych jest zdefiniowany za pomocą Fluent API w pliku `src/backend/Cracow360.Infrastructure/Persistence/Cracow360DbContext.cs`:
+
+| Nazwa Tabeli | Klucz Główny (PK) | Liczba Wierszy | Encja Domenowa | Opis i Mapowanie Entity Framework Core |
+| :--- | :--- | :---: | :--- | :--- |
+| **`Districts`** | `DistrictId` (`INTEGER`, `1..18`, `ValueGeneratedNever`) | **18** | `District` | Główna tabela 18 dzielnic administracyjnych Krakowa (`Symbol`, `Name`, `AreaSqKm`, `CentroidLat`, `CentroidLon`). Spłaszcza **10 obiektów domenowych (Owned Entity Types)** bezpośrednio do kolumn tabeli poprzez `OwnsOne`: `Scores` (8 filarów QoL + `OverallQualityScore`), `Demographics`, `EducationAndCare`, `MobilityAndTransport`, `GreeneryAndSport`, `PublicSafety`, `HousingMarket`, `EnvironmentalQuality`, `CultureAndSociety` oraz `ForecastsAndB2B`. |
+| **`PointsOfInterest`** | `Id` (`TEXT`, max `100` znaków) | **927** | `PointOfInterest` | Zgeokodowane obiekty infrastruktury miejskiej (żłobki, przedszkola, szkoły podstawowe, parki miejskie i kieszonkowe, lasy, parkingi P+R, biblioteki oraz Centra Aktywności Seniorów CAS). Powiązane kluczem obcym `DistrictId` (`OnDelete: Cascade`). Przechowuje `Category` (`PoiCategory`) i `SubCategory` (`PoiSubCategory`) jako czytelne łańcuchy znaków (`HasConversion<string>()`) oraz zagnieżdżone metryki `Metrics` (`PoiMetrics`: `Capacity`, `Vacancies`, `MonthlyFeePln`, `AreaHa`, `SpotsCount`). |
+| **`AirQualityReadings`** | `Id` (`INTEGER`, Identity) | *Dynamiczna* | `AirQualityStationReading` | Historyczne i bieżące odczyty telemetrii jakości powietrza (`StationId`, `StationName`, `MeasuredAtUtc`, `Pm10`, `Pm25`, `No2`, `OverallIndexLevel`) zapisywane przez procesy tła. |
 
 ---
 
-## Co zrobić, jeśli musisz zresetować dane?
-Jeśli zmodyfikowałeś dane w skryptach Pythona i chcesz, aby backend zaczął korzystać ze świeżych danych:
-1. Zatrzymaj backend.
-2. Po prostu usuń plik `cracow360.db` z tego folderu.
-3. Uruchom ponownie backend – baza danych zostanie odtworzona od zera w ułamku sekundy, pobierając najnowsze dane z `data/contracts/`.
+## 🔄 Samonaprawiający Cykl Życia i Kompatybilność z Dockerem (`DatabaseSeeder.cs`)
+
+Baza danych **nie wymaga ręcznego wykonywania skryptów SQL**. Cały jej cykl życia jest zautomatyzowany podczas uruchamiania `Cracow360.Api` w metodzie `DatabaseSeeder.SeedAsync()`:
+
+1. **Inicjalizacja Katalogu i Schematu**: Sprawdza istnienie katalogu `data/db/` i wywołuje `dbContext.Database.EnsureCreatedAsync()`.
+2. **Automatyczna Detekcja Rozjazdu Schematu (Self-Healing)**: Wykonuje lekkie zapytanie kontrolne do tabeli `dbContext.Districts`. W przypadku wykrycia niezgodności schematu (np. po dodaniu nowych pól analitycznych w klasach C#), `DatabaseSeeder` automatycznie usuwa przestarzały plik bazy (`EnsureDeletedAsync()`) i buduje czysty schemat od nowa (`EnsureCreatedAsync()`).
+3. **Klasyczny Tryb Dziennika (`PRAGMA journal_mode=DELETE;`)**: Jawnie wyłącza pliki tymczasowe WAL (`-wal` / `-shm`) na rzecz klasycznego dziennika wycofywania. Dzięki temu narzędzia takie jak **JetBrains Rider Database Tools** czy **DB Browser for SQLite** na systemie gospodarza mogą bezpiecznie przeglądać plik `cracow360.db` w czasie rzeczywistym, nawet gdy aplikacja działa wewnątrz kontenera **Docker**.
+4. **Idempotentna Synchronizacja Kontraktów**: Przy każdym starcie backendu `DatabaseSeeder` wczytuje pliki `krakow_districts_master.json` (18 dzielnic) oraz `krakow_poi_locations.json` (927 punktów POI), aktualizuje tabele `Districts` i `PointsOfInterest` w jednej transakcji oraz czyści klucz pamięci podręcznej `IMemoryCache` (`districts_all`).
+
+---
+
+## 🛠️ Podgląd i Resetowanie Bazy Danych
+
+> [!TIP]
+> **Chcesz wymusić pełną przebudowę bazy danych od zera?**  
+> Ponieważ plik `cracow360.db` jest deterministycznie odtwarzany z katalogu [`data/contracts/`](../contracts/README-pl.md) przy każdym uruchomieniu backendu, możesz w dowolnym momencie bezpiecznie go usunąć:
+> ```powershell
+> Remove-Item -Force data/db/cracow360.db
+> dotnet run --project src/backend/Cracow360.Api
+> ```
+> W ciągu ~1 sekundy od startu `.NET 9` utworzy nowy plik `cracow360.db` i załaduje wszystkie **18 dzielnic** oraz **927 punktów POI**.

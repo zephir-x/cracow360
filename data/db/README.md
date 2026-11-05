@@ -1,40 +1,85 @@
-﻿> 🌐 **Documentation in two languages / Dokumentacja w dwóch językach:** [<img src="https://flagcdn.com/20x15/gb.png" alt="English" width="20" height="15" /> English](README.md) | [<img src="https://flagcdn.com/20x15/pl.png" alt="Polski" width="20" height="15" /> Polski](README-pl.md)
+﻿# 🗄️ Cracow360 — SQLite Operational Database (`data/db/`)
 
-# SQLite Database
+> 🌐 **Documentation in two languages / Dokumentacja w dwóch językach:**  
+> 🇬🇧 **English (Current)** | 🇵🇱 **[Polski (README-pl.md)](./README-pl.md)**
 
-## What is this folder used for?
-This directory stores the local SQLite database file: `cracow360.db`. It is a relational database used by the application backend (`Cracow360.Api` powered by .NET 9 and Entity Framework Core).
+![SQLite](https://img.shields.io/badge/Database-SQLite_3-003B57?style=for-the-badge&logo=sqlite&logoColor=white)
+![EF Core 9](https://img.shields.io/badge/ORM-EF_Core_9.0-512BD4?style=for-the-badge&logo=dotnet&logoColor=white)
+![Status](https://img.shields.io/badge/Lifecycle-Auto--Seeded_%26_Self--Healing-10B981?style=for-the-badge)
 
 ---
 
-## How and when is the database file created?
-The `cracow360.db` file **is not created by Python analytics scripts**; instead, it is generated fully automatically upon the first launch of the backend application:
-```bash
-dotnet run --project src/backend/Cracow360.Api
+## 📌 Architectural Role
+
+This directory hosts the local **SQLite 3** relational database file (`cracow360.db`) used at runtime by the **.NET 9 Web API** (`Cracow360.Api` / `Cracow360.Infrastructure`).
+
+In the **Cracow360** architecture, SQLite acts as a **high-speed operational read/query store** layered over the immutable JSON analytical contracts in [`data/contracts/`](../contracts/README.md) and live environmental telemetry fetched in the background:
+
+```mermaid
+flowchart LR
+    subgraph Contracts["📄 data/contracts/ (SSoT)"]
+        M["krakow_districts_master.json<br/>(18 Districts, 10 Domains)"]
+        P["krakow_poi_locations.json<br/>(927 Geocoded POIs)"]
+    end
+
+    subgraph Seeder["⚙️ DatabaseSeeder.cs (.NET 9)"]
+        S["Startup Auto-Migration<br/>& Contract Sync"]
+    end
+
+    subgraph SQLite["🗄️ data/db/cracow360.db"]
+        T1[("Districts<br/>(18 rows + 10 Owned Types)")]
+        T2[("PointsOfInterest<br/>(927 rows + Owned Metrics)")]
+        T3[("AirQualityReadings<br/>(GIOŚ / Open-Meteo Telemetry)")]
+    end
+
+    subgraph Runtime["🚀 Cracow360.Api"]
+        API["REST Controllers +<br/>IMemoryCache + Wawelent RAG"]
+    end
+
+    M --> S
+    P --> S
+    S --> T1
+    S --> T2
+    T1 --> API
+    T2 --> API
+    T3 <--> API
 ```
 
-### Automatic Seeding Mechanism:
-1. During application startup, the backend checks whether `data/db/cracow360.db` exists on disk.
-2. If the file does not exist:
-   - It creates a new schema structure based on EF Core domain models (`Districts`, `Scores`, `Forecasts`, `PointsOfInterest`, `Tourism`, `Accessibility`).
-   - The `DatabaseSeeder.cs` class automatically reads contract files from the `data/contracts/` folder (`krakow_districts_master.json`, `krakow_poi_locations.json`, etc.).
-   - It seamlessly populates the database with all 18 districts, accessibility profiles, and over 700 POI points (leveraging globally unique UUIDs to prevent IdentityMap tracking conflicts).
-3. Once the database exists, the backend connects to it directly and serves data to the API immediately.
+> [!NOTE]
+> The specialized contracts `krakow_accessibility_profiles.json` and `krakow_tourism_explorer.json`, as well as the boundary polygons in `krakow_districts.geojson`, are served directly from [`data/contracts/`](../contracts/README.md) via dedicated backend services with in-memory caching rather than being duplicated inside SQLite tables.
 
 ---
 
-## Why is the database file not tracked in the Git repository?
-The `cracow360.db` file and associated auxiliary files (`*.db-shm`, `*.db-wal`) are intentionally listed in `.gitignore`.
+## 🧱 Relational Schema (`Cracow360DbContext`)
 
-Because of this:
-- the code repository remains lightweight and clean,
-- binary database merge conflicts between developers are avoided,
-- each user is guaranteed that their local database will be faithfully recreated from the latest JSON contracts.
+The schema is configured via Fluent API in `src/backend/Cracow360.Infrastructure/Persistence/Cracow360DbContext.cs`:
+
+| Table Name | Primary Key | Row Count | Domain Entity | Description & EF Core Mapping Details |
+| :--- | :--- | :---: | :--- | :--- |
+| **`Districts`** | `DistrictId` (`INTEGER`, `1..18`, `ValueGeneratedNever`) | **18** | `District` | Master table of Krakow's 18 administrative districts (`Symbol`, `Name`, `AreaSqKm`, `CentroidLat`, `CentroidLon`). Flattens **10 Owned Entity Types** (`OwnsOne`) directly into the table row: `Scores` (8 QoL pillars + `OverallQualityScore`), `Demographics`, `EducationAndCare`, `MobilityAndTransport`, `GreeneryAndSport`, `PublicSafety`, `HousingMarket`, `EnvironmentalQuality`, `CultureAndSociety`, and `ForecastsAndB2B`. |
+| **`PointsOfInterest`** | `Id` (`TEXT`, max `100` chars) | **927** | `PointOfInterest` | Geocoded civic facilities (nurseries, kindergartens, primary schools, parks, pocket parks, forests, P+R parking lots, libraries, and Senior Activity Centers CAS). Indexed by foreign key `DistrictId` (`OnDelete: Cascade`). Stores `Category` (`PoiCategory`) and `SubCategory` (`PoiSubCategory`) as readable strings (`HasConversion<string>()`) and flattens `Metrics` (`PoiMetrics`: `Capacity`, `Vacancies`, `MonthlyFeePln`, `AreaHa`, `SpotsCount`) via `OwnsOne`. |
+| **`AirQualityReadings`** | `Id` (`INTEGER`, Identity) | *Dynamic* | `AirQualityStationReading` | Historical and live air-quality telemetry snapshots (`StationId`, `StationName`, `MeasuredAtUtc`, `Pm10`, `Pm25`, `No2`, `OverallIndexLevel`) persisted by background workers and queried by environmental endpoints. |
 
 ---
 
-## What to do if you need to reset the data?
-If you have modified data in the Python scripts and want the backend to start using fresh data:
-1. Stop the backend.
-2. Simply delete the `cracow360.db` file from this folder.
-3. Restart the backend – the database will be recreated from scratch in a fraction of a second, fetching the latest data from `data/contracts/`.
+## 🔄 Self-Healing Lifecycle & Docker Compatibility (`DatabaseSeeder.cs`)
+
+The database requires **zero manual SQL setup**. Its entire lifecycle is automated during `Cracow360.Api` startup via `DatabaseSeeder.SeedAsync()`:
+
+1. **Directory & Schema Provisioning**: Ensures `data/db/` exists and invokes `dbContext.Database.EnsureCreatedAsync()`.
+2. **Automatic Schema-Drift Recovery**: Executes a lightweight probe query against `dbContext.Districts`. If an `Exception` occurs (for example, after adding new analytical columns in C# domain entities), `DatabaseSeeder` automatically logs a warning, drops the outdated file (`EnsureDeletedAsync()`), and recreates a clean schema (`EnsureCreatedAsync()`).
+3. **Classic Rollback Journal (`PRAGMA journal_mode=DELETE;`)**: Explicitly disables SQLite WAL (`-wal` / `-shm`) files in favor of classic rollback journaling. This guarantees that tools like **JetBrains Rider Database Tools** or **DB Browser for SQLite** on the host OS can inspect `cracow360.db` live even when mounted inside a running **Docker** container.
+4. **Idempotent Contract Synchronization**: On every application start, `DatabaseSeeder` reads `krakow_districts_master.json` (18 districts) and `krakow_poi_locations.json` (927 POIs), refreshes the `Districts` and `PointsOfInterest` tables in a single transaction, and invalidates the `IMemoryCache` key (`districts_all`) so the API immediately serves the newest ETL contract state.
+
+---
+
+## 🛠️ Inspecting & Resetting the Database
+
+> [!TIP]
+> **Need a clean database rebuild?**  
+> Because `cracow360.db` is deterministically hydrated from [`data/contracts/`](../contracts/README.md) on every backend startup, you can safely reset it at any time:
+> ```powershell
+> Remove-Item -Force data/db/cracow360.db
+> dotnet run --project src/backend/Cracow360.Api
+> ```
+> Within ~1 second of launch, `.NET 9` will recreate `cracow360.db` and re-seed all **18 districts** and **927 POIs**.
