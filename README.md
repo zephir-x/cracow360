@@ -14,6 +14,11 @@
 
 ---
 
+<video src="https://github.com/user-attachments/assets/c30190d3-29c7-4377-ae67-a6c61a1833fe" controls autoplay loop muted width="100%">
+</video>
+
+---
+
 ## 🧭 Executive Summary & Core Mission
 
 > *"Ordo ab chao"* - *Order from chaos.*
@@ -196,6 +201,9 @@ The production version of Kraków360 is deployed on high-availability infrastruc
 ### 7. 🌤️ Live Atmospheric & Air Quality Telemetry Bar
 *Real-time ambient monitoring integrated directly below the top navigation bar.*
 
+<video src="https://github.com/user-attachments/assets/fa5b4668-6ca6-454a-aa7d-c4f23017075f" controls autoplay loop muted width="100%">
+</video>
+
 - **Live Meteorological Telemetry (Open-Meteo API):** Real-time ambient readings including temperature, apparent feel (°C), dynamic WMO weather condition icons, precipitation probability, and wind velocity with localized gust tracking.
 - **Air Quality & Smog Telemetry (GIOŚ & Copernicus CAMS Grid):** European Air Quality Index (EAQI), real-time PM10, PM2.5, NO₂ concentrations, and 90-day winter smog exceedance thresholds.
 - **Health, UV & Botanical Allergen Alerts:** Real-time monitoring across 5 botanical allergens (grass, birch, alder, mugwort, ambrosia) and UV Index warnings to assist sensitive residents and allergy sufferers.
@@ -206,6 +214,9 @@ The production version of Kraków360 is deployed on high-availability infrastruc
 
 ### 8. 🐉 Wawelek AI Assistant & City Companion
 *A friendly, context-grounded conversational agent powered by DeepSeek API & RAG.*
+
+<video src="https://github.com/user-attachments/assets/7ba3731a-7d9f-481c-bff4-6ee21269bfcb" controls autoplay loop muted width="100%">
+</video>
 
 - **Floating Action Button (FAB) & Mascot Avatar (`WawelekAssistantWidget.tsx`):**
   - Positioned at the bottom-right of the viewport with an ambient glow aura and animated SVG Mascot Avatar reacting dynamically to 4 distinct emotional states: `idle`, `listening`, `thinking`, and `speaking`.
