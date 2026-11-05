@@ -26,8 +26,10 @@ The pipeline is strictly sequential. It transforms unstructured, raw civic data 
 - **Inputs**: Reads dozens of raw CSVs from `data_raw/` (demographics, schools, parks, KMK transit stops, P+R, etc.) and `Korekty_Geoprzestrzenne_POI.csv`.
 - **Methodology & Algorithms**:
     - **Dynamic Geocoding**: Connects to the official Polish **GUGiK API** to resolve street addresses into WGS84 coordinates. Utilizes a persistent `requests.Session()` and a local JSON cache (`spatial_geocoding_cache.json`) to massively reduce network latency.
+    - **Environmental Telemetry (Open-Meteo Air Quality API)**: Fetches 90-day time series of particulate matter ($\text{PM}_{10}$, $\text{PM}_{2.5}$), nitrogen dioxide ($\text{NO}_2$), and smog day counts for each district centroid.
     - **Point-in-Polygon (PiP)**: Uses `matplotlib.path` to geometrically test which district polygon contains a specific geographic coordinate.
     - **Stochastic Isochrones**: Instead of arbitrary multipliers, it calculates transit coverage using a **Poisson probability model** ($1 - e^{- \lambda}$), assuming a 300m walking radius ($\sim 0.2827 \text{ km}^2$) around effective transit stops.
+    - **Consistent BDK Demographic Balance**: Computes total registered population (`totalPopulation = permanentResidents + temporaryResidents`) and 3-year demographic growth (2023–2025) on a strictly symmetric basis, keeping `foreignersTotal` as an independent structural indicator.
     - **UUID Generation**: Generates globally unique identifiers (`uuid.uuid4()`) for every Point of Interest (POI) to strictly prevent Primary Key tracking conflicts in the Entity Framework Core database.
 - **Outputs**: `data_processed/districts_aggregated.json` and `data/contracts/krakow_poi_locations.json`.
 
@@ -35,9 +37,9 @@ The pipeline is strictly sequential. It transforms unstructured, raw civic data 
 - **Purpose**: Computes the 8 fundamental Quality of Life (QoL) pillar scores for all 18 districts.
 - **Inputs**: Reads `districts_aggregated.json`.
 - **Methodology & Algorithms**:
-    - **Min-Max Normalization**: Scales raw demographic/infrastructural data into a unified [0.0 - 100.0] index.
-    - **Daytime Population Correction**: In the public safety module, it applies a multiplier (e.g., 1.55x for District I - Stare Miasto) to account for tourists and daily commuters, preventing the unfair inflation of crime rates per permanent resident.
-    - **Bayesian Smoothing**: Adds constants to denominators (e.g., `areaKm2 + 8.0`) to penalize extreme statistical outliers in geographically tiny districts.
+    - **Reference Benchmark Scoring**: Maps hard urban indicators directly against official legal and urban standards (EU Directive 2008/50/EC for $\text{PM}_{10}/\text{PM}_{2.5}/\text{NO}_2$, EEA/WHO green space benchmark of $50\text{ m}^2/\text{capita}$, GUS/SEWiK road safety benchmarks, and NBP/Otodom housing affordability) into a unified $[0.0 - 100.0]$ scale.
+    - **Preschool Cohort Calibration (Ages 3–6)**: Accounts for all 4 birth cohorts served by kindergartens (`age4to6 + 0.25 * age0to3`) against a target capacity buffer ($1.50\times$), eliminating artificial score saturation at $100.0$.
+    - **Zero Arbitrary Penalties**: All pillar scores derive strictly from transparent linear benchmark equations bounded by `clamp(0.0, 100.0)`.
 - **Outputs**: `data_processed/districts_scored.json`.
 
 ### Step 03: `03_etl_accessibility_profiles.py`
@@ -53,9 +55,9 @@ The pipeline is strictly sequential. It transforms unstructured, raw civic data 
 - **Purpose**: Builds predictive econometric models for the year 2028 and exports the master contract.
 - **Inputs**: Reads `districts_scored.json`.
 - **Methodology & Algorithms**:
-    - **OLS Linear Regression (`scikit-learn`)**: Fits an Ordinary Least Squares trendline to historical single-year birth cohorts (2018–2025) to project raw birth rates up to 2028.
+    - **Damped-Trend OLS Regression (`scikit-learn`)**: Fits an Ordinary Least Squares trendline to historical single-year birth cohorts (2018–2025) and projects a damped relative slope from the current 0–3 baseline across 2025–2028.
     - **Cohort-Component Migration**: Applies a dampened 3-year migration multiplier to the predicted baseline, effectively simulating families moving in or out of specific districts.
-    - **Deficit Classification**: Maps mathematical balances (e.g., nursery places minus 2028 demand) into actionable B2B/B2G potential enums (`LOW`, `MEDIUM`, `HIGH`).
+    - **SSoT-Synchronized Deficit Classification (Ages 0–14)**: Computes both total and segment-specific educational capacity balances (nurseries 0–3, kindergartens 4–6, primary schools 7–14 at $350\text{ places/school}$), mapping them to B2B/B2G potential enums (`LOW`, `MEDIUM`, `HIGH`) and granular, non-contradictory recommendations.
     - **Matplotlib**: Generates static, presentation-ready scatter and bar charts for the competition PDF report.
 - **Outputs**: `data/contracts/krakow_districts_master.json` and PNG charts in `charts/`.
 
@@ -72,7 +74,7 @@ The pipeline is strictly sequential. It transforms unstructured, raw civic data 
 - **Inputs**: Reads all four final JSON contract files in `data/contracts/`.
 - **Methodology & Algorithms**:
     - Acts as a suite of unit tests for the data layer.
-    - Verifies exact cardinality (must have exactly 18 districts), type checking (scores must be floats $\in [0, 100]$), enum compliance, and bounding-box validation (asserting all GPS coordinates actually fall within Krakow's metropolitan limits).
+    - Verifies exact cardinality (must have exactly 18 districts), type checking (scores must be floats $\in [0, 100]$), demographic balance identity (`totalPopulation == permanentResidents + temporaryResidents`), nested schema keys (`environmentalQuality`, `publicSafety`, `housingMarket`), enum compliance, and WGS84 bounding-box validation.
 - **Execution**: Returns exit code `0` on success, or `1` with an itemized diagnostic list if any contract violation is detected.
 
 ---

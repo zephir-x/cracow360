@@ -17,10 +17,10 @@ Katalog zawiera ponad 30 oficjalnych zbiorów danych podzielonych tematycznie:
 - **Transport i mobilność**: Lokalizacje przystanków komunikacji miejskiej (KMK), parkingi Park & Ride (P+R), stojaki rowerowe (*Zarząd Transportu Publicznego - ZTP*) oraz długości dróg rowerowych.
 - **Kultura i seniorzy**: Filie Biblioteki Kraków, miejskie domy i ośrodki kultury oraz Centra Aktywności Seniora (CAS).
 - **Dostępność (Kraków bez Barier)**: Wyznaczone miejsca postojowe dla osób z niepełnosprawnościami (Niebieskie Koperty) oraz audyty dostępności architektonicznej obiektów publicznych (*UMK / MFiPR*).
-- **Środowisko i akustyka**: Pomiary stężeń pyłów zawieszonych PM10/PM2.5 i dni smogowe (*GIOŚ / WIOŚ*).
-- **Bezpieczeństwo**: Statystyki kolizji drogowych i wypadków z udziałem pieszych (*SEWiK Komendy Głównej Policji*).
-- **Rynek nieruchomości**: Średnie ceny transakcyjne, stawki najmu oraz wskaźniki dostępności mieszkań (*NBP BaRN, Otodom Analytics*).
-- **Pliki konfiguracyjne i domyślne**: Pliki systemowe, takie jak `Korekty_Geoprzestrzenne_POI.csv` (ręczne korekty współrzędnych przestrzennych dla parków/lasów) oraz `Dzielnice_Krakowa.csv` (oficjalne definicje administracyjne 18 dzielnic).
+- **Środowisko i jakość powietrza (API + geometria)**: Współrzędne referencyjne dzielnic w `Dzielnice_Krakowa.csv` wykorzystywane przez skrypt `01_etl` do pobierania 90-dniowej telemetrii $\text{PM}_{10}$, $\text{PM}_{2.5}$, $\text{NO}_2$ i dni smogowych z **Open-Meteo Air Quality API (CAMS)**.
+- **Bezpieczeństwo**: Statystyki rocznych kolizji drogowych, wypadków z udziałem pieszych i rannych oraz ankietowej oceny bezpieczeństwa w dzielnicach (`Bezpieczenstwo i zdarzenia drogowe w dzielnicach Krakowa 2024-2025.csv` – *SEWiK KGP / Otodom*).
+- **Rynek nieruchomości**: Średnie ceny transakcyjne $\text{m}^2$, średnie stawki najmu $\text{m}^2$ oraz dostępność $\text{m}^2$ za średnią pensję netto (`Ceny mieszkan w dzielnicach Krakowa 2025-2026.csv` – *NBP BaRN, Otodom Analytics*).
+- **Pliki geoprzestrzenne i konfiguracyjne**: Granice wektorowe 18 dzielnic (`krakow_districts.geojson`), geometria dróg rowerowych (`Drogi_Rowerowe_Krakow.geojson`), `Korekty_Geoprzestrzenne_POI.csv` oraz `Dzielnice_Krakowa.csv`.
 
 ---
 

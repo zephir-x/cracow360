@@ -47,24 +47,29 @@ def forecast_cohorts_ols(birth_cohorts: dict[str, int], growth_3yr_pct: float, a
         - `forecastedAge4to6_2028`: Est. number of children born 2022-2024 progressing to ages 4-6 in 2028.
     """
     # 1. Prepare historical training data for the OLS model
-    years = np.array([y for y in range(2018, 2025)], dtype=float).reshape(-1, 1)
+    years = np.array([y for y in range(2018, 2026)], dtype=float).reshape(-1, 1)
     # Fallback to a quarter of current 0-3 population if specific historical data is missing
-    counts = np.array([float(birth_cohorts.get(str(y), age0to3_now / 4.0)) for y in range(2018, 2025)], dtype=float)
+    counts = np.array([float(birth_cohorts.get(str(y), age0to3_now / 4.0)) for y in range(2018, 2026)], dtype=float)
 
     # 2. Fit the Linear Regression model to identify the demographic trajectory (rising or falling births)
     model = LinearRegression()
     model.fit(years, counts)
 
-    # 3. Predict the raw number of births for the next 4 years
-    future_years = np.array([[2025.0], [2026.0], [2027.0], [2028.0]])
-    pred_annual = model.predict(future_years)
+    # 3. Damped-trend cohort projection anchored to current 0-3 baseline (prevents artificial clipping at floor)
+    recent_annual_base = max(age0to3_now / 4.0, 1.0)
+    mean_hist = max(float(np.mean(counts)), 1.0)
+    rel_annual_slope = float(model.coef_[0]) / mean_hist
+    # Dampen historical linear slope (0.30) to reflect demographic stabilization after post-2020 trough
+    damped_slope = max(-0.045, min(0.045, rel_annual_slope * 0.30))
 
     # 4. Adjust the raw birth predictions by the district's net migration factor
     # We dampen the 3-year growth rate by 0.85 to avoid over-projecting temporary migration spikes
     mig_factor = 1.0 + (growth_3yr_pct / 100.0) * 0.85
 
-    # Calculate total expected 0-3 cohort in 2028, enforcing a floor of 70% of current births to prevent negative values
-    raw_0to3_2028 = float(np.sum(np.maximum(pred_annual, counts[-1] * 0.70))) * mig_factor
+    projected_cohorts = [
+        recent_annual_base * (1.0 + damped_slope * h) for h in (1.0, 2.0, 3.0, 4.0)
+    ]
+    raw_0to3_2028 = float(np.sum(projected_cohorts)) * mig_factor
 
     # Clamp final prediction to a realistic biological/urban envelope (between 82% and 128% of current population)
     forecast_0to3 = int(round(max(age0to3_now * 0.82, min(age0to3_now * 1.28, raw_0to3_2028))))
@@ -79,16 +84,44 @@ def forecast_cohorts_ols(birth_cohorts: dict[str, int], growth_3yr_pct: float, a
 
     return forecast_0to3, forecast_4to6
 
-def build_recommendation(district: dict, nursery_pot: str, senior_def: str, green_def: str, balance: int) -> str:
+
+def build_recommendation(
+    district: dict,
+    nursery_pot: str,
+    senior_def: str,
+    green_def: str,
+    balance_0to3: int,
+    kg_bal_2028: int,
+    sch_bal_2028: int,
+    tot_bal_2028: int,
+    tot_cov_2028: int,
+) -> str:
     name = district["districtName"]
     dem = district["demographics"]
     grn = district["greeneryAndSport"]
     senior_pct = round((dem["age65Plus"] / max(dem["totalPopulation"], 1)) * 100.0, 1)
 
+    nursery_str = f"niedobór {abs(balance_0to3)} miejsc" if balance_0to3 < 0 else f"zapas +{balance_0to3} miejsc"
+    kg_str = f"niedobór {abs(kg_bal_2028)} miejsc" if kg_bal_2028 < 0 else f"rezerwa +{kg_bal_2028} miejsc"
+    sch_str = f"niedobór {abs(sch_bal_2028)} miejsc" if sch_bal_2028 < 0 else f"rezerwa +{sch_bal_2028} miejsc"
+
     if nursery_pot == "HIGH" and green_def == "HIGH":
-        return f"Priorytet: kontraktowanie nowych miejsc żłobkowych (prognozowany bilans 2028: {balance} miejsc) oraz tworzenie parków kieszonkowych (obecnie {grn['greenAreaM2PerCapita']} m² zieleni/os.)."
+        return (
+            f"Priorytet: rozbudowa bazy edukacyjno-opiekuńczej 0–14 (łączny bilans 2028: {tot_bal_2028} miejsc, pokrycie {tot_cov_2028}%; "
+            f"żłobki 0–3: {nursery_str}, przedszkola 4–6: {kg_str}, szkoły 7–14: {sch_str}) oraz tworzenie parków kieszonkowych "
+            f"(obecnie {grn['greenAreaM2PerCapita']} m² zieleni/os.)."
+        )
     if nursery_pot == "HIGH":
-        return f"Wysoki potencjał inwestycyjny B2B/B2G dla placówek edukacyjno-opiekuńczych z uwagi na deficyt bazy w horyzoncie 2028 (dynamika {dem['populationGrowthRate3YrPct']:+.1f}%, bilans opieki: {balance} miejsc)."
+        return (
+            f"Wysoki priorytet rozbudowy bazy edukacyjno-opiekuńczej 0–14 w horyzoncie 2028 (łączny bilans: {tot_bal_2028} miejsc, "
+            f"pokrycie {tot_cov_2028}%, dynamika populacji {dem['populationGrowthRate3YrPct']:+.1f}%; "
+            f"żłobki 0–3: {nursery_str}, przedszkola 4–6: {kg_str}, szkoły 7–14: {sch_str})."
+        )
+    if balance_0to3 < -50:
+        return (
+            f"Zrównoważony łączny bilans 0–14 ({tot_bal_2028:+d} miejsc, pokrycie {tot_cov_2028}%), jednak występuje lokalny deficyt "
+            f"w segmencie żłobków 0–3 (bilans 2028: {balance_0to3} miejsc) rekompensowany rezerwą w przedszkolach ({kg_str}) i szkołach ({sch_str})."
+        )
     if senior_def in ("HIGH", "MEDIUM") and senior_pct >= 24.0:
         return f"Rozbudowa sieci Centrów Aktywności Seniora (CAS) oraz oferty kulturalno-opiekuńczej z uwagi na wysoki odsetek mieszkańców 65+ ({senior_pct}%)."
     if green_def == "HIGH":
@@ -175,6 +208,8 @@ def run_econometric_forecasts() -> None:
         sch_count = edu.get("primarySchoolsCount", 0)
         sch_cap = sch_count * 350
 
+        kg_bal_2028 = kg_places - f_4to6
+        sch_bal_2028 = sch_cap - f_7to14
         tot_cap_2028 = care_places + kg_places + sch_cap
         tot_kids_2028 = f_0to3 + f_4to6 + f_7to14
         tot_bal_2028 = tot_cap_2028 - tot_kids_2028
@@ -214,7 +249,17 @@ def run_econometric_forecasts() -> None:
             "nurseryInvestmentPotentialB2B": nursery_pot,
             "seniorInfrastructureDeficit": senior_def,
             "greenSpaceDeficit": green_def,
-            "recommendedMunicipalAction": build_recommendation(d, nursery_pot, senior_def, green_def, balance_2028),
+            "recommendedMunicipalAction": build_recommendation(
+                d,
+                nursery_pot,
+                senior_def,
+                green_def,
+                balance_2028,
+                kg_bal_2028,
+                sch_bal_2028,
+                tot_bal_2028,
+                tot_cov_2028,
+            ),
         }
 
         # Strip internal working data before final contract export

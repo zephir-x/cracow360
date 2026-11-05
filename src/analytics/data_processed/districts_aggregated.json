@@ -6,7 +6,7 @@
       "districtName": "Dzielnica I Stare Miasto",
       "areaKm2": 5.57,
       "demographics": {
-        "totalPopulation": 31029,
+        "totalPopulation": 29725,
         "permanentResidents": 26823,
         "temporaryResidents": 2902,
         "foreignersTotal": 1304,
@@ -15,7 +15,7 @@
         "age7to14": 1627,
         "age15to64": 16598,
         "age65Plus": 7514,
-        "populationGrowthRate3YrPct": 0.89
+        "populationGrowthRate3YrPct": -3.35
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -54,17 +54,17 @@
         "totalParksAreaHa": 30.91,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 30.91,
-        "greenAreaM2PerCapita": 9.96,
-        "totalGreenM2PerCapita": 9.96,
+        "greenAreaM2PerCapita": 10.4,
+        "totalGreenM2PerCapita": 10.4,
         "schoolSportsFacilitiesCount": 275,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 14,
+        "culturalCentersCount": 4,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 1866,
-        "municipalSubsidyPerCapitaPln": 387.1
+        "annualCulturalEventsCount": 634,
+        "municipalSubsidyPerCapitaPln": 180.41
       },
       "publicSafety": {
         "roadCollisionsAnnual": 955,
@@ -82,10 +82,10 @@
         "m2PerAverageSalary": 0.32
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.78,
-        "pm25Avg90dUgM3": 19.0,
-        "smogDays90dCount": 9,
-        "no2Avg90dUgM3": 16.21
+        "pm10Avg90dUgM3": 24.04,
+        "pm25Avg90dUgM3": 19.28,
+        "smogDays90dCount": 10,
+        "no2Avg90dUgM3": 16.34
       },
       "_internal": {
         "birthCohorts": {
@@ -200,7 +200,7 @@
         "primarySchoolClasses": 281,
         "pop2023": 30754,
         "pop2024": 30075,
-        "pop2025": 31029,
+        "pop2025": 29725,
         "kasselKerbStops": 18,
         "tactilePavingStops": 29
       }
@@ -211,7 +211,7 @@
       "districtName": "Dzielnica II Grzegórzki",
       "areaKm2": 5.85,
       "demographics": {
-        "totalPopulation": 33693,
+        "totalPopulation": 32066,
         "permanentResidents": 29599,
         "temporaryResidents": 2467,
         "foreignersTotal": 1627,
@@ -220,7 +220,7 @@
         "age7to14": 2280,
         "age15to64": 18077,
         "age65Plus": 7213,
-        "populationGrowthRate3YrPct": 5.38
+        "populationGrowthRate3YrPct": 0.29
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -259,17 +259,17 @@
         "totalParksAreaHa": 24.14,
         "forestAreaHa": 5.4,
         "totalGreenAreaHa": 29.54,
-        "greenAreaM2PerCapita": 7.16,
-        "totalGreenM2PerCapita": 8.77,
+        "greenAreaM2PerCapita": 7.53,
+        "totalGreenM2PerCapita": 9.21,
         "schoolSportsFacilitiesCount": 88,
         "schoolSwimmingPoolsCount": 2
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 1,
         "seniorActivityCentersCount": 5,
-        "annualCulturalEventsCount": 415,
-        "municipalSubsidyPerCapitaPln": 79.22
+        "annualCulturalEventsCount": 315,
+        "municipalSubsidyPerCapitaPln": 60.36
       },
       "publicSafety": {
         "roadCollisionsAnnual": 617,
@@ -287,10 +287,10 @@
         "m2PerAverageSalary": 0.36
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.78,
-        "pm25Avg90dUgM3": 19.0,
-        "smogDays90dCount": 9,
-        "no2Avg90dUgM3": 16.21
+        "pm10Avg90dUgM3": 24.04,
+        "pm25Avg90dUgM3": 19.28,
+        "smogDays90dCount": 10,
+        "no2Avg90dUgM3": 16.34
       },
       "_internal": {
         "birthCohorts": {
@@ -403,7 +403,7 @@
         "primarySchoolClasses": 149,
         "pop2023": 31972,
         "pop2024": 31874,
-        "pop2025": 33693,
+        "pop2025": 32066,
         "kasselKerbStops": 4,
         "tactilePavingStops": 12
       }
@@ -414,7 +414,7 @@
       "districtName": "Dzielnica III Prądnik Czerwony",
       "areaKm2": 6.44,
       "demographics": {
-        "totalPopulation": 48363,
+        "totalPopulation": 46880,
         "permanentResidents": 44524,
         "temporaryResidents": 2356,
         "foreignersTotal": 1483,
@@ -423,7 +423,7 @@
         "age7to14": 3458,
         "age15to64": 26930,
         "age65Plus": 11551,
-        "populationGrowthRate3YrPct": 2.07
+        "populationGrowthRate3YrPct": -1.06
       },
       "educationAndCare": {
         "nurseriesPublicCount": 0,
@@ -462,17 +462,17 @@
         "totalParksAreaHa": 20.02,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 20.02,
-        "greenAreaM2PerCapita": 4.14,
-        "totalGreenM2PerCapita": 4.14,
+        "greenAreaM2PerCapita": 4.27,
+        "totalGreenM2PerCapita": 4.27,
         "schoolSportsFacilitiesCount": 89,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 7,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 3,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 726,
-        "municipalSubsidyPerCapitaPln": 96.58
+        "annualCulturalEventsCount": 849,
+        "municipalSubsidyPerCapitaPln": 99.68
       },
       "publicSafety": {
         "roadCollisionsAnnual": 529,
@@ -490,10 +490,10 @@
         "m2PerAverageSalary": 0.45
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.78,
-        "pm25Avg90dUgM3": 19.0,
-        "smogDays90dCount": 9,
-        "no2Avg90dUgM3": 16.21
+        "pm10Avg90dUgM3": 24.04,
+        "pm25Avg90dUgM3": 19.28,
+        "smogDays90dCount": 10,
+        "no2Avg90dUgM3": 16.34
       },
       "_internal": {
         "birthCohorts": {
@@ -607,7 +607,7 @@
         "primarySchoolClasses": 238,
         "pop2023": 47383,
         "pop2024": 47067,
-        "pop2025": 48363,
+        "pop2025": 46880,
         "kasselKerbStops": 28,
         "tactilePavingStops": 56
       }
@@ -618,7 +618,7 @@
       "districtName": "Dzielnica IV Prądnik Biały",
       "areaKm2": 23.42,
       "demographics": {
-        "totalPopulation": 79042,
+        "totalPopulation": 76804,
         "permanentResidents": 74105,
         "temporaryResidents": 2699,
         "foreignersTotal": 2238,
@@ -627,7 +627,7 @@
         "age7to14": 6377,
         "age15to64": 47158,
         "age65Plus": 15269,
-        "populationGrowthRate3YrPct": 5.6
+        "populationGrowthRate3YrPct": 2.61
       },
       "educationAndCare": {
         "nurseriesPublicCount": 3,
@@ -666,17 +666,17 @@
         "totalParksAreaHa": 17.88,
         "forestAreaHa": 15.3,
         "totalGreenAreaHa": 33.18,
-        "greenAreaM2PerCapita": 2.26,
-        "totalGreenM2PerCapita": 4.2,
+        "greenAreaM2PerCapita": 2.33,
+        "totalGreenM2PerCapita": 4.32,
         "schoolSportsFacilitiesCount": 114,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 5,
-        "culturalCentersCount": 8,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 1348,
-        "municipalSubsidyPerCapitaPln": 109.75
+        "annualCulturalEventsCount": 726,
+        "municipalSubsidyPerCapitaPln": 45.2
       },
       "publicSafety": {
         "roadCollisionsAnnual": 776,
@@ -694,10 +694,10 @@
         "m2PerAverageSalary": 0.43
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.78,
-        "pm25Avg90dUgM3": 19.0,
-        "smogDays90dCount": 9,
-        "no2Avg90dUgM3": 16.21
+        "pm10Avg90dUgM3": 24.04,
+        "pm25Avg90dUgM3": 19.28,
+        "smogDays90dCount": 10,
+        "no2Avg90dUgM3": 16.34
       },
       "_internal": {
         "birthCohorts": {
@@ -811,7 +811,7 @@
         "primarySchoolClasses": 252,
         "pop2023": 74850,
         "pop2024": 75507,
-        "pop2025": 79042,
+        "pop2025": 76804,
         "kasselKerbStops": 79,
         "tactilePavingStops": 123
       }
@@ -822,7 +822,7 @@
       "districtName": "Dzielnica V Krowodrza",
       "areaKm2": 5.62,
       "demographics": {
-        "totalPopulation": 33088,
+        "totalPopulation": 31523,
         "permanentResidents": 28725,
         "temporaryResidents": 2798,
         "foreignersTotal": 1565,
@@ -831,7 +831,7 @@
         "age7to14": 1921,
         "age15to64": 16970,
         "age65Plus": 8372,
-        "populationGrowthRate3YrPct": 3.68
+        "populationGrowthRate3YrPct": -1.23
       },
       "educationAndCare": {
         "nurseriesPublicCount": 3,
@@ -870,17 +870,17 @@
         "totalParksAreaHa": 35.74,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 35.74,
-        "greenAreaM2PerCapita": 10.8,
-        "totalGreenM2PerCapita": 10.8,
+        "greenAreaM2PerCapita": 11.34,
+        "totalGreenM2PerCapita": 11.34,
         "schoolSportsFacilitiesCount": 73,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
-        "culturalCentersCount": 1,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 311,
-        "municipalSubsidyPerCapitaPln": 60.5
+        "annualCulturalEventsCount": 510,
+        "municipalSubsidyPerCapitaPln": 85.75
       },
       "publicSafety": {
         "roadCollisionsAnnual": 949,
@@ -898,10 +898,10 @@
         "m2PerAverageSalary": 0.39
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.78,
-        "pm25Avg90dUgM3": 19.0,
-        "smogDays90dCount": 9,
-        "no2Avg90dUgM3": 16.21
+        "pm10Avg90dUgM3": 24.04,
+        "pm25Avg90dUgM3": 19.28,
+        "smogDays90dCount": 10,
+        "no2Avg90dUgM3": 16.34
       },
       "_internal": {
         "birthCohorts": {
@@ -1015,7 +1015,7 @@
         "primarySchoolClasses": 248,
         "pop2023": 31915,
         "pop2024": 31534,
-        "pop2025": 33088,
+        "pop2025": 31523,
         "kasselKerbStops": 19,
         "tactilePavingStops": 35
       }
@@ -1026,7 +1026,7 @@
       "districtName": "Dzielnica VI Bronowice",
       "areaKm2": 9.56,
       "demographics": {
-        "totalPopulation": 26418,
+        "totalPopulation": 25627,
         "permanentResidents": 24655,
         "temporaryResidents": 972,
         "foreignersTotal": 791,
@@ -1035,7 +1035,7 @@
         "age7to14": 2144,
         "age15to64": 15020,
         "age65Plus": 5917,
-        "populationGrowthRate3YrPct": 4.32
+        "populationGrowthRate3YrPct": 1.2
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -1074,17 +1074,17 @@
         "totalParksAreaHa": 39.93,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 39.93,
-        "greenAreaM2PerCapita": 15.11,
-        "totalGreenM2PerCapita": 15.11,
+        "greenAreaM2PerCapita": 15.58,
+        "totalGreenM2PerCapita": 15.58,
         "schoolSportsFacilitiesCount": 46,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 207,
-        "municipalSubsidyPerCapitaPln": 50.52
+        "annualCulturalEventsCount": 601,
+        "municipalSubsidyPerCapitaPln": 104.23
       },
       "publicSafety": {
         "roadCollisionsAnnual": 327,
@@ -1102,10 +1102,10 @@
         "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 21.91,
-        "pm25Avg90dUgM3": 17.71,
-        "smogDays90dCount": 5,
-        "no2Avg90dUgM3": 14.46
+        "pm10Avg90dUgM3": 22.15,
+        "pm25Avg90dUgM3": 17.99,
+        "smogDays90dCount": 6,
+        "no2Avg90dUgM3": 14.58
       },
       "_internal": {
         "birthCohorts": {
@@ -1215,7 +1215,7 @@
         "primarySchoolClasses": 88,
         "pop2023": 25323,
         "pop2024": 25285,
-        "pop2025": 26418,
+        "pop2025": 25627,
         "kasselKerbStops": 4,
         "tactilePavingStops": 11
       }
@@ -1226,7 +1226,7 @@
       "districtName": "Dzielnica VII Zwierzyniec",
       "areaKm2": 28.73,
       "demographics": {
-        "totalPopulation": 22272,
+        "totalPopulation": 21661,
         "permanentResidents": 20296,
         "temporaryResidents": 1365,
         "foreignersTotal": 611,
@@ -1235,7 +1235,7 @@
         "age7to14": 1740,
         "age15to64": 12527,
         "age65Plus": 4989,
-        "populationGrowthRate3YrPct": 3.56
+        "populationGrowthRate3YrPct": 0.72
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -1274,17 +1274,17 @@
         "totalParksAreaHa": 118.87,
         "forestAreaHa": 419.0,
         "totalGreenAreaHa": 537.87,
-        "greenAreaM2PerCapita": 53.37,
-        "totalGreenM2PerCapita": 241.5,
+        "greenAreaM2PerCapita": 54.88,
+        "totalGreenM2PerCapita": 248.31,
         "schoolSportsFacilitiesCount": 56,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 3,
-        "culturalCentersCount": 2,
+        "culturalCentersCount": 4,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 518,
-        "municipalSubsidyPerCapitaPln": 149.81
+        "annualCulturalEventsCount": 1060,
+        "municipalSubsidyPerCapitaPln": 302.59
       },
       "publicSafety": {
         "roadCollisionsAnnual": 218,
@@ -1302,10 +1302,10 @@
         "m2PerAverageSalary": 0.33
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 21.91,
-        "pm25Avg90dUgM3": 17.71,
-        "smogDays90dCount": 5,
-        "no2Avg90dUgM3": 14.46
+        "pm10Avg90dUgM3": 22.15,
+        "pm25Avg90dUgM3": 17.99,
+        "smogDays90dCount": 6,
+        "no2Avg90dUgM3": 14.58
       },
       "_internal": {
         "birthCohorts": {
@@ -1418,7 +1418,7 @@
         "primarySchoolClasses": 91,
         "pop2023": 21507,
         "pop2024": 21452,
-        "pop2025": 22272,
+        "pop2025": 21661,
         "kasselKerbStops": 27,
         "tactilePavingStops": 44
       }
@@ -1429,7 +1429,7 @@
       "districtName": "Dzielnica VIII Dębniki",
       "areaKm2": 46.19,
       "demographics": {
-        "totalPopulation": 71800,
+        "totalPopulation": 69431,
         "permanentResidents": 66203,
         "temporaryResidents": 3228,
         "foreignersTotal": 2369,
@@ -1438,7 +1438,7 @@
         "age7to14": 6398,
         "age15to64": 43393,
         "age65Plus": 11853,
-        "populationGrowthRate3YrPct": 5.43
+        "populationGrowthRate3YrPct": 1.95
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -1477,17 +1477,17 @@
         "totalParksAreaHa": 63.82,
         "forestAreaHa": 180.5,
         "totalGreenAreaHa": 244.32,
-        "greenAreaM2PerCapita": 8.89,
-        "totalGreenM2PerCapita": 34.03,
+        "greenAreaM2PerCapita": 9.19,
+        "totalGreenM2PerCapita": 35.19,
         "schoolSportsFacilitiesCount": 136,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 6,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 5,
         "seniorActivityCentersCount": 5,
-        "annualCulturalEventsCount": 622,
-        "municipalSubsidyPerCapitaPln": 55.76
+        "annualCulturalEventsCount": 1346,
+        "municipalSubsidyPerCapitaPln": 87.92
       },
       "publicSafety": {
         "roadCollisionsAnnual": 892,
@@ -1505,10 +1505,10 @@
         "m2PerAverageSalary": 0.37
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 21.91,
-        "pm25Avg90dUgM3": 17.71,
-        "smogDays90dCount": 5,
-        "no2Avg90dUgM3": 14.46
+        "pm10Avg90dUgM3": 22.15,
+        "pm25Avg90dUgM3": 17.99,
+        "smogDays90dCount": 6,
+        "no2Avg90dUgM3": 14.58
       },
       "_internal": {
         "birthCohorts": {
@@ -1623,7 +1623,7 @@
         "primarySchoolClasses": 438,
         "pop2023": 68100,
         "pop2024": 68185,
-        "pop2025": 71800,
+        "pop2025": 69431,
         "kasselKerbStops": 34,
         "tactilePavingStops": 71
       }
@@ -1634,7 +1634,7 @@
       "districtName": "Dzielnica IX Łagiewniki-Borek Fałęcki",
       "areaKm2": 5.42,
       "demographics": {
-        "totalPopulation": 16230,
+        "totalPopulation": 15797,
         "permanentResidents": 15168,
         "temporaryResidents": 629,
         "foreignersTotal": 433,
@@ -1643,7 +1643,7 @@
         "age7to14": 1422,
         "age15to64": 9530,
         "age65Plus": 3314,
-        "populationGrowthRate3YrPct": 2.84
+        "populationGrowthRate3YrPct": 0.1
       },
       "educationAndCare": {
         "nurseriesPublicCount": 0,
@@ -1682,17 +1682,17 @@
         "totalParksAreaHa": 36.81,
         "forestAreaHa": 65.2,
         "totalGreenAreaHa": 102.01,
-        "greenAreaM2PerCapita": 22.68,
-        "totalGreenM2PerCapita": 62.85,
+        "greenAreaM2PerCapita": 23.3,
+        "totalGreenM2PerCapita": 64.58,
         "schoolSportsFacilitiesCount": 49,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 207,
-        "municipalSubsidyPerCapitaPln": 82.23
+        "annualCulturalEventsCount": 342,
+        "municipalSubsidyPerCapitaPln": 161.92
       },
       "publicSafety": {
         "roadCollisionsAnnual": 213,
@@ -1710,10 +1710,10 @@
         "m2PerAverageSalary": 0.41
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.78,
-        "pm25Avg90dUgM3": 19.0,
-        "smogDays90dCount": 9,
-        "no2Avg90dUgM3": 16.21
+        "pm10Avg90dUgM3": 24.04,
+        "pm25Avg90dUgM3": 19.28,
+        "smogDays90dCount": 10,
+        "no2Avg90dUgM3": 16.34
       },
       "_internal": {
         "birthCohorts": {
@@ -1825,7 +1825,7 @@
         "primarySchoolClasses": 137,
         "pop2023": 15782,
         "pop2024": 15798,
-        "pop2025": 16230,
+        "pop2025": 15797,
         "kasselKerbStops": 5,
         "tactilePavingStops": 18
       }
@@ -1836,7 +1836,7 @@
       "districtName": "Dzielnica X Swoszowice",
       "areaKm2": 25.6,
       "demographics": {
-        "totalPopulation": 30720,
+        "totalPopulation": 30146,
         "permanentResidents": 29234,
         "temporaryResidents": 912,
         "foreignersTotal": 574,
@@ -1845,7 +1845,7 @@
         "age7to14": 3093,
         "age15to64": 19112,
         "age65Plus": 5103,
-        "populationGrowthRate3YrPct": 2.73
+        "populationGrowthRate3YrPct": 0.81
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -1884,17 +1884,17 @@
         "totalParksAreaHa": 13.33,
         "forestAreaHa": 83.9,
         "totalGreenAreaHa": 97.23,
-        "greenAreaM2PerCapita": 4.34,
-        "totalGreenM2PerCapita": 31.65,
+        "greenAreaM2PerCapita": 4.42,
+        "totalGreenM2PerCapita": 32.25,
         "schoolSportsFacilitiesCount": 41,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 5,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 4,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 518,
-        "municipalSubsidyPerCapitaPln": 108.61
+        "annualCulturalEventsCount": 1085,
+        "municipalSubsidyPerCapitaPln": 163.76
       },
       "publicSafety": {
         "roadCollisionsAnnual": 573,
@@ -1912,10 +1912,10 @@
         "m2PerAverageSalary": 0.49
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 19.19,
-        "pm25Avg90dUgM3": 15.79,
-        "smogDays90dCount": 2,
-        "no2Avg90dUgM3": 9.79
+        "pm10Avg90dUgM3": 19.42,
+        "pm25Avg90dUgM3": 16.04,
+        "smogDays90dCount": 3,
+        "no2Avg90dUgM3": 9.91
       },
       "_internal": {
         "birthCohorts": {
@@ -2026,7 +2026,7 @@
         "primarySchoolClasses": 175,
         "pop2023": 29904,
         "pop2024": 29752,
-        "pop2025": 30720,
+        "pop2025": 30146,
         "kasselKerbStops": 20,
         "tactilePavingStops": 34
       }
@@ -2037,7 +2037,7 @@
       "districtName": "Dzielnica XI Podgórze Duchackie",
       "areaKm2": 9.54,
       "demographics": {
-        "totalPopulation": 56236,
+        "totalPopulation": 55132,
         "permanentResidents": 53769,
         "temporaryResidents": 1363,
         "foreignersTotal": 1104,
@@ -2046,7 +2046,7 @@
         "age7to14": 4603,
         "age15to64": 33044,
         "age65Plus": 12927,
-        "populationGrowthRate3YrPct": 2.58
+        "populationGrowthRate3YrPct": 0.56
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -2085,17 +2085,17 @@
         "totalParksAreaHa": 47.13,
         "forestAreaHa": 7.8,
         "totalGreenAreaHa": 54.93,
-        "greenAreaM2PerCapita": 8.38,
-        "totalGreenM2PerCapita": 9.77,
+        "greenAreaM2PerCapita": 8.55,
+        "totalGreenM2PerCapita": 9.96,
         "schoolSportsFacilitiesCount": 119,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 415,
-        "municipalSubsidyPerCapitaPln": 47.46
+        "annualCulturalEventsCount": 605,
+        "municipalSubsidyPerCapitaPln": 52.03
       },
       "publicSafety": {
         "roadCollisionsAnnual": 245,
@@ -2113,10 +2113,10 @@
         "m2PerAverageSalary": 0.44
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.78,
-        "pm25Avg90dUgM3": 19.0,
-        "smogDays90dCount": 9,
-        "no2Avg90dUgM3": 16.21
+        "pm10Avg90dUgM3": 24.04,
+        "pm25Avg90dUgM3": 19.28,
+        "smogDays90dCount": 10,
+        "no2Avg90dUgM3": 16.34
       },
       "_internal": {
         "birthCohorts": {
@@ -2227,7 +2227,7 @@
         "primarySchoolClasses": 232,
         "pop2023": 54824,
         "pop2024": 54854,
-        "pop2025": 56236,
+        "pop2025": 55132,
         "kasselKerbStops": 11,
         "tactilePavingStops": 19
       }
@@ -2238,7 +2238,7 @@
       "districtName": "Dzielnica XII Bieżanów-Prokocim",
       "areaKm2": 18.47,
       "demographics": {
-        "totalPopulation": 65580,
+        "totalPopulation": 64458,
         "permanentResidents": 62507,
         "temporaryResidents": 1951,
         "foreignersTotal": 1122,
@@ -2247,7 +2247,7 @@
         "age7to14": 4918,
         "age15to64": 38642,
         "age65Plus": 15125,
-        "populationGrowthRate3YrPct": 1.73
+        "populationGrowthRate3YrPct": -0.01
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -2286,17 +2286,17 @@
         "totalParksAreaHa": 45.54,
         "forestAreaHa": 11.2,
         "totalGreenAreaHa": 56.74,
-        "greenAreaM2PerCapita": 6.94,
-        "totalGreenM2PerCapita": 8.65,
+        "greenAreaM2PerCapita": 7.07,
+        "totalGreenM2PerCapita": 8.8,
         "schoolSportsFacilitiesCount": 85,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 6,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 4,
-        "annualCulturalEventsCount": 622,
-        "municipalSubsidyPerCapitaPln": 61.05
+        "annualCulturalEventsCount": 688,
+        "municipalSubsidyPerCapitaPln": 52.79
       },
       "publicSafety": {
         "roadCollisionsAnnual": 612,
@@ -2314,10 +2314,10 @@
         "m2PerAverageSalary": 0.59
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.45,
-        "pm25Avg90dUgM3": 18.46,
-        "smogDays90dCount": 7,
-        "no2Avg90dUgM3": 15.54
+        "pm10Avg90dUgM3": 23.7,
+        "pm25Avg90dUgM3": 18.74,
+        "smogDays90dCount": 8,
+        "no2Avg90dUgM3": 15.66
       },
       "_internal": {
         "birthCohorts": {
@@ -2430,7 +2430,7 @@
         "primarySchoolClasses": 322,
         "pop2023": 64463,
         "pop2024": 64189,
-        "pop2025": 65580,
+        "pop2025": 64458,
         "kasselKerbStops": 30,
         "tactilePavingStops": 45
       }
@@ -2441,7 +2441,7 @@
       "districtName": "Dzielnica XIII Podgórze",
       "areaKm2": 25.67,
       "demographics": {
-        "totalPopulation": 48003,
+        "totalPopulation": 45518,
         "permanentResidents": 42298,
         "temporaryResidents": 3220,
         "foreignersTotal": 2485,
@@ -2450,7 +2450,7 @@
         "age7to14": 3800,
         "age15to64": 28229,
         "age65Plus": 6446,
-        "populationGrowthRate3YrPct": 10.52
+        "populationGrowthRate3YrPct": 4.8
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -2489,17 +2489,17 @@
         "totalParksAreaHa": 92.55,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 92.55,
-        "greenAreaM2PerCapita": 19.28,
-        "totalGreenM2PerCapita": 19.28,
+        "greenAreaM2PerCapita": 20.33,
+        "totalGreenM2PerCapita": 20.33,
         "schoolSportsFacilitiesCount": 95,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
-        "culturalCentersCount": 19,
+        "culturalCentersCount": 5,
         "seniorActivityCentersCount": 6,
-        "annualCulturalEventsCount": 2073,
-        "municipalSubsidyPerCapitaPln": 278.02
+        "annualCulturalEventsCount": 1139,
+        "municipalSubsidyPerCapitaPln": 104.78
       },
       "publicSafety": {
         "roadCollisionsAnnual": 1390,
@@ -2517,10 +2517,10 @@
         "m2PerAverageSalary": 0.35
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.78,
-        "pm25Avg90dUgM3": 19.0,
-        "smogDays90dCount": 9,
-        "no2Avg90dUgM3": 16.21
+        "pm10Avg90dUgM3": 24.04,
+        "pm25Avg90dUgM3": 19.28,
+        "smogDays90dCount": 10,
+        "no2Avg90dUgM3": 16.34
       },
       "_internal": {
         "birthCohorts": {
@@ -2632,7 +2632,7 @@
         "primarySchoolClasses": 235,
         "pop2023": 43434,
         "pop2024": 44098,
-        "pop2025": 48003,
+        "pop2025": 45518,
         "kasselKerbStops": 10,
         "tactilePavingStops": 79
       }
@@ -2643,7 +2643,7 @@
       "districtName": "Dzielnica XIV Czyżyny",
       "areaKm2": 12.26,
       "demographics": {
-        "totalPopulation": 37956,
+        "totalPopulation": 36669,
         "permanentResidents": 34624,
         "temporaryResidents": 2045,
         "foreignersTotal": 1287,
@@ -2652,7 +2652,7 @@
         "age7to14": 3180,
         "age15to64": 21919,
         "age65Plus": 6361,
-        "populationGrowthRate3YrPct": 6.93
+        "populationGrowthRate3YrPct": 3.31
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -2691,17 +2691,17 @@
         "totalParksAreaHa": 54.88,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 54.88,
-        "greenAreaM2PerCapita": 14.46,
-        "totalGreenM2PerCapita": 14.46,
+        "greenAreaM2PerCapita": 14.97,
+        "totalGreenM2PerCapita": 14.97,
         "schoolSportsFacilitiesCount": 80,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 1,
-        "annualCulturalEventsCount": 207,
-        "municipalSubsidyPerCapitaPln": 35.16
+        "annualCulturalEventsCount": 172,
+        "municipalSubsidyPerCapitaPln": 45.57
       },
       "publicSafety": {
         "roadCollisionsAnnual": 666,
@@ -2719,10 +2719,10 @@
         "m2PerAverageSalary": 0.54
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.45,
-        "pm25Avg90dUgM3": 18.46,
-        "smogDays90dCount": 7,
-        "no2Avg90dUgM3": 15.54
+        "pm10Avg90dUgM3": 23.7,
+        "pm25Avg90dUgM3": 18.74,
+        "smogDays90dCount": 8,
+        "no2Avg90dUgM3": 15.66
       },
       "_internal": {
         "birthCohorts": {
@@ -2831,7 +2831,7 @@
         "primarySchoolClasses": 133,
         "pop2023": 35495,
         "pop2024": 35957,
-        "pop2025": 37956,
+        "pop2025": 36669,
         "kasselKerbStops": 13,
         "tactilePavingStops": 37
       }
@@ -2842,7 +2842,7 @@
       "districtName": "Dzielnica XV Mistrzejowice",
       "areaKm2": 5.59,
       "demographics": {
-        "totalPopulation": 51479,
+        "totalPopulation": 50819,
         "permanentResidents": 49936,
         "temporaryResidents": 883,
         "foreignersTotal": 660,
@@ -2851,7 +2851,7 @@
         "age7to14": 3411,
         "age15to64": 30975,
         "age65Plus": 13089,
-        "populationGrowthRate3YrPct": 0.4
+        "populationGrowthRate3YrPct": -0.89
       },
       "educationAndCare": {
         "nurseriesPublicCount": 2,
@@ -2890,17 +2890,17 @@
         "totalParksAreaHa": 38.41,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 38.41,
-        "greenAreaM2PerCapita": 7.46,
-        "totalGreenM2PerCapita": 7.46,
+        "greenAreaM2PerCapita": 7.56,
+        "totalGreenM2PerCapita": 7.56,
         "schoolSportsFacilitiesCount": 44,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 207,
-        "municipalSubsidyPerCapitaPln": 25.93
+        "annualCulturalEventsCount": 534,
+        "municipalSubsidyPerCapitaPln": 63.95
       },
       "publicSafety": {
         "roadCollisionsAnnual": 198,
@@ -2918,10 +2918,10 @@
         "m2PerAverageSalary": 0.5
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.45,
-        "pm25Avg90dUgM3": 18.46,
-        "smogDays90dCount": 7,
-        "no2Avg90dUgM3": 15.54
+        "pm10Avg90dUgM3": 23.7,
+        "pm25Avg90dUgM3": 18.74,
+        "smogDays90dCount": 8,
+        "no2Avg90dUgM3": 15.66
       },
       "_internal": {
         "birthCohorts": {
@@ -3032,7 +3032,7 @@
         "primarySchoolClasses": 173,
         "pop2023": 51274,
         "pop2024": 50929,
-        "pop2025": 51479,
+        "pop2025": 50819,
         "kasselKerbStops": 11,
         "tactilePavingStops": 44
       }
@@ -3043,7 +3043,7 @@
       "districtName": "Dzielnica XVI Bieńczyce",
       "areaKm2": 3.7,
       "demographics": {
-        "totalPopulation": 36813,
+        "totalPopulation": 36438,
         "permanentResidents": 35743,
         "temporaryResidents": 695,
         "foreignersTotal": 375,
@@ -3052,7 +3052,7 @@
         "age7to14": 2211,
         "age15to64": 22072,
         "age65Plus": 9907,
-        "populationGrowthRate3YrPct": -2.76
+        "populationGrowthRate3YrPct": -3.75
       },
       "educationAndCare": {
         "nurseriesPublicCount": 1,
@@ -3091,17 +3091,17 @@
         "totalParksAreaHa": 31.95,
         "forestAreaHa": 0.0,
         "totalGreenAreaHa": 31.95,
-        "greenAreaM2PerCapita": 8.68,
-        "totalGreenM2PerCapita": 8.68,
+        "greenAreaM2PerCapita": 8.77,
+        "totalGreenM2PerCapita": 8.77,
         "schoolSportsFacilitiesCount": 74,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 2,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 2,
         "seniorActivityCentersCount": 3,
-        "annualCulturalEventsCount": 207,
-        "municipalSubsidyPerCapitaPln": 36.25
+        "annualCulturalEventsCount": 172,
+        "municipalSubsidyPerCapitaPln": 45.86
       },
       "publicSafety": {
         "roadCollisionsAnnual": 189,
@@ -3119,10 +3119,10 @@
         "m2PerAverageSalary": 0.57
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.45,
-        "pm25Avg90dUgM3": 18.46,
-        "smogDays90dCount": 7,
-        "no2Avg90dUgM3": 15.54
+        "pm10Avg90dUgM3": 23.7,
+        "pm25Avg90dUgM3": 18.74,
+        "smogDays90dCount": 8,
+        "no2Avg90dUgM3": 15.66
       },
       "_internal": {
         "birthCohorts": {
@@ -3234,7 +3234,7 @@
         "primarySchoolClasses": 144,
         "pop2023": 37857,
         "pop2024": 36979,
-        "pop2025": 36813,
+        "pop2025": 36438,
         "kasselKerbStops": 1,
         "tactilePavingStops": 19
       }
@@ -3245,7 +3245,7 @@
       "districtName": "Dzielnica XVII Wzgórza Krzesławickie",
       "areaKm2": 23.82,
       "demographics": {
-        "totalPopulation": 20671,
+        "totalPopulation": 20465,
         "permanentResidents": 20123,
         "temporaryResidents": 342,
         "foreignersTotal": 206,
@@ -3254,7 +3254,7 @@
         "age7to14": 1655,
         "age15to64": 12810,
         "age65Plus": 4402,
-        "populationGrowthRate3YrPct": 2.09
+        "populationGrowthRate3YrPct": 1.08
       },
       "educationAndCare": {
         "nurseriesPublicCount": 3,
@@ -3293,17 +3293,17 @@
         "totalParksAreaHa": 19.99,
         "forestAreaHa": 35.6,
         "totalGreenAreaHa": 55.59,
-        "greenAreaM2PerCapita": 9.67,
-        "totalGreenM2PerCapita": 26.89,
+        "greenAreaM2PerCapita": 9.77,
+        "totalGreenM2PerCapita": 27.16,
         "schoolSportsFacilitiesCount": 38,
         "schoolSwimmingPoolsCount": 0
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 1,
-        "culturalCentersCount": 0,
+        "culturalCentersCount": 4,
         "seniorActivityCentersCount": 2,
-        "annualCulturalEventsCount": 104,
-        "municipalSubsidyPerCapitaPln": 32.28
+        "annualCulturalEventsCount": 219,
+        "municipalSubsidyPerCapitaPln": 124.19
       },
       "publicSafety": {
         "roadCollisionsAnnual": 211,
@@ -3321,10 +3321,10 @@
         "m2PerAverageSalary": 0.69
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.45,
-        "pm25Avg90dUgM3": 18.46,
-        "smogDays90dCount": 7,
-        "no2Avg90dUgM3": 15.54
+        "pm10Avg90dUgM3": 23.7,
+        "pm25Avg90dUgM3": 18.74,
+        "smogDays90dCount": 8,
+        "no2Avg90dUgM3": 15.66
       },
       "_internal": {
         "birthCohorts": {
@@ -3435,7 +3435,7 @@
         "primarySchoolClasses": 80,
         "pop2023": 20247,
         "pop2024": 20222,
-        "pop2025": 20671,
+        "pop2025": 20465,
         "kasselKerbStops": 16,
         "tactilePavingStops": 58
       }
@@ -3446,7 +3446,7 @@
       "districtName": "Dzielnica XVIII Nowa Huta",
       "areaKm2": 65.41,
       "demographics": {
-        "totalPopulation": 47336,
+        "totalPopulation": 46796,
         "permanentResidents": 45365,
         "temporaryResidents": 1431,
         "foreignersTotal": 540,
@@ -3455,7 +3455,7 @@
         "age7to14": 3322,
         "age15to64": 27809,
         "age65Plus": 12032,
-        "populationGrowthRate3YrPct": -1.63
+        "populationGrowthRate3YrPct": -2.75
       },
       "educationAndCare": {
         "nurseriesPublicCount": 5,
@@ -3494,17 +3494,17 @@
         "totalParksAreaHa": 146.15,
         "forestAreaHa": 36.3,
         "totalGreenAreaHa": 182.45,
-        "greenAreaM2PerCapita": 30.88,
-        "totalGreenM2PerCapita": 38.54,
+        "greenAreaM2PerCapita": 31.23,
+        "totalGreenM2PerCapita": 38.99,
         "schoolSportsFacilitiesCount": 115,
         "schoolSwimmingPoolsCount": 1
       },
       "cultureAndSociety": {
         "libraryBranchesCount": 4,
-        "culturalCentersCount": 18,
+        "culturalCentersCount": 8,
         "seniorActivityCentersCount": 13,
-        "annualCulturalEventsCount": 2281,
-        "municipalSubsidyPerCapitaPln": 310.13
+        "annualCulturalEventsCount": 1858,
+        "municipalSubsidyPerCapitaPln": 461.58
       },
       "publicSafety": {
         "roadCollisionsAnnual": 540,
@@ -3522,10 +3522,10 @@
         "m2PerAverageSalary": 0.53
       },
       "environmentalQuality": {
-        "pm10Avg90dUgM3": 23.45,
-        "pm25Avg90dUgM3": 18.46,
-        "smogDays90dCount": 7,
-        "no2Avg90dUgM3": 15.54
+        "pm10Avg90dUgM3": 23.7,
+        "pm25Avg90dUgM3": 18.74,
+        "smogDays90dCount": 8,
+        "no2Avg90dUgM3": 15.66
       },
       "_internal": {
         "birthCohorts": {
@@ -3639,7 +3639,7 @@
         "primarySchoolClasses": 301,
         "pop2023": 48121,
         "pop2024": 47293,
-        "pop2025": 47336,
+        "pop2025": 46796,
         "kasselKerbStops": 14,
         "tactilePavingStops": 140
       }

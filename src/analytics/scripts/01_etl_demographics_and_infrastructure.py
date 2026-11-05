@@ -718,7 +718,7 @@ def run_etl() -> None:
 
     for did, d in districts_data.items():
         dem = d["demographics"]
-        dem["totalPopulation"] = dem["permanentResidents"] + dem["temporaryResidents"] + dem["foreignersTotal"]
+        dem["totalPopulation"] = dem["permanentResidents"] + dem["temporaryResidents"]
         d["_internal"]["pop2025"] = dem["totalPopulation"]
         pop23 = d["_internal"]["pop2023"]
         dem["populationGrowthRate3YrPct"] = round(((dem["totalPopulation"] - pop23) / pop23) * 100, 2) if pop23 > 0 else 0.0
@@ -865,23 +865,54 @@ def run_etl() -> None:
 
     total_culture_subsidy, total_cultural_events = 0.0, 0
     cultural_centers_by_district: dict[int, int] = defaultdict(int)
+    cultural_events_by_district: dict[int, float] = defaultdict(float)
+    cultural_subsidy_by_district: dict[int, float] = defaultdict(float)
+
+    # Official branch & club territorial network distribution for Krakow's municipal cultural institutions
+    # Maps each parent operator's `Kluby i filie wraz siedzibą główną` count to the actual districts where its branches operate
+    CULTURAL_NETWORK_SHARES: list[tuple[str, dict[int, int], bool]] = [
+        ("Nowohuckie Centrum Kultury", {18: 1}, True),
+        ("Dworek Białoprądnicki", {3: 1, 4: 2, 5: 1, 6: 2, 7: 2}, True),
+        ("Centrum Kultury Podgórza", {8: 5, 9: 1, 10: 4, 11: 2, 12: 2, 13: 5}, True),
+        # KFK is reported in two half-year rows in 2025 CSV (up to June 30 and from July 1 after merging with 'Krakowiacy').
+        # Physical facilities (6 clubs) are counted once; events and subsidies are accumulated across both half-years.
+        ("od 1 lipca 2025", {1: 3, 2: 1, 3: 2, 5: 1}, False),
+        ("Krakowskie Forum Kultury", {1: 3, 2: 1, 3: 2}, True),
+        ("Kraków-Nowa Huta", {14: 2, 15: 1, 16: 2, 17: 4, 18: 5}, True),
+        ("Norwid", {15: 1, 18: 2}, True),
+        ("Krakowiacy", {5: 1}, True),
+        ("Piosenki", {1: 1}, True),
+        ("Decjusza", {7: 2}, True),
+        ("Dialogu Międzykulturowego", {9: 1}, True),
+    ]
+
     kultura_file = find_csv(r"Działalność miejskich centrów")
     if kultura_file:
         for row in read_clean_csv(kultura_file):
             podmiot = row.get("Podmiot", "").strip()
             kluby = clean_int(row.get("Kluby i filie wraz siedzibą główną", "1"), 1)
-            total_cultural_events += clean_int(row.get("Imprezy_wydarzenia - Liczba", "0") or row.get("Imprezy_wydarzenia - Liczba ", "0"))
-            total_culture_subsidy += clean_float(row.get("Dotacje podmiotowe z budżetu Miasta Krakowa_w zł", "0"))
+            row_events = clean_int(row.get("Imprezy_wydarzenia - Liczba", "0") or row.get("Imprezy_wydarzenia - Liczba ", "0"))
+            row_subsidy = clean_float(row.get("Dotacje podmiotowe z budżetu Miasta Krakowa_w zł", "0"))
+            total_cultural_events += row_events
+            total_culture_subsidy += row_subsidy
 
-            if any(k in podmiot for k in ["Nowohuckie", "Nowa Huta", "Norwid"]): did = 18
-            elif "Białoprądnicki" in podmiot: did = 4
-            elif "Podgórza" in podmiot: did = 13
-            elif any(k in podmiot for k in ["Krakowskie Forum", "Piosenki"]): did = 1
-            elif "Decjusza" in podmiot: did = 7
-            elif "Krakowiacy" in podmiot: did = 5
-            else: did = 1
+            matched_dist_map: dict[int, int] = {1: kluby}
+            count_facilities = True
+            for pattern_key, dist_map, should_count in CULTURAL_NETWORK_SHARES:
+                if pattern_key.lower() in podmiot.lower():
+                    matched_dist_map = dist_map
+                    count_facilities = should_count
+                    break
 
-            cultural_centers_by_district[did] += kluby
+            map_total = max(1, sum(matched_dist_map.values()))
+            for d_id, branch_cnt in matched_dist_map.items():
+                weight = branch_cnt / map_total
+                if count_facilities:
+                    # Scale proportionally if raw CSV 'kluby' ever changes in future years
+                    scaled_cnt = int(round(kluby * weight)) if len(matched_dist_map) > 1 else kluby
+                    cultural_centers_by_district[d_id] += scaled_cnt
+                cultural_events_by_district[d_id] += row_events * weight
+                cultural_subsidy_by_district[d_id] += row_subsidy * weight
 
     library_branches_by_district: dict[int, int] = defaultdict(int)
     filie_bib_file = find_csv(r"Filie Biblioteki")
@@ -927,15 +958,18 @@ def run_etl() -> None:
                         "metrics": {"capacity": 45, "areaHa": None, "additionalInfo": "CAS"}
                     })
 
-    total_units = max(1, sum(library_branches_by_district.values()) + sum(cultural_centers_by_district.values()))
+    total_lib_branches = max(1, sum(library_branches_by_district.values()))
     for did, d in districts_data.items():
         cult = d["cultureAndSociety"]
         cult["libraryBranchesCount"] = library_branches_by_district[did]
         cult["culturalCentersCount"] = cultural_centers_by_district[did]
-        share = (library_branches_by_district[did] + cultural_centers_by_district[did]) / total_units
-        cult["annualCulturalEventsCount"] = int(round(total_cultural_events * share))
+        lib_share = library_branches_by_district[did] / total_lib_branches
+        # Combine 80% direct institutional branch events/subsidies with 20% municipal library cultural programming
+        dist_events = 0.80 * cultural_events_by_district[did] + 0.20 * (total_cultural_events * lib_share)
+        dist_subsidy = 0.80 * cultural_subsidy_by_district[did] + 0.20 * (total_culture_subsidy * lib_share)
+        cult["annualCulturalEventsCount"] = int(round(dist_events))
         pop = max(d["demographics"]["totalPopulation"], 1)
-        cult["municipalSubsidyPerCapitaPln"] = round((total_culture_subsidy * share) / pop, 2)
+        cult["municipalSubsidyPerCapitaPln"] = round(dist_subsidy / pop, 2)
 
     print("[API] Downloading historical environmental data (90 days) from Open-Meteo...")
     for did in range(1, 19):

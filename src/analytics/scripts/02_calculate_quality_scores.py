@@ -72,9 +72,10 @@ def calculate_quality_scores() -> None:
         # - Early childcare coverage (0-3): places per child (ratio <= 1.0 means 100% coverage = 100 pts)
         child_ratio = max(0.01, float(d["educationAndCare"]["childrenPerCarePlaceRatio"]))
         care_cov = clamp((1.0 / child_ratio) * 100.0)
-        # - Kindergarten coverage (4-6): available places relative to demographic cohort (1.0 = 100 pts)
-        kg_kids = max(d["demographics"]["age4to6"], 1)
-        kg_cov = clamp((d["educationAndCare"]["kindergartenPlacesTotal"] / kg_kids) * 100.0)
+        # - Kindergarten coverage (3-6 yrs): Polish preschool education covers 4 birth cohorts (ages 3, 4, 5, 6),
+        #   i.e., age4to6 (3 cohorts) + 25% of age0to3 (3-year-olds). Benchmark: 1.50 places per resident child = 100 pts.
+        kg_kids_3to6 = max(float(d["demographics"]["age4to6"]) + 0.25 * float(d["demographics"]["age0to3"]), 1.0)
+        kg_cov = clamp((float(d["educationAndCare"]["kindergartenPlacesTotal"]) / (kg_kids_3to6 * 1.50)) * 100.0)
         # - Class size optimality: benchmark 15 students = 100 pts, 25 students = 50 pts, 35 students = 0 pts
         avg_class = float(d["educationAndCare"]["avgStudentsPerClass"])
         class_score = clamp(100.0 - (avg_class - 15.0) * 5.0)

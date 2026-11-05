@@ -152,6 +152,53 @@ def validate_districts_master(file_path: Path) -> list[str]:
                     f"District {d_id}: '{level_key}' has invalid value '{lvl}'. Allowed enums: {ALLOWED_POTENTIAL_LEVELS}."
                 )
 
+        # Verify nested schema keys for demographics, environmentalQuality, publicSafety, and housingMarket
+        dem = district.get("demographics", {})
+        for dem_key in [
+            "totalPopulation",
+            "permanentResidents",
+            "temporaryResidents",
+            "foreignersTotal",
+            "age0to3",
+            "age4to6",
+            "age7to14",
+            "age15to64",
+            "age65Plus",
+            "populationGrowthRate3YrPct",
+        ]:
+            if dem_key not in dem:
+                errors.append(f"District {d_id}: demographics missing key '{dem_key}'.")
+        if dem.get("totalPopulation") != (dem.get("permanentResidents", 0) + dem.get("temporaryResidents", 0)):
+            errors.append(
+                f"District {d_id}: totalPopulation ({dem.get('totalPopulation')}) must equal permanentResidents + temporaryResidents."
+            )
+
+        env = district.get("environmentalQuality", {})
+        for env_key in ["pm10Avg90dUgM3", "pm25Avg90dUgM3", "smogDays90dCount", "no2Avg90dUgM3"]:
+            if env_key not in env:
+                errors.append(f"District {d_id}: environmentalQuality missing key '{env_key}'.")
+
+        safety = district.get("publicSafety", {})
+        for safety_key in ["roadCollisionsAnnual", "pedestrianAccidents", "injuryAccidents", "safetyRatingSurvey"]:
+            if safety_key not in safety:
+                errors.append(f"District {d_id}: publicSafety missing key '{safety_key}'.")
+
+        housing = district.get("housingMarket", {})
+        for hm_key in ["avgPricePerM2", "avgRentalPriceM2", "m2PerAverageSalary"]:
+            if hm_key not in housing or float(housing.get(hm_key, 0.0)) <= 0.0:
+                errors.append(f"District {d_id}: housingMarket '{hm_key}' must be present and > 0.")
+
+        culture = district.get("cultureAndSociety", {})
+        for cult_key in [
+            "libraryBranchesCount",
+            "culturalCentersCount",
+            "seniorActivityCentersCount",
+            "annualCulturalEventsCount",
+            "municipalSubsidyPerCapitaPln",
+        ]:
+            if cult_key not in culture or float(culture.get(cult_key, 0)) <= 0:
+                errors.append(f"District {d_id}: cultureAndSociety '{cult_key}' must be present and > 0.")
+
     # Step 8: Assert that all district IDs from 1 to 18 are present without gaps or duplicates
     missing_ids = set(range(1, 19)) - seen_ids
     if missing_ids:

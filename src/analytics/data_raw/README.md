@@ -17,10 +17,10 @@ The directory contains over 30 official datasets categorized thematically:
 - **Transport and Mobility**: Public transport stop locations (KMK), Park & Ride (P+R) networks, bicycle parking racks (*Public Transport Authority - ZTP*), and cycle track lengths.
 - **Culture and Seniors**: Branches of the Krakow Library, municipal culture centers, and Senior Activity Centres (CAS).
 - **Accessibility (Kraków bez Barier)**: Designated PRM parking stalls (Niebieskie Koperty) and architectural accessibility audits of public facilities (*UMK / MFiPR*).
-- **Environment and Acoustics**: PM10/PM2.5 particulate matter concentrations and smog days (*GIOŚ / WIOŚ*).
-- **Safety**: Road collisions and pedestrian accident statistics (*SEWiK Police Headquarters*).
-- **Real Estate Market**: Average transaction prices, rental rates, and housing affordability indicators (*NBP BaRN, Otodom Analytics*).
-- **Configuration Defaults**: System files like `Korekty_Geoprzestrzenne_POI.csv` (manual spatial coordinate overrides for parks/forests) and `Dzielnice_Krakowa.csv` (official administrative definitions of the 18 districts).
+- **Environment and Air Quality (API + Geometry)**: Reference district centroids in `Dzielnice_Krakowa.csv` used by `01_etl` to fetch 90-day $\text{PM}_{10}$, $\text{PM}_{2.5}$, $\text{NO}_2$, and smog-day telemetry from the **Open-Meteo Air Quality API (CAMS)**.
+- **Safety**: Annual road collisions, pedestrian/injury accidents, and resident safety survey ratings across districts (`Bezpieczenstwo i zdarzenia drogowe w dzielnicach Krakowa 2024-2025.csv` – *SEWiK Police Headquarters / Otodom*).
+- **Real Estate Market**: Average transaction prices per $\text{m}^2$, average rental rates per $\text{m}^2$, and $\text{m}^2$ purchasing power per average net salary (`Ceny mieszkan w dzielnicach Krakowa 2025-2026.csv` – *NBP BaRN, Otodom Analytics*).
+- **Geospatial & Configuration Files**: Vector boundaries of the 18 districts (`krakow_districts.geojson`), cycling network geometry (`Drogi_Rowerowe_Krakow.geojson`), `Korekty_Geoprzestrzenne_POI.csv`, and `Dzielnice_Krakowa.csv`.
 
 ---
 

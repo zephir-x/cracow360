@@ -34,10 +34,10 @@ Przechowuje również bezpiecznie stany operacyjne (takie jak trwała pamięć p
   - `educationScore` – Edukacja i opieka nad dziećmi,
   - `greeneryScore` – Tereny zielone i rekreacja,
   - `cultureAndSeniorScore` – Biblioteki, Centra Aktywności Seniora (CAS) i kultura,
-  - `environmentScore` – Jakość powietrza i komfort akustyczny,
-  - `safetyScore` – Bezpieczeństwo publiczne i wskaźniki wypadków drogowych (skorygowane o populację dzienną),
-  - `housingAffordabilityScore` – Dostępność cenowa mieszkań,
-  - `demographicVitalityScore` – Rozwój demograficzny i retencja młodzieży.
+  - `environmentScore` – Jakość powietrza (stężenia $\text{PM}_{10}$, $\text{PM}_{2.5}$, $\text{NO}_2$ oraz liczba dni smogowych w oknie 90 dni względem norm UE),
+  - `safetyScore` – Bezpieczeństwo publiczne (ocena ankietowa mieszkańców 1–5 oraz brak kolizji i wypadków drogowych na 1 tys. / 10 tys. mieszkańców),
+  - `housingAffordabilityScore` – Dostępność cenowa mieszkań (siła nabywcza $\text{m}^2$ za średnią pensję, ceny zakupu i stawki najmu),
+  - `demographicVitalityScore` – Witalność demograficzna (3-letnia dynamika populacji, udział wieku produkcyjnego 15–64, meldunki czasowe i umiędzynarodowienie).
 
 ---
 

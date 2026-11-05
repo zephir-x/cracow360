@@ -26,8 +26,10 @@ Potok wykonywany jest ściśle sekwencyjnie. Przekształca niestrukturyzowane, s
 - **Dane wejściowe**: Odczytuje dziesiątki surowych plików CSV z katalogu `data_raw/` (demografia, szkoły, parki, przystanki KMK, P+R itd.) oraz `Korekty_Geoprzestrzenne_POI.csv`.
 - **Metodologia i algorytmy**:
     - **Dynamiczne geokodowanie**: Łączy się z oficjalnym interfejsem **API GUGiK** w celu zamiany adresów ulicznych na współrzędne WGS84. Wykorzystuje trwałą sesję `requests.Session()` oraz lokalną pamięć podręczną JSON (`spatial_geocoding_cache.json`), co radykalnie zmniejsza opóźnienia sieciowe.
+    - **Telemetria środowiskowa (Open-Meteo Air Quality API)**: Pobiera 90-dniowe szeregi czasowe stężeń pyłów zawieszonych ($\text{PM}_{10}$, $\text{PM}_{2.5}$), dwutlenku azotu ($\text{NO}_2$) oraz liczby dni smogowych dla centroidów poszczególnych dzielnic.
     - **Point-in-Polygon (PiP)**: Używa `matplotlib.path` do geometrycznego sprawdzania, który wielokąt dzielnicy zawiera określone współrzędne geograficzne.
     - **Stochastyczne izochrony**: Zamiast arbitralnych mnożników oblicza zasięg transportu publicznego przy użyciu **modelu probabilistycznego Poissona** ($1 - e^{- \lambda}$), zakładając 300-metrowy promień dojścia pieszego ($\sim 0.2827 \text{ km}^2$) wokół efektywnych przystanków komunikacji.
+    - **Spójny bilans demograficzny BDK**: Wylicza łączną populację ewidencyjną (`totalPopulation = permanentResidents + temporaryResidents`) oraz 3-letnią dynamikę demograficzną (2023–2025) na symetrycznej bazie porównawczej, zachowując `foreignersTotal` jako niezależny wskaźnik strukturalny.
     - **Generowanie UUID**: Tworzy unikalne globalnie identyfikatory (`uuid.uuid4()`) dla każdego punktu POI, aby bezwzględnie zapobiec konfliktom śledzenia kluczy głównych (Primary Key) w bazie danych Entity Framework Core.
 - **Wyniki**: `data_processed/districts_aggregated.json` oraz `data/contracts/krakow_poi_locations.json`.
 
@@ -35,9 +37,9 @@ Potok wykonywany jest ściśle sekwencyjnie. Przekształca niestrukturyzowane, s
 - **Cel**: Oblicza 8 fundamentalnych ocen filarowych Jakości Życia (QoL) dla wszystkich 18 dzielnic.
 - **Dane wejściowe**: Odczytuje `districts_aggregated.json`.
 - **Metodologia i algorytmy**:
-    - **Normalizacja Min-Max**: Skaluje surowe dane demograficzne/infrastrukturalne do ujednoliconego indeksu [0.0 - 100.0].
-    - **Korekta o populację dzienną**: W module bezpieczeństwa publicznego stosuje mnożnik (np. 1,55x dla Dzielnicy I – Stare Miasto), uwzględniając turystów i osoby dojeżdżające do pracy, co zapobiega niesprawiedliwemu zawyżaniu wskaźników przestępczości w przeliczeniu na stałych mieszkańców.
-    - **Wygładzanie bayesowskie**: Dodaje stałe do mianowników (np. `areaKm2 + 8.0`), aby ograniczyć wpływ skrajnych wartości odstających w bardzo małych geograficznie dzielnicach.
+    - **Skalowanie referencyjne (Benchmark Scoring)**: Odwzorowuje twarde wskaźniki miejskie bezpośrednio względem oficjalnych norm prawnych i urbanistycznych (Dyrektywa UE 2008/50/WE dla $\text{PM}_{10}/\text{PM}_{2.5}/\text{NO}_2$, normy dostępności terenów zielonych EEA/WHO $50\text{ m}^2/\text{os.}$, wskaźniki bezpieczeństwa GUS/SEWiK oraz siła nabywcza NBP/Otodom) na ujednoliconą skalę $[0.0 - 100.0]$.
+    - **Kalibracja kohorty przedszkolnej (3–6 lat)**: Uwzględnia pełne 4 roczniki dzieci objętych wychowaniem przedszkolnym (`age4to6 + 0.25 * age0to3`) względem docelowego bufora pojemności placówek ($1.50\times$), eliminując sztuczne spłaszczenie wyników na górnej granicy skali.
+    - **Brak arbitralnych kar i mnożników**: Wyniki wynikają wyłącznie z przejrzystych równań liniowych ograniczonych funkcją `clamp(0.0, 100.0)`.
 - **Wyniki**: `data_processed/districts_scored.json`.
 
 ### Krok 03: `03_etl_accessibility_profiles.py`
@@ -53,9 +55,9 @@ Potok wykonywany jest ściśle sekwencyjnie. Przekształca niestrukturyzowane, s
 - **Cel**: Buduje predykcyjne modele ekonometryczne na rok 2028 i eksportuje główny kontrakt systemowy.
 - **Dane wejściowe**: Odczytuje `districts_scored.json`.
 - **Metodologia i algorytmy**:
-    - **Regresja liniowa OLS (`scikit-learn`)**: Dopasowuje linię trendu metodą najmniejszych kwadratów (OLS) do historycznych rocznych kohort urodzeń (2018–2025), prognozując liczby urodzeń do roku 2028.
+    - **Regresja liniowa OLS z wygaszanym trendem (`scikit-learn`)**: Dopasowuje linię trendu metodą najmniejszych kwadratów (OLS) do historycznych rocznych kohort urodzeń (2018–2025) i rzutuje wygaszany trend (damped trend) z obecnej bazy 0–3 lat na horyzont 2025–2028.
     - **Migracja kohortowo-komponentowa**: Stosuje wytłumiony 3-letni mnożnik migracyjny do prognozowanej linii bazowej, symulując przepływy rodzin wprowadzających się lub wyprowadzających z poszczególnych dzielnic.
-    - **Klasyfikacja deficytów**: Odwzorowuje bilanse matematyczne (np. liczba miejsc w żłobkach minus popyt w 2028 r.) na praktyczne typy wyliczeniowe potencjału B2B/B2G (`LOW`, `MEDIUM`, `HIGH`).
+    - **Zsynchronizowana klasyfikacja deficytów SSoT (0–14 lat)**: Wylicza łączny i cząstkowy bilans miejsc edukacyjno-opiekuńczych (żłobki 0–3, przedszkola 4–6, szkoły podstawowe 7–14 przy normatywie $350\text{ miejsc/szkołę}$), mapując je na typy potencjału B2B/B2G (`LOW`, `MEDIUM`, `HIGH`) oraz precyzyjne rekomendacje bez sprzeczności między segmentami.
     - **Matplotlib**: Generuje statyczne, gotowe do prezentacji wykresy punktowe i słupkowe do raportu konkursowego w formacie PDF.
 - **Wyniki**: `data/contracts/krakow_districts_master.json` oraz wykresy PNG w katalogu `charts/`.
 
@@ -72,7 +74,7 @@ Potok wykonywany jest ściśle sekwencyjnie. Przekształca niestrukturyzowane, s
 - **Dane wejściowe**: Odczytuje wszystkie cztery ostateczne pliki kontraktów JSON w `data/contracts/`.
 - **Metodologia i algorytmy**:
     - Działa jak zestaw testów jednostkowych dla warstwy danych.
-    - Weryfikuje dokładną liczność (dokładnie 18 dzielnic), poprawność typów (wyniki muszą być liczbami zmiennoprzecinkowymi $\in [0, 100]$), zgodność typów enum oraz ograniczenia ramki otaczającej (bounding-box – upewniając się, że wszystkie współrzędne GPS faktycznie leżą w granicach metropolitalnych Krakowa).
+    - Weryfikuje dokładną liczność (dokładnie 18 dzielnic), poprawność typów (wyniki muszą być liczbami zmiennoprzecinkowymi $\in [0, 100]$), spójność równania demograficznego (`totalPopulation == permanentResidents + temporaryResidents`), obecność zagnieżdżonych kluczy (`environmentalQuality`, `publicSafety`, `housingMarket`), zgodność typów enum oraz ograniczenia ramki otaczającej (bounding-box WGS84).
 - **Wykonanie**: Zwraca kod wyjścia `0` w przypadku powodzenia lub `1` wraz ze szczegółową listą diagnostyczną w razie wykrycia jakiegokolwiek naruszenia kontraktu.
 
 ---

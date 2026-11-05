@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-04T17:07:24.765842+00:00",
+  "generatedAt": "2026-11-05T00:08:08.072469+00:00",
   "meta": {
     "title": "Profile Dostępności Architektonicznej i Społecznej Dzielnic Krakowa",
     "description": "Zintegrowane wskaźniki dostępności dla osób z niepełnosprawnościami, seniorów i rodzin z dziećmi oparte w 100% na danych ZDMK, UMK, ZTP i BDK.",
@@ -48,13 +48,13 @@
       "districtRoman": "I",
       "districtName": "Dzielnica I Stare Miasto",
       "areaKm2": 5.57,
-      "totalPopulation": 31029,
+      "totalPopulation": 29725,
       "seniors65Plus": 7514,
       "metrics": {
         "prmParking": {
           "totalSpots": 525,
           "locationsCount": 196,
-          "spotsPer10kPop": 169.2,
+          "spotsPer10kPop": 176.6,
           "spotsPerKm2": 94.3
         },
         "transit": {
@@ -168,11 +168,11 @@
         }
       ],
       "scores": {
-        "overallScore": 72.5,
-        "mobilityScore": 67.7,
+        "overallScore": 72.4,
+        "mobilityScore": 67.5,
         "visualScore": 60.8,
         "hearingScore": 96.0,
-        "seniorScore": 72.3,
+        "seniorScore": 72.2,
         "familyStrollerScore": 73.6
       },
       "keyStrengths": [
@@ -186,13 +186,13 @@
       "districtRoman": "II",
       "districtName": "Dzielnica II Grzegórzki",
       "areaKm2": 5.85,
-      "totalPopulation": 33693,
+      "totalPopulation": 32066,
       "seniors65Plus": 7213,
       "metrics": {
         "prmParking": {
           "totalSpots": 216,
           "locationsCount": 87,
-          "spotsPer10kPop": 64.1,
+          "spotsPer10kPop": 67.4,
           "spotsPerKm2": 36.9
         },
         "transit": {
@@ -254,11 +254,11 @@
         }
       ],
       "scores": {
-        "overallScore": 79.3,
-        "mobilityScore": 93.5,
+        "overallScore": 79.2,
+        "mobilityScore": 93.2,
         "visualScore": 48.0,
         "hearingScore": 96.0,
-        "seniorScore": 78.5,
+        "seniorScore": 78.4,
         "familyStrollerScore": 81.7
       },
       "keyStrengths": [
@@ -272,13 +272,13 @@
       "districtRoman": "III",
       "districtName": "Dzielnica III Prądnik Czerwony",
       "areaKm2": 6.44,
-      "totalPopulation": 48363,
+      "totalPopulation": 46880,
       "seniors65Plus": 11551,
       "metrics": {
         "prmParking": {
           "totalSpots": 81,
           "locationsCount": 50,
-          "spotsPer10kPop": 16.7,
+          "spotsPer10kPop": 17.3,
           "spotsPerKm2": 12.6
         },
         "transit": {
@@ -331,7 +331,7 @@
         "mobilityScore": 94.3,
         "visualScore": 94.0,
         "hearingScore": 84.5,
-        "seniorScore": 58.8,
+        "seniorScore": 58.9,
         "familyStrollerScore": 91.5
       },
       "keyStrengths": [
@@ -345,13 +345,13 @@
       "districtRoman": "IV",
       "districtName": "Dzielnica IV Prądnik Biały",
       "areaKm2": 23.42,
-      "totalPopulation": 79042,
+      "totalPopulation": 76804,
       "seniors65Plus": 15269,
       "metrics": {
         "prmParking": {
           "totalSpots": 58,
           "locationsCount": 36,
-          "spotsPer10kPop": 7.3,
+          "spotsPer10kPop": 7.6,
           "spotsPerKm2": 2.5
         },
         "transit": {
@@ -390,7 +390,7 @@
         "mobilityScore": 75.7,
         "visualScore": 82.1,
         "hearingScore": 57.7,
-        "seniorScore": 53.7,
+        "seniorScore": 53.8,
         "familyStrollerScore": 83.8
       },
       "keyStrengths": [
@@ -404,13 +404,13 @@
       "districtRoman": "V",
       "districtName": "Dzielnica V Krowodrza",
       "areaKm2": 5.62,
-      "totalPopulation": 33088,
+      "totalPopulation": 31523,
       "seniors65Plus": 8372,
       "metrics": {
         "prmParking": {
           "totalSpots": 30,
           "locationsCount": 13,
-          "spotsPer10kPop": 9.1,
+          "spotsPer10kPop": 9.5,
           "spotsPerKm2": 5.3
         },
         "transit": {
@@ -476,7 +476,7 @@
         "mobilityScore": 95.0,
         "visualScore": 72.9,
         "hearingScore": 65.3,
-        "seniorScore": 61.9,
+        "seniorScore": 62.0,
         "familyStrollerScore": 95.0
       },
       "keyStrengths": [
@@ -490,13 +490,13 @@
       "districtRoman": "VI",
       "districtName": "Dzielnica VI Bronowice",
       "areaKm2": 9.56,
-      "totalPopulation": 26418,
+      "totalPopulation": 25627,
       "seniors65Plus": 5917,
       "metrics": {
         "prmParking": {
           "totalSpots": 27,
           "locationsCount": 21,
-          "spotsPer10kPop": 10.2,
+          "spotsPer10kPop": 10.5,
           "spotsPerKm2": 2.8
         },
         "transit": {
@@ -548,13 +548,13 @@
       "districtRoman": "VII",
       "districtName": "Dzielnica VII Zwierzyniec",
       "areaKm2": 28.73,
-      "totalPopulation": 22272,
+      "totalPopulation": 21661,
       "seniors65Plus": 4989,
       "metrics": {
         "prmParking": {
           "totalSpots": 62,
           "locationsCount": 45,
-          "spotsPer10kPop": 27.8,
+          "spotsPer10kPop": 28.6,
           "spotsPerKm2": 2.2
         },
         "transit": {
@@ -621,13 +621,13 @@
       "districtRoman": "VIII",
       "districtName": "Dzielnica VIII Dębniki",
       "areaKm2": 46.19,
-      "totalPopulation": 71800,
+      "totalPopulation": 69431,
       "seniors65Plus": 11853,
       "metrics": {
         "prmParking": {
           "totalSpots": 106,
           "locationsCount": 64,
-          "spotsPer10kPop": 14.8,
+          "spotsPer10kPop": 15.3,
           "spotsPerKm2": 2.3
         },
         "transit": {
@@ -676,11 +676,11 @@
         }
       ],
       "scores": {
-        "overallScore": 59.8,
+        "overallScore": 59.9,
         "mobilityScore": 60.0,
         "visualScore": 53.5,
         "hearingScore": 50.0,
-        "seniorScore": 64.0,
+        "seniorScore": 64.1,
         "familyStrollerScore": 73.4
       },
       "keyStrengths": [
@@ -694,13 +694,13 @@
       "districtRoman": "IX",
       "districtName": "Dzielnica IX Łagiewniki-Borek Fałęcki",
       "areaKm2": 5.42,
-      "totalPopulation": 16230,
+      "totalPopulation": 15797,
       "seniors65Plus": 3314,
       "metrics": {
         "prmParking": {
           "totalSpots": 21,
           "locationsCount": 10,
-          "spotsPer10kPop": 12.9,
+          "spotsPer10kPop": 13.3,
           "spotsPerKm2": 3.9
         },
         "transit": {
@@ -752,13 +752,13 @@
       "districtRoman": "X",
       "districtName": "Dzielnica X Swoszowice",
       "areaKm2": 25.6,
-      "totalPopulation": 30720,
+      "totalPopulation": 30146,
       "seniors65Plus": 5103,
       "metrics": {
         "prmParking": {
           "totalSpots": 9,
           "locationsCount": 3,
-          "spotsPer10kPop": 2.9,
+          "spotsPer10kPop": 3.0,
           "spotsPerKm2": 0.4
         },
         "transit": {
@@ -809,7 +809,7 @@
       "districtRoman": "XI",
       "districtName": "Dzielnica XI Podgórze Duchackie",
       "areaKm2": 9.54,
-      "totalPopulation": 56236,
+      "totalPopulation": 55132,
       "seniors65Plus": 12927,
       "metrics": {
         "prmParking": {
@@ -865,7 +865,7 @@
       ],
       "scores": {
         "overallScore": 64.0,
-        "mobilityScore": 62.3,
+        "mobilityScore": 62.1,
         "visualScore": 57.8,
         "hearingScore": 84.5,
         "seniorScore": 52.0,
@@ -882,13 +882,13 @@
       "districtRoman": "XII",
       "districtName": "Dzielnica XII Bieżanów-Prokocim",
       "areaKm2": 18.47,
-      "totalPopulation": 65580,
+      "totalPopulation": 64458,
       "seniors65Plus": 15125,
       "metrics": {
         "prmParking": {
           "totalSpots": 34,
           "locationsCount": 10,
-          "spotsPer10kPop": 5.2,
+          "spotsPer10kPop": 5.3,
           "spotsPerKm2": 1.8
         },
         "transit": {
@@ -924,7 +924,7 @@
       "facilities": [],
       "scores": {
         "overallScore": 63.5,
-        "mobilityScore": 62.9,
+        "mobilityScore": 62.8,
         "visualScore": 63.1,
         "hearingScore": 57.7,
         "seniorScore": 55.1,
@@ -941,13 +941,13 @@
       "districtRoman": "XIII",
       "districtName": "Dzielnica XIII Podgórze",
       "areaKm2": 25.67,
-      "totalPopulation": 48003,
+      "totalPopulation": 45518,
       "seniors65Plus": 6446,
       "metrics": {
         "prmParking": {
           "totalSpots": 140,
           "locationsCount": 63,
-          "spotsPer10kPop": 29.2,
+          "spotsPer10kPop": 30.8,
           "spotsPerKm2": 5.5
         },
         "transit": {
@@ -1062,10 +1062,10 @@
       ],
       "scores": {
         "overallScore": 80.2,
-        "mobilityScore": 85.1,
+        "mobilityScore": 85.2,
         "visualScore": 63.7,
         "hearingScore": 84.5,
-        "seniorScore": 88.2,
+        "seniorScore": 88.4,
         "familyStrollerScore": 80.8
       },
       "keyStrengths": [
@@ -1079,13 +1079,13 @@
       "districtRoman": "XIV",
       "districtName": "Dzielnica XIV Czyżyny",
       "areaKm2": 12.26,
-      "totalPopulation": 37956,
+      "totalPopulation": 36669,
       "seniors65Plus": 6361,
       "metrics": {
         "prmParking": {
           "totalSpots": 54,
           "locationsCount": 32,
-          "spotsPer10kPop": 14.2,
+          "spotsPer10kPop": 14.7,
           "spotsPerKm2": 4.4
         },
         "transit": {
@@ -1138,7 +1138,7 @@
         "mobilityScore": 59.7,
         "visualScore": 58.4,
         "hearingScore": 84.5,
-        "seniorScore": 52.0,
+        "seniorScore": 52.1,
         "familyStrollerScore": 71.1
       },
       "keyStrengths": [
@@ -1151,13 +1151,13 @@
       "districtRoman": "XV",
       "districtName": "Dzielnica XV Mistrzejowice",
       "areaKm2": 5.59,
-      "totalPopulation": 51479,
+      "totalPopulation": 50819,
       "seniors65Plus": 13089,
       "metrics": {
         "prmParking": {
           "totalSpots": 89,
           "locationsCount": 59,
-          "spotsPer10kPop": 17.3,
+          "spotsPer10kPop": 17.5,
           "spotsPerKm2": 15.9
         },
         "transit": {
@@ -1192,8 +1192,8 @@
       },
       "facilities": [],
       "scores": {
-        "overallScore": 69.3,
-        "mobilityScore": 70.3,
+        "overallScore": 69.2,
+        "mobilityScore": 70.1,
         "visualScore": 83.8,
         "hearingScore": 57.7,
         "seniorScore": 56.1,
@@ -1210,13 +1210,13 @@
       "districtRoman": "XVI",
       "districtName": "Dzielnica XVI Bieńczyce",
       "areaKm2": 3.7,
-      "totalPopulation": 36813,
+      "totalPopulation": 36438,
       "seniors65Plus": 9907,
       "metrics": {
         "prmParking": {
           "totalSpots": 42,
           "locationsCount": 28,
-          "spotsPer10kPop": 11.4,
+          "spotsPer10kPop": 11.5,
           "spotsPerKm2": 11.4
         },
         "transit": {
@@ -1252,7 +1252,7 @@
       "facilities": [],
       "scores": {
         "overallScore": 58.7,
-        "mobilityScore": 56.3,
+        "mobilityScore": 56.2,
         "visualScore": 70.1,
         "hearingScore": 57.7,
         "seniorScore": 57.2,
@@ -1267,13 +1267,13 @@
       "districtRoman": "XVII",
       "districtName": "Dzielnica XVII Wzgórza Krzesławickie",
       "areaKm2": 23.82,
-      "totalPopulation": 20671,
+      "totalPopulation": 20465,
       "seniors65Plus": 4402,
       "metrics": {
         "prmParking": {
           "totalSpots": 52,
           "locationsCount": 34,
-          "spotsPer10kPop": 25.2,
+          "spotsPer10kPop": 25.4,
           "spotsPerKm2": 2.2
         },
         "transit": {
@@ -1309,7 +1309,7 @@
       "facilities": [],
       "scores": {
         "overallScore": 66.2,
-        "mobilityScore": 65.3,
+        "mobilityScore": 65.1,
         "visualScore": 68.3,
         "hearingScore": 57.7,
         "seniorScore": 66.4,
@@ -1326,13 +1326,13 @@
       "districtRoman": "XVIII",
       "districtName": "Dzielnica XVIII Nowa Huta",
       "areaKm2": 65.41,
-      "totalPopulation": 47336,
+      "totalPopulation": 46796,
       "seniors65Plus": 12032,
       "metrics": {
         "prmParking": {
           "totalSpots": 144,
           "locationsCount": 101,
-          "spotsPer10kPop": 30.4,
+          "spotsPer10kPop": 30.8,
           "spotsPerKm2": 2.2
         },
         "transit": {
@@ -1421,7 +1421,7 @@
       ],
       "scores": {
         "overallScore": 85.1,
-        "mobilityScore": 82.8,
+        "mobilityScore": 82.6,
         "visualScore": 75.2,
         "hearingScore": 96.0,
         "seniorScore": 95.0,

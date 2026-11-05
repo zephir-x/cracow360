@@ -34,10 +34,10 @@ It also securely stores operational states (like the persistent geocoding cache)
   - `educationScore` – Education and childcare capacities,
   - `greeneryScore` – Green spaces and recreation,
   - `cultureAndSeniorScore` – Libraries, CAS centers, and culture,
-  - `environmentScore` – Air quality and acoustic comfort,
-  - `safetyScore` – Public safety and traffic accident rates (adjusted for daytime population),
-  - `housingAffordabilityScore` – Housing affordability,
-  - `demographicVitalityScore` – Demographic growth and youth retention.
+  - `environmentScore` – Ambient air quality (90-day $\text{PM}_{10}$, $\text{PM}_{2.5}$, $\text{NO}_2$ concentrations and smog days evaluated against EU legal limits),
+  - `safetyScore` – Public and traffic safety (resident safety survey 1–5 and absence of road collisions/pedestrian accidents per capita),
+  - `housingAffordabilityScore` – Housing affordability (purchasing power in $\text{m}^2$ per average net salary, purchase prices, and rental rates),
+  - `demographicVitalityScore` – Demographic vitality (3-year population growth, working-age share 15–64, temporary residents, and international community share).
 
 ---
 
