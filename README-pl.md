@@ -694,8 +694,8 @@ Repozytorium wyposażone jest w wielowarstwowe mechanizmy automatycznej weryfika
 
 | Autor | Tło Akademickie | Zakres Odpowiedzialności w Projekcie |
 | :--- | :--- | :--- |
-| **Kacper Gumulak**<br/>*Główny Architekt i Inżynier Oprogramowania Fullstack* | Informatyka<br/>**Politechnika Krakowska**<br/>[Profil LinkedIn](https://www.linkedin.com/in/kacper-gumulak-532a6b290/) | Inżynieria oprogramowania, Minimal API w .NET 9, frontend w React 19, kartografia Leaflet, scrubbing wideo na Canvas, seeder SQLite, integracja AI DeepSeek, DevOps Docker. |
-| **Filip Gorczyca**<br/>*Główny Analityk Danych, Ekonometria i Identyfikacja Wizualna* | Analityka Gospodarcza<br/>**Uniwersytet Ekonomiczny w Krakowie**<br/>[Profil LinkedIn](https://www.linkedin.com/in/filip-gorczyca-4469a4309/) | Kalibracja miejskich danych otwartych, modele ekonometryczne, badanie ankietowe 243 mieszkańców, identyfikacja wizualna marki, produkcja materiałów wideo (`ad.mp4`, `panorama.mp4`) oraz dokumentacja konkursowa. |
+| **Kacper Gumulak**<br/>*Główny Architekt i Inżynier Oprogramowania Fullstack* | Informatyka<br/>**Politechnika Krakowska**<br/>[Profil LinkedIn](https://www.linkedin.com/in/kacper-gumulak-dev/) | Inżynieria oprogramowania, Minimal API w .NET 9, frontend w React 19, kartografia Leaflet, scrubbing wideo na Canvas, seeder SQLite, integracja AI DeepSeek, DevOps Docker. |
+| **Filip Gorczyca**<br/>*Główny Analityk Danych, Ekonometria i Identyfikacja Wizualna* | Analityka Gospodarcza<br/>**Uniwersytet Ekonomiczny w Krakowie**<br/>[Profil LinkedIn](https://www.linkedin.com/in/filip-gorczyca/) | Kalibracja miejskich danych otwartych, modele ekonometryczne, badanie ankietowe 243 mieszkańców, identyfikacja wizualna marki, produkcja materiałów wideo (`ad.mp4`, `panorama.mp4`) oraz dokumentacja konkursowa. |
 
 ---
 

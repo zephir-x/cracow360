@@ -694,8 +694,8 @@ The repository incorporates multiple layers of automated verification:
 
 | Contributor | Academic Background | Project Responsibilities |
 | :--- | :--- | :--- |
-| **Kacper Gumulak**<br/>*Lead Architect & Fullstack Software Engineer* | Computer Science<br/>**Cracow University of Technology** (*Politechnika Krakowska*)<br/>[LinkedIn Profile](https://www.linkedin.com/in/kacper-gumulak-532a6b290/) | Software engineering, .NET 9 Minimal API, React 19 Frontend, Leaflet cartography, Canvas scroll scrubbing, SQLite seeder, DeepSeek AI integration, Docker DevOps. |
-| **Filip Gorczyca**<br/>*Lead Data Analyst, Econometrics & Visual Design* | Economic Analysis<br/>**Krakow University of Economics** (*Uniwersytet Ekonomiczny w Krakowie*)<br/>[LinkedIn Profile](https://www.linkedin.com/in/filip-gorczyca-4469a4309/) | Municipal open data calibration, econometric models, empirical survey of 243 residents, brand identity, video production (`ad.mp4`, `panorama.mp4`), and competition documentation. |
+| **Kacper Gumulak**<br/>*Lead Architect & Fullstack Software Engineer* | Computer Science<br/>**Cracow University of Technology** (*Politechnika Krakowska*)<br/>[LinkedIn Profile](https://www.linkedin.com/in/kacper-gumulak-dev/) | Software engineering, .NET 9 Minimal API, React 19 Frontend, Leaflet cartography, Canvas scroll scrubbing, SQLite seeder, DeepSeek AI integration, Docker DevOps. |
+| **Filip Gorczyca**<br/>*Lead Data Analyst, Econometrics & Visual Design* | Economic Analysis<br/>**Krakow University of Economics** (*Uniwersytet Ekonomiczny w Krakowie*)<br/>[LinkedIn Profile](https://www.linkedin.com/in/filip-gorczyca/) | Municipal open data calibration, econometric models, empirical survey of 243 residents, brand identity, video production (`ad.mp4`, `panorama.mp4`), and competition documentation. |
 
 ---
 
