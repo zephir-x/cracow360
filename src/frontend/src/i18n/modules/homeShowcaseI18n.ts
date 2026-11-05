@@ -489,7 +489,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
         idleSummarySubtitle:
           'Projekt i wdrożenie platformy Kraków360 – od wydajnego backendu po dynamiczny interfejs.',
         idleHighlights: [
-          { value: 'Backend .NET 9', label: 'Clean Architecture, EF Core, Dapper & SQLite' },
+          { value: 'Backend .NET 9', label: 'Clean Architecture, EF Core & SQLite' },
           { value: 'Frontend React 19', label: 'TypeScript, Tailwind CSS & płynny UI' },
           { value: 'VPS & Wawelek AI', label: 'Wdrożenie na Mikrus, Docker & DeepSeek' },
         ],
@@ -498,7 +498,7 @@ const PL_HOME_SHOWCASE: HomeShowcaseTranslations = {
           'Studiuje informatykę na Politechnice Krakowskiej i od lat z pasją odkrywa niepowtarzalny klimat miasta pod Wawelem. Własne doświadczenia z codziennym życiem w Krakowie i poszukiwaniem idealnej dzielnicy zainspirowały go do przekucia surowych miejskich danych w nowoczesną platformę ułatwiającą życie mieszkańcom.',
         contributionTitle: 'Wkład inżynieryjny w projekt Kraków360',
         contributionBody:
-          'Opracował kompletną architekturę techniczną platformy: od wydajnego backendu w C# / .NET 9 (Clean Architecture, EF Core, Dapper), przez interaktywny frontend w React 19 i TypeScript, po integrację asystenta Wawelek AI oraz konteneryzację Docker i wdrożenie na serwerze VPS (Mikrus).',
+          'Opracował kompletną architekturę techniczną platformy: od wydajnego backendu w C# / .NET 9 (Clean Architecture, EF Core), przez interaktywny frontend w React 19 i TypeScript, po integrację asystenta Wawelek AI oraz konteneryzację Docker i wdrożenie na serwerze VPS (Mikrus).',
         tags: ['.NET 9 & C#', 'React 19 & TypeScript', 'Docker & VPS Mikrus', 'Wawelek AI & DeepSeek'],
         linkedInUrl: 'https://www.linkedin.com/in/kacper-gumulak-dev/',
         linkedInLabel: 'Profil LinkedIn',
@@ -888,7 +888,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
         idleSummarySubtitle:
           'Engineering the Kraków360 platform—from high-performance backend to UI.',
         idleHighlights: [
-          { value: 'Backend .NET 9', label: 'Clean Architecture, EF Core, Dapper & SQLite' },
+          { value: 'Backend .NET 9', label: 'Clean Architecture, EF Core & SQLite' },
           { value: 'Frontend React 19', label: 'TypeScript, Tailwind CSS & UI' },
           { value: 'VPS & Wawelek AI', label: 'Mikrus VPS deployment, Docker & DeepSeek' },
         ],
@@ -897,7 +897,7 @@ const EN_HOME_SHOWCASE: HomeShowcaseTranslations = {
           'Studies Computer Science at Cracow University of Technology and passionately explores the vibrant atmosphere of the city under Wawel. Everyday life in Krakow and searching for the ideal neighborhood inspired him to turn raw open municipal data into a modern platform supporting residents.',
         contributionTitle: 'Engineering Contribution to Kraków360',
         contributionBody:
-          'Engineered the complete system architecture: from the C# / .NET 9 backend (Clean Architecture, EF Core, Dapper), through the interactive React 19 & TypeScript frontend, to Wawelek AI integration and Docker deployment on a Mikrus VPS server.',
+          'Engineered the complete system architecture: from the C# / .NET 9 backend (Clean Architecture, EF Core), through the interactive React 19 & TypeScript frontend, to Wawelek AI integration and Docker deployment on a Mikrus VPS server.',
         tags: ['.NET 9 & C#', 'React 19 & TypeScript', 'Docker & Mikrus VPS', 'Wawelek AI & DeepSeek'],
         linkedInUrl: 'https://www.linkedin.com/in/kacper-gumulak-dev/',
         linkedInLabel: 'LinkedIn Profile',
@@ -1287,7 +1287,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
         idleSummarySubtitle:
           'Розробка платформи Kraków360 — від продуктивного бекенду до інтерфейсу.',
         idleHighlights: [
-          { value: 'Бекенд .NET 9', label: 'Clean Architecture, EF Core, Dapper та SQLite' },
+          { value: 'Бекенд .NET 9', label: 'Clean Architecture, EF Core та SQLite' },
           { value: 'Фронтенд React 19', label: 'TypeScript, Tailwind CSS та плавний UI' },
           { value: 'VPS та Wawelek AI', label: 'Розгортання на Mikrus, Docker та DeepSeek' },
         ],
@@ -1296,7 +1296,7 @@ const UA_HOME_SHOWCASE: HomeShowcaseTranslations = {
           'Вивчає інформатику в Краківській політехніці й із захопленням досліджує атмосферу міста під Вавелем. Власний досвід життя в Кракові та пошуку ідеального району надихнув його перетворити відкриті міські дані на сучасну платформу, що полегшує життя мешканцям.',
         contributionTitle: 'Інженерний внесок у проєкт Kraków360',
         contributionBody:
-          'Розробив повну технічну архітектуру платформи: від продуктивного бекенду на C# / .NET 9 (Clean Architecture, EF Core, Dapper), через інтерактивний фронтенд на React 19 та TypeScript, до інтеграції асистента Wawelek AI, контейнеризації Docker та розгортання на VPS-сервері (Mikrus).',
+          'Розробив повну технічну архітектуру платформи: від продуктивного бекенду на C# / .NET 9 (Clean Architecture, EF Core), через інтерактивний фронтенд на React 19 та TypeScript, до інтеграції асистента Wawelek AI, контейнеризації Docker та розгортання на VPS-сервері (Mikrus).',
         tags: ['.NET 9 & C#', 'React 19 & TypeScript', 'Docker & VPS Mikrus', 'Wawelek AI & DeepSeek'],
         linkedInUrl: 'https://www.linkedin.com/in/kacper-gumulak-dev/',
         linkedInLabel: 'Профіль LinkedIn',

@@ -8,7 +8,7 @@
 [![React 19](https://img.shields.io/badge/React_19-TypeScript-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TailwindCSS v4](https://img.shields.io/badge/TailwindCSS_v4-Vite_6-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Python 3.12](https://img.shields.io/badge/Python_3.12-ETL_%26_GIS-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![SQLite 3](https://img.shields.io/badge/SQLite_3-EF_Core_9_%26_Dapper-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org/)
+[![SQLite 3](https://img.shields.io/badge/SQLite_3-EF_Core_9-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org/)
 [![Docker](https://img.shields.io/badge/Docker_Compose-Multi--Container-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Open Data](https://img.shields.io/badge/Open_Data-52_Municipal_Datasets-059669?style=for-the-badge&logo=databricks&logoColor=white)](https://otwartedane.um.krakow.pl/)
 
@@ -45,36 +45,36 @@ Kraków360 directly implements the strategic goals of the **Krakow Development S
 
 ## 📑 Table of Contents
 
-- [🌐 Live Demonstration & Production Links](#-live-demonstration--production-links)
-- [✨ Interactive Modules & Feature Walkthrough](#-interactive-modules--feature-walkthrough)
-  - [1. 🎬 Cinematic Showcase & Storytelling (`/home`)](#1--cinematic-showcase--storytelling-home)
-  - [2. 🏡 Resident Mode & 8-Pillar QoL Engine (`/resident`)](#2--resident-mode--8-pillar-qol-engine-resident)
-  - [3. 👶 Parent Mode & 15-Minute City Simulator (`/parent`)](#3--parent-mode--15-minute-city-simulator-parent)
-  - [4. 🏛️ Official & Investor Mode (`/investor`)](#4--official--investor-mode-investor)
-  - [5. 🧭 Smart Tourism & Overtourism Relief (`/tourist`)](#5--smart-tourism--overtourism-relief-tourist)
-  - [6. 🔬 Methodology & Open Data Registry (`/methodology`)](#6--methodology--open-data-registry-methodology)
-  - [7. 🌤️ Live Atmospheric & Air Quality Telemetry Bar](#7--live-atmospheric--air-quality-telemetry-bar)
-  - [8. 🐉 Wawelek AI Assistant & City Companion](#8--wawelek-ai-assistant--city-companion)
-- [🏗️ System Architecture & Engineering](#-system-architecture--engineering)
-  - [Complete System Architecture](#complete-system-architecture)
-  - [End-to-End Data Pipeline](#end-to-end-data-pipeline)
-  - [Entity Relationship Diagram (ERD)](#entity-relationship-diagram-erd)
-  - [Backend Clean Architecture (.NET 9)](#backend-clean-architecture-net-9)
-  - [Frontend Architecture (React 19)](#frontend-architecture-react-19)
-- [📁 Repository & Directory Structure](#-repository--directory-structure)
-- [📐 Open Data Integration & Mathematical Foundations](#-open-data-integration--mathematical-foundations)
-  - [Spatial GIS Projections](#spatial-gis-projections)
-  - [Poisson Public Transit 15-Minute Isochrone](#poisson-public-transit-15-minute-isochrone)
-  - [8-Pillar Quality of Life Normalization](#8-pillar-quality-of-life-normalization)
-  - [Demographic Cohort Shift & OLS Damped Forecasting (2028)](#demographic-cohort-shift--ols-damped-forecasting-2028)
-- [🚀 Quick Start & Deployment Guide](#-quick-start--deployment-guide)
-  - [Option A: Docker Compose (Production / Full Stack)](#option-a-docker-compose-production--full-stack)
-  - [Option B: Manual Development Setup (.NET 9 + Node.js + Python)](#option-b-manual-development-setup-net-9--nodejs--python)
-  - [Environment Variables](#environment-variables)
-  - [Service Endpoints & Ports](#service-endpoints--ports)
-- [🧪 Quality Assurance & System Verification](#-quality-assurance--system-verification)
-- [👥 Team Percepcja360 & Authors](#-team-percepcja360--authors)
-- [📄 License & Disclaimers](#-license--disclaimers)
+- 🌐 **Live Demonstration & Production Links**
+- ✨ **Interactive Modules & Feature Walkthrough**
+  - **1. 🎬 Cinematic Showcase & Storytelling** (`/home`)
+  - **2. 🏡 Resident Mode & 8-Pillar QoL Engine** (`/resident`)
+  - **3. 👶 Parent Mode & 15-Minute City Simulator** (`/parent`)
+  - **4. 🏛️ Official & Investor Mode** (`/investor`)
+  - **5. 🧭 Smart Tourism & Overtourism Relief** (`/tourist`)
+  - **6. 🔬 Methodology & Open Data Registry** (`/methodology`)
+  - **7. 🌤️ Live Atmospheric & Air Quality Telemetry Bar**
+  - **8. 🐉 Wawelek AI Assistant & City Companion**
+- 🏗️ **System Architecture & Engineering**
+  - Complete System Architecture
+  - End-to-End Data Pipeline
+  - Domain Model & Aggregate Structure
+  - Backend Clean Architecture (.NET 9)
+  - Frontend Architecture (React 19)
+- 📁 **Repository & Directory Structure**
+- 📐 **Open Data Integration & Mathematical Foundations**
+  - Spatial GIS Projections
+  - Poisson Public Transit 15-Minute Isochrone
+  - 8-Pillar Quality of Life Normalization
+  - Demographic Cohort Shift & OLS Damped Forecasting (2028)
+- 🚀 **Quick Start & Deployment Guide**
+  - Option A: Docker Compose (Production / Full Stack)
+  - Option B: Manual Development Setup (.NET 9 + Node.js + Python)
+  - Environment Variables
+  - Service Endpoints & Ports
+- 🧪 **Quality Assurance & System Verification**
+- 👥 **Team Percepcja360 & Authors**
+- 📄 **License & Disclaimers**
 
 ---
 
@@ -307,7 +307,7 @@ sequenceDiagram
     participant Frontend as React 19 Frontend
 
     Note over Raw,Python: Step 1: Offline Spatial ETL & Econometrics
-    Raw->>Python: Ingest 31 CSVs (Demographics, KMK, Schools, Greenery)
+    Raw->>Python: Ingest 36 CSVs (Demographics, KMK, Schools, Greenery)
     Python->>Python: Transform CRS (EPSG:2178/3857/2180 → WGS84) via PyProj
     Python->>Python: Spatial Point-in-Polygon (Shapely) mapping to 18 districts
     Python->>Python: Compute 8 QoL scores & 2028 Cohort Projections
@@ -328,7 +328,7 @@ sequenceDiagram
 
 ---
 
-### Entity Relationship Diagram (ERD)
+### Domain Model & Aggregate Structure (DDD)
 
 ```mermaid
 erDiagram
@@ -417,6 +417,9 @@ erDiagram
     }
 ```
 
+> 💡 **Architectural Note (Domain-Driven Design & EF Core 9):**  
+> Kraków360 follows the **Aggregate Root** pattern. The domain facets (demographics, education, mobility, greenery, etc.) are strongly-typed **Owned Value Objects** mapped inline into the primary `Districts` table via `entity.OwnsOne(...)` in EF Core 9. Geocoded facilities are connected via a direct 1:N relationship (`PointOfInterest`), enabling ultra-fast 0 ms read performance with clean domain separation.
+
 ---
 
 ### Backend Clean Architecture (.NET 9)
@@ -433,7 +436,7 @@ The backend is built following **Clean Architecture** principles, maintaining st
 3. **`Cracow360.Infrastructure`**:
    - EF Core 9 `Cracow360DbContext` with owned entity configurations mapped to SQLite.
    - `DatabaseSeeder.cs` featuring **Self-Healing schema verification** (detects column mismatches, clears change trackers, and ingests contracts).
-   - High-performance caching via `IMemoryCache` and `Dapper` read queries.
+   - High-performance caching via `IMemoryCache` and optimized EF Core read queries.
    - External service implementations: `LiveAtmosphereService` (Open-Meteo & GIOŚ) and `WawelekAssistantService` (DeepSeek Platform API with Context Caching).
 4. **`Cracow360.Api`**:
    - High-throughput ASP.NET Core 9 **Minimal API** endpoint route groups.

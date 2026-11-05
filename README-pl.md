@@ -8,9 +8,14 @@
 [![React 19](https://img.shields.io/badge/React_19-TypeScript-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://react.dev/)
 [![TailwindCSS v4](https://img.shields.io/badge/TailwindCSS_v4-Vite_6-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
 [![Python 3.12](https://img.shields.io/badge/Python_3.12-ETL_%26_GIS-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
-[![SQLite 3](https://img.shields.io/badge/SQLite_3-EF_Core_9_%26_Dapper-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org/)
+[![SQLite 3](https://img.shields.io/badge/SQLite_3-EF_Core_9-003B57?style=for-the-badge&logo=sqlite&logoColor=white)](https://sqlite.org/)
 [![Docker](https://img.shields.io/badge/Docker_Compose-Multi--Container-2496ED?style=for-the-badge&logo=docker&logoColor=white)](https://www.docker.com/)
 [![Otwarte Dane](https://img.shields.io/badge/Otwarte_Dane-52_Zbiory_Miejskie-059669?style=for-the-badge&logo=databricks&logoColor=white)](https://otwartedane.um.krakow.pl/)
+
+---
+
+<video src="https://github.com/user-attachments/assets/3de5ae50-b645-44cc-9556-3beae7ba1970" controls autoplay loop muted width="100%">
+</video>
 
 ---
 
@@ -40,36 +45,36 @@ Kraków360 bezpośrednio realizuje strategiczne cele **Strategii Rozwoju Krakowa
 
 ## 📑 Spis Treści
 
-- [🌐 Działająca Aplikacja Live i Linki Produkcyjne](#-działająca-aplikacja-live-i-linki-produkcyjne)
-- [✨ Przegląd Modułów Funkcjonalnych](#-przegląd-modułów-funkcjonalnych)
-  - [1. 🎬 Kinematograficzna Strona Główna Start (`/home`)](#1--kinematograficzna-strona-główna-start-home)
-  - [2. 🏡 Tryb Mieszkańca i Silnik 8 Filarów QoL (`/resident`)](#2--tryb-mieszkańca-i-silnik-8-filarów-qol-resident)
-  - [3. 👶 Tryb Rodzica i Miasto 15-Minutowe (`/parent`)](#3--tryb-rodzica-i-miasto-15-minutowe-parent)
-  - [4. 🏛️ Tryb Urzędnika i Inwestora (`/investor`)](#4--tryb-urzędnika-i-inwestora-investor)
-  - [5. 🧭 Smart Turystyka i Ochrona Przed Overtourismem (`/tourist`)](#5--smart-turystyka-i-ochrona-przed-overtourismem-tourist)
-  - [6. 🔬 Metodologia i Rejestr Otwartych Danych (`/methodology`)](#6--metodologia-i-rejestr-otwartych-danych-methodology)
-  - [7. 🌤️ Pasek Telemetrii Atmosferycznej i Jakości Powietrza Na Żywo](#7--pasek-telemetrii-atmosferycznej-i-jakości-powietrza-na-żywo)
-  - [8. 🐉 Asystent AI Wawelek i Miejski Przewodnik](#8--asystent-ai-wawelek-i-miejski-przewodnik)
-- [🏗️ Architektura Systemu i Inżynieria Oprogramowania](#-architektura-systemu-i-inżynieria-oprogramowania)
-  - [Kompletna Architektura Systemu](#kompletna-architektura-systemu)
-  - [Kompletny Przepływ Danych End-to-End](#kompletny-przepływ-danych-end-to-end)
-  - [Diagram Związków Encji (ERD)](#diagram-związków-encji-erd)
-  - [Czysta Architektura Backendowa (.NET 9)](#czysta-architektura-backendowa-net-9)
-  - [Architektura Frontendowa (React 19)](#architektura-frontendowa-react-19)
-- [📁 Struktura Repozytorium i Modułów Projektu](#-struktura-repozytorium-i-modułów-projektu)
-- [📐 Integracja Otwartych Danych i Fundamenty Matematyczne](#-integracja-otwartych-danych-i-fundamenty-matematyczne)
-  - [Projekcje Geograficzne GIS](#projekcje-geograficzne-gis)
-  - [15-Minutowa Izochrona Transportu Publicznego w Modelu Poissona](#15-minutowa-izochrona-transportu-publicznego-w-modelu-poissona)
-  - [Normalizacja Min-Max 8 Filarów Jakości Życia](#normalizacja-min-max-8-filarów-jakości-życia)
-  - [Prognozowanie Przesunięć Kohortowych i Tłumione OLS (2028)](#prognozowanie-przesunięć-kohortowych-i-tłumione-ols-2028)
-- [🚀 Szybki Start i Przewodnik Wdrożeniowy](#-szybki-start-i-przewodnik-wdrożeniowy)
-  - [Opcja A: Docker Compose (Produkcja / Full Stack)](#opcja-a-docker-compose-produkcja--full-stack)
-  - [Opcja B: Ręczne Uruchomienie Deweloperskie (.NET 9 + Node.js + Python)](#opcja-b-ręczne-uruchomienie-deweloperskie-net-9--nodejs--python)
-  - [Zmienne Środowiskowe](#zmienne-środowiskowe)
-  - [Porty i Punkty Końcowe Usług](#porty-i-punkty-końcowe-usług)
-- [🧪 Zapewnienie Jakości i Weryfikacja Systemu](#-zapewnienie-jakości-i-weryfikacja-systemu)
-- [👥 Zespół Percepcja360 i Autorzy](#-zespół-percepcja360-i-autorzy)
-- [📄 Licencje i Zastrzeżenia Prawne](#-licencje-i-zastrzeżenia-prawne)
+- 🌐 **Działająca Aplikacja Live i Linki Produkcyjne**
+- ✨ **Przegląd Modułów Funkcjonalnych**
+  - **1. 🎬 Kinematograficzna Strona Główna Start** (`/home`)
+  - **2. 🏡 Tryb Mieszkańca i Silnik 8 Filarów QoL** (`/resident`)
+  - **3. 👶 Tryb Rodzica i Miasto 15-Minutowe** (`/parent`)
+  - **4. 🏛️ Tryb Urzędnika i Inwestora** (`/investor`)
+  - **5. 🧭 Smart Turystyka i Ochrona Przed Overtourismem** (`/tourist`)
+  - **6. 🔬 Metodologia i Rejestr Otwartych Danych** (`/methodology`)
+  - **7. 🌤️ Pasek Telemetrii Atmosferycznej i Jakości Powietrza Na Żywo**
+  - **8. 🐉 Asystent AI Wawelek i Miejski Przewodnik**
+- 🏗️ **Architektura Systemu i Inżynieria Oprogramowania**
+  - Kompletna Architektura Systemu
+  - Kompletny Przepływ Danych End-to-End
+  - Model Domenowy i Struktura Agregatu Dzielnicy
+  - Czysta Architektura Backendowa (.NET 9)
+  - Architektura Frontendowa (React 19)
+- 📁 **Struktura Repozytorium i Modułów Projektu**
+- 📐 **Integracja Otwartych Danych i Fundamenty Matematyczne**
+  - Projekcje Geograficzne GIS
+  - 15-Minutowa Izochrona Transportu Publicznego w Modelu Poissona
+  - Normalizacja Min-Max 8 Filarów Jakości Życia
+  - Prognozowanie Przesunięć Kohortowych i Tłumione OLS (2028)
+- 🚀 **Szybki Start i Przewodnik Wdrożeniowy**
+  - Opcja A: Docker Compose (Produkcja / Full Stack)
+  - Opcja B: Ręczne Uruchomienie Deweloperskie (.NET 9 + Node.js + Python)
+  - Zmienne Środowiskowe
+  - Porty i Punkty Końcowe Usług
+- 🧪 **Zapewnienie Jakości i Weryfikacja Systemu**
+- 👥 **Zespół Percepcja360 i Autorzy**
+- 📄 **Licencje i Zastrzeżenia Prawne**
 
 ---
 
@@ -196,6 +201,9 @@ Wersja produkcyjna Kraków360 została wdrożona na infrastrukturze o wysokiej d
 ### 7. 🌤️ Pasek Telemetrii Atmosferycznej i Jakości Powietrza Na Żywo
 *Bieżący monitoring warunków środowiskowych zintegrowany bezpośrednio pod górnym paskiem nawigacyjnym.*
 
+<video src="https://github.com/user-attachments/assets/2e84940c-6af4-43d3-8a53-a2844dd09a60" controls autoplay loop muted width="100%">
+</video>
+
 - **Telemetria Meteorologiczna Na Żywo (Open-Meteo API):** Pomiary w czasie rzeczywistym obejmujące temperaturę, temperaturę odczuwalną (°C), dynamiczne ikony zjawisk WMO, prawdopodobieństwo opadów oraz prędkość wiatru ze śledzeniem porywów lokalnych.
 - **Telemetria Jakości Powietrza i Smogu (GIOŚ & Copernicus CAMS Grid):** Europejski Indeks Jakości Powietrza (EAQI), stężenia PM10, PM2.5, NO₂ w czasie rzeczywistym oraz 90-dniowe progi przekroczeń norm zimowego smogu.
 - **Zdrowie, Indeks UV i Alerty Alergologiczne:** Bieżący monitoring stężeń 5 głównych alergenów roślinnych (trawy, brzoza, olcha, bylica, ambrozja) oraz ostrzeżenia indeksu UV wspierające osoby wrażliwe i alergików.
@@ -206,6 +214,9 @@ Wersja produkcyjna Kraków360 została wdrożona na infrastrukturze o wysokiej d
 
 ### 8. 🐉 Asystent AI Wawelek i Miejski Przewodnik
 *Przyjazny, osadzony w kontekście asystent konwersacyjny oparty o DeepSeek API oraz architekturę RAG.*
+
+<video src="https://github.com/user-attachments/assets/3514e7cf-cc40-449a-9b4c-f36d097a06e8" controls autoplay loop muted width="100%">
+</video>
 
 - **Pływający Przycisk Akcji (FAB) i Awatar Maskotki (`WawelekAssistantWidget.tsx`):**
   - Umieszczony w prawym dolnym rogu ekranu z ambientową poświatą oraz animowanym awatarem maskotki SVG reagującym dynamicznie na 4 stany emocjonalne: `idle` (oczekiwanie), `listening` (słuchanie), `thinking` (przetwarzanie) i `speaking` (mówienie).
@@ -296,7 +307,7 @@ sequenceDiagram
     participant Frontend as Frontend React 19
 
     Note over Raw,Python: Krok 1: Przestrzenny ETL i Ekonometria Offline
-    Raw->>Python: Wczytanie 31 plików CSV (demografia, KMK, edukacja, zieleń)
+    Raw->>Python: Wczytanie 36 plików CSV (demografia, KMK, edukacja, zieleń)
     Python->>Python: Transformacja układów współrzędnych (EPSG:2178/3857/2180 → WGS84) przez PyProj
     Python->>Python: Przestrzenny Point-in-Polygon (Shapely) przypisujący obiekty do 18 dzielnic
     Python->>Python: Obliczenie wskaźników 8 filarów i prognoz kohortowych do 2028 r.
@@ -317,7 +328,7 @@ sequenceDiagram
 
 ---
 
-### Diagram Związków Encji (ERD)
+### Model Domenowy i Struktura Agregatu Dzielnicy (DDD)
 
 ```mermaid
 erDiagram
@@ -406,6 +417,9 @@ erDiagram
     }
 ```
 
+> 💡 **Uwaga architektoniczna (Domain-Driven Design & EF Core 9):**  
+> Model danych oparty jest na wzorcu **Aggregate Root (DDD)**. Poszczególne fasety tematyczne (demografia, edukacja, mobilność, zieleń itp.) stanowią silnie typowane **obiekty wartości (Owned Value Objects)** zmapowane w EF Core 9 bezpośrednio do głównej tabeli `Districts` za pomocą `entity.OwnsOne(...)`. Obiekty POI powiązane są bezpośrednią relacją 1:N (`PointOfInterest`), co gwarantuje zerowy narzut relacyjny i błyskawiczne czasy odczytu (0 ms) przy zachowaniu pełnej separacji domenowej.
+
 ---
 
 ### Czysta Architektura Backendowa (.NET 9)
@@ -422,7 +436,7 @@ Backend został zaprojektowany zgodnie z zasadami **Clean Architecture**, zachow
 3. **`Cracow360.Infrastructure`**:
    - Kontekst EF Core 9 `Cracow360DbContext` z konfiguracją encji podrzędnych mapowanych do bazy SQLite.
    - `DatabaseSeeder.cs` z funkcją **samoleczącej weryfikacji struktury tabel** (wykrywa niezgodności kolumn, czyści change trackery i zasila bazę kontraktami).
-   - Wysokowydajna pamięć podręczna `IMemoryCache` oraz zapytania odczytu `Dapper`.
+   - Wysokowydajna pamięć podręczna `IMemoryCache` oraz zoptymalizowane zapytania odczytu EF Core.
    - Implementacje serwisów zewnętrznych: `LiveAtmosphereService` (Open-Meteo i GIOŚ) oraz `WawelekAssistantService` (DeepSeek Platform API z Context Caching).
 4. **`Cracow360.Api`**:
    - Wysokoprzepustowe grupy tras **Minimal API** w ASP.NET Core 9.

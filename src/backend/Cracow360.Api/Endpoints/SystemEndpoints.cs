@@ -35,7 +35,7 @@ public static class SystemEndpoints
                 ProjectName: "Kraków360 – System Analizy Jakości Życia, Dostępności Usług i Predykcji Rozwoju Miejskiego",
                 Competition: "Open Data App – Urząd Miasta Krakowa (2026)",
                 Environment: env.EnvironmentName,
-                DatabaseProvider: "SQLite (EF Core 9 + Dapper)",
+                DatabaseProvider: "SQLite (EF Core 9)",
                 DatabaseConnected: canConnect,
                 SeededDistrictsCount: districtsCount,
                 SeededPoisCount: poisCount,

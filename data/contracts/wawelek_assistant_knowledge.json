@@ -51,10 +51,10 @@
           "portfolio": "https://kacpergumulak.pl",
           "linkedIn": "https://www.linkedin.com/in/kacper-gumulak-dev/"
         },
-        "responsibilitiesInKrakow360": "Architektura inżynieryjna i programistyczna Kraków360: Backend C# / .NET 9 Minimal API (Clean Architecture, EF Core 9, Dapper, SQLite), Frontend React 19 + TypeScript + TailwindCSS v4 + React-Leaflet, wdrożenie potoku analitycznego ETL w Pythonie (Pandas, Scikit-Learn, GeoPandas, GUGiK EMUiA, OSM), integracja AI Asystenta Wawelka oraz konteneryzacja Docker Compose i wdrożenie produkcyjne na VPS.",
+        "responsibilitiesInKrakow360": "Architektura inżynieryjna i programistyczna Kraków360: Backend C# / .NET 9 Minimal API (Clean Architecture, EF Core 9, SQLite), Frontend React 19 + TypeScript + TailwindCSS v4 + React-Leaflet, wdrożenie potoku analitycznego ETL w Pythonie (Pandas, Scikit-Learn, GeoPandas, GUGiK EMUiA, OSM), integracja AI Asystenta Wawelka oraz konteneryzacja Docker Compose i wdrożenie produkcyjne na VPS.",
         "professionalProfileAndBio": "Kacper łączy solidne backendy w C# / .NET 9, dynamiczne interfejsy w React 19 & TypeScript oraz nowoczesną architekturę Cloud-Native (Microsoft Azure, Terraform IaC, Docker, CI/CD GitHub Actions) w myśl filozofii 'You build it, you run it'. W połowie 2026 roku odbył komercyjny staż jako Web Developer w Allventures (TypeScript, React, Vite, integracja narzędzi AI). Wcześniejsze doświadczenie w profesjonalnej obsłudze klienta nauczyło go świetnej komunikacji i przekładania złożonego żargonu technicznego na rozwiązania przyjazne ludziom. Nie jest z Krakowa ale bardzo polubił to miejsce (tak samo jak Filip).",
         "techStack": [
-          "C# & .NET 9, ASP.NET Core, Entity Framework Core, Dapper",
+          "C# & .NET 9, ASP.NET Core, Entity Framework Core",
           "Clean Architecture, Domain-Driven Design (DDD), CQRS, MediatR",
           "Microsoft Azure, Terraform (Infrastructure as Code), Docker, Linux, Nginx, GitHub Actions CI/CD",
           "React 19, TypeScript, Tailwind CSS, Vite, SignalR & WebSockets, React Query",
