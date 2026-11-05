@@ -4,5 +4,9 @@
   "height": 1080,
   "usableSourceFrames": 680,
   "sourceFps": 30.0,
-  "pattern": "/showcase/frames/frame_{index}.webp"
+  "pattern": "/showcase/frames/frame_{index}.webp",
+  "enhanced": true,
+  "aiSuperResolution": true,
+  "model": "Real-ESRGAN NCNN Vulkan realesr-animevideov3-x2",
+  "quality": 88
 }

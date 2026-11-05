@@ -29,6 +29,14 @@ __pycache__/
 .ipynb_checkpoints/
 .pytest_cache/
 
+# AI & Analytics tools, models and caches
+src/analytics/tools/
+src/analytics/models/
+*.onnx
+*.pth
+*.bin
+*.param
+
 # Environment variables
 .env
 .env.*

@@ -220,7 +220,10 @@ export function PromoVideoSpotlightCard({ copy }: PromoVideoSpotlightCardProps) 
             playsInline
             onLoadedMetadata={handleLoadedMetadata}
             onTimeUpdate={handleTimeUpdate}
-            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01]"
+            style={{
+              imageRendering: '-webkit-optimize-contrast',
+            }}
+            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.01] contrast-[1.04] saturate-[1.06] brightness-[1.01]"
           />
 
           {/* Subtle Top & Bottom Cinema Vignette */}

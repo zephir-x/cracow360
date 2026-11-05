@@ -124,6 +124,10 @@ export function VelocityScrollScrubSection({
     const dx = (cw - dw) * 0.5;
     const dy = (ch - dh) * 0.5;
 
+    // Enforce high-precision bilinear/bicubic resampling on the HTML5 Canvas context
+    ctx.imageSmoothingEnabled = true;
+    ctx.imageSmoothingQuality = 'high';
+
     ctx.clearRect(0, 0, cw, ch);
     ctx.drawImage(img, dx, dy, dw, dh);
   };
@@ -241,14 +245,14 @@ export function VelocityScrollScrubSection({
     };
   }, []);
 
-  // 2. Keep Canvas resolution matched to viewport (capped at 1920px width for GPU efficiency)
+  // 2. Keep Canvas resolution matched to viewport and HiDPI / Retina physical pixel grid (capped at 2560px for high-end rendering)
   useEffect(() => {
     const syncCanvasSize = () => {
       const canvas = canvasRef.current;
       if (!canvas) return;
-      const dpr = Math.min(window.devicePixelRatio || 1, 1.5);
-      const targetW = Math.min(1920, Math.round(window.innerWidth * dpr));
-      const targetH = Math.min(1080, Math.round(window.innerHeight * dpr));
+      const dpr = Math.min(window.devicePixelRatio || 1, 2.0);
+      const targetW = Math.min(2560, Math.round(window.innerWidth * dpr));
+      const targetH = Math.min(1440, Math.round(window.innerHeight * dpr));
       if (canvas.width !== targetW || canvas.height !== targetH) {
         canvas.width = targetW;
         canvas.height = targetH;
@@ -478,9 +482,10 @@ export function VelocityScrollScrubSection({
           style={{
             filter: canvasBlurPx > 0.15 ? `blur(${canvasBlurPx.toFixed(1)}px)` : 'none',
             transform: finaleProgress > 0.01 ? `scale(${canvasScale.toFixed(3)})` : 'none',
+            imageRendering: '-webkit-optimize-contrast',
             willChange: 'transform, filter',
           }}
-          className="absolute inset-0 w-full h-full object-cover"
+          className="absolute inset-0 w-full h-full object-cover contrast-[1.03] brightness-[1.01]"
         />
 
         {/* Subtle atmospheric edge gradients for crisp readability of minimalist HUD & story cards */}
